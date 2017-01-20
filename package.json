@@ -1,0 +1,19 @@
+{
+  "name": "aoe_techradar_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "create": "node ./scripts/create.js",
+    "clean": "node ./scripts/clean.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Raithel <t.raithel@googlemail.com> (http://www.tomraithel.de)",
+  "license": "MIT",
+  "dependencies": {
+    "async": "2.1.4",
+    "front-matter": "2.1.1",
+    "fs-extra": "2.0.0",
+    "marked": "0.3.6"
+  }
+}
