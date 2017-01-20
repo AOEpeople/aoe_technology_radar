@@ -1,21 +1,35 @@
-var fs = require('fs-extra');
-var frontmatter = require('front-matter');
-var marked = require('marked');
-var file = require('./file');
+import {
+  readFile,
+  outputFile,
+} from 'fs-extra';
+import frontmatter from 'front-matter';
+import marked from 'marked';
+import waterfall from 'async/waterfall';
+import {
+  srcPath,
+  distPath,
+} from './file';
 
-var fileName = file.path('radar/v1/tools/grunt.md');
+const fileName = srcPath('v1/tools/grunt.md');
 
-fs.readFile(fileName, 'utf8', function(err, data) {
-  if (err) throw err;
+console.log('<<< start creating files');
 
-  var item = frontmatter(data);
+waterfall([
+    (callback) => {
+      readFile(fileName, 'utf8', callback);
+    },
+    (data, callback) => {
+      const item = frontmatter(data);
+      const html = marked(item.body);
 
-  var html = marked(item.body);
-
-  console.log(item.attributes);
-  console.log(html);
-
-  fs.outputFile(file.distDir() + '/test.html', html, function (err) {
-    console.log(err) // => null
-  })
-});
+      outputFile(distPath('test3.html'), html, callback);
+    }
+  ],
+  (err, results) => {
+    if (!err) {
+      console.log('done creating files >>>');
+    } else {
+      console.error(err);
+    }
+  }
+);

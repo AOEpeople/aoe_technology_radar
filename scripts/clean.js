@@ -1,24 +1,14 @@
-var fs = require('fs-extra');
-var async = require('async');
-var file = require('./file');
+import { emptyDir } from 'fs-extra';
+import { distPath } from './file';
 
-var distDir = file.distDir();
+var distDir = distPath();
 
 console.log('<<< start cleaning dist dir: ', distDir);
 
-async.series([
-    function(callback) {
-      fs.ensureDir(distDir, callback);
-    },
-    function(callback) {
-      fs.emptyDir(distDir, callback);
-    }
-  ],
-  function(err, results) {
-    if (!err) {
-      console.log('done cleaning dist dir >>>');
-    } else {
-      console.error(err);
-    }
+emptyDir(distDir, (err) => {
+  if (!err) {
+    console.log('done cleaning dist dir >>>');
+  } else {
+    console.error(err);
   }
-);
+});

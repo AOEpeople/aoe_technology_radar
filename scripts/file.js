@@ -1,10 +1,13 @@
-var path = require('path');
+import path from 'path';
 
-module.exports = {
-  path: function(relativePath) {
-    return path.resolve(__dirname, '..', relativePath)
-  },
-  distDir: function() {
-    return this.path('dist');
-  }
-};
+export const relativePath = (...relativePath) => (
+  path.resolve(__dirname, '..', ...relativePath)
+);
+
+export const srcPath = (pathInSrc = '') => (
+  relativePath('radar', pathInSrc)
+);
+
+export const distPath = (pathInDist = '') => (
+  relativePath('dist', pathInDist)
+);
