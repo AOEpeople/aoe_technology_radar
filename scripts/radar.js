@@ -4,6 +4,7 @@ import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
 import { srcPath, distPath } from './file';
+import { item as itemTemplate } from './template';
 
 export const createRadar = async (tree) => {
   const fileNames = await getAllMarkdownFiles();
@@ -52,7 +53,7 @@ const createRevisionsFromFiles = (fileNames) => (
             ...itemInfoFromFilename(fileName),
             fileName,
             attributes: fm.attributes,
-            body: fm.body,
+            body: marked(fm.body),
           });
         }
       });
@@ -98,6 +99,7 @@ const addRevisionToItem = (item = {
     ...rest,
   } = revision;
   return {
+    quadrant,
     attributes: {
       ...item.attributes,
       ...revision.attributes,
@@ -111,20 +113,17 @@ export const outputRadar = (radar) => {
   return Promise.all(
     Object.entries(radar).map(([quadrantName, quadrant]) => (
       Object.entries(quadrant).map(([itemName, item]) => (
-        new Promise((resolve, reject) => (
-          outputFile(distPath(quadrantName, `${itemName}.html`), getItemHtml(item), (err, data) => {
+        new Promise((resolve, reject) => {
+          console.log(JSON.stringify(item, null, 2));
+          outputFile(distPath(quadrantName, `${itemName}.html`), itemTemplate(item), (err, data) => {
             if (err) {
               reject(err);
             } else {
               resolve(data);
             }
           })
-        ))
+        })
       ))
     ))
   );
 };
-
-const getItemHtml = (item) => (`
-  <h1>${item.attributes.title}</h1>
-`)

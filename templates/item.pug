@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  a(href='/' + quadrant + '.html') #{quadrant}
+  h1 #{attributes.title}
+    = ' '
+    small #{attributes.ring}
+
+  hr
+  section
+    != revisions[0].body
+  hr
+
+  ul
+    each revision, index in revisions
+      if index > 0
+        li
+          = revision.version
+          != revision.body
