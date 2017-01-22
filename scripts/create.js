@@ -17,9 +17,9 @@ import {
 
 (async () => {
   try {
-    const tree = await getTree();
+    // const tree = await getTree();
     // console.log(JSON.stringify(tree, null, 2));
-    const radar = await createRadar(tree);
+    const radar = await createRadar();
     console.log(JSON.stringify(radar, null, 2));
   } catch(e) {
     console.error('error:', e);

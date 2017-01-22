@@ -1,7 +1,6 @@
 ---
-layout:     post
 title:      "React"
-ring:       adopt
+ring:       trial
 ---
 
 Hier steht eine Einleitung über *React* - super "cool"

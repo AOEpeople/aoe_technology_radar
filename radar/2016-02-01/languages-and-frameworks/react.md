@@ -1,6 +1,5 @@
 ---
-layout:     post
-title:      "React"
+title:      "React 123"
 ring:       adopt
 ---
 
