@@ -1,9 +1,9 @@
 import { walk } from 'walk';
-import fs, { readFile } from 'fs-extra';
+import fs, { readFile, outputFile } from 'fs-extra';
 import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
-import { srcPath } from './file';
+import { srcPath, distPath } from './file';
 
 export const createRadar = async (tree) => {
   const fileNames = await getAllMarkdownFiles();
@@ -105,3 +105,26 @@ const addRevisionToItem = (item = {
     revisions: item.revisions.concat(rest),
   };
 };
+
+
+export const outputRadar = (radar) => {
+  return Promise.all(
+    Object.entries(radar).map(([quadrantName, quadrant]) => (
+      Object.entries(quadrant).map(([itemName, item]) => (
+        new Promise((resolve, reject) => (
+          outputFile(distPath(quadrantName, `${itemName}.html`), getItemHtml(item), (err, data) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(data);
+            }
+          })
+        ))
+      ))
+    ))
+  );
+};
+
+const getItemHtml = (item) => (`
+  <h1>${item.attributes.title}</h1>
+`)

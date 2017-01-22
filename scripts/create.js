@@ -10,17 +10,16 @@ import {
   distPath,
 } from './file';
 import {
-  getTree,
   createRadar,
+  outputRadar,
 } from './radar';
 
 
 (async () => {
   try {
-    // const tree = await getTree();
-    // console.log(JSON.stringify(tree, null, 2));
     const radar = await createRadar();
-    console.log(JSON.stringify(radar, null, 2));
+    outputRadar(radar);
+    // console.log(JSON.stringify(radar, null, 2));
   } catch(e) {
     console.error('error:', e);
   }
