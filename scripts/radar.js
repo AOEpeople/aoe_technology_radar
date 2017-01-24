@@ -16,8 +16,11 @@ import {
 export const createRadar = async (tree) => {
   const fileNames = (await getAllMarkdownFiles(radarPath())).reverse();
   const revisions = await createRevisionsFromFiles(fileNames);
+  const allVersions = getAllVersions(revisions);
   const quadrants = createQuadrants(revisions);
-  return quadrants;
+  const quadrantsWithIsNewFlag = flagWithIsNew(quadrants, allVersions);
+
+  return quadrantsWithIsNewFlag;
 };
 
 const createRevisionsFromFiles = (fileNames) => (
@@ -52,6 +55,15 @@ const itemInfoFromFilename = (fileName) => {
     quadrant,
   }
 };
+
+const getAllVersions = (revisions) => (
+  revisions.reduce((allVersions, { version }) => {
+    if(!allVersions.includes(version)) {
+      return [...allVersions, version];
+    }
+    return allVersions;
+  }, []).sort()
+)
 
 const createQuadrants = (revisions) => (
   revisions.reduce((quadrants, revision) => {
@@ -123,3 +135,20 @@ const outputQuadrantPage = (quadrantName, quadrant) => (
     })
   })
 )
+
+const flagWithIsNew = (radar, allVersions) => (
+  Object.entries(radar).reduce((newRadar, [quadrantName, quadrant]) => ({
+    ...newRadar,
+    [quadrantName]: Object.entries(quadrant).reduce((newItem, [itemName, item]) => ({
+      ...newItem,
+      [itemName]: {
+        ...item,
+        isNew: isNewItem(item, allVersions),
+      },
+    }), {}),
+  }), {})
+);
+
+const isNewItem = (item, allVersions) => {
+  return item.revisions[0].version === allVersions[allVersions.length-1]
+}
