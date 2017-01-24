@@ -3,11 +3,10 @@ import { distPath } from './file';
 
 var distDir = distPath();
 
-console.log('<<< start cleaning dist dir: ', distDir);
 
 emptyDir(distDir, (err) => {
   if (!err) {
-    console.log('done cleaning dist dir >>>');
+    console.log('Cleaned dist dir', distDir);
   } else {
     console.error(err);
   }

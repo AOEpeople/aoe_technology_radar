@@ -7,6 +7,9 @@ import {
   distPath,
   getAllPugFiles,
 } from './file';
+import {
+  vars,
+} from './template';
 
 export const createStatic = async (radar) => {
   const paths = await getAllPugFiles(staticPath());
@@ -25,9 +28,9 @@ const getPlainFileNames = (paths) => (
 const renderStaticPages = (radar, fileNames) => (
   Promise.all(fileNames.map((name) => (
     new Promise((resolve, reject) => (
-      outputFile(distPath(`${name}.html`), pug.renderFile(staticPath(`${name}.pug`), {
+      outputFile(distPath(`${name}.html`), pug.renderFile(staticPath(`${name}.pug`), vars({
         radar,
-      }), (err, data) => {
+      })), (err, data) => {
         if (err) {
           reject(err);
         } else {

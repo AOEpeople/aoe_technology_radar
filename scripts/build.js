@@ -13,8 +13,8 @@ import {
     outputRadar(radar);
     createStatic(radar);
 
-    console.log('Radar build!');
-    console.log(JSON.stringify(radar, null, 2));
+    console.log('Built radar');
+    // console.log(JSON.stringify(radar, null, 2));
   } catch(e) {
     console.error('error:', e);
   }

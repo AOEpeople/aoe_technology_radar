@@ -7,7 +7,11 @@ import {
   distPath,
   getAllMarkdownFiles,
 } from './file';
-import { item as itemTemplate } from './template';
+import {
+  item as itemTemplate,
+  quadrant as quadrantTemplate,
+  vars,
+} from './template';
 
 export const createRadar = async (tree) => {
   const fileNames = (await getAllMarkdownFiles(radarPath())).reverse();
@@ -85,13 +89,14 @@ const addRevisionToItem = (item = {
 
 export const outputRadar = (radar) => {
   return Promise.all(
-    Object.entries(radar).map(([quadrantName, quadrant]) => (
+    Object.entries(radar).map(async ([quadrantName, quadrant]) => {
+      await outputQuadrantPage(quadrantName, quadrant);
       Object.entries(quadrant).map(([itemName, item]) => (
         new Promise((resolve, reject) => {
-          outputFile(distPath(quadrantName, `${itemName}.html`), itemTemplate({
+          outputFile(distPath(quadrantName, `${itemName}.html`), itemTemplate(vars({
             quadrantName,
             item,
-          }), (err, data) => {
+          })), (err, data) => {
             if (err) {
               reject(err);
             } else {
@@ -100,6 +105,21 @@ export const outputRadar = (radar) => {
           })
         })
       ))
-    ))
+    })
   );
 };
+
+const outputQuadrantPage = (quadrantName, quadrant) => (
+  new Promise((resolve, reject) => {
+    outputFile(distPath(`${quadrantName}.html`), quadrantTemplate(vars({
+      quadrantName,
+      quadrant,
+    })), (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    })
+  })
+)
