@@ -1,18 +1,21 @@
 extends layout.pug
 
+block vars
+  - var title=item.attributes.title
+
 block content
-  a(href='/' + quadrant + '.html') #{quadrant}
-  h1 #{attributes.title}
+  a(href='/' + quadrantName + '.html') #{quadrantName}
+  h1 #{item.attributes.title}
     = ' '
-    small #{attributes.ring}
+    small #{item.attributes.ring}
 
   hr
   section
-    != revisions[0].body
+    != item.revisions[0].body
   hr
 
   ul
-    each revision, index in revisions
+    each revision, index in item.revisions
       if index > 0
         li
           = revision.version

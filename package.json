@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create": "npm run clean && babel-node ./scripts/create.js",
+    "build": "npm run clean && babel-node ./scripts/build.js",
     "clean": "babel-node ./scripts/clean.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

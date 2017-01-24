@@ -1,45 +1,20 @@
-import { walk } from 'walk';
 import fs, { readFile, outputFile } from 'fs-extra';
 import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
-import { srcPath, distPath } from './file';
+import {
+  radarPath,
+  distPath,
+  getAllMarkdownFiles,
+} from './file';
 import { item as itemTemplate } from './template';
 
 export const createRadar = async (tree) => {
-  const fileNames = await getAllMarkdownFiles();
+  const fileNames = (await getAllMarkdownFiles(radarPath())).reverse();
   const revisions = await createRevisionsFromFiles(fileNames);
   const quadrants = createQuadrants(revisions);
   return quadrants;
 };
-
-const getAllMarkdownFiles = () => (
-  new Promise((resolve, reject) => {
-    const walker = walk(srcPath(), { followLinks: false });
-    const files = [];
-
-    walker.on("file", (root, fileStat, next) => {
-      if (isMarkdownFile(fileStat.name)) {
-        files.push(path.resolve(root, fileStat.name));
-      }
-      next();
-    });
-
-    walker.on("errors", (root, nodeStatsArray, next) => {
-      nodeStatsArray.forEach(function (n) {
-        console.error("[ERROR] " + n.name)
-        console.error(n.error.message || (n.error.code + ": " + n.error.path));
-      });
-      next();
-    });
-
-    walker.on("end", () => {
-      resolve(files.sort().reverse());
-    });
-  })
-);
-
-const isMarkdownFile = (name) => name.match(/\.md$/);
 
 const createRevisionsFromFiles = (fileNames) => (
   Promise.all(fileNames.map((fileName) => {
@@ -99,7 +74,6 @@ const addRevisionToItem = (item = {
     ...rest,
   } = revision;
   return {
-    quadrant,
     attributes: {
       ...item.attributes,
       ...revision.attributes,
@@ -114,8 +88,10 @@ export const outputRadar = (radar) => {
     Object.entries(radar).map(([quadrantName, quadrant]) => (
       Object.entries(quadrant).map(([itemName, item]) => (
         new Promise((resolve, reject) => {
-          console.log(JSON.stringify(item, null, 2));
-          outputFile(distPath(quadrantName, `${itemName}.html`), itemTemplate(item), (err, data) => {
+          outputFile(distPath(quadrantName, `${itemName}.html`), itemTemplate({
+            quadrantName,
+            item,
+          }), (err, data) => {
             if (err) {
               reject(err);
             } else {
