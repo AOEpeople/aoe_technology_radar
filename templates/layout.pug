@@ -2,8 +2,7 @@ block vars
 html
   head
     title #{title} - AOE Tech Radar
-    block scripts
-      script(src='/jquery.js')
+    link(rel='stylesheet', href='/styles.css')
 
   h3
     a(href='/') AOE Tech Radar
@@ -12,3 +11,5 @@ html
 
   body
     block content
+    block scripts
+      script(src='/bundle.js')

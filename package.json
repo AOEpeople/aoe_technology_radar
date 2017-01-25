@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && babel-node ./scripts/build.js",
-    "clean": "babel-node ./scripts/clean.js",
+    "build": "npm run clean && npm run build:radar && npm run build:webpack",
+    "build:radar": "babel-node ./tasks/build.js",
+    "build:webpack": "webpack --config webpack.config.js",
+    "clean": "babel-node ./tasks/clean.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tom Raithel <t.raithel@googlemail.com> (http://www.tomraithel.de)",
@@ -13,12 +15,16 @@
   "dependencies": {
     "async": "2.1.4",
     "babel-cli": "6.22.2",
+    "babel-loader": "6.2.10",
     "babel-preset-latest": "6.22.0",
     "babel-preset-stage-0": "6.22.0",
+    "css-loader": "0.26.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
     "front-matter": "2.1.1",
     "fs-extra": "2.0.0",
     "marked": "0.3.6",
     "pug": "2.0.0-beta8",
-    "walk": "2.3.9"
+    "walk": "2.3.9",
+    "webpack": "2.2.0"
   }
 }
