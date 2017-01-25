@@ -1,5 +1,4 @@
 ---
-new:        true
 ---
 
 Foo

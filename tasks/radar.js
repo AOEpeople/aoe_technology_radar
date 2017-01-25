@@ -14,7 +14,7 @@ import {
 } from './template';
 
 export const createRadar = async (tree) => {
-  const fileNames = (await getAllMarkdownFiles(radarPath())).reverse();
+  const fileNames = (await getAllMarkdownFiles(radarPath()));
   const revisions = await createRevisionsFromFiles(fileNames);
   const allVersions = getAllVersions(revisions);
   const quadrants = createQuadrants(revisions);
@@ -80,7 +80,9 @@ const addRevisionToQuadrant = (quadrant = {}, revision) => ({
 });
 
 const addRevisionToItem = (item = {
-  attributes: {},
+  attributes: {
+    isFeatured: true,
+  },
   revisions: [],
 }, revision) => {
   const {
@@ -90,14 +92,17 @@ const addRevisionToItem = (item = {
     ...rest,
   } = revision;
   return {
+    ...item,
     attributes: {
       ...item.attributes,
       ...revision.attributes,
     },
-    revisions: item.revisions.concat(rest),
+    revisions: [
+      rest,
+      ...item.revisions,
+    ],
   };
 };
-
 
 export const outputRadar = (radar) => {
   return Promise.all(

@@ -1,17 +1,6 @@
 ---
-layout:     post
-title:      "Grunt"
+title:      "Grunt 2"
 ring:       hold
-new:        true
 ---
 
-Hier steht was über *Grunt*
-
-Hier noch ein [link](http://www.google.de) zu google
-
-<!--except-->
-
-Hier steht der Rest!
-
-History
--------
+Hier steht was neueres über *Grunt*

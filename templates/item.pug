@@ -9,9 +9,13 @@ block content
     = ' '
     small #{item.attributes.ring}
 
-  h2 New: #{item.isNew ? 'YES' : 'NO'}
 
   hr
+    
+  h4= item.revisions[0].version
+  h5 New: #{item.isNew ? 'YES' : 'NO'}
+  h5 Feature: #{item.attributes.isFeatured ? 'YES' : 'NO'}
+
   section
     != item.revisions[0].body
   hr

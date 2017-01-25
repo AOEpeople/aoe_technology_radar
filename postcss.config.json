@@ -1,7 +1,8 @@
 {
   "use": [
-    "autoprefixer",
-    "postcss-nested"
+    "postcss-easy-import",
+    "postcss-nested",
+    "autoprefixer"
   ],
   "autoprefixer": {
       "browsers": "> 5%"
