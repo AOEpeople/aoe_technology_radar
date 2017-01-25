@@ -1,0 +1,9 @@
+{
+  "use": [
+    "autoprefixer",
+    "postcss-nested"
+  ],
+  "autoprefixer": {
+      "browsers": "> 5%"
+  }
+}
