@@ -10,7 +10,6 @@ block content
         h4= translate(quadrantName)
         ul
           each radarItem, itemName in quadrant
-            if radarItem.attributes.isFeatured === true
-              li
-                a(href='/' + quadrantName + '/' + itemName + '.html')
-                  = radarItem.attributes.title
+            li
+              a(href='/' + quadrantName + '/' + itemName + '.html')
+                = radarItem.attributes.title

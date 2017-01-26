@@ -11,7 +11,7 @@ block content
 
 
   hr
-    
+
   h4= item.revisions[0].version
   h5 New: #{item.isNew ? 'YES' : 'NO'}
   h5 Feature: #{item.attributes.isFeatured ? 'YES' : 'NO'}
@@ -24,5 +24,8 @@ block content
     each revision, index in item.revisions
       if index > 0
         li
-          = revision.version
+          h3
+            = revision.version
+            = ' '
+            = revision.attributes.ring
           != revision.body

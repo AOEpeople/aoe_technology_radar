@@ -91,17 +91,30 @@ const addRevisionToItem = (item = {
     fileName,
     ...rest,
   } = revision;
-  return {
+  let newItem = {
     ...item,
     attributes: {
       ...item.attributes,
       ...revision.attributes,
     },
-    revisions: [
-      rest,
-      ...item.revisions,
-    ],
   };
+
+  if (revisionCreatesNewHistoryEntry(revision)) {
+    newItem = {
+      ...newItem,
+      revisions: [
+        rest,
+        ...newItem.revisions,
+      ],
+    }
+  }
+
+  return newItem;
+};
+
+const revisionCreatesNewHistoryEntry = (revision) => {
+  return revision.body.trim() !== '' ||
+         typeof revision.attributes.ring !== 'undefined';
 };
 
 export const outputRadar = (radar) => {
