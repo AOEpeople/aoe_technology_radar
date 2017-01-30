@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "2.1.4",
-    "autoprefixer": "6.7.0",
+    "autoprefixer": "6.7.1",
     "babel-cli": "6.22.2",
     "babel-loader": "6.2.10",
     "babel-preset-latest": "6.22.0",
