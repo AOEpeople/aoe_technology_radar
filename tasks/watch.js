@@ -1,5 +1,6 @@
 import { watch } from 'fs';
 import { exec } from 'child_process';
+import liveServer from 'live-server';
 
 import {
   stylesPath,
@@ -8,6 +9,7 @@ import {
   radarPath,
   staticPath,
   templatesPath,
+  distPath,
 } from './file';
 
 const watchBuild = (name) => (eventType, fileName) => {
@@ -32,4 +34,8 @@ watch(radarPath(), options, watchBuild('pages'));
 watch(staticPath(), options, watchBuild('pages'));
 watch(templatesPath(), options, watchBuild('pages'));
 
-console.log('Watching for changes, press CTRL+C to quit');
+var params = {
+    root: distPath(),
+    logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
+};
+liveServer.start(params);
