@@ -21,6 +21,10 @@ export const stylesPath = (...pathInSrc) => (
   relativePath('styles', ...pathInSrc)
 );
 
+export const assetsPath = (...pathInSrc) => (
+  relativePath('assets', ...pathInSrc)
+);
+
 export const jsPath = (...pathInSrc) => (
   relativePath('js', ...pathInSrc)
 );

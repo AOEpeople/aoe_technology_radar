@@ -3,6 +3,7 @@ import { exec } from 'child_process';
 
 import {
   stylesPath,
+  assetsPath,
   jsPath,
   radarPath,
   staticPath,
@@ -26,6 +27,7 @@ const options = {
 
 watch(stylesPath(), options, watchBuild('css'));
 watch(jsPath(), options, watchBuild('js'));
+watch(assetsPath(), options, watchBuild('assets'));
 watch(radarPath(), options, watchBuild('pages'));
 watch(staticPath(), options, watchBuild('pages'));
 watch(templatesPath(), options, watchBuild('pages'));
