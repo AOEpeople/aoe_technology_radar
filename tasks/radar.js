@@ -195,7 +195,7 @@ const addItemToQuadrant = (quadrant = {}, item) => ({
   [item.attributes.ring]: addItemToRing(quadrant[item.attributes.ring], item),
 });
 
-const addItemToRing = (ring = [], item) => ({
+const addItemToRing = (ring = [], item) => ([
   ...ring,
   item,
-});
+]);
