@@ -3,13 +3,12 @@ html
   head
     title #{title} - AOE Tech Radar
     link(rel='stylesheet', href='/styles.css')
-
-  h3
-    a(href='/') AOE Tech Radar
-
-  hr
-
   body
-    block content
-    block scripts
-      script(src='/bundle.js')
+    .page
+      .header
+        a(href='/')
+          img(src='/assets/logo.svg')
+
+      block content
+      block scripts
+        script(src='/bundle.js')

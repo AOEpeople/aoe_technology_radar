@@ -1,7 +1,9 @@
+
 body {
-  background: #fff;
+  background: #475157;
   box-sizing: border-box;
-  transform: translate3d(1,1,1);
+  margin: 0;
+  padding: 0;
 
   & h1 {
     color: blue;
