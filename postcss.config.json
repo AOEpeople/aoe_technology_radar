@@ -2,6 +2,7 @@
   "use": [
     "postcss-easy-import",
     "postcss-nested",
+    "postcss-css-variables",
     "autoprefixer"
   ],
   "autoprefixer": {

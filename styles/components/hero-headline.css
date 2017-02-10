@@ -1,0 +1,9 @@
+.hero-headline {
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--color-white);
+
+  &__alt {
+    color: var(--color-gray-light);
+  }
+}

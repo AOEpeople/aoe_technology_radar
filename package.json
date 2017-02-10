@@ -27,6 +27,7 @@
     "live-server": "1.2.0",
     "marked": "0.3.6",
     "postcss-cli": "2.6.0",
+    "postcss-css-variables": "0.6.0",
     "postcss-easy-import": "2.0.0",
     "postcss-nested": "1.0.0",
     "pug": "2.0.0-beta9",

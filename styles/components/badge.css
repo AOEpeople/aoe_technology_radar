@@ -1,0 +1,24 @@
+.badge {
+  color: var(--color-white);
+  display: inline-block;
+  padding: 0 15px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+
+  &--adopt {
+    background: var(--color-green);
+  }
+  &--trial {
+    background: var(--color-orange);
+  }
+  &--assess {
+    background: var(--color-blue);
+  }
+  &--hold {
+    background: var(--color-marine);
+  }
+}

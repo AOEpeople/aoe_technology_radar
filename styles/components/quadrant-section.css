@@ -1,0 +1,13 @@
+.quadrant-section {
+  &__header {
+
+  }
+
+  &__lists {
+    display: flex;
+  }
+  
+  &__list {
+    flex: 0 0 20%;
+  }
+}

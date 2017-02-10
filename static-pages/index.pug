@@ -4,12 +4,20 @@ block vars
   - var title='Overview'
 
 block content
-  ul
+  .hero-headline
+    | Technology Radar
+    span.hero-headline__alt
+      = ' '
+      | March 2017
+  div
     each quadrant, quadrantName in radar
-      li
-        h4= translate(quadrantName)
-        ul
+      .quadrant-section
+        .quadrant-section__header
+          h4= translate(quadrantName)
+        .quadrant-section__lists
           each radarItem, itemName in quadrant
-            li
+            .quadrant-section__list
               a(href='/' + quadrantName + '/' + itemName + '.html')
                 = radarItem.attributes.title
+                span(class=`badge badge--${radarItem.attributes.ring}`)
+                  = radarItem.attributes.ring

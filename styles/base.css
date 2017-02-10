@@ -1,8 +1,33 @@
+:root {
+  --color-gray-dark: #475157;
+  --color-gray-light: #7D878D;
+  --color-white: #fff;
+  --color-green: #5CB449;
+  --color-orange: #FAA03D;
+  --color-blue: #40A7D1;
+  --color-marine: #688190;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('/assets/fonts/clanot-news.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('/assets/fonts/clanot-thin.otf');
+  font-weight: 300;
+}
+
 body {
-  background: #475157;
+  background: var(--color-gray-dark);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'DIN';
+  font-weight: normal;
+  font-size: 16px;
 
   & h1 {
     color: blue;
