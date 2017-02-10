@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && npm run build:radar && npm run build:js && npm run build:css",
-    "build:radar": "babel-node ./tasks/build.js",
+    "build:pages": "babel-node ./tasks/build.js",
     "build:js": "webpack --config webpack.config.js",
     "build:css": "postcss -c postcss.config.json -o dist/styles.css styles/main.css",
-    "watch:radar": "nodemon -w radar -w static-pages -w templates -e md,pug --exec 'npm run build:radar'",
-    "watch:css": "nodemon -w styles -e css --exec 'npm run build:css'",
-    "watch:js": "nodemon -w js -e js --exec 'npm run build:js'",
+    "watch": "babel-node ./tasks/watch.js",
     "clean": "babel-node ./tasks/clean.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

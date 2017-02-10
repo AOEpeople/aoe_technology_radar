@@ -13,6 +13,18 @@ export const staticPath = (...pathInSrc) => (
   relativePath('static-pages', ...pathInSrc)
 );
 
+export const templatesPath = (...pathInSrc) => (
+  relativePath('templates', ...pathInSrc)
+);
+
+export const stylesPath = (...pathInSrc) => (
+  relativePath('styles', ...pathInSrc)
+);
+
+export const jsPath = (...pathInSrc) => (
+  relativePath('js', ...pathInSrc)
+);
+
 export const distPath = (...pathInDist) => (
   relativePath('dist', ...pathInDist)
 );
