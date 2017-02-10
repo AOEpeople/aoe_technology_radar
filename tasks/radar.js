@@ -16,11 +16,12 @@ import {
 export const createRadar = async (tree) => {
   const fileNames = (await getAllMarkdownFiles(radarPath()));
   const revisions = await createRevisionsFromFiles(fileNames);
-  const allVersions = getAllVersions(revisions);
-  const quadrants = createQuadrants(revisions);
-  const quadrantsWithIsNewFlag = flagWithIsNew(quadrants, allVersions);
+  const allReleases = getAllReleases(revisions);
+  const items = createItems(revisions);
+  const itemsWithIsNewFlag = flagWithIsNew(items, allReleases);
+  const quadrants = groupByQuadrants(itemsWithIsNewFlag);
 
-  return quadrantsWithIsNewFlag;
+  return quadrants;
 };
 
 const createRevisionsFromFiles = (fileNames) => (
@@ -45,39 +46,57 @@ const createRevisionsFromFiles = (fileNames) => (
 
 const itemInfoFromFilename = (fileName) => {
   const [
-    version,
+    release,
     quadrant,
     nameWithSuffix,
   ] = fileName.split('/').slice(-3);
   return {
     name: nameWithSuffix.substr(0, nameWithSuffix.length - 3),
-    version,
+    release,
     quadrant,
   }
 };
 
-const getAllVersions = (revisions) => (
-  revisions.reduce((allVersions, { version }) => {
-    if(!allVersions.includes(version)) {
-      return [...allVersions, version];
+const getAllReleases = (revisions) => (
+  revisions.reduce((allReleases, { release }) => {
+    if(!allReleases.includes(release)) {
+      return [...allReleases, release];
     }
-    return allVersions;
+    return allReleases;
   }, []).sort()
 )
 
-const createQuadrants = (revisions) => (
-  revisions.reduce((quadrants, revision) => {
-    return {
-      ...quadrants,
-      [revision.quadrant]: addRevisionToQuadrant(quadrants[revision.quadrant], revision),
-    };
-  }, {})
-);
+// const createQuadrants = (revisions) => (
+//   revisions.reduce((quadrants, revision) => {
+//     return {
+//       ...quadrants,
+//       [revision.quadrant]: addRevisionToQuadrant(quadrants[revision.quadrant], revision),
+//     };
+//   }, {})
+// );
+
+// const addRevisionToQuadrant = (quadrant = {}, revision) => ({
+//   ...quadrant,
+//   [revision.name]: addRevisionToItem(quadrant[revision.name], revision),
+// });
 
 const addRevisionToQuadrant = (quadrant = {}, revision) => ({
   ...quadrant,
-  [revision.name]: addRevisionToItem(quadrant[revision.name], revision),
+  [revision.attributes.ring]: addRevisionToRing(quadrant[revision.attributes.ring], revision),
 });
+
+const createItems = (revisions) => {
+  const itemMap = revisions.reduce((items, revision) => {
+    return {
+      ...items,
+      [revision.name]: addRevisionToItem(items[revision.name], revision),
+    };
+  }, {});
+
+  return Object
+    .values(itemMap)
+    .sort((x, y) => (x.name > y.name ? 1 : -1));
+}
 
 const addRevisionToItem = (item = {
   attributes: {
@@ -86,13 +105,12 @@ const addRevisionToItem = (item = {
   revisions: [],
 }, revision) => {
   const {
-    name,
-    quadrant,
     fileName,
     ...rest,
   } = revision;
   let newItem = {
     ...item,
+    ...rest,
     attributes: {
       ...item.attributes,
       ...revision.attributes,
@@ -154,19 +172,30 @@ const outputQuadrantPage = (quadrantName, quadrant) => (
   })
 )
 
-const flagWithIsNew = (radar, allVersions) => (
-  Object.entries(radar).reduce((newRadar, [quadrantName, quadrant]) => ({
-    ...newRadar,
-    [quadrantName]: Object.entries(quadrant).reduce((newItem, [itemName, item]) => ({
-      ...newItem,
-      [itemName]: {
-        ...item,
-        isNew: isNewItem(item, allVersions),
-      },
-    }), {}),
+const flagWithIsNew = (items, allReleases) => (
+  items.map((item) => ({
+    ...item,
+    isNew: isNewItem(item, allReleases),
+  }), [])
+);
+
+const isNewItem = (item, allReleases) => {
+  return item.revisions[0].release === allReleases[allReleases.length-1]
+}
+
+const groupByQuadrants = (items) => (
+  items.reduce((quadrants, item) => ({
+    ...quadrants,
+    [item.quadrant]: addItemToQuadrant(quadrants[item.quadrant], item),
   }), {})
 );
 
-const isNewItem = (item, allVersions) => {
-  return item.revisions[0].version === allVersions[allVersions.length-1]
-}
+const addItemToQuadrant = (quadrant = {}, item) => ({
+  ...quadrant,
+  [item.attributes.ring]: addItemToRing(quadrant[item.attributes.ring], item),
+});
+
+const addItemToRing = (ring = [], item) => ({
+  ...ring,
+  item,
+});

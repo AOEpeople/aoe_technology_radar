@@ -1,31 +1,33 @@
 extends layout.pug
 
 block vars
-  - var title=item.attributes.title
+  //-
+    - var title=item.attributes.title
 
 block content
-  a(href='/' + quadrantName + '.html')= translate(quadrantName)
-  h1 #{item.attributes.title}
-    = ' '
-    small #{item.attributes.ring}
+  //-
+    a(href='/' + quadrantName + '.html')= translate(quadrantName)
+    h1 #{item.attributes.title}
+      = ' '
+      small #{item.attributes.ring}
 
 
-  hr
+    hr
 
-  h4= item.revisions[0].version
-  h5 New: #{item.isNew ? 'YES' : 'NO'}
-  h5 Feature: #{item.attributes.isFeatured ? 'YES' : 'NO'}
+    h4= item.revisions[0].version
+    h5 New: #{item.isNew ? 'YES' : 'NO'}
+    h5 Feature: #{item.attributes.isFeatured ? 'YES' : 'NO'}
 
-  section
-    != item.revisions[0].body
-  hr
+    section
+      != item.revisions[0].body
+    hr
 
-  ul
-    each revision, index in item.revisions
-      if index > 0
-        li
-          h3
-            = revision.version
-            = ' '
-            = revision.attributes.ring
-          != revision.body
+    ul
+      each revision, index in item.revisions
+        if index > 0
+          li
+            h3
+              = revision.version
+              = ' '
+              = revision.attributes.ring
+            != revision.body

@@ -4,9 +4,10 @@ block vars
   - var title='Quadrant'
 
 block content
-  h1
-    = translate(quadrantName)
-  ul
-    each radarItem, itemName in quadrant
-      li
-        a(href='/' + quadrantName + '/' + itemName + '.html')= radarItem.attributes.title
+  //
+    h1
+      = translate(quadrantName)
+    ul
+      each radarItem, itemName in quadrant
+        li
+          a(href='/' + quadrantName + '/' + itemName + '.html')= radarItem.attributes.title
