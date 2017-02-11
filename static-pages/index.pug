@@ -9,21 +9,24 @@ block content
     span.hero-headline__alt
       = ' '
       | March 2017
-  div
+  div.quadrant-grid
     //-
       pre
         = JSON.stringify(radar, 0, 2)
+
     each quadrant, quadrantName in radar
-      .quadrant-section
-        .quadrant-section__header
-          h4= translate(quadrantName)
-        .quadrant-section__lists
-          each items, ringName in quadrant
-            .quadrant-section__list
-              .ring-list
-                .ring-list__header
-                  span(class=`badge badge--${ringName}`)
-                    = ringName
-                each item in items
-                  a.ring-list__item(href='/' + quadrantName + '/' + item.name + '.html')
-                    = item.attributes.title
+      .quadrant-grid__quadrant
+        .quadrant-section
+          .quadrant-section__header
+            h4.headline= translate(quadrantName)
+          .quadrant-section__rings
+            each items, ringName in quadrant
+              .quadrant-section__ring
+                .ring-list
+                  .ring-list__header
+                    span(class=`badge badge--${ringName}`)
+                      = ringName
+                  each item in items
+                    span.ring-list__item
+                      a.link(href='/' + quadrantName + '/' + item.name + '.html')
+                        = item.attributes.title

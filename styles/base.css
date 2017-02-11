@@ -1,5 +1,6 @@
 :root {
   --color-gray-dark: #475157;
+  --color-gray-normal: #979797;
   --color-gray-light: #7D878D;
   --color-white: #fff;
   --color-green: #5CB449;
@@ -27,7 +28,8 @@ body {
   padding: 0;
   font-family: 'DIN';
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5;
 
   & h1 {
     color: blue;

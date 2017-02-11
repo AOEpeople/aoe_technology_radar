@@ -1,10 +1,10 @@
 .ring-list {
   &__header {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   &__item {
+    font-size: 13px;
     display: block;
-    color: var(--color-white);
     margin-bottom: 10px;
   }
 }

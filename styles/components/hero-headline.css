@@ -1,7 +1,8 @@
 .hero-headline {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 300;
   color: var(--color-white);
+  margin-bottom: 70px;
 
   &__alt {
     color: var(--color-gray-light);

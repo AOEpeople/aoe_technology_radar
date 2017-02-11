@@ -1,13 +1,14 @@
 .quadrant-section {
   &__header {
-
+    margin-bottom: 20px;
   }
 
-  &__lists {
+  &__rings {
     display: flex;
   }
-  
-  &__list {
-    flex: 0 0 20%;
+
+  &__ring {
+    padding: 0 8px;
+    flex: 0 0 25%;
   }
 }

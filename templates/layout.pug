@@ -5,12 +5,23 @@ html
     link(rel='stylesheet', href='/styles.css')
   body
     .page
-      .header
-        a.header__logo(href='/')
-          img(src='/assets/logo.svg')
-        .header__nav
-          | How to Use Technology Radar?
-
-      block content
-      block scripts
-        script(src='/bundle.js')
+      .page__header
+        .branding
+          a.branding__logo(href='/')
+            img(src='/assets/logo.svg')
+          .branding__content
+            | How to Use Technology Radar?
+      .page__content
+        block content
+        block scripts
+          script(src='/bundle.js')
+      .page__footer
+        .branding
+          span.branding__logo
+            img(src='/assets/logo.svg')
+          .branding__content
+            span.footnote
+              | AOE is a leading provider of Enterprise Open Source web solutions.
+              | Using current agile development methods, more than 250+ developers
+              | and consultants in 8 global locations develop customized Open Source
+              | solutions for global companies and corporations.

@@ -1,0 +1,9 @@
+.quadrant-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__quadrant {
+    flex: 0 0 50%;
+    margin-bottom: 40px;
+  }
+}
