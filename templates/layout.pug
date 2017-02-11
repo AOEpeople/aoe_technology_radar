@@ -10,7 +10,11 @@ html
           a.branding__logo(href='/')
             img(src='/assets/logo.svg')
           .branding__content
-            | How to Use Technology Radar?
+            .nav
+              .nav__item
+                a.icon-link(href='/') How to Use Technology Radar?
+              .nav__item
+                a.icon-link(href='/') Technologies Overview
       .page__content
         block content
         block scripts

@@ -1,0 +1,8 @@
+.nav {
+  &__item {
+    display: inline-block;
+    & + .nav__item {
+      margin-left: 20px;
+    }
+  }
+}

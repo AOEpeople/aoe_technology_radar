@@ -1,4 +1,6 @@
 .headline {
+  margin: 0;
+  padding: 0;
   color: var(--color-white);
   font-size: 20px;
   font-weight: normal;

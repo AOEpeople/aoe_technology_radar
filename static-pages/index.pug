@@ -18,7 +18,11 @@ block content
       .quadrant-grid__quadrant
         .quadrant-section
           .quadrant-section__header
-            h4.headline= translate(quadrantName)
+            .split
+              .split__left
+                h4.headline= translate(quadrantName)
+              .split__right
+                a.icon-link(href='/') Quadrant Overview
           .quadrant-section__rings
             each items, ringName in quadrant
               .quadrant-section__ring

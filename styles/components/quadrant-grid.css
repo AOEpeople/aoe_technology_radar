@@ -1,9 +1,10 @@
 .quadrant-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   &__quadrant {
-    flex: 0 0 50%;
+    flex: 0 0 45%;
     margin-bottom: 40px;
   }
 }
