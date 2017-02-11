@@ -17,6 +17,6 @@ export const vars = (vars) => ({
   ...vars,
 })
 
-export const item = pug.compileFile(relativePath(templateFolder, 'item.pug'));
+export const item = pug.compileFile(relativePath(templateFolder, 'item-page.pug'));
 
-export const quadrant = pug.compileFile(relativePath(templateFolder, 'quadrant.pug'));
+export const quadrant = pug.compileFile(relativePath(templateFolder, 'quadrant-page.pug'));

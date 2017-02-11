@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:radar && npm run build:js && npm run build:css",
+    "build": "npm run clean && npm run build:pages && npm run build:js && npm run build:css && npm run build:assets",
+    "build:all": "npm run build",
     "build:pages": "babel-node ./tasks/build.js",
     "build:js": "webpack --config webpack.config.js",
     "build:css": "postcss -c postcss.config.json -o dist/styles.css styles/main.css",

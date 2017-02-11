@@ -1,0 +1,25 @@
+.item {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-gray-normal);
+  display: block;
+  text-decoration: none;
+
+  &.is-active {
+    background: var(--color-gray-dark-alt);
+  }
+
+  &:first-child {
+    border-top: 1px solid var(--color-gray-normal);
+  }
+
+  &__title {
+    font-size: 16px;
+    color: var(--color-white);
+  }
+
+  &__info {
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--color-gray-normal);
+  }
+}

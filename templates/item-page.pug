@@ -1,0 +1,76 @@
+extends layout.pug
+
+block vars
+  //-
+    - var title=item.attributes.title
+
+block body
+  .item-page
+    .item-page__nav
+      .item-page__nav__inner
+        .nav
+          .nav__item
+            a.icon-link.icon-link--primary.icon-link--big(href='/') AOE Technology Radar
+        .item-page__header
+          h3.headline
+            = translate(item.quadrant)
+        .item-list
+          .item-list__header
+            .split
+              .split__left
+                span(class=`badge badge--big badge--${item.attributes.ring}`)
+                  = item.attributes.ring
+              .split__right
+                a.icon-link(href=`/${item.quadrant}.html`) Quadrant Overview
+          .item-list__list
+            each ringItem in itemsInRing
+              a.item(class=`${ringItem.name === item.name ? 'is-active' : ''}` href=`/${ringItem.quadrant}/${ringItem.name}.html`)
+                .item__title= ringItem.attributes.title
+                if ringItem.attributes.info
+                  .item__info= ringItem.attributes.info
+    .item-page__content
+      .item-page__content__inner
+        .split
+          .split__left
+          .split__right
+            .nav
+              .nav__item
+                a.icon-link(href='/') How to Use Technology Radar?
+              .nav__item
+                a.icon-link(href='/') Technologies Overview
+        .item-page__header
+          .split
+            .split__left
+              h1.hero-headline.hero-headline--inverse
+                = item.attributes.title
+            .split__right
+              span(class=`badge badge--big badge--${item.attributes.ring}`)
+                = item.attributes.ring
+        .item-details
+          != item.body
+  //-
+    a(href='/' + item.quadrant + '.html')= translate(item.quadrant)
+    h1 #{item.attributes.title}
+      = ' '
+      small #{item.attributes.ring}
+
+
+    hr
+
+    h4= item.revisions[0].version
+    h5 New: #{item.isNew ? 'YES' : 'NO'}
+    h5 Feature: #{item.attributes.isFeatured ? 'YES' : 'NO'}
+
+    section
+      != item.revisions[0].body
+    hr
+
+    ul
+      each revision, index in item.revisions
+        if index > 0
+          li
+            h3
+              = revision.version
+              = ' '
+              = revision.attributes.ring
+            != revision.body

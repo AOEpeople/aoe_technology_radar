@@ -18,11 +18,23 @@ export const createRadar = async (tree) => {
   const revisions = await createRevisionsFromFiles(fileNames);
   const allReleases = getAllReleases(revisions);
   const items = createItems(revisions);
-  const itemsWithIsNewFlag = flagWithIsNew(items, allReleases);
-  const quadrants = groupByQuadrants(itemsWithIsNewFlag);
+  const flaggedItems = flagWithIsNew(items, allReleases);
 
-  return quadrants;
+  const quadrants = groupByQuadrants(flaggedItems);
+
+  return {
+    items: flaggedItems,
+    quadrants,
+  }
 };
+
+export const groupByQuadrants = (items) => (
+  items.reduce((quadrants, item) => ({
+    ...quadrants,
+    [item.quadrant]: addItemToQuadrant(quadrants[item.quadrant], item),
+  }), {})
+);
+
 
 const createRevisionsFromFiles = (fileNames) => (
   Promise.all(fileNames.map((fileName) => {
@@ -135,14 +147,17 @@ const revisionCreatesNewHistoryEntry = (revision) => {
          typeof revision.attributes.ring !== 'undefined';
 };
 
-export const outputRadar = (radar) => {
+export const outputRadar = ({ quadrants, items }) => {
+  Object.entries(quadrants).map(async ([quadrantName, quadrant]) => (
+    await outputQuadrantPage(quadrantName, quadrant)
+  ));
   return Promise.all(
-    Object.entries(radar).map(async ([quadrantName, quadrant]) => {
-      await outputQuadrantPage(quadrantName, quadrant);
-      Object.entries(quadrant).map(([itemName, item]) => (
+    items.map(async (item) => {
+
+      // Object.entries(quadrant).map(([itemName, item]) => (
         new Promise((resolve, reject) => {
-          outputFile(distPath(quadrantName, `${itemName}.html`), itemTemplate(vars({
-            quadrantName,
+          outputFile(distPath(item.quadrant, `${item.name}.html`), itemTemplate(vars({
+            itemsInRing: quadrants[item.quadrant][item.attributes.ring],
             item,
           })), (err, data) => {
             if (err) {
@@ -152,10 +167,11 @@ export const outputRadar = (radar) => {
             }
           })
         })
-      ))
+      // ))
     })
   );
 };
+
 
 const outputQuadrantPage = (quadrantName, quadrant) => (
   new Promise((resolve, reject) => {
@@ -182,13 +198,6 @@ const flagWithIsNew = (items, allReleases) => (
 const isNewItem = (item, allReleases) => {
   return item.revisions[0].release === allReleases[allReleases.length-1]
 }
-
-const groupByQuadrants = (items) => (
-  items.reduce((quadrants, item) => ({
-    ...quadrants,
-    [item.quadrant]: addItemToQuadrant(quadrants[item.quadrant], item),
-  }), {})
-);
 
 const addItemToQuadrant = (quadrant = {}, item) => ({
   ...quadrant,

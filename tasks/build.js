@@ -1,5 +1,6 @@
 import {
   createRadar,
+  groupByQuadrants,
   outputRadar,
 } from './radar';
 import {
@@ -11,7 +12,9 @@ import {
   try {
     const radar = await createRadar();
     outputRadar(radar);
-    createStatic(radar);
+
+    // const radarByQuadrants = groupByQuadrants(radar);
+    createStatic(radar.quadrants);
 
     console.log('Built radar');
     // console.log(JSON.stringify(radar, null, 2));

@@ -1,4 +1,4 @@
-extends ../templates/layout.pug
+extends ../templates/default-page.pug
 
 block vars
   - var title='Overview'
@@ -22,7 +22,7 @@ block content
               .split__left
                 h4.headline= translate(quadrantName)
               .split__right
-                a.icon-link(href='/') Quadrant Overview
+                a.icon-link(href=`/${quadrantName}.html`) Quadrant Overview
           .quadrant-section__rings
             each items, ringName in quadrant
               .quadrant-section__ring

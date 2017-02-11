@@ -8,8 +8,16 @@
   line-height: 25px;
   color: var(--color-gray-normal);
 
+  &--primary {
+    color: var(--color-brand);
+  }
+
+  &--big {
+    font-size: 16px;
+  }
+
   &:hover {
-    color: var(--color-white);
+    text-decoration: underline;
   }
 
   &:before {

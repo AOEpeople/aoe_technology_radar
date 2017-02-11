@@ -12,7 +12,8 @@ import {
   distPath,
 } from './file';
 
-const watchBuild = (name) => (eventType, fileName) => {
+
+const runBuild = (name) => (
   exec(`npm run build:${name}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
@@ -21,11 +22,15 @@ const watchBuild = (name) => (eventType, fileName) => {
     console.log(stdout);
     console.error(stderr);
   })
-}
+);
+
+const watchBuild = (name) => (eventType, fileName) => runBuild(name);
 
 const options = {
   recursive: true,
 }
+
+runBuild('all');
 
 watch(stylesPath(), options, watchBuild('css'));
 watch(jsPath(), options, watchBuild('js'));

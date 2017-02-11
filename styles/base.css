@@ -1,12 +1,15 @@
 :root {
   --color-gray-dark: #475157;
+  --color-gray-dark-alt: #4F585E;
   --color-gray-normal: #979797;
   --color-gray-light: #7D878D;
+
   --color-white: #fff;
   --color-green: #5CB449;
   --color-orange: #FAA03D;
   --color-blue: #40A7D1;
   --color-marine: #688190;
+  --color-brand: #F59134;
 }
 
 @font-face {

@@ -1,0 +1,32 @@
+.item-page {
+  display: flex;
+  height: 100vh;
+  &__nav,
+  &__content {
+    height: 100%;
+  }
+
+  &__header {
+    min-height: 40px;
+    margin: 50px 0 25px;
+  }
+
+  &__nav {
+    flex: 0 0 30%;
+    background: var(--color-gray-dark);
+    &__inner {
+      float: right;
+      width: 375px;
+      margin: 60px 40px 0 0;
+    }
+  }
+
+  &__content {
+    flex: 0 0 70%;
+    background: var(--color-white);
+    &__inner {
+      width: 680px;
+      margin: 60px 0 0 110px;
+    }
+  }
+}

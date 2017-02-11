@@ -4,28 +4,6 @@ html
     title #{title} - AOE Tech Radar
     link(rel='stylesheet', href='/styles.css')
   body
-    .page
-      .page__header
-        .branding
-          a.branding__logo(href='/')
-            img(src='/assets/logo.svg')
-          .branding__content
-            .nav
-              .nav__item
-                a.icon-link(href='/') How to Use Technology Radar?
-              .nav__item
-                a.icon-link(href='/') Technologies Overview
-      .page__content
-        block content
-        block scripts
-          script(src='/bundle.js')
-      .page__footer
-        .branding
-          span.branding__logo
-            img(src='/assets/logo.svg')
-          .branding__content
-            span.footnote
-              | AOE is a leading provider of Enterprise Open Source web solutions.
-              | Using current agile development methods, more than 250+ developers
-              | and consultants in 8 global locations develop customized Open Source
-              | solutions for global companies and corporations.
+    block body
+    block scripts
+      script(src='/bundle.js')
