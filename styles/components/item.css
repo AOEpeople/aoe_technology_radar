@@ -4,6 +4,7 @@
   display: block;
   text-decoration: none;
   transition: background 200ms ease-out;
+  color: var(--color-gray-normal);
 
   &.is-active {
     background: var(--color-gray-dark-alt);
@@ -20,6 +21,12 @@
   &--no-leading-border {
     &:first-child {
       border-top: none;
+    }
+  }
+
+  &--no-trailing-border {
+    &:last-child {
+      border-bottom: none;
     }
   }
 

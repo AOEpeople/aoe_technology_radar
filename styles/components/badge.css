@@ -1,6 +1,7 @@
 .badge {
   color: var(--color-white);
   display: inline-block;
+  box-sizing: border-box;
   padding: 0 15px;
   text-transform: uppercase;
   border-radius: 13px;
@@ -8,6 +9,8 @@
   line-height: 25px;
   height: 25px;
   overflow: hidden;
+  text-decoration: none;
+  border: 1px solid var(--color-gray-normal);
 
   &--big {
     border-radius: 15px;
@@ -17,17 +20,25 @@
     padding: 0 20px;
   }
 
+  &--neutral {
+    background: var(--color-gray-normal);
+    border-color: var(--color-gray-normal);
+  }
   &--adopt {
     background: var(--color-green);
+    border-color: var(--color-green);
   }
   &--trial {
     background: var(--color-orange);
+    border-color: var(--color-orange);
   }
   &--assess {
     background: var(--color-blue);
+    border-color: var(--color-blue);
   }
   &--hold {
     background: var(--color-marine);
+    border-color: var(--color-marine);
   }
 
 }

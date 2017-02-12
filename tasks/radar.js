@@ -36,14 +36,21 @@ const addItemToQuadrant = (quadrant = {}, item) => ({
 });
 
 export const groupByFirstLetter = (items) => (
-  items.reduce((letterIned, item) => ({
-    ...letterIned,
-    [getFirstLetter(item)]: addItemToFirstLetterIndex(letterIned[getFirstLetter(item)], item),
+  items.reduce((letterIndex, item) => ({
+    ...letterIndex,
+    [getFirstLetter(item)]: addItemToList(letterIndex[getFirstLetter(item)], item),
   }), {})
 );
 
-const addItemToFirstLetterIndex = (letterIned = [], item) => ([
-  ...letterIned,
+export const groupByRing = (items) => (
+  items.reduce((rings, item) => ({
+    ...rings,
+    [item.attributes.ring]: addItemToList(rings[item.attributes.ring], item),
+  }), {})
+);
+
+const addItemToList = (list = [], item) => ([
+  ...list,
   item,
 ]);
 

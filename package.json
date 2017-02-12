@@ -32,6 +32,7 @@
     "postcss-easy-import": "2.0.0",
     "postcss-nested": "1.0.0",
     "pug": "2.0.0-beta9",
+    "vue": "2.1.10",
     "walk": "2.3.9",
     "webpack": "2.2.0"
   }

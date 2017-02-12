@@ -1,12 +1,43 @@
 extends ../templates/default-page.pug
 
 block vars
+  - var noLogo=true
   - var title='Technologies Overview'
 
 block content
   .headline-group
     .hero-headline
       | Technologies Overview
-  div.item-index
-    each items, letter  in groupByFirstLetter(radar)
-      .item-index__letter= letter
+  .filter
+    .nav
+      .nav__item
+        a.badge.badge--big.badge--neutral(href='#') all
+      each items, ringName in groupByRing(radar)
+        .nav__item
+          a.badge.badge--big.badge--empty(href='#')= ringName
+
+  div.letter-index
+    each items, letter in groupByFirstLetter(radar)
+      .letter-index__group
+        .letter-index__letter= letter
+        .letter-index__items
+          .item-list
+            .item-list__list
+              each item in items
+                a.item.item--no-leading-border.item--no-trailing-border(href=`/${item.quadrant}/${item.name}.html`)
+                  .split.split--align-top
+                    .split__left
+                      .item__title
+                        = item.attributes.title
+                        if item.isNew
+                          = ' '
+                          span.is-new new
+                      if item.attributes.info
+                        .item__info= item.attributes.info
+                    .split__right
+                      .nav
+                        .nav__item
+                          = translate(item.quadrant)
+                        .nav__item
+                          span(class=`badge badge--${item.attributes.ring}`)
+                            = item.attributes.ring

@@ -1,6 +1,10 @@
 import pug from 'pug';
 import { relativePath } from './file';
-import { groupByQuadrants, groupByFirstLetter } from './radar';
+import {
+  groupByQuadrants,
+  groupByFirstLetter,
+  groupByRing,
+} from './radar';
 
 const templateFolder = 'templates';
 
@@ -17,6 +21,7 @@ export const vars = (vars) => ({
   },
   groupByQuadrants,
   groupByFirstLetter,
+  groupByRing,
   ...vars,
 })
 

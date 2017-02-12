@@ -2,7 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
+  &--align-top {
+    align-items: flex-start;
+  }
+
   &__left {
     flex: 0 1 auto;
   }

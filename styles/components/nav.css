@@ -1,6 +1,7 @@
 .nav {
+  white-space: nowrap;
   &__item {
-    display: inline-block;
+    display: inline-flex;
     & + .nav__item {
       margin-left: 20px;
     }
