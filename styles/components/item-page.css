@@ -9,7 +9,7 @@
   &__nav,
   &__content {
     box-sizing: border-box;
-    padding-top: 150px;
+    padding-top: 130px;
     height: 100vh;
     position: relative;
   }
@@ -20,20 +20,24 @@
   }
 
   &__nav {
-    flex: 0 0 37%;
+    flex: 0 0 calc((100vw - 1200px) / 2 + 400px);
+    /*flex: 0 0 37%;*/
     &__inner {
+      box-sizing: border-box;
       float: right;
-      width: 375px;
-      margin: 0 40px 0 0;
+      width: 410px;
+      padding: 0 40px 0 10px;
     }
   }
 
   &__content {
-    flex: 0 0 63%;
+    flex: 0 0 calc((100vw - 1200px) / 2 + 800px);
+    /*flex: 0 0 calc((100vw - 1200px) / 2);*/
     background: var(--color-white);
     &__inner {
-      width: 680px;
-      margin: 0 0 0 100px;
+      box-sizing: border-box;
+      width: 810px;
+      padding: 0 10px 0 100px;
     }
   }
 }
