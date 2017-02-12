@@ -9,6 +9,8 @@
   &__header {
     flex: 0 0 auto;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 100;
   }
 
   &__content {

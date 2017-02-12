@@ -4,8 +4,12 @@ block body
   .page
     .page__header
       .branding
-        a.branding__logo(href='/')
-          img(src='/assets/logo.svg')
+        if noLogo
+          .branding__backlink
+            a.icon-link(href='/') AOE Technology Radar
+        if !noLogo
+          a.branding__logo(href='/')
+            img(src='/assets/logo.svg')
         .branding__content
           .nav
             .nav__item
@@ -14,13 +18,14 @@ block body
               a.icon-link(href='/') Technologies Overview
     .page__content
       block content
-    .page__footer
-      .branding
-        span.branding__logo
-          img(src='/assets/logo.svg')
-        .branding__content
-          span.footnote
-            | AOE is a leading provider of Enterprise Open Source web solutions.
-            | Using current agile development methods, more than 250+ developers
-            | and consultants in 8 global locations develop customized Open Source
-            | solutions for global companies and corporations.
+    if !noFooter
+      .page__footer
+        .branding
+          span.branding__logo
+            img(src='/assets/logo.svg')
+          .branding__content
+            span.footnote
+              | AOE is a leading provider of Enterprise Open Source web solutions.
+              | Using current agile development methods, more than 250+ developers
+              | and consultants in 8 global locations develop customized Open Source
+              | solutions for global companies and corporations.

@@ -1,13 +1,24 @@
 extends default-page.pug
 
 block vars
-  - var title='Quadrant'
+  - var noLogo=true
+  - var title=`${translate(quadrantName)}`
 
 block content
-  //
-    h1
+  .headline-group
+    h1.hero-headline
       = translate(quadrantName)
-    ul
-      each radarItem, itemName in quadrant
-        li
-          a(href='/' + quadrantName + '/' + itemName + '.html')= radarItem.attributes.title
+  .quadrant-section
+    .quadrant-section__rings
+      each items, ringName in quadrant
+        .quadrant-section__ring
+          .item-list
+            .item-list__header
+              span(class=`badge badge--big badge--${ringName}`)
+                = ringName
+            .item-list__list
+              each ringItem in items
+                a.item.item--no-leading-border(href=`/${ringItem.quadrant}/${ringItem.name}.html`)
+                  .item__title= ringItem.attributes.title
+                  if ringItem.attributes.info
+                    .item__info= ringItem.attributes.info

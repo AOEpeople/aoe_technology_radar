@@ -1,16 +1,14 @@
-extends layout.pug
+extends default-page.pug
 
 block vars
-  //-
-    - var title=item.attributes.title
+  - var noLogo=true
+  - var noFooter=true
+  - var title=item.attributes.title
 
-block body
+block content
   .item-page
     .item-page__nav
       .item-page__nav__inner
-        .nav
-          .nav__item
-            a.icon-link.icon-link--primary.icon-link--big(href='/') AOE Technology Radar
         .item-page__header
           h3.headline
             = translate(item.quadrant)
@@ -30,14 +28,6 @@ block body
                   .item__info= ringItem.attributes.info
     .item-page__content
       .item-page__content__inner
-        .split
-          .split__left
-          .split__right
-            .nav
-              .nav__item
-                a.icon-link(href='/') How to Use Technology Radar?
-              .nav__item
-                a.icon-link(href='/') Technologies Overview
         .item-page__header
           .split
             .split__left

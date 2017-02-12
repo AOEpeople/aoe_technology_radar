@@ -3,6 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 60px;
+
+  &__backlink {
+    flex: 0 0 auto;
+  }
 
   &__logo {
     flex: 0 0 200px;

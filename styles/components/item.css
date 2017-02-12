@@ -3,13 +3,24 @@
   border-bottom: 1px solid var(--color-gray-normal);
   display: block;
   text-decoration: none;
+  transition: background 200ms ease-out;
 
   &.is-active {
     background: var(--color-gray-dark-alt);
   }
 
+  &:hover {
+    background: var(--color-gray-dark-alt2);
+  }
+
   &:first-child {
     border-top: 1px solid var(--color-gray-normal);
+  }
+
+  &--no-leading-border {
+    &:first-child {
+      border-top: none;
+    }
   }
 
   &__title {
