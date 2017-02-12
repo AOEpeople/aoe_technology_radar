@@ -1,3 +1,8 @@
-const add = (x, y) => x + y;
+import filter from './filter';
 
-add(1, 4);
+const enhanceComponent = (selector, enhancer) => {
+  const $filter = [].slice.call(document.querySelectorAll(selector));
+  $filter.map(enhancer);
+}
+
+enhanceComponent('.js--filter', filter);

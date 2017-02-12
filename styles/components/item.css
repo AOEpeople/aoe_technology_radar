@@ -18,6 +18,17 @@
     border-top: 1px solid var(--color-gray-normal);
   }
 
+  &--big {
+    padding: 20px 10px;
+    /*&:hover {
+      background: transparent;
+
+      & .item__title {
+        text-decoration: underline;
+      }
+    }*/
+  }
+
   &--no-leading-border {
     &:first-child {
       border-top: none;
