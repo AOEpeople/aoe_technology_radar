@@ -1,0 +1,12 @@
+extends ../templates/default-page.pug
+
+block vars
+  - var title='Technologies Overview'
+
+block content
+  .headline-group
+    .hero-headline
+      | Technologies Overview
+  div.item-index
+    each items, letter  in groupByFirstLetter(radar)
+      .item-index__letter= letter

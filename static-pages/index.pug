@@ -1,7 +1,7 @@
 extends ../templates/default-page.pug
 
 block vars
-  - var title='Overview'
+  - var title='AOE Technology Radar'
 
 block content
   .headline-group
@@ -11,11 +11,7 @@ block content
         = ' '
         | March 2017
   div.quadrant-grid
-    //-
-      pre
-        = JSON.stringify(radar, 0, 2)
-
-    each quadrant, quadrantName in radar
+    each quadrant, quadrantName in groupByQuadrants(radar)
       .quadrant-grid__quadrant
         .quadrant-section
           .quadrant-section__header

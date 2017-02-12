@@ -20,12 +20,7 @@ export const createRadar = async (tree) => {
   const items = createItems(revisions);
   const flaggedItems = flagWithIsNew(items, allReleases);
 
-  const quadrants = groupByQuadrants(flaggedItems);
-
-  return {
-    items: flaggedItems,
-    quadrants,
-  }
+  return flaggedItems;
 };
 
 export const groupByQuadrants = (items) => (
@@ -34,6 +29,25 @@ export const groupByQuadrants = (items) => (
     [item.quadrant]: addItemToQuadrant(quadrants[item.quadrant], item),
   }), {})
 );
+
+const addItemToQuadrant = (quadrant = {}, item) => ({
+  ...quadrant,
+  [item.attributes.ring]: addItemToRing(quadrant[item.attributes.ring], item),
+});
+
+export const groupByFirstLetter = (items) => (
+  items.reduce((letterIned, item) => ({
+    ...letterIned,
+    [getFirstLetter(item)]: addItemToFirstLetterIndex(letterIned[getFirstLetter(item)], item),
+  }), {})
+);
+
+const addItemToFirstLetterIndex = (letterIned = [], item) => ([
+  ...letterIned,
+  item,
+]);
+
+export const getFirstLetter = (item) => item.attributes.title.substr(0,1).toUpperCase();
 
 
 const createRevisionsFromFiles = (fileNames) => (
@@ -147,10 +161,13 @@ const revisionCreatesNewHistoryEntry = (revision) => {
          typeof revision.attributes.ring !== 'undefined';
 };
 
-export const outputRadar = ({ quadrants, items }) => {
-  Object.entries(quadrants).map(async ([quadrantName, quadrant]) => (
-    await outputQuadrantPage(quadrantName, quadrant)
+export const outputRadar = (items) => {
+  const quadrants = groupByQuadrants(items);
+
+  Object.entries(quadrants).map(([quadrantName, quadrant]) => (
+    outputQuadrantPage(quadrantName, quadrant)
   ));
+
   return Promise.all(
     items.map(async (item) => {
 
@@ -198,11 +215,6 @@ const flagWithIsNew = (items, allReleases) => (
 const isNewItem = (item, allReleases) => {
   return item.revisions[0].release === allReleases[allReleases.length-1]
 }
-
-const addItemToQuadrant = (quadrant = {}, item) => ({
-  ...quadrant,
-  [item.attributes.ring]: addItemToRing(quadrant[item.attributes.ring], item),
-});
 
 const addItemToRing = (ring = [], item) => ([
   ...ring,

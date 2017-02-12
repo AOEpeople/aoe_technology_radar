@@ -14,7 +14,7 @@ import {
     outputRadar(radar);
 
     // const radarByQuadrants = groupByQuadrants(radar);
-    createStatic(radar.quadrants);
+    createStatic(radar);
 
     console.log('Built radar');
     // console.log(JSON.stringify(radar, null, 2));
