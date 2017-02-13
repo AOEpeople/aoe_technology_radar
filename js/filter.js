@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import applyPjax from './pjax';
+
 
 const initFilter = element => {
   const index = JSON.parse(element.getAttribute('data-index'));
@@ -23,6 +25,12 @@ const initFilter = element => {
         const visibleItems = itemsInLetter.filter((item) => this.isRingVisible(item.attributes.ring));
         return visibleItems.length > 0;
       },
+    },
+    created() {
+      applyPjax();
+    },
+    updated() {
+      applyPjax();
     },
   });
 };

@@ -27,6 +27,7 @@
     "fs-extra": "2.0.0",
     "live-server": "1.2.0",
     "marked": "0.3.6",
+    "pjax": "0.2.4",
     "postcss-cli": "2.6.0",
     "postcss-css-variables": "0.6.0",
     "postcss-easy-import": "2.0.0",

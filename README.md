@@ -48,4 +48,4 @@ If an item is overwritten in a new release, the attributes from the new item are
 -  [ ] Implement search?
 -  [ ] Radar View?
 -  [ ] Make mobile friendly
--  [ ] Add pjax
+-  [x] Add pjax
