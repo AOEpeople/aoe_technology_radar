@@ -42,6 +42,7 @@ If an item is overwritten in a new release, the attributes from the new item are
 ## Todos
 
 -  [ ] Final CSS (Icons, etc)
+-  [ ] Get contents for how-to-use page
 -  [ ] Better semantic and SEO
 -  [ ] Radar View?
 -  [ ] Make mobile friendly
