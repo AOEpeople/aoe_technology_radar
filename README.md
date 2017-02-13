@@ -5,8 +5,8 @@ A static site generator for AOE Technology Radar
 ## Installation
 
 ```
-> git clone git@github.com:AOEpeople/aoe_techradar_node.git
-> cd aoe_techradar_node
+> git clone git@github.com:AOEpeople/aoe_technology_radar.git
+> cd aoe_technology_radar
 > npm install
 > npm run watch
 ```
