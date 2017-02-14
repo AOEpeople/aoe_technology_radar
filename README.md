@@ -43,7 +43,7 @@ If an item is overwritten in a new release, the attributes from the new item are
 
 -  [x] Add Icons
 -  [x] Add pjax
--  [ ] Final CSS (Icons, etc)
+-  [ ] Finalize CSS
 -  [ ] Get contents for how-to-use page
 -  [ ] Show item history on details
 -  [ ] Better semantic and SEO

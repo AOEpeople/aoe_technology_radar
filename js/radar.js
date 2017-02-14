@@ -1,4 +1,5 @@
 import filter from './filter';
+import details from './details';
 import applyPjax from './pjax';
 
 const enhanceComponent = (selector, enhancer) => {
@@ -8,6 +9,7 @@ const enhanceComponent = (selector, enhancer) => {
 
 const enhanceComponents = () => {
   enhanceComponent('.js--filter', filter);
+  enhanceComponent('.js--details', details);
 }
 
 applyPjax();
