@@ -2,7 +2,6 @@
   display: inline-block;
   position: relative;
   text-decoration: none;
-  padding-left: 30px;
   height: 25px;
   font-size: 14px;
   line-height: 25px;
@@ -16,19 +15,13 @@
     font-size: 16px;
   }
 
-  &:hover {
-    text-decoration: underline;
+  &__icon {
+    margin-right: 6px;
+    position: relative;
+    top: -1px;
   }
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 25px;
-    height: 25px;
-    /* TODO icon*/
-    background: var(--color-gray-normal);
-    border-radius: 50%;
+  &:hover {
+    text-decoration: underline;
   }
 }

@@ -19,7 +19,9 @@ block content
                 span(class=`badge badge--big badge--${item.attributes.ring}`)
                   = item.attributes.ring
               .split__right
-                a.icon-link(href=`/${item.quadrant}.html`) Quadrant Overview
+                a.icon-link(href=`/${item.quadrant}.html`)
+                  span.icon.icon--pie.icon-link__icon
+                  | Quadrant Overview
           .item-list__list
             each ringItem in itemsInRing
               a.item(class=`${ringItem.name === item.name ? 'is-active' : ''}` href=`/${ringItem.quadrant}/${ringItem.name}.html`)
@@ -36,7 +38,7 @@ block content
             .split__right
               span(class=`badge badge--big badge--${item.attributes.ring}`)
                 = item.attributes.ring
-        .item-details
+        .markdown
           != item.body
   //-
     a(href='/' + item.quadrant + '.html')= translate(item.quadrant)
