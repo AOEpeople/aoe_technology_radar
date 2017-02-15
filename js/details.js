@@ -27,10 +27,9 @@ const animation = (steps) => {
 }
 
 const initDetails = (element, fromPjax) => {
-  console.log('app');
-  // if (fromPjax !== true) {
-  //   return;
-  // }
+  if (fromPjax !== true) {
+    return;
+  }
 
   element.classList.add('animate');
   element.classList.add('animate--curtain');

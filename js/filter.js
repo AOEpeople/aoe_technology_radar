@@ -2,7 +2,7 @@ import Vue from 'vue';
 import applyPjax from './pjax';
 
 
-const initFilter = element => {
+const initFilter = (element) => {
   const index = JSON.parse(element.getAttribute('data-index'));
 
   const filter = new Vue({
@@ -26,7 +26,7 @@ const initFilter = element => {
         return visibleItems.length > 0;
       },
     },
-    created() {
+    mounted() {
       applyPjax();
     },
     updated() {
