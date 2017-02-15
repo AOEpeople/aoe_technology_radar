@@ -18,34 +18,88 @@ const af = (() => {
 })();
 
 const animation = (steps) => {
-  steps.reduce((total, [timeout, step]) => {
+  steps.map(([timeout, step]) => {
     af(() => {
-      window.setTimeout(step, total + timeout)
+      window.setTimeout(step, timeout)
     });
-    return total + timeout;
-  }, 0);
+  });
 }
 
+const createAnimation = (stateA, stateB, delay) => ({
+  style: stateA,
+  prepare(target) {
+    this.style = stateA;
+  },
+  run(target) {
+    af(() => {
+      window.setTimeout(() => {
+        this.style = stateB;
+      }, delay)
+    });
+  },
+});
+
 const initDetails = (element, fromPjax) => {
-  if (fromPjax !== true) {
+
+  if(!fromPjax) {
     return;
   }
 
-  element.classList.add('animate');
-  element.classList.add('animate--curtain');
-  element.classList.add('animate--invisible-content');
-  element.classList.add('animate--invisible-nav');
-  animation([
-    [0, () => {
-      element.classList.remove('animate--curtain');
-    }],
-    [350, () => {
-      element.classList.remove('animate--invisible-nav');
-    }],
-    [150, () => {
-      element.classList.remove('animate--invisible-content');
-    }],
-  ])
+  const items = JSON.parse(element.getAttribute('data-items'));
+
+  const details = new Vue({
+    el: element,
+    template: element.outerHTML,
+    data: {
+      background: createAnimation({
+          transform: 'translateX(calc((100vw - 1200px) / 2 + 800px))',
+        }, {
+          transform: 'translateX(0)',
+        },
+        0
+      ),
+      navHeader: createAnimation({
+          transform: 'translateY(-20px)',
+          opacity: '0',
+        }, {
+          transform: 'translateY(0px)',
+          opacity: '1',
+        },
+        300
+      ),
+      text: createAnimation({
+          transform: 'translateY(-20px)',
+          opacity: '0',
+        }, {
+          transform: 'translateY(0px)',
+          opacity: '1',
+        },
+        600
+      ),
+      items: items.map((item, i) => (createAnimation({
+          transform: 'translateY(-40px)',
+          opacity: '0',
+        }, {
+          transform: 'translateY(0px)',
+          opacity: '1',
+        },
+        200 + 100 * i
+      )))
+    },
+    methods: {
+      createAnimation
+    },
+    mounted() {
+      applyPjax();
+      this.background.run();
+      this.navHeader.run();
+      this.text.run();
+      this.items.map(item => item.run());
+    },
+    updated() {
+      applyPjax();
+    },
+  });
 };
 
 export default initDetails;

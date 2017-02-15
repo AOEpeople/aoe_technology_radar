@@ -7,6 +7,10 @@
     align-items: flex-start;
   }
 
+  &--overview {
+    min-height: 40px;
+  }
+
   &__left {
     flex: 0 1 auto;
   }

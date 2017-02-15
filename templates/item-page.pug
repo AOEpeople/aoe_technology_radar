@@ -6,9 +6,9 @@ block vars
   - var title=item.attributes.title
 
 block content
-  .item-page.js--details
+  .item-page.js--details(data-items=JSON.stringify(itemsInRing))
     .item-page__nav
-      .item-page__nav__inner
+      .item-page__nav__inner(v-bind:style="navHeader.style")
         .item-page__header
           h3.headline
             = translate(item.quadrant)
@@ -23,13 +23,17 @@ block content
                   span.icon.icon--pie.icon-link__icon
                   | Quadrant Overview
           .item-list__list
-            each ringItem in itemsInRing
-              a.item(class=`${ringItem.name === item.name ? 'is-active' : ''}` href=`/${ringItem.quadrant}/${ringItem.name}.html`)
+            each ringItem, i in itemsInRing
+              a.item(
+                class=`${ringItem.name === item.name ? 'is-active' : ''}`
+                href=`/${ringItem.quadrant}/${ringItem.name}.html`
+                v-bind:style=`items[${i}].style`
+              )
                 .item__title= ringItem.attributes.title
                 if ringItem.attributes.info
                   .item__info= ringItem.attributes.info
-    .item-page__content
-      .item-page__content__inner
+    .item-page__content(v-bind:style="background.style")
+      .item-page__content__inner(v-bind:style="text.style")
         .item-page__header
           .split
             .split__left

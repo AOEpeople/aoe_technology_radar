@@ -4,13 +4,14 @@
     border-top: 1px solid var(--color-gray-normal);
     position: relative;
     padding: 0 0 0 200px;
-    min-height: 100px;
+    min-height: 80px;
   }
   &__letter {
     font-size: 50px;
+    line-height: 80px;
     color: var(--color-gray-normal);
     position: absolute;
     left: 50px;
-    top: 10px;
+    top: 0;
   }
 }
