@@ -3,7 +3,7 @@ extends default-page.pug
 block vars
   - var noLogo=true
   - var noFooter=true
-  - var title=item.attributes.title
+  - var title=item.title
 
 block content
   .item-page.js--details(data-items=JSON.stringify(itemsInRing))
@@ -16,8 +16,8 @@ block content
           .item-list__header(v-bind:style="navHeader.style")
             .split
               .split__left
-                span(class=`badge badge--big badge--${item.attributes.ring}`)
-                  = item.attributes.ring
+                span(class=`badge badge--big badge--${item.ring}`)
+                  = item.ring
               .split__right
                 a.icon-link(href=`/${item.quadrant}.html`)
                   span.icon.icon--pie.icon-link__icon
@@ -29,33 +29,33 @@ block content
                 href=`/${ringItem.quadrant}/${ringItem.name}.html`
                 v-bind:style=`items[${i}].style`
               )
-                .item__title= ringItem.attributes.title
-                if ringItem.attributes.info
-                  .item__info= ringItem.attributes.info
+                .item__title= ringItem.title
+                if ringItem.info
+                  .item__info= ringItem.info
     .item-page__content(v-bind:style="background.style")
       .item-page__content__inner(v-bind:style="text.style")
         .item-page__header
           .split
             .split__left
               h1.hero-headline.hero-headline--inverse
-                = item.attributes.title
+                = item.title
             .split__right
-              span(class=`badge badge--big badge--${item.attributes.ring}`)
-                = item.attributes.ring
+              span(class=`badge badge--big badge--${item.ring}`)
+                = item.ring
         .markdown
           != item.body
   //-
     a(href='/' + item.quadrant + '.html')= translate(item.quadrant)
-    h1 #{item.attributes.title}
+    h1 #{item.title}
       = ' '
-      small #{item.attributes.ring}
+      small #{item.ring}
 
 
     hr
 
     h4= item.revisions[0].version
     h5 New: #{item.isNew ? 'YES' : 'NO'}
-    h5 Feature: #{item.attributes.isFeatured ? 'YES' : 'NO'}
+    h5 Feature: #{item.isFeatured ? 'YES' : 'NO'}
 
     section
       != item.revisions[0].body
@@ -68,5 +68,5 @@ block content
             h3
               = revision.version
               = ' '
-              = revision.attributes.ring
+              = revision.ring
             != revision.body

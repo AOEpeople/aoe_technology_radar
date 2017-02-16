@@ -32,7 +32,7 @@ export const groupByQuadrants = (items) => (
 
 const addItemToQuadrant = (quadrant = {}, item) => ({
   ...quadrant,
-  [item.attributes.ring]: addItemToRing(quadrant[item.attributes.ring], item),
+  [item.ring]: addItemToRing(quadrant[item.ring], item),
 });
 
 export const groupByFirstLetter = (items) => (
@@ -45,7 +45,7 @@ export const groupByFirstLetter = (items) => (
 export const groupByRing = (items) => (
   items.reduce((rings, item) => ({
     ...rings,
-    [item.attributes.ring]: addItemToList(rings[item.attributes.ring], item),
+    [item.ring]: addItemToList(rings[item.ring], item),
   }), {})
 );
 
@@ -54,8 +54,20 @@ const addItemToList = (list = [], item) => ([
   item,
 ]);
 
-export const getFirstLetter = (item) => item.attributes.title.substr(0,1).toUpperCase();
+export const getFirstLetter = (item) => item.title.substr(0,1).toUpperCase();
 
+
+const checkAttributes = (fileName, attributes) => {
+  const rings = ['trial', 'assess', 'adopt', 'hold'];
+  if (attributes.ring && !rings.includes(attributes.ring)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
+  }
+
+  const quadrants = ['languages-and-frameworks', 'methods-and-patterns', 'platforms-and-aoe-services', 'tools'];
+  if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
+  }
+}
 
 const createRevisionsFromFiles = (fileNames) => (
   Promise.all(fileNames.map((fileName) => {
@@ -65,10 +77,11 @@ const createRevisionsFromFiles = (fileNames) => (
           reject(err);
         } else {
           const fm = frontmatter(data);
+          checkAttributes(fileName, fm.attributes);
           resolve({
             ...itemInfoFromFilename(fileName),
+            ...fm.attributes,
             fileName,
-            attributes: fm.attributes,
             body: marked(fm.body),
           });
         }
@@ -80,13 +93,11 @@ const createRevisionsFromFiles = (fileNames) => (
 const itemInfoFromFilename = (fileName) => {
   const [
     release,
-    quadrant,
     nameWithSuffix,
-  ] = fileName.split('/').slice(-3);
+  ] = fileName.split('/').slice(-2);
   return {
     name: nameWithSuffix.substr(0, nameWithSuffix.length - 3),
     release,
-    quadrant,
   }
 };
 
@@ -115,7 +126,7 @@ const getAllReleases = (revisions) => (
 
 const addRevisionToQuadrant = (quadrant = {}, revision) => ({
   ...quadrant,
-  [revision.attributes.ring]: addRevisionToRing(quadrant[revision.attributes.ring], revision),
+  [revision.ring]: addRevisionToRing(quadrant[revision.ring], revision),
 });
 
 const createItems = (revisions) => {
@@ -165,7 +176,7 @@ const addRevisionToItem = (item = {
 
 const revisionCreatesNewHistoryEntry = (revision) => {
   return revision.body.trim() !== '' ||
-         typeof revision.attributes.ring !== 'undefined';
+         typeof revision.ring !== 'undefined';
 };
 
 export const outputRadar = (items) => {
@@ -181,7 +192,7 @@ export const outputRadar = (items) => {
       // Object.entries(quadrant).map(([itemName, item]) => (
         new Promise((resolve, reject) => {
           outputFile(distPath(item.quadrant, `${item.name}.html`), itemTemplate(vars({
-            itemsInRing: quadrants[item.quadrant][item.attributes.ring],
+            itemsInRing: quadrants[item.quadrant][item.ring],
             item,
           })), (err, data) => {
             if (err) {

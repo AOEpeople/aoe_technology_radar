@@ -1,6 +1,7 @@
 ---
 title:      "Grunt"
 ring:       adopt
+quadrant:   tools
 ---
 
 Hier steht was altes über *Grunt*

@@ -1,5 +1,0 @@
----
-isFeatured: false
----
-
-Foo!

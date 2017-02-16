@@ -2,6 +2,8 @@
 title:      "This is a long title"
 ring:       assess
 info:       React is a view library
+quadrant:   languages-and-frameworks
+
 ---
 
 React blablab *React* - super **"cool"**

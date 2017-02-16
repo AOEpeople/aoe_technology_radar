@@ -19,6 +19,6 @@ block content
             .item-list__list
               each ringItem in items
                 a.item.item--no-leading-border(href=`/${ringItem.quadrant}/${ringItem.name}.html`)
-                  .item__title= ringItem.attributes.title
-                  if ringItem.attributes.info
-                    .item__info= ringItem.attributes.info
+                  .item__title= ringItem.title
+                  if ringItem.info
+                    .item__info= ringItem.info

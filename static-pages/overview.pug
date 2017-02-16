@@ -39,21 +39,21 @@ block content
                 each item in items
                   a.item.item--big.item--no-leading-border.item--no-trailing-border(
                     href=`/${item.quadrant}/${item.name}.html`
-                    v-if=`isRingVisible('${item.attributes.ring}')`
+                    v-if=`isRingVisible('${item.ring}')`
                   )
                     .split.split--overview
                       .split__left
                         .item__title
-                          = item.attributes.title
+                          = item.title
                           if item.isNew
                             = ' '
                             span.is-new new
-                        if item.attributes.info
-                          .item__info= item.attributes.info
+                        if item.info
+                          .item__info= item.info
                       .split__right
                         .nav
                           .nav__item
                             = translate(item.quadrant)
                           .nav__item
-                            span(class=`badge badge--${item.attributes.ring}`)
-                              = item.attributes.ring
+                            span(class=`badge badge--${item.ring}`)
+                              = item.ring

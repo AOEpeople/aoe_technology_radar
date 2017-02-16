@@ -1,6 +1,8 @@
 ---
-title:      "Something else"
-ring:       hold
+title:      "Vue"
+ring:       adopt
+quadrant:   languages-and-frameworks
+
 ---
 
 Hier steht eine Einleitung über *React* - super "cool"

@@ -22,7 +22,7 @@ const initFilter = (element) => {
       },
       isGroupVisible(letter) {
         const itemsInLetter = this.index[letter] || [];
-        const visibleItems = itemsInLetter.filter((item) => this.isRingVisible(item.attributes.ring));
+        const visibleItems = itemsInLetter.filter((item) => this.isRingVisible(item.ring));
         return visibleItems.length > 0;
       },
     },
