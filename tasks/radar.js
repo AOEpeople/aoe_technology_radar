@@ -231,7 +231,7 @@ const flagWithIsNew = (items, allReleases) => (
 );
 
 const isNewItem = (item, allReleases) => {
-  return item.revisions[0].release === allReleases[allReleases.length-1]
+  return item.revisions.length > 1 && item.revisions[0].release === allReleases[allReleases.length-1]
 }
 
 const addItemToRing = (ring = [], item) => ([
