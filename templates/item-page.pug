@@ -8,12 +8,12 @@ block vars
 block content
   .item-page.js--details(data-items=JSON.stringify(itemsInRing))
     .item-page__nav
-      .item-page__nav__inner(v-bind:style="navHeader.style")
-        .item-page__header
+      .item-page__nav__inner
+        .item-page__header(v-bind:style="navHeader.style")
           h3.headline
             = translate(item.quadrant)
         .item-list
-          .item-list__header
+          .item-list__header(v-bind:style="navHeader.style")
             .split
               .split__left
                 span(class=`badge badge--big badge--${item.attributes.ring}`)

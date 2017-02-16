@@ -6,7 +6,6 @@
   transition: background 200ms ease-out;
   color: var(--color-gray-normal);
   box-sizing: border-box;
-  transition: opacity 150ms ease-out, transform 300ms ease-out;
 
   &.is-active {
     background: var(--color-gray-dark-alt);

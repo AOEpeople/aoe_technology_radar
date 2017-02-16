@@ -54,6 +54,7 @@ const initDetails = (element, fromPjax) => {
       background: createAnimation({
           transform: 'translateX(calc((100vw - 1200px) / 2 + 800px))',
         }, {
+          transition: 'transform 450ms cubic-bezier(0.24, 1.12, 0.71, 0.98)',
           transform: 'translateX(0)',
         },
         0
@@ -62,6 +63,7 @@ const initDetails = (element, fromPjax) => {
           transform: 'translateY(-20px)',
           opacity: '0',
         }, {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
           transform: 'translateY(0px)',
           opacity: '1',
         },
@@ -71,16 +73,18 @@ const initDetails = (element, fromPjax) => {
           transform: 'translateY(-20px)',
           opacity: '0',
         }, {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
           transform: 'translateY(0px)',
           opacity: '1',
         },
         600
       ),
       items: items.map((item, i) => (createAnimation({
-          transform: 'translateY(-40px)',
+          transform: 'translateX(-40px)',
           opacity: '0',
         }, {
-          transform: 'translateY(0px)',
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(0px)',
           opacity: '1',
         },
         200 + 100 * i
