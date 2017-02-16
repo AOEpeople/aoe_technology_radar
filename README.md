@@ -25,6 +25,7 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
   ---
   title:      "React"
   ring:       adopt
+  quadrant:   languages-and-frameworks
   ---
 
   Text goes here
@@ -32,6 +33,7 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
 
 Following front-matter attributes are possible:
 - **title**: Name of the Item
+- **quadrant**: Quadrant. One of `languages-and-frameworks`, `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
 - **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
 - **info**: (optial) A short textual description of the item (visible in overview pages)
 
