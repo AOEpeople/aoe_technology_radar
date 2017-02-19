@@ -4,17 +4,18 @@ import {
   outputRadar,
 } from './radar';
 import {
-  createStatic,
+  renderApp,
 } from './static';
 
 
 (async () => {
   try {
     const radar = await createRadar();
-    outputRadar(radar);
+    renderApp(radar, 'index');
+    // outputRadar(radar);
 
     // const radarByQuadrants = groupByQuadrants(radar);
-    createStatic(radar);
+    // createStatic(radar);
 
     console.log('Built radar');
     // console.log(JSON.stringify(radar, null, 2));

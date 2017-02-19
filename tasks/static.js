@@ -1,42 +1,78 @@
 import { outputFile } from 'fs-extra';
-import pug from 'pug';
-import frontmatter from 'front-matter';
-import marked from 'marked';
-import {
-  staticPath,
-  distPath,
-  getAllPugFiles,
-} from './file';
-import {
-  vars,
-} from './template';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-export const createStatic = async (radar) => {
-  const paths = await getAllPugFiles(staticPath());
-  const fileNames = getPlainFileNames(paths);
-  return renderStaticPages(radar, fileNames);
-  return fileNames;
-};
+import { distPath } from './file';
+import App from '../components/App';
 
-const getPlainFileNames = (paths) => (
-  paths.map((fileName) => {
-    const [ nameWithSuffix ] = fileName.split('/').slice(-1);
-    return nameWithSuffix.substr(0, nameWithSuffix.length - 4);
-  })
-)
+const appReducer = (state = {}, action) => {
+  return state;
+}
 
-const renderStaticPages = (radar, fileNames) => (
-  Promise.all(fileNames.map((name) => (
-    new Promise((resolve, reject) => (
-      outputFile(distPath(`${name}.html`), pug.renderFile(staticPath(`${name}.pug`), vars({
-        ...radar,
-      })), (err, data) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(data);
-        }
-      })
-    ))
-  )))
+export const renderApp = (radar, pageName) => {
+  // Create a new Redux store instance
+  const store = createStore(appReducer, {
+    ...radar,
+    pageName
+  });
+
+  // Render the component to a string
+  const html = renderToString(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )
+
+  // Grab the initial state from our Redux store
+  const preloadedState = store.getState()
+
+  // Send the rendered page back to the client
+  const fullHtml = renderFullPage(html, preloadedState);
+
+  // Save file
+  save(fullHtml, pageName);
+}
+
+const renderFullPage = (html, preloadedState) => {
+  return `
+  <html>
+    <head>
+      <title>AOE Technology Radar - AOE Tech Radar</title>
+      <link rel="stylesheet" href="/styles.css"/>
+    </head>
+    <body>
+      <div id="root">${html}</div>
+      <script>
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
+      </script>
+      <script src="/bundle.js"></script>
+    </body>
+  </html>
+
+
+    <!doctype html>
+    <html>
+      <head>
+        <title>Redux Universal Example</title>
+      </head>
+      <body>
+
+        <script src="/static/bundle.js"></script>
+      </body>
+    </html>
+    `
+}
+
+const save = (html, pageName) => (
+  new Promise((resolve, reject) => (
+    outputFile(distPath(`${pageName}.html`), html, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    })
+  ))
 );
