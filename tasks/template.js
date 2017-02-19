@@ -1,4 +1,5 @@
 import pug from 'pug';
+import moment from 'moment';
 import { relativePath } from './file';
 import {
   groupByQuadrants,
@@ -19,6 +20,7 @@ export const vars = (vars) => ({
 
     return mappings[text.trim()] || '-';
   },
+  formatRelease: (release) => moment(release, 'YYYY-MM-DD').format('MMM YYYY'),
   groupByQuadrants,
   groupByFirstLetter,
   groupByRing,

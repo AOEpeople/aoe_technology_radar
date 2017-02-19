@@ -6,7 +6,7 @@ block vars
 
 block content
   .js--filter(
-    data-index=JSON.stringify(groupByFirstLetter(radar))
+    data-index=JSON.stringify(groupByFirstLetter(items))
   )
     .headline-group
       .hero-headline
@@ -19,7 +19,7 @@ block content
             v-on:click="setRing('all')"
             v-bind:class=`ring === 'all' ? 'badge--neutral' : ''`
           ) all
-        each items, ringName in groupByRing(radar)
+        each _, ringName in groupByRing(items)
           .nav__item
             a.badge.badge--big.badge--empty(
               href='#'
@@ -28,7 +28,7 @@ block content
             )= ringName
 
     div.letter-index
-      each items, letter in groupByFirstLetter(radar)
+      each indexItems, letter in groupByFirstLetter(items)
         .letter-index__group(
           v-if=`isGroupVisible('${letter}')`
         )
@@ -36,7 +36,7 @@ block content
           .letter-index__items
             .item-list
               .item-list__list
-                each item in items
+                each item in indexItems
                   a.item.item--big.item--no-leading-border.item--no-trailing-border(
                     href=`/${item.quadrant}/${item.name}.html`
                     v-if=`isRingVisible('${item.ring}')`

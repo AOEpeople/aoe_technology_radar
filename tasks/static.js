@@ -29,7 +29,7 @@ const renderStaticPages = (radar, fileNames) => (
   Promise.all(fileNames.map((name) => (
     new Promise((resolve, reject) => (
       outputFile(distPath(`${name}.html`), pug.renderFile(staticPath(`${name}.pug`), vars({
-        radar,
+        ...radar,
       })), (err, data) => {
         if (err) {
           reject(err);

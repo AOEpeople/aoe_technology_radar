@@ -20,7 +20,10 @@ export const createRadar = async (tree) => {
   const items = createItems(revisions);
   const flaggedItems = flagWithIsNew(items, allReleases);
 
-  return flaggedItems;
+  return {
+    items: flaggedItems,
+    releases: allReleases,
+  };
 };
 
 export const groupByQuadrants = (items) => (
@@ -179,7 +182,7 @@ const revisionCreatesNewHistoryEntry = (revision) => {
          typeof revision.ring !== 'undefined';
 };
 
-export const outputRadar = (items) => {
+export const outputRadar = ({ items }) => {
   const quadrants = groupByQuadrants(items);
 
   Object.entries(quadrants).map(([quadrantName, quadrant]) => (

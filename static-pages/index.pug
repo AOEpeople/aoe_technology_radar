@@ -9,9 +9,9 @@ block content
       | Technology Radar
       span.hero-headline__alt
         = ' '
-        | March 2017
+        = formatRelease(releases[releases.length - 1])
   div.quadrant-grid
-    each quadrant, quadrantName in groupByQuadrants(radar)
+    each quadrant, quadrantName in groupByQuadrants(items)
       .quadrant-grid__quadrant
         .quadrant-section
           .quadrant-section__header
