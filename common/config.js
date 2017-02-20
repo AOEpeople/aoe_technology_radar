@@ -7,6 +7,20 @@ export const getPageNames = (radar) => {
   ]
 }
 
+export const quadrants = [
+  'languages-and-frameworks',
+  'methods-and-patterns',
+  'platforms-and-aoe-services',
+  'tools',
+];
+
+export const rings = [
+  'assess',
+  'trial',
+  'hold',
+  'adopt',
+];
+
 const messages = {
   'languages-and-frameworks': 'Languages & Frameworks',
   'methods-and-patterns': 'Methods & Patterns',
