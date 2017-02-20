@@ -3,10 +3,8 @@ import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './components/App'
+import appReducer from './reducer'
 
-const appReducer = (state = {}, action) => {
-  return state;
-}
 
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__TECHRADAR__;

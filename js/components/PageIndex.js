@@ -2,7 +2,7 @@ import React from 'react';
 import HeroHeadline from './HeroHeadline';
 import QuadrantGrid from './QuadrantGrid';
 
-export default function PageIndex({ items }) {
+export default function PageIndex({ items, navigate }) {
   return (
     <div>
       <div className="headline-group">

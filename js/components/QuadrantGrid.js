@@ -7,7 +7,7 @@ const renderRing = (ringName, quadrantName, groups) => {
     return null;
   }
   return (
-    <div className="quadrant-section__ring">
+    <div key={ringName} className="quadrant-section__ring">
       <div className="ring-list">
         <div className="ring-list__header"><span className={`badge badge--${ringName}`}>{ringName}</span></div>
         {
@@ -51,7 +51,7 @@ const renderQuadrant = (quadrantName, groups) => {
   );
 }
 
-export default function({ items }) {
+export default function QuadrantGrid({ items }) {
   const groups = groupByQuadrants(items);
   return (
     <div className="quadrant-grid">

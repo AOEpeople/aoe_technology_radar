@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import actions from '../actions';
 import Header from './Header';
 import Router from './Router';
 
@@ -9,7 +10,7 @@ function App(props) {
     <div className="js--body">
       <div className="page">
         <div className="page__header">
-          <Header />
+          <Header {...props} />
         </div>
         <div className="page__content">
           <Router {...props} />
@@ -29,4 +30,7 @@ function App(props) {
   )
 }
 
-export default connect(({ items, releases, pageName }) => ({ items, releases, pageName }))(App);
+export default connect(
+  ({ items, releases, pageName }) => ({ items, releases, pageName }),
+  actions
+)(App);

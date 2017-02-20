@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npm run clean && npm run build:pages && npm run build:js && npm run build:css && npm run build:assets",
     "build:all": "npm run build",
-    "build:pages": "babel-node ./tasks/build.js",
-    "build:js": "webpack --config webpack.config.js",
+    "build:pages": "RENDER_MODE=server babel-node ./tasks/build.js",
+    "build:js": "RENDER_MODE=client webpack --config webpack.config.js",
     "build:css": "postcss -c postcss.config.json -o dist/styles.css styles/main.css",
     "build:assets": "babel-node ./tasks/assets.js",
     "watch": "babel-node ./tasks/watch.js",
@@ -27,6 +27,7 @@
     "classnames": "2.2.5",
     "front-matter": "2.1.2",
     "fs-extra": "2.0.0",
+    "history": "4.5.1",
     "live-server": "1.2.0",
     "marked": "0.3.6",
     "moment": "2.17.1",

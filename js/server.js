@@ -4,10 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './components/App';
-
-const appReducer = (state = {}, action) => {
-  return state;
-}
+import appReducer from './reducer';
 
 export const renderPage = (radar, pageName) => {
   // Create a new Redux store instance
