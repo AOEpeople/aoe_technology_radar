@@ -1,28 +1,12 @@
-import { outputFile } from 'fs-extra';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { distPath } from './file';
-import App from '../components/App';
+import App from './components/App';
 
 const appReducer = (state = {}, action) => {
   return state;
-}
-
-const getPageNames = (radar) => {
-  return [
-    'index',
-    'overview',
-    'help',
-    'foo/bar',
-  ]
-}
-
-export const renderApp = (radar) => {
-    const pageNames = getPageNames(radar);
-    pageNames.map(pageName => renderPage(radar, pageName))
 }
 
 export const renderPage = (radar, pageName) => {
@@ -43,10 +27,10 @@ export const renderPage = (radar, pageName) => {
   const preloadedState = store.getState()
 
   // Send the rendered page back to the client
-  const fullHtml = renderFullPage(html, preloadedState);
+  return renderFullPage(html, preloadedState);
 
   // Save file
-  save(fullHtml, pageName);
+  // return save(fullHtml, pageName);
 }
 
 const renderFullPage = (html, preloadedState) => {
@@ -59,34 +43,10 @@ const renderFullPage = (html, preloadedState) => {
     <body>
       <div id="root">${html}</div>
       <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
+        window.__TECHRADAR__ = ${JSON.stringify(preloadedState)}
       </script>
       <script src="/bundle.js"></script>
     </body>
   </html>
-
-
-    <!doctype html>
-    <html>
-      <head>
-        <title>Redux Universal Example</title>
-      </head>
-      <body>
-
-        <script src="/static/bundle.js"></script>
-      </body>
-    </html>
     `
 }
-
-const save = (html, pageName) => (
-  new Promise((resolve, reject) => (
-    outputFile(distPath(`${pageName}.html`), html, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    })
-  ))
-);

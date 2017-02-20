@@ -7,11 +7,6 @@ import {
   distPath,
   getAllMarkdownFiles,
 } from './file';
-import {
-  item as itemTemplate,
-  quadrant as quadrantTemplate,
-  vars,
-} from './template';
 
 export const createRadar = async (tree) => {
   const fileNames = (await getAllMarkdownFiles(radarPath()));
@@ -181,50 +176,6 @@ const revisionCreatesNewHistoryEntry = (revision) => {
   return revision.body.trim() !== '' ||
          typeof revision.ring !== 'undefined';
 };
-
-export const outputRadar = ({ items }) => {
-  const quadrants = groupByQuadrants(items);
-
-  Object.entries(quadrants).map(([quadrantName, quadrant]) => (
-    outputQuadrantPage(quadrantName, quadrant)
-  ));
-
-  return Promise.all(
-    items.map(async (item) => {
-
-      // Object.entries(quadrant).map(([itemName, item]) => (
-        new Promise((resolve, reject) => {
-          outputFile(distPath(item.quadrant, `${item.name}.html`), itemTemplate(vars({
-            itemsInRing: quadrants[item.quadrant][item.ring],
-            item,
-          })), (err, data) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(data);
-            }
-          })
-        })
-      // ))
-    })
-  );
-};
-
-
-const outputQuadrantPage = (quadrantName, quadrant) => (
-  new Promise((resolve, reject) => {
-    outputFile(distPath(`${quadrantName}.html`), quadrantTemplate(vars({
-      quadrantName,
-      quadrant,
-    })), (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    })
-  })
-)
 
 const flagWithIsNew = (items, allReleases) => (
   items.map((item) => ({

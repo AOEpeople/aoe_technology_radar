@@ -1,6 +1,6 @@
 import pug from 'pug';
 import moment from 'moment';
-import { relativePath } from './file';
+import { relativePath } from '../common/file';
 import {
   groupByQuadrants,
   groupByFirstLetter,

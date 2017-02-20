@@ -2,16 +2,26 @@ import {
   createRadar,
   groupByQuadrants,
   outputRadar,
-} from './radar';
-import {
-  renderApp,
-} from './static';
+} from '../common/radar';
+import { save } from '../common/file';
+import { getPageNames } from '../common/config';
+import { renderPage } from '../js/server';
 
 
 (async () => {
   try {
     const radar = await createRadar();
-    renderApp(radar);
+
+    getPageNames(radar).map((pageName) => {
+      const pageHtml = renderPage(radar, pageName);
+      console.log(pageHtml);
+      save(pageHtml, `${pageName}.html`);
+    });
+
+    // pages.map((pageHtml) => {
+    //   save(pageHtml, `${pageName}.html`)
+    // });
+    // console.log(pages);
     // outputRadar(radar);
 
     // const radarByQuadrants = groupByQuadrants(radar);

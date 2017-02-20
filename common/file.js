@@ -1,3 +1,4 @@
+import { outputFile } from 'fs-extra';
 import path from 'path';
 import { walk } from 'walk';
 
@@ -11,10 +12,6 @@ export const radarPath = (...pathInSrc) => (
 
 export const staticPath = (...pathInSrc) => (
   relativePath('static-pages', ...pathInSrc)
-);
-
-export const templatesPath = (...pathInSrc) => (
-  relativePath('templates', ...pathInSrc)
 );
 
 export const stylesPath = (...pathInSrc) => (
@@ -35,10 +32,6 @@ export const distPath = (...pathInDist) => (
 
 export const getAllMarkdownFiles = (folder) => (
   getAllFiles(folder, isMarkdownFile)
-);
-
-export const getAllPugFiles = (folder) => (
-  getAllFiles(folder, isPugFile)
 );
 
 const getAllFiles = (folder, predicate) => (
@@ -69,4 +62,14 @@ const getAllFiles = (folder, predicate) => (
 
 const isMarkdownFile = (name) => name.match(/\.md$/);
 
-const isPugFile = (name) => name.match(/\.pug$/);
+export const save = (html, fileName) => (
+  new Promise((resolve, reject) => (
+    outputFile(distPath(fileName), html, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    })
+  ))
+);

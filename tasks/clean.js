@@ -1,5 +1,5 @@
 import { emptyDir } from 'fs-extra';
-import { distPath } from './file';
+import { distPath } from '../common/file';
 
 var distDir = distPath();
 

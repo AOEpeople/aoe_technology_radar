@@ -2,7 +2,7 @@ import { copy } from 'fs-extra';
 import {
   assetsPath,
   distPath,
-} from './file';
+} from '../common/file';
 
 copy(assetsPath(), distPath('assets'), (err) => {
   if (err) {
