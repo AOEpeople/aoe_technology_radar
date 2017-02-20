@@ -11,7 +11,21 @@ const appReducer = (state = {}, action) => {
   return state;
 }
 
-export const renderApp = (radar, pageName) => {
+const getPageNames = (radar) => {
+  return [
+    'index',
+    'overview',
+    'help',
+    'foo/bar',
+  ]
+}
+
+export const renderApp = (radar) => {
+    const pageNames = getPageNames(radar);
+    pageNames.map(pageName => renderPage(radar, pageName))
+}
+
+export const renderPage = (radar, pageName) => {
   // Create a new Redux store instance
   const store = createStore(appReducer, {
     ...radar,

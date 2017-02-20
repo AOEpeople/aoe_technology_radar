@@ -11,7 +11,7 @@ import {
 (async () => {
   try {
     const radar = await createRadar();
-    renderApp(radar, 'index');
+    renderApp(radar);
     // outputRadar(radar);
 
     // const radarByQuadrants = groupByQuadrants(radar);
