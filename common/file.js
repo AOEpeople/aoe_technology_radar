@@ -10,10 +10,6 @@ export const radarPath = (...pathInSrc) => (
   relativePath('radar', ...pathInSrc)
 );
 
-export const staticPath = (...pathInSrc) => (
-  relativePath('static-pages', ...pathInSrc)
-);
-
 export const stylesPath = (...pathInSrc) => (
   relativePath('styles', ...pathInSrc)
 );

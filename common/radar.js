@@ -21,40 +21,6 @@ export const createRadar = async (tree) => {
   };
 };
 
-export const groupByQuadrants = (items) => (
-  items.reduce((quadrants, item) => ({
-    ...quadrants,
-    [item.quadrant]: addItemToQuadrant(quadrants[item.quadrant], item),
-  }), {})
-);
-
-const addItemToQuadrant = (quadrant = {}, item) => ({
-  ...quadrant,
-  [item.ring]: addItemToRing(quadrant[item.ring], item),
-});
-
-export const groupByFirstLetter = (items) => (
-  items.reduce((letterIndex, item) => ({
-    ...letterIndex,
-    [getFirstLetter(item)]: addItemToList(letterIndex[getFirstLetter(item)], item),
-  }), {})
-);
-
-export const groupByRing = (items) => (
-  items.reduce((rings, item) => ({
-    ...rings,
-    [item.ring]: addItemToList(rings[item.ring], item),
-  }), {})
-);
-
-const addItemToList = (list = [], item) => ([
-  ...list,
-  item,
-]);
-
-export const getFirstLetter = (item) => item.title.substr(0,1).toUpperCase();
-
-
 const checkAttributes = (fileName, attributes) => {
   const rings = ['trial', 'assess', 'adopt', 'hold'];
   if (attributes.ring && !rings.includes(attributes.ring)) {
@@ -187,8 +153,3 @@ const flagWithIsNew = (items, allReleases) => (
 const isNewItem = (item, allReleases) => {
   return item.revisions.length > 1 && item.revisions[0].release === allReleases[allReleases.length-1]
 }
-
-const addItemToRing = (ring = [], item) => ([
-  ...ring,
-  item,
-]);

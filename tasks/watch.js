@@ -8,9 +8,8 @@ import {
   jsPath,
   radarPath,
   staticPath,
-  templatesPath,
   distPath,
-} from './file';
+} from '../common/file';
 
 
 const runBuild = (name) => (
@@ -36,8 +35,6 @@ watch(stylesPath(), options, watchBuild('css'));
 watch(jsPath(), options, watchBuild('js'));
 watch(assetsPath(), options, watchBuild('assets'));
 watch(radarPath(), options, watchBuild('pages'));
-watch(staticPath(), options, watchBuild('pages'));
-watch(templatesPath(), options, watchBuild('pages'));
 
 var params = {
     root: distPath(),
