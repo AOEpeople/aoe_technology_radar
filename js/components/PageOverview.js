@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import HeadlineGroup from './HeadlineGroup';
 import HeroHeadline from './HeroHeadline';
 import Badge from './Badge';
+import Link from './Link';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
@@ -76,7 +77,11 @@ class PageOverview extends React.Component {
                     <div className="item-list__list">
                       {
                         items.map((item) => (
-                          <a key={item.name} className="item item--big item--no-leading-border item--no-trailing-border" href="/platforms-and-aoe-services/bar.html">
+                          <Link
+                            key={item.name}
+                            className="item item--big item--no-leading-border item--no-trailing-border"
+                            pageName={`${item.quadrant}/${item.name}`}
+                          >
                             <div className="split split--overview">
                               <div className="split__left">
                                 <div className="item__title">{item.title}</div>
@@ -90,7 +95,7 @@ class PageOverview extends React.Component {
                                 </div>
                               </div>
                             </div>
-                          </a>
+                          </Link>
                         ))
                       }
                     </div>

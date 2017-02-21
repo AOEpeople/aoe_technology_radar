@@ -2,6 +2,7 @@ import React from 'react';
 import { translate, rings } from '../../common/config';
 import Badge from './Badge';
 import Item from './Item';
+import Link from './Link';
 
 const renderList = (ringName, quadrantName, groups, big) => {
   const itemsInRing = groups[quadrantName][ringName];
@@ -34,7 +35,7 @@ const renderList = (ringName, quadrantName, groups, big) => {
             key={item.name}
             className="ring-list__item"
           >
-            <a className="link" href={`/${item.quadrant}/${item.name}.html`}>{item.title}</a>
+            <Link className="link" pageName={`${item.quadrant}/${item.name}`}>{item.title}</Link>
           </span>
         ))
       }
@@ -65,9 +66,9 @@ export default function QuadrantSection({ quadrantName, groups, big = false }) {
           {
             !big && (
               <div className="split__right">
-                <a className="icon-link" href={`/${quadrantName}.html`}>
+                <Link className="icon-link" pageName={`${quadrantName}`}>
                   <span className="icon icon--pie icon-link__icon"></span>Quadrant Overview
-                </a>
+                </Link>
               </div>
             )
           }

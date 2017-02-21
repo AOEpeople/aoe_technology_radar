@@ -28,7 +28,7 @@ const historyManager = store => {
 
   return next => action => {
     if(action.type === NAVIGATE && action.pushToHistory === true) {
-      history.push(`${action.pageName}.html`);
+      history.push(`/${action.pageName}.html`);
     }
     return next(action);
   }

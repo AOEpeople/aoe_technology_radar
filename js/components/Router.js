@@ -3,10 +3,11 @@ import PageIndex from './PageIndex';
 import PageOverview from './PageOverview';
 import PageHelp from './PageHelp';
 import PageQuadrant from './PageQuadrant';
-import { quadrants } from '../../common/config';
+import PageItem from './PageItem';
+import { quadrants, getItemPageNames } from '../../common/config';
 
 
-const getPageByName = (pageName) => {
+const getPageByName = (items, pageName) => {
   if (pageName === 'index') {
     return PageIndex;
   }
@@ -19,11 +20,14 @@ const getPageByName = (pageName) => {
   if (quadrants.includes(pageName)) {
     return PageQuadrant;
   }
+  if (getItemPageNames(items).includes(pageName)) {
+    return PageItem;
+  }
 
   return 'div';
 }
 
 export default function Router({ pageName, ...props}) {
-  const Comp = getPageByName(pageName);
+  const Comp = getPageByName(props.items, pageName);
   return <Comp {...props} pageName={pageName} />;
 }

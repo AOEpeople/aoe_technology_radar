@@ -1,13 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
+import Link from './Link';
 
 export default function Item({ item, noLeadingBorder = false}) {
   return (
-    <a
+    <Link
       className={classNames('item', {
         'item--no-leading-border': noLeadingBorder,
       })}
-      href={`/${item.quadrant}/${item.name}.html`}
+      pageName={`${item.quadrant}/${item.name}`}
     >
       <div className="item__title">{item.title}</div>
       {
@@ -15,6 +16,6 @@ export default function Item({ item, noLeadingBorder = false}) {
           <div className="item__info">{item.info}</div>
         )
       }
-    </a>
+    </Link>
   );
 }
