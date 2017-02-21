@@ -1,7 +1,12 @@
 import React from 'react';
 import Branding from './Branding';
+import { getItemPageNames } from '../../common/config';
 
-export default function Footer() {
+export default function Footer({ items, pageName }) {
+  if (getItemPageNames(items).includes(pageName)) {
+    return null;
+  }
+
   return (
     <Branding
       logoContent={<img src="/assets/logo.svg"/>}
