@@ -1,26 +1,17 @@
 import React from 'react';
 import { translate, rings } from '../../common/config';
 import Badge from './Badge';
-import Item from './Item';
 import Link from './Link';
+import ItemList from './ItemList';
 
 const renderList = (ringName, quadrantName, groups, big) => {
   const itemsInRing = groups[quadrantName][ringName];
 
   if (big === true) {
     return (
-      <div className="item-list">
-        <div className="item-list__header">
-          <Badge type={ringName} big={big}>{ringName}</Badge>
-        </div>
-        <div className="item-list__list">
-          {
-            itemsInRing.map(item => (
-              <Item key={item.name} item={item} noLeadingBorder />
-            ))
-          }
-        </div>
-      </div>
+      <ItemList items={itemsInRing} noLeadingBorder>
+        <Badge type={ringName} big={big}>{ringName}</Badge>
+      </ItemList>
     );
   }
 

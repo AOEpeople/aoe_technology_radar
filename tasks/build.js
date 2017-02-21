@@ -14,7 +14,6 @@ import { renderPage } from '../js/server';
 
     getPageNames(radar).map((pageName) => {
       const pageHtml = renderPage(radar, pageName);
-      console.log(pageHtml);
       save(pageHtml, `${pageName}.html`);
     });
 
