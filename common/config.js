@@ -1,18 +1,19 @@
-export const getPageNames = (radar) => {
-  return [
-    'index',
-    'overview',
-    'help',
-    'foo/bar',
-  ]
-}
-
 export const quadrants = [
   'languages-and-frameworks',
   'methods-and-patterns',
   'platforms-and-aoe-services',
   'tools',
 ];
+
+export const getPageNames = (radar) => {
+  return [
+    'index',
+    'overview',
+    'help',
+    ...quadrants,
+  ]
+}
+
 
 export const rings = [
   'assess',

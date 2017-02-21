@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import HeadlineGroup from './HeadlineGroup';
 import HeroHeadline from './HeroHeadline';
+import Badge from './Badge';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
@@ -52,16 +53,13 @@ class PageOverview extends React.Component {
             {
               rings.map(ringName => (
                 <div className="nav__item" key={ringName}>
-                  <a
-                    className={classNames('badge badge--big', {
-                      'badge--empty': !this.isRingActive(ringName),
-                      [`badge--${ringName}`]: this.isRingActive(ringName),
-                    })}
+                  <Badge
+                    big
                     onClick={this.handleRingClick(ringName)}
-                    href="#"
+                    type={this.isRingActive(ringName) ? ringName : 'empty' }
                   >
                     {ringName}
-                  </a>
+                  </Badge>
                 </div>
               ))
             }
@@ -86,7 +84,9 @@ class PageOverview extends React.Component {
                               <div className="split__right">
                                 <div className="nav">
                                   <div className="nav__item">{translate(item.quadrant)}</div>
-                                  <div className="nav__item"><span className={`badge badge--${item.ring}`}>{item.ring}</span></div>
+                                  <div className="nav__item">
+                                    <Badge type={item.ring}>{item.ring}</Badge>
+                                  </div>
                                 </div>
                               </div>
                             </div>
