@@ -33,6 +33,7 @@ runBuild('all');
 
 watch(stylesPath(), options, watchBuild('css'));
 watch(jsPath(), options, watchBuild('js'));
+watch(jsPath(), options, watchBuild('pages'));
 watch(assetsPath(), options, watchBuild('assets'));
 watch(radarPath(), options, watchBuild('pages'));
 

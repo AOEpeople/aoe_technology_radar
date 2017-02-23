@@ -9,7 +9,7 @@ export default function Footer({ items, pageName }) {
 
   return (
     <Branding
-      logoContent={<img src="/assets/logo.svg"/>}
+      logoContent={<img src="/assets/logo.svg" width="150px" height="60px" />}
     >
       <span className="footnote">
         AOE is a leading provider of Enterprise Open Source web solutions.

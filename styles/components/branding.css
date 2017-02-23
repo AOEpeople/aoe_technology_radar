@@ -12,9 +12,7 @@
   &__logo {
     flex: 0 0 200px;
     & img {
-      display: block;
-      width: 150px;
-      height: 60px;
+      display: inline-block;
     }
   }
 

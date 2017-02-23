@@ -1,11 +1,16 @@
 import React from 'react';
 import Branding from './Branding';
 import Link from './Link';
+import LogoLink from './LogoLink';
+import { getItemPageNames } from '../../common/config';
 
-export default function Header() {
+export default function Header({ pageName }) {
+
+  const smallLogo = pageName !== 'index';
+
   return (
     <Branding
-      logoContent={<Link pageName="index"><img src="/assets/logo.svg"/></Link>}
+      logoContent={<LogoLink small={smallLogo} />}
     >
       <div className="nav">
         <div className="nav__item">
