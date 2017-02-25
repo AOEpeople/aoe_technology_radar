@@ -1,10 +1,11 @@
 import React from 'react';
 import HeroHeadline from './HeroHeadline';
+import Fadeable from './Fadeable';
 
-export default function PageHelp() {
+export default function PageHelp({ leaving, onLeave }) {
   return (
-    <div>
+    <Fadeable leaving={leaving} onLeave={onLeave}>
       <HeroHeadline>How to use AOE Technology Radar</HeroHeadline>
-    </div>
+    </Fadeable>
   );
 }

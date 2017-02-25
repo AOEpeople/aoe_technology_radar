@@ -27,7 +27,46 @@ const getPageByName = (items, pageName) => {
   return 'div';
 }
 
-export default function Router({ pageName, ...props}) {
-  const Comp = getPageByName(props.items, pageName);
-  return <Comp {...props} pageName={pageName} />;
+class Router extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageName: props.pageName,
+      leaving: false,
+    };
+  }
+
+  componentWillReceiveProps({ pageName }) {
+    this.setState({
+      ...this.state,
+      nextPageName: pageName,
+      leaving: true,
+    });
+  }
+
+  handlePageLeave = () => {
+    this.setState({
+      ...this.state,
+      pageName: this.state.nextPageName,
+      leaving: true,
+      nextPageName: null,
+    });
+
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        this.setState({
+          ...this.state,
+          leaving: false,
+        });
+      });
+    }, 0);
+  };
+
+  render() {
+    const { pageName, leaving } = this.state;
+    const Comp = getPageByName(this.props.items, pageName);
+    return <Comp {...this.props} pageName={pageName} leaving={leaving} onLeave={this.handlePageLeave} />;
+  }
 }
+
+export default Router;

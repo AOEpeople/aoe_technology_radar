@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { connect } from 'react-redux';
 
 import actions from '../actions';
@@ -13,7 +14,7 @@ function App(props) {
         <div className="page__header">
           <Header {...props} />
         </div>
-        <div className="page__content">
+        <div className={classNames('page__content', { 'is-faded': props.isFaded })}>
           <Router {...props} />
         </div>
         <div className="page__footer">

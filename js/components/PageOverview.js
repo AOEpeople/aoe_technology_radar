@@ -4,6 +4,7 @@ import HeadlineGroup from './HeadlineGroup';
 import HeroHeadline from './HeroHeadline';
 import Badge from './Badge';
 import Link from './Link';
+import Fadeable from './Fadeable';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
@@ -45,7 +46,7 @@ class PageOverview extends React.Component {
     const groups = this.getFilteredAndGroupedItems();
 
     return (
-      <div>
+      <Fadeable leaving={this.props.leaving} onLeave={this.props.onLeave}>
         <HeadlineGroup>
           <HeroHeadline>Technologies Overview</HeroHeadline>
         </HeadlineGroup>
@@ -106,7 +107,7 @@ class PageOverview extends React.Component {
           }
 
         </div>
-      </div>
+      </Fadeable>
     );
   }
 }
