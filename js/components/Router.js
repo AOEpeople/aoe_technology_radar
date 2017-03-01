@@ -37,11 +37,21 @@ class Router extends React.Component {
   }
 
   componentWillReceiveProps({ pageName }) {
-    this.setState({
-      ...this.state,
-      nextPageName: pageName,
-      leaving: true,
-    });
+    const leaving = getPageByName(this.props.items, pageName) !== getPageByName(this.props.items, this.state.pageName);
+
+    if (leaving) {
+      this.setState({
+        ...this.state,
+        nextPageName: pageName,
+        leaving: true,
+      });
+    } else {
+      // stay on same page
+      this.setState({
+        ...this.state,
+        pageName,
+      });
+    }
   }
 
   handlePageLeave = () => {

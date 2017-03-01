@@ -72,7 +72,7 @@ export const createAnimationRunner = (animations, subscriber) => {
 
   const animationsDuration = getMaxAnimationsDuration(animations);
 
-  const animate = (name, animation, stateName, getDelay) => {
+  const animate = (name, animation) => {
     if (animation instanceof Array) {
       animation.map((a, index) => {
         window.requestAnimationFrame(() => {
@@ -81,12 +81,12 @@ export const createAnimationRunner = (animations, subscriber) => {
               ...state,
               [name]: [
                 ...(state[name].slice(0, index)),
-                a[stateName],
+                a.stateB,
                 ...(state[name].slice(index + 1, state[name].length)),
               ],
             };
             subscriber();
-          }, getDelay(a))
+          }, a.delay);
         });
       });
     } else {
@@ -94,10 +94,10 @@ export const createAnimationRunner = (animations, subscriber) => {
         window.setTimeout(() => {
           state = {
             ...state,
-            [name]: animation[stateName],
+            [name]: animation.stateB,
           };
           subscriber();
-        }, getDelay(animation))
+        }, animation.delay);
       });
     }
   }
@@ -108,27 +108,11 @@ export const createAnimationRunner = (animations, subscriber) => {
     },
     run() {
       Object.entries(animations).forEach(([name, animation]) => {
-        animate(name, animation, 'stateB', a => a.delay)
-      })
-    },
-    runReverse() {
-      Object.entries(animations).reverse().forEach(([name, animation]) => {
-        animate(name, animation, 'stateA', a => animationsDuration - a.delay)
-      })
+        animate(name, animation)
+      });
     },
     awaitAnimationComplete(callback) {
       window.setTimeout(callback, animationsDuration);
     },
   }
 }
-
-// prepare(callback) {
-//   callback(stateA);
-// },
-// run(callback) {
-//   window,requestAnimationFrame(() => {
-//     window.setTimeout(() => {
-//       callback(stateB);
-//     }, delay)
-//   });
-// },

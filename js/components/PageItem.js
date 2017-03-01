@@ -6,86 +6,8 @@ import Link from './Link';
 import Fadeable from './Fadeable';
 import { createAnimation, createAnimationRunner } from '../animation';
 
+import { translate } from '../../common/config';
 import { groupByQuadrants } from '../../common/model';
-
-const items = [1, 2]; // TODO use real items
-
-const animationsIn = {
-  background: createAnimation({
-      transform: 'translateX(calc((100vw - 1200px) / 2 + 800px))',
-      transition: 'transform 450ms cubic-bezier(0.24, 1.12, 0.71, 0.98)',
-    }, {
-      transition: 'transform 450ms cubic-bezier(0.24, 1.12, 0.71, 0.98)',
-      transform: 'translateX(0)',
-    },
-    0
-  ),
-  navHeader: createAnimation({
-      transform: 'translateX(-40px)',
-      opacity: '0',
-    }, {
-      transition: 'opacity 150ms ease-out, transform 300ms ease-out',
-      transform: 'translateX(0px)',
-      opacity: '1',
-    },
-    300
-  ),
-  text: createAnimation({
-      transform: 'translateY(-20px)',
-      opacity: '0',
-    }, {
-      transition: 'opacity 150ms ease-out, transform 300ms ease-out',
-      transform: 'translateY(0px)',
-      opacity: '1',
-    },
-    600
-  ),
-  items: items.map((item, i) => (createAnimation({
-      transform: 'translateX(-40px)',
-      opacity: '0',
-    }, {
-      transition: 'opacity 150ms ease-out, transform 300ms ease-out',
-      transform: 'translateX(0px)',
-      opacity: '1',
-    },
-    400 + 100 * i
-  )))
-};
-
-const animationsOut = {
-  background: createAnimation(
-    animationsIn.background.stateB,
-    animationsIn.background.stateA,
-    0
-  ),
-  navHeader: createAnimation(
-    animationsIn.navHeader.stateB,
-    {
-      transition: 'opacity 150ms ease-out, transform 300ms ease-out',
-      transform: 'translateX(40px)',
-      opacity: '0',
-    },
-    0
-  ),
-  text: createAnimation(
-    animationsIn.text.stateB,
-    {
-      transform: 'translateY(20px)',
-      transition: 'opacity 150ms ease-out, transform 300ms ease-out',
-      opacity: '0',
-    },
-    0
-  ),
-  items: items.map((item, i) => (createAnimation(
-    animationsIn.items[i].stateB,
-    {
-      transition: 'opacity 150ms ease-out, transform 300ms ease-out',
-      transform: 'translateX(40px)',
-      opacity: '0',
-    },
-    100 + 100 * i
-  )))
-};
 
 const setAnimations = (state, animations) => ({
   ...state,
@@ -96,8 +18,87 @@ class PageItem extends React.Component {
   constructor(props) {
     super(props);
 
+    const itemsInRing = this.getItemsInRing(props);
+
+    this.animationsIn = {
+      background: createAnimation({
+          transform: 'translateX(calc((100vw - 1200px) / 2 + 800px))',
+          transition: 'transform 450ms cubic-bezier(0.24, 1.12, 0.71, 0.98)',
+        }, {
+          transition: 'transform 450ms cubic-bezier(0.24, 1.12, 0.71, 0.98)',
+          transform: 'translateX(0)',
+        },
+        0
+      ),
+      navHeader: createAnimation({
+          transform: 'translateX(-40px)',
+          opacity: '0',
+        }, {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(0px)',
+          opacity: '1',
+        },
+        300
+      ),
+      text: createAnimation({
+          transform: 'translateY(-20px)',
+          opacity: '0',
+        }, {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateY(0px)',
+          opacity: '1',
+        },
+        600
+      ),
+      items: props.items.map((item, i) => (createAnimation({
+          transform: 'translateX(-40px)',
+          opacity: '0',
+        }, {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(0px)',
+          opacity: '1',
+        },
+        400 + 100 * i
+      )))
+    };
+
+    this.animationsOut = {
+      background: createAnimation(
+        this.animationsIn.background.stateB,
+        this.animationsIn.background.stateA,
+        0
+      ),
+      navHeader: createAnimation(
+        this.animationsIn.navHeader.stateB,
+        {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(40px)',
+          opacity: '0',
+        },
+        0
+      ),
+      text: createAnimation(
+        this.animationsIn.text.stateB,
+        {
+          transform: 'translateY(20px)',
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          opacity: '0',
+        },
+        0
+      ),
+      items: itemsInRing.map((item, i) => (createAnimation(
+        this.animationsIn.items[i].stateB,
+        {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(40px)',
+          opacity: '0',
+        },
+        100 + 100 * i
+      )))
+    };
+
     if (props.leaving) { // entering from an other page
-      this.state = setAnimations({}, createAnimationRunner(animationsIn).getState());
+      this.state = setAnimations({}, createAnimationRunner(this.animationsIn).getState());
     } else { // Hard refresh
       this.state = {};
     }
@@ -105,12 +106,12 @@ class PageItem extends React.Component {
 
   componentWillReceiveProps({ leaving }) {
     if (!this.props.leaving && leaving) { // page will be left
-      this.animationRunner = createAnimationRunner(animationsOut, this.handleAnimationsUpdate);
+      this.animationRunner = createAnimationRunner(this.animationsOut, this.handleAnimationsUpdate);
       this.animationRunner.run();
       this.animationRunner.awaitAnimationComplete(this.props.onLeave);
     }
     if (this.props.leaving && !leaving) { // page is entered
-      this.animationRunner = createAnimationRunner(animationsIn, this.handleAnimationsUpdate);
+      this.animationRunner = createAnimationRunner(this.animationsIn, this.handleAnimationsUpdate);
       this.animationRunner.run();
     }
   }
@@ -132,21 +133,28 @@ class PageItem extends React.Component {
     return this.state.animations[name];
   };
 
+  getItem = (props) => {
+    const [quadrantName, itemName] = props.pageName.split('/');
+    const item = props.items.filter(item => item.quadrant === quadrantName && item.name === itemName)[0];
+    return item;
+  }
+
+  getItemsInRing = (props) => {
+    const item = this.getItem(props);
+    const itemsInRing = groupByQuadrants(props.items)[item.quadrant][item.ring];
+    return itemsInRing;
+  };
+
   render() {
-    const { leaving, onLeave, pageName, items } = this.props;
-    const [quadrantName, itemName] = pageName.split('/');
-    const item = items.filter(item => item.quadrant === quadrantName && item.name === itemName)[0];
-    const itemsInRing = groupByQuadrants(items)[item.quadrant][item.ring];
-
-    // console.log(this.getAnimationState('items'));
-
+    const item = this.getItem(this.props);
+    const itemsInRing = this.getItemsInRing(this.props);
     return (
       <div>
         <div className="item-page">
           <div className="item-page__nav">
             <div className="item-page__nav__inner">
               <div className="item-page__header" style={this.getAnimationState('navHeader')}>
-                <h3 className="headline">Languages &amp; Frameworks</h3>
+                <h3 className="headline">{translate(item.quadrant)}</h3>
               </div>
 
               <ItemList
