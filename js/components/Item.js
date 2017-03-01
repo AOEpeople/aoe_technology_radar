@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Link from './Link';
 
-export default function Item({ item, noLeadingBorder = false, active = false}) {
+export default function Item({ item, noLeadingBorder = false, active = false, style = {}}) {
   return (
     <Link
       className={classNames('item', {
@@ -10,6 +10,7 @@ export default function Item({ item, noLeadingBorder = false, active = false}) {
         'is-active': active,
       })}
       pageName={`${item.quadrant}/${item.name}`}
+      style={style}
     >
       <div className="item__title">{item.title}</div>
       {
