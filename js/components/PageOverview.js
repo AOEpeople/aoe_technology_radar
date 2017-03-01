@@ -4,11 +4,17 @@ import HeadlineGroup from './HeadlineGroup';
 import HeroHeadline from './HeroHeadline';
 import Badge from './Badge';
 import Link from './Link';
+import Search from './Search';
 import Fadeable from './Fadeable';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
 const rings = ['all', 'assess', 'trial', 'hold', 'adopt'];
+
+const containsSearchTerm = (text = '', term = '') => {
+  // TODO search refinement
+  return text.trim().toLocaleLowerCase().indexOf(term.trim().toLocaleLowerCase()) !== -1;
+}
 
 class PageOverview extends React.Component {
 
@@ -16,6 +22,7 @@ class PageOverview extends React.Component {
     super(...args);
     this.state = {
       ring: rings[0],
+      search: '',
     };
   }
 
@@ -32,15 +39,37 @@ class PageOverview extends React.Component {
     return this.state.ring === ringName;
   }
 
+  itemMatchesRing = (item) => {
+    return this.state.ring === 'all' || item.ring === this.state.ring;
+  };
+
+  itemMatchesSearch = (item) => {
+    return this.state.search.trim() === '' ||
+      containsSearchTerm(item.title, this.state.search) ||
+      containsSearchTerm(item.body, this.state.search) ||
+      containsSearchTerm(item.info, this.state.search);
+  };
+
+  isItemVisible = (item) => {
+    return this.itemMatchesRing(item) && this.itemMatchesSearch(item);
+  };
+
   getFilteredAndGroupedItems() {
     const groups = groupByFirstLetter(this.props.items);
     const groupsFiltered = groups.map(group => ({
       ...group,
-      items: group.items.filter(item => this.state.ring === 'all' || item.ring === this.state.ring),
+      items: group.items.filter(this.isItemVisible),
     }));
     const nonEmptyGroups = groupsFiltered.filter(group => group.items.length > 0);
     return nonEmptyGroups;
   }
+
+  handleSearchTermChange = (value) => {
+    this.setState({
+      ...this.state,
+      search: value,
+    });
+  };
 
   render() {
     const groups = this.getFilteredAndGroupedItems();
@@ -51,20 +80,27 @@ class PageOverview extends React.Component {
           <HeroHeadline>Technologies Overview</HeroHeadline>
         </HeadlineGroup>
         <div className="filter">
-          <div className="nav">
-            {
-              rings.map(ringName => (
-                <div className="nav__item" key={ringName}>
-                  <Badge
-                    big
-                    onClick={this.handleRingClick(ringName)}
-                    type={this.isRingActive(ringName) ? ringName : 'empty' }
-                  >
-                    {ringName}
-                  </Badge>
-                </div>
-              ))
-            }
+          <div className="split">
+            <div className="split__left">
+              <Search onChange={this.handleSearchTermChange} value={this.state.search} />
+            </div>
+            <div className="split__right">
+              <div className="nav">
+                {
+                  rings.map(ringName => (
+                    <div className="nav__item" key={ringName}>
+                      <Badge
+                        big
+                        onClick={this.handleRingClick(ringName)}
+                        type={this.isRingActive(ringName) ? ringName : 'empty' }
+                      >
+                        {ringName}
+                      </Badge>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
           </div>
         </div>
 

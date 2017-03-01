@@ -1,0 +1,35 @@
+.search {
+  box-sizing: border-box;
+  width: 600px;
+  height: 50px;
+  position: relative;
+
+  &__field {
+    height: 100%;
+    width: 100%;
+    padding: 10px 20px 10px 50px;
+    background: #3A444A;
+    display: block;
+    border: none;
+    color: var(--color-white);
+    font-size: 16px;
+    line-height: 1;
+    font-family: 'DIN';
+    font-weight: normal;
+
+    &::placeholder {
+      color: var(--color-gray-normal);
+    }
+
+    &:focus {
+      outline: none;
+      background: #2F393F;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+  }
+}
