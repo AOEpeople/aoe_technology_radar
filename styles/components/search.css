@@ -3,11 +3,13 @@
   width: 600px;
   height: 50px;
   position: relative;
+  margin: 0;
+  padding: 0;
 
   &__field {
     height: 100%;
     width: 100%;
-    padding: 10px 20px 10px 50px;
+    padding: 10px 120px 10px 20px;
     background: #3A444A;
     display: block;
     border: none;
@@ -27,9 +29,10 @@
     }
   }
 
-  &__icon {
+  &__button {
     position: absolute;
-    top: 14px;
-    left: 14px;
+    top: 50%;
+    margin-top: -18px;
+    right: 7px;
   }
 }

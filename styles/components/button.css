@@ -1,0 +1,17 @@
+.button {
+  border: none;
+  background: transparent;
+  position: relative;
+  padding: 10px 10px 10px 35px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--color-gray-normal);
+
+  &__icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -11px;
+  }
+}
