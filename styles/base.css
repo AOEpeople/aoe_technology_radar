@@ -40,3 +40,7 @@ body {
     color: blue;
   }
 }
+
+#root {
+  min-height: 100vh;
+}
