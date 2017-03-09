@@ -1,0 +1,29 @@
+#!/usr/bin/env groovy
+
+properties([
+  buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10')),
+  pipelineTriggers([
+    pollSCM('H/15 * * * *')
+  ])
+])
+
+node {
+  stage('Preparations') {
+    echo "Current branch: $env.BRANCH_NAME"
+    checkout scm
+  }
+
+  parallel(
+    frontend: {
+      stage('Build Frontend Assets') {
+        docker.image('aoepeople/fe-build-env:1.1.0').inside() {
+          ansiColor('xterm') {
+            sh "npm prune"
+            sh "npm install"
+            sh "npm run build"
+          }
+        }
+      }
+    },
+  )
+}

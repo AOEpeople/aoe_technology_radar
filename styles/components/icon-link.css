@@ -22,14 +22,13 @@
   }
 
   &:hover {
-    color: var(--color-white);
     &:after {
       content: '';
       position: absolute;
       left: 0;
       bottom: -8px;
       width: 100%;
-      border-bottom: 2px solid var(--color-white);
+      border-bottom: 2px solid var(--color-gray-normal);
     }
   }
 }
