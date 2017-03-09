@@ -7,7 +7,7 @@ export default function PageIndex({ leaving, onLeave, items, navigate }) {
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <div className="headline-group">
-        <HeroHeadline alt="Mar 2017">AOE Technology Radar</HeroHeadline>
+        <HeroHeadline alt="Mar 2017">AOE Technology Radar (beta)</HeroHeadline>
       </div>
       <QuadrantGrid items={items} />
     </Fadeable>
