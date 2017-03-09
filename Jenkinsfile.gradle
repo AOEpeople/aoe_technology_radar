@@ -18,9 +18,8 @@ node {
       stage('Build Frontend Assets') {
         docker.image('aoepeople/fe-build-env:1.1.0').inside() {
           ansiColor('xterm') {
-            sh "npm prune"
-            sh "npm install"
-            sh "npm run build"
+            sh "yarn install"
+            sh "yarn run build"
           }
         }
       }
