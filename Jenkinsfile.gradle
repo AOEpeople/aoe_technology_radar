@@ -18,7 +18,7 @@ node {
       stage('Build Frontend Assets') {
         docker.image('aoepeople/fe-build-env:1.1.0').inside() {
           ansiColor('xterm') {
-            sh "yarn install"
+            sh "BABEL_CACHE_PATH=/tmp/.babel yarn install"
             sh "yarn run build"
           }
         }
