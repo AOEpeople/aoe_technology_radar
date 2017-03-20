@@ -26,4 +26,8 @@
   &--back {
     background-image: url('/assets/icons/back.svg');
   }
+
+  &--close {
+    background-image: url('/assets/icons/close.svg');
+  }
 }

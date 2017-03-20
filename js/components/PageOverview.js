@@ -30,7 +30,6 @@ class PageOverview extends React.Component {
     e.preventDefault();
 
     this.setState({
-      ...this.state,
       ring,
     });
   }
@@ -66,7 +65,6 @@ class PageOverview extends React.Component {
 
   handleSearchTermChange = (value) => {
     this.setState({
-      ...this.state,
       search: value,
     });
   };
