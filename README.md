@@ -47,6 +47,7 @@ If an item is overwritten in a new release, the attributes from the new item are
 -  [x] Implement search
 -  [ ] Finalize CSS
 -  [ ] Get contents for how-to-use page
--  [ ] Show item history on details
+-  [ ] Show item history on details (relevant with 2nd release)
 -  [ ] Better semantic and SEO
 -  [ ] Make mobile friendly
+-  [ ] Create more react components for already existing CSS comps

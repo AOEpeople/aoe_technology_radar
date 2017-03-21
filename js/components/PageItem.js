@@ -4,6 +4,7 @@ import Badge from './Badge';
 import ItemList from './ItemList';
 import Link from './Link';
 import Fadeable from './Fadeable';
+import SetTitle from './SetTitle';
 import { createAnimation, createAnimationRunner } from '../animation';
 
 import { translate } from '../../common/config';
@@ -150,6 +151,7 @@ class PageItem extends React.Component {
     const itemsInRing = this.getItemsInRing(this.props);
     return (
       <div>
+        <SetTitle {...this.props} title={item.title} />
         <div className="item-page">
           <div className="item-page__nav">
             <div className="item-page__nav__inner">

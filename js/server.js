@@ -14,10 +14,12 @@ export const renderPage = (radar, pageName) => {
     pageState: {},
   });
 
+  let pageTitle;
+
   // Render the component to a string
   const html = renderToString(
     <Provider store={store}>
-      <App />
+      <App onSetTitle={(title) => { pageTitle = title; }} />
     </Provider>
   )
 
@@ -25,14 +27,14 @@ export const renderPage = (radar, pageName) => {
   const preloadedState = store.getState()
 
   // Send the rendered page back to the client
-  return renderFullPage(html, preloadedState);
+  return renderFullPage(html, pageTitle, preloadedState);
 }
 
-const renderFullPage = (html, preloadedState) => {
+const renderFullPage = (html, pageTitle, preloadedState) => {
   return `
   <html>
     <head>
-      <title>AOE Technology Radar</title>
+      <title>${pageTitle} | AOE Technology Radar</title>
       <link rel="stylesheet" href="/styles.css"/>
     </head>
     <body>

@@ -44,9 +44,13 @@ delete window.__TECHRADAR__;
 // Create Redux store with initial state
 const store = createStore(appReducer, preloadedState, applyMiddleware(historyManager))
 
+const handleSetTitle = (title) => {
+  document.title = `${title} | AOE Technology Radar`;
+};
+
 render(
   <Provider store={store}>
-    <App />
+    <App onSetTitle={handleSetTitle} />
   </Provider>,
   document.getElementById('root')
 )

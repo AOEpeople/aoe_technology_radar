@@ -6,6 +6,7 @@ import Badge from './Badge';
 import Link from './Link';
 import Search from './Search';
 import Fadeable from './Fadeable';
+import SetTitle from './SetTitle';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
@@ -83,6 +84,7 @@ class PageOverview extends React.Component {
 
     return (
       <Fadeable leaving={this.props.leaving} onLeave={this.props.onLeave}>
+        <SetTitle {...this.props} title="Technologies Overview" />
         <HeadlineGroup>
           <HeroHeadline>Technologies Overview</HeroHeadline>
         </HeadlineGroup>
