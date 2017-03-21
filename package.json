@@ -14,7 +14,7 @@
     "clean": "babel-node ./tasks/clean.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tom Raithel <t.raithel@googlemail.com> (http://www.tomraithel.de)",
+  "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "MIT",
   "dependencies": {
     "async": "2.1.4",

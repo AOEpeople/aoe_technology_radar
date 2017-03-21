@@ -26,16 +26,13 @@ export const renderPage = (radar, pageName) => {
 
   // Send the rendered page back to the client
   return renderFullPage(html, preloadedState);
-
-  // Save file
-  // return save(fullHtml, pageName);
 }
 
 const renderFullPage = (html, preloadedState) => {
   return `
   <html>
     <head>
-      <title>AOE Technology Radar - AOE Tech Radar</title>
+      <title>AOE Technology Radar</title>
       <link rel="stylesheet" href="/styles.css"/>
     </head>
     <body>

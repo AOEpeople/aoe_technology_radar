@@ -44,10 +44,9 @@ If an item is overwritten in a new release, the attributes from the new item are
 ## Todos
 
 -  [x] Add Icons
--  [x] Add pjax
+-  [x] Implement search
 -  [ ] Finalize CSS
 -  [ ] Get contents for how-to-use page
 -  [ ] Show item history on details
 -  [ ] Better semantic and SEO
--  [ ] Implement search?
 -  [ ] Make mobile friendly
