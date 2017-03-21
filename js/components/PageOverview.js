@@ -18,12 +18,21 @@ const containsSearchTerm = (text = '', term = '') => {
 
 class PageOverview extends React.Component {
 
-  constructor(...args) {
-    super(...args);
+  constructor(props, ...args) {
+    super(props, ...args);
     this.state = {
       ring: rings[0],
-      search: '',
+      search: props.pageState.search || '',
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.search !== nextProps.pageState.search) {
+      this.setState({
+        ring: rings[0],
+        search: nextProps.pageState.search,
+      });
+    }
   }
 
   handleRingClick = (ring) => (e) => {

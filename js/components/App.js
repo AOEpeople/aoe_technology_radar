@@ -26,6 +26,6 @@ function App(props) {
 }
 
 export default connect(
-  ({ items, releases, pageName }) => ({ items, releases, pageName }),
+  ({ items, releases, pageName, pageState }) => ({ items, releases, pageName, pageState }),
   actions
 )(App);

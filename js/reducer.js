@@ -2,6 +2,7 @@ import { NAVIGATE } from './actions';
 
 const initialState = {
   pageName: 'index',
+  pageState: {},
   items: [],
   releases: [],
 };
@@ -12,6 +13,7 @@ const appReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         pageName: action.pageName,
+        pageState: action.pageState,
       }
       break;
     default:

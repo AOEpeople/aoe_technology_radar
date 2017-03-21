@@ -10,7 +10,8 @@ export const renderPage = (radar, pageName) => {
   // Create a new Redux store instance
   const store = createStore(appReducer, {
     ...radar,
-    pageName
+    pageName,
+    pageState: {},
   });
 
   // Render the component to a string

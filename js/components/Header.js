@@ -1,16 +1,20 @@
 import React from 'react';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
+
 import Branding from './Branding';
 import Link from './Link';
 import LogoLink from './LogoLink';
 import Search from './Search';
 import { getItemPageNames } from '../../common/config';
+import actions from '../actions';
 
 class Header extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       searchOpen: false,
+      search: '',
     };
   }
 
@@ -26,9 +30,29 @@ class Header extends React.Component {
     });
   }
 
+  handleSearchChange = (search) => {
+    this.setState({
+      search,
+    });
+  }
+
+  handleSearchSubmit = () => {
+    this.props.navigate('overview', true, {
+      search: this.state.search,
+    });
+
+    this.setState({
+      searchOpen: false,
+      search: '',
+    });
+  }
+
   handleOpenClick = (e) => {
     e.preventDefault();
     this.openSearch();
+    setTimeout(() => {
+      this.search.focus();
+    }, 0);
   }
 
   render() {
@@ -56,7 +80,14 @@ class Header extends React.Component {
               <span className="icon icon--search icon-link__icon"></span>Search
             </a>
             <div className={classNames('nav__search', { 'is-open': searchOpen })}>
-              <Search onClose={this.closeSearch} open={searchOpen} />
+              <Search
+                value={this.state.search}
+                onClose={this.closeSearch}
+                onSubmit={this.handleSearchSubmit}
+                onChange={this.handleSearchChange}
+                open={searchOpen}
+                ref={(s) => { this.search = s; }}
+              />
             </div>
           </div>
         </div>
@@ -65,4 +96,8 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+
+export default connect(
+  undefined,
+  actions
+)(Header);
