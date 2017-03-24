@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:pages && npm run build:js && npm run build:css && npm run build:assets",
+    "build": "npm run clean && npm run build:pages && npm run build:jsprod && npm run build:css && npm run build:assets",
     "build:all": "npm run build",
     "build:pages": "RENDER_MODE=server babel-node ./tasks/build.js",
     "build:js": "RENDER_MODE=client webpack --config webpack.config.js",
+    "build:jsprod": "RENDER_MODE=client webpack -p --config webpack.config.js",
     "build:css": "postcss -c postcss.config.json -o dist/styles.css styles/main.css",
     "build:assets": "babel-node ./tasks/assets.js",
     "watch": "babel-node ./tasks/watch.js",
