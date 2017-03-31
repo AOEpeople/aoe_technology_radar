@@ -9,4 +9,4 @@ Continuous Integration and Delivery is a critical part of our development and de
 
 Being an important part of each project, the pipeline configuration should be managed as code and rolled out automatically - this also allows us to manage the pipeline itself applying the same standards that apply to application code.
 
-While some teams started using Jenkins' [JobDSL plugin,](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin) others explored the new [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) - in both ways, the build artifacts should be published to an artifact repository such as [Artifactory.](/confluence/display/knowledge/Artifactory)
+While some teams started using Jenkins' [JobDSL plugin,](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin) others explored the new [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) - in both ways, the build artifacts should be published to an artifact repository such as [Artifactory.](/platforms-and-aoe-services/artifactory.html)

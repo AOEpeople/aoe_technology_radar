@@ -17,6 +17,6 @@ TypeScript continues to be actively developed by Microsoft and is also well-Inte
 
 The excellent strucure and the possibilities for extension make it a good choice to consider for larger JavaScript projects.
 
-Typescript was the choice for [Angular 2+](/confluence/pages/viewpage.action?pageId=88047913) and one can assume that it will get more traction with the success of Angular 2 in the future.
+Typescript was the choice for [Angular 2+](/tools/angular-2.html) and one can assume that it will get more traction with the success of Angular 2 in the future.
 
 There are also projects that support Typescript „code execution“ on the server such as [ts-node](https://www.npmjs.com/package/ts-node).

@@ -15,7 +15,7 @@ Core features of SASS are:
 *   Extends: CSS properties can be inherited
 *   SASS files can be split into modules, which leads to smaller files and better file structures
 *   Operators: Simple math calculations can be applied to CSS properties
-*   Easily to integrate in nodejs-environments and build tools such s [NPM](/confluence/display/knowledge/NPM), [Gulp](/confluence/display/knowledge/Gulp) and [Grunt](/confluence/display/knowledge/Grunt).
+*   Easily to integrate in nodejs-environments and build tools such s [NPM](/tools/npm.html), [Gulp](/tools/gulp.html) and [Grunt](/tools/grunt.html).
 
 SASS has been widely adopted for many years and has evolved to an industry-standard backed by an active community since 2006.
 
