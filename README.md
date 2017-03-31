@@ -35,7 +35,7 @@ Following front-matter attributes are possible:
 - **title**: Name of the Item
 - **quadrant**: Quadrant. One of `languages-and-frameworks`, `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
 - **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
-- **info**: (optial) A short textual description of the item (visible in overview pages)
+- **info**: (optional) A short textual description of the item (visible in overview pages)
 
 The name of the .md file acts as item identifier and may overwrite items with the same name from older releases.
 

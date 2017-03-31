@@ -18,10 +18,10 @@ export const getPageNames = (radar) => {
 export const getItemPageNames = (items) => items.map(item => `${item.quadrant}/${item.name}`);
 
 export const rings = [
-  'assess',
-  'trial',
-  'hold',
   'adopt',
+  'trial',
+  'assess',
+  'hold'
 ];
 
 const messages = {
