@@ -17,6 +17,6 @@ The benefits we see are:
 *  enabling better parallel work in big teams or multi-team projects
 *  flexibility in deploying changes to production - by just deploying the changed service
 
-Related patterns are [Strategic Domain Driven Design]() as an approach to wisely cut your architecture according to useful bounded contexts and decide on the relevant communication and "translation" between the services.
+Related patterns are [Strategic Domain Driven Design](/methods-and-patterns/strategic-domain-driven-design.html) as an approach to wisely cut your architecture according to useful bounded contexts and decide on the relevant communication and "translation" between the services.
 
-Also [Resilience thinking](/confluence/display/knowledge/Resilience+thinking) is especially important when designing an application as a suite of microservices.
+Also [Resilience thinking](/methods-and-patterns/resilience-thinking.html) is especially important when designing an application as a suite of microservices.

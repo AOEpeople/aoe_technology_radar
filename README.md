@@ -29,6 +29,11 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
   ---
 
   Text goes here
+
+  <!--except-->
+
+  Additional Stuff goes here
+
   ```
 
 Following front-matter attributes are possible:

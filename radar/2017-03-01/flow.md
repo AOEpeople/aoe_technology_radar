@@ -13,4 +13,4 @@ We used Flow in a couple of projects and decided to put it on hold for the follo
 *   limited documentation and community
 *   development of the framework is closely coupled to the progress of the Neos project
 
-Although it could be that some of the above-mentioned aspects have improved in the past, we decided to use other PHP frameworks such as [Symfony](http://symfony.com/) or other Languages (See [Go](/confluence/display/knowledge/Go); [Play Framework](/confluence/display/knowledge/Play+Framework); [Spring Boot](/confluence/display/knowledge/Spring+Boot))
+Although it could be that some of the above-mentioned aspects have improved in the past, we decided to use other PHP frameworks such as [Symfony](http://symfony.com/) or other Languages (See [Go](/languages-and-frameworks/go-lang.html); [Play Framework](/languages-and-frameworks/play-framework.html); [Spring Boot](/languages-and-frameworks/spring-boot.html))

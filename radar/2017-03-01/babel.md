@@ -20,7 +20,7 @@ In general, Babel is split in 2 ways to bring you the new goodies you want.
     *   [...](https://babeljs.io/learn-es2015/)
 2.  New globals and functions are provided by [babel-polyfill](http://babeljs.io/docs/usage/polyfill/) e.g.:
 
-*   *   [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+    *   [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
     *   [Array.find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
     *   [Array.includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
     *   [...](https://github.com/zloirock/core-js#index)
@@ -32,4 +32,4 @@ The configuration is really simple due to the [plugin system](http://babeljs.io/
 
 To know what you need you can practice ECMAScript 6 by doing it with [es6katas](http://es6katas.org/) and ask [caniuse](http://caniuse.com/).
 
-If you are using [TypeScript](https://extranet.aoe.com/confluence/display/knowledge/Typescript), Babel is not necessary since you already get the new features with TypeScript.
+If you are using [TypeScript](/languages-and-frameworks/typescript.html), Babel is not necessary since you already get the new features with TypeScript.
