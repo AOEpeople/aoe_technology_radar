@@ -13,7 +13,7 @@ It is a pattern familiy focused on using and defining Bounded Context and thinki
 A context map and a common conceptional core help to understand and improve the overall strategic picture. Especially with the Microservice approach, it is important to define and connect services following the low coupling - high cohesion principles by idendifying fitting bounded contexts.
 
 The following chart gives an overview of possible relationships between bounded contexts:
-![strategic-domain-driven-design-relationships](/assets/images/strategic-domain-driven-design-relationships.png =400x "strategic-domain-driven-design-relationships")
+![strategic-domain-driven-design-relationships](/assets/images/strategic-domain-driven-design-relationships.png)
 
 
 While we have found that this approach is especially useful in designing distributed systems and applications with microservices, we have also extended this approach to provide guidlines for general enterprise architectures.
