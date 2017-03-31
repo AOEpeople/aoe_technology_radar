@@ -2,6 +2,7 @@ import React from 'react';
 import PageIndex from './PageIndex';
 import PageOverview from './PageOverview';
 import PageHelp from './PageHelp';
+import PageToolbox from './PageToolbox';
 import PageQuadrant from './PageQuadrant';
 import PageItem from './PageItem';
 import { quadrants, getItemPageNames } from '../../common/config';
@@ -14,8 +15,11 @@ const getPageByName = (items, pageName) => {
   if (pageName === 'overview') {
     return PageOverview;
   }
-  if (pageName === 'help') {
+  if (pageName === 'help-and-about-tech-radar') {
     return PageHelp;
+  }
+  if (pageName === 'aoe-toolbox') {
+    return PageToolbox;
   }
   if (quadrants.includes(pageName)) {
     return PageQuadrant;
