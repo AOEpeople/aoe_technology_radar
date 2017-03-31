@@ -36,7 +36,7 @@ const renderList = (ringName, quadrantName, groups, big) => {
 
 
 const renderRing = (ringName, quadrantName, groups, big) => {
-  if (!groups[quadrantName][ringName] || groups[quadrantName][ringName].length === 0) {
+  if (!groups[quadrantName] || !groups[quadrantName][ringName] || groups[quadrantName][ringName].length === 0) {
     return null;
   }
   return (
