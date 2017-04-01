@@ -10,10 +10,7 @@ export default function Footer({ items, pageName }) {
         logoContent={<img src="/assets/logo.svg" width="150px" height="60px" />}
       >
         <span className="footnote">
-          AOE is a leading provider of Enterprise Open Source web solutions.
-          Using current agile development methods, more than 250+ developers
-          and consultants in 8 global locations develop customized Open Source
-          solutions for global companies and corporations.
+      AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers.
         </span>
       </Branding>
     </div>
