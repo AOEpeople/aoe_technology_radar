@@ -51,7 +51,7 @@ If an item is overwritten in a new release, the attributes from the new item are
 -  [x] Add Icons
 -  [x] Implement search
 -  [ ] Finalize CSS
--  [x ] Get contents for how-to-use page
+-  [x] Get contents for how-to-use page
 -  [ ] Show item history on details (relevant with 2nd release)
 -  [ ] Better semantic and SEO
 -  [ ] Make mobile friendly
