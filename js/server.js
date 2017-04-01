@@ -37,6 +37,8 @@ const renderFullPage = (html, pageTitle, preloadedState) => {
       <title>${pageTitle} | AOE Technology Radar</title>
       <link rel="stylesheet" href="/styles.css"/>
       <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?c2sn1i">
+      <meta property="og:title" content="${pageTitle} | AOE Technology Radar" />
+      <meta property="og:image" content="/assets/logo.svg" />
     </head>
     <body>
       <div id="root">${html}</div>
