@@ -6,6 +6,7 @@ import actions from '../actions';
 import Header from './Header';
 import Footer from './Footer';
 import Router from './Router';
+import FooterEnd from './FooterEnd';
 
 function App(props) {
   return (
@@ -19,6 +20,7 @@ function App(props) {
         </div>
         <div className="page__footer">
           <Footer {...props} />
+          <FooterEnd {...props} />
         </div>
       </div>
     </div>
