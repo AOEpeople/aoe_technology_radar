@@ -18,6 +18,10 @@ export const assetsPath = (...pathInSrc) => (
   relativePath('assets', ...pathInSrc)
 );
 
+export const faviconPath = (...pathInSrc) => (
+    relativePath('assets/favicon.ico', ...pathInSrc)
+);
+
 export const jsPath = (...pathInSrc) => (
   relativePath('js', ...pathInSrc)
 );
