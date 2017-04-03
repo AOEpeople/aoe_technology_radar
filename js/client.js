@@ -36,6 +36,14 @@ const historyManager = store => {
   }
 }
 
+let reloadTimeout;
+window.addEventListener('resize', function () {
+  clearTimeout(reloadTimeout);
+  reloadTimeout = setTimeout(() => {
+    window.location.reload();
+  }, 200);
+});
+
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__TECHRADAR__;
 
