@@ -12,6 +12,16 @@
     margin-bottom: 20px;
     position: relative;
     z-index: 100;
+
+   @media (--until-sm) {
+     margin: 0
+   }
+
+    @media (--until-lg) {
+      .nav {
+        display: none;
+      }
+    }
   }
 
   &__content {
