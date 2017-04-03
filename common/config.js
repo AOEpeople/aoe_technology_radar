@@ -34,4 +34,9 @@ const messages = {
 
 export const translate = (key) => (messages[key] || '-');
 
+export function isMobileViewport() {
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    return width < 1200;
+}
+
 const formatRelease = (release) => moment(release, 'YYYY-MM-DD').format('MMM YYYY');
