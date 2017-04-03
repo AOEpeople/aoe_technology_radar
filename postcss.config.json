@@ -2,7 +2,9 @@
   "use": [
     "postcss-easy-import",
     "postcss-nested",
+    "postcss-custom-media",
     "postcss-css-variables",
+    "css-mqpacker",
     "autoprefixer"
   ],
   "autoprefixer": {
