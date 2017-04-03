@@ -30,4 +30,13 @@
       transition-delay: 0s;
     }
   }
+
+  &--relations {
+    @media (--until-md) {
+      .nav__item {
+        display: block;
+        margin: 5px 0 0;
+      }
+    }
+  }
 }

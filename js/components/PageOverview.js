@@ -89,7 +89,7 @@ class PageOverview extends React.Component {
           <HeroHeadline>Technologies Overview</HeroHeadline>
         </HeadlineGroup>
         <div className="filter">
-          <div className="split">
+          <div className="split split--filter">
             <div className="split__left">
               <Search onChange={this.handleSearchTermChange} value={this.state.search} />
             </div>
@@ -133,7 +133,7 @@ class PageOverview extends React.Component {
                                 <div className="item__title">{item.title}</div>
                               </div>
                               <div className="split__right">
-                                <div className="nav">
+                                <div className="nav nav--relations">
                                   <div className="nav__item">{translate(item.quadrant)}</div>
                                   <div className="nav__item">
                                     <Badge type={item.ring}>{item.ring}</Badge>

@@ -5,7 +5,11 @@
     position: relative;
     padding: 0 0 0 200px;
     min-height: 80px;
+    @media (--until-md) {
+      padding:  0 0 0 50px;
+    }
   }
+
   &__letter {
     font-size: 50px;
     line-height: 80px;
@@ -13,5 +17,8 @@
     position: absolute;
     left: 50px;
     top: 0;
+    @media (--until-md) {
+      left: 0;
+    }
   }
 }
