@@ -10,13 +10,11 @@ export default function FooterEnd({ items, pageName }) {
                     <p>Follow us:</p>
                 </div>
                 <div className="footer-social-links">
-
-                    <a class="social-links-icon" href="https://www.facebook.com/aoepeople" target="_blank"><i className="socicon-facebook social-icon"></i></a>
-                    <a class="social-links-icon" href="https://twitter.com/aoepeople" target="_blank"><i className="socicon-twitter social-icon"></i></a>
-                    <a class="social-links-icon" href="https://www.linkedin.com/company/aoe" target="_blank"><i className="socicon-linkedin social-icon"></i></a>
-                    <a class="social-links-icon" href="https://www.xing.com/company/aoe" target="_blank"><i className="socicon-xing social-icon"></i></a>
-                    <a class="social-links-icon" href="https://www.youtube.com/user/aoepeople" target="_blank"><i className="socicon-youtube social-icon"></i></a>
-
+                    <a className="social-links-icon" href="https://www.facebook.com/aoepeople" target="_blank"><i className="socicon-facebook social-icon"></i></a>
+                    <a className="social-links-icon" href="https://twitter.com/aoepeople" target="_blank"><i className="socicon-twitter social-icon"></i></a>
+                    <a className="social-links-icon" href="https://www.linkedin.com/company/aoe" target="_blank"><i className="socicon-linkedin social-icon"></i></a>
+                    <a className="social-links-icon" href="https://www.xing.com/company/aoe" target="_blank"><i className="socicon-xing social-icon"></i></a>
+                    <a className="social-links-icon" href="https://www.youtube.com/user/aoepeople" target="_blank"><i className="socicon-youtube social-icon"></i></a>
                 </div>
             </div>
             <div className="footer-copyright">
