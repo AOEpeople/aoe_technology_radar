@@ -29,6 +29,7 @@ const historyManager = store => {
 
   return next => action => {
     if(action.type === NAVIGATE && action.pushToHistory === true) {
+      window.scrollTo(0, 0);
       history.push(`/${action.pageName}.html`);
     }
     return next(action);
