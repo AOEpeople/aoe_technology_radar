@@ -44,5 +44,8 @@
     margin: 10 0 10 0;
   }
 
-
+  pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
