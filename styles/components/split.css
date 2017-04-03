@@ -18,4 +18,8 @@
   &__right {
     flex: 0 1 auto;
   }
+
+   @media (--until-sm) {
+     display: block;
+   }
 }

@@ -13,7 +13,7 @@
     padding: 0 8px;
     flex: 0 0 25%;
     margin: 0 0 25px;
-    @media (--until-sm) {
+    @media (--until-md) {
       flex-basis: 50%;
 
     }
