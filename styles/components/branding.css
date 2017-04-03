@@ -25,4 +25,15 @@
   &.is-hidden {
     opacity: 0;
   }
+
+  @media (--until-sm) {
+    &--footer {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  @media (--until-xl) {
+    margin: 15px 0 0;
+  }
 }

@@ -17,6 +17,7 @@
 @custom-media --until-sm (max-width: 30em);
 @custom-media --until-md (max-width: 48em);
 @custom-media --until-lg (max-width: 61.875em);
+@custom-media --until-xl (max-width: 75em);
 
 @font-face {
   font-family: 'DIN';

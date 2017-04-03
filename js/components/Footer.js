@@ -1,12 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 import Branding from './Branding';
-import { getItemPageNames } from '../../common/config';
+import { getItemPageNames, isMobileViewport } from '../../common/config';
 
 export default function Footer({ items, pageName }) {
   return (
-    <div className={classNames('footer', {'is-hidden': getItemPageNames(items).includes(pageName)})}>
+    <div className={classNames('footer', {'is-hidden': !isMobileViewport() && getItemPageNames(items).includes(pageName)})}>
       <Branding
+        modifier="footer"
         logoContent={<img src="/assets/logo.svg" width="150px" height="60px" />}
       >
         <span className="footnote">

@@ -11,20 +11,25 @@
     color: var(--color-gray-normal);
   }
 
-  & .footer-social {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  @media (--until-sm) {
+    flex-direction: column;
     align-items: center;
-
-    & .footer-social-label {
-      margin: 0 10px 0 0;
-    }
+    margin: 20px 0 0;
   }
-
 }
 
 .footer-end-left {
   flex-direction: column;
   align-items: flex-start;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__label {
+    margin: 0 10px 0 0;
+  }
 }
