@@ -40,3 +40,13 @@
     }
   }
 }
+
+.mobile-item-page {
+  background: #fff;
+  margin: 0 -15px;
+  padding: 15px;
+
+  &__aside {
+    padding: 20px 0
+  }
+}

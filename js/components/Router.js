@@ -5,8 +5,8 @@ import PageHelp from './PageHelp';
 import PageToolbox from './PageToolbox';
 import PageQuadrant from './PageQuadrant';
 import PageItem from './PageItem';
-import { quadrants, getItemPageNames } from '../../common/config';
-
+import PageItemMobile from './PageItemMobile';
+import { quadrants, getItemPageNames, isMobileViewport } from '../../common/config';
 
 const getPageByName = (items, pageName) => {
   if (pageName === 'index') {
@@ -25,7 +25,7 @@ const getPageByName = (items, pageName) => {
     return PageQuadrant;
   }
   if (getItemPageNames(items).includes(pageName)) {
-    return PageItem;
+    return isMobileViewport() ? PageItemMobile : PageItem;
   }
 
   return 'div';
