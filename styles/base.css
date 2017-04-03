@@ -14,6 +14,10 @@
   --color-brand: #F59134;
 }
 
+@custom-media --until-sm (max-width: 30em);
+@custom-media --until-md (max-width: 48em);
+@custom-media --until-lg (max-width: 61.875em);
+
 @font-face {
   font-family: 'DIN';
   src: url('/assets/fonts/clanot-news.otf');

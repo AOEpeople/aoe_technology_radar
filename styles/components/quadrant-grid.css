@@ -6,5 +6,8 @@
   &__quadrant {
     flex: 0 0 45%;
     margin-bottom: 40px;
+    @media (--until-lg) {
+      flex-basis: 100%;
+    }
   }
 }
