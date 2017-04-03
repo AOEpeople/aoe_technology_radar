@@ -13,4 +13,11 @@
   &--inverse {
     color: var(--color-gray-light);
   }
+
+  @media (--until-sm) {
+    font-size: 26px;
+    &__alt {
+      display: block;
+    }
+  }
 }
