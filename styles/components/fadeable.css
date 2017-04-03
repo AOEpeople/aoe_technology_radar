@@ -1,23 +1,8 @@
 .fadable {
-  position: relative;
-
-  &::after {
-    transition: opacity 0.2s cubic-bezier(0.54, 0, 0.28, 1);
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    background: var(--color-gray-dark);
-    pointer-events: none;
-  }
+  opacity: 1;
+  transition: opacity 0.2s cubic-bezier(0.54, 0, 0.28, 1);
 
   &.is-faded {
-    &::after {
-      opacity: 1;
-    }
+   opacity: 0;
   }
 }
