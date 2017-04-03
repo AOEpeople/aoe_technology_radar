@@ -35,6 +35,9 @@ const messages = {
 export const translate = (key) => (messages[key] || '-');
 
 export function isMobileViewport() {
+    // return false for server side rendering
+    if (typeof window == 'undefined') return false;
+
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     return width < 1200;
 }
