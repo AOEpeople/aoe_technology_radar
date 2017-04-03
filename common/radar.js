@@ -58,7 +58,7 @@ const itemInfoFromFilename = (fileName) => {
   const [
     release,
     nameWithSuffix,
-  ] = fileName.split('/').slice(-2);
+  ] = fileName.split(path.sep).slice(-2);
   return {
     name: nameWithSuffix.substr(0, nameWithSuffix.length - 3),
     release,

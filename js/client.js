@@ -10,7 +10,7 @@ import actions, { NAVIGATE } from './actions';
 
 // Remove .html and map / to index
 const getPageNameFromPath = (path) => {
-  if (path === '/') {
+  if (path === path.sep) {
     return 'index';
   }
   return path.substring(1, path.length - 5);
