@@ -5,7 +5,7 @@ quadrant:   languages-and-frameworks
 
 ---
 
-With Spring Boot you create standalone Spring Applications with minimum configuration. Spring Boot rapidly gets you up and running for production. 
+With Spring Boot you create standalone Spring Applications with minimum configuration. [Spring Boot](https://projects.spring.io/spring-boot/) rapidly gets you up and running for production. 
 
 With an embedded Tomcat, Jetty and Undertow you have everything you need to deploy your application out-of-the-box.
 
