@@ -42,6 +42,9 @@ The name of the .md file acts as item identifier and may overwrite items with th
 
 If an item is overwritten in a new release, the attributes from the new item are merged with the old ones and a new history entry is created for that item.
 
+## Travis
+[![Travis](https://api.travis-ci.org/AOEpeople/aoe_technology_radar.svg?branch=master)](https://travis-ci.org/AOEpeople/aoe_technology_radar/)
+
 ## Todos
 
 -  [x] Add Icons
