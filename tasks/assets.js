@@ -11,10 +11,3 @@ copy(assetsPath(), distPath('assets'), (err) => {
   }
   console.log("copied assets");
 });
-
-copy(faviconPath(),distPath('favicon.ico'),(err) => {
-  if (err) {
-    return console.error(err);
-  }
-  console.log("copied favicon");
-});
