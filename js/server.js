@@ -36,7 +36,7 @@ const renderFullPage = (html, pageTitle, preloadedState) => {
     <head>
       <meta charset="utf-8">
       <title>${pageTitle} | AOE Technology Radar</title>
-      <link rel="stylesheet" href="/styles.css"/>
+      <link rel="stylesheet" href="/assets/css/styles.css"/>
       <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?c2sn1i">
       <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
       <meta name="format-detection" content="telephone=no">
