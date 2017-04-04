@@ -28,11 +28,7 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
   quadrant:   languages-and-frameworks
   ---
 
-  Text goes here
-
-  <!--except-->
-
-  Additional Stuff goes here
+  Text goes here. You can use **markdown** here.
 
   ```
 
