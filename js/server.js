@@ -38,6 +38,7 @@ const renderFullPage = (html, pageTitle, preloadedState) => {
       <title>${pageTitle} | AOE Technology Radar</title>
       <link rel="stylesheet" href="/styles.css"/>
       <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?c2sn1i">
+      <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
       <meta name="format-detection" content="telephone=no">
       <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
       <meta property="og:title" content="${pageTitle} | AOE Technology Radar" />
