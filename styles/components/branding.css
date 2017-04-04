@@ -30,6 +30,9 @@
     &--footer {
       display: block;
       text-align: center;
+      .branding__logo {
+        margin: 0 0 15px;
+      }
     }
   }
 
