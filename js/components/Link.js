@@ -9,7 +9,7 @@ function Link({ pageName, children, navigate, className, style = {}}) {
   };
 
   return (
-    <a href={`/${pageName}.html`} onClick={handleClick} style={style} {...{ className }}>
+    <a href={`/techradar/${pageName}.html`} onClick={handleClick} style={style} {...{ className }}>
       {children}
     </a>
   );

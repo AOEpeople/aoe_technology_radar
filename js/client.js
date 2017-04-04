@@ -18,7 +18,9 @@ const getPageNameFromPath = (path) => {
 }
 
 const historyManager = store => {
-  const history = createHistory();
+  const history = createHistory({
+    basename: '/techradar'
+  });
 
   // If browser-back button is pressed, provide new pageName to store
   history.listen((location, action) => {

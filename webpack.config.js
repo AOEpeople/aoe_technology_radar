@@ -6,7 +6,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: 'techradar/assets/js/[name].js',
   },
   module: {
     rules: [

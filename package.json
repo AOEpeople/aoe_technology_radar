@@ -9,7 +9,7 @@
     "build:pages": "cross-env RENDER_MODE=server babel-node ./tasks/build.js",
     "build:js": "cross-env RENDER_MODE=client webpack --config webpack.config.js",
     "build:jsprod": "cross-env RENDER_MODE=client webpack -p --config webpack.config.js",
-    "build:css": "postcss -c postcss.config.json -o dist/assets/css/styles.css styles/main.css",
+    "build:css": "postcss -c postcss.config.json -o dist/techradar/assets/css/styles.css styles/main.css",
     "build:assets": "babel-node ./tasks/assets.js",
     "watch": "babel-node ./tasks/watch.js",
     "clean": "babel-node ./tasks/clean.js",

@@ -5,6 +5,10 @@ export const quadrants = [
   'tools',
 ];
 
+export function assetUrl(file) {
+  return `/techradar/assets/${file}`
+}
+
 export const getPageNames = (radar) => {
   return [
     'index',
