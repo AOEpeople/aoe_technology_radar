@@ -21,13 +21,13 @@
 
 @font-face {
   font-family: 'DIN';
-  src: url('/assets/fonts/clanot-news.otf');
+  src: url('../fonts/clanot-news.otf');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'DIN';
-  src: url('/assets/fonts/clanot-thin.otf');
+  src: url('../fonts/clanot-thin.otf');
   font-weight: 300;
 }
 
