@@ -7,6 +7,7 @@ import createHistory from 'history/createBrowserHistory';
 import App from './components/App';
 import appReducer from './reducer';
 import actions, { NAVIGATE } from './actions';
+import {isMobileViewport} from '../common/config'
 
 // Remove .html and map / to index
 const getPageNameFromPath = (path) => {
@@ -37,10 +38,11 @@ const historyManager = store => {
 }
 
 let reloadTimeout;
+let wasMobileViewport = isMobileViewport();
 window.addEventListener('resize', function () {
   clearTimeout(reloadTimeout);
   reloadTimeout = setTimeout(() => {
-    window.location.reload();
+    if (wasMobileViewport != isMobileViewport()) window.location.reload();
   }, 200);
 });
 
