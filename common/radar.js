@@ -45,6 +45,8 @@ const createRevisionsFromFiles = (fileNames) => (
           reject(err);
         } else {
           const fm = frontmatter(data);
+          // prepend subfolder to links
+          fm.body = fm.body.replace(/\]\(\//g, '](/techradar/')
           checkAttributes(fileName, fm.attributes);
           resolve({
             ...itemInfoFromFilename(fileName),
