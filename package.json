@@ -46,5 +46,9 @@
     "redux": "3.6.0",
     "walk": "2.3.9",
     "webpack": "2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
   }
 }
