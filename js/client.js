@@ -11,11 +11,11 @@ import {isMobileViewport} from '../common/config'
 
 // Remove .html and map / to index
 const getPageNameFromPath = (path) => {
-  if (path === path.sep) {
+  if (path === '/') {
     return 'index';
   }
   return path.substring(1, path.length - 5);
-}
+};
 
 const historyManager = store => {
   const history = createHistory({
@@ -37,7 +37,7 @@ const historyManager = store => {
     }
     return next(action);
   }
-}
+};
 
 let reloadTimeout;
 let wasMobileViewport = isMobileViewport();

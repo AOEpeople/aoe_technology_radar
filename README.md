@@ -57,3 +57,4 @@ If an item is overwritten in a new release, the attributes from the new item are
 -  [ ] Add mobile navigation and search
 -  [ ] Create more react components for already existing CSS comps
 -  [ ] Refactor hardcoded subfolder in routing
+-  [ ] Unit test for radar generation :see_no_evil:
