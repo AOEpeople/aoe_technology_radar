@@ -31,6 +31,7 @@
     "css-mqpacker": "^5.0.1",
     "front-matter": "2.1.2",
     "fs-extra": "2.0.0",
+    "highlight.js": "9.10.0",
     "history": "4.5.1",
     "live-server": "1.2.0",
     "marked": "0.3.6",

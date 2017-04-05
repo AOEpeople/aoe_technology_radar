@@ -2,11 +2,15 @@ import fs, { readFile, outputFile } from 'fs-extra';
 import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
+import hljs from 'highlight.js';
 import {
   radarPath,
-  distPath,
   getAllMarkdownFiles,
 } from './file';
+
+marked.setOptions({
+  highlight: (code) => hljs.highlightAuto(code).value,
+});
 
 export const createRadar = async (tree) => {
   const fileNames = (await getAllMarkdownFiles(radarPath()));
@@ -31,7 +35,7 @@ const checkAttributes = (fileName, attributes) => {
   if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
     throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
   }
-}
+};
 
 const createRevisionsFromFiles = (fileNames) => (
   Promise.all(fileNames.map((fileName) => {
@@ -52,7 +56,7 @@ const createRevisionsFromFiles = (fileNames) => (
       });
     })
   }))
-)
+);
 
 const itemInfoFromFilename = (fileName) => {
   const [
@@ -72,7 +76,7 @@ const getAllReleases = (revisions) => (
     }
     return allReleases;
   }, []).sort()
-)
+);
 
 // const createQuadrants = (revisions) => (
 //   revisions.reduce((quadrants, revision) => {
@@ -104,7 +108,7 @@ const createItems = (revisions) => {
   return Object
     .values(itemMap)
     .sort((x, y) => (x.name > y.name ? 1 : -1));
-}
+};
 
 const addRevisionToItem = (item = {
   attributes: {
@@ -152,4 +156,4 @@ const flagWithIsNew = (items, allReleases) => (
 
 const isNewItem = (item, allReleases) => {
   return item.revisions.length > 1 && item.revisions[0].release === allReleases[allReleases.length-1]
-}
+};

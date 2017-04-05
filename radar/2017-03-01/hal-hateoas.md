@@ -8,16 +8,13 @@ Hypermedia As The Engine Of Application State or in short HATEOAS is a pattern t
 
 Let's assume we have a bank account and an action to deposit money on that account. Everything you need to know is that the account resource has an action for a deposit. The URL of that action can then fetched from the link attribute with the corresponding relation.
 
-`<account>`
-
-`    <account_number>12345</account_number>`
-
-`    <balance currency="usd">-25.00</balance>`
-
-`    <link rel="deposit" href="https://bank.example.com/account/12345/deposit" />`
-
-`</account>`
-
+```
+<account>
+    <account_number>12345</account_number>
+    <balance currency="usd">-25.00</balance>
+    <link rel="deposit" href="https://bank.example.com/account/12345/deposit" />
+</account>
+```
 
 Besides from HATEOAS there is an alternative implementation called Hypertext Application Language, in short HAL, which has much more features than the basic HATEOAS.
 

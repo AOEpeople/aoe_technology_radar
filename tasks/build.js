@@ -17,18 +17,8 @@ import { renderPage } from '../js/server';
       save(pageHtml, `${pageName}.html`);
     });
 
-    // pages.map((pageHtml) => {
-    //   save(pageHtml, `${pageName}.html`)
-    // });
-    // console.log(pages);
-    // outputRadar(radar);
-
-    // const radarByQuadrants = groupByQuadrants(radar);
-    // createStatic(radar);
-
     console.log('Built radar');
-    // console.log(JSON.stringify(radar, null, 2));
   } catch(e) {
     console.error('error:', e);
   }
-})()
+})();

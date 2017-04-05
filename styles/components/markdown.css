@@ -46,6 +46,8 @@
 
   pre {
     overflow-x: auto;
+    padding: 10px;
+    background: var(--color-gray-dark);
     -webkit-overflow-scrolling: touch;
   }
 }
