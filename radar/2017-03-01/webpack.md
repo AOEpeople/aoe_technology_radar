@@ -8,17 +8,13 @@ quadrant:   tools
 
 In the following example, we define that JavaScript files should be handled by babel-loader, excluding the files from node_modules. The logic behind the process comes from the [loader](https://webpack.js.org/concepts/loaders/). You can find the right loader in [npm](https://www.npmjs.com/search?q=loader%20webpack&page=1&ranking=optimal).
 
-
-`{`
-
-`test: /\.js$/,`
-
-`loader: 'babel-loader',`
-
-`exclude: /node_modules/,`
-
-`},`
-
+```
+{
+    test: /\.js$/,
+    loader: 'babel-loader',
+    exclude: /node_modules/,
+}
+```
 
 On top of that you can use [plugins](https://webpack.js.org/plugins/) to optimize your bundle like uglifying your code or put your common libraries in a separate file.
 
