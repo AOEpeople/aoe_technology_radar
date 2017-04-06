@@ -1,9 +1,7 @@
 import React from 'react';
-import HeroHeadline from './HeroHeadline';
 import Badge from './Badge';
 import ItemList from './ItemList';
 import Link from './Link';
-import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';
 import { createAnimation, createAnimationRunner } from '../animation';
 
