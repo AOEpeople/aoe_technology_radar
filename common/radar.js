@@ -47,12 +47,17 @@ const createRevisionsFromFiles = (fileNames) => (
           const fm = frontmatter(data);
           // prepend subfolder to links
           fm.body = fm.body.replace(/\]\(\//g, '](/techradar/')
+
+          // add target attribute to external links
+          let html = marked(fm.body);
+          html = html.replace(/a href="http/g, 'a target="_blank" href="http')
+
           checkAttributes(fileName, fm.attributes);
           resolve({
             ...itemInfoFromFilename(fileName),
             ...fm.attributes,
             fileName,
-            body: marked(fm.body),
+            body: html
           });
         }
       });
