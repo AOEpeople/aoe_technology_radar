@@ -5,6 +5,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 
   &__nav,
   &__content {
@@ -20,6 +21,7 @@
   }
 
   &__nav {
+    background: var(--color-gray-dark);
     flex: 0 0 calc((100vw - 1200px) / 2 + 400px);
     &__inner {
       box-sizing: border-box;

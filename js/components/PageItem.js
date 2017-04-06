@@ -2,6 +2,7 @@ import React from 'react';
 import Badge from './Badge';
 import ItemList from './ItemList';
 import Link from './Link';
+import FooterEnd from './FooterEnd';
 import SetTitle from './SetTitle';
 import { createAnimation, createAnimationRunner } from '../animation';
 
@@ -58,14 +59,25 @@ class PageItem extends React.Component {
           opacity: '1',
         },
         400 + 100 * i
-      )))
+      ))),
+      footer: createAnimation({
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(-40px)',
+          opacity: '0',
+        }, {
+          transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+          transform: 'translateX(0px)',
+          opacity: '1',
+        },
+        600 + itemsInRing.length * 100
+      ),
     };
 
     this.animationsOut = {
       background: createAnimation(
         this.animationsIn.background.stateB,
         this.animationsIn.background.stateA,
-        0
+        300 + itemsInRing.length * 50
       ),
       navHeader: createAnimation(
         this.animationsIn.navHeader.stateB,
@@ -92,8 +104,17 @@ class PageItem extends React.Component {
           transform: 'translateX(40px)',
           opacity: '0',
         },
-        100 + 100 * i
-      )))
+        100 + 50 * i
+      ))),
+      footer: createAnimation(
+          this.animationsIn.text.stateB,
+          {
+            transition: 'opacity 150ms ease-out, transform 300ms ease-out',
+            transform: 'translateX(40px)',
+            opacity: '0',
+          },
+          200 + itemsInRing.length * 50
+      ),
     };
 
     if (props.leaving) { // entering from an other page
@@ -168,6 +189,9 @@ class PageItem extends React.Component {
                   </div>
                 </div>
               </ItemList>
+              <div className="item-page__footer" style={this.getAnimationState('footer')}>
+                <FooterEnd modifier="in-sidebar" />
+              </div>
             </div>
           </div>
           <div className="item-page__content" style={this.getAnimationState('background')}>
