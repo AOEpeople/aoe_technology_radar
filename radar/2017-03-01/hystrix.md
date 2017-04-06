@@ -14,4 +14,4 @@ Hystrix is a very powerful library for handling failures, fallbacks and latency 
 
 Beside from that purposes Hystrix also offers some helpful features like parallel and asynchronous execution, In-Request-Caching and other useful features for working with distributed systems.
 
-Another useful component that you are able to use with Hystrix is his powerful dashboard that give you the ability of real time monitoring of external dependencies and how they are behave. Alerting is also able with that powerful dashboard.
+Another useful component that you are able to use with Hystrix is his dashboard that give you the ability of real time monitoring of external dependencies and how they behave. Alerting is also able via the dashboard.
