@@ -49,7 +49,7 @@ class PageItem extends React.Component {
         },
         600
       ),
-      items: props.items.map((item, i) => (createAnimation({
+      items: itemsInRing.map((item, i) => (createAnimation({
           transform: 'translateX(-40px)',
           opacity: '0',
         }, {
