@@ -1,6 +1,6 @@
 ---
 title:      "Rest Assured (Testing)"
-ring:       trial
+ring:       assess
 quadrant:   tools
 
 ---

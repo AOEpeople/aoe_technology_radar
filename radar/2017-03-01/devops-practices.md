@@ -1,6 +1,6 @@
 ---
 title:      "Devops practices"
-ring:       trial
+ring:       adopt
 quadrant:   methods-and-patterns
 
 ---
