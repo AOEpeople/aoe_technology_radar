@@ -11,16 +11,17 @@
     color: var(--color-gray-normal);
   }
 
+  &--left {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+  }
+
   @media (--until-sm) {
     flex-direction: column;
     align-items: center;
     margin: 20px 0 0;
   }
-}
-
-.footer-end-left {
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .footer-social {

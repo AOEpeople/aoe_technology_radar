@@ -4,7 +4,7 @@ import { getItemPageNames, isMobileViewport } from '../../common/config';
 
 export default function FooterEnd({ items, pageName }) {
   return (
-        <div className={classNames('footer-end', {'footer-end-left': !isMobileViewport() && getItemPageNames(items).includes(pageName)})} >
+        <div className={classNames('footer-end', {'footer-end--left': !isMobileViewport() && getItemPageNames(items).includes(pageName)})} >
             <div className="footer-social">
                 <div className="footer-social__label">
                     <p>Follow us:</p>
