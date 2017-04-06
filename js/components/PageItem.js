@@ -117,12 +117,6 @@ class PageItem extends React.Component {
     }
   }
 
-  handleTransitionEnd = () => {
-    if (this.state.faded) {
-      this.props.onLeave();
-    }
-  };
-
   handleAnimationsUpdate = () => {
     this.setState(setAnimations(this.state, this.animationRunner.getState()));
   };
