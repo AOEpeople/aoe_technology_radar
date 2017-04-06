@@ -1,10 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { getItemPageNames, isMobileViewport } from '../../common/config';
 
-export default function FooterEnd({ items, pageName }) {
+export default function FooterEnd({modifier}) {
   return (
-        <div className={classNames('footer-end', {'footer-end--left': !isMobileViewport() && getItemPageNames(items).includes(pageName)})} >
+        <div className={classNames('footer-end', {[`footer-end__${modifier}`]: modifier})}>
             <div className="footer-social">
                 <div className="footer-social__label">
                     <p>Follow us:</p>
