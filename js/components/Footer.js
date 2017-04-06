@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Branding from './Branding';
+import FooterEnd from './FooterEnd';
 import { assetUrl, getItemPageNames, isMobileViewport } from '../../common/config';
 
 export default function Footer({ items, pageName }) {
@@ -14,6 +15,7 @@ export default function Footer({ items, pageName }) {
       AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers.
         </span>
       </Branding>
+      <FooterEnd/>
     </div>
   );
 }
