@@ -1,5 +1,5 @@
 ---
-title:      "Typo3 as a Framework"
+title:      "TYPO3 as a Framework"
 ring:       hold
 quadrant:   tools
 
