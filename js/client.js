@@ -8,6 +8,7 @@ import App from './components/App';
 import appReducer from './reducer';
 import actions, { NAVIGATE } from './actions';
 import {isMobileViewport} from '../common/config'
+import {track} from './analytics';
 
 // Remove .html and map / to index
 const getPageNameFromPath = (path) => {
@@ -59,6 +60,7 @@ const store = createStore(appReducer, preloadedState, applyMiddleware(historyMan
 
 const handleSetTitle = (title) => {
   document.title = `${title} | AOE Technology Radar`;
+  track();
 };
 
 render(
