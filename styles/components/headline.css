@@ -4,4 +4,8 @@
   color: var(--color-white);
   font-size: 20px;
   font-weight: normal;
+
+  &--dark {
+    color: var(--color-gray-light);
+  }
 }

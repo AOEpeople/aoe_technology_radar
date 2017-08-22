@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from './Link';
+import IsNew from './IsNew';
 
 export default function Item({ item, noLeadingBorder = false, active = false, style = {}}) {
   return (
@@ -12,7 +13,10 @@ export default function Item({ item, noLeadingBorder = false, active = false, st
       pageName={`${item.quadrant}/${item.name}`}
       style={style}
     >
-      <div className="item__title">{item.title}</div>
+      <div className="item__title">
+        {item.title}
+        <IsNew item={item} />
+      </div>
       {
         item.info && (
           <div className="item__info">{item.info}</div>
