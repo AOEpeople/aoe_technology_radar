@@ -15,8 +15,8 @@ Seeing this data as a stream of elements could allow to handle them piece by
 piece and only keeping as much of the data in-process as can currently be
 handled. 
 
-(http://doc.akka.io/docs/akka/current/scala/stream/index.html)[Akka Streams] is
-a (http://www.reactive-streams.org/)[Reactive Streams] implementation that
+[Akka Streams](http://doc.akka.io/docs/akka/current/scala/stream/index.html) is
+a [Reactive Streams](http://www.reactive-streams.org/) implementation that
 provides a very end-user friendly API for setting up streams for data
 processing that are bounded in resource usage and efficient.  It uses the Akka
 Actor Framework to execute these streams in an asynchronous and parallel
@@ -29,8 +29,6 @@ Our first trials with Akka Streams were promising but we have not implemented
 more complex services with it.
 
 We will continue looking into it together with the
-(/languages-and-frameworks/alpakka.html)[Alpakka] Connectors for integration
+[Alpakka](/languages-and-frameworks/alpakka.html) Connectors for integration
 work.
-
-
 
