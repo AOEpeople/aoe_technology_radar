@@ -6,14 +6,14 @@ quadrant:   languages-and-frameworks
 ---
 
 In our backend services we frequently encounter the task to transform data
-coming from and uploading to external sources and services. 
+coming from and uploading to external sources and services.
 
 Building more complex data transformation processes with Akka Actors has proven
 very difficult for us in the past.
 
 Seeing this data as a stream of elements could allow to handle them piece by
 piece and only keeping as much of the data in-process as can currently be
-handled. 
+handled.
 
 [Akka Streams](http://doc.akka.io/docs/akka/current/scala/stream/index.html) is
 a [Reactive Streams](http://www.reactive-streams.org/) implementation that
@@ -31,4 +31,3 @@ more complex services with it.
 We will continue looking into it together with the
 [Alpakka](/languages-and-frameworks/alpakka.html) Connectors for integration
 work.
-

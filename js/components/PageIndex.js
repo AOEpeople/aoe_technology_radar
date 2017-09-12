@@ -1,6 +1,7 @@
 import React from 'react';
 import { formatRelease } from '../date';
 
+import { featuredOnly } from '../../common/model';
 import HeroHeadline from './HeroHeadline';
 import QuadrantGrid from './QuadrantGrid';
 import Fadeable from './Fadeable';
@@ -22,7 +23,7 @@ export default function PageIndex({
           AOE Technology Radar
         </HeroHeadline>
       </div>
-      <QuadrantGrid items={items} />
+      <QuadrantGrid items={featuredOnly(items)} />
     </Fadeable>
   );
 }
