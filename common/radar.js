@@ -150,9 +150,6 @@ const flagWithIsNew = (items, allReleases) =>
     [],
   );
 
-const isNewItem = (item, allReleases) => {
-  return (
-    item.revisions.length === 0 ||
-    item.revisions[0].release === allReleases[allReleases.length - 1]
-  );
-};
+const isNewItem = (item, allReleases) =>
+  item.revisions.length === 0 ||
+  item.revisions[0].release === allReleases[allReleases.length - 1];
