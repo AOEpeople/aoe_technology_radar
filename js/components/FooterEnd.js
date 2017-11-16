@@ -17,7 +17,7 @@ export default function FooterEnd({modifier}) {
                 </div>
             </div>
             <div className="footer-copyright">
-                <p><a href="https://www.aoe.com/en/copyright-meta/legal-information.html" target="_blank">Legal Information</a></p>
+                <p><a href="https://www.haufegroup.com/de/impressum" target="_blank">Legal Information</a></p>
             </div>
         </div>
   );

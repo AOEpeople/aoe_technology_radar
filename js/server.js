@@ -36,13 +36,13 @@ const renderFullPage = (html, pageTitle, preloadedState) => {
   <html>
     <head>
       <meta charset="utf-8">
-      <title>${pageTitle} | AOE Technology Radar</title>
+      <title>${pageTitle} | Haufe Technology Radar</title>
       <link rel="stylesheet" href="${assetUrl('css/styles.css')}"/>
       <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?c2sn1i">
       <link rel="shortcut icon" href="${assetUrl('favicon.ico')}" type="image/x-icon">
       <meta name="format-detection" content="telephone=no">
       <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
-      <meta property="og:title" content="${pageTitle} | AOE Technology Radar" />
+      <meta property="og:title" content="${pageTitle} | Haufe Technology Radar" />
       <meta property="og:image" content="${assetUrl('logo.svg')}" />
     </head>
     <body>

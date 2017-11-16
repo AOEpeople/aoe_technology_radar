@@ -1,6 +1,6 @@
-# AOE Technology Radar
+# Haufe Technology Radar
 
-A static site generator for AOE Technology Radar
+A static site generator for Haufe Technology Radar
 
 ## Installation
 

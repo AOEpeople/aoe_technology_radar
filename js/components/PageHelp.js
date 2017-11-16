@@ -6,8 +6,8 @@ import SetTitle from './SetTitle';
 export default function PageHelp({ leaving, onLeave, ...props }) {
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle {...props} title="How to use AOE Technology Radar" />
-      <HeroHeadline>How to use AOE Technology Radar</HeroHeadline>
+      <SetTitle {...props} title="How to use Haufe Technology Radar" />
+      <HeroHeadline>How to use Haufe Technology Radar</HeroHeadline>
       <div className="fullpage-content">
         <h3>Introduction</h3>
         <p>Technology is moving fast and new technologies and innovations appear continuously.</p>

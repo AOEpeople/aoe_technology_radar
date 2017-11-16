@@ -59,7 +59,7 @@ delete window.__TECHRADAR__;
 const store = createStore(appReducer, preloadedState, applyMiddleware(historyManager))
 
 const handleSetTitle = (title) => {
-  document.title = `${title} | AOE Technology Radar`;
+  document.title = `${title} | Haufe Technology Radar`;
   track();
 };
 
