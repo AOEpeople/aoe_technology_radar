@@ -1,7 +1,7 @@
 ---
 title:      "Typescript"
 ring:       assess
-quadrant:   languages-and-frameworks
+quadrant:   data-science-and-analytics
 
 ---
 
@@ -17,6 +17,6 @@ TypeScript continues to be actively developed by Microsoft and is also well-Inte
 
 The excellent structure and the possibilities for extension make it a good choice to consider for larger JavaScript projects.
 
-Typescript was the choice for [Angular 2+](/languages-and-frameworks/angular-2.html) and one can assume that it will get more traction with the success of Angular 2 in the future.
+Typescript was the choice for [Angular 2+](/data-science-and-analytics/angular-2.html) and one can assume that it will get more traction with the success of Angular 2 in the future.
 
 There are also projects that support Typescript „code execution“ on the server such as [ts-node](https://www.npmjs.com/package/ts-node).

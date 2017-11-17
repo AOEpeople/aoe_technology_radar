@@ -31,7 +31,7 @@ const checkAttributes = (fileName, attributes) => {
     throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
   }
 
-  const quadrants = ['languages-and-frameworks', 'methods-and-patterns', 'platforms-and-aoe-services', 'tools'];
+  const quadrants = ['data-science-and-analytics', 'methods-and-patterns', 'platforms-and-aoe-services', 'tools'];
   if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
     throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
   }

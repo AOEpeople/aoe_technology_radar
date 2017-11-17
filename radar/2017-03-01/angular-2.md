@@ -1,7 +1,7 @@
 ---
 title:      "Angular 2"
 ring:       assess
-quadrant:   languages-and-frameworks
+quadrant:   data-science-and-analytics
 
 ---
 

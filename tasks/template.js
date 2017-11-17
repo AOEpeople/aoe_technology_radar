@@ -12,7 +12,7 @@ const templateFolder = 'templates';
 export const vars = (vars) => ({
   translate: (text) => {
     const mappings = {
-      'languages-and-frameworks': 'Languages & Frameworks',
+      'data-science-and-analytics': 'Data Science & Analytics',
       'methods-and-patterns': 'Methods & Patterns',
       'platforms-and-aoe-services': 'Platforms and AOE Services',
       'tools': 'Tools',

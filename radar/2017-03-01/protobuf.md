@@ -1,7 +1,7 @@
 ---
 title:      "Protobuf"
 ring:       assess
-quadrant:   languages-and-frameworks
+quadrant:   data-science-and-analytics
 
 ---
 

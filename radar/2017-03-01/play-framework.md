@@ -1,11 +1,11 @@
 ---
 title:      "Play Framework"
 ring:       adopt
-quadrant:   languages-and-frameworks
+quadrant:   data-science-and-analytics
 
 ---
 
-The Play Framework is a lightweight (web)application framework for Java and [Scala](/languages-and-frameworks/scala-lang.html) programmers.
+The Play Framework is a lightweight (web)application framework for Java and [Scala](/data-science-and-analytics/scala-lang.html) programmers.
 
 A developer can choose from different modules to include necessary functionality such s accessing http resources, databases, and so on. As a consequence, the developer can choose, and is not distracted by or clobbered with irrelevant things. This approach is considered as minimalistic, but it is easy to include necessary functionality.
 

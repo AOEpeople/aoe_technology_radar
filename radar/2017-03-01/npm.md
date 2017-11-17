@@ -15,7 +15,7 @@ With [shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) you have a robust too
 For each package you have to classify your dependencies:
 
 -   dependencies are needed for use without the need of pre compiling, e.g. [lodash](https://lodash.com/)
--   devDependencies are needed for development only, e.g. testing frameworks or pre compiler e.g. [babel](/languages-and-frameworks/babel.html)
+-   devDependencies are needed for development only, e.g. testing frameworks or pre compiler e.g. [babel](/data-science-and-analytics/babel.html)
 -   peerDependencies you have to provide for using the package
 
 With [scripts](https://docs.npmjs.com/misc/scripts) you get support for the most common build lifecycle steps, e.g. build, start, test ...
@@ -23,4 +23,4 @@ With [scripts](https://docs.npmjs.com/misc/scripts) you get support for the mo
 Other useful features:
 
 -   mirror support for your own repository (e.g. [artifactory](/platforms-and-aoe-services/artifactory.html))
--   can be used for server and client JavaScript development (see [node.js](/languages-and-frameworks/node-js.html) )
+-   can be used for server and client JavaScript development (see [node.js](/data-science-and-analytics/node-js.html) )

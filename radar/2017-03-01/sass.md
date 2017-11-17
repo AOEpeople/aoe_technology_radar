@@ -1,7 +1,7 @@
 ---
 title:      "SASS"
 ring:       adopt
-quadrant:   languages-and-frameworks
+quadrant:   data-science-and-analytics
 
 ---
 

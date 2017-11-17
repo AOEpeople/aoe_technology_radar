@@ -1,5 +1,5 @@
 export const quadrants = [
-  'languages-and-frameworks',
+  'data-science-and-analytics',
   'methods-and-patterns',
   'platforms-and-aoe-services',
   'tools',
@@ -30,7 +30,7 @@ export const rings = [
 ];
 
 const messages = {
-  'languages-and-frameworks': 'Languages & Frameworks',
+  'data-science-and-analytics': 'Data Science & Analytics',
   'methods-and-patterns': 'Methods & Patterns',
   'platforms-and-aoe-services': 'Platforms and AOE Services',
   'tools': 'Tools',
