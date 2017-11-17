@@ -43,7 +43,7 @@ const renderFullPage = (html, pageTitle, preloadedState) => {
       <meta name="format-detection" content="telephone=no">
       <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
       <meta property="og:title" content="${pageTitle} | Haufe Technology Radar" />
-      <meta property="og:image" content="${assetUrl('logo.svg')}" />
+      <meta property="og:image" content="${assetUrl('haufe-logo.jpg')}" />
     </head>
     <body>
       <div id="root">${html}</div>
