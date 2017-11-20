@@ -1,6 +1,6 @@
 ---
 title:      "AWS Lambda"
-ring:       trial
+ring:       productize
 quadrant:   platforms-and-partners
 
 ---

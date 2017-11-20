@@ -1,6 +1,6 @@
 ---
 title:      "Job DSL (Jenkins)"
-ring:       trial
+ring:       productize
 quadrant:   ui-and-devices
 
 ---

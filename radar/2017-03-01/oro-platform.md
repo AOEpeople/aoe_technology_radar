@@ -1,6 +1,6 @@
 ---
 title:      "Oro Platform"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

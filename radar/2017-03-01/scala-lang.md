@@ -1,6 +1,6 @@
 ---
 title:      "Scala Lang"
-ring:       trial
+ring:       productize
 quadrant:   data-science-and-analytics
 
 ---

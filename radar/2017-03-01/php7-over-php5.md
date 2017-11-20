@@ -1,6 +1,6 @@
 ---
 title:      "PHP7 over PHP5"
-ring:       adopt
+ring:       discover
 quadrant:   data-science-and-analytics
 
 ---

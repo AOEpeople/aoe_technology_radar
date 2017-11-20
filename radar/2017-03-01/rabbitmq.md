@@ -1,6 +1,6 @@
 ---
 title:      "RabbitMQ"
-ring:       trial
+ring:       productize
 quadrant:   ui-and-devices
 
 ---

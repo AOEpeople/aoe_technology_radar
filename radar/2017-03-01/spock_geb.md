@@ -1,6 +1,6 @@
 ---
 title:      "Spock + Geb"
-ring:       adopt
+ring:       discover
 quadrant:   data-science-and-analytics
 
 ---

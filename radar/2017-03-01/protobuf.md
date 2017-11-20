@@ -1,6 +1,6 @@
 ---
 title:      "Protobuf"
-ring:       assess
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

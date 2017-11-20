@@ -1,6 +1,6 @@
 ---
 title:      "Webpack"
-ring:       trial
+ring:       productize
 quadrant:   ui-and-devices
 
 ---

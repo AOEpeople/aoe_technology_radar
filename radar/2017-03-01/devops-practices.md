@@ -1,6 +1,6 @@
 ---
 title:      "Devops practices"
-ring:       adopt
+ring:       discover
 quadrant:   infrastructure-and-operational-technology
 
 ---

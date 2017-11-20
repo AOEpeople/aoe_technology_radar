@@ -1,6 +1,6 @@
 ---
 title:      "Elasticsearch"
-ring:       trial
+ring:       productize
 quadrant:   platforms-and-partners
 
 ---

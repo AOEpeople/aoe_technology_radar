@@ -1,6 +1,6 @@
 ---
 title:      "Artifactory"
-ring:       trial
+ring:       productize
 quadrant:   platforms-and-partners
 
 ---

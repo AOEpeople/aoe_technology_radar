@@ -1,6 +1,6 @@
 ---
 title:      "Spring Boot"
-ring:       assess
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

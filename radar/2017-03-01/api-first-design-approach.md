@@ -1,6 +1,6 @@
 ---
 title:      "API-First Design Approach"
-ring:       trial
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

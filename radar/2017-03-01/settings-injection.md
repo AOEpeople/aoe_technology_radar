@@ -1,6 +1,6 @@
 ---
 title:      "Settings Injection"
-ring:       adopt
+ring:       discover
 quadrant:   infrastructure-and-operational-technology
 
 ---

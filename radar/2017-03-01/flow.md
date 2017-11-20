@@ -1,6 +1,6 @@
 ---
 title:      "Flow"
-ring:       hold
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

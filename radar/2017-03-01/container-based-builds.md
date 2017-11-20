@@ -1,6 +1,6 @@
 ---
 title:      "Container-based builds"
-ring:       assess
+ring:       scale
 quadrant:   infrastructure-and-operational-technology
 
 ---

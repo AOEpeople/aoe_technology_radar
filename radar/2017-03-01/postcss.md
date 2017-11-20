@@ -1,6 +1,6 @@
 ---
 title:      "PostCSS"
-ring:       adopt
+ring:       discover
 quadrant:   data-science-and-analytics
 
 ---

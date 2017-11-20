@@ -1,6 +1,6 @@
 ---
 title:      "Explicit test strategy"
-ring:       assess
+ring:       scale
 quadrant:   infrastructure-and-operational-technology
 
 ---

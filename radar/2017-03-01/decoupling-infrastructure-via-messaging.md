@@ -1,6 +1,6 @@
 ---
 title:      "Decoupling Infrastructure via Messaging"
-ring:       trial
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

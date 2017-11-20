@@ -10,7 +10,7 @@ import SetTitle from './SetTitle';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
-const rings = ['all', 'assess', 'trial', 'hold', 'adopt'];
+const rings = ['all', 'discover', 'productize', 'scale'];
 
 const containsSearchTerm = (text = '', term = '') => {
   // TODO search refinement

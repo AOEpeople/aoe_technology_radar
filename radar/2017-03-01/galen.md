@@ -1,6 +1,6 @@
 ---
 title:      "Galen"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

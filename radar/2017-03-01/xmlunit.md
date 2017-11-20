@@ -1,6 +1,6 @@
 ---
 title:      "XMLUnit"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

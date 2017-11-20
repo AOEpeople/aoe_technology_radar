@@ -1,6 +1,6 @@
 ---
 title:      "Play Framework"
-ring:       adopt
+ring:       discover
 quadrant:   data-science-and-analytics
 
 ---

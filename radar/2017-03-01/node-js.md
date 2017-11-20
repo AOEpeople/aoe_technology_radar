@@ -1,6 +1,6 @@
 ---
 title:      "node.js"
-ring:       trial
+ring:       productize
 quadrant:   data-science-and-analytics
 
 ---

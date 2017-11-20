@@ -1,6 +1,6 @@
 ---
 title:      "Styleguide Driven Development"
-ring:       trial
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

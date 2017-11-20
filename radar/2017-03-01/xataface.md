@@ -1,6 +1,6 @@
 ---
 title:      "Xataface"
-ring:       hold
+ring:       scale
 quadrant:   platforms-and-partners
 
 ---

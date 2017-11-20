@@ -1,6 +1,6 @@
 ---
 title:      "Evil User Stories"
-ring:       assess
+ring:       scale
 quadrant:   infrastructure-and-operational-technology
 
 ---

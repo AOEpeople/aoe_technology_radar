@@ -1,6 +1,6 @@
 ---
 title:      "Grunt"
-ring:       hold
+ring:       scale
 quadrant:   ui-and-devices
 ---
 

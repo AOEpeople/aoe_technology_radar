@@ -26,7 +26,7 @@ export const createRadar = async (tree) => {
 };
 
 const checkAttributes = (fileName, attributes) => {
-  const rings = ['adopt', 'trial', 'assess', 'hold'];
+  const rings = ['discover', 'productize', 'scale'];
   if (attributes.ring && !rings.includes(attributes.ring)) {
     throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
   }

@@ -1,6 +1,6 @@
 ---
 title:      "Pin external dependencies"
-ring:       adopt
+ring:       discover
 quadrant:   infrastructure-and-operational-technology
 
 ---

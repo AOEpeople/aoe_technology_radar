@@ -1,6 +1,6 @@
 ---
 title:      "Maintain third party packages"
-ring:       hold
+ring:       scale
 quadrant:   platforms-and-partners
 
 ---

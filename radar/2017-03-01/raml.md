@@ -1,6 +1,6 @@
 ---
 title:      "RAML"
-ring:       adopt
+ring:       discover
 quadrant:   ui-and-devices
 
 ---

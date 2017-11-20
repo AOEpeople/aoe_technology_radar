@@ -1,6 +1,6 @@
 ---
 title:      "Pair working"
-ring:       trial
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

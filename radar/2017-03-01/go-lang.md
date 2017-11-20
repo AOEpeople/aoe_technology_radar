@@ -1,6 +1,6 @@
 ---
 title:      "Go / Golang"
-ring:       assess
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

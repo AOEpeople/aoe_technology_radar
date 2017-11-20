@@ -1,6 +1,6 @@
 ---
 title:      "Bower"
-ring:       hold
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

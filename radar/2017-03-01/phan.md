@@ -1,6 +1,6 @@
 ---
 title:      "phan"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

@@ -1,6 +1,6 @@
 ---
 title:      "Typescript"
-ring:       assess
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

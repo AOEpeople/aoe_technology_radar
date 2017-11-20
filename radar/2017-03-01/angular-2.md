@@ -1,6 +1,6 @@
 ---
 title:      "Angular 2"
-ring:       assess
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

@@ -1,6 +1,6 @@
 ---
 title:      "Docker"
-ring:       assess
+ring:       scale
 quadrant:   platforms-and-partners
 
 ---

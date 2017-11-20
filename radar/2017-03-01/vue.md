@@ -1,6 +1,6 @@
 ---
 title:      "Vue.js"
-ring:       assess
+ring:       scale
 quadrant:   data-science-and-analytics
 
 ---

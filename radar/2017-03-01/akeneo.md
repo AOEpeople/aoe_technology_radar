@@ -1,6 +1,6 @@
 ---
 title:      "Akeneo"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

@@ -1,6 +1,6 @@
 ---
 title:      "Microservices"
-ring:       trial
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

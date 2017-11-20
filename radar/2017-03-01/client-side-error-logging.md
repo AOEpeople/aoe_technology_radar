@@ -1,6 +1,6 @@
 ---
 title:      "Client-side error logging"
-ring:       trial
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

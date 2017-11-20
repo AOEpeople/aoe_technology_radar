@@ -1,6 +1,6 @@
 ---
 title:      "Neo4j"
-ring:       assess
+ring:       scale
 quadrant:   platforms-and-partners
 
 ---

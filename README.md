@@ -24,7 +24,7 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
   ```
   ---
   title:      "React"
-  ring:       adopt
+  ring:       discover
   quadrant:   data-science-and-analytics
   ---
 
@@ -35,7 +35,7 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
 Following front-matter attributes are possible:
 - **title**: Name of the Item
 - **quadrant**: Quadrant. One of `data-science-and-analytics`, `infrastructure-and-operational-technology`, `platforms-and-partners`, `ui-and-devices`
-- **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
+- **ring**: Ring section in radar. One of `trial`, `assess`, `discover`, `hold`
 - **info**: (optional) A short textual description of the item (visible in overview pages)
 
 The name of the .md file acts as item identifier and may overwrite items with the same name from older releases.

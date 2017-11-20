@@ -1,6 +1,6 @@
 ---
 title:      "Infrastructure as Code"
-ring:       adopt
+ring:       discover
 quadrant:   infrastructure-and-operational-technology
 
 ---

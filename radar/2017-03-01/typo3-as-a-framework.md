@@ -1,6 +1,6 @@
 ---
 title:      "TYPO3 as a Framework"
-ring:       hold
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

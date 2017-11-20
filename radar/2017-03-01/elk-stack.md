@@ -1,6 +1,6 @@
 ---
 title:      "ELK Stack"
-ring:       adopt
+ring:       discover
 quadrant:   platforms-and-partners
 
 ---

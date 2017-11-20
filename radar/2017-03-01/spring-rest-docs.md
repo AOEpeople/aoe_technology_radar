@@ -1,6 +1,6 @@
 ---
 title:      "Spring REST Docs"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

@@ -1,6 +1,6 @@
 ---
 title:      "Ant"
-ring:       hold
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

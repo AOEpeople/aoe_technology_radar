@@ -1,6 +1,6 @@
 ---
 title:      "Strategic Domain Driven Design"
-ring:       adopt
+ring:       discover
 quadrant:   infrastructure-and-operational-technology
 
 ---

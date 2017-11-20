@@ -1,6 +1,6 @@
 ---
 title:      "Rest Assured (Testing)"
-ring:       assess
+ring:       scale
 quadrant:   ui-and-devices
 
 ---
