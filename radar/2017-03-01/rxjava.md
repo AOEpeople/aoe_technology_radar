@@ -1,7 +1,7 @@
 ---
 title:      "RxJava"
 ring:       trial
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 

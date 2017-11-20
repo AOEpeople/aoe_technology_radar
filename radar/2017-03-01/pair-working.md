@@ -1,7 +1,7 @@
 ---
 title:      "Pair working"
 ring:       trial
-quadrant:   methods-and-patterns
+quadrant:   infrastructure-and-operational-technology
 
 ---
 We summarized the practices of pair programming and administrating as pair working.

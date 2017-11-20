@@ -1,7 +1,7 @@
 ---
 title:      "Oro Platform"
 ring:       assess
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 
@@ -11,6 +11,6 @@ One of the central features is that entities, which are to be managed within the
 
 As with every framework or application, the general-purpose goals and abstraction comes with drawbacks: In fact, OroPlatform modifies and extends the common way of doing things in Symfony in several places, which makes the developer's life hard at times. Also, the UI and package managing are set in such a way that they are hard to extend or replace. The many additional abstraction layers can result in decreased performance.
 
-On the other hand, OroPlatform gives you a good headstart for prototyping and frees you from rebuilding common requirements - which makes it a relevant choice for business applications with the need to manage several entities in a backend. Also, projects such [Akeneo](/tools/akeneo.html) or OroCRM use OroPlatform with success.
+On the other hand, OroPlatform gives you a good headstart for prototyping and frees you from rebuilding common requirements - which makes it a relevant choice for business applications with the need to manage several entities in a backend. Also, projects such [Akeneo](/ui-and-devices/akeneo.html) or OroCRM use OroPlatform with success.
 
 Since the project is still young, the future development and improvements need to be watched. We classified the Framework as ***Assess***.

@@ -1,7 +1,7 @@
 ---
 title:      "Keycloak"
 ring:       trial
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 User management, authentication, authorization and Single Sign-On are part of most distributed systems nowadays. Building these sensitive and serious parts on your own might be a problem due to knowledge- and budget restrictions. Because of growing requirements in that field (social logins, single sign-on, federation, two-factor authentication, etc.), as well as growing security concerns, building these things on your own has become more challenging during the past decade.

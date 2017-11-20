@@ -13,9 +13,9 @@ export const vars = (vars) => ({
   translate: (text) => {
     const mappings = {
       'data-science-and-analytics': 'Data Science & Analytics',
-      'methods-and-patterns': 'Methods & Patterns',
-      'platforms-and-aoe-services': 'Platforms and AOE Services',
-      'tools': 'Tools',
+      'infrastructure-and-operational-technology': 'Infrastructure & Operational Technology',
+      'platforms-and-partners': 'Platforms & Partners',
+      'ui-and-devices': 'UI & Devices',
     };
 
     return mappings[text.trim()] || '-';

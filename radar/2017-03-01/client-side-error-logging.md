@@ -1,7 +1,7 @@
 ---
 title:      "Client-side error logging"
 ring:       trial
-quadrant:   methods-and-patterns
+quadrant:   infrastructure-and-operational-technology
 
 ---
 

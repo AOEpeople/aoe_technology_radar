@@ -34,7 +34,7 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
 
 Following front-matter attributes are possible:
 - **title**: Name of the Item
-- **quadrant**: Quadrant. One of `data-science-and-analytics`, `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
+- **quadrant**: Quadrant. One of `data-science-and-analytics`, `infrastructure-and-operational-technology`, `platforms-and-partners`, `ui-and-devices`
 - **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
 - **info**: (optional) A short textual description of the item (visible in overview pages)
 

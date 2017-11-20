@@ -1,7 +1,7 @@
 ---
 title:      "Datadog"
 ring:       assess
-quadrant:   platforms-and-aoe-services
+quadrant:   platforms-and-partners
 
 ---
 

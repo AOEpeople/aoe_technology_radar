@@ -1,7 +1,7 @@
 ---
 title:      "HAL / HATEOAS"
 ring:       assess
-quadrant:   methods-and-patterns
+quadrant:   infrastructure-and-operational-technology
 
 ---
 Hypermedia As The Engine Of Application State or in short HATEOAS is a pattern that helps to organize dependencies and resources in a RESTful API. The basic idea of HATEOAS is that an API consumer do not have to know how dependencies of resources are connected and how to get them. A consumer must only be familiar with the basics of hypermedia.

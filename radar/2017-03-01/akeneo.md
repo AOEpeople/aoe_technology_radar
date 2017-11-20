@@ -1,7 +1,7 @@
 ---
 title:      "Akeneo"
 ring:       assess
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 

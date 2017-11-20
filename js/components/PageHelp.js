@@ -31,7 +31,7 @@ export default function PageHelp({ leaving, onLeave, ...props }) {
         <ul>
           <li><strong>Data Science & Analytics:</strong> All data related technologies and trends like BigData, Business Intelligence, Artifical Intelligence (AI,KI) and Machine Learning are placed here.</li>
           <li><strong>Infrastructure & Operational Technology:</strong> Technologies reaching from Cloud over DevOps, Containerization, Continous Integration/Delivery/Deployment, Build Pipelines, Monitoring, Logging</li>
-          <li><strong>Platform & Partners:</strong> Technologies useful for product/system collaboration and composable new product forms like APIs, API Management, Partner Platform, Collaboration, Integration </li>
+          <li><strong>Platforms & Partners:</strong> Technologies useful for product/system collaboration and composable new product forms like APIs, API Management, Partner Platform, Collaboration, Integration </li>
           <li><strong>UI & Devices</strong> New forms of user interfaces like voice (Amazon Alexa), Chatbots, Virtual/Artifical/Mixed reality devices, Mobile devices and also other IoT devices including Smart Home</li>
         </ul>
         <p>Each of the items is classified in one of these rings:</p>

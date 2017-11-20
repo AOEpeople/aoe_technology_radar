@@ -1,7 +1,7 @@
 ---
 title:      "imgix"
 ring:       assess
-quadrant:   platforms-and-aoe-services
+quadrant:   platforms-and-partners
 
 ---
 [Imgix](https://www.imgix.com/) is an SaaS solution for delivering and processing images. When developing responsive websites, you will quickly reach the point where you need various versions of your images to achieve a good responsive user interface. You want high quality versions for retina displays but small versions for mobile devices with a slow Internet connection.

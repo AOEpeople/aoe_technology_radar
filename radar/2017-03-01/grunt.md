@@ -1,7 +1,7 @@
 ---
 title:      "Grunt"
 ring:       hold
-quadrant:   tools
+quadrant:   ui-and-devices
 ---
 
 
@@ -9,10 +9,10 @@ Grunt is a JavaScript task runner that automates repetitive tasks. While Grunt s
 other alternatives such as [Gulp](http://gulpjs.com/) emerged in the meantime and proved to be a better pick for the
 majority of our teams.
 
-We have two main reasons for discarding Grunt in favor of other tools:
+We have two main reasons for discarding Grunt in favor of other ui-and-devices:
 
 ### Speed
-If a decent amount of tasks is reached, Grunt is known to run slower than other tools, because it heavily relies on I/O operations and
+If a decent amount of tasks is reached, Grunt is known to run slower than other ui-and-devices, because it heavily relies on I/O operations and
 always stores the result of one task as files on the disk.
 
 ### Configuration

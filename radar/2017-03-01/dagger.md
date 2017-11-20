@@ -1,7 +1,7 @@
 ---
 title:      "Dagger"
 ring:       adopt
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 

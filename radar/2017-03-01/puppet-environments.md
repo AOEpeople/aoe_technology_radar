@@ -1,7 +1,7 @@
 ---
 title:      "Puppet Environments"
 ring:       assess
-quadrant:   platforms-and-aoe-services
+quadrant:   platforms-and-partners
 
 ---
 
@@ -10,7 +10,7 @@ Puppet
 
 Puppet is an Open Source configuration management tool. It is used by a wide range of different companies world-wide, e.g. the Wikimedia Foundation, Mozilla, Reddit, CERN, Dell, Rackspace, Twitter, the New York Stock Exchange, PayPal, Disney, Citrix Systems, Spotify, Oracle, the University of California Los Angeles, the University of North Texas, QVC, Intel, Google and others.
 
-Puppet has been the basic tool to address Continuous Configuration Automation (CCA) in AOE's [Infrastructure as Code](/methods-and-patterns/infrastructure-as-code.html) strategy (IaC) for more than 4 years.
+Puppet has been the basic tool to address Continuous Configuration Automation (CCA) in AOE's [Infrastructure as Code](/infrastructure-and-operational-technology/infrastructure-as-code.html) strategy (IaC) for more than 4 years.
 
 Puppet Environments
 -------------------

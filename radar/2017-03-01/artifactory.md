@@ -1,7 +1,7 @@
 ---
 title:      "Artifactory"
 ring:       trial
-quadrant:   platforms-and-aoe-services
+quadrant:   platforms-and-partners
 
 ---
 JFrog [Artifactory ](https://www.jfrog.com/open-source/)is a software tool, which, in the end, manages and stores (binary) artifacts.

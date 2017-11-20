@@ -1,7 +1,7 @@
 ---
 title:      "Evil User Stories"
 ring:       assess
-quadrant:   methods-and-patterns
+quadrant:   infrastructure-and-operational-technology
 
 ---
 With Evil User Stories, we aim to raise the project teams' (PO, Dev-Team, QA) and clients' awareness for security topics and introduce a security-by-design principle.

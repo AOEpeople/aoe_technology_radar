@@ -1,7 +1,7 @@
 ---
 title:      "Hystrix "
 ring:       assess
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 

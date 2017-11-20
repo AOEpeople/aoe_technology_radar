@@ -1,7 +1,7 @@
 ---
 title:      "Galen"
 ring:       assess
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 

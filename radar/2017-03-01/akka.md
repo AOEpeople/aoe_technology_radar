@@ -4,7 +4,7 @@ ring:       trial
 quadrant:   data-science-and-analytics
 
 ---
-With the growing adoption of microservice-based architecures, the interest in frameworks and tools that make building systems that follow the reactive manifesto possible has increased.
+With the growing adoption of microservice-based architecures, the interest in frameworks and ui-and-devices that make building systems that follow the reactive manifesto possible has increased.
 
 Akka provides you a toolkit and runtime based on the Actor model known from Erlang to reach this goal.
 

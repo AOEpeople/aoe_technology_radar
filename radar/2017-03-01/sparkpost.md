@@ -1,7 +1,7 @@
 ---
 title:      "SparkPost"
 ring:       assess
-quadrant:   platforms-and-aoe-services
+quadrant:   platforms-and-partners
 
 ---
 Sparkpost is an SaaS service for E-Mail delivery and E-Mail templating that can be used to send E-Mails by calling an API.

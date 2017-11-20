@@ -1,8 +1,8 @@
 export const quadrants = [
-  'data-science-and-analytics',
-  'methods-and-patterns',
-  'platforms-and-aoe-services',
-  'tools',
+    'data-science-and-analytics',
+    'infrastructure-and-operational-technology', // Infrastructure & Operational Technology 'methods-and-patterns',
+    'platforms-and-partners', // Platform & Partners platforms-and-aoe-services
+    'ui-and-devices', // UI & Devices tools
 ];
 
 export function assetUrl(file) {
@@ -31,9 +31,9 @@ export const rings = [
 
 const messages = {
   'data-science-and-analytics': 'Data Science & Analytics',
-  'methods-and-patterns': 'Methods & Patterns',
-  'platforms-and-aoe-services': 'Platforms and AOE Services',
-  'tools': 'Tools',
+  'infrastructure-and-operational-technology': 'Infrastructure & Operational Technology',
+  'platforms-and-partners': 'Platform & Partners',
+  'ui-and-devices': 'UI & Devices',
 };
 
 export const translate = (key) => (messages[key] || '-');

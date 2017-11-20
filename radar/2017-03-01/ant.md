@@ -1,7 +1,7 @@
 ---
 title:      "Ant"
 ring:       hold
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 Apache Ant was build in 1997 to have something like Make in the C/C++ world for Java. Ant uses xml files to describe steps required to produce executable artifacts from source code. The main concepts of tasks and targets are programmable in an imperative style.

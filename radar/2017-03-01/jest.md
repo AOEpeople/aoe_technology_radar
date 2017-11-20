@@ -1,7 +1,7 @@
 ---
 title:      "Jest "
 ring:       assess
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 [Jest](https://facebook.github.io/jest/) is a javascript testing framework by facebook to test javascript code **and** react applications / components.

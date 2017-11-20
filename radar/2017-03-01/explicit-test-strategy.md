@@ -1,7 +1,7 @@
 ---
 title:      "Explicit test strategy"
 ring:       assess
-quadrant:   methods-and-patterns
+quadrant:   infrastructure-and-operational-technology
 
 ---
 According to the [ISTQB Glossar](http://glossar.german-testing-board.info/#teststrategie)- a **Test Strategy** is an abstract specification that comprises the designated test levels (unit, integration, system and acceptance tests) and the implementation of each level for a whole organization or for an application. This test strategy can be applicable to one or more projects.

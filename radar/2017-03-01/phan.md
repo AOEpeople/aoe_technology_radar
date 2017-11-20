@@ -1,7 +1,7 @@
 ---
 title:      "phan"
 ring:       assess
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
 Phan is a static code analyzer for PHP7, which is very fast, since it uses the PHP 7 AST (abstract syntax tree). Phan basically offers some of the safety that otherwise only compiled type-safe languages have - such as checking function references and return types.

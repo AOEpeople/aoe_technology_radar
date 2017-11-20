@@ -1,10 +1,10 @@
 ---
 title:      "Webpack"
 ring:       trial
-quadrant:   tools
+quadrant:   ui-and-devices
 
 ---
-[Webpack](https://webpack.js.org/) is a web bundler for JavaScript applications. Instead of writing scripts to build and bundle your app like you would with [Gulp](/tools/gulp.html), you just define what files you want to load into your bundle.
+[Webpack](https://webpack.js.org/) is a web bundler for JavaScript applications. Instead of writing scripts to build and bundle your app like you would with [Gulp](/ui-and-devices/gulp.html), you just define what files you want to load into your bundle.
 
 In the following example, we define that JavaScript files should be handled by babel-loader, excluding the files from node_modules. The logic behind the process comes from the [loader](https://webpack.js.org/concepts/loaders/). You can find the right loader in [npm](https://www.npmjs.com/search?q=loader%20webpack&page=1&ranking=optimal).
 
