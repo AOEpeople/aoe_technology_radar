@@ -1,8 +1,8 @@
 export const quadrants = [
     'data-science-and-analytics',
-    'infrastructure-and-operational-technology', // Infrastructure & Operational Technology 'methods-and-patterns',
-    'platforms-and-partners', // Platform & Partners platforms-and-aoe-services
-    'ui-and-devices', // UI & Devices tools
+    'infrastructure-and-operational-technology',
+    'platforms-and-partners',
+    'ui-and-devices',
 ];
 
 export function assetUrl(file) {
@@ -31,7 +31,7 @@ export const rings = [
 const messages = {
   'data-science-and-analytics': 'Data Science & Analytics',
   'infrastructure-and-operational-technology': 'Infrastructure & Operational Technology',
-  'platforms-and-partners': 'Platform & Partners',
+  'platforms-and-partners': 'Platforms & Partners',
   'ui-and-devices': 'UI & Devices',
 };
 

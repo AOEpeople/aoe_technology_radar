@@ -5,12 +5,17 @@ A static site generator for Haufe Technology Radar
 ## Installation
 
 ```
-> git clone git@github.com:AOEpeople/aoe_technology_radar.git
+> git clone https://github.com/Haufe-Lexware/aoe_technology_radar.git
 > cd aoe_technology_radar
 > npm install
 > npm run watch
 ```
 *A new browser tab should open up - wait until last command has finished and refresh.*
+
+## Original version
+
+The Haufe Technology radar is a fork of the AOE technology radar, that you can find on https://github.com/AOEpeople/aoe_technology_radar.
+Thanks a lot to AOE to provide such a cool tech radar implementation!
 
 ## Usage
 
@@ -23,7 +28,7 @@ The items are written in Markdown format (.md)
 Each file has a [front-matter](https://github.com/jxson/front-matter) header where the attributes of the item are listed:
   ```
   ---
-  title:      "React"
+  title:      "Machine Learning"
   ring:       discover
   quadrant:   data-science-and-analytics
   ---
@@ -35,26 +40,43 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header whe
 Following front-matter attributes are possible:
 - **title**: Name of the Item
 - **quadrant**: Quadrant. One of `data-science-and-analytics`, `infrastructure-and-operational-technology`, `platforms-and-partners`, `ui-and-devices`
-- **ring**: Ring section in radar. One of `trial`, `assess`, `discover`, `hold`
+- **ring**: Ring section in radar. One of `discover`, `productize`, `scale`
 - **info**: (optional) A short textual description of the item (visible in overview pages)
 
 The name of the .md file acts as item identifier and may overwrite items with the same name from older releases.
 
 If an item is overwritten in a new release, the attributes from the new item are merged with the old ones and a new history entry is created for that item.
 
-## Travis
-[![Travis](https://api.travis-ci.org/AOEpeople/aoe_technology_radar.svg?branch=master)](https://travis-ci.org/AOEpeople/aoe_technology_radar/)
+## Deployment
+
+The deployment is based on docker. Use the dockerfile in the project to create a haufetechradar docker image.
+
+``` 
+
+FROM node:7.10.1 as source
+WORKDIR /src/haufe-techradar
+COPY . ./
+RUN npm install
+RUN npm run build:all
+
+FROM nginx:1.13.5
+WORKDIR /opt/haufe-techradar
+COPY --from=source /src/haufe-techradar/dist .
+COPY default.template /etc/nginx/conf.d/default.template
+CMD /bin/bash -c "envsubst < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+
+```
+
+To run the image locally use:
+
+```
+
+docker build --no-cache -t haufetechradar .
+docker run -e SERVER_NAMES=localhost -p "8080:80" haufetechradar
+
+```
 
 ## Todos
 
--  [x] Add Icons
--  [x] Implement search
--  [ ] Finalize CSS
--  [x] Get contents for how-to-use page
--  [ ] Show item history on details (relevant with 2nd release)
--  [ ] Better semantic and SEO
--  [ ] Make mobile friendly
--  [ ] Add mobile navigation and search
--  [ ] Create more react components for already existing CSS comps
--  [ ] Refactor hardcoded subfolder in routing
--  [ ] Unit test for radar generation :see_no_evil:
+-  [ ] Work on the content 
+-  [ ] Implement circle diagram view of the data 
