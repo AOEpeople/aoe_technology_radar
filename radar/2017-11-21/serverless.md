@@ -1,7 +1,7 @@
 ---
-title:      "AWS Lambda"
-ring:       productize
-quadrant:   platforms-and-partners
+title:      "Serverless"
+ring:       discover
+quadrant:   infrastructure-and-operational-technology
 
 ---
 AWS Lambda is one of the exciting new "cloud-native" / serverless ways to run code without worrying about infrastructure. While it is possible to directly respond to web requests using the API Gateway, our teams are currently using AWS Lambda mostly for tasks outside the critical path. As a custom resource for CloudFormation, it allows us to manage all aspects of a deployment in an elegant way by simply deploying a new CloudFormation stack. Baking AMIs and doing green/blue switches are only two of the many use cases where AWS Lambda comes in very handy.
