@@ -67,6 +67,16 @@ const handleSetTitle = title => {
   track();
 };
 
+// FIXME!
+// This is a quiet ugly hack, that is needed to hydrate the react root correctly on mobile:
+// The main issue is, that we render different components based on the view port - which means that
+// the server-generated DOM differs from the DOM that would be rendered on mobile devices.
+// We therefore completely ignore the pre-rendered DOM on mobile and let the client render.
+// To solve this root of this issue, we need to remove the conditional renderings that check "isMobileViewport()"!
+if (isMobileViewport()) {
+  document.getElementById('root').innerHTML = '';
+}
+
 hydrate(
   <Provider store={store}>
     <App onSetTitle={handleSetTitle} />
