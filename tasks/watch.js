@@ -11,23 +11,21 @@ import {
   relativePath,
 } from '../common/file';
 
-
-const runBuild = (name) => (
-  exec(`npm run build:${name}`, (error, stdout, stderr) => {
+const runBuild = name =>
+  exec(`yarn run build:${name}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
     }
     console.log(stdout);
     console.error(stderr);
-  })
-);
+  });
 
-const watchBuild = (name) => (eventType, fileName) => runBuild(name);
+const watchBuild = name => (eventType, fileName) => runBuild(name);
 
 const options = {
   recursive: true,
-}
+};
 
 runBuild('all');
 
@@ -38,7 +36,7 @@ watch(assetsPath(), options, watchBuild('assets'));
 watch(radarPath(), options, watchBuild('pages'));
 
 const params = {
-    root: relativePath('dist'),
-    logLevel: 0, // 0 = errors only, 1 = some, 2 = lots
+  root: relativePath('dist'),
+  logLevel: 0, // 0 = errors only, 1 = some, 2 = lots
 };
 liveServer.start(params);

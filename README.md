@@ -7,8 +7,8 @@ A static site generator for AOE Technology Radar
 ```
 > git clone git@github.com:AOEpeople/aoe_technology_radar.git
 > cd aoe_technology_radar
-> npm install
-> npm run watch
+> yarn install
+> yarn watch
 ```
 
 _A new [browser tab](http://127.0.0.1:8080/techradar) should open up - wait
