@@ -1,6 +1,7 @@
 ---
 title:      "Webpack"
-ring:       trial
+ring:       adopt
 quadrant:   tools
-
 ---
+
+TODO!

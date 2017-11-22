@@ -1,6 +1,7 @@
 ---
-title:      "Jest "
-ring:       assess
+title:      "Jest"
+ring:       adopt
 quadrant:   tools
-
 ---
+
+TODO

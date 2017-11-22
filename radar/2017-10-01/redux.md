@@ -1,6 +1,7 @@
 ---
 title:      "Redux"
-ring:       trial
+ring:       adopt
 quadrant:   languages-and-frameworks
-
 ---
+
+TODO

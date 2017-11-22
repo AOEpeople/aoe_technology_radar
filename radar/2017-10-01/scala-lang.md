@@ -1,6 +1,7 @@
 ---
 title:      "Scala Lang"
-ring:       trial
+ring:       adopt
 quadrant:   languages-and-frameworks
-
 ---
+
+TODO
