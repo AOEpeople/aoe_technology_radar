@@ -31,7 +31,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "classnames": "2.2.5",
-    "cross-env": "^4.0.0",
+    "cross-env": "^5.1.1",
     "css-mqpacker": "^6.0.1",
     "front-matter": "2.3.0",
     "fs-extra": "4.0.2",
