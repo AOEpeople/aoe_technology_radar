@@ -1,7 +1,7 @@
 ---
 title:      "Docker"
 ring:       discover
-quadrant:   platforms-and-partners
+quadrant:   infrastructure-and-operational-technology
 
 ---
 

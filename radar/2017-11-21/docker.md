@@ -1,7 +1,7 @@
 ---
 title:      "Docker"
 ring:       scale
-quadrant:   platforms-and-partners
+quadrant:   infrastructure-and-operational-technology
 
 ---
 
@@ -15,4 +15,5 @@ Also, Docker allows us to keep our development setup much smaller and faster; in
 
 Backed by services such as [Kubernetes](/platforms-and-partners/kubernetes.html), we can deploy Docker containers on a flexible infrastructure and enable our developers to test their software more easily in different environments.
 
-Here at AOE, we assess Docker in different projects to become more flexible and faster, which increases our focus on development of even better and more stable software.
+Here at Haufe, we assess Docker in different projects to become more flexible and faster, which increases our focus on development of even better and more stable software.
+
