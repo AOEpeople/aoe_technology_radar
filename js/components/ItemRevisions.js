@@ -4,14 +4,14 @@ import ItemRevision from './ItemRevision';
 
 export default function ItemRevisions({ revisions }) {
   return (
-    <div>
+    <div className="item-revisions">
       <HeadlineGroup secondary>
-        <h4 className="headline headline--dark">
-          Revisions:
-        </h4>
+        <h4 className="headline headline--dark">Revisions:</h4>
       </HeadlineGroup>
 
-      {revisions.map((revision) => <ItemRevision key={revision.release} revision={revision} />)}
+      {revisions.map(revision => (
+        <ItemRevision key={revision.release} revision={revision} />
+      ))}
     </div>
   );
 }
