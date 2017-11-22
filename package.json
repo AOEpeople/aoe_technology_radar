@@ -51,7 +51,7 @@
     "react-redux": "5.0.6",
     "redux": "3.7.2",
     "walk": "2.3.9",
-    "webpack": "2.2.0"
+    "webpack": "3.8.1"
   },
   "repository": {
     "type": "git",
