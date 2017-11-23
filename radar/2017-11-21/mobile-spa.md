@@ -1,6 +1,6 @@
 ---
 title:      "Mobile Single Page Apps"
-ring:       productize
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

@@ -5,7 +5,7 @@ quadrant:   infrastructure-and-operational-technology
 
 ---
 
-Thomas Schüring
+Thomas Schüring, Andreas Plaul?
 
 ## Why?
 - Short description of the technolgy 

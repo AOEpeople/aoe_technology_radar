@@ -1,11 +1,9 @@
 ---
-title:      "Big Data/Data Analytics"
+title:      "Learning Management System"
 ring:       productize
-quadrant:   data-science-and-analytics
+quadrant:   platforms-and-partners
 
 ---
-
-Rainer Kempkes, Holger Reinhardt
 
 ## Why?
 - Short description of the technolgy 

@@ -1,6 +1,6 @@
 ---
 title:      "Data Platform"
-ring:       scale
+ring:       discover
 quadrant:   data-science-and-analytics
 
 ---

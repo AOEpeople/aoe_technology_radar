@@ -1,11 +1,9 @@
 ---
-title:      "Big Data/Data Analytics"
-ring:       productize
-quadrant:   data-science-and-analytics
+title:      "Virtual/Augmented/Mixed Reality"
+ring:       discover
+quadrant:   ui-and-devices
 
 ---
-
-Rainer Kempkes, Holger Reinhardt
 
 ## Why?
 - Short description of the technolgy 

@@ -1,12 +1,12 @@
 ---
-title:      "Smart Devices"
+title:      "IoT/Smart Devices"
 ring:       discover
 quadrant:   ui-and-devices
 
 ---
 
 Holger Reinhardt
-Was ist den damit gemeint? Smart Home?
+Was ist den damit gemeint? Smart Home oder IoT?
 
 ## Why?
 - Short description of the technolgy 
