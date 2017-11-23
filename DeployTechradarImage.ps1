@@ -1,4 +1,5 @@
 # deploy the docker image to the rmote host on Azure and starts it
+Set-PSDebug -Trace 1
 
 # set docker env to remote host
 & "docker-machine" env haufe-techradar-vm | Invoke-Expression
