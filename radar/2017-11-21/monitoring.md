@@ -1,11 +1,11 @@
 ---
-title:      "Service Management"
+title:      "Monitoring"
 ring:       scale
 quadrant:   infrastructure-and-operational-technology
 
 ---
 
-Larissa Wissmann? Andreas Plaul?
+Thomas Schüring, Andreas Plaul?
 
 ## Why?
 - Short description of the technolgy 

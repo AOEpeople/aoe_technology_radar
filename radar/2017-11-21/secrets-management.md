@@ -1,11 +1,11 @@
 ---
-title:      "Service Management"
+title:      "Secrets Management"
 ring:       scale
 quadrant:   infrastructure-and-operational-technology
 
 ---
 
-Larissa Wissmann? Andreas Plaul?
+Patrick Hafner, ChristophL, ThomasS?
 
 ## Why?
 - Short description of the technolgy 

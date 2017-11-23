@@ -5,6 +5,8 @@ quadrant:   infrastructure-and-operational-technology
 
 ---
 
+Holger Reinhardt?
+
 ## Why?
 Flexibility, Control, Speed
 

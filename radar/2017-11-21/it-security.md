@@ -1,11 +1,11 @@
 ---
-title:      "Service Management"
+title:      "IT Security"
 ring:       scale
 quadrant:   infrastructure-and-operational-technology
 
 ---
 
-Larissa Wissmann? Andreas Plaul?
+Jochen Vogel, Daniel Schalberger, Thomas Schüring?
 
 ## Why?
 - Short description of the technolgy 

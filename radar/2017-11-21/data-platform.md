@@ -1,11 +1,11 @@
 ---
-title:      "Service Management"
+title:      "Data Platform"
 ring:       scale
-quadrant:   infrastructure-and-operational-technology
+quadrant:   data-science-and-analytics
 
 ---
 
-Larissa Wissmann? Andreas Plaul?
+Rainer Kempkes, Holger Reinhardt
 
 ## Why?
 - Short description of the technolgy 

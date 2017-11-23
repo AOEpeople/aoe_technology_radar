@@ -1,11 +1,11 @@
 ---
-title:      "Service Management"
+title:      "Machine Learning"
 ring:       scale
-quadrant:   infrastructure-and-operational-technology
+quadrant:   data-science-and-analytics
 
 ---
 
-Larissa Wissmann? Andreas Plaul?
+Rainer Kempkes
 
 ## Why?
 - Short description of the technolgy 
