@@ -1,9 +1,12 @@
 ---
-title:      "Chatbots"
+title:      "Smart Devices"
 ring:       discover
 quadrant:   ui-and-devices
 
 ---
+
+Holger Reinhardt
+Was ist den damit gemeint? Smart Home?
 
 ## Why?
 - Short description of the technolgy 
