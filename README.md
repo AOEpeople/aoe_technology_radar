@@ -17,9 +17,10 @@ A static site generator for Haufe Technology Radar
 The Haufe Technology radar is a fork of the AOE technology radar, that you can find on https://github.com/AOEpeople/aoe_technology_radar.
 Thanks a lot to AOE to provide such a cool tech radar implementation!
 
-## Usage
+## Working on the Content
 
-For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD) under `/radar`. In each release folder create a folder for every quadrant and place the items there.
+The content of the tech radar is located in the folder  `/radar`. To organize progress over time, the files are structured in subfolders with the release date (YYYY-MM-DD).
+For each item there must be one markdown file (*.md).
 
 ### Maintaining items
 
@@ -43,9 +44,21 @@ Following front-matter attributes are possible:
 - **ring**: Ring section in radar. One of `discover`, `productize`, `scale`
 - **info**: (optional) A short textual description of the item (visible in overview pages)
 
-The name of the .md file acts as item identifier and may overwrite items with the same name from older releases.
+### Template
+It is recommended to use **_template.md** file as a template for new items. It contains the structure that should be uses for all items with some explanation how to use it.
 
-If an item is overwritten in a new release, the attributes from the new item are merged with the old ones and a new history entry is created for that item.
+### History
+The name of the .md file acts as item identifier.
+
+If an item also exists in a newer release, the attributes from the new item are merged with the old ones.
+The content of the md-files is merged.  The content of the newest file is displayed first.
+
+### Use GitHub to work on content
+The easiest way to work on the *.md files is the usage of GitHub.
+Use the branch `PrepareContent` to change the md files.
+Simply switch to [PrepareContent branch](https://github.com/Haufe-Lexware/aoe_technology_radar/tree/PrepareContent/radar/2017-11-21) and start to edit the md files.
+Commit your changes with a short note what you changed.
+I will merge the changes from time to time to the master branch.
 
 ## Deployment
 
