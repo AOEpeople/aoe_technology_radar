@@ -13,7 +13,7 @@ It enables you to create, secure, manage, scale and analyze APIs.
 
 An API Management is a "Must Have" for partner business like it is a goal in different units and already on its way.
 
-## API Managment solution ##
+## API Managment solutions ##
 
 ### Wicked ###
 
@@ -46,4 +46,4 @@ Martin Danielsson from CTO Office created our own API Management solution. It's 
 
 ## Contact ##
 
-Martin Danielsson <martin.daniellsson@haufe-lexware.com> and everybody from CTO Office <_LeadArcsCTO@haufe-lexware.com>
+Martin Danielsson <martin.danielsson@haufe-lexware.com> and everybody from CTO Office <_LeadArcsCTO@haufe-lexware.com>

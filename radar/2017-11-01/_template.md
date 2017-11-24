@@ -31,10 +31,10 @@ corporations|sme|verticals|consumer
 
 ## Strategic category ##
 
-Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
+- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
+- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
+- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
+- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
 
 ## Technology choices/solutions ##
 
@@ -49,3 +49,12 @@ Use [Description](http://www.anylink.com) to place links.
 
 Name the main contact persons or unit.
 Use <email@domain.com> for mail contact infos
+
+## Hints for embedding videos ##
+
+### Show picture and open separate browser tab
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
+
+### Embed in page
+Video is dislayed in the page itself. It is realized via iframe.
+<iframe width="854" height="480" src="https://www.youtube.com/embed/yrRPLBYiiEc" frameborder="0" allowfullscreen></iframe>
