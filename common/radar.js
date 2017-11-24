@@ -14,7 +14,7 @@ export const createRadar = async tree => {
   const revisions = await createRevisionsFromFiles(fileNames);
   const allReleases = getAllReleases(revisions);
   const items = createItems(revisions);
-  const flaggedItems = flagWithIsNew(items, allReleases);
+  const flaggedItems = flagItem(items, allReleases);
 
   return {
     items: flaggedItems,
@@ -26,7 +26,9 @@ const checkAttributes = (fileName, attributes) => {
   const rings = ['adopt', 'trial', 'assess', 'hold'];
   if (attributes.ring && !rings.includes(attributes.ring)) {
     throw new Error(
-      `Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`,
+      `Error: ${fileName} has an illegal value for 'ring' - must be one of ${
+        rings
+      }`,
     );
   }
 
@@ -38,7 +40,9 @@ const checkAttributes = (fileName, attributes) => {
   ];
   if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
     throw new Error(
-      `Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`,
+      `Error: ${
+        fileName
+      } has an illegal value for 'quadrant' - must be one of ${quadrants}`,
     );
   }
 };
@@ -111,7 +115,7 @@ const createItems = revisions => {
 
 const addRevisionToItem = (
   item = {
-    isNew: false,
+    flag: 'default',
     isFeatured: true,
     revisions: [],
   },
@@ -141,15 +145,30 @@ const revisionCreatesNewHistoryEntry = revision => {
   return revision.body.trim() !== '' || typeof revision.ring !== 'undefined';
 };
 
-const flagWithIsNew = (items, allReleases) =>
+const flagItem = (items, allReleases) =>
   items.map(
     item => ({
       ...item,
-      isNew: isNewItem(item, allReleases),
+      flag: getItemFlag(item, allReleases),
     }),
     [],
   );
 
-const isNewItem = (item, allReleases) =>
-  item.revisions.length === 0 ||
+const isInLastRelease = (item, allReleases) =>
   item.revisions[0].release === allReleases[allReleases.length - 1];
+
+const isNewItem = (item, allReleases) =>
+  item.revisions.length === 1 && isInLastRelease(item, allReleases);
+
+const hasItemChanged = (item, allReleases) =>
+  item.revisions.length > 1 && isInLastRelease(item, allReleases);
+
+const getItemFlag = (item, allReleases) => {
+  if (isNewItem(item, allReleases)) {
+    return 'new';
+  }
+  if (hasItemChanged(item, allReleases)) {
+    return 'changed';
+  }
+  return 'default';
+};

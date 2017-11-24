@@ -1,9 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from './Link';
-import IsNew from './IsNew';
+import Tag from './Tag';
 
-export default function Item({ item, noLeadingBorder = false, active = false, style = {}}) {
+export default function Item({
+  item,
+  noLeadingBorder = false,
+  active = false,
+  style = {},
+}) {
   return (
     <Link
       className={classNames('item', {
@@ -15,13 +20,9 @@ export default function Item({ item, noLeadingBorder = false, active = false, st
     >
       <div className="item__title">
         {item.title}
-        <IsNew item={item} />
+        <Tag item={item} />
       </div>
-      {
-        item.info && (
-          <div className="item__info">{item.info}</div>
-        )
-      }
+      {item.info && <div className="item__info">{item.info}</div>}
     </Link>
   );
 }

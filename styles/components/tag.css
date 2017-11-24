@@ -1,6 +1,5 @@
-.is-new {
+.tag {
   font-size: 9px;
-  background: var(--color-red);
   display: inline-block;
   padding: 3px 8px;
   border-radius: 10px;
@@ -8,4 +7,12 @@
   vertical-align: top;
   margin-top: -2px;
   left: 5px;
+
+  &--new {
+    background: var(--color-red);
+  }
+
+  &--changed {
+    background: var(--color-blue);
+  }
 }
