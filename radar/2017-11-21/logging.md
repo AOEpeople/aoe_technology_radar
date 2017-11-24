@@ -17,6 +17,8 @@ Thomas Schüring, Andreas Plaul?
 ## Our projects 
 List of projects and activities
 
+- [Logging - Best-Practices](https://github.com/Haufe-Lexware/Logging---Best-Practices/blob/master/README.md)
+
 
 ## Contact
 Name the main contact persons and 
