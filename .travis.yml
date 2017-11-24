@@ -14,7 +14,7 @@ deploy:
     region: eu-central-1
     local_dir: dist
     detect_encoding: true
-    "on":
+    on:
       branch: master
   - provider: s3
     access_key_id:
@@ -27,5 +27,5 @@ deploy:
     region: eu-central-1
     local_dir: dist
     detect_encoding: true
-    "on":
+    on:
       branch: next
