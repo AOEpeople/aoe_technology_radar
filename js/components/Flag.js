@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Tag({ item, short = false }) {
+export default function Flag({ item, short = false }) {
   if (item.flag !== 'default') {
     let name = item.flag.toUpperCase();
     if (short === true) {
@@ -9,7 +9,7 @@ export default function Tag({ item, short = false }) {
         changed: 'C',
       }[item.flag];
     }
-    return <span className={`tag tag--${item.flag}`}>{name}</span>;
+    return <span className={`flag flag--${item.flag}`}>{name}</span>;
   }
   return null;
 }

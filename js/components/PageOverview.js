@@ -7,7 +7,7 @@ import Link from './Link';
 import Search from './Search';
 import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';
-import Tag from './Tag';
+import Flag from './Flag';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
@@ -140,7 +140,7 @@ class PageOverview extends React.Component {
                           <div className="split__left">
                             <div className="item__title">
                               {item.title}
-                              <Tag item={item} />
+                              <Flag item={item} />
                             </div>
                           </div>
                           <div className="split__right">

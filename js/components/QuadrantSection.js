@@ -3,7 +3,7 @@ import { translate, rings } from '../../common/config';
 import Badge from './Badge';
 import Link from './Link';
 import ItemList from './ItemList';
-import Tag from './Tag';
+import Flag from './Flag';
 
 const renderList = (ringName, quadrantName, groups, big) => {
   const itemsInRing = groups[quadrantName][ringName];
@@ -27,7 +27,7 @@ const renderList = (ringName, quadrantName, groups, big) => {
         <span key={item.name} className="ring-list__item">
           <Link className="link" pageName={`${item.quadrant}/${item.name}`}>
             {item.title}
-            <Tag item={item} short />
+            <Flag item={item} short />
           </Link>
         </span>
       ))}

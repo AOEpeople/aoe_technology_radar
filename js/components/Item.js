@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from './Link';
-import Tag from './Tag';
+import Flag from './Flag';
 
 export default function Item({
   item,
@@ -20,7 +20,7 @@ export default function Item({
     >
       <div className="item__title">
         {item.title}
-        <Tag item={item} />
+        <Flag item={item} />
       </div>
       {item.info && <div className="item__info">{item.info}</div>}
     </Link>
