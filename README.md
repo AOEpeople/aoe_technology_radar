@@ -57,7 +57,11 @@ merged with the old ones and a new history entry is created for that item.
 
 ## Travis
 
-[![Travis](https://api.travis-ci.org/AOEpeople/aoe_technology_radar.svg?branch=master)](https://travis-ci.org/AOEpeople/aoe_technology_radar/)
+* [![Travis](https://api.travis-ci.org/AOEpeople/aoe_technology_radar.svg?branch=master)](https://travis-ci.org/AOEpeople/aoe_technology_radar/)
+  (master)
+
+* [![Travis](https://api.travis-ci.org/AOEpeople/aoe_technology_radar.svg?branch=next)](https://travis-ci.org/AOEpeople/aoe_technology_radar/)
+  (next)
 
 ## Todos
 
