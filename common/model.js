@@ -1,4 +1,4 @@
-export const featuredOnly = items => items.filter(item => item.isFeatured);
+export const featuredOnly = items => items.filter(item => item.featured);
 
 export const groupByQuadrants = items =>
   items.reduce(

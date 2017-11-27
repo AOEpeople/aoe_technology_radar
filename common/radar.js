@@ -113,10 +113,17 @@ const createItems = revisions => {
   return Object.values(itemMap).sort((x, y) => (x.name > y.name ? 1 : -1));
 };
 
+const ignoreEmptyRevisionBody = (revision, item) => {
+  if (!revision.body || revision.body.trim() === '') {
+    return item.body;
+  }
+  return revision.body;
+};
+
 const addRevisionToItem = (
   item = {
     flag: 'default',
-    isFeatured: true,
+    featured: true,
     revisions: [],
   },
   revision,
@@ -125,6 +132,7 @@ const addRevisionToItem = (
   let newItem = {
     ...item,
     ...rest,
+    body: ignoreEmptyRevisionBody(rest, item),
     attributes: {
       ...item.attributes,
       ...revision.attributes,

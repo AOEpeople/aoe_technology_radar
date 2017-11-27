@@ -45,6 +45,9 @@ Following front-matter attributes are possible:
 * **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
 * **info**: (optional) A short textual description of the item (visible in
   overview pages)
+* **featured**: (optional, default "true") If you set this to `false`, the item
+  will not be visibile on the homepage anymore but still available in the radar
+  overview.
 
 The name of the .md file acts as item identifier and may overwrite items with
 the same name from older releases.
