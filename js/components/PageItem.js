@@ -4,6 +4,8 @@ import ItemList from './ItemList';
 import Link from './Link';
 import FooterEnd from './FooterEnd';
 import SetTitle from './SetTitle';
+import ItemRevisions from './ItemRevisions';
+import IsNew from './IsNew';
 import { createAnimation, createAnimationRunner } from '../animation';
 
 import { translate } from '../../common/config';
@@ -207,6 +209,7 @@ class PageItem extends React.Component {
                 </div>
               </div>
               <div className="markdown" dangerouslySetInnerHTML={{__html: item.body}} />
+              {item.revisions.length > 1 && <ItemRevisions revisions={item.revisions.slice(1)} />}
             </div>
           </div>
         </div>

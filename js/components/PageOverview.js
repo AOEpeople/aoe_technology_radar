@@ -7,6 +7,7 @@ import Link from './Link';
 import Search from './Search';
 import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';
+import IsNew from './IsNew';
 import { groupByFirstLetter } from '../../common/model';
 import { translate } from '../../common/config';
 
@@ -130,7 +131,10 @@ class PageOverview extends React.Component {
                           >
                             <div className="split split--overview">
                               <div className="split__left">
-                                <div className="item__title">{item.title}</div>
+                                <div className="item__title">
+                                  {item.title}
+                                  <IsNew item={item} />
+                                </div>
                               </div>
                               <div className="split__right">
                                 <div className="nav nav--relations">
