@@ -59,3 +59,4 @@ List of projects and activities
 
 ## Contact ##
 Thomas Schüring <thomas.schuering@haufe-lexware.com>
+Andreas Plaul <Andreas.Plaul@haufe-lexware.com>
