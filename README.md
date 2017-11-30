@@ -64,9 +64,13 @@ The content of the md-files is also merged. The content of the newest file is di
 
 The easiest way to work on the *.md files is the usage of GitHub.
 Use the branch `PrepareContent` to change the md files.
-Simply switch to [PrepareContent branch](https://github.com/Haufe-Lexware/aoe_technology_radar/tree/PrepareContent/radar/2017-11-21) and start to edit the md files.
+Simply switch to [PrepareContent branch](https://github.com/Haufe-Lexware/aoe_technology_radar/tree/PrepareContent/radar/2017-11-01) and start to edit the md files.
+Currently we work in the folder radar/2017-11-01.
 Commit your changes with a short note what you changed.
 I will merge the changes from time to time to the master branch.
+
+### Who should fill out which technology file ###
+Just take a look in the file [Technology List](./technologylist.md)
 
 ## Deployment
 
