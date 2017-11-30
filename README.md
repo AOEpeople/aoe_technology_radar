@@ -49,9 +49,32 @@ Following front-matter attributes are possible:
 - **ring**: Ring section in radar. One of `discover`, `productize`, `scale`
 - **info**: (optional) A short textual description of the item (visible in overview pages)
 
+#### Quadrant values and their meaning ####
+- `data-science-and-analytics` means Data Science & Analytics   
+All data related technologies and trends like BigData, Business Intelligence, Artifical Intelligence (AI,KI) and Machine Learning are placed here.
+
+- `infrastructure-and-operational-technology` means Infrastructure & Operational Technology   
+Technologies reaching from Cloud over DevOps, Containerization, Continous Integration/Delivery/Deployment, Build Pipelines, Monitoring, Logging
+
+- `platforms-and-partners` means Platforms & Partners   
+Technologies useful for product/system collaboration and composable new product forms like APIs, API Management, Partner Platform, Collaboration, Integration
+- `ui-and-devices` means UI & Devices   
+New forms of user interfaces like voice (Amazon Alexa), Chatbots, Virtual/Artifical/Mixed reality devices, Mobile devices and also other IoT devices including Smart Home
+
+#### Ring section values and their meaning ####
+
+Each of the items is classified in one of these rings:
+- `discover`   
+ We discover the value of a technology and proof the value for us and our customers. That is typically the stage were we work on PoCs and unrisky tests in apps.
+- `productize`
+We use it in one or a small amount of products and gather experinece with our customers.
+- `scale`   
+We use it in many products and teams and it has proven to be stable and useful.
+
 ### Template
 
-It is recommended to use the **_template.md** file as a template for new items. It contains the structure that should be used for all items with some explanation how to use it.
+It is strongly recommended to use the **_template.md** file as a template for new items. 
+It also contains the structure that should be used for all items with helpful explanations about the audience and view point to write the content.
 
 ### History
 
@@ -65,12 +88,12 @@ The content of the md-files is also merged. The content of the newest file is di
 The easiest way to work on the *.md files is the usage of GitHub.
 Use the branch `PrepareContent` to change the md files.
 Simply switch to [PrepareContent branch](https://github.com/Haufe-Lexware/aoe_technology_radar/tree/PrepareContent/radar/2017-11-01) and start to edit the md files.
-Currently we work in the folder radar/2017-11-01.
+Currently we work in the folder `radar/2017-11-01`.
 Commit your changes with a short note what you changed.
 I will merge the changes from time to time to the master branch.
 
-### Who should fill out which technology file ###
-Just take a look in the file [Technology List](./technologylist.md)
+### Who should fill out which technology file? ###
+Just take a look in the file [Technology List](./technologylist.md).
 
 ## Deployment
 
