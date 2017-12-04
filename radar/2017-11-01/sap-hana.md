@@ -1,28 +1,40 @@
 ---
 title:      "SAP HANA"
 ring:       discover
-quadrant:   infrastructure-and-operational-technology
+quadrant:   data-science-and-analytics
 
 ---
+
+** Template for Key Technologies **
+
+*** Possible quadrant values **
+
+- data-science-and-analytics
+
+
+*** Possible ring values **
+
+- discover
 
 ## Why? ##
 
 - eine neue Form der Datenbank
 - InMemory Technology (https://de.wikipedia.org/wiki/In-Memory-Datenbank)
 - nicht mehr Zeilen- sondern Spaltenbasiert (https://de.wikipedia.org/wiki/Spaltenorientierte_Datenbank)
-- Vorteil: grÃ¶ÃŸere Datenmengen (mehrere TB) kÃ¶nnen in sehr kurzer Zeit (ms) verarbeitet werden
+- Vorteil: größere Datenmengen (mehrere TB) können in sehr kurzer Zeit (ms) verarbeitet werden
 
 ## Relevant for which units ##
 
-Bereiche die extrem groÃŸe Datenmengen verarbeiten mÃ¼ssen oder die in sehr kurzer Zeit viele Anfragen an Datenbanken durchfÃ¼hren wollen.
+Bereiche die extrem große Datenmengen verarebiten müssen oder die in sehr kurzer Zeit viele Anfragen an Datenbanken durchführen wollen.
 
 ## Strategic category ##
 
-- Kategorie 1: Eine SchlÃ¼sseltechnologie ist fÃ¼r ein HGF relevant
+- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
+
 
 ## Technology choices/solutions ##
 
-Die Haufe wird zukÃ¼nfitg HANA im SAP-Umfeld einsetzen. Da die Technologie sehr teuer ist, wird vermutlich zunÃ¤chst nur das SAP ERP (Finanzbuchhaltung, Controlling, Kreditoren- und Debitorenverarbeitung, Abrechnung und Produkte) und das SAP BI/BW (Business Warehouse, genutzt durch das Contrlooing fÃ¼r das Reporting fÃ¼r Teamleiter, Bereichsleiter oder GeschÃ¤ftsleitung) umgestellt.
+Die Haufe wird zukünfitg HANA im SAP-Umfeld einsetzen. Da die Technologie sehr teuer ist, wird vermutlich zunächst nur das SAP ERP (Finanzbuchhaltung, Controlling, Kreditoren- und Debitorenverarbeitung, Abrechnung und Produkte) und das SAP BI/BW (Business Warehouse, genutzt durch das Contrlooing für das Reporting für Teamleiter, Bereichsleiter oder Geschäftsleitung) umgestellt.
 
 ## Our projects ##
 
