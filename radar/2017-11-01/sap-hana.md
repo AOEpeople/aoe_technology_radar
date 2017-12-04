@@ -10,20 +10,19 @@ quadrant:   infrastructure-and-operational-technology
 - eine neue Form der Datenbank
 - InMemory Technology (https://de.wikipedia.org/wiki/In-Memory-Datenbank)
 - nicht mehr Zeilen- sondern Spaltenbasiert (https://de.wikipedia.org/wiki/Spaltenorientierte_Datenbank)
-- Vorteil: gr��ere Datenmengen (mehrere TB) k�nnen in sehr kurzer Zeit (ms) verarbeitet werden
+- Vorteil: größere Datenmengen (mehrere TB) können in sehr kurzer Zeit (ms) verarbeitet werden
 
 ## Relevant for which units ##
 
-Bereiche die extrem gro�e Datenmengen verarebiten m�ssen oder die in sehr kurzer Zeit viele Anfragen an Datenbanken durchf�hren wollen.
+Bereiche die extrem große Datenmengen verarbeiten müssen oder die in sehr kurzer Zeit viele Anfragen an Datenbanken durchführen wollen.
 
 ## Strategic category ##
 
-- Kategorie 1: Eine Schl�sseltechnologie ist f�r ein HGF relevant
-
+- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
 
 ## Technology choices/solutions ##
 
-Die Haufe wird zuk�nfitg HANA im SAP-Umfeld einsetzen. Da die Technologie sehr teuer ist, wird vermutlich zun�chst nur das SAP ERP (Finanzbuchhaltung, Controlling, Kreditoren- und Debitorenverarbeitung, Abrechnung und Produkte) und das SAP BI/BW (Business Warehouse, genutzt durch das Contrlooing f�r das Reporting f�r Teamleiter, Bereichsleiter oder Gesch�ftsleitung) umgestellt.
+Die Haufe wird zukünfitg HANA im SAP-Umfeld einsetzen. Da die Technologie sehr teuer ist, wird vermutlich zunächst nur das SAP ERP (Finanzbuchhaltung, Controlling, Kreditoren- und Debitorenverarbeitung, Abrechnung und Produkte) und das SAP BI/BW (Business Warehouse, genutzt durch das Contrlooing für das Reporting für Teamleiter, Bereichsleiter oder Geschäftsleitung) umgestellt.
 
 ## Our projects ##
 
