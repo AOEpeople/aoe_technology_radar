@@ -1,3 +1,11 @@
+---
+title:      "SAP HANA"
+ring:       discover
+quadrant:   infrastructure-and-operational-technology
+
+---
+
+
 SAP HANA
 
 ## Why? ##
