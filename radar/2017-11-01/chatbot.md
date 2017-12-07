@@ -6,7 +6,7 @@ quadrant:   ui-and-devices
 ---
 
 ## State December 2017
-Different approaches for ChatBots were developed during the last Hackathons. A Project for AKA & HCP starts in January, rolling out the existing prototypes.
+Different approaches for ChatBots were developed during the last Hackathons. A project for AKA & HCP starts in January, rolling out the existing prototypes.
 
 
 ## Why?
