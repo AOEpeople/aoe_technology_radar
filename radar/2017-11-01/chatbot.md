@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=IYJjrvXSbnM
 
 On Facebook, for example, already exist more than 100.000 ChatsBots. These little programs will shape the expectations of our customers in the future more and more.
 
-Furthermore: If you look on the usage and browsing behavior of mobile devices mobile, as they are the new „normal“, it’s
+Furthermore: If you look on the usage and browsing behavior of mobile devices, that are the new „normal“, it’s
 necessary to find ways to shape user experiences and customer touchpoints beyond our owned websites. On the other hand chatbots are a
 great opportunity to deliver extraordinary customer experiences especially in the Service and eCommerce area. 24/7. 
 If we look e.g. on WeChat (https://www.clickz.com/an-introduction-to-wechat-the-evolution-and-future-of-chinas-most-popularapp/111401/ ), the big Chinese Messenger Platform, you can see the potential of what could be possible.
