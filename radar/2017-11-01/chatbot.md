@@ -30,10 +30,11 @@ great opportunity to deliver extraordinary customer experiences especially in th
 
 If you look for example on WeChat, the big Chinese Messenger Platform, you can see the potential of what could be possible. For further information read: https://www.clickz.com/an-introduction-to-wechat-the-evolution-and-future-of-chinas-most-popularapp/111401/ 
 
-In difference to classical Web-Interfaces, ChatBots belong into a new and upcoming category called conversational interfaces. Speech and
-Wording is used to shapen your brand. So everyone who’s designing a ChatBot have to keep this in mind.
+In difference to classical Web-Interfaces, ChatBots belong into a new and upcoming category called "conversational interfaces".
+Classical branding elements like logos, typo, images are missing here or are defined by the messenger service itself. Therefore speech
+and wording are the driving factors that shapen your brand. So everyone who’s designing a ChatBot have to keep this in mind.
 
-Therfore this technology is relevant for all units and departments.
+
 
 
 ## Technology choices/solutions
