@@ -15,7 +15,7 @@ Instant Messaging Platforms like What’sApp, Facebook Messenger, etc. are still
 communication. To get or stay in contact with our future and existing customers on these platforms it is necessary to use technologies,
 like the little programs, that are called chatbots.
 
-A definition of a ChatBot could be: 
+A definition of a ChatBot could be:
 It is a computer program, designed to simulate conversation with human users, especially over the
 Internet.
 
