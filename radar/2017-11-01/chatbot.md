@@ -26,7 +26,7 @@ On Facebook, for example, already exist more than 100.000 ChatsBots. These littl
 
 Furthermore: If you look on the usage and browsing behavior of mobile devices, that are the new „normal“, it’s
 necessary to find ways to shape user experiences and customer touchpoints beyond our owned websites. Therfore chatbots are a
-great opportunity to deliver extraordinary customer experiences especially in the Service and eCommerce area. 24/7. 
+great opportunity to deliver extraordinary customer experiences especially in the customer service and eCommerce area. 24/7. 
 
 If you look for example on WeChat, the big Chinese Messenger Platform, you can see the potential of what could be possible. For further information read: https://www.clickz.com/an-introduction-to-wechat-the-evolution-and-future-of-chinas-most-popularapp/111401/ 
 
