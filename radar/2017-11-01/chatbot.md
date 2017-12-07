@@ -19,11 +19,11 @@ A definition of a ChatBot could be:
 It is a computer program, designed to simulate conversation with human users, especially over the
 Internet.
 
+For better understanding see this Video:
+https://www.youtube.com/watch?v=IYJjrvXSbnM 
+
 On Facebook for example already exist more than 100.000 ChatsBots, these little programs will shape the expactations of our customers in
 the future more and more.
-
-See this Video:
-https://www.youtube.com/watch?v=IYJjrvXSbnM 
 
 Furthermore: Because mobile is the new „normal“, and you look on the usage and browsing behavior of these devices, it’s
 necessary to find ways to shape user experiences and customer touchpoints beyond our owned websites. On the other hand chatbots are a
