@@ -67,7 +67,7 @@ class Header extends React.Component {
         <div className="nav">
           <div className="nav__item">
             <Link pageName="help-and-about-tech-radar" className="icon-link">
-              <span className="icon icon--question icon-link__icon"></span>How to Use Technology Radar?
+              <span className="icon icon--question icon-link__icon"></span>About the Haufe Technology Radar?
             </Link>
           </div>
           <div className="nav__item">
