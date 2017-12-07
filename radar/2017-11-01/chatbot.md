@@ -34,7 +34,7 @@ In difference to classical Web-Interfaces, ChatBots belong into a new and upcomi
 Classical branding elements like logos, typo, images are missing here or are defined by the messenger service itself. Therefore speech
 and wording are the driving factors that shapen your brand. So everyone who’s designing a ChatBot have to keep this in mind.
 
-All the FAMA (Facebook, Amazon, Microsoft, Apple) are offering frameworks, where you can build upon. But, in comparison to many other tpics, here not the technology is the challenging aspect. The most challenging is the design of the dialog as well to train the Bot, that response are in the way you want.
+All the FAMA (Facebook, Amazon, Microsoft, Apple) and many other companies and start-ups are offering frameworks, where you can build upon. But, in comparison to many other topics, here not the technology is the challenging aspect. The most challenging is the design of the dialog as well to train the Bot, that response are in the way you want.
 
 
 ## Technology choices/solutions
