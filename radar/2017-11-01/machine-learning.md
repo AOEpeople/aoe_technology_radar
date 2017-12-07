@@ -6,7 +6,6 @@ quadrant:   data-science-and-analytics
 ---
 
 Rainer Kempkes
-Artificial Intelligence hier drin.
 
 ## Why?
 - Short description of the technolgy 
