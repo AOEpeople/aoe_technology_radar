@@ -28,7 +28,7 @@ Furthermore: If you look on the usage and browsing behavior of mobile devices, t
 necessary to find ways to shape user experiences and customer touchpoints beyond our owned websites. Therfore chatbots are a
 great opportunity to deliver extraordinary customer experiences especially in the Service and eCommerce area. 24/7. 
 
-If we look e.g. on WeChat (https://www.clickz.com/an-introduction-to-wechat-the-evolution-and-future-of-chinas-most-popularapp/111401/ ), the big Chinese Messenger Platform, you can see the potential of what could be possible.
+If you look for example on WeChat, the big Chinese Messenger Platform, you can see the potential of what could be possible. For further information read: https://www.clickz.com/an-introduction-to-wechat-the-evolution-and-future-of-chinas-most-popularapp/111401/ 
 
 In difference to classical Web-Interfaces, chatbots belong into a new and upcoming category called conversational interfaces. Speech and
 Wording is used to shapen your brand. So everyone who’s designing a ChatBot have to keep this in mind.
