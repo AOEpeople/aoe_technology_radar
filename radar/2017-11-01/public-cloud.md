@@ -12,11 +12,11 @@ Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) gives us the
 The public cloud gives us:
 
 - Flexibility   
-  We can Start with minimal set of resources and can choose to increase when we need to.
+  Start with a minimal set of resources and grow when it's necessary.
 - Control   
-  We operate our solutions and have access to monitoring information and logging data.
+  Operate the solutions and immedeately have access to monitoring and logging data.
 - Speed   
-  Deployments are done in minutes. Infrastructure changes can be done immediately.
+  Deployments are done in minutes. Infrastructure changes can be done from the team.
 
 It even can save costs when we use the public cloud infrastructure in an intelligent way and choose the application architecture accordingly.
 Without public cloud continuous deployment (CD) is not possible for production.
@@ -50,4 +50,4 @@ Some samples:
 
 ## Contact ##
 
-Esmaeil Sarabadani, Andreas Plaul and many more from ICT or CTO Office
+Esmaeil Sarabadani <esmaeil.sarabadani@haufe-lexware.com>, Andreas Plaul <andreas.plaul@haufe-lexware.com> and many more from ICT or CTO Office
