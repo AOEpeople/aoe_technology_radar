@@ -7,7 +7,8 @@ quadrant:   infrastructure-and-operational-technology
 
 ## Why? ##
 
-Both AWS and Azure provide the new exciting way of **serverless** applications/functions.
+AWS and Azure both provide the new exciting way of **serverless** applications/functions.
+Main features/promises are:
 
 - No worry about the infrastructure - no servers to manage
 - Pay-per-use pricing model
@@ -17,7 +18,7 @@ That allows to create small apps called on demand and to run the apps with minim
 The functionality might be triggered by various sources like Http-Request, Timer-trigger, Database Trigger, Event Trigger
 Maintenance effort for the infastructure is highly reduced.
 
-But with the use of the technology the app is tied to the cloud provider.
+But with the use of the technology the app is tied to the cloud provider. You can't switch to a traditional hoster anymore or run the service OnPremise.
 
 ## Relevant for which units ##
 
