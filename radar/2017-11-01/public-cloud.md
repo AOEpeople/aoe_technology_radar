@@ -45,7 +45,7 @@ New projects use the public cloud from the start.
 
 Some samples:
 - LexOffice
-- Foundational services
+- Foundational Services
 - iDesk
 
 ## Contact ##

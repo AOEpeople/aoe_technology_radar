@@ -5,10 +5,12 @@ quadrant:   data-science-and-analytics
 
 ---
 
-Rainer Kempkes, Holger Reinhardt
+Holger Reinhardt
+Ich benötige Input, was gemeintt ist.
+
 
 ## Why?
-- Short description of the technolgy 
+- Short description of the technolgy
 - Business reasons why it is important for us
 
 ## Technology choices/solutions
