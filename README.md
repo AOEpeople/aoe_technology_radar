@@ -124,6 +124,22 @@ docker run -e SERVER_NAMES=localhost -p "8080:80" haufetechradar
 
 ```
 
+## Available instances ##
+
+We have two available instances running on Azure.
+
+### Test-Version ###
+
+The test version is available at [http://hg-tr-test.westeurope.cloudapp.azure.com/techradar/](http://hg-tr-test.westeurope.cloudapp.azure.com/techradar/).
+It reflects the content and version of the **PrepareContent** branch.
+A new deployment is triggered whenever the branch **PrepareContent** is changed.
+
+### Prod-Version ###
+
+The production version is available at [http://hg-tr-prod.westeurope.cloudapp.azure.com/techradar/](http://hg-tr-prod.westeurope.cloudapp.azure.com/techradar/)
+It reflects the content and version of the **master** branch.
+A new deployment is triggered whenever the branch **master** is changed.
+
 ## Todos
 
 - [ ] Work on the content
