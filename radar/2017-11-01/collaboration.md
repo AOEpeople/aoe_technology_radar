@@ -5,41 +5,40 @@ quadrant:   platforms-and-partners
 
 ---
 
-Holger Reinhardt
-
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+Most Haufe Group applications are designed as stand alone solutions.
+Especially in domains where Haufe Group offers multiple solutions targeting the same customer collaboration of the solutions is a crucial selling point.
+Currently the applications do not fully exploit their potential of collaboration to optimally support customers in their work processes.
+Solution collaboration starts with a common login includes exchange of data, harmonised user inrterface and support of useful work processes that are not possible with a single solution.
+
+It is a technical challenge to achieve that goal. Monolithic applications are definately not the answer.
+**Highly aligned, loosely coupled** is a leading principal for the collaboration solution architecture.
+Small focused applications and teams that provide their business value via API and a set of integration patterns are our approach.
 
 ## Relevant for which units ##
 
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-corporations|sme|verticals|consumer
+Solution collaboration is extremely important for the HR solutions including Talent and Recruiting Management, Haufe Suite, Haufe Zeugnis Manager, Learning Management Systems and eProcurement solutions.
+TOPAS solution is designed for partner collaboration.
+LexOffice started a partner collaboration program.
+Real Estate has also a partner collabortaion initiative.
 
 ## Strategic category ##
 
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
 - Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+- REST APIs
+- Microservices
+- Asynchronous communication
 
 ## Our projects ##
 
-List of projects and activities. It's also a good idea to name the contact information for the activity.
-This section is very important cause it documents at what level we are, regarding the usage and experience with the technolgy. 
+- [Rhythmix](https://rhythmix.haufe.com/de) - <andreas.meya@haife-lexware.com>, <uwe.habicher@haufe-lexware.com>
+- TOPAS - <philipp.kemper@haufe-lexware.com>, <frank.laule@haufe-lexware.com>
+- LexOffice - <christian.steiger@haufe-lexware.com>
 
 ## Contact ##
 
-Name the main contact persons or unit.
-Use <email@domain.com> for mail contact infos
+<holger.reinhardt@haufe-lexware.com>, <_LeadArcsCTO@haufe-lexware.com>
