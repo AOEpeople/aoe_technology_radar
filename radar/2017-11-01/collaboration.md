@@ -13,15 +13,12 @@ Currently the applications do not fully exploit their potential of collaboration
 Solution collaboration starts with a common login includes exchange of data, harmonised user inrterface and support of useful work processes that are not possible with a single solution.
 
 It is a technical challenge to achieve that goal. Monolithic applications are definately not the answer.
-**Highly aligned, loosely coupled** is a leading principal for the collaboration solution architecture.
+[**Highly aligned, loosely coupled**](https://de.slideshare.net/reed2001/culture-1798664/94-Highly_Aligned_Loosely_Coupled_Highly) is a leading principal for the collaboration solution architecture.
 Small focused applications and teams that provide their business value via API and a set of integration patterns are our approach.
 
 ## Relevant for which units ##
 
 Solution collaboration is extremely important for the HR solutions including Talent and Recruiting Management, Haufe Suite, Haufe Zeugnis Manager, Learning Management Systems and eProcurement solutions.
-TOPAS solution is designed for partner collaboration.
-LexOffice started a partner collaboration program.
-Real Estate has also a partner collabortaion initiative.
 
 ## Strategic category ##
 
@@ -36,8 +33,6 @@ Real Estate has also a partner collabortaion initiative.
 ## Our projects ##
 
 - [Rhythmix](https://rhythmix.haufe.com/de) - <andreas.meya@haife-lexware.com>, <uwe.habicher@haufe-lexware.com>
-- TOPAS - <philipp.kemper@haufe-lexware.com>, <frank.laule@haufe-lexware.com>
-- LexOffice - <christian.steiger@haufe-lexware.com>
 
 ## Contact ##
 
