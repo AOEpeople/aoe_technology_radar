@@ -186,7 +186,7 @@ class PageItem extends React.Component {
                   </div>
                   <div className="split__right">
                     <Link className="icon-link" pageName={item.quadrant}>
-                      <span className="icon icon--pie icon-link__icon"></span>Quadrant Overview
+                      <span className="icon icon--overview icon-link__icon"></span>Quadrant Overview
                     </Link>
                   </div>
                 </div>
