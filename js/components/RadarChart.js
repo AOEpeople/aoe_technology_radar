@@ -4,6 +4,7 @@ import * as d3tip from 'd3-tip';
 import {withFauxDOM} from 'react-faux-dom';
 import * as model from '../../common/model';
 import {Chance} from 'chance';
+import Link from './Link';
 import { isNull } from 'util';
 import actions from '../actions';
 import { connect } from 'react-redux';
@@ -306,7 +307,7 @@ class RadarChart extends React.Component {
     return (
       <div className='renderedD3' id='radar'>
         {this.props.chart}
-        <div id='legend'>{this.availableQuadrants.map((quadrant, i) => <div className={`button ${quadrant.order} full-view`} key={i}>{quadrant.label}</div>)}</div>
+        <div id='legend'>{this.availableQuadrants.map((quadrant, i) => <Link pageName={`${quadrant.name}`} key={i}><div className={`button ${quadrant.order} full-view`} key={i}>{quadrant.label}</div></Link>)}</div>
       </div>
     )
   }
