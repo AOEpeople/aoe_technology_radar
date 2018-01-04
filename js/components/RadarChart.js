@@ -9,6 +9,20 @@ import actions from '../actions';
 import { connect } from 'react-redux';
 
 class RadarChart extends React.Component {
+  
+  availableRings = [
+    {'name': 'scale', 'order': 0},
+    {'name': 'productize', 'order': 1},
+    {'name': 'discover', 'order': 2}
+  ];
+
+  availableQuadrants = [
+    {'name': 'data-science-and-analytics', 'label': 'Data science & analytics', 'order': 'first', 'startAngle': 90},
+    {'name': 'infrastructure-and-operational-technology', 'label': 'Infrastructure & Operational Technology' ,'order': 'second', 'startAngle': 0},
+    {'name': 'platforms-and-partners', 'label': 'Platforms & Partners', 'order': 'third', 'startAngle': -90},
+    {'name': 'ui-and-devices', 'label': 'Ui & Devices', 'order': 'fourth', 'startAngle': -180}
+  ];
+
   componentDidMount () {
 
     const size = 620;
@@ -19,19 +33,6 @@ class RadarChart extends React.Component {
       .attr('id', 'radar-plot')
       .attr('width', size)
       .attr('height', size);
-
-    const availableRings = [
-      {'name': 'scale', 'order': 0},
-      {'name': 'productize', 'order': 1},
-      {'name': 'discover', 'order': 2}
-    ];
-  
-    const availableQuadrants = [
-      {'name': 'data-science-and-analytics', 'label': 'Data science & analytics', 'order': 'first', 'startAngle': 90},
-      {'name': 'infrastructure-and-operational-technology', 'label': 'Infrastructure & Operational Technology' ,'order': 'second', 'startAngle': 0},
-      {'name': 'platforms-and-partners', 'label': 'Platforms & Partners', 'order': 'third', 'startAngle': -90},
-      {'name': 'ui-and-devices', 'label': 'Ui & Devices', 'order': 'fourth', 'startAngle': -180}
-    ];
 
     const getAggregatedDataGroupedByRing = (data) => {
     
@@ -48,7 +49,6 @@ class RadarChart extends React.Component {
   
     }
 
-    //all items in ring: 
     const assembleFlatChartItemsForRing = (ringData) => {
       var chartItems = [];
       if (ringData === null || ringData === undefined) {
@@ -92,22 +92,18 @@ class RadarChart extends React.Component {
   
     const getRadiusOfRing = (currentRingNumber) => {
       
-      const totalNumberOfRings = availableRings.length;
+      const totalNumberOfRings = this.availableRings.length;
       const maxRadius = center();
       const total = getSum(totalNumberOfRings);
       const sum = getSum(currentRingNumber);
       return maxRadius * sum / total;
     }
 
-    const plotQuadrant = (rings, quadrant) => {
+    const plotQuadrant = (quadrant) => {
       var quadrantGroup = svg.append('g')
         .attr('class', 'quadrant-group quadrant-group-' + quadrant.order)
   
-        //.on('mouseover', mouseoverQuadrant.bind({}, quadrant.order))
-        //.on('mouseout', mouseoutQuadrant.bind({}, quadrant.order))
-        //.on('click', selectQuadrant.bind({}, quadrant.order, quadrant.startAngle));
-  
-      rings.forEach(function (ring, i) {
+      this.availableRings.forEach(function (ring, i) {
         var arc = d3.arc()
           .innerRadius(getRadiusOfRing(i))
           .outerRadius(getRadiusOfRing(i + 1))
@@ -147,8 +143,8 @@ class RadarChart extends React.Component {
         .attr('stroke-width', 10);
     }
    
-    const plotTexts = (quadrantGroup, rings, quadrant) => {
-      rings.forEach(function (ring, i) {
+    const plotTexts = (quadrantGroup, quadrant) => {
+      this.availableRings.forEach(function (ring, i) {
         const p1 = getRadiusOfRing(i);
         const p2 = getRadiusOfRing(i + 1);
         const modificator = (p1 + p2) / 2;
@@ -171,7 +167,7 @@ class RadarChart extends React.Component {
     }
 
     const getStartAngleByQuadrantName = (quadrantName) => {
-      availableQuadrants.forEach(function(availableQuadrant){
+      this.availableQuadrants.forEach(function(availableQuadrant){
         if(availableQuadrant.name === quadrantName){
           return availableQuadrant.startAngle;
         }
@@ -229,7 +225,7 @@ class RadarChart extends React.Component {
       let aggregated = getAggregatedDataGroupedByRing(this.props.items);
       let order = quadrant.order;
       let startAngle = quadrant.startAngle;
-      availableRings.forEach(function(availableRing, i){
+      this.availableRings.forEach(function(availableRing, i){
         let itemsInRing = aggregated[availableRing.name];
         if (itemsInRing !== undefined && itemsInRing !== null) {
           const minRadius = getRadiusOfRing(i);
@@ -285,21 +281,18 @@ class RadarChart extends React.Component {
         .attr('x', x)
         .attr('y', y + 4)
         .attr('class', 'blip-text')
-        // derive font-size from current blip width
+        // derive font-size from current item width
         .style('font-size', ((item.width * 10) / 22) + 'px')
         .attr('text-anchor', 'middle')
-        .text(item.label);
-        
-  
+        .text(item.label);  
      
     }
 
     
-    
-    availableQuadrants.forEach(function(quadrant){
-      let quadrantGroup = plotQuadrant(availableRings, quadrant);
+    this.availableQuadrants.forEach(function(quadrant){
+      let quadrantGroup = plotQuadrant(quadrant);
       plotLines(quadrantGroup, quadrant);
-      plotTexts(quadrantGroup, availableRings, quadrant);
+      plotTexts(quadrantGroup, quadrant);
       plotItems(quadrantGroup, quadrant);
 
     });
@@ -313,6 +306,7 @@ class RadarChart extends React.Component {
     return (
       <div className='renderedD3' id='radar'>
         {this.props.chart}
+        <div id='legend'>{this.availableQuadrants.map((quadrant, i) => <div className={`button ${quadrant.order} full-view`} key={i}>{quadrant.label}</div>)}</div>
       </div>
     )
   }

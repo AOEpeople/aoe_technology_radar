@@ -2,10 +2,44 @@
 @media screen {
 
   #radar {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     margin-bottom: 50px;
+
+    div#legend {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+    
+    .button {
+      font-size: 13px;
+      display: inline-block;
+      margin: auto;
+      margin-right: 20px;
+      margin-top: 25px;
+      border-radius: 2px;
+
+      padding: 10px 20px;
+    
+      &.first {
+        background-color: #86b782;
+        color: white;
+      }
+      &.second {
+        background-color: #1ebccd;
+        color: white;
+      }
+      &.third {
+        background-color: #f38a3e;
+        color: white;
+      }
+      &.fourth {
+        background-color: #b32059;
+        color: white;
+      }
+  }
 
     svg#radar-plot {
       display: block;
@@ -103,7 +137,7 @@
 
       h3 {
         text-transform: uppercase;
-        font-size: $baseFont;
+        font-size: 17px;
         margin: 0;
         font-weight: bold;
       }
