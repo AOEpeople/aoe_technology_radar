@@ -32,7 +32,7 @@ Solution collaboration is extremely important for the HR solutions including Tal
 
 ## Our projects ##
 
-- [Rhythmix](https://rhythmix.haufe.com/de) - <andreas.meya@haife-lexware.com>, <uwe.habicher@haufe-lexware.com>
+- [Rhythmix](https://rhythmix.haufe.com/de) - <andreas.meya@haufe-lexware.com>, <uwe.habicher@haufe-lexware.com>
 
 ## Contact ##
 

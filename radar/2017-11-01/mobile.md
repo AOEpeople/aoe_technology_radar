@@ -41,18 +41,18 @@ A wide seletion of mobile framworks are available. The market is very vivid and 
 
 The list is only a selection of projects.
 
-- iDesk mobile
-  <martin.danielsson@haufe-lexware.com> 
-- Lexware mobile
-  <bjoern.streule@haufe-lexware.com> 
-- LexOffice
-  <martin.danielsson@haufe-lexware.com> 
-- Helios?
-  <christoph.ludwig@haufe-lexware.com> 
-- Onboarding app
-  <karsten.gaebert@haufe-lexware.com> 
+- iDesk mobile   
+  Angular.js based single page app. Contact: <martin.danielsson@haufe-lexware.com>
+- Lexware mobile   
+  Responsive web app. Contact: <bjoern.streule@haufe-lexware.com>
+- LexOffice   
+  Native iOS und Android solution. Contact: <thomas.doerr@haufe-lexware.com>
+- Helios   
+  <christoph.ludwig@haufe-lexware.com>
+- Onboarding app   
+  React native based app. Contact: <karsten.gaebert@haufe-lexware.com>
 - DigiLib app
-  <raul.firu@haufe-lexware.com> 
+  <raul.firu@haufe-lexware.com>
 
 ## Contact ##
 
