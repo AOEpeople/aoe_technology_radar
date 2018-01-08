@@ -8,9 +8,9 @@ quadrant:   platforms-and-partners
 ## Why? ##
 
 Most Haufe Group applications are designed as stand alone solutions.
-Especially in domains where Haufe Group offers multiple solutions targeting the same customer collaboration of the solutions is a crucial selling point.
+Especially in domains where Haufe Group offers multiple solutions targeting the same customer group, collaboration of the solutions is a crucial selling point.
 Currently the applications do not fully exploit their potential of collaboration to optimally support customers in their work processes.
-Solution collaboration starts with a common login includes exchange of data, harmonised user inrterface and support of useful work processes that are not possible with a single solution.
+Solution collaboration starts with a common login includes exchange of data, harmonised user interface and support of useful work processes that are not possible with a single solution.
 
 It is a technical challenge to achieve that goal. Monolithic applications are definately not the answer.
 [**Highly aligned, loosely coupled**](https://de.slideshare.net/reed2001/culture-1798664/94-Highly_Aligned_Loosely_Coupled_Highly) is a leading principal for the collaboration solution architecture.
