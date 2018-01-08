@@ -34,7 +34,7 @@
     "highlight.js": "9.10.0",
     "history": "4.5.1",
     "live-server": "1.2.0",
-    "marked": "0.3.6",
+    "marked": "0.3.9",
     "moment": "2.17.1",
     "postcss-cli": "2.6.0",
     "postcss-css-variables": "0.6.0",
