@@ -5,41 +5,36 @@ quadrant:   platforms-and-partners
 
 ---
 
-Holger Reinhardt, Thomas Schüring, Rainer Zehnle
-
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+The world is moving to a direction where everything will be connected. APIs are a concrete way for apps to communicate and to collaborate.
+Haufe Group is convinced to use APIs and [API-Management](./../infrastructure-and-operational-technology/api-management.html) solutions.
+
+The more [API-Management](./../infrastructure-and-operational-technology/api-management.html) instances we will have, the bigger the need for a API Discovery service.
+
+- Is there already functionality that I can use?
+- How do I find it?
+- How many APIs are there in Haufe Group?
 
 ## Relevant for which units ##
 
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-corporations|sme|verticals|consumer
+All units
 
 ## Strategic category ##
 
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
 - Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+There are not many solutions to use.
+
+- [apis.io](http://apis.io/)
 
 ## Our projects ##
 
-List of projects and activities. It's also a good idea to name the contact information for the activity.
-This section is very important cause it documents at what level we are, regarding the usage and experience with the technolgy. 
+We started an initiative to install and use [apis.io](http://apis.io/) for our purposes.
+The initiative should be finished in Q1/2018.
 
 ## Contact ##
 
-Name the main contact persons or unit.
-Use <email@domain.com> for mail contact infos
+Contact <thomas.schuering@haufe-lexware.com> for more infos.
