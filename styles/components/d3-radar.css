@@ -1,0 +1,229 @@
+
+@media screen {
+
+  #radar {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 50px;
+
+    div#legend {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+    
+    .button {
+      font-size: 13px;
+      display: inline-block;
+      margin: auto;
+      margin-right: 20px;
+      margin-top: 25px;
+      border-radius: 2px;
+
+      padding: 10px 20px;
+    
+      &.first {
+        background-color: #86b782;
+        color: white;
+      }
+      &.second {
+        background-color: #1ebccd;
+        color: white;
+      }
+      &.third {
+        background-color: #f38a3e;
+        color: white;
+      }
+      &.fourth {
+        background-color: #b32059;
+        color: white;
+      }
+  }
+
+    svg#radar-plot {
+      display: block;
+      margin: auto;
+      transition: all 1s ease;
+      position: relative;
+      left: 0;
+      right: 0;
+
+      .legend {
+        visibility: hidden;
+        transition: visibility 1s ease 1s;
+        color: black;
+      }
+
+      path {
+        &.ring-arc-3 {
+          stroke: none;
+          fill: #eeeeee;
+        }
+        &.ring-arc-2 {
+          stroke: none;
+          fill: #dadada;
+        }
+        &.ring-arc-1 {
+          stroke: none;
+          fill: #cacaca;
+        }
+        &.ring-arc-0 {
+          stroke: none;
+          fill: #bababa;
+        }
+      }
+
+      .blip-link {
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .quadrant-group {
+        cursor: pointer;
+      }
+
+      circle, polygon, path {
+        &.first {
+          fill: #86b782;
+          stroke: none;
+        }
+        &.second {
+          fill: #1ebccd;
+          stroke: none;
+        }
+        &.third {
+          fill:#f38a3e;
+          stroke: none;
+        }
+        &.fourth {
+          fill:#b32059;
+          stroke: none;
+        }
+      }
+
+      line {
+        stroke: white;
+      }
+
+      text {
+        &.blip-text {
+          font-size: 9px;
+          font-style: italic;
+          fill: white;
+        }
+
+        &.line-text {
+          font-weight: bold;
+          text-transform: uppercase;
+          fill: black;
+          font-size: 11px;
+        }
+      }
+    }
+
+    div.quadrant-table {
+
+      .quadrant-table__name {
+        display: none;
+      }
+
+      max-height: 0;
+      max-width: 0;
+      position: absolute;
+      overflow: hidden;
+
+      transition: max-height 0.5s ease 1s;
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 17px;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      &.first {
+        right: 20px;
+
+        &.selected {
+          float: right;
+        }
+      }
+
+      &.second {
+        left: 20px;
+
+        &.selected {
+          float: left;
+        }
+      }
+
+      &.third {
+        left: 20px;
+
+        &.selected {
+          float: left;
+        }
+      }
+
+      &.fourth {
+        right: 20px;
+
+        &.selected {
+          float: right;
+        }
+      }
+
+      &.selected {
+        position: relative;
+        max-height: 10000px;
+        max-width: 40%;
+      }
+
+      ul {
+        padding: 0;
+        margin-left: 0;
+
+        li {
+          list-style-type: none;
+          padding-left: 0;
+
+          .blip-list-item {
+            padding: 2px 5px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 400;
+
+            &.highlight {
+              color: white;
+              background-color: rgba(0, 0, 0, 0.8);
+            }
+          }
+
+          .blip-item-description {
+            max-height: 0;
+            overflow: hidden;
+            width: 300px;
+
+            p {
+              margin: 0;
+              border-top: 1px solid rgb(119, 119, 119);
+              border-bottom: 1px solid rgb(119, 119, 119);
+              padding: 20px;
+              color: rgb(51, 51, 51);
+              font-weight: 100;
+              font-size: 14px;
+            }
+
+            transition: max-height 0.2s ease;
+            &.expanded {
+              transition: max-height 0.5s ease 0.2s;
+              max-height: 1000px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
