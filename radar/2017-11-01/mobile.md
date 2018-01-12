@@ -48,11 +48,11 @@ The list is only a selection of projects.
 - LexOffice   
   Native iOS und Android solution. Contact: <thomas.doerr@haufe-lexware.com>
 - Helios   
-  <christoph.ludwig@haufe-lexware.com>
+  Contact: <christoph.ludwig@haufe-lexware.com>
 - Onboarding app   
   React native based app. Contact: <karsten.gaebert@haufe-lexware.com>
-- DigiLib app
-  <raul.firu@haufe-lexware.com>
+- DigiLib app   
+  Contact: <raul.firu@haufe-lexware.com>
 
 ## Contact ##
 
