@@ -57,21 +57,26 @@
 
       path {
         &.ring-arc-3 {
-          stroke: none;
+          stroke: #eeeeee;
+          stroke-width: 1px;
           fill: #eeeeee;
         }
         &.ring-arc-2 {
-          stroke: none;
+          stroke: #dadada;
+          stroke-width: 1px;
           fill: #dadada;
         }
         &.ring-arc-1 {
-          stroke: none;
+          stroke: #cacaca;
+          stroke-width: 1px;
           fill: #cacaca;
         }
         &.ring-arc-0 {
-          stroke: none;
+          stroke: #bababa;
+        stroke-width: 1px;
           fill: #bababa;
         }
+        
       }
 
       .blip-link {
@@ -109,8 +114,10 @@
       text {
         &.blip-text {
           font-size: 9px;
-          font-style: italic;
-          fill: white;
+          font-family: Helvetica, Arial, Geneva, sans-serif;
+          /*font-weight: bold;*/
+          /*font-style: italic;*/
+          fill: black;
         }
 
         &.line-text {
