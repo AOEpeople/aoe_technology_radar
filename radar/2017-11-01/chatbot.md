@@ -9,7 +9,7 @@ quadrant:   ui-and-devices
 Different approaches for ChatBots were developed during the last Hackathons. A project for AKA & HCP starts in January, rolling out the existing prototypes.
 
 
-## Why?
+## Why? ##
 
 Instant Messaging Platforms like What’sApp, Facebook Messenger, etc. are still on the rise and enjoy a huge popularity regarding
 communication. To get or stay in contact with our future and existing customers on these platforms it is necessary to use technologies,
@@ -36,18 +36,19 @@ and wording are the driving factors that shapen your brand. So everyone who’s 
 
 All the FAMA (Facebook, Amazon, Microsoft, Apple) and many other companies and start-ups are offering frameworks, where you can build upon. But, in comparison to many other topics, here not the technology itself is the challenging aspect. The most challenging and crucial factor for success is the design of the dialog as well ad the training of the Bot.
 
-
-## Technology choices/solutions
+## Technology choices/solutions ##
 
 Description of the actual framework: http://work.haufegroup.io/Akademie-Chat-Bot/ 
 
-## Our projects 
+## Our projects ##
+
 VoiceFirst – ChatBot Stream. Development of ChatBots for HCP & AKA 
 
+## Contact ##
 
-## Contact
 Christian Kempter, Ioan-Bogdan Cimpoesu
 
-## Further Article
+## Further Article ##
+
 https://masterofcode.com/blog/what-is-a-chatbot 
 
