@@ -17,18 +17,6 @@ Relevant technologies enabling Business Insights allow for analyzing big volumes
 [Actionable Insights: The Missing Link Between Data And Business Value](https://www.forbes.com/sites/brentdykes/2016/04/26/actionable-insights-the-missing-link-between-data-and-business-value/#4e050fc951e5)
 [Insight Platforms Have Arrived](https://go.forrester.com/blogs/16-05-03-insight_platforms_have_arrived/)
 
-## Relevant for which units ##
-
-corporations|sme|verticals|consumer
-
-## Strategic category ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
-
 ## Technology choices/solutions ##
 
 List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
