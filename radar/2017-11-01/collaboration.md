@@ -1,5 +1,5 @@
 ---
-title:      "Collaboration"
+title:      "Integration&Collaboration"
 ring:       productize
 quadrant:   platforms-and-partners
 
@@ -16,6 +16,9 @@ It is a technical challenge to achieve that goal. Monolithic applications are de
 [**Highly aligned, loosely coupled**](https://de.slideshare.net/reed2001/culture-1798664/94-Highly_Aligned_Loosely_Coupled_Highly) is a leading principal for the collaboration solution architecture.
 Small focused applications and teams that provide their business value via API and a set of integration patterns are our approach.
 
+Moving from monolithic, tightly integrated platform products to a portfolio of highly aligned, loosely coupled products requires a different product collaboration paradigm, best described in [‘Building Microservices’ (Sam Newman) chapter on Implementing Asynchronous Event-Based Collaboration](https://www.safaribooksonline.com/library/view/building-microservices/9781491950340/ch04.html#idm811600).
+Other concepts would be async vs sync, and orchestration vs choreography, dumb networks and smart endpoints etc.
+
 ## Relevant for which units ##
 
 Solution collaboration is extremely important for the HR solutions including Talent and Recruiting Management, Haufe Suite, Haufe Zeugnis Manager, Learning Management Systems and eProcurement solutions.
@@ -26,9 +29,11 @@ Solution collaboration is extremely important for the HR solutions including Tal
 
 ## Technology choices/solutions ##
 
+- SAML, OAuth2
 - REST APIs
 - Microservices
 - Asynchronous communication
+- Event based communication
 
 ## Our projects ##
 
