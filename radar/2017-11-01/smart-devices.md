@@ -5,31 +5,17 @@ quadrant:   ui-and-devices
 
 ---
 
-Holger Reinhardt
-Was ist den damit gemeint? Smart Home oder IoT?
-
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+A system of ubiquitous devices connecting the physical world to the cloud.
+Although things, Internet, and connectivity are the three core components of IoT, the value is in closing the gap between the physical and digital world in self-reinforcing and self-improving systems.
+If you knew the state of every thing in the world, and could reason on top of the data: What problems would you solve?
+(from https://aws.amazon.com/iot/)
 
-## Relevant for which units ##
+https://en.wikipedia.org/wiki/Internet_of_things
+More HLRE specifcially https://en.wikipedia.org/wiki/Internet_of_things#Building_and_home_automation
 
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-corporations|sme|verticals|consumer
-
-## Strategic category ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
+I would even go so far that smart devices like Alexa enable conversational commerce (see IRC blog article again) at a far greater scale than our mobile phones and require a new kind of UX (https://blog.ubisend.com/optimise-chatbots/what-is-conversational-ux) and interaction patterns.
 
 ## Technology choices/solutions ##
 
