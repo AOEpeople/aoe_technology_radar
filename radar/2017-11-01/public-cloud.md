@@ -43,7 +43,7 @@ We have a good business relationship with both Amazon and Microsoft.
 Some projects have refactored their build pipelines and moved their infrastructure from traditional hosters to the cloud.
 New projects that use the public cloud from the start.
 
-[comment]: # @sarabadanie Maybe it's a good idea to say which ones are lift and shift and which are native?
+<!-- @sarabadanie Maybe it's a good idea to say which ones are lift and shift and which are native? -->
 
 Some samples:
 - LexOffice
