@@ -5,17 +5,16 @@ quadrant:   platforms-and-partners
 
 ---
 
-Holger Reinhardt
-
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+The business needs of our customers are wide spread. There is no chance to fulfill all the needs with our own standard applications.
+It is more and more required that our applications are open for extensions and cooperation with partner appliactions.
+Business workflows and processes are complex and often spread over multiple applications, including systems and solutions we do not offer ourselves.
+Customers want to decide themselves which appliaction they want to use for a specific functionality.
+Haufe Group follows the strategy to work together with partners to offer better and new solutions.
+
+To support automated and integrated processes applications need to have APIs.
+
 
 ## Relevant for which units ##
 

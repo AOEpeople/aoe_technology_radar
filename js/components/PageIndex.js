@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { formatRelease } from '../date';
-
 import HeroHeadline from './HeroHeadline';
+import RadarChart from './RadarChart';
 import QuadrantGrid from './QuadrantGrid';
 import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';

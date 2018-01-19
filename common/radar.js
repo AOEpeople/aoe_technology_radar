@@ -27,12 +27,12 @@ export const createRadar = async (tree) => {
 
 const checkAttributes = (fileName, attributes) => {
   const rings = ['discover', 'productize', 'scale'];
-  if (attributes.ring && !rings.includes(attributes.ring)) {
+  if (!attributes.ring || !rings.includes(attributes.ring)) {
     throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
   }
 
   const quadrants = ['data-science-and-analytics', 'infrastructure-and-operational-technology', 'platforms-and-partners', 'ui-and-devices'];
-  if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
+  if (!attributes.quadrant || !quadrants.includes(attributes.quadrant)) {
     throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
   }
 };

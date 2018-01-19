@@ -4,6 +4,7 @@ import PageOverview from './PageOverview';
 import PageHelp from './PageHelp';
 import PageToolbox from './PageToolbox';
 import PageQuadrant from './PageQuadrant';
+import PageRadarChart from './PageRadarChart';
 import PageItem from './PageItem';
 import PageItemMobile from './PageItemMobile';
 import { quadrants, getItemPageNames, isMobileViewport } from '../../common/config';
@@ -20,6 +21,9 @@ const getPageByName = (items, pageName) => {
   }
   if (pageName === 'aoe-toolbox') {
     return PageToolbox;
+  }
+  if (pageName === 'radar-chart') {
+    return PageRadarChart;
   }
   if (quadrants.includes(pageName)) {
     return PageQuadrant;

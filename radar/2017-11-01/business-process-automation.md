@@ -5,41 +5,32 @@ quadrant:   platforms-and-partners
 
 ---
 
-Holger Reinhardt
-
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+Technology is the enabler of business process automation (BPA), and it can automate workflows to the point where human intervention is unnecessary. Automation can save time and money, delight customers who no longer have to wait in line for a person to assist them with a transaction, and preclude human error. Companies look to automate business processes that are time- and resource-intensive operationally, that are subject to human error, and that can be accelerated with automated process improvements achievable through machines and technology. If automating business processes speeds product to market, improves revenue capture, or reduces operating expenses so margins can improve if pricing needs to be kept flat, so much the better.
 
-## Relevant for which units ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-corporations|sme|verticals|consumer
-
-## Strategic category ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
+[Business process automation: Where it works, and where it doesn't](http://www.zdnet.com/article/business-process-automation-where-it-works-and-where-it-doesnt/)
+[Business process automation](https://en.wikipedia.org/wiki/Business_process_automation)
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+Examples of next generation business process automation tools are:
+- [IFTTT](https://ifttt.com)
+- [Zapier](https://zapier.com)
+- [Flow](https://flow.microsoft.com/en-us/)
+- [Beehive](https://github.com/muesli/beehive) - open source (self-hosted)
+- but also [Jenkins](https://jenkins.io)
+
+And don't forget Salesforce as business process platform for sales, services, marketing processes as well its potential for Haufe Academy as event planning and booking platform.
+[Servicenow](https://www.servicenow.com/products/workflow.html) is also used to automate business processes.
 
 ## Our projects ##
 
-List of projects and activities. It's also a good idea to name the contact information for the activity.
-This section is very important cause it documents at what level we are, regarding the usage and experience with the technolgy. 
+- LexOffice investigates [Zapier](https://zapier.com)
+  Contact: Michael Öztürk
+- ITSM team uses [Servicenow](https://www.servicenow.com) for a lot of automated processes
+  Contact: Larissa Wissmann
 
 ## Contact ##
 
-Name the main contact persons or unit.
-Use <email@domain.com> for mail contact infos
+Larissa Wissmann <larissa.wissmann@haufe-lexware.com>
