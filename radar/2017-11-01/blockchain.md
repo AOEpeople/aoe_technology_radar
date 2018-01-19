@@ -17,9 +17,6 @@ But there is much more that is addressed by blockchain technology:
 - Digital rights management
 - Supply chain auditing
 
-#### 19 Industries The Blockchain Will Disrupt ####
-<iframe width="854" height="480" src="https://www.youtube.com/watch?v=G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
-
 Possible business ideas for us might be
 
 - Store education data like education experiences, certificates    
@@ -31,6 +28,11 @@ Possible business ideas for us might be
   Read [more](https://www.coindesk.com/sony-seeks-blockchain-patent-for-user-authentication-system/).
 
 The article [BLOCKCHAIN APPLICATION IDEAS THAT COULD HELP YOUR SMALL BUSINESS](https://due.com/blog/8-blockchain-applications-help-small-business/) contains more interesting business ideas.
+
+#### 19 Industries The Blockchain Will Disrupt ####
+
+Watch this video to see how blockchain technology might disrupt several industries.
+<iframe width="854" height="480" src="https://www.youtube.com/watch?v=G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
 
 ### What is blockchain? ###
 
