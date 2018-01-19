@@ -14,6 +14,7 @@ export const getPageNames = (radar) => {
     'index',
     'overview',
     'help-and-about-tech-radar',
+    'radar-chart',
     'aoe-toolbox',
     ...quadrants,
     ...getItemPageNames(radar.items),

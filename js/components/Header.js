@@ -65,6 +65,11 @@ class Header extends React.Component {
         logoContent={<LogoLink small={smallLogo} />}
       >
         <div className="nav">
+        <div className="nav__item">
+            <Link pageName="radar-chart" className="icon-link">
+              <span className="icon icon--pie icon-link__icon"></span>Technology Radar Chart
+            </Link>
+          </div>
           <div className="nav__item">
             <Link pageName="help-and-about-tech-radar" className="icon-link">
               <span className="icon icon--question icon-link__icon"></span>About the Haufe Technology Radar?
