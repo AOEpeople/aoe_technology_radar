@@ -17,14 +17,17 @@ But there is much more that is addressed by blockchain technology:
 - Digital rights management
 - Supply chain auditing
 
-Possible business ideas might be
+#### 19 Industries The Blockchain Will Disrupt ####
+<iframe width="854" height="480" src="https://www.youtube.com/watch?v=G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
 
-- Store education data like education experiences, certificates
+Possible business ideas for us might be
+
+- Store education data like education experiences, certificates    
   Read [more](https://techcrunch.com/2017/08/09/sony-education-blockchain/) what Sony alreday offers.
-- Digital Rights Management for our content or books
+- Digital Rights Management for our content or books   
   Read [more](http://www.digitalistmag.com/digital-economy/2017/12/19/using-blockchain-for-media-rights-management-ad-revenues-05644369)
 - [Smart Contracts and Licensing](https://link.springer.com/chapter/10.1007/978-3-319-48478-5_6)
-- Identity system for our solutions
+- Identity system for our solutions   
   Read [more](https://www.coindesk.com/sony-seeks-blockchain-patent-for-user-authentication-system/).
 
 The article [BLOCKCHAIN APPLICATION IDEAS THAT COULD HELP YOUR SMALL BUSINESS](https://due.com/blog/8-blockchain-applications-help-small-business/) contains more interesting business ideas.
