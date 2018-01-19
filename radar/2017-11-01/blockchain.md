@@ -29,9 +29,12 @@ Possible business ideas for us might be
 
 The article [BLOCKCHAIN APPLICATION IDEAS THAT COULD HELP YOUR SMALL BUSINESS](https://due.com/blog/8-blockchain-applications-help-small-business/) contains more interesting business ideas.
 
-#### 19 Industries The Blockchain Will Disrupt ####
-
+**19 Industries The Blockchain Will Disrupt**
 Watch this video to see how blockchain technology might disrupt several industries.
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=G3psxs3gyf8)
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/yrRPLBYiiEc" frameborder="0" allowfullscreen></iframe>
+
 <iframe width="854" height="480" src="https://www.youtube.com/watch?v=G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
 
 ### What is blockchain? ###
