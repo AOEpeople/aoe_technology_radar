@@ -10,7 +10,7 @@ quadrant:   ui-and-devices
 The market share of mobile devices grows constantly. Smartphones and tablets are used from more and more customers.
 Internet usage with mobile devices is part of everyday life. The [Zenith study 2017](http://group/websites/prm/ProduktProjekte/PjM%20Dokumente/Anlage_Zenith-Mobile-Avertising-Forecast.pdf) states that mobile internet usage achieved 75% and will grow in the upcoming years.
 
-<!-- The 75% has no context and, therefore, no value. 75% of what- world population?
+<!-- The 75% has no context and, therefore, no value. 75% of what- world population? -->
 
 That means that each solution team must have a strategy how to support mobile devices.
 For some apps, it is even the best to support only mobile devices.
