@@ -32,8 +32,6 @@ The article [BLOCKCHAIN APPLICATION IDEAS THAT COULD HELP YOUR SMALL BUSINESS](h
 #### 19 Industries The Blockchain Will Disrupt ####
 
 Watch this video to see how blockchain technology might disrupt several industries.
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/G3psxs3gyf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 [![Watch the video](https://i.ytimg.com/vi/G3psxs3gyf8/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBXDBUcYlLLaivFqkU7xEt-n5k80g)](https://youtu.be/G3psxs3gyf8)
 
 ### What is blockchain? ###
