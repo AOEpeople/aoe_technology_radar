@@ -33,6 +33,8 @@ The article [BLOCKCHAIN APPLICATION IDEAS THAT COULD HELP YOUR SMALL BUSINESS](h
 Watch this video to see how blockchain technology might disrupt several industries.
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/G3psxs3gyf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+[![Watch the video](https://i.ytimg.com/vi/G3psxs3gyf8/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBXDBUcYlLLaivFqkU7xEt-n5k80g)](https://youtu.be/G3psxs3gyf8)
+
 ### What is blockchain? ###
 
 A blockchain is a digitized, decentralized, public ledger of all digital (often cryptocurrency) transactions. It allows market participants to keep track of digital transactions without central recordkeeping or authority. The blockchain is immutable. You cannot change the entries. You can only add entries. The blockchain is unhackable.
