@@ -1,6 +1,6 @@
 ---
 title:      "Secrets Management"
-ring:       scale
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---

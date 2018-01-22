@@ -1,6 +1,6 @@
 ---
 title:      "Business Insights"
-ring:       scale
+ring:       discover
 quadrant:   data-science-and-analytics
 
 ---
