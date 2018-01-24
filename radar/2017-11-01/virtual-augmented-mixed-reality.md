@@ -13,7 +13,7 @@ Virtual/Augmented and Mixed Reality are different forms of to allow the user to 
 Currently the VR/AR/MR technologies focuses on visual environment and experience.
 VR replaces the visual experience with a whole new world of sensations.
 Virtual reality (VR) technology uses virtual reality headsets to generate realistic images, sounds and other sensations that simulate a user's physical presence in a virtual or imaginary environment.
-Augmented reality (AR) technology augements/extends a physical, real-world environment with computer-generated or extracted real-world sensory input such as sound, video, graphics, haptics or GPS data.
+Augmented reality (AR) technology augments/extends a physical, real-world environment with computer-generated or extracted real-world sensory input such as sound, video, graphics, haptics or GPS data.
 Mixed reality (MR), sometimes referred to as hybrid reality, is the merging of real and virtual worlds to produce new environments and visualizations where physical and digital objects co-exist and interact in real time.
 
 It's not easy to see a real customer value in our business domains. 

@@ -16,7 +16,7 @@ The chapter [API Design Principles](https://github.com/Haufe-Lexware/api-style-g
 
 ## Our projects ##
 
-The API style guide MUST be used when you create an API, refactor or extend an API, no exeptions. Existing APIs might be subject to adapt if there is business value in it.
+The API style guide MUST be used when you create an API, refactor or extend an API, no exceptions. Existing APIs might be subject to adapt if there is business value in it.
 
 The [API Style Guidelines](https://github.com/Haufe-Lexware/api-style-guide)
  is used in a lot of our APIs.
