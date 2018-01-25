@@ -1,5 +1,5 @@
 ---
-title:      "Continuous Integrtation and Delivery"
+title:      "Continuous Integration and Delivery"
 ring:       scale
 quadrant:   infrastructure-and-operational-technology
 

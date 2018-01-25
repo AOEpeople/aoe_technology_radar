@@ -28,10 +28,10 @@ export const renderPage = (radar, pageName) => {
   const preloadedState = store.getState()
 
   // Send the rendered page back to the client
-  return renderFullPage(html, pageTitle, preloadedState);
+  return renderFullPage(html, pageTitle, preloadedState, pageName);
 }
 
-const renderFullPage = (html, pageTitle, preloadedState) => {
+const renderFullPage = (html, pageTitle, preloadedState, pageName) => {
   return `
   <html>
     <head>
@@ -44,8 +44,24 @@ const renderFullPage = (html, pageTitle, preloadedState) => {
       <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
       <meta property="og:title" content="${pageTitle} | Haufe Technology Radar" />
       <meta property="og:image" content="${assetUrl('haufe-logo.jpg')}" />
+      <script type="text/javascript">
+        window.emos3 = {
+          defaults : {
+            siteid : 'tech-radar'
+          },
+          stored : [],
+          send : function(p){this.stored.push(p);}
+        };
+      </script>
     </head>
     <body>
+      <script type="text/javascript" src="${assetUrl('lib/emos3.js')}" async="async"></script>
+      <script type="text/javascript">
+        window.emos3.send({
+          content : '${pageName}',
+          siteid : 'tech-radar'
+        });
+      </script>
       <div id="root">${html}</div>
       <script>
         window.__TECHRADAR__ = ${JSON.stringify(preloadedState)}
