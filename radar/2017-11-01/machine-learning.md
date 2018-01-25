@@ -17,7 +17,7 @@ quadrant:   data-science-and-analytics
 
 [Definition](#definition)   
 [Areas of application, user benefit and correlated HG initiatives](#areas-of-application-user-benefit-and-correlated-hg-initiatives)   
-[1. product view]([#1-product-view)   
+[1. product view](#1-product-view)   
 [2. marketing view](#2-marketing-view)   
 [3. others](#3-others)   
 [Impulses](#impulses)   
