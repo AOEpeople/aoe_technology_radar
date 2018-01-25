@@ -12,7 +12,7 @@ Especially in domains where Haufe Group offers multiple solutions targeting the 
 Currently the applications do not fully exploit their potential of collaboration to optimally support customers in their work processes.
 Solution collaboration starts with a common login includes exchange of data, harmonised user interface and support of useful work processes that are not possible with a single solution.
 
-It is a technical challenge to achieve that goal. Monolithic applications are definately not the answer.
+It is a technical challenge to achieve that goal. Monolithic applications are definitely not the answer.
 [**Highly aligned, loosely coupled**](https://de.slideshare.net/reed2001/culture-1798664/94-Highly_Aligned_Loosely_Coupled_Highly) is a leading principal for the collaboration solution architecture.
 Small focused applications and teams that provide their business value via API and a set of integration patterns are our approach.
 
