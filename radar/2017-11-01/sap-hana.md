@@ -22,7 +22,7 @@ Bereiche die extrem große Datenmengen verarbeiten müssen oder die in sehr kurz
 
 ## Technology choices/solutions ##
 
-Die Haufe wird zukünfitg HANA im SAP-Umfeld einsetzen. Da die Technologie sehr teuer ist, wird vermutlich zunächst nur das SAP ERP (Finanzbuchhaltung, Controlling, Kreditoren- und Debitorenverarbeitung, Abrechnung und Produkte) und das SAP BI/BW (Business Warehouse, genutzt durch das Contrlooing für das Reporting für Teamleiter, Bereichsleiter oder Geschäftsleitung) umgestellt.
+Die Haufe wird zukünfitg HANA im SAP-Umfeld einsetzen. Da die Technologie sehr teuer ist, wird vermutlich zunächst nur das SAP ERP (Finanzbuchhaltung, Controlling, Kreditoren- und Debitorenverarbeitung, Abrechnung und Produkte) und das SAP BI/BW (Business Warehouse, genutzt durch das Controlling für das Reporting für Teamleiter, Bereichsleiter oder Geschäftsleitung) umgestellt.
 
 ## Our projects ##
 
