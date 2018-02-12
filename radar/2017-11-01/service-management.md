@@ -27,19 +27,6 @@ We can decide to keep this topic extremely narrow and put the tool (ITSM, Servic
 
 Ultimately it also leads to the concept of ‘local domain of control and global domain of visibility’ ..and who controls which aspects
 
-## Relevant for which units ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-corporations|sme|verticals|consumer
-
-## Strategic category ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
-
 ## Technology choices/solutions ##
 
 List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.

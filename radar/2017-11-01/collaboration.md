@@ -19,14 +19,6 @@ Small focused applications and teams that provide their business value via API a
 Moving from monolithic, tightly integrated platform products to a portfolio of highly aligned, loosely coupled products requires a different product collaboration paradigm, best described in [‘Building Microservices’ (Sam Newman) chapter on Implementing Asynchronous Event-Based Collaboration](https://www.safaribooksonline.com/library/view/building-microservices/9781491950340/ch04.html#idm811600).
 Other concepts would be async vs sync, and orchestration vs choreography, dumb networks and smart endpoints etc.
 
-## Relevant for which units ##
-
-Solution collaboration is extremely important for the HR solutions including Talent and Recruiting Management, Haufe Suite, Haufe Zeugnis Manager, Learning Management Systems and eProcurement solutions.
-
-## Strategic category ##
-
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-
 ## Technology choices/solutions ##
 
 - SAML, OAuth2

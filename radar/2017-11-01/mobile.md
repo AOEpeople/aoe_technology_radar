@@ -1,6 +1,6 @@
 ---
 title:      "Mobile"
-ring:       productize
+ring:       scale
 quadrant:   ui-and-devices
 
 ---

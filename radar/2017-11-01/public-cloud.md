@@ -21,14 +21,6 @@ The public cloud gives us:
 It even can save costs when we use the public cloud infrastructure in an intelligent way and choose the application architecture accordingly.
 Without public cloud continuous deployment (CD) is not possible for production.
 
-## Relevant for which units ##
-
-All units
-
-## Strategic category ##
-
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-
 ## Technology choices/solutions ##
 
 ICT and CTO agreed to support two public cloud providers.

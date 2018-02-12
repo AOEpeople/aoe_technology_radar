@@ -16,14 +16,6 @@ The more [API-Management](./../infrastructure-and-operational-technology/api-man
 - How do I find it?
 - How many APIs are there in Haufe Group?
 
-## Relevant for which units ##
-
-All units
-
-## Strategic category ##
-
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
-
 ## Technology choices/solutions ##
 
 There are not many solutions to use.

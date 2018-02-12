@@ -17,19 +17,6 @@ Focus on the why we use it and not how it works.
 Describe the business opportunities and the business value.
 If the technology is necessary to enable another technology, please name it.
 
-## Relevant for which units ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-corporations|sme|verticals|consumer
-
-## Strategic category ##
-
-I'm not sure wether we really need that categorization. We can add it later if we want to.
-- Kategorie 1: Eine Schlüsseltechnologie ist für ein HGF relevant
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
-- Kategorie 3: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung generisch
-- Kategorie 4: Eine Schlüsseltechnologie ist noch nicht in einer Business Strategie erwähnt
-
 ## Technology choices/solutions ##
 
 List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.

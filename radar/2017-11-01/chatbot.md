@@ -1,6 +1,6 @@
 ---
 title:      "Chatbots"
-ring:       discover
+ring:       productize
 quadrant:   ui-and-devices
 
 ---

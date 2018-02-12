@@ -36,6 +36,7 @@ Most activities were focused on Hololens (Mixed Reality).
 - Hololens Day (May 2017)
 - Hololens Developer Workshop (October 2017)
 - Hackathon with business cases from Akademie for Hololens (November 2017)
+- MR/VR/AR cell that creates a so called memory app for Akademie
 
 ## Contact ##
 

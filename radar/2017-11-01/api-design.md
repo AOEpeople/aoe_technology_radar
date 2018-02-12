@@ -6,6 +6,7 @@ quadrant:   platforms-and-partners
 ---
 
 ## Why? ##
+
 Great RESTful APIs look like they were designed by a single team. This promotes API adoption, reduces friction, and enables clients to use them properly. To build APIs that meet this standard, and to answer many common questions encountered along the way of RESTful API development, the Haufe-Lexware CTO team has created this comprehensive set of guidelines. 
 The chapter [API Design Principles](https://github.com/Haufe-Lexware/api-style-guide/blob/master/api-design-principles/api-design-principles.md) describes how we design our APIs.
 

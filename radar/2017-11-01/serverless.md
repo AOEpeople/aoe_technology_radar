@@ -1,6 +1,6 @@
 ---
 title:      "Serverless"
-ring:       discover
+ring:       productize
 quadrant:   infrastructure-and-operational-technology
 
 ---
@@ -19,14 +19,6 @@ The functionality might be triggered by various sources like Http-Request, Timer
 Maintenance effort for the infrastructure is highly reduced.
 
 But with the use of the technology the app is tied to the cloud provider. You can't switch to a traditional hoster anymore or run the service OnPremise.
-
-## Relevant for which units ##
-
-All units
-
-## Strategic category ##
-
-- Kategorie 2: Eine Schlüsseltechnologie ist für mehrere HGF relevant – Ausprägung sehr HGF spezifisch
 
 ## Technology choices/solutions ##
 

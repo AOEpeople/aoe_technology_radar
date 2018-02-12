@@ -19,12 +19,11 @@ Relevant technologies enabling Business Insights allow for analyzing big volumes
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+No research done
 
 ## Our projects ##
 
-List of projects and activities. It's also a good idea to name the contact information for the activity.
-This section is very important cause it documents at what level we are, regarding the usage and experience with the technolgy.
+No activities till now.
 
 ## Contact ##
 
