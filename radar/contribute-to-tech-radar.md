@@ -17,49 +17,63 @@ Since the tech radar is curated, the first step is to tell us what you wish to c
 * E-mail to [\_kickstarter\_customer\_success\_new\_tech@haufe-lexware.com](mailto:_kickstarter_customer_success_new_tech@haufe-lexware.com?subject=Tech Radar Contribution).
 * Rocket chat in the "Tech Radar" channel.
 * Jabber to us in the Jabber "Tech Radar" channel
-* Make an "content-less" pull request - **from your forked GitHub repository** - with a comment what you wish to contribute to [https://github.com/Haufe-Lexware/aoe\_technology\_radar](https://github.com/Haufe-Lexware/aoe_technology_radar/tree/PrepareContent "The Tech Radar Git repository").
+* Make an "content-less" pull request - **from your forked GitHub repository** - and say you wish to contribute to https://github.com/Haufe-Lexware/aoe\_technology\_radar.
 
-When we receive your request, we'll contact you to talk about it and to see if it's something the tech radar is ready for.
+When we receive your request, we'll contact you to talk about it and to see if it's something the tech radar is ready for and how much content is needed for version 1.0.
 
 ## Contributing content
 
 There are various ways to to contribute content. For folks, who don't want to contribute over Git, there are German and English Microsoft Word templates that you can use to structure your content. Just ask for them.
 
-If you are going to contribute over Git, the recommended workflow is for you to [fork](https://help.github.com/articles/fork-a-repo/ "How to fork a Git repo") the [https://github.com/Haufe-Lexware/aoe\_technology\_radar](https://github.com/Haufe-Lexware/aoe_technology_radar) repository to your own Git account. Create and edit your content from your forked repository and make a pull request inside of the "PrepareContent" branch \(Select the "PrepareContent" branch in your fork\).
+If you are going to contribute over Git, the recommended workflow is for you to [fork](https://help.github.com/articles/fork-a-repo/ "How to fork a Git repo") the [https://github.com/Haufe-Lexware/aoe\_technology\_radar](https://github.com/Haufe-Lexware/aoe_technology_radar) repository to your own Git account. Create and edit your content from your forked repository and make a pull request inside of the "PrepareContent" branch \(Select the "PrepareContent" branch in your fork\). Directly after you fork the Tech Radar, it is a good idea to change your default branch to "PrepareContent" from your repository settings.
 
 Documentation for [forking](https://www.gitbook.com/book/sspeights/technology-radar-work/edit#) and[ pull requests](https://www.gitbook.com/book/sspeights/technology-radar-work/edit#) is linked. But, if you have any questions about forking a repository or creating a pull request, please contact us.
 
-## Editing content
+## Edit content
 
-There are several way to edit Git Markdown. People, who work with GitHub on a regular basis should feel free to use an IDE to contribute and edit Tech Radar content. Remember if you are working with a Git repo you always want to work from the "PrepareContent" branch and never from "master" branch!
+Once it is decided that content should be added to the tech radar, you can start contributing. It is good to look at other completed tech radar content. Here you can get an idea of the scope and purpose of a tech radar article. tech radar content is created with [Git Markdown](https://guides.github.com/features/mastering-markdown/). 
+
+There are several way to edit Git Markdown. People, who work with Git and Markdown on a regular basis should feel free to use an IDE to contribute and edit Tech Radar content. Remember if you are working with a Git repo you always want to work from the "PrepareContent" branch and never from "master" branch!
 
 Using Git from the Git Bash is not described here. If you want to use bash commands to manage your content, we assume you know how to do it already.
 
 ### Microsoft Word templates
 
-For those of you, who don't want to work with Git at all, just request the English or German Microsoft Word templates and someone will enter the content for you when editing is finished.
+For those of you, who don't want to work with Git at all, just request the English or German Microsoft Word templates and someone will enter the content in Git for you when editing is finished. 
 
 ### Edit online in Github
 
-### Using GitBook to edit your forked Tech Radar repository
+You can create and edit markdown file in your Git repository online. 
+
+* Navigate to the "radar" folder in your forked repository, 
+* "Create New File", 
+* name your file
+* Copy the contents of \_template.md into this file
+* Edit this content. **Achtung: Here you have to know markdown syntax to be able to edit.**
+* Commit your changes
+
+### Use GitBook to edit your forked Tech Radar repository
 
 For those you, who want to use Git but want a WYSIWYG editor, GitBook is an alternative. GitBook is the Git online Markdown WYSIWYG editor. From GitBook, you can log in to GitBook with your GitHub account and sync your forked Tech Radar repository and edit WYSIWYG online.
 
-Please remember, even though GitBook is WYSIWYG, you are still working with your forked Git repository: you must still only work with the "PrepareContent" branch. From the home page of your GitBook, go to "Settings" &gt; "Options" and in the "Publication Section", select "PrepareContent" as your default branch. This way you only have to configure this once.
+Please remember, even though GitBook is WYSIWYG, you are still working with your forked Git repository: you must still only work with the "PrepareContent" branch. From the home page of your GitBook, go to **"Settings" &gt; "Options"** and in the **"Publication Section"**, select** "PrepareContent"** as your default branch. This way you only have to configure this once.
 
-### Editing from GitBook editor
+### Edit from GitBook editor
 
 All Tech Radar content is under the "radar" folder in date stamped folders.
 
 To start working, Click "Edit" from your GitBook home page, to open the edit dialog - since this is not really a GitBook, select "Files" in the upper right corner to the see the content. to create your content --
 
-* Create a file with the name of the technology you are contributing: all lower-case with hyphen separators.
+* Make sure the default branch is selected in the upper-left corner
+* In the "radar" folder, create a file with the name of the technology you are contributing: all lower-case with hyphen separators.
 * Open the \_template.md file and copy the contents.
 * Paste these contents into your new file and change the information to fit your contribution.
 * Edit using the toolbar in the upper-right corner.
 * Click "Publish" \(CTRL + S\) in the upper-right corner to push your changes. 
 
-## 
+## Make your pull request
+
+When you are done, you make a pull request to https://github.com/Haufe-Lexware/aoe\_technology\_radar to let us know you are ready for a review. 
 
 
 
