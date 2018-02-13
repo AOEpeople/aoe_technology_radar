@@ -55,7 +55,7 @@ To start working, Click "Edit" from your GitBook home page, to open the edit dia
 * Open the \_template.md file and copy the contents.
 * Paste these contents into your new file and change the information to fit your contribution.
 * Edit using the toolbar in the upper-right corner.
-* Click "Publish" in the upper-right corner to push your changes. 
+* Click "Publish" \(CTRL + S\) in the upper-right corner to push your changes. 
 
 ## 
 
