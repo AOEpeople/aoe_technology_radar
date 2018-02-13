@@ -1,7 +1,7 @@
 ---
 title:      "Learning Management System"
 ring:       productize
-quadrant:   ##platforms-and-partners
+quadrant:   platforms-and-partners
 
 ---
 
@@ -19,7 +19,7 @@ If the technology is necessary to enable another technology, please name it.
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+List our preferred solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
 
 ## Our projects ##
 
