@@ -39,9 +39,7 @@ For those of you, who don't want to work with Git at all, just request the Engli
 
 ### Using GitBook to edit your forked Tech Radar repository
 
-For those you, who want to use Git but want a Wysiwyg editor, GitBook is an alternative. GitBook is the Git online Markdown WYSIWYG editor. From GitBook, you can log in to GitBook with your GitHub account and sync your forked Tech Radar repository and edit WYSIWYG online. 
-
-
+For those you, who want to use Git but want a WYSIWYG editor, GitBook is an alternative. GitBook is the Git online Markdown WYSIWYG editor. From GitBook, you can log in to GitBook with your GitHub account and sync your forked Tech Radar repository and edit WYSIWYG online.
 
 ## 
 
