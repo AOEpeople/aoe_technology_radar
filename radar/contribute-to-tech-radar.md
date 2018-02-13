@@ -39,6 +39,8 @@ Using Git from the Git Bash is not described here. If you want to use bash comma
 
 For those of you, who don't want to work with Git at all, just request the English or German Microsoft Word templates and someone will enter the content for you when editing is finished.
 
+### Edit online in Github
+
 ### Using GitBook to edit your forked Tech Radar repository
 
 For those you, who want to use Git but want a WYSIWYG editor, GitBook is an alternative. GitBook is the Git online Markdown WYSIWYG editor. From GitBook, you can log in to GitBook with your GitHub account and sync your forked Tech Radar repository and edit WYSIWYG online.
@@ -58,3 +60,6 @@ To start working, Click "Edit" from your GitBook home page, to open the edit dia
 * Click "Publish" \(CTRL + S\) in the upper-right corner to push your changes. 
 
 ## 
+
+
+
