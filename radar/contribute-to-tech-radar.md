@@ -14,7 +14,7 @@ It's also a good idea to follow these steps, when contributing information.
 
 Since the tech radar is curated, the first step is to tell us what you wish to contribute. You can let us know in various ways
 
-* E-mail to [\_kickstarter\_customer\_success\_new\_tech@haufe-lexware.com](mailto:_kickstarter_customer_success_new_tech@haufe-lexware.com?subject=Tech Radar Contribution).
+* E-mail to [\_kickstarter\_customer\_success\_new\_tech@haufe-lexware.com](mailto:_kickstarter_customer_success_new_tech@haufe-lexware.com?subject=Tech-Radar-Contribution).
 * Rocket chat in the "Tech Radar" channel.
 * Jabber to us in the Jabber "Tech Radar" channel
 * Make an "content-less" pull request - **from your forked GitHub repository** - and say you wish to contribute to [https://github.com/Haufe-Lexware/aoe\_technology\_radar](https://github.com/Haufe-Lexware/aoe_technology_radar).
