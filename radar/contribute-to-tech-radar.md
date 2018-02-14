@@ -45,13 +45,13 @@ For those of you, who don't want to work with Git at all, just request the Engli
 
 You can create and edit markdown file in your Git repository online.
 
-[To see instructions, click here.](/radar/edit-in-github.md)
+[To see instructions, click here.](/radar/edit-in-github.md){:target="_blank"}
 
 ### Use GitBook to edit your forked tech radar repository
 
 For those you, who want to use Git but want a WYSIWYG editor, [GitBook](https://help.gitbook.com/basics/what-is-gitbook.html) is an alternative. GitBook is the Git online Markdown WYSIWYG editor. From GitBook, you can [log in to GitBook with your GitHub account and sync your forked Tech Radar repository](https://help.gitbook.com/github/can-i-host-on-github.html) and edit WYSIWYG online.
 
-[To see instructions, click here.](/radar/edit-with-gitbook.md)
+[To see instructions, click here.](/radar/edit-with-gitbook.md){:target="_blank"}
 
 ## Make your pull request
 
