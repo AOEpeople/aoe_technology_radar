@@ -27,15 +27,15 @@ There are various ways to to contribute content. For folks, who don't want to co
 
 If you are going to contribute over Git, the recommended workflow is for you to [fork](https://help.github.com/articles/fork-a-repo/ "How to fork a Git repo") the [https://github.com/Haufe-Lexware/aoe\_technology\_radar](https://github.com/Haufe-Lexware/aoe_technology_radar) repository to your own Git account. Create and edit your content from your forked repository and make a pull request inside of the "PrepareContent" branch \(Select the "PrepareContent" branch in your fork\). Directly after you fork the Tech Radar, it is a good idea to change your default branch to "PrepareContent" from your repository settings.
 
-Documentation for [forking](https://www.gitbook.com/book/sspeights/technology-radar-work/edit#) and[ pull requests](https://www.gitbook.com/book/sspeights/technology-radar-work/edit#) is linked. But, if you have any questions about forking a repository or creating a pull request, please contact us.
+Documentation for [forking](https://help.github.com/articles/fork-a-repo/) and [pull requests](https://help.github.com/articles/creating-a-pull-request/ "How to make a pull request") is linked. But, if you have any questions about forking a repository or creating a pull request, please contact us.
 
 ## Edit content
 
-Once it is decided that content should be added to the tech radar, you can start contributing. It is good to look at other completed tech radar content. Here you can get an idea of the scope and purpose of a tech radar article. tech radar content is created with [Git Markdown](https://guides.github.com/features/mastering-markdown/).
+Once it is decided that content should be added to the tech radar, you can start contributing. It is good to look at [other tech radar content](http://hg-tr-prod.westeurope.cloudapp.azure.com/techradar/infrastructure-and-operational-technology/blockchain.html "Blockchain in the Tech Radar"). Here you can get an idea of the scope and purpose of a tech radar article. tech radar content is created with [Git Markdown](https://guides.github.com/features/mastering-markdown/).
 
 There are several way to edit Git Markdown. People, who work with Git and Markdown on a regular basis should feel free to use an IDE to contribute and edit Tech Radar content. Remember if you are working with a Git repo you always want to work from the "PrepareContent" branch and never from "master" branch!
 
-Using Git from the Git Bash is not described here. If you want to use bash commands to manage your content, we assume you know how to do it already.
+Using Git from the Git Bash is not described here. If you want to use bash commands to manage your content with Git, we assume you know how to do it already.
 
 ### Microsoft Word templates
 
@@ -45,35 +45,13 @@ For those of you, who don't want to work with Git at all, just request the Engli
 
 You can create and edit markdown file in your Git repository online.
 
-* Navigate to the "radar" folder in your forked repository, 
-* "Create New File", 
-* name your file
-* Copy the contents of \_template.md into this file
-* Edit this content. **Achtung: Here you have to know markdown syntax to be able to edit.**
-* Commit your changes
-
 ### Use GitBook to edit your forked tech radar repository
 
 For those you, who want to use Git but want a WYSIWYG editor, [GitBook](https://help.gitbook.com/basics/what-is-gitbook.html) is an alternative. GitBook is the Git online Markdown WYSIWYG editor. From GitBook, you can [log in to GitBook with your GitHub account and sync your forked Tech Radar repository](https://help.gitbook.com/github/can-i-host-on-github.html) and edit WYSIWYG online.
 
-Please remember, even though GitBook is WYSIWYG, you are still working with your forked tech radar repository: you must still only work with the "PrepareContent" branch. From the home page of your GitBook, go to **"Settings" &gt; "Options"** and in the **"Publication Section"**, select** "PrepareContent"** as your default branch. This way you only have to configure this once.
-
-### Edit from GitBook editor
-
-All tech radar content is under the "radar" folder in date stamped folders.
-
-To start working, click "Edit" from your GitBook home page, to open the edit dialog - since this is not really a GitBook, select "Files" in the upper right corner to the see the content. to create your content --
-
-* Make sure the default branch - "PrepareContent" - is selected in the upper-left corner
-* In the "radar" folder, create a file with the name of the technology you are contributing: all lower-case with hyphen separators.
-* Open the \_template.md file and copy the contents.
-* Paste these contents into your new file and change it to fit your contribution.
-* Edit using the toolbar in the upper-right corner.
-* Click "Publish" \(CTRL + S\) in the upper-right corner to push your changes. 
-
 ## Make your pull request
 
-When you are done, you make a pull request to https://github.com/Haufe-Lexware/aoe\_technology\_radar to let us know you are ready for a review. To create a pull request -
+When you are done, you make a pull request to [https://github.com/Haufe-Lexware/aoe\_technology\_radar](https://github.com/Haufe-Lexware/aoe_technology_radar) to let us know you are ready for a review. Remember we advise you to [fork the tech radar](https://help.github.com/articles/fork-a-repo/ "How to fork a git repository") on your own GitHub account and to contribute [by making pull requests from this forked repository](https://help.github.com/articles/creating-a-pull-request/ "How to make a pull request"). To create a pull request -
 
 * Go to your forked tech radar repository
 * Click "New Pull Request". A pull request with your changes is created and you changes will be reviewed.
