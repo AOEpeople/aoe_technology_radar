@@ -7,9 +7,9 @@ quadrant:   infrastructure-and-operational-technology
 
 ## Why? ##
 
-After development, any application/service is stripped of debugging functionality or instrumentation.
+After development, any application/service is stripped of debugging functionality and instrumentation.
 
-The only chance to keep an eye out for success/failure is to observe the system(s) for
+The only chance to keep an eye on success/failure is to observe the system(s) for
 
 - logging information
 - monitoring data
@@ -32,7 +32,7 @@ Monitoring data is being used to **control and manage** the application/service 
 
 ### Telemetry ###
 
-... is any kind of **usage** information of the application/service and its runtime environment. 
+... is any kind of **usage** information about the application/service and its runtime environment. 
 
 Think about:
 

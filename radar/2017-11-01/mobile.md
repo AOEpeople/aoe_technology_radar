@@ -10,13 +10,15 @@ quadrant:   ui-and-devices
 The market share of mobile devices grows constantly. Smartphones and tablets are used from more and more customers.
 Internet usage with mobile devices is part of everyday life. The [Zenith study 2017](http://group/websites/prm/ProduktProjekte/PjM%20Dokumente/Anlage_Zenith-Mobile-Avertising-Forecast.pdf) states that mobile internet usage achieved 75% and will grow in the upcoming years.
 
+<!-- The 75% has no context and, therefore, no value. 75% of what- world population? -->
+
 That means that each solution team must have a strategy how to support mobile devices.
-For some apps it is even the best to support only mobile devices.
+For some apps, it is even the best to support only mobile devices.
 
-With the rise of mobile devices a lot of different technical approaches and frameworks are offered to implement a mobile solution.
+With the rise of mobile devices, a lot of different technical approaches and frameworks are offered to implement a mobile solution.
 
-The range of mobile solution approaches reaches from web apps over hybrid apps to (cross-platform) native apps.
-The article [Native, Web or Hybrid Apps?](https://www.mobiloud.com/blog/native-web-or-hybrid-apps/) gives an excellent overview about the different approaches and also a chapter, how to choose the right approach for your situation.
+The range of mobile solution approaches includes web apps, hybrid apps, and (cross-platform) native apps.
+The article [Native, Web or Hybrid Apps?](https://www.mobiloud.com/blog/native-web-or-hybrid-apps/) gives an excellent overview about the different approaches and there is also a chapter on "how to choose the right approach for your situation".
 
 ## Relevant for which units ##
 
@@ -39,7 +41,7 @@ A wide selection of mobile frameworks are available. The market is very vivid an
 
 ## Our projects ##
 
-The list is only a selection of projects.
+The list is a small selection of example projects. There are many more mobile projects at Haufe Group.
 
 - iDesk mobile   
   Angular.js based single page app. Contact: <martin.danielsson@haufe-lexware.com>
