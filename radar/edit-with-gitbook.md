@@ -25,7 +25,7 @@ To start working, click "Edit" from your GitBook home page, to open the edit dia
 * Paste these contents into your new file and change it to fit your contribution.
 * Edit using the toolbar in the upper-right corner.
 
-![](/assets/2018-02-14-15_11_25-radar_toolbar-GitBook Editor.png)
+![](/assets/2018-02-14-radar_toolbar-GitBookEditor.png)
 
 * Click "Publish" \(CTRL + S\) in the upper-right corner to push your changes. 
 
