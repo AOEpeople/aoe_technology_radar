@@ -4,7 +4,7 @@ You can create and edit markdown file in your Git repository online.
 
 * Navigate to the "radar" folder in your forked repository.
 
-![](../assets/2018-02-14 15_15_10-go-to-radar-folder-SSpeights_aoe_technology_radar.png)
+![](https://github.com/SSpeights/aoe_technology_radar/assets/2018-02-14 15_15_10-go-to-radar-folder-SSpeights_aoe_technology_radar.png)
 
 * "Create New File".
 
