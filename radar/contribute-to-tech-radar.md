@@ -39,7 +39,7 @@ Using Git from the Git Bash is not described here. If you want to use bash comma
 
 ### Microsoft Word templates
 
-For those of you, who don't want to work with Git at all, just request the English or German Microsoft Word templates and someone will enter the content in Git for you when editing is finished.
+For those of you, who don't want to work with Git at all, just request the English or German Microsoft Word templates and contribute your tech radar content in Microsoft Word format. Someone will enter the content in Git for you when editing is finished.
 
 ### Edit online in GitHub
 
@@ -73,7 +73,7 @@ To start working, click "Edit" from your GitBook home page, to open the edit dia
 
 ## Make your pull request
 
-When you are done, you make a pull request to https://github.com/Haufe-Lexware/aoe\_technology\_radar to let us know you are ready for a review. To create a pull request - 
+When you are done, you make a pull request to https://github.com/Haufe-Lexware/aoe\_technology\_radar to let us know you are ready for a review. To create a pull request -
 
 * Go to your forked tech radar repository
 * Click "New Pull Request". A pull request with your changes is created and you changes will be reviewed.
@@ -83,6 +83,4 @@ When you are done, you make a pull request to https://github.com/Haufe-Lexware/a
 **Achtung: if you have an open pull request, new changes will be added to the open pull request until it is merged with the Haufe Group repository.**
 
 Please don't hesitate to contact us, if you have any questions about contributing.
-
-
 
