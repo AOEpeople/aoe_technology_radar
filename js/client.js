@@ -8,7 +8,8 @@ import App from './components/App';
 import appReducer from './reducer';
 import actions, { NAVIGATE } from './actions';
 import {isMobileViewport} from '../common/config'
-import {track} from './analytics';
+//import {track} from './analytics';
+import {track} from './econda';
 
 // Remove .html and map / to index
 const getPageNameFromPath = (path) => {

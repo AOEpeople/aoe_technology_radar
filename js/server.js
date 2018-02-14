@@ -56,12 +56,6 @@ const renderFullPage = (html, pageTitle, preloadedState, pageName) => {
     </head>
     <body>
       <script type="text/javascript" src="${assetUrl('lib/emos3.js')}" async="async"></script>
-      <script type="text/javascript">
-        window.emos3.send({
-          content : '${pageName}',
-          siteid : 'tech-radar'
-        });
-      </script>
       <div id="root">${html}</div>
       <script>
         window.__TECHRADAR__ = ${JSON.stringify(preloadedState)}
