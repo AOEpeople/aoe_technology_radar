@@ -27,7 +27,7 @@ To start working, click "Edit" from your GitBook home page, to open the edit dia
 
 ![](/assets/images/2018-02-14-radar_toolbar-GitBookEditor.png)
 
-* Click "Publish" \(CTRL + S\) in the upper-right corner to push your changes. 
+* Click "Publish" \(CTRL + S\) in the upper-right corner to save your changes. 
 
 
 
