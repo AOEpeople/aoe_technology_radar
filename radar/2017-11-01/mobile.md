@@ -30,7 +30,7 @@ Relevant for all units.
 
 ## Technology choices/solutions ##
 
-A wide seletion of mobile frameworks is available. The market is very vivid, and it is hard to keep track of all the offers.
+A wide selection of mobile frameworks are available. The market is very vivid and it is hard to keep track of all the offers.
 
 - Swift or Objective-C (Native iOS)
 - Java (native Android)

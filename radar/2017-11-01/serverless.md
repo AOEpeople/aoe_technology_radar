@@ -16,7 +16,7 @@ Main features/promises are:
 
 That allows to create small apps called on demand and to run the apps with minimal costs.
 The functionality might be triggered by various sources like Http-Request, Timer-trigger, Database Trigger, Event Trigger
-Maintenance effort for the infastructure is highly reduced.
+Maintenance effort for the infrastructure is highly reduced.
 
 But with the use of the technology the app is tied to the cloud provider. You can't switch to a traditional hoster anymore or run the service OnPremise.
 

@@ -9,12 +9,13 @@ quadrant:   infrastructure-and-operational-technology
 
 The public cloud provides infrastructure like (computing power, storage, network ...) and managed services.
 Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) gives us the chance to automate our deployments and to maintain our released software versions in a way that was not possible with traditional hosting services.
+
 The public cloud gives us:
 
 - Flexibility   
   Start with a minimal set of resources and grow as needed.
 - Control   
-  Operate the solutions and immedeately have access to monitoring and logging data.
+  Operate the solutions and immediately have access to monitoring and logging data.
 - Speed   
   Deployments are done in minutes. Infrastructure changes can be done by the team.
 
