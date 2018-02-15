@@ -2,6 +2,7 @@
 title:      "Learning Management System"
 ring:       productize
 quadrant:   platforms-and-partners
+hidden:     true
 
 ---
 

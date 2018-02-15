@@ -48,6 +48,7 @@ Following front-matter attributes are possible:
 - **quadrant**: Quadrant. One of `data-science-and-analytics`, `infrastructure-and-operational-technology`, `platforms-and-partners`, `ui-and-devices`
 - **ring**: Ring section in radar. One of `discover`, `productize`, `scale`
 - **info**: (optional) A short textual description of the item (visible in overview pages)
+- **hidden**: (optional) Set to `true` in order to hide the item. E.g. when under development.
 
 #### Quadrant values and their meaning ####
 - `data-science-and-analytics` means Data Science & Analytics   

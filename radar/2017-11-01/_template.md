@@ -2,6 +2,7 @@
 title:      "template"
 ring:       discover
 quadrant:   data-science-and-analytics
+hidden:     true
 
 ---
 

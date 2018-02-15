@@ -14,7 +14,8 @@ marked.setOptions({
 
 export const createRadar = async (tree) => {
   const fileNames = (await getAllMarkdownFiles(radarPath()));
-  const revisions = await createRevisionsFromFiles(fileNames);
+  const revisionsWithHidden = await createRevisionsFromFiles(fileNames);
+  const revisions = revisionsWithHidden.filter(revision => !revision.hidden); 
   const allReleases = getAllReleases(revisions);
   const items = createItems(revisions);
   const flaggedItems = flagWithIsNew(items, allReleases);
@@ -44,15 +45,14 @@ const createRevisionsFromFiles = (fileNames) => (
         if(err) {
           reject(err);
         } else {
-          const fm = frontmatter(data);
+          const fm = frontmatter(data);    
+          checkAttributes(fileName, fm.attributes);
           // prepend subfolder to links
           fm.body = fm.body.replace(/\]\(\//g, '](/techradar/')
 
           // add target attribute to external links
           let html = marked(fm.body);
           html = html.replace(/a href="http/g, 'a target="_blank" href="http')
-
-          checkAttributes(fileName, fm.attributes);
           resolve({
             ...itemInfoFromFilename(fileName),
             ...fm.attributes,
