@@ -141,7 +141,11 @@ The production version is available at [http://hg-tr-prod.westeurope.cloudapp.az
 It reflects the content and version of the **master** branch.
 A new deployment is triggered whenever the branch **master** is changed.
 
+## Contribute
+
+[To see instructions, click here.](docs/contribute-to-tech-radar.md)
+
 ## Todos
 
 - [ ] Work on the content
-- [ ] Implement circle diagram view of the data
+- [x] Implement circle diagram view of the data
