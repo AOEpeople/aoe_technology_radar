@@ -40,5 +40,5 @@ The new benefits that big data analytics brings to the table, however, are speed
  
 
 ## Contact ##
-- Customer Analytics/Big Data Lab: Jutta Hobbelhagen <Jutta.Hobbelhagen@haufe-lexware.com>
+- Customer Analytics/Big Data Lab: <Jutta.Hobbelhagen@haufe-lexware.com>
 - Big Data Architecture (in CTO): <Jerzy.Kott@haufe-lexware.com>
