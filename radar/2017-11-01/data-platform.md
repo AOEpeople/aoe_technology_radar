@@ -5,7 +5,6 @@ quadrant:   data-science-and-analytics
 
 ---
 
-Jerzy Kott
 
 ## Definition ##
 
