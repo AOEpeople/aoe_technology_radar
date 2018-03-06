@@ -5,29 +5,50 @@ quadrant:   data-science-and-analytics
 
 ---
 
-Rainer Kempkes, Holger Reinhardt
+Jerzy Kott
+
+## Definition ##
+
+Data platform is a type of IT solution that combines the features and capabilities of several data application and sources across company's data landscape within a single solution. It is a platform that enables organization developing, deploying, operating and managing a data infrastructure /environment. 
+Data platform generally consists of storage, servers, databases, big data solutions, BI/Analytics and data management utilities. It also supports integration with other systems.
 
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+- Remove data silos by creating common Data Platform integrating all valuable data sources and data engines across company.
+
+- Enable scalable, agile and future-proof company-wide data architecture and ecosystem
+
+- Enable data democratisation and data-driven decisions by implementing self-service BI/Analytics/Reporting
+
+- Enrich products with embedded BI/Analytic/Reporting and analytics-driven functionality
+
+- Enable data-driven product development
+
+- Provides discovery and fast prototyping environment for data-driven experimentation and innovation.
+
+- Lowers maintenance costs and workload by reducing the complexity of multiple data integration vendors/solutions into a one cohesive solution
+
+- Removes direct dependences between data systems and applications ("decoupling"), allowing more flexible and agile new products and solutions development.
+
+- Removes currently existing bottlenecks for analysing, cleansing and delivering data.
+
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+Currently concept is under discussion with Data Lake being preffered solution.
+
+Data Lake - centralised repository of enterprise data that can meet the needs of various application workloads that gain efficiency through the reusability and consistency of data.
+
 
 ## Our projects ##
 
-List of projects and activities. It's also a good idea to name the contact information for the activity.
-This section is very important cause it documents at what level we are, regarding the usage and experience with the technolgy. 
+HDP - PoC/pilot of publish/subscribe based data packages transport concept (Thomas Schuering).
+Data Warehouse (MIWH) upgrade (Patric Held)
 
-## Contact ##
+## Contacts ##
 
-Name the main contact persons or unit.
-Use <email@domain.com> for mail contact infos
+Data Architecture: Jerzy.Kott@haufe-lexware.com
+HDP PoC: Thomas.Schuering@haufe.com
+MIWH: Patrick.Held@haufe-lexware.com
+
 
