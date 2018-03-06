@@ -9,10 +9,10 @@ export default function Footer({ items, pageName }) {
     <div className={classNames('footer', {'is-hidden': !isMobileViewport() && getItemPageNames(items).includes(pageName)})}>
       <Branding
         modifier="footer"
-        logoContent={<img src={assetUrl('logo.svg')} width="150px" height="60px" />}
+        logoContent={<img src={assetUrl('haufe-logo.png')} width="180px" height="18px" />}
       >
         <span className="footnote">
-      AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers.
+        The Haufe Group stands for integrated cloud and desktop solutions in the areas of taxation, legal, bookkeeping, learning, and talent management It is a leading media and software vendor for professional online portals, e-procurement, online communities, and human resource & organizational development solutions.
         </span>
       </Branding>
       <FooterEnd/>

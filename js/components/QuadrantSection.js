@@ -3,6 +3,7 @@ import { translate, rings } from '../../common/config';
 import Badge from './Badge';
 import Link from './Link';
 import ItemList from './ItemList';
+import IsNew from './IsNew';
 
 const renderList = (ringName, quadrantName, groups, big) => {
   const itemsInRing = groups[quadrantName][ringName];
@@ -26,7 +27,10 @@ const renderList = (ringName, quadrantName, groups, big) => {
             key={item.name}
             className="ring-list__item"
           >
-            <Link className="link" pageName={`${item.quadrant}/${item.name}`}>{item.title}</Link>
+            <Link className="link" pageName={`${item.quadrant}/${item.name}`}>
+              {item.title}
+              <IsNew item={item} />
+            </Link>
           </span>
         ))
       }
@@ -58,7 +62,7 @@ export default function QuadrantSection({ quadrantName, groups, big = false }) {
             !big && (
               <div className="split__right">
                 <Link className="icon-link" pageName={`${quadrantName}`}>
-                  <span className="icon icon--pie icon-link__icon"></span>Quadrant Overview
+                  <span className="icon icon--overview icon-link__icon"></span>Quadrant Overview
                 </Link>
               </div>
             )

@@ -12,10 +12,10 @@ const templateFolder = 'templates';
 export const vars = (vars) => ({
   translate: (text) => {
     const mappings = {
-      'languages-and-frameworks': 'Languages & Frameworks',
-      'methods-and-patterns': 'Methods & Patterns',
-      'platforms-and-aoe-services': 'Platforms and AOE Services',
-      'tools': 'Tools',
+      'data-science-and-analytics': 'Data Science & Analytics',
+      'infrastructure-and-operational-technology': 'Infrastructure & Operational Technology',
+      'platforms-and-partners': 'Platforms & Partners',
+      'ui-and-devices': 'UI & Devices',
     };
 
     return mappings[text.trim()] || '-';

@@ -1,0 +1,20 @@
+  
+server {
+  listen       80 default_server;
+  server_name  _;
+  index        index.html;
+  access_log   /var/log/nginx/techradar.access.log  combined;
+
+  location / {
+    root       /opt/haufe-techradar/techradar;
+    try_files  $uri $uri/ /index.html; # fallback page if requested page is unknown
+  }
+
+  location /techradar { # if someone uses legacy url
+    root       /opt/haufe-techradar/;
+    try_files  $uri $uri/ /index.html;
+  }
+
+}
+
+

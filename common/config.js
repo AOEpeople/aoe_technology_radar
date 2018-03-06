@@ -1,8 +1,8 @@
 export const quadrants = [
-  'languages-and-frameworks',
-  'methods-and-patterns',
-  'platforms-and-aoe-services',
-  'tools',
+    'data-science-and-analytics',
+    'infrastructure-and-operational-technology',
+    'platforms-and-partners',
+    'ui-and-devices',
 ];
 
 export function assetUrl(file) {
@@ -14,6 +14,7 @@ export const getPageNames = (radar) => {
     'index',
     'overview',
     'help-and-about-tech-radar',
+    'radar-chart',
     'aoe-toolbox',
     ...quadrants,
     ...getItemPageNames(radar.items),
@@ -23,17 +24,16 @@ export const getPageNames = (radar) => {
 export const getItemPageNames = (items) => items.map(item => `${item.quadrant}/${item.name}`);
 
 export const rings = [
-  'adopt',
-  'trial',
-  'assess',
-  'hold'
+  'discover',
+  'productize',
+  'scale'
 ];
 
 const messages = {
-  'languages-and-frameworks': 'Languages & Frameworks',
-  'methods-and-patterns': 'Methods & Patterns',
-  'platforms-and-aoe-services': 'Platforms and AOE Services',
-  'tools': 'Tools',
+  'data-science-and-analytics': 'Data Science & Analytics',
+  'infrastructure-and-operational-technology': 'Infrastructure & Operational Technology',
+  'platforms-and-partners': 'Platforms & Partners',
+  'ui-and-devices': 'UI & Devices',
 };
 
 export const translate = (key) => (messages[key] || '-');

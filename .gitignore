@@ -2,3 +2,6 @@
 dist
 node_modules
 npm-debug.log
+/.vs/slnx.sqlite
+/.vs/aoe_technology_radar/v15
+/.vs

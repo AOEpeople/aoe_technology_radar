@@ -28,7 +28,7 @@
     transition: 400ms all cubic-bezier(0.54, 0, 0.28, 1);
     position: absolute;
     top: 50%;
-    left: 130px;
+    left: 230px;
     white-space: nowrap;
     font-size: 18px;
     line-height: 1;

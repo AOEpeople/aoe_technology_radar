@@ -8,7 +8,8 @@ import App from './components/App';
 import appReducer from './reducer';
 import actions, { NAVIGATE } from './actions';
 import {isMobileViewport} from '../common/config'
-import {track} from './analytics';
+//import {track} from './analytics';
+import {track} from './econda';
 
 // Remove .html and map / to index
 const getPageNameFromPath = (path) => {
@@ -59,7 +60,7 @@ delete window.__TECHRADAR__;
 const store = createStore(appReducer, preloadedState, applyMiddleware(historyManager))
 
 const handleSetTitle = (title) => {
-  document.title = `${title} | AOE Technology Radar`;
+  document.title = `${title} | Haufe Technology Radar`;
   track();
 };
 

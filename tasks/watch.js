@@ -37,8 +37,8 @@ watch(jsPath(), options, watchBuild('pages'));
 watch(assetsPath(), options, watchBuild('assets'));
 watch(radarPath(), options, watchBuild('pages'));
 
-var params = {
+const params = {
     root: relativePath('dist'),
-    logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
+    logLevel: 0, // 0 = errors only, 1 = some, 2 = lots
 };
 liveServer.start(params);

@@ -24,15 +24,15 @@
     background: var(--color-gray-normal);
     border-color: var(--color-gray-normal);
   }
-  &--adopt {
+  &--discover {
     background: var(--color-green);
     border-color: var(--color-green);
   }
-  &--trial {
+  &--productize {
     background: var(--color-orange);
     border-color: var(--color-orange);
   }
-  &--assess {
+  &--scale {
     background: var(--color-blue);
     border-color: var(--color-blue);
   }
