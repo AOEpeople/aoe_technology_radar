@@ -5,17 +5,25 @@ quadrant:   data-science-and-analytics
 
 ---
 
-Rainer Kempkes, Holger Reinhardt
+Jerzy Kott
+
+## Definitions ##
+
+Big data analytics is the process of examining large and varied data sets to discover hidden patterns, unknown correlations, market trends, customer preferences and other useful information that can help organizations make more-informed business decisions.
 
 ## Why? ##
 
-- Short description of the technolgy   
-Keep it short and not to technical. The audience of the tech radar are all Haufe Group employees and not only the techies.
-Use a language that also business people can understand. Use links to refer to content with deeper information.
-- Business reasons why it is important for us   
-Focus on the why we use it and not how it works.
-Describe the business opportunities and the business value.
-If the technology is necessary to enable another technology, please name it.
+- Cost reduction. Big data technologies such as Hadoop and cloud-based analytics bring significant cost advantages when it comes to storing large amounts of data – plus they can identify more efficient ways of doing business.
+
+- Faster, better decision making. With the speed of Hadoop and in-memory analytics, combined with the ability to analyze new sources of data, businesses are able to analyze information immediately – and make decisions based on what they’ve learned.
+
+- New products and services. With the ability to gauge customer needs and satisfaction through analytics comes the power to give customers what they want. 
+
+The concept of big data has been around for years; most organizations now understand that if they capture all the data that streams into their businesses, they can apply analytics and get significant value from it. 
+
+The new benefits that big data analytics brings to the table, however, are speed and efficiency. Whereas a few years ago a business would have gathered information, run analytics and discover information that could be used for future decisions, today that business can identify insights for immediate decisions. The ability to work faster – and stay agile – gives organizations a competitive edge they didn’t have before.  
+
+
 
 ## Technology choices/solutions ##
 
