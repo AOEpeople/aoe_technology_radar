@@ -27,14 +27,18 @@ The new benefits that big data analytics brings to the table, however, are speed
 
 ## Technology choices/solutions ##
 
-List our prefered solutions. It's not necessary or a goal to list all possible solutions. Focus on what we use.
+- Classical Hadoop ecosystem distributions e.g. Cloudera, Hortonworks, MapR etc.
+- Apache Spark
+- Cloud-based big data as a service e.g. Azure HDInsights or AWS EMR
+- Commercial analytical platforms e.g. SAS Visual Analytics or Microsoft Power BI
 
 ## Our projects ##
 
-List of projects and activities. It's also a good idea to name the contact information for the activity.
-This section is very important cause it documents at what level we are, regarding the usage and experience with the technolgy. 
+- Customer Analytics team runs Big Data Lab with SAS Visual Analytics and Hadoop ecosystem back-end.
+- Microsoft Power BI is used in various departments of our company.
+- PoCs related to Big Data Analytics are in progress across the company.
+ 
 
 ## Contact ##
-
-Name the main contact persons or unit.
-Use <email@domain.com> for mail contact infos
+Customer Analytics/Big Data Lab: Jutta Hobbelhagen <Jutta.Hobbelhagen@haufe-lexware.com>
+Big Data Architecture (in CTO): <Jerzy.Kott@haufe-lexware.com>
