@@ -42,13 +42,13 @@ Data Lake - centralised repository of enterprise data that can meet the needs of
 
 ## Our projects ##
 
-HDP - PoC/pilot of publish/subscribe based data packages transport concept (Thomas Schuering).
-Data Warehouse (MIWH) upgrade (Patric Held)
+- HDP - PoC/pilot of publish/subscribe based data packages transport concept (Thomas Schuering).
+- Data Warehouse (MIWH) upgrade (Patric Held)
 
 ## Contacts ##
 
-Data Architecture: Jerzy.Kott@haufe-lexware.com
-HDP PoC: Thomas.Schuering@haufe.com
-MIWH: Patrick.Held@haufe-lexware.com
+- Data Architecture: Jerzy.Kott@haufe-lexware.com
+- HDP PoC: Thomas.Schuering@haufe.com
+- MIWH: Patrick.Held@haufe-lexware.com
 
 
