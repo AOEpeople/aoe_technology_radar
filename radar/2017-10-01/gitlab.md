@@ -1,6 +1,6 @@
 ---
 title:      "Gitlab"
-ring:       trail
+ring:       trial
 quadrant:   tools
 ---
 
