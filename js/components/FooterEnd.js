@@ -14,6 +14,7 @@ export default function FooterEnd({modifier}) {
                     <a className="social-links-icon" href="https://www.linkedin.com/company/aoe" target="_blank"><i className="socicon-linkedin social-icon"></i></a>
                     <a className="social-links-icon" href="https://www.xing.com/company/aoe" target="_blank"><i className="socicon-xing social-icon"></i></a>
                     <a className="social-links-icon" href="https://www.youtube.com/user/aoepeople" target="_blank"><i className="socicon-youtube social-icon"></i></a>
+                    <a className="social-links-icon" href="https://github.com/aoepeople" target="_blank"><i className="socicon-github social-icon"></i></a>
                 </div>
             </div>
             <div className="footer-copyright">
