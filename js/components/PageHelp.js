@@ -40,7 +40,7 @@ export default function PageHelp({ leaving, onLeave, ...props }) {
           <li><strong>Hold:</strong> This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that there are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now.</li>
         </ul>
       <p>We also maintain a short list of useful tools - that are not worth putting on the radar - but that can belong in everyone's "toolbox". We call the list of these technologies the AOE Toolbox and you can find information about them here: <a href="aoe-toolbox.html">AOE Toolbox</a></p>
-      <p>Contributions and source code of the radar are on github: <a href="https://github.com/AOEpeople/aoe_technology_radar" target="_blank">AOE Tech Rdar on Github</a></p>
+      <p>Contributions and source code of the radar are on github: <a href="https://github.com/AOEpeople/aoe_technology_radar" target="_blank">AOE Tech Radar on Github</a></p>
 
 
       </div>
