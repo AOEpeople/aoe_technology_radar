@@ -1,6 +1,6 @@
 ---
 title:      "Google container engine"
 ring:       trial
-quadrant:   pattern
+quadrant:   methods-and-patterns
 
 ---

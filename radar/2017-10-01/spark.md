@@ -1,5 +1,5 @@
 ---
-title:      "Alpakka"
+title:      "Spark"
 ring:       assess
 quadrant:   languages-and-frameworks
 

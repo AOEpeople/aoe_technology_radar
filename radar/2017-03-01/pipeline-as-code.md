@@ -1,6 +1,6 @@
 ---
 title:      "Pipeline as Code"
-ring:       assess
+ring:       adopt
 quadrant:   methods-and-patterns
 
 ---

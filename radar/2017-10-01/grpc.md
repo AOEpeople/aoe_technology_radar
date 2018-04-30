@@ -1,4 +1,6 @@
 ---
 title:      "GRPC"
 ring:       assess
-quadrant:   TBD
+quadrant:   languages-and-frameworks
+
+---

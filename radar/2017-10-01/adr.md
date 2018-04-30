@@ -1,6 +1,6 @@
 ---
 title:      "ADR"
 ring:       assess
-quadrant:   pattern
+quadrant:   methods-and-patterns
 
 ---

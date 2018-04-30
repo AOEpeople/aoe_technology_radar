@@ -1,6 +1,6 @@
 ---
 title:      "Vue.js"
-ring:       assess
+ring:       trial
 quadrant:   languages-and-frameworks
 
 ---

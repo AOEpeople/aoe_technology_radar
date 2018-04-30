@@ -1,6 +1,6 @@
 ---
 title:      "Kubernetes"
-ring:       assess
+ring:       trial
 quadrant:   platforms-and-aoe-services
 
 ---

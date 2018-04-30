@@ -1,6 +1,6 @@
 ---
 title:      "MKDOCS"
-ring:       asses
+ring:       assess
 quadrant:   tools
 
 ---

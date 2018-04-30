@@ -1,6 +1,6 @@
 ---
 title:      "Self service infrastructure"
 ring:       assess
-quadrant:   pattern
+quadrant:   methods-and-patterns
 
 ---
