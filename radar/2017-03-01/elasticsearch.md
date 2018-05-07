@@ -1,6 +1,6 @@
 ---
 title:      "Elasticsearch"
-ring:       adopt
+ring:       trial
 quadrant:   platforms-and-aoe-services
 
 ---
