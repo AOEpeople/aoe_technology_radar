@@ -28,4 +28,4 @@ deploy:
     local_dir: dist
     detect_encoding: true
     on:
-      branch: finalize
+      branch: next
