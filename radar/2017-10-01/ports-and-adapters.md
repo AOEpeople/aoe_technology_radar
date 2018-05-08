@@ -22,10 +22,10 @@ In short here is how we often layer such applications:
     * Contains the Applications API and Services, that are developed around the use cases in the application requirements.
     * This use cases orchestrate the flow of data to and from the domain
 * Interfaces:
-    * set of adapters that convert data from the  format most convenient for the  use cases to the format most convenient for  some external agency/access
+    * set of adapters that convert data from the format most convenient for the use cases to the format most convenient for some external agency/access
     * e.g. (Web) Controllers / DTOs for handling forms etc
 * Infrastructure:
-    * This layer is where all the details go. The Web is a detail.   The database is a detail.  We keep these things on the  outside where they can do little harm.
+    * This layer is where all the details go. The Web is a detail. The database is a detail. We keep these things on the outside where they can do little harm.
     * This is where you can use frameworks and tools such as the RDB Mappers etc.
     * communication details with other external systems (and its DataTransferObjects and Mappers)
 
