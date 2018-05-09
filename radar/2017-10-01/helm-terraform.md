@@ -1,6 +1,6 @@
 ---
 title:      "Helm/Terraform"
-ring:       assess
+ring:       trial
 quadrant:   tools
 
 ---
