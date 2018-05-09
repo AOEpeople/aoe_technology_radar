@@ -5,6 +5,9 @@ quadrant:   platforms-and-aoe-services
 
 ---
 
-Kubernetes is a container orchestration platform, which supports many different infrastructure providers. It allows you to deploy containers and takes care of running, scaling or self-healing your applications based on configurations you provide. It's based on years of knowledge and experience Google gained by using containers.
-
-At AOE, we started Kubernetes in a test environment on bare metal to experiment with it. It's currently used for running AOE internal apps such as dashboards as well as running builds in containers. We also started to use it for upcoming projects to run and manage several services. There are Tools to automate the setup of kubernetes in AWS like [Cops](https://kubernetes.io/docs/getting-started-guides/kops/). Another helpful tool is [Minikube](https://github.com/kubernetes/minikube), which allows to test and run kubernetes locally.
+Kubernetes has developed to the quasi standard for container orchestration: Nearly every cloud provider provides managed Kubernetes and even Docker Enterprise uses Kubernetes.
+We are running several production systems with Kubernetes and we are using it concepts like:
+ * "secrets" and "configmaps" to manage configurations for the applications. By updating this ressources with an automated configuration pipeline you have a great way for configuration management.
+ * Autoscaling of Kubernetes nodes and the usage of "horizontal pod scaling" inside Kubernetes allows elastic scaling
+ * The support of managing permissions with OAuth allows to secure Kubernetes with [Keycloak](/tools/keycloak.html) (SSO)
+ * Kubernetes extensibility and API can be used to automate and customize it to your needs
