@@ -36,7 +36,7 @@
     "history": "4.7.2",
     "live-server": "1.2.0",
     "marked": "0.3.9",
-    "moment": "2.19.3",
+    "moment": "2.22.1",
     "postcss-cli": "4.1.1",
     "postcss-css-variables": "0.8.0",
     "postcss-custom-media": "^6.0.0",
