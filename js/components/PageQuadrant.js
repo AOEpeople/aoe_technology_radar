@@ -6,10 +6,10 @@ import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';
 
 import { translate } from '../../common/config';
-import { groupByQuadrants } from '../../common/model';
+import {featuredOnly, groupByQuadrants} from '../../common/model';
 
 export default function PageQuadrant({ leaving, onLeave, pageName, items, ...props }) {
-  const groups = groupByQuadrants(items);
+  const groups = groupByQuadrants(featuredOnly(items));
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle {...props} title={translate(pageName)} />
