@@ -4,10 +4,10 @@ ring:       hold
 quadrant:   tools
 ---
 
-[SVN/Subversion](https://subversion.apache.org/) have for many years been a
-strong tool for version control, but a stronger and better tool
+[SVN/Subversion](https://subversion.apache.org/) has been a
+strong tool for version control for many years, but a stronger and better tool
 ([Git](https://git-scm.com/)) has taken over.
 
-We have over the last period of time, read years, migrate more and more
-repositories from SVN to Git, and we will completely turn off our SVN server end
+During the past few years, we have migrated more and more
+repositories from SVN to Git; and we will completely turn off our SVN server by the end
 of this year (2017).
