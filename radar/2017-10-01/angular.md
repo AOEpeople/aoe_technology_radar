@@ -4,14 +4,14 @@ ring:       trial
 quadrant:   languages-and-frameworks
 
 ---
-Beside that many major upgrades from version 2 to 5 which often needed manual hands on a lot has happened in the Angular 
-ecosystem in 2017. Like in particular the improvements on the HTTP-Client which require less coding effort from now or 
-the great improvements on angular.cli like aot (ahead of time compile) for faster rendering, fewer requests and 
-much smaller builds to name just the most important ones.
+In addition to numerous major upgrades from version 2 to 5, which often needed a "hands-on" approach, a lot has happened in the Angular 
+ecosystem in 2017. Specifically, the improvements in the HTTP-Client, which now requires less coding effort. Or 
+the vast improvements on angular.cli such as aot (ahead of time compile) for faster rendering, fewer requests and 
+much smaller builds, to just name the most important ones.
 
-Beside that many facts about, we made many good experiences using Angular in large and medium size projects. Actually 
-it's the choice in our telecommunication sector teams as single page application framework (SPA) for micro service front 
+We have achieved particularly good results using Angular in large and medium-size projects. Actually, 
+it's our framework-of-choice in our telecommunication sector teams as a single-page application framework (SPA) for microservice front 
 ends.
 
-The convenient scaffolding of unit- and end-2-end-tests provide a very quality driven workflow.
-Also the module and component architecture helps to keep the codebase understandable end maintainable.
+The convenient scaffolding of unit- and end-to-end-tests provides a quality-driven workflow.
+Also, the module- and component architecture helps to keep the codebase understandable end maintainable.
