@@ -4,3 +4,5 @@ ring:       adopt
 quadrant:   methods-and-patterns
 
 ---
+
+Updated to "adopt".
