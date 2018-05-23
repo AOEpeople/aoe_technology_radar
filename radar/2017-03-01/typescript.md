@@ -13,7 +13,7 @@ JavaScript scoping, which led into recurring workarounds such as **var self = th
 
 In TypeScript **this** stays **this**, which leads to more readable and understandable code from an OOP perspective.
 
-TypeScript continues to be actively developed by Microsoft and is also well-Integrated in today's IDEs.
+TypeScript continues to be actively developed by Microsoft and is well-Integrated in today's IDEs.
 
 The excellent structure and the possibilities for extension make it a good choice to consider for larger JavaScript projects.
 
