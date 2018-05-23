@@ -29,6 +29,7 @@
   }
 
   &__footer {
+    margin-top: 5px;
     flex: 0 0 auto;
   }
 }

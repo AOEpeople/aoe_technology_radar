@@ -15,15 +15,19 @@ export default function PageIndex({
   ...props
 }) {
   const newestRelease = props.releases.slice(-1)[0];
+  const numberOfReleases = props.releases.length;
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle {...props} title="Technology Radar" />
       <div className="headline-group">
-        <HeroHeadline alt={formatRelease(newestRelease)}>
+        <HeroHeadline alt={`Version #${numberOfReleases}`}>
           AOE Technology Radar
         </HeroHeadline>
       </div>
       <QuadrantGrid items={featuredOnly(items)} />
+      <div className="publish-date">
+          Published {formatRelease(newestRelease)}
+      </div>
     </Fadeable>
   );
 }
