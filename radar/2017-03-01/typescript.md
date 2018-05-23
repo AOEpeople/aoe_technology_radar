@@ -13,10 +13,10 @@ JavaScript scoping, which led into recurring workarounds such as **var self = th
 
 In TypeScript **this** stays **this**, which leads to more readable and understandable code from an OOP perspective.
 
-TypeScript continues to be actively developed by Microsoft and is also well-Integrated in today's IDEs.
+TypeScript continues to be actively developed by Microsoft and is well-Integrated in today's IDEs.
 
 The excellent structure and the possibilities for extension make it a good choice to consider for larger JavaScript projects.
 
-Typescript was the choice for [Angular 2+](/languages-and-frameworks/angular-2.html) and one can assume that it will get more traction with the success of Angular 2 in the future.
+Typescript was the choice for [Angular](/languages-and-frameworks/angular.html) and one can assume that it will get more traction with the success of Angular in the future.
 
 There are also projects that support Typescript „code execution“ on the server such as [ts-node](https://www.npmjs.com/package/ts-node).

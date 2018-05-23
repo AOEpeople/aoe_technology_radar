@@ -3,6 +3,7 @@ import { translate, rings } from '../../common/config';
 import Badge from './Badge';
 import Link from './Link';
 import ItemList from './ItemList';
+import Flag from './Flag';
 
 const renderList = (ringName, quadrantName, groups, big) => {
   const itemsInRing = groups[quadrantName][ringName];
@@ -10,7 +11,9 @@ const renderList = (ringName, quadrantName, groups, big) => {
   if (big === true) {
     return (
       <ItemList items={itemsInRing} noLeadingBorder>
-        <Badge type={ringName} big={big}>{ringName}</Badge>
+        <Badge type={ringName} big={big}>
+          {ringName}
+        </Badge>
       </ItemList>
     );
   }
@@ -20,23 +23,24 @@ const renderList = (ringName, quadrantName, groups, big) => {
       <div className="ring-list__header">
         <Badge type={ringName}>{ringName}</Badge>
       </div>
-      {
-        itemsInRing.map(item => (
-          <span
-            key={item.name}
-            className="ring-list__item"
-          >
-            <Link className="link" pageName={`${item.quadrant}/${item.name}`}>{item.title}</Link>
-          </span>
-        ))
-      }
+      {itemsInRing.map(item => (
+        <span key={item.name} className="ring-list__item">
+          <Link className="link" pageName={`${item.quadrant}/${item.name}`}>
+            {item.title}
+            <Flag item={item} short />
+          </Link>
+        </span>
+      ))}
     </div>
   );
-}
-
+};
 
 const renderRing = (ringName, quadrantName, groups, big) => {
-  if (!groups[quadrantName] || !groups[quadrantName][ringName] || groups[quadrantName][ringName].length === 0) {
+  if (
+    !groups[quadrantName] ||
+    !groups[quadrantName][ringName] ||
+    groups[quadrantName][ringName].length === 0
+  ) {
     return null;
   }
   return (
@@ -44,7 +48,7 @@ const renderRing = (ringName, quadrantName, groups, big) => {
       {renderList(ringName, quadrantName, groups, big)}
     </div>
   );
-}
+};
 
 export default function QuadrantSection({ quadrantName, groups, big = false }) {
   return (
@@ -54,21 +58,18 @@ export default function QuadrantSection({ quadrantName, groups, big = false }) {
           <div className="split__left">
             <h4 className="headline">{translate(quadrantName)}</h4>
           </div>
-          {
-            !big && (
-              <div className="split__right">
-                <Link className="icon-link" pageName={`${quadrantName}`}>
-                  <span className="icon icon--pie icon-link__icon"></span>Quadrant Overview
-                </Link>
-              </div>
-            )
-          }
+          {!big && (
+            <div className="split__right">
+              <Link className="icon-link" pageName={`${quadrantName}`}>
+                <span className="icon icon--pie icon-link__icon" />Quadrant
+                Overview
+              </Link>
+            </div>
+          )}
         </div>
       </div>
       <div className="quadrant-section__rings">
-        {
-          rings.map((ringName) => renderRing(ringName, quadrantName, groups, big))
-        }
+        {rings.map(ringName => renderRing(ringName, quadrantName, groups, big))}
       </div>
     </div>
   );
