@@ -2,6 +2,14 @@
 
 A static site generator for AOE Technology Radar
 
+## Usage for your own radar?
+The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
+
+However please be aware:
+* The text and descriptions for the articles in the "radar" are copyright protected by AOE and they are not allowed to use in your radar
+* It would be nice to mention in radar that the generator is based on this repository.
+* Also when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
+
 ## Installation
 
 ```
