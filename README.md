@@ -4,6 +4,7 @@ A static site generator for AOE Technology Radar
 
 ## Usage for your own radar?
 The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
+(There is a list of planned features below in case someone wants to contribute :-)
 
 However please be aware:
 * The text and descriptions for the articles in the "radar" are copyright protected by AOE and they are not allowed to use in your radar
@@ -77,6 +78,8 @@ merged with the old ones and a new history entry is created for that item.
 * [x] Implement search
 * [ ] Finalize CSS
 * [x] Get contents for how-to-use page
+* [ ] Tagging Items (Show Tags / Linking related items automatically)
+* [ ] Filter by Tags in overview
 * [ ] Show item history on details (relevant with 2nd release)
 * [ ] Better semantic and SEO
 * [ ] Make mobile friendly
