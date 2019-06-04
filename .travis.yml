@@ -2,6 +2,7 @@ language: node_js
 node_js: node
 install: yarn install
 script: yarn build
+cache: yarn
 deploy:
   - provider: s3
     access_key_id:
