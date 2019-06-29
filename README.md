@@ -14,10 +14,10 @@ However please be aware:
 ## Installation
 
 ```
-> git clone git@github.com:AOEpeople/aoe_technology_radar.git
-> cd aoe_technology_radar
-> yarn install
-> yarn watch
+git clone git@github.com:AOEpeople/aoe_technology_radar.git
+cd aoe_technology_radar
+yarn
+yarn watch
 ```
 
 _A new [browser tab](http://127.0.0.1:8080/techradar) should open up - wait
@@ -37,7 +37,6 @@ Each file has a [front-matter](https://github.com/jxson/front-matter) header
 where the attributes of the item are listed:
 
 ```
-
 ---
 title:      "React"
 ring:       adopt
