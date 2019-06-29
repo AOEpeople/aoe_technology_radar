@@ -6,13 +6,13 @@
   "scripts": {
     "build": "yarn clean && yarn build:pages && yarn build:jsprod && yarn build:css && yarn build:assets",
     "build:all": "yarn build",
-    "build:pages": "cross-env RENDER_MODE=server babel-node ./tasks/build.js",
+    "build:pages": "cross-env RENDER_MODE=server babel ./tasks/build.js",
     "build:js": "cross-env RENDER_MODE=client webpack --config webpack.config.js",
     "build:jsprod": "cross-env RENDER_MODE=client webpack -p --config webpack.config.js",
     "build:css": "postcss -c postcss.config.js -o dist/techradar/assets/css/styles.css styles/main.css",
-    "build:assets": "babel-node ./tasks/assets.js",
-    "watch": "babel-node ./tasks/watch.js",
-    "clean": "babel-node ./tasks/clean.js",
+    "build:assets": "babel ./tasks/assets.js",
+    "watch": "babel ./tasks/watch.js",
+    "clean": "babel ./tasks/clean.js",
     "test": "jest"
   },
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
@@ -20,13 +20,7 @@
   "dependencies": {
     "async": "2.6.0",
     "autoprefixer": "7.1.6",
-    "babel-cli": "6.26.0",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-latest": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-0": "6.24.1",
+    "babel-loader": "8.0.6",
     "classnames": "2.2.5",
     "cross-env": "^5.1.1",
     "css-mqpacker": "^6.0.1",
@@ -54,10 +48,15 @@
     "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
+    "core-js": "^3.1.4",
     "jest": "^24.8.0",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.8.6",
+    "regenerator-runtime": "^0.13.2"
   }
 }
