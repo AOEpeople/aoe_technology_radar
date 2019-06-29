@@ -13,7 +13,7 @@
     "build:assets": "babel-node ./tasks/assets.js",
     "watch": "babel-node ./tasks/watch.js",
     "clean": "babel-node ./tasks/clean.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "Apache-2.0",
@@ -52,5 +52,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "react-test-renderer": "^16.8.6"
   }
 }

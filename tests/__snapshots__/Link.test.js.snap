@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a Link component 1`] = `
+<a
+  className="icon-link"
+  href="/techradar/overview.html"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className="icon icon--overview icon-link__icon"
+  />
+  Technologies Overview
+</a>
+`;
