@@ -1,7 +1,9 @@
 language: node_js
 node_js: node
 install: yarn install
-script: yarn build
+script:
+  - yarn build
+  - yarn test
 cache: yarn
 deploy:
   - provider: s3
