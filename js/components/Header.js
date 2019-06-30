@@ -6,7 +6,6 @@ import Branding from './Branding';
 import Link from './Link';
 import LogoLink from './LogoLink';
 import Search from './Search';
-import { getItemPageNames } from '../../common/config';
 import actions from '../actions';
 
 class Header extends React.Component {

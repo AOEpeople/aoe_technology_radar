@@ -1,4 +1,4 @@
-import fs, { readFile, outputFile } from 'fs-extra';
+import { readFile } from 'fs-extra';
 import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
