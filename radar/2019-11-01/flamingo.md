@@ -32,7 +32,7 @@ Flamingo has a clean architecture with clear dependencies in mind and offers a t
 * GraphQL support and therefore support to build nice SPA and PWAs on top of it
 * Resilience and Caching for external APIs calls.
 
-Flamingo itself does not contain ORM Mapper or libraries - instead it emphasizes "ports and adapters" architecture - so that you have a technology free (domain) model and any possible (and replaceable) persitence behind it.
+Flamingo itself does not contain ORM Mapper or libraries - instead it emphasizes ["ports and adapters"](/methods-and-patterns/ports-and-adapters.html)  architecture - so that you have a technology free (domain) model and any possible (and replaceable) persitence behind it.
 That makes Flamingo useful to build microservices and applications - especially to build "frontends" or portals that require interaction with other (micro) services in a distributed architecture. 
 When sticking to the architectural recommendation you can build modular applications with replaceable adapters that gives you independed testability.
 
