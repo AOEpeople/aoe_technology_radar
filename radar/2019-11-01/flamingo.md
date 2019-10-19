@@ -4,7 +4,6 @@ ring:       adopt
 quadrant:   languages-and-frameworks
 
 ---
-Flamingo
 
 Flamingo is a high productivity go based framework for rapidly building fast and pluggable web projects.
 It is used to build scalable and maintainable (web)applications.
