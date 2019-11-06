@@ -1,6 +1,6 @@
 ---
 title:      "STRIDE Threat Modeling"
-ring:       assess
+ring:       trial
 quadrant:   methods-and-patterns
 
 ---
