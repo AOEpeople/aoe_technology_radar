@@ -1,6 +1,6 @@
 ---
 title:      "BeyondCorp"
-ring:       assess
+ring:       trial
 quadrant:   methods-and-patterns
 
 ---
