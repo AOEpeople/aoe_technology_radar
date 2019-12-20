@@ -43,7 +43,7 @@
     "postcss-easy-import": "3.0.0",
     "postcss-nested": "2.1.2",
     "react": "16.1.1",
-    "react-dom": "16.1.1",
+    "react-dom": "16.1.2",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
     "walk": "2.3.9",
