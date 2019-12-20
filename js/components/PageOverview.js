@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import HeadlineGroup from './HeadlineGroup';
 import HeroHeadline from './HeroHeadline';
 import Badge from './Badge';

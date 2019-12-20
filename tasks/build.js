@@ -1,4 +1,4 @@
-import { createRadar, groupByQuadrants, outputRadar } from '../common/radar';
+import { createRadar } from '../common/radar';
 import { save } from '../common/file';
 import { getPageNames } from '../common/config';
 import { renderPage } from '../js/server';
