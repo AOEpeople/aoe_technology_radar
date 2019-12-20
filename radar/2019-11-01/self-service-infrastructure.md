@@ -1,7 +1,7 @@
 ---
 title:      "Self-service infrastructure"
 ring:       trial
-quadrant:   methods-and-patterns
+quadrant:   platforms-and-aoe-services
 
 ---
 
