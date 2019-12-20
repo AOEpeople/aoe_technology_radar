@@ -1,7 +1,6 @@
 import { copy } from 'fs-extra';
 import {
   assetsPath,
-  faviconPath,
   distPath,
 } from '../common/file';
 

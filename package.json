@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "yarn clean && yarn build:pages && yarn build:jsprod && yarn build:css && yarn build:assets",
     "build:all": "yarn build",
@@ -18,7 +19,6 @@
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "Apache-2.0",
   "dependencies": {
-    "async": "2.6.0",
     "autoprefixer": "7.1.6",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
@@ -35,7 +35,7 @@
     "highlight.js": "9.12.0",
     "history": "4.7.2",
     "live-server": "1.2.0",
-    "marked": "0.3.9",
+    "marked": "0.3.18",
     "moment": "2.22.1",
     "postcss-cli": "4.1.1",
     "postcss-css-variables": "0.8.0",
@@ -43,7 +43,7 @@
     "postcss-easy-import": "3.0.0",
     "postcss-nested": "2.1.2",
     "react": "16.1.1",
-    "react-dom": "16.1.1",
+    "react-dom": "16.12.0",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
     "walk": "2.3.9",

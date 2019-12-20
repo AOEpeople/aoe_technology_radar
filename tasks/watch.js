@@ -7,7 +7,6 @@ import {
   assetsPath,
   jsPath,
   radarPath,
-  staticPath,
   relativePath,
 } from '../common/file';
 
