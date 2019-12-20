@@ -19,7 +19,6 @@
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "Apache-2.0",
   "dependencies": {
-    "async": "2.6.0",
     "autoprefixer": "7.1.6",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
