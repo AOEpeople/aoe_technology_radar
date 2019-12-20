@@ -1,7 +1,7 @@
 ---
 title:      "Apache Camel"
-ring:       adopt
-quadrant:   trial
+ring:       trial
+quadrant:   languages-and-frameworks
 featured:   false
 ---
 
