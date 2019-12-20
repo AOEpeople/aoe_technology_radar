@@ -5,3 +5,5 @@ quadrant:   languages-and-frameworks
 featured:   false
 
 ---
+
+Updated to "adopt"
