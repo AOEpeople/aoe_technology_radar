@@ -1,0 +1,36 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: yarn install
+    - run: yarn build
+  
+    - if: github.ref == 'master'
+      uses: jakejarvis/s3-sync-action@v0.5.0
+      with:
+        args: --acl public-read --follow-symlinks --delete --skip_cleanup
+      env:
+        AWS_S3_BUCKET: techradar.aoe.com
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'eu-central-1'
+        SOURCE_DIR: 'dist'
+  
+    - if: github.ref == 'actions'
+      uses: jakejarvis/s3-sync-action@v0.5.0
+      with:
+        args: --acl public-read --follow-symlinks --delete --skip_cleanup
+      env:
+        AWS_S3_BUCKET: techradar-next.aoe.com
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'eu-central-1'
+        SOURCE_DIR: 'dist'
