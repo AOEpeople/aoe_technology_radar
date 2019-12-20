@@ -2,7 +2,6 @@ import React from 'react';
 import PageIndex from './PageIndex';
 import PageOverview from './PageOverview';
 import PageHelp from './PageHelp';
-import PageToolbox from './PageToolbox';
 import PageQuadrant from './PageQuadrant';
 import PageItem from './PageItem';
 import PageItemMobile from './PageItemMobile';
@@ -17,9 +16,6 @@ const getPageByName = (items, pageName) => {
   }
   if (pageName === 'help-and-about-tech-radar') {
     return PageHelp;
-  }
-  if (pageName === 'aoe-toolbox') {
-    return PageToolbox;
   }
   if (quadrants.includes(pageName)) {
     return PageQuadrant;

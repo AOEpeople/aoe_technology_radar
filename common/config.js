@@ -32,7 +32,7 @@ export const rings = [
 const messages = {
   'languages-and-frameworks': 'Languages & Frameworks',
   'methods-and-patterns': 'Methods & Patterns',
-  'platforms-and-aoe-services': 'Platforms and AOE Services',
+  'platforms-and-aoe-services': 'Platforms and Operations',
   'tools': 'Tools',
 };
 
