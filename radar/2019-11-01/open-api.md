@@ -5,8 +5,7 @@ quadrant:   tools
 
 ---
 
-RAML and Swagger have been merged to OpenAPI. 
-The OpenAPI Specification is becoming a broadly adopted industry standard for describing modern APIs.
+The OpenAPI Specification is becoming a broadly adopted industry standard for describing modern REST APIs. Other initiatives like RAML have [joined](https://blogs.mulesoft.com/dev/api-dev/open-api-raml-better-together/) the OpenAPI Initiative.
 
 OpenAPI v2 version is basically the former Swagger - and Swagger provides useful tools for OpenAPI like the online editor and viewer http://editor.swagger.io/
 We have also found that this version currently have a good tool support accross languages, so you will find API client and server generation tools for a lot of languages, which makes it quite easy to connect to an API that is described in OpenAPI standard.
