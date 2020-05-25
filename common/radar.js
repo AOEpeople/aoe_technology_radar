@@ -3,6 +3,7 @@ import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
 import hljs from 'highlight.js';
+import { quadrants, rings } from './config';
 import { radarPath, getAllMarkdownFiles } from './file';
 
 marked.setOptions({
@@ -23,27 +24,24 @@ export const createRadar = async tree => {
 };
 
 const checkAttributes = (fileName, attributes) => {
-  const rings = ['adopt', 'trial', 'assess', 'hold'];
   if (attributes.ring && !rings.includes(attributes.ring)) {
-    throw new Error(
-      `Error: ${fileName} has an illegal value for 'ring' - must be one of ${
-        rings
-      }`,
-    );
+    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
   }
 
-  const quadrants = [
-    'languages-and-frameworks',
-    'methods-and-patterns',
-    'platforms-and-aoe-services',
-    'tools',
-  ];
   if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
-    throw new Error(
-      `Error: ${
-        fileName
-      } has an illegal value for 'quadrant' - must be one of ${quadrants}`,
-    );
+    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
+  }
+
+  if (!attributes.quadrant) {
+    const defaultQuadrant = quadrants[0];
+
+    console.warn(`${fileName} missing 'quadrant', using default: ${defaultQuadrant}`);
+
+    attributes.quadrant = defaultQuadrant;
+  }
+
+  if (!attributes.title) {
+    attributes.title = path.basename(fileName);
   }
 };
 
