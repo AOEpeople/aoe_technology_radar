@@ -7,7 +7,7 @@ import createHistory from 'history/createBrowserHistory';
 import App from './components/App';
 import appReducer from './reducer';
 import actions, { NAVIGATE } from './actions';
-import { isMobileViewport } from '../common/config';
+import { isMobileViewport, radarName } from '../common/config';
 import { track } from './analytics';
 
 // Remove .html and map / to index
@@ -63,7 +63,7 @@ const store = createStore(
 );
 
 const handleSetTitle = title => {
-  document.title = `${title} | AOE Technology Radar`;
+  document.title = `${title} | ${radarName}`;
   track();
 };
 

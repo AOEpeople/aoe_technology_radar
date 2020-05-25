@@ -2,19 +2,20 @@ import React from 'react';
 import HeroHeadline from './HeroHeadline';
 import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';
+import { radarName } from '../../common/config';
 
 export default function PageHelp({ leaving, onLeave, ...props }) {
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle {...props} title="How to use AOE Technology Radar" />
-      <HeroHeadline>How to use AOE Technology Radar</HeroHeadline>
+      <SetTitle {...props} title={ "How to use the " + radarName } />
+      <HeroHeadline>How to use the {radarName}</HeroHeadline>
       <div className="fullpage-content">
         <h3>Introduction</h3>
         <p>Technology is moving fast and new technologies and innovations appear continuously.</p>
         <p>It's essential for a development and technology company such as AOE to constantly improve and keep track with the latest useful innovations.
         It is important to openly look for innovations and new technologies and to question established technologies and methods every now and then.</p>
         <p>But, it is also important to wisely choose which technologies to use in our daily work and in the different projects we are carrying out. As we all know: There is no silver bullet.</p>
-        <h3>What is the AOE Tech Radar</h3>
+        <h3>What is the {radarName}</h3>
         <p>The Tech Radar is an overview of different technologies - from languages, frameworks, tools and patterns to platforms - that we consider "new or mentionable".
           The radar therefore doesn't provide an overview of all established technologies - but it focuses on items that have recently gained in importance or changed.
         </p>

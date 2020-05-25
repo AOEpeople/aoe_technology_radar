@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from './Link';
-import { assetUrl } from '../../common/config';
+import { assetUrl, radarNameShort } from '../../common/config';
 
 export default function LogoLink({ small=false }) {
   return (
@@ -10,7 +10,7 @@ export default function LogoLink({ small=false }) {
       <span className="logo-link__slide">
         <img className="logo-link__img" src={assetUrl('logo.svg')} width="150px" height="60px" />
         <span className="logo-link__text">
-          Technology Radar
+          {radarNameShort}
         </span>
       </span>
     </Link>

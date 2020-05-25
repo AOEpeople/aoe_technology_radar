@@ -1,3 +1,6 @@
+export const radarName = 'AOE Technology Radar';
+export const radarNameShort = 'Technology Radar';
+
 export const quadrants = [
   'languages-and-frameworks',
   'methods-and-patterns',
