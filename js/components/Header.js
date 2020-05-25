@@ -7,6 +7,7 @@ import Link from './Link';
 import LogoLink from './LogoLink';
 import Search from './Search';
 import actions from '../actions';
+import { radarNameShort } from '../../common/config';
 
 class Header extends React.Component {
   constructor(...args) {
@@ -66,7 +67,7 @@ class Header extends React.Component {
         <div className="nav">
           <div className="nav__item">
             <Link pageName="help-and-about-tech-radar" className="icon-link">
-              <span className="icon icon--question icon-link__icon"></span>How to Use Technology Radar?
+              <span className="icon icon--question icon-link__icon"></span>How to Use {radarNameShort}?
             </Link>
           </div>
           <div className="nav__item">

@@ -1,11 +1,11 @@
 import React from 'react';
 import { formatRelease } from '../date';
-
 import { featuredOnly } from '../../common/model';
 import HeroHeadline from './HeroHeadline';
 import QuadrantGrid from './QuadrantGrid';
 import Fadeable from './Fadeable';
 import SetTitle from './SetTitle';
+import { radarName, radarNameShort } from '../../common/config';
 
 export default function PageIndex({
   leaving,
@@ -18,10 +18,10 @@ export default function PageIndex({
   const numberOfReleases = props.releases.length;
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle {...props} title="Technology Radar" />
+      <SetTitle {...props} title={ radarNameShort } />
       <div className="headline-group">
         <HeroHeadline alt={`Version #${numberOfReleases}`}>
-          AOE Technology Radar
+          {radarName}
         </HeroHeadline>
       </div>
       <QuadrantGrid items={featuredOnly(items)} />
