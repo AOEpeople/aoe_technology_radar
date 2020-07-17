@@ -4,7 +4,7 @@ import Badge from '../Badge/Badge';
 import Link from '../Link/Link';
 import ItemList from '../ItemList/ItemList';
 import Flag from '../Flag/Flag';
-import { Item, Group } from '../../model';
+import { Group } from '../../model';
 import './quadrant-section.scss';
 const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: boolean) => {
   const itemsInRing = groups[quadrantName][ringName];

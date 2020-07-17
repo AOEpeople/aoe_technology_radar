@@ -61,7 +61,6 @@ export default function Router({pageName, items, releases, search}: RouterProps)
     }, [pageName, items, statePageName]);
 
     const handlePageLeave = () => {
-        setLeaving(true);
         setStatePageName(nextPageName);
         setNextPageName('');
 
@@ -76,7 +75,8 @@ export default function Router({pageName, items, releases, search}: RouterProps)
         case page.index:
             return <PageIndex leaving={leaving} items={items} onLeave={handlePageLeave} releases={releases}/>;
         case page.overview:
-            return <PageOverview items={items} rings={rings} search={search} leaving={leaving} onLeave={handlePageLeave}/>;
+            return <PageOverview items={items} rings={rings} search={search} leaving={leaving}
+                                 onLeave={handlePageLeave}/>;
         case page.help:
             return <PageHelp leaving={leaving} onLeave={handlePageLeave}/>;
         case page.quadrant:

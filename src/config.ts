@@ -26,17 +26,6 @@ export function assetUrl(file: string) {
   // return `/techradar/assets/${file}`
 }
 
-const getPageNames = (radar: Radar) => {
-  return [
-    'index',
-    'overview',
-    'help-and-about-tech-radar',
-    'aoe-toolbox',
-    ...quadrants,
-    ...getItemPageNames(radar.items),
-  ]
-}
-
 export const getItemPageNames = (items: Item[]) => items.map(item => `${item.quadrant}/${item.name}`);
 
 const messages:{[k: string]: string} = {
@@ -55,5 +44,3 @@ export function isMobileViewport() {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     return width < 1200;
 }
-
-// const formatRelease = (release: moment.MomentInput) => moment(release, 'YYYY-MM-DD').format('MMM YYYY');
