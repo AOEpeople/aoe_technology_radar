@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import './fadeable.scss';
+
 type FadeableProps = {
   leaving: boolean;
   onLeave: () => void;
@@ -10,8 +11,12 @@ export default function Fadeable({ leaving, onLeave, children }: React.PropsWith
   const [faded, setFaded] = useState(leaving);
 
   useEffect(() => {
-    setFaded(leaving);
-  }, [leaving]);
+    if (!faded && leaving) {
+      setFaded(true);
+    } else if (faded && !leaving) {
+      setFaded(false);
+    }
+  }, [faded, leaving]);
 
   const handleTransitionEnd = () => {
     if (faded) {

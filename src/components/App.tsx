@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import classNames from 'classnames';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Router from './Router';
 import { BrowserRouter, Switch, Route, Redirect, useParams } from 'react-router-dom';
-
 import radardata from '../rd.json';
 import { Item } from '../model';
 
-const A = () => {
+const RouterWithPageParam = () => {
   const { page } = useParams();
-  return <Router pageName={page} items={radardata.items as Item[]} releases={radardata.releases as string[]}></Router>;
+  return <Router pageName={page} items={radardata.items as Item[]} releases={radardata.releases as string[]}/>;
 };
 
 export default function App() {
-  const [isFaded] = useState(false);
-
   return (
     <BrowserRouter>
       <div>
@@ -23,10 +20,10 @@ export default function App() {
           <div className='page__header'>
             <Header pageName='a' />
           </div>
-          <div className={classNames('page__content', { 'is-faded': isFaded })}>
+          <div className={classNames('page__content')}>
             <Switch>
               <Route path={'/techradar/:page(.+).html'}>
-                <A />
+                <RouterWithPageParam />
               </Route>
               <Route path={'/'}>
                 <Redirect to={'/techradar/index.html'} />

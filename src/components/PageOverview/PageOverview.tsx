@@ -8,7 +8,7 @@ import Fadeable from '../Fadeable/Fadeable';
 import SetTitle from '../SetTitle';
 import Flag from '../Flag/Flag';
 import { groupByFirstLetter, Item } from '../../model';
-import { translate, ring } from '../../config';
+import { translate, Ring } from '../../config';
 
 const containsSearchTerm = (text = '', term = '') => {
   // TODO search refinement
@@ -16,7 +16,7 @@ const containsSearchTerm = (text = '', term = '') => {
 };
 
 type PageOverviewProps = {
-  rings: ring[];
+  rings: Ring[];
   search: string;
   items: Item[];
   leaving: boolean;
@@ -24,7 +24,7 @@ type PageOverviewProps = {
 };
 
 export default function PageOverview({ rings, search: searchProp, items, leaving, onLeave }: PageOverviewProps) {
-  const [ring, setRing] = useState<ring | 'all'>('all');
+  const [ring, setRing] = useState<Ring | 'all'>('all');
   const [search, setSearch] = useState(searchProp);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
     setSearch(searchProp);
   }, [rings, searchProp]);
 
-  const handleRingClick = (ring: ring) => () => {
+  const handleRingClick = (ring: Ring) => () => {
     setRing(ring);
   };
 

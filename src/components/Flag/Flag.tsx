@@ -1,7 +1,9 @@
 import React from 'react';
 import './flag.scss';
+import {FlagType} from "../../model";
+
 interface ItemFlag {
-  flag: 'default' | 'new' | 'changed';
+  flag: FlagType;
 }
 
 export default function Flag({ item, short = false }: { item: ItemFlag; short?: boolean }) {
