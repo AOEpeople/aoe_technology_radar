@@ -1,20 +1,14 @@
-import {useState} from "react";
+import {useEffect} from "react";
+import {radarName} from "../config";
 
 type SetTitleProps = {
   title: string
-  onSetTitle?: (title: string) => void
 }
 
-export default function SetTitle({title, onSetTitle}: SetTitleProps) {
-  const [onSetTitleState, setOnSetTitleState] = useState(() => onSetTitle)
-
-  if (onSetTitle) {
-    setOnSetTitleState(onSetTitle)
-  }
-
-  if (onSetTitleState) {
-    onSetTitleState(title)
-  }
+export default function SetTitle({title}: SetTitleProps) {
+  useEffect(() => {
+    document.title = `${title} | ${radarName}`
+  }, [title])
 
   return null;
 }

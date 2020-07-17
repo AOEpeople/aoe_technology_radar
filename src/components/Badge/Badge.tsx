@@ -9,7 +9,7 @@ type BadgeProps = {
 };
 
 export default function Badge({ onClick, big, type, children }: React.PropsWithChildren<BadgeProps>) {
-  const Comp = typeof onClick ? 'a' : 'span';
+  const Comp = onClick ? 'a' : 'span';
 
   return (
     <Comp
