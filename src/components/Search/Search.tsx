@@ -1,6 +1,7 @@
 import React, { FormEvent } from 'react';
 import classNames from 'classnames';
 import './search.scss';
+
 type SearchProps = {
   onClose?: () => void;
   onSubmit?: () => void;
@@ -22,7 +23,7 @@ function Search({ value, onChange, onClose, open = false, onSubmit = () => {} }:
   };
 
   const handleClose = (e: React.MouseEvent) => {
-    // e.preventDefault();
+    e.preventDefault();
     if (onClose != null) {
       onClose();
     }

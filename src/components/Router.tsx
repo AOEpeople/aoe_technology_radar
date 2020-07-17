@@ -5,13 +5,14 @@ import PageHelp from './PageHelp/PageHelp';
 import PageQuadrant from './PageQuadrant/PageQuadrant';
 import PageItem from './PageItem/PageItem';
 import PageItemMobile from './PageItemMobile/PageItemMobile';
-import {quadrants, getItemPageNames, isMobileViewport} from '../config';
+import {quadrants, getItemPageNames, isMobileViewport, rings} from '../config';
 import {Item} from '../model';
 
 type RouterProps = {
     pageName: string
     items: Item[]
     releases: string[]
+    search: string
 }
 
 enum page {
@@ -44,7 +45,7 @@ const getPageByName = (items: Item[], pageName: string): page => {
     return page.notFound;
 };
 
-export default function Router({pageName, items, releases}: RouterProps) {
+export default function Router({pageName, items, releases, search}: RouterProps) {
     const [statePageName, setStatePageName] = useState(pageName);
     const [leaving, setLeaving] = useState(false);
     const [nextPageName, setNextPageName] = useState<string>('');
@@ -75,7 +76,7 @@ export default function Router({pageName, items, releases}: RouterProps) {
         case page.index:
             return <PageIndex leaving={leaving} items={items} onLeave={handlePageLeave} releases={releases}/>;
         case page.overview:
-            return <PageOverview items={items} rings={[]} search={''} leaving={leaving} onLeave={handlePageLeave}/>;
+            return <PageOverview items={items} rings={rings} search={search} leaving={leaving} onLeave={handlePageLeave}/>;
         case page.help:
             return <PageHelp leaving={leaving} onLeave={handlePageLeave}/>;
         case page.quadrant:

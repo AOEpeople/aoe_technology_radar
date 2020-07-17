@@ -3,13 +3,19 @@ import classNames from 'classnames';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Router from './Router';
-import { BrowserRouter, Switch, Route, Redirect, useParams } from 'react-router-dom';
+import {BrowserRouter, Switch, Route, Redirect, useParams, useLocation} from 'react-router-dom';
 import radardata from '../rd.json';
 import { Item } from '../model';
 
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+}
+
 const RouterWithPageParam = () => {
   const { page } = useParams();
-  return <Router pageName={page} items={radardata.items as Item[]} releases={radardata.releases as string[]}/>;
+  const query = useQuery();
+
+  return <Router pageName={page} search={query.get('search') || ''} items={radardata.items as Item[]} releases={radardata.releases as string[]}/>;
 };
 
 export default function App() {

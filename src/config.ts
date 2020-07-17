@@ -11,6 +11,7 @@ export const quadrants = [
 ];
 
 export const rings = [
+  'all',
   'adopt',
   'trial',
   'assess',

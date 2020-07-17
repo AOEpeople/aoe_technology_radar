@@ -57,6 +57,7 @@
     "postcss-custom-media": "^6.0.0",
     "postcss-easy-import": "3.0.0",
     "postcss-nested": "2.1.2",
+    "query-string": "^6.13.1",
     "react": "^16.13.1",
     "react-dom": "16.12.0",
     "react-router": "^5.2.0",
