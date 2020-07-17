@@ -1,0 +1,33 @@
+.icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  vertical-align: middle;
+
+  &--pie {
+    background-image: url('../../icons/pie.svg');
+  }
+
+  &--question {
+    background-image: url('../../icons/question.svg');
+  }
+
+  &--overview {
+    background-image: url('../../icons/overview.svg');
+  }
+
+  &--search {
+    background-image: url('../../icons/search.svg');
+  }
+
+  &--back {
+    background-image: url('../../icons/back.svg');
+  }
+
+  &--close {
+    background-image: url('../../icons/close.svg');
+  }
+}
