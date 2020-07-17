@@ -79,11 +79,11 @@ export default function Router({pageName, items, releases}: RouterProps) {
         case page.help:
             return <PageHelp leaving={leaving} onLeave={handlePageLeave}/>;
         case page.quadrant:
-            return <PageQuadrant leaving={leaving} onLeave={handlePageLeave} items={items} pageName={pageName}/>;
+            return <PageQuadrant leaving={leaving} onLeave={handlePageLeave} items={items} pageName={statePageName}/>;
         case page.itemMobile:
-            return <PageItemMobile items={items} pageName={pageName} leaving={leaving} onLeave={handlePageLeave}/>;
+            return <PageItemMobile items={items} pageName={statePageName} leaving={leaving} onLeave={handlePageLeave}/>;
         case page.item:
-            return <PageItem items={items} pageName={pageName} leaving={leaving} onLeave={handlePageLeave}/>;
+            return <PageItem items={items} pageName={statePageName} leaving={leaving} onLeave={handlePageLeave}/>;
         default:
             return <div/>;
     }
