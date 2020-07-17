@@ -1,8 +1,10 @@
-.publish-date {
-    color: var(--color-gray-normal);
-    text-align: right;
+@import '../../styles/sccs-vars.scss';
 
-    @media (--until-sm) {
-        text-align: center;
-    }
+.publish-date {
+  color: var(--color-gray-normal);
+  text-align: right;
+
+  @media (max-width: $until-sm) {
+    text-align: center;
+  }
 }

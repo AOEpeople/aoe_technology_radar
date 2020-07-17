@@ -1,18 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @font-face {
   font-family: 'DIN';
   src: url('./fonts/clanot-news.otf');
@@ -25,5 +10,52 @@ code {
   font-weight: 300;
 }
 
+
+:root {
+  --color-gray-dark: #475157;
+  --color-gray-dark-alt: #4F585E;
+  --color-gray-dark-alt2: #434D53;
+  --color-gray-normal: #7f858a;
+  --color-gray-light: #7D878D;
+
+  --color-white: #fff;
+  --color-green: #5CB449;
+  --color-orange: #FAA03D;
+  --color-blue: #40A7D1;
+  --color-marine: #688190;
+  --color-red: #F1235A;
+  --color-brand: #F59134;
+  --until-sm: 30em;
+  --until-md: 48em;
+  --until-lg: 61.875em;
+  --until-xl: 75em;
+}
+
+// @custom-media --until-sm (max-width: 30em);
+// @custom-media --until-md (max-width: 48em);
+// @custom-media --until-lg (max-width: 61.875em);
+// @custom-media --until-xl (max-width: 75em);
+
+
+
+body {
+  background: var(--color-gray-dark);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DIN';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+
+  & h1 {
+    color: blue;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
 @import './styles/main.scss'
