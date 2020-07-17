@@ -1,10 +1,11 @@
 import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
 import './badge.scss';
+import {Ring} from "../../config";
 type BadgeProps = {
   onClick?: MouseEventHandler;
   big?: boolean;
-  type: 'big' | 'all' | 'adopt' | 'trial' | 'assess' | 'hold' | 'empty';
+  type: 'big' | 'all' | 'empty' | Ring;
 };
 
 export default function Badge({ onClick, big, type, children }: React.PropsWithChildren<BadgeProps>) {

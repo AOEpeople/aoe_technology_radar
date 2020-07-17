@@ -1,30 +1,4 @@
-// import React from 'react';
-
-// todo fix this mess
-
-// const _callSetTitle = (props) => {
-//   if (typeof props.onSetTitle === 'function' && props.title) {
-//     props.onSetTitle(props.title);
-//   }
-// };
-
-// class _SetTitle extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     _callSetTitle(props);
-//   }
-
-//   componentWillReceiveProps(nextProps) {
-//     if (nextProps.title !== this.props.title) {
-//       _callSetTitle(nextProps);
-//     }
-//   }
-
-//   render() {
-//     return null;
-//   }
-// }
-
+import {useState} from "react";
 
 type SetTitleProps = {
   title: string
@@ -32,9 +6,15 @@ type SetTitleProps = {
 }
 
 export default function SetTitle({title, onSetTitle}: SetTitleProps) {
+  const [onSetTitleState, setOnSetTitleState] = useState(() => onSetTitle)
+
   if (onSetTitle) {
-    onSetTitle(title)
-  } 
+    setOnSetTitleState(onSetTitle)
+  }
+
+  if (onSetTitleState) {
+    onSetTitleState(title)
+  }
 
   return null;
 }

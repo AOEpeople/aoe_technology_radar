@@ -1,18 +1,20 @@
-import { ring } from "./config"
+import { Ring } from "./config"
 
 export type ItemAttributes = {
   name: string
-  ring: ring
+  ring: Ring
   quadrant: string
   title: string
   featured: boolean
 }
 
+export type FlagType = 'new' | 'changed' | 'default'
+
 export type Item = ItemAttributes & {
   featured: boolean
   body: string
   info: string
-  flag: 'new' | 'changed' | 'default'
+  flag: FlagType
   revisions: Revision[]
 }
 

@@ -1,4 +1,3 @@
-// import moment from 'moment';
 import { Item, Radar } from './model';
 
 export const radarName = 'AOE Technology Radar';
@@ -11,12 +10,22 @@ export const quadrants = [
   'tools',
 ];
 
+export const rings = [
+  'adopt',
+  'trial',
+  'assess',
+  'hold'
+] as const;
+
+export type Ring = typeof rings[number]
+
+// todo: fix
 export function assetUrl(file: string) {
   return '/' + file;
   // return `/techradar/assets/${file}`
 }
 
-export const getPageNames = (radar: Radar) => {
+const getPageNames = (radar: Radar) => {
   return [
     'index',
     'overview',
@@ -28,15 +37,6 @@ export const getPageNames = (radar: Radar) => {
 }
 
 export const getItemPageNames = (items: Item[]) => items.map(item => `${item.quadrant}/${item.name}`);
-
-export type ring = "adopt" | "trial" | "assess" | "hold"
-
-export const rings: ring[] = [
-  'adopt',
-  'trial',
-  'assess',
-  'hold'
-];
 
 const messages:{[k: string]: string} = {
   'languages-and-frameworks': 'Languages & Frameworks',
