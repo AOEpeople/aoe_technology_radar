@@ -1,3 +1,5 @@
+@import '../../styles/sccs-vars.scss';
+
 .hero-headline {
   font-size: 38px;
   font-weight: 300;
@@ -14,8 +16,9 @@
     color: var(--color-gray-light);
   }
 
-  @media (--until-sm) {
+  @media (max-width: $until-sm) {
     font-size: 26px;
+
     &__alt {
       display: block;
     }

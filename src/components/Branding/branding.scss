@@ -1,3 +1,5 @@
+@import '../../styles/sccs-vars.scss';
+
 .branding {
   margin: 40px 0;
   display: flex;
@@ -27,7 +29,7 @@
     opacity: 0;
   }
 
-  @media (--until-sm) {
+  @media (max-width: $until-sm) {
     &--footer {
       display: block;
       text-align: center;
@@ -38,7 +40,7 @@
     }
   }
 
-  @media (--until-xl) {
+  @media (max-width: $until-xl) {
     margin: 15px 0 0;
   }
 }

@@ -1,10 +1,13 @@
+@import '../../styles/sccs-vars.scss';
+
 .nav {
   white-space: nowrap;
 
   &__item {
     display: inline-flex;
     position: relative;
-    & + .nav__item {
+
+    &+.nav__item {
       margin-left: 20px;
     }
   }
@@ -32,7 +35,7 @@
   }
 
   &--relations {
-    @media (--until-md) {
+    @media (max-width: $until-md) {
       .nav__item {
         display: block;
         margin: 5px 0 0;
