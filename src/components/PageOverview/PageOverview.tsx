@@ -16,7 +16,7 @@ const containsSearchTerm = (text = '', term = '') => {
 };
 
 type PageOverviewProps = {
-  rings: Ring[];
+  rings: readonly ('all' | Ring)[];
   search: string;
   items: Item[];
   leaving: boolean;
