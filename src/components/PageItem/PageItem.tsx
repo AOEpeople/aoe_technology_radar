@@ -165,7 +165,7 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
             animationRunner.run();
             setStateLeaving(false)
         }
-    }, [stateLeaving, leaving])
+    }, [stateLeaving, leaving, animationsIn, animationsOut, onLeave])
 
     const getAnimationStates = (name: string) => {
         if (!animations) {

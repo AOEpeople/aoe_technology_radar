@@ -48,9 +48,9 @@ function Search({ value, onChange, onClose, open = false, onSubmit = () => {} }:
         </button>
       </span>
       {closable && (
-        <a className={classNames('search__close', { 'is-open': open })} onClick={handleClose}>
+        <button className={classNames('search__close link-button', { 'is-open': open })} onClick={handleClose}>
           <span className='icon icon--close' />
-        </a>
+        </button>
       )}
     </form>
   );

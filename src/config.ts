@@ -1,4 +1,4 @@
-import { Item, Radar } from './model';
+import { Item } from './model';
 
 export const radarName = 'AOE Technology Radar';
 export const radarNameShort = 'Technology Radar';
