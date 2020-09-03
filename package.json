@@ -9,7 +9,7 @@
     "test": "react-scripts test",
     "_build": "yarn clean && yarn build:pages && yarn build:jsprod && yarn build:css && yarn build:assets",
     "build:all": "yarn build",
-    "build:pages": "yarn run ts-node ./src/radarjson.ts",
+    "build:pages": "yarn run ts-node-script ./tasks/radarjson.ts",
     "build:css": "postcss -c postcss.config.js -o dist/techradar/assets/css/styles.css styles/main.css",
     "type-check": "tsc --noEmit"
   },
