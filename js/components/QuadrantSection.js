@@ -1,12 +1,12 @@
 import React from 'react';
-import { translate, rings } from '../../common/config';
+import { translate, rings, showEmptyRings } from '../../common/config';
 import Badge from './Badge';
 import Link from './Link';
 import ItemList from './ItemList';
 import Flag from './Flag';
 
 const renderList = (ringName, quadrantName, groups, big) => {
-  const itemsInRing = groups[quadrantName][ringName];
+  const itemsInRing = groups[quadrantName][ringName] || [];
 
   if (big === true) {
     return (
@@ -37,9 +37,12 @@ const renderList = (ringName, quadrantName, groups, big) => {
 
 const renderRing = (ringName, quadrantName, groups, big) => {
   if (
-    !groups[quadrantName] ||
-    !groups[quadrantName][ringName] ||
-    groups[quadrantName][ringName].length === 0
+    !showEmptyRings &&
+    (
+      !groups[quadrantName] ||
+      !groups[quadrantName][ringName] ||
+      groups[quadrantName][ringName].length === 0
+    )
   ) {
     return null;
   }

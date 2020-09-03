@@ -31,6 +31,7 @@ export const rings = [
   'assess',
   'hold'
 ];
+export const showEmptyRings = false;
 
 const messages = {
   'languages-and-frameworks': 'Languages & Frameworks',
