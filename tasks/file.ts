@@ -28,7 +28,7 @@ export const jsPath = (...pathInSrc: string[]) => (
 );
 
 export const distPath = (...pathInDist: string[]) => (
-  relativePath('dist', 'techradar', ...pathInDist)
+  relativePath('src', ...pathInDist)
 );
 
 export const getAllMarkdownFiles = (folder: string) => (
