@@ -7,6 +7,7 @@
     "strict": true,
     "types": ["node"],
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+//    "outDir": "../bin",
   }
 }

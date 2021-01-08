@@ -3,7 +3,8 @@ import path from 'path';
 import { walk } from 'walk';
 
 export const relativePath = (...relativePath: string[]): string => (
-  path.resolve(__dirname, '..', ...relativePath)
+  // path.resolve(__dirname, '..', ...relativePath)
+  path.resolve(...relativePath)
 );
 
 export const radarPath = (...pathInSrc: string[]) => (

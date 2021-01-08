@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2015",
     "lib": [
       "dom",
       "dom.iterable",
@@ -14,11 +14,15 @@
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "outDir": "bin",
+    "resolveJsonModule": true,
+    "noEmit": true
   },
+  "files": [
+    "tasks/radarjson.ts"
+  ],
   "include": [
     "src"
   ]
