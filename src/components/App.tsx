@@ -4,21 +4,20 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Router from './Router';
 import {BrowserRouter, Switch, Route, Redirect, useParams, useLocation} from 'react-router-dom';
-import radardata from '../rd.json';
 import { Item } from '../model';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 }
 
-const RouterWithPageParam = () => {
+const RouterWithPageParam = ({items, releases}: {items: Item[], releases: string[]}) => {
   const { page } = useParams();
   const query = useQuery();
 
-  return <Router pageName={page} search={query.get('search') || ''} items={radardata.items as Item[]} releases={radardata.releases as string[]}/>;
+  return <Router pageName={page} search={query.get('search') || ''} items={items} releases={releases}/>;
 };
 
-export default function App() {
+export default function App({items, releases}: {items: Item[], releases: string[]}) {
   return (
     <BrowserRouter>
       <div>
@@ -29,7 +28,7 @@ export default function App() {
           <div className={classNames('page__content')}>
             <Switch>
               <Route path={'/techradar/:page(.+).html'}>
-                <RouterWithPageParam />
+                <RouterWithPageParam items={items} releases={releases} />
               </Route>
               <Route path={'/'}>
                 <Redirect to={'/techradar/index.html'} />
@@ -37,7 +36,7 @@ export default function App() {
             </Switch>
           </div>
           <div className='page__footer'>
-            <Footer items={radardata.items as Item[]} pageName='a' />
+            <Footer items={items} pageName='a' />
           </div>
         </div>
       </div>

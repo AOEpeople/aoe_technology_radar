@@ -12,18 +12,14 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "isolatedModules": true,
     "jsx": "react",
     "outDir": "bin",
-    "resolveJsonModule": true,
-    "noEmit": true
+    "resolveJsonModule": true
   },
   "files": [
     "tasks/radarjson.ts"
-  ],
-  "include": [
-    "src"
   ]
 }
