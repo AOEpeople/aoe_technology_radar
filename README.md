@@ -5,6 +5,7 @@ A static site generator for AOE Technology Radar
 ## Looking for the AOE Tech Radar content?
 
 The repository is now found here: https://github.com/AOEpeople/techradar
+
 The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
 
 ## Usage for your own radar?
@@ -34,6 +35,20 @@ cd build
 python3 -m http.server 8080
 ```
 Then open here: http://localhost:8080
+
+## Run a prepared static version
+
+In most cases you have the techradar available at `/techradar`, and for reasons want all correct pages to be accessable.
+
+Until this setup improves, you can use the following way to generate the correct techradar:
+
+```
+PUBLIC_URL=techradar/ yarn aoe_technology_radar
+yarn aoe_technology_radar-static
+cp -r build techradar
+```
+
+(This is rather workaroundish for now, but does the job.)
 
 ## Usage
 
