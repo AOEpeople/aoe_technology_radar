@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isMobileViewport = exports.translate = exports.getItemPageNames = exports.assetUrl = exports.rings = exports.quadrants = exports.radarNameShort = exports.radarName = void 0;
-exports.radarName = 'AOE Technology Radar';
-exports.radarNameShort = 'Technology Radar';
+exports.radarName = process.env.RADAR_NAME || 'AOE Technology Radar';
+exports.radarNameShort = exports.radarName;
 exports.quadrants = [
     'languages-and-frameworks',
     'methods-and-patterns',
