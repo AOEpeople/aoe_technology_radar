@@ -18,7 +18,7 @@ exports.rings = [
 ];
 // todo: fix
 function assetUrl(file) {
-    return '/' + file;
+    return process.env.PUBLIC_URL + '/' + file;
     // return `/techradar/assets/${file}`
 }
 exports.assetUrl = assetUrl;

@@ -13,8 +13,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.radarJsonGenerator = void 0;
 const radar_1 = require("./radar");
 const file_1 = require("./file");
-const fs_1 = require("fs");
-const config_1 = require("../src/config");
 exports.radarJsonGenerator = (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('start');
@@ -35,15 +33,6 @@ ReactDOM.render(
     document.getElementById('root')
 );
 `, 'index.tsx');
-        fs_1.copyFileSync('build/index.html', 'build/overview.html');
-        fs_1.copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html');
-        config_1.quadrants.forEach(quadrant => {
-            fs_1.copyFileSync('build/index.html', 'build/' + quadrant + '.html');
-            fs_1.mkdirSync('build/' + quadrant);
-        });
-        radar.items.forEach(item => {
-            fs_1.copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html');
-        });
         console.log('Built radar');
     }
     catch (e) {

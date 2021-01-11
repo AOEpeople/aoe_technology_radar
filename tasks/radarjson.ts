@@ -29,17 +29,6 @@ ReactDOM.render(
 );
 `, 'index.tsx')
 
-        copyFileSync('build/index.html', 'build/overview.html')
-        copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html')
-
-        quadrants.forEach(quadrant => {
-            copyFileSync('build/index.html', 'build/' + quadrant + '.html')
-            mkdirSync('build/' + quadrant)
-        })
-        radar.items.forEach(item => {
-            copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html')
-        })
-
         console.log('Built radar');
     } catch (e) {
         console.error('error:', e);
