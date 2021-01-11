@@ -4,7 +4,7 @@ import {createRadar} from "./radar";
 import {save} from "./file";
 
 
-(async () => {
+export const radarJsonGenerator = (async () => {
     try {
         console.log('start')
         const radar = await createRadar();
@@ -37,4 +37,4 @@ ReactDOM.render(
     } catch (e) {
         console.error('error:', e);
     }
-})()
+})

@@ -10,9 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.radarJsonGenerator = void 0;
 const radar_1 = require("./radar");
 const file_1 = require("./file");
-(() => __awaiter(void 0, void 0, void 0, function* () {
+exports.radarJsonGenerator = (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('start');
         const radar = yield radar_1.createRadar();
@@ -42,4 +43,4 @@ ReactDOM.render(
     catch (e) {
         console.error('error:', e);
     }
-}))();
+}));

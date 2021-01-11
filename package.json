@@ -7,8 +7,7 @@
     "build": "tsc"
   },
   "bin": {
-    "aoe-radar-create": "bin/tasks/radarjson.js",
-    "aoe-radar-build": "scripts/build.js"
+    "aoe_technology_radar": "scripts/build.js"
   },
   "browserslist": {
     "production": [
