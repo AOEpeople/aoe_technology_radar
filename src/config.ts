@@ -20,13 +20,9 @@ export const rings = [
 
 export type Ring = typeof rings[number]
 
-// todo: fix
-export function assetUrl(file: string) {
-  return process.env.PUBLIC_URL + '/' + file;
-  // return `/techradar/assets/${file}`
-}
-
 export const getItemPageNames = (items: Item[]) => items.map(item => `${item.quadrant}/${item.name}`);
+
+export const showEmptyRings = false;
 
 const messages:{[k: string]: string} = {
   'languages-and-frameworks': 'Languages & Frameworks',
