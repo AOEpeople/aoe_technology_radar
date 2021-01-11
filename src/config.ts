@@ -1,7 +1,7 @@
 import { Item } from './model';
 
-export const radarName = 'AOE Technology Radar';
-export const radarNameShort = 'Technology Radar';
+export const radarName = process.env.RADAR_NAME || 'AOE Technology Radar'
+export const radarNameShort = radarName;
 
 export const quadrants = [
   'languages-and-frameworks',
