@@ -7,7 +7,8 @@
     "build": "tsc"
   },
   "bin": {
-    "aoe_technology_radar": "scripts/build.js"
+    "aoe_technology_radar": "scripts/build.js",
+    "aoe_technology_radar-static": "bin/tasks/create-static.js"
   },
   "browserslist": {
     "production": [

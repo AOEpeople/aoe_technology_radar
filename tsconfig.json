@@ -20,6 +20,7 @@
     "resolveJsonModule": true
   },
   "files": [
-    "tasks/radarjson.ts"
+    "tasks/radarjson.ts",
+    "tasks/create-static.ts"
   ]
 }

@@ -10,31 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.radarJsonGenerator = void 0;
 const radar_1 = require("./radar");
-const file_1 = require("./file");
 const fs_1 = require("fs");
 const config_1 = require("../src/config");
-exports.radarJsonGenerator = (() => __awaiter(void 0, void 0, void 0, function* () {
+(() => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log('start');
+        console.log('starting static');
         const radar = yield radar_1.createRadar();
-        // console.log(radar);
-        file_1.save(JSON.stringify(radar), 'rd.json');
-        file_1.save(`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'aoe_technology_radar/src/components/App';
-import 'aoe_technology_radar/src/index.scss';
-import {Item} from "aoe_technology_radar/src/model";
-import radardata from './rd.json';
-
-ReactDOM.render(
-    <React.StrictMode>
-        <App items={radardata.items as Item[]} releases={radardata.releases as string[]} />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
-`, 'index.tsx');
         fs_1.copyFileSync('build/index.html', 'build/overview.html');
         fs_1.copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html');
         config_1.quadrants.forEach(quadrant => {
@@ -44,9 +26,9 @@ ReactDOM.render(
         radar.items.forEach(item => {
             fs_1.copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html');
         });
-        console.log('Built radar');
+        console.log('created static');
     }
     catch (e) {
         console.error('error:', e);
     }
-}));
+}))();

@@ -6,28 +6,10 @@ import {copyFileSync, mkdir, mkdirSync} from "fs";
 import {quadrants} from "../src/config";
 
 
-export const radarJsonGenerator = (async () => {
+(async () => {
     try {
-        console.log('start')
+        console.log('starting static')
         const radar = await createRadar();
-
-        // console.log(radar);
-
-        save(JSON.stringify(radar), 'rd.json')
-        save(`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'aoe_technology_radar/src/components/App';
-import 'aoe_technology_radar/src/index.scss';
-import {Item} from "aoe_technology_radar/src/model";
-import radardata from './rd.json';
-
-ReactDOM.render(
-    <React.StrictMode>
-        <App items={radardata.items as Item[]} releases={radardata.releases as string[]} />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
-`, 'index.tsx')
 
         copyFileSync('build/index.html', 'build/overview.html')
         copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html')
@@ -40,8 +22,8 @@ ReactDOM.render(
             copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html')
         })
 
-        console.log('Built radar');
+        console.log('created static');
     } catch (e) {
         console.error('error:', e);
     }
-})
+})()
