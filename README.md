@@ -2,6 +2,11 @@
 
 A static site generator for AOE Technology Radar
 
+## Looking for the AOE Tech Radar content?
+
+The repository is now found here: https://github.com/AOEpeople/techradar
+The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
+
 ## Usage for your own radar?
 
 The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
