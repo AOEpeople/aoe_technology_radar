@@ -1,5 +1,5 @@
 import React from 'react';
-import { translate, rings, Ring } from '../../config';
+import { translate, rings, Ring, showEmptyRings } from '../../config';
 import Badge from '../Badge/Badge';
 import Link from '../Link/Link';
 import ItemList from '../ItemList/ItemList';
@@ -7,7 +7,7 @@ import Flag from '../Flag/Flag';
 import { Group } from '../../model';
 import './quadrant-section.scss';
 const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: boolean) => {
-  const itemsInRing = groups[quadrantName][ringName];
+  const itemsInRing = groups[quadrantName][ringName] || [];
 
   if (big) {
     return (
@@ -37,7 +37,7 @@ const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: bo
 };
 
 const renderRing = (ringName: Ring, quadrantName: string, groups: Group, big: boolean) => {
-  if (!groups[quadrantName] || !groups[quadrantName][ringName] || groups[quadrantName][ringName].length === 0) {
+  if (!showEmptyRings && (!groups[quadrantName] || !groups[quadrantName][ringName] || groups[quadrantName][ringName].length === 0)) {
     return null;
   }
   return (
