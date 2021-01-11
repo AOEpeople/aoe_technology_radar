@@ -13,6 +13,10 @@ process.on('unhandledRejection', err => {
   throw err;
 });
 
+// create radar
+
+require('../bin/tasks/radarjson').radarJsonGenerator()
+
 // Ensure environment variables are read.
 require('../config/env');
 
