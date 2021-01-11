@@ -22,7 +22,7 @@ export type Ring = typeof rings[number]
 
 // todo: fix
 export function assetUrl(file: string) {
-  return '/' + file;
+  return process.env.PUBLIC_URL + '/' + file;
   // return `/techradar/assets/${file}`
 }
 
