@@ -79,7 +79,7 @@ export default function PageHelp({ leaving, onLeave }: { leaving: boolean; onLea
           </li>
           <li>
             <strong>Hold:</strong> This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that
-            there are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because
+            they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because
             we see better options or alternatives now.
           </li>
         </ul>
