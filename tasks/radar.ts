@@ -3,7 +3,7 @@ import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
 import hljs from 'highlight.js';
-import { quadrants, rings } from '../src/config';
+import { quadrants, rings, blipFlags } from '../src/config';
 import { radarPath, getAllMarkdownFiles } from './file';
 import { Item, Revision, ItemAttributes, Radar } from '../src/model';
 
@@ -165,10 +165,10 @@ const hasItemChanged = (item: Item, allReleases: string[]) =>
 
 const getItemFlag = (item: Item, allReleases: string[]): string => {
   if (isNewItem(item, allReleases)) {
-    return 'new';
+    return blipFlags.new.name;
   }
   if (hasItemChanged(item, allReleases)) {
-    return 'changed';
+    return blipFlags.changed.name;
   }
-  return 'default';
+  return blipFlags.default.name;
 };

@@ -10,6 +10,38 @@ export const quadrants = [
     'tools',
 ];
 
+// Quadrants positions start from the top left and go clockwise
+export const quadrantsMap = {
+    'languages-and-frameworks': {
+      displayName: 'Languages & Frameworks',
+      colour: '#84BFA4',
+      position: 1
+    },
+    'methods-and-patterns': {
+      displayName: 'Methods & Patterns',
+      colour: '#248EA6',
+      position: 2
+    },
+    'platforms-and-aoe-services': {
+      displayName: 'Platforms and Operations',
+      colour: '#F25244',
+      position: 3
+    },
+    'tools': {
+      displayName: 'Tools',
+      colour: '#F2A25C',
+      position: 4
+    },
+  };
+  
+const chartMargin = 20,
+    chartSize = 900;
+export const chartConfig = {
+    margin: chartMargin,
+    size: chartSize,
+    canvasSize: chartSize - chartMargin * 2
+};
+
 export const rings = [
     'all',
     'adopt',
@@ -17,6 +49,33 @@ export const rings = [
     'assess',
     'hold'
 ] as const;
+
+// rings positions start at the centre and go outwards
+export const ringsMap = {
+    'adopt': {
+      displayName: 'ADOPT',
+      position: 1
+    },
+    'trial': {
+      displayName: 'TRIAL',
+      position: 2
+    },
+    'assess': {
+      displayName: 'ASSESS',
+      position: 3
+    },
+    'hold': {
+      displayName: 'HOLD',
+      position: 4
+    }
+  };
+
+// TODO replace with TS enum
+export const blipFlags = {
+    new: { name: 'new', short: 'N' },
+    changed: { name: 'changed', short: 'C' },
+    default: { name: 'default', short: '' }
+}
 
 export type Ring = typeof rings[number]
 

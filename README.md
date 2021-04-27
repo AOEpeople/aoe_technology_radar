@@ -89,3 +89,11 @@ the same name from older releases.
 
 If an item is overwritten in a new release, the attributes from the new item are
 merged with the old ones and a new history entry is created for that item.
+
+## Local development
+
+1. Copy the `src/rd.json_` file and save it as `src/rd.json`.
+1. Copy the `src/index.tsx_` file and save it as `src/index.tsx`.
+1. Run `./scripts/start` to start a local dev server.
+1. Access the local app at [http://localhost:3000/techradar](http://localhost:3000/techradar).
+
