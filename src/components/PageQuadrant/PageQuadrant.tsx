@@ -5,7 +5,7 @@ import QuadrantSection from '../QuadrantSection/QuadrantSection';
 import Fadeable from '../Fadeable/Fadeable';
 import SetTitle from '../SetTitle';
 
-import { translate } from '../../config';
+import { quadrantsMap } from '../../config';
 import { featuredOnly, groupByQuadrants, Item } from '../../model';
 
 type PageQuadrantProps = {
@@ -19,11 +19,11 @@ export default function PageQuadrant({ leaving, onLeave, pageName, items }: Page
   const groups = groupByQuadrants(featuredOnly(items));
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle title={translate(pageName)} />
+      <SetTitle title={quadrantsMap[pageName].displayName} />
       <HeadlineGroup>
-        <HeroHeadline>{translate(pageName)}</HeroHeadline>
+        <HeroHeadline>{quadrantsMap[pageName].displayName}</HeroHeadline>
       </HeadlineGroup>
-      <QuadrantSection groups={groups} quadrantName={pageName} big />
+      <QuadrantSection groups={groups} quadrantName={pageName} big showTitle={false} />
     </Fadeable>
   );
 }

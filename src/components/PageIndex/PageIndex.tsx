@@ -3,7 +3,7 @@ import { formatRelease } from '../../date';
 import { featuredOnly, Item } from '../../model';
 import HeroHeadline from '../HeroHeadline/HeroHeadline';
 import QuadrantGrid from '../QuadrantGrid/QuadrantGrid';
-import RadarChart from '../Chart/RadarChart';
+import RadarGrid from '../RadarGrid/RadarGrid';
 import Fadeable from '../Fadeable/Fadeable';
 import SetTitle from '../SetTitle';
 import { radarName, radarNameShort } from '../../config';
@@ -25,8 +25,10 @@ export default function PageIndex({ leaving, onLeave, items, releases }: PageInd
       <div className='headline-group'>
         <HeroHeadline alt={`Version #${numberOfReleases}`}>{radarName}</HeroHeadline>
       </div>
-      <RadarChart blips={featuredOnly(items)} />
+      <RadarGrid blips={featuredOnly(items)} />
+      {/* 
       <QuadrantGrid items={featuredOnly(items)} />
+      */}
       <div className='publish-date'>Published {formatRelease(newestRelease)}</div>
     </Fadeable>
   );

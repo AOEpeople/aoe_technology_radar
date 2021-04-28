@@ -1,66 +1,112 @@
-import ReactFauxDOM from 'react-faux-dom';
-import * as d3 from "d3";
-import { quadrantsMap, ringsMap } from '../../config';
+import React from 'react';
+import { quadrantsMap, ringsMap, chartConfig, blipFlags } from '../..//config';
+import { NewBlip, ChangedBlip, DefaultBlip } from './BlipShapes';
+
+/*
+See https://medium.com/create-code/build-a-radar-diagram-with-d3-js-9db6458a9248
+for a good explanation of formulas used to calculate various things in this component
+*/
 
 const generateCoordinates = (enrichedBlip, xScale, yScale) => {
-    const pi = Math.PI;
-    // radian between 5 and 85
-    const randomDegree = ((Math.random() * 80 + 5) * pi) / 180;
-    const radius = enrichedBlip.ringPosition - 0.2;
-    const r = Math.random() * 0.6 + (radius - 0.6);
-    // multiples of PI/2
-    const shift = pi * [1, 4, 3, 2][enrichedBlip.quadrantPosition - 1] / 2;
+    const pi = Math.PI,
+        ringRadius = chartConfig.ringsAttributes[enrichedBlip.ringPosition - 1].radius,
+        previousRingRadius = enrichedBlip.ringPosition == 1 ? 0 : chartConfig.ringsAttributes[enrichedBlip.ringPosition - 2].radius,
+        ringPadding = 0.6;
+
+    // radian between 0 and 90 degrees
+    const randomDegree = ((Math.random() * 90) * pi) / 180;
+    // random distance from the centre of the radar, but within given ring. Also, with some "padding" so the points don't touch ring borders.
+    const radius = randomBetween(previousRingRadius + ringPadding, ringRadius - ringPadding);
+    /* 
+    Multiples of PI/2. To apply the calculated position to the specific quadrant.
+    Order here is counter-clockwise and starts at the top left, so we need to "invert" quadrant positions
+    */
+    const shift = pi * [4, 3, 2, 1][enrichedBlip.quadrantPosition - 1] / 2;
 
     return {
-        x: xScale(Math.cos(randomDegree + shift) * r),
-        y: yScale(Math.sin(randomDegree + shift) * r)
+        x: xScale(Math.cos(randomDegree + shift) * radius),
+        y: yScale(Math.sin(randomDegree + shift) * radius)
     };
 };
 
-const distanceBetweenPoints = (point1, point2) => {
+const randomBetween = (min, max) => {
+    return Math.random() * (max - min) + min;
+};
+
+const distanceBetween = (point1, point2) => {
     const a = point2.x - point1.x;
     const b = point2.y - point1.y;
     return Math.sqrt((a * a) + (b * b));
-  };
+};
 
-export default function BlipPoints({blips, xScale, yScale}) {
+export default function BlipPoints({blips, xScale, yScale, navigate}) {
+
     const enrichedBlips = blips.reduce((list, blip) => {
         if (!blip.ring || !blip.quadrant) {
             // skip the blip if it doesn't have a ring or quadrant assigned
             return list;
         }
-        blip.ringPosition = ringsMap[blip.ring].position;
-        blip.quadrantPosition = quadrantsMap[blip.quadrant].position;
-        blip.colour = quadrantsMap[blip.quadrant].colour;
+        let enrichedBlip = { ...blip,
+            ringPosition: ringsMap[blip.ring].position,
+            quadrantPosition: quadrantsMap[blip.quadrant].position,
+            colour: quadrantsMap[blip.quadrant].colour,
+            txtColour: quadrantsMap[blip.quadrant].txtColour
+        };
 
         let point;
         let counter = 1;
         do {
-            point = generateCoordinates(blip, xScale, yScale);
+            point = generateCoordinates(enrichedBlip, xScale, yScale);
             counter++;
-            // generate position of the new blip until it has a satisfactory distance to every other blip
-            // this feels pretty inefficient, but good enough for now
-        } while (list.some(item => distanceBetweenPoints(point, item) < 8) || counter > 100);
+            /*
+            Generate position of the new blip until it has a satisfactory distance to every other blip (so that they don't touch each other)
+            and quadrant borders (so that they don't overlap quadrants)
+            This feels pretty inefficient, but good enough for now.
+            */
+        } while (counter < 100
+                && (Math.abs(point.x - xScale(0)) < 15
+                    || Math.abs(point.y - yScale(0)) < 15
+                    || list.some(item => distanceBetween(point, item) < chartConfig.blipSize + chartConfig.blipSize / 2)
+                ));
 
-        blip.x = point.x;
-        blip.y = point.y;
+        enrichedBlip.x = point.x;
+        enrichedBlip.y = point.y;
 
-        list.push(blip);
+        list.push(enrichedBlip);
         return list;
     }, []);
 
-    const el = ReactFauxDOM.createElement('g');
+    const handleClick = (pageName, event) => {
+        event.preventDefault();
+        navigate(pageName);
+    }
 
-    d3.select(el)
-        .attr('class', 'circles')
-        .selectAll('circle')
-        .data(enrichedBlips)
-        .enter().append('circle')
-        .attr('fill', blip => blip.colour)
-        .attr('r', 3)
-        .attr('data-value', blip => blip.title)
-        .attr('cx', blip => blip.x)
-        .attr('cy', blip => blip.y)
+    const renderBlip = (blip, index) => {
+        const props = {
+            blip,
+            className: 'blip',
+            fill: blip.colour,
+            'data-background-color': blip.colour,
+            'data-text-color': blip.txtColour,
+            'data-tip': blip.title,
+            onClick: handleClick.bind(this, `${blip.quadrant}/${blip.name}`),
+            key: index
+        }
+        switch (blip.flag) {
+            case blipFlags.new.name:
+              return <NewBlip {...props} />;
+            case blipFlags.changed.name:
+              return <ChangedBlip {...props} />;
+            default:
+              return <DefaultBlip {...props} />;
+          }
+    }
 
-    return el.toReact();
-}
+    return (
+        <g className="blips">
+            {enrichedBlips.map((blip, index) => (
+                renderBlip(blip, index)
+            ))}
+        </g>
+    );
+};

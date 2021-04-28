@@ -1,7 +1,8 @@
+// TODO remove faux-dom and start using the React hook approach
 import ReactFauxDOM from 'react-faux-dom';
-import * as d3 from 'd3';
+import * as d3 from "d3";
 
-export const LeftAxis = ({ scale }) => {
+export const YAxis = ({ scale }) => {
     const el = ReactFauxDOM.createElement('g');
 
     const axisGenerator = d3.axisLeft(scale).ticks(6);
@@ -14,7 +15,7 @@ export const LeftAxis = ({ scale }) => {
     return el.toReact();
 };
 
-export const BottomAxis = ({ scale }) => {
+export const XAxis = ({ scale }) => {
     const el = ReactFauxDOM.createElement('g');
 
     const axisGenerator = d3.axisBottom(scale).ticks(6);

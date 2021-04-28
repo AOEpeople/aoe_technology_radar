@@ -8,7 +8,7 @@ import Fadeable from '../Fadeable/Fadeable';
 import SetTitle from '../SetTitle';
 import Flag from '../Flag/Flag';
 import { groupByFirstLetter, Item } from '../../model';
-import { translate, Ring } from '../../config';
+import { quadrantsMap, Ring } from '../../config';
 
 const containsSearchTerm = (text = '', term = '') => {
   // TODO search refinement
@@ -109,7 +109,7 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
                         </div>
                         <div className='split__right'>
                           <div className='nav nav--relations'>
-                            <div className='nav__item'>{translate(item.quadrant)}</div>
+                            <div className='nav__item'>{quadrantsMap[item.quadrant].displayName}</div>
                             <div className='nav__item'>
                               <Badge type={item.ring}>{item.ring}</Badge>
                             </div>

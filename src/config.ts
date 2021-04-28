@@ -3,43 +3,52 @@ import {Item} from './model';
 export const radarName = process.env.RADAR_NAME || 'AOE Technology Radar'
 export const radarNameShort = radarName;
 
-export const quadrants = [
-    'languages-and-frameworks',
-    'methods-and-patterns',
-    'platforms-and-aoe-services',
-    'tools',
-];
+// Quadrants positions start from the top right and go clockwise
+export const quadrantsMap = { 
+  'methods-and-patterns': {
+    id: 'methods-and-patterns',
+    displayName: 'Methods & Patterns',
+    colour: '#248EA6',
+    txtColour: 'white',
+    position: 1,
+    description: 'Optional description goes here'
+  },
+  'platforms-and-aoe-services': {
+    id: 'platforms-and-aoe-services',
+    displayName: 'Platforms and Operations',
+    colour: '#F25244',
+    txtColour: '#444444',
+    position: 2,
+    description: 'Optional description goes here'
+  },
+  'tools': {
+    id:  'tools',
+    displayName: 'Tools',
+    colour: '#F2A25C',
+    txtColour: 'white',
+    position: 3,
+    description: 'Optional descrption goes here'
+  },
+  'languages-and-frameworks': {
+    id: 'languages-and-frameworks',
+    displayName: 'Languages & Frameworks',
+    colour: '#84BFA4',
+    txtColour: '#444444',
+    position: 4,
+    description: 'Optional description goes here'
+  },
+};
 
-// Quadrants positions start from the top left and go clockwise
-export const quadrantsMap = {
-    'languages-and-frameworks': {
-      displayName: 'Languages & Frameworks',
-      colour: '#84BFA4',
-      position: 1
-    },
-    'methods-and-patterns': {
-      displayName: 'Methods & Patterns',
-      colour: '#248EA6',
-      position: 2
-    },
-    'platforms-and-aoe-services': {
-      displayName: 'Platforms and Operations',
-      colour: '#F25244',
-      position: 3
-    },
-    'tools': {
-      displayName: 'Tools',
-      colour: '#F2A25C',
-      position: 4
-    },
-  };
-  
-const chartMargin = 20,
-    chartSize = 900;
 export const chartConfig = {
-    margin: chartMargin,
-    size: chartSize,
-    canvasSize: chartSize - chartMargin * 2
+    size: 800, //in px
+    scale: [-16, 16],
+    blipSize: 12, // in px, be careful when increasing this value as it may cause a lot of calculations during placing the blips on the chart
+    ringsAttributes: [ // order from the centre outwards
+      { radius: 8, arcWidth: 6 }, // radius values are based on the scale (not px!)
+      { radius: 11, arcWidth: 4 },
+      { radius: 14, arcWidth: 2 },
+      { radius: 16, arcWidth: 2 }
+    ]
 };
 
 export const rings = [
@@ -52,29 +61,29 @@ export const rings = [
 
 // rings positions start at the centre and go outwards
 export const ringsMap = {
-    'adopt': {
-      displayName: 'ADOPT',
-      position: 1
-    },
-    'trial': {
-      displayName: 'TRIAL',
-      position: 2
-    },
-    'assess': {
-      displayName: 'ASSESS',
-      position: 3
-    },
-    'hold': {
-      displayName: 'HOLD',
-      position: 4
-    }
-  };
+  'adopt': {
+    displayName: 'ADOPT',
+    position: 1
+  },
+  'trial': {
+    displayName: 'EXPLORE',
+    position: 2
+  },
+  'assess': {
+    displayName: 'ENDURE',
+    position: 3
+  },
+  'hold': {
+    displayName: 'RETIRE',
+    position: 4
+  }
+};
 
 // TODO replace with TS enum
 export const blipFlags = {
-    new: { name: 'new', short: 'N' },
-    changed: { name: 'changed', short: 'C' },
-    default: { name: 'default', short: '' }
+  new: { name: 'new', short: 'N' },
+  changed: { name: 'changed', short: 'C' },
+  default: { name: 'default', short: '' }
 }
 
 export type Ring = typeof rings[number]
@@ -82,15 +91,6 @@ export type Ring = typeof rings[number]
 export const getItemPageNames = (items: Item[]) => items.map(item => `${item.quadrant}/${item.name}`);
 
 export const showEmptyRings = false;
-
-const messages: { [k: string]: string } = {
-    'languages-and-frameworks': 'Languages & Frameworks',
-    'methods-and-patterns': 'Methods & Patterns',
-    'platforms-and-aoe-services': 'Platforms and Operations',
-    'tools': 'Tools',
-};
-
-export const translate = (key: string) => (messages[key] || '-');
 
 export function isMobileViewport() {
     // return false for server side rendering

@@ -3,7 +3,7 @@ import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
 import hljs from 'highlight.js';
-import { quadrants, rings, blipFlags } from '../src/config';
+import { quadrantsMap, ringsMap, blipFlags } from '../src/config';
 import { radarPath, getAllMarkdownFiles } from './file';
 import { Item, Revision, ItemAttributes, Radar } from '../src/model';
 
@@ -27,12 +27,15 @@ export const createRadar = async (): Promise<Radar> => {
 };
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
-  if (attributes.ring && !rings.includes(attributes.ring)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
+  const validQuadrants = Object.keys(quadrantsMap);
+  const validRings = Object.keys(ringsMap);
+
+  if (attributes.ring && !validRings.includes(attributes.ring)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${validRings}`);
   }
 
-  if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
+  if (attributes.quadrant && !validQuadrants.includes(attributes.quadrant)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${validQuadrants}`);
   }
 
   if (!attributes.quadrant || attributes.quadrant === '') {

@@ -30,4 +30,25 @@
   &--close {
     background-image: url('../../icons/close.svg');
   }
+
+  &--blip_new {
+    background-image: url('../../icons/blip_new.svg');
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
+
+  &--blip_changed {
+    background-image: url('../../icons/blip_changed.svg');
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
+
+  &--blip_default {
+    background-image: url('../../icons/blip_default.svg');
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
 }

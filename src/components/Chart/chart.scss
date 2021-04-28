@@ -2,4 +2,15 @@
     fill: white;
     font-size: 12px;
     text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.chart .blip:hover {
+    cursor: pointer;
+}
+
+.chart .tooltip {
+    padding: 5px 10px;
+    border-radius: 11px;
 }

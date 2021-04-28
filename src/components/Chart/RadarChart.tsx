@@ -1,60 +1,63 @@
 import React from 'react';
 import * as d3 from "d3";
-import './chart.scss';
-import { blipFlags, chartConfig, quadrantsMap, ringsMap } from '../../config';
-import { LeftAxis, BottomAxis } from './Axes';
+import ReactTooltip from 'react-tooltip';
+import { chartConfig, quadrantsMap, ringsMap } from '../../config';
+import { YAxis, XAxis } from './Axes';
 import QuadrantRings from './QuadrantRings';
 import BlipPoints from './BlipPoints';
 
-const RingLabel = ({ring}) => {
-    const middlePoint = chartConfig.canvasSize / 2;
-    const shift = (ring.position - 1) * chartConfig.canvasSize / 8 + chartConfig.canvasSize / 16;
+import './chart.scss';
+
+const RingLabel = ({ring, xScale, yScale}) => {
+    const ringRadius = chartConfig.ringsAttributes[ring.position - 1].radius,
+      previousRingRadius = ring.position == 1 ? 0 : chartConfig.ringsAttributes[ring.position - 2].radius,
+
+      // middle point in between two ring arcs
+      distanceFromCentre = previousRingRadius + (ringRadius - previousRingRadius) / 2;
 
     return (
-        <g>
-        {/* Right hand-side label */}
-        <text x={middlePoint + shift} y={middlePoint} textAnchor="middle" dy=".35em">
-            {ring.displayName}
-        </text>
-        {/* Left hand-side label */}
-        <text x={middlePoint - shift} y={middlePoint} textAnchor="middle" dy=".35em">
-            {ring.displayName}
-        </text>
+        <g className="ring-label">
+          {/* Right hand-side label */}
+          <text x={xScale(distanceFromCentre)} y={yScale(0)} textAnchor="middle" dy=".35em">
+              {ring.displayName}
+          </text>
+          {/* Left hand-side label */}
+          <text x={xScale(-distanceFromCentre)} y={yScale(0)} textAnchor="middle" dy=".35em">
+              {ring.displayName}
+          </text>
         </g>
     );
 };
 
 export default function RadarChart({ blips }) {
   const xScale = d3.scaleLinear()
-    .domain([-4, 4])
-    .range([0, chartConfig.canvasSize]);
+    .domain(chartConfig.scale)
+    .range([0, chartConfig.size]);
   const yScale = d3.scaleLinear()
-    .domain([-4, 4])
-    .range([chartConfig.canvasSize, 0]);
+    .domain(chartConfig.scale)
+    .range([chartConfig.size, 0]);
 
   return (
-    <div className="chart">
+    <div className="chart" style={{maxWidth: `${chartConfig.size}px`}}>
       <svg viewBox={`0 0 ${chartConfig.size} ${chartConfig.size}`}>
-        <g transform={`translate(${chartConfig.margin}, ${chartConfig.margin})`}>
+          <g transform={`translate(${xScale(0)}, 0)`}>
+            <YAxis scale={yScale}/>
+          </g>
+          <g transform={`translate(0, ${yScale(0)})`}>
+            <XAxis scale={xScale}/>
+          </g>
 
-            <g transform={`translate(${xScale.range()[1] / 2}, 0)`}>
-            <LeftAxis scale={yScale}/>
-            </g>
-            <g transform={`translate(0, ${yScale.range()[0] / 2})`}>
-            <BottomAxis scale={xScale}/>
-            </g>
+          {Object.keys(quadrantsMap).map((id, index) => (
+              <QuadrantRings key={index} quadrant={quadrantsMap[id]} xScale={xScale} />
+          ))}
 
-            {Object.keys(quadrantsMap).map((id, index) => (
-                <QuadrantRings key={index} quadrant={quadrantsMap[id]} />
-            ))}
+          {Object.keys(ringsMap).map((id, index) => (
+              <RingLabel key={index} ring={ringsMap[id]} xScale={xScale} yScale={yScale} />
+          ))}
 
-            {Object.keys(ringsMap).map((id, index) => (
-                <RingLabel key={index} ring={ringsMap[id]} />
-            ))}
-
-            <BlipPoints blips={blips} xScale={xScale} yScale={yScale}/>
-        </g>
+          <BlipPoints blips={blips} xScale={xScale} yScale={yScale}/>
       </svg>
+      <ReactTooltip className="tooltip" offset={{top: -5}}/>
     </div>
     );
 }

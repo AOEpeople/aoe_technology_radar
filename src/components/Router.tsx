@@ -5,7 +5,7 @@ import PageHelp from './PageHelp/PageHelp';
 import PageQuadrant from './PageQuadrant/PageQuadrant';
 import PageItem from './PageItem/PageItem';
 import PageItemMobile from './PageItemMobile/PageItemMobile';
-import {quadrants, getItemPageNames, isMobileViewport, rings} from '../config';
+import {quadrantsMap, getItemPageNames, isMobileViewport, rings} from '../config';
 import {Item} from '../model';
 
 type RouterProps = {
@@ -35,7 +35,7 @@ const getPageByName = (items: Item[], pageName: string): page => {
     if (pageName === 'help-and-about-tech-radar') {
         return page.help;
     }
-    if (quadrants.includes(pageName)) {
+    if (Object.keys(quadrantsMap).includes(pageName)) {
         return page.quadrant;
     }
     if (getItemPageNames(items).includes(pageName)) {

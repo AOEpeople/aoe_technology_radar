@@ -1,7 +1,8 @@
 import React from 'react';
-import { translate, rings, Ring, showEmptyRings } from '../../config';
+import { rings, quadrantsMap, Ring, showEmptyRings } from '../../config';
 import Badge from '../Badge/Badge';
 import Link from '../Link/Link';
+import IconLink from '../IconLink/IconLink';
 import ItemList from '../ItemList/ItemList';
 import Flag from '../Flag/Flag';
 import { Group } from '../../model';
@@ -47,20 +48,19 @@ const renderRing = (ringName: Ring, quadrantName: string, groups: Group, big: bo
   );
 };
 
-export default function QuadrantSection({ quadrantName, groups, big = false }: { quadrantName: string; groups: Group; big?: boolean }) {
+export default function QuadrantSection({ quadrantName, groups, big = false, showTitle = true}: { quadrantName: string; groups: Group; big?: boolean; showTitle?: boolean }) {
   return (
     <div className='quadrant-section'>
       <div className='quadrant-section__header'>
         <div className='split'>
-          <div className='split__left'>
-            <h4 className='headline'>{translate(quadrantName)}</h4>
-          </div>
+          {showTitle && (
+            <div className="split__left">
+              <h4 className="headline">{quadrantsMap[quadrantName].displayName}</h4>
+            </div>
+          )}
           {!big && (
             <div className='split__right'>
-              <Link className='icon-link' pageName={`${quadrantName}`}>
-                <span className='icon icon--pie icon-link__icon' />
-                Zoom In
-              </Link>
+              <IconLink pageName={quadrantName} icon="pie" text="Zoom In" />
             </div>
           )}
         </div>
