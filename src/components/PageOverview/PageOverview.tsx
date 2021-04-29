@@ -7,8 +7,8 @@ import Search from '../Search/Search';
 import Fadeable from '../Fadeable/Fadeable';
 import SetTitle from '../SetTitle';
 import Flag from '../Flag/Flag';
-import { groupByFirstLetter, Item } from '../../model';
-import { quadrantsMap, Ring } from '../../config';
+import { groupByFirstLetter, Item, Ring } from '../../model';
+import { quadrantsMap } from '../../config';
 
 const containsSearchTerm = (text = '', term = '') => {
   // TODO search refinement
@@ -75,10 +75,10 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
           </div>
           <div className='split__right'>
             <div className='nav'>
-              {rings.map((ringName) => (
-                <div className='nav__item' key={ringName}>
-                  <Badge big onClick={handleRingClick(ringName)} type={isRingActive(ringName) ? ringName : 'empty'}>
-                    {ringName}
+              {Object.keys(rings).map((key) => (
+                <div className='nav__item' key={Ring[key]}>
+                  <Badge big onClick={handleRingClick(Ring[key])} type={isRingActive(Ring[key]) ? Ring[key] : 'empty'}>
+                    {Ring[key]}
                   </Badge>
                 </div>
               ))}

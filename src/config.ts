@@ -1,7 +1,9 @@
-import {Item} from './model';
+import {Item, HomepageOption} from './model';
 
 export const radarName = process.env.RADAR_NAME || 'AOE Technology Radar'
 export const radarNameShort = radarName;
+
+export const homepageContent = HomepageOption.both; // by defaul show both versions so that people can choose which one they like more (or keep both)
 
 // Quadrants positions start from the top right and go clockwise
 export const quadrantsMap = { 
@@ -11,7 +13,7 @@ export const quadrantsMap = {
     colour: '#248EA6',
     txtColour: 'white',
     position: 1,
-    description: 'Optional description goes here'
+    description: 'Here we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc.'
   },
   'platforms-and-aoe-services': {
     id: 'platforms-and-aoe-services',
@@ -19,7 +21,7 @@ export const quadrantsMap = {
     colour: '#F25244',
     txtColour: '#444444',
     position: 2,
-    description: 'Optional description goes here'
+    description: 'Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of.'
   },
   'tools': {
     id:  'tools',
@@ -27,7 +29,7 @@ export const quadrantsMap = {
     colour: '#F2A25C',
     txtColour: 'white',
     position: 3,
-    description: 'Optional descrption goes here'
+    description: 'Here we put different software tools - from small helpers to bigger software projects'
   },
   'languages-and-frameworks': {
     id: 'languages-and-frameworks',
@@ -35,7 +37,7 @@ export const quadrantsMap = {
     colour: '#84BFA4',
     txtColour: '#444444',
     position: 4,
-    description: 'Optional description goes here'
+    description: "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
   },
 };
 
@@ -44,49 +46,12 @@ export const chartConfig = {
     scale: [-16, 16],
     blipSize: 12, // in px, be careful when increasing this value as it may cause a lot of calculations during placing the blips on the chart
     ringsAttributes: [ // order from the centre outwards
-      { radius: 8, arcWidth: 6 }, // radius values are based on the scale (not px!)
+      { radius: 8, arcWidth: 6 }, // radius values are based on the scale (not px!), arc width is in px
       { radius: 11, arcWidth: 4 },
       { radius: 14, arcWidth: 2 },
       { radius: 16, arcWidth: 2 }
     ]
 };
-
-export const rings = [
-    'all',
-    'adopt',
-    'trial',
-    'assess',
-    'hold'
-] as const;
-
-// rings positions start at the centre and go outwards
-export const ringsMap = {
-  'adopt': {
-    displayName: 'ADOPT',
-    position: 1
-  },
-  'trial': {
-    displayName: 'EXPLORE',
-    position: 2
-  },
-  'assess': {
-    displayName: 'ENDURE',
-    position: 3
-  },
-  'hold': {
-    displayName: 'RETIRE',
-    position: 4
-  }
-};
-
-// TODO replace with TS enum
-export const blipFlags = {
-  new: { name: 'new', short: 'N' },
-  changed: { name: 'changed', short: 'C' },
-  default: { name: 'default', short: '' }
-}
-
-export type Ring = typeof rings[number]
 
 export const getItemPageNames = (items: Item[]) => items.map(item => `${item.quadrant}/${item.name}`);
 

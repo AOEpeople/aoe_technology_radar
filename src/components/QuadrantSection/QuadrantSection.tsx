@@ -1,11 +1,11 @@
 import React from 'react';
-import { rings, quadrantsMap, Ring, showEmptyRings } from '../../config';
+import { quadrantsMap, showEmptyRings } from '../../config';
 import Badge from '../Badge/Badge';
 import Link from '../Link/Link';
 import IconLink from '../IconLink/IconLink';
 import ItemList from '../ItemList/ItemList';
 import Flag from '../Flag/Flag';
-import { Group } from '../../model';
+import { Group, Ring } from '../../model';
 import './quadrant-section.scss';
 const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: boolean) => {
   const itemsInRing = groups[quadrantName][ringName] || [];
@@ -65,7 +65,7 @@ export default function QuadrantSection({ quadrantName, groups, big = false, sho
           )}
         </div>
       </div>
-      <div className='quadrant-section__rings'>{rings.map((ringName) => renderRing(ringName, quadrantName, groups, big))}</div>
+      <div className='quadrant-section__rings'>{Object.keys(Ring).map((key) => renderRing(Ring[key], quadrantName, groups, big))}</div>
     </div>
   );
 }

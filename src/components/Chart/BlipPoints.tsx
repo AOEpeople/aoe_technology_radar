@@ -1,5 +1,7 @@
 import React from 'react';
-import { quadrantsMap, ringsMap, chartConfig, blipFlags } from '../..//config';
+import {FlagType, Ring} from '../../model';
+import { quadrantsMap, chartConfig } from '../../config';
+import Link from '../Link/Link';
 import { NewBlip, ChangedBlip, DefaultBlip } from './BlipShapes';
 
 /*
@@ -11,7 +13,7 @@ const generateCoordinates = (enrichedBlip, xScale, yScale) => {
     const pi = Math.PI,
         ringRadius = chartConfig.ringsAttributes[enrichedBlip.ringPosition - 1].radius,
         previousRingRadius = enrichedBlip.ringPosition == 1 ? 0 : chartConfig.ringsAttributes[enrichedBlip.ringPosition - 2].radius,
-        ringPadding = 0.6;
+        ringPadding = 0.7;
 
     // radian between 0 and 90 degrees
     const randomDegree = ((Math.random() * 90) * pi) / 180;
@@ -39,7 +41,7 @@ const distanceBetween = (point1, point2) => {
     return Math.sqrt((a * a) + (b * b));
 };
 
-export default function BlipPoints({blips, xScale, yScale, navigate}) {
+export default function BlipPoints({blips, xScale, yScale}) {
 
     const enrichedBlips = blips.reduce((list, blip) => {
         if (!blip.ring || !blip.quadrant) {
@@ -47,8 +49,8 @@ export default function BlipPoints({blips, xScale, yScale, navigate}) {
             return list;
         }
         let enrichedBlip = { ...blip,
-            ringPosition: ringsMap[blip.ring].position,
             quadrantPosition: quadrantsMap[blip.quadrant].position,
+            ringPosition: Ring[blip.ring],
             colour: quadrantsMap[blip.quadrant].colour,
             txtColour: quadrantsMap[blip.quadrant].txtColour
         };
@@ -76,11 +78,6 @@ export default function BlipPoints({blips, xScale, yScale, navigate}) {
         return list;
     }, []);
 
-    const handleClick = (pageName, event) => {
-        event.preventDefault();
-        navigate(pageName);
-    }
-
     const renderBlip = (blip, index) => {
         const props = {
             blip,
@@ -89,13 +86,12 @@ export default function BlipPoints({blips, xScale, yScale, navigate}) {
             'data-background-color': blip.colour,
             'data-text-color': blip.txtColour,
             'data-tip': blip.title,
-            onClick: handleClick.bind(this, `${blip.quadrant}/${blip.name}`),
             key: index
         }
         switch (blip.flag) {
-            case blipFlags.new.name:
+            case FlagType.new:
               return <NewBlip {...props} />;
-            case blipFlags.changed.name:
+            case FlagType.changed:
               return <ChangedBlip {...props} />;
             default:
               return <DefaultBlip {...props} />;
@@ -105,7 +101,9 @@ export default function BlipPoints({blips, xScale, yScale, navigate}) {
     return (
         <g className="blips">
             {enrichedBlips.map((blip, index) => (
-                renderBlip(blip, index)
+                <Link pageName={`${blip.quadrant}/${blip.name}`} key={index}>
+                    {renderBlip(blip, index)}
+                </Link>
             ))}
         </g>
     );

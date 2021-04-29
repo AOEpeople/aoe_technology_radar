@@ -1,6 +1,6 @@
 import React from 'react';
 import { groupByQuadrants, Item, Group } from '../../model';
-import { quadrants } from '../../config';
+import { quadrantsMap } from '../../config';
 import QuadrantSection from '../QuadrantSection/QuadrantSection';
 import './quadrant-grid.scss';
 const renderQuadrant = (quadrantName: string, groups: Group) => {
@@ -13,5 +13,5 @@ const renderQuadrant = (quadrantName: string, groups: Group) => {
 
 export default function QuadrantGrid({ items }: { items: Item[] }) {
   const groups = groupByQuadrants(items);
-  return <div className='quadrant-grid'>{quadrants.map((quadrantName) => renderQuadrant(quadrantName, groups))}</div>;
+  return <div className='quadrant-grid'>{Object.keys(quadrantsMap).map((quadrantName) => renderQuadrant(quadrantName, groups))}</div>;
 }

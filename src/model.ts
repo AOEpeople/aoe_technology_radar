@@ -1,4 +1,16 @@
-import { Ring } from "./config"
+export enum HomepageOption {
+  chart,
+  columns,
+  both
+}
+
+export enum Ring {
+  all = 0,
+  adopt = 1,
+  trial = 2,
+  assess = 3,
+  hold = 4
+}
 
 export type ItemAttributes = {
   name: string
@@ -8,7 +20,11 @@ export type ItemAttributes = {
   featured: boolean
 }
 
-export type FlagType = 'new' | 'changed' | 'default'
+export enum FlagType {
+  new = 'new',
+  changed = 'changed',
+  default = 'default'
+}
 
 export type Item = ItemAttributes & {
   featured: boolean

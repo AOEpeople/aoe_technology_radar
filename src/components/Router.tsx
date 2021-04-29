@@ -5,8 +5,8 @@ import PageHelp from './PageHelp/PageHelp';
 import PageQuadrant from './PageQuadrant/PageQuadrant';
 import PageItem from './PageItem/PageItem';
 import PageItemMobile from './PageItemMobile/PageItemMobile';
-import {quadrantsMap, getItemPageNames, isMobileViewport, rings} from '../config';
-import {Item} from '../model';
+import {quadrantsMap, getItemPageNames, isMobileViewport} from '../config';
+import {Item, Ring} from '../model';
 
 type RouterProps = {
     pageName: string
@@ -75,7 +75,7 @@ export default function Router({pageName, items, releases, search}: RouterProps)
         case page.index:
             return <PageIndex leaving={leaving} items={items} onLeave={handlePageLeave} releases={releases}/>;
         case page.overview:
-            return <PageOverview items={items} rings={rings} search={search} leaving={leaving}
+            return <PageOverview items={items} rings={Object.values(Ring)} search={search} leaving={leaving}
                                  onLeave={handlePageLeave}/>;
         case page.help:
             return <PageHelp leaving={leaving} onLeave={handlePageLeave}/>;

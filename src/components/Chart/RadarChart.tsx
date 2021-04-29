@@ -1,7 +1,8 @@
 import React from 'react';
 import * as d3 from "d3";
 import ReactTooltip from 'react-tooltip';
-import { chartConfig, quadrantsMap, ringsMap } from '../../config';
+import { Ring } from '../../model';
+import { chartConfig, quadrantsMap } from '../../config';
 import { YAxis, XAxis } from './Axes';
 import QuadrantRings from './QuadrantRings';
 import BlipPoints from './BlipPoints';
@@ -9,8 +10,8 @@ import BlipPoints from './BlipPoints';
 import './chart.scss';
 
 const RingLabel = ({ring, xScale, yScale}) => {
-    const ringRadius = chartConfig.ringsAttributes[ring.position - 1].radius,
-      previousRingRadius = ring.position == 1 ? 0 : chartConfig.ringsAttributes[ring.position - 2].radius,
+    const ringRadius = chartConfig.ringsAttributes[ring - 1].radius,
+      previousRingRadius = ring == 1 ? 0 : chartConfig.ringsAttributes[ring - 2].radius,
 
       // middle point in between two ring arcs
       distanceFromCentre = previousRingRadius + (ringRadius - previousRingRadius) / 2;
@@ -19,11 +20,11 @@ const RingLabel = ({ring, xScale, yScale}) => {
         <g className="ring-label">
           {/* Right hand-side label */}
           <text x={xScale(distanceFromCentre)} y={yScale(0)} textAnchor="middle" dy=".35em">
-              {ring.displayName}
+              {Ring[ring]}
           </text>
           {/* Left hand-side label */}
           <text x={xScale(-distanceFromCentre)} y={yScale(0)} textAnchor="middle" dy=".35em">
-              {ring.displayName}
+              {Ring[ring]}
           </text>
         </g>
     );
@@ -51,8 +52,8 @@ export default function RadarChart({ blips }) {
               <QuadrantRings key={index} quadrant={quadrantsMap[id]} xScale={xScale} />
           ))}
 
-          {Object.keys(ringsMap).map((id, index) => (
-              <RingLabel key={index} ring={ringsMap[id]} xScale={xScale} yScale={yScale} />
+          {[1, 2, 3, 4].map((ring, index) => (
+              <RingLabel key={index} ring={ring} xScale={xScale} yScale={yScale} />
           ))}
 
           <BlipPoints blips={blips} xScale={xScale} yScale={yScale}/>

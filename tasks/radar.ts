@@ -3,9 +3,9 @@ import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
 import hljs from 'highlight.js';
-import { quadrantsMap, ringsMap, blipFlags } from '../src/config';
+import { quadrantsMap } from '../src/config';
 import { radarPath, getAllMarkdownFiles } from './file';
-import { Item, Revision, ItemAttributes, Radar } from '../src/model';
+import { Item, Revision, ItemAttributes, Radar, FlagType, Ring } from '../src/model';
 
 type FMAttributes = ItemAttributes
 
@@ -28,10 +28,9 @@ export const createRadar = async (): Promise<Radar> => {
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
   const validQuadrants = Object.keys(quadrantsMap);
-  const validRings = Object.keys(ringsMap);
 
-  if (attributes.ring && !validRings.includes(attributes.ring)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${validRings}`);
+  if (attributes.ring && !Ring[attributes.ring]) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${Object.values(Ring)}`);
   }
 
   if (attributes.quadrant && !validQuadrants.includes(attributes.quadrant)) {
@@ -116,12 +115,12 @@ const ignoreEmptyRevisionBody = (revision: Revision, item: Item) => {
 
 const addRevisionToItem = (
   item: Item = {
-    flag: 'default',
+    flag: FlagType.default,
     featured: true,
     revisions: [],
     name: '',
     title: '',
-    ring: 'trial',
+    ring: Ring.trial,
     quadrant: '',
     body: '',
     info: '',
@@ -168,10 +167,10 @@ const hasItemChanged = (item: Item, allReleases: string[]) =>
 
 const getItemFlag = (item: Item, allReleases: string[]): string => {
   if (isNewItem(item, allReleases)) {
-    return blipFlags.new.name;
+    return FlagType.new;
   }
   if (hasItemChanged(item, allReleases)) {
-    return blipFlags.changed.name;
+    return FlagType.changed;
   }
-  return blipFlags.default.name;
+  return FlagType.default;
 };
