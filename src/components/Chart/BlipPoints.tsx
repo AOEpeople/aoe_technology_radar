@@ -21,9 +21,9 @@ const generateCoordinates = (enrichedBlip, xScale, yScale) => {
     const radius = randomBetween(previousRingRadius + ringPadding, ringRadius - ringPadding);
     /* 
     Multiples of PI/2. To apply the calculated position to the specific quadrant.
-    Order here is counter-clockwise and starts at the top left, so we need to "invert" quadrant positions
+    Order here is counter-clockwise, so we need to "invert" quadrant positions (i.e. swap 2 with 4)
     */
-    const shift = pi * [4, 3, 2, 1][enrichedBlip.quadrantPosition - 1] / 2;
+    const shift = pi * [1, 4, 3, 2][enrichedBlip.quadrantPosition - 1] / 2;
 
     return {
         x: xScale(Math.cos(randomDegree + shift) * radius),

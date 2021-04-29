@@ -5,14 +5,22 @@ export const radarNameShort = radarName;
 
 export const homepageContent = HomepageOption.both; // by defaul show both versions so that people can choose which one they like more (or keep both)
 
-// Quadrants positions start from the top right and go clockwise
-export const quadrantsMap = { 
+// Quadrants positions start from the top left and go clockwise
+export const quadrantsMap = {
+  'languages-and-frameworks': {
+    id: 'languages-and-frameworks',
+    displayName: 'Languages & Frameworks',
+    colour: '#84BFA4',
+    txtColour: '#444444',
+    position: 1,
+    description: "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
+  },
   'methods-and-patterns': {
     id: 'methods-and-patterns',
     displayName: 'Methods & Patterns',
     colour: '#248EA6',
     txtColour: 'white',
-    position: 1,
+    position: 2,
     description: 'Here we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc.'
   },
   'platforms-and-aoe-services': {
@@ -20,7 +28,7 @@ export const quadrantsMap = {
     displayName: 'Platforms and Operations',
     colour: '#F25244',
     txtColour: '#444444',
-    position: 2,
+    position: 3,
     description: 'Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of.'
   },
   'tools': {
@@ -28,17 +36,9 @@ export const quadrantsMap = {
     displayName: 'Tools',
     colour: '#F2A25C',
     txtColour: 'white',
-    position: 3,
-    description: 'Here we put different software tools - from small helpers to bigger software projects'
-  },
-  'languages-and-frameworks': {
-    id: 'languages-and-frameworks',
-    displayName: 'Languages & Frameworks',
-    colour: '#84BFA4',
-    txtColour: '#444444',
     position: 4,
-    description: "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
-  },
+    description: 'Here we put different software tools - from small helpers to bigger software projects'
+  }
 };
 
 export const chartConfig = {
