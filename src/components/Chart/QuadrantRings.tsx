@@ -1,8 +1,9 @@
 import React from 'react';
 import * as d3 from 'd3';
 import { chartConfig } from '../../config';
+import { QuadrantConfig } from '../../model';
 
-const arcPath = (quadrantPosition, ringPosition, xScale) => {
+function arcPath(quadrantPosition: number, ringPosition: number, xScale: d3.ScaleLinear) {
   const startAngle = quadrantPosition == 1 ?
         3 * Math.PI / 2
         : (quadrantPosition - 2) *  Math.PI / 2
@@ -21,7 +22,10 @@ const arcPath = (quadrantPosition, ringPosition, xScale) => {
     });
 }
 
-export default function QuadrantRings ({ quadrant, xScale}) {
+const QuadrantRings: React.FC<{
+  quadrant: QuadrantConfig
+  xScale: d3.ScaleLinear
+}> = ({ quadrant, xScale}) => {
     // order from top-right clockwise
     const gradientAttributes = [
       {x: 0,         y: 0,          cx: 1, cy: 1, r: 1},
@@ -65,3 +69,5 @@ export default function QuadrantRings ({ quadrant, xScale}) {
       </g>
     );
   }
+
+  export default QuadrantRings;

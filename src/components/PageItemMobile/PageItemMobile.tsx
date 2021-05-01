@@ -40,7 +40,7 @@ export default function PageItemMobile({ pageName, items, leaving, onLeave }: Pa
             <div className='mobile-item-page__header'>
               <div className='split'>
                 <div className='split__left'>
-                  <h3 className='headline'>{quadrantsMap[item.quadrant].displayName}</h3>
+                  <h3 className='headline'>{quadrantsMap.get(item.quadrant).displayName}</h3>
                   <h1 className='hero-headline hero-headline--inverse'>{item.title}</h1>
                 </div>
                 <div className='split__right'>
@@ -59,7 +59,7 @@ export default function PageItemMobile({ pageName, items, leaving, onLeave }: Pa
         <ItemList items={itemsInRing} activeItem={item}>
           <div className='split'>
             <div className='split__left'>
-              <h3 className='headline'>{quadrantsMap[item.quadrant].displayName}</h3>
+              <h3 className='headline'>{quadrantsMap.get(item.quadrant).displayName}</h3>
             </div>
             <div className='split__right'>
               <IconLink pageName={item.quadrant} icon="pie" text="Zoom in" />

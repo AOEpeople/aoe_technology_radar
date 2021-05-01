@@ -16,7 +16,7 @@ const containsSearchTerm = (text = '', term = '') => {
 };
 
 type PageOverviewProps = {
-  rings: readonly ('all' | Ring)[];
+  rings: readonly Ring[];
   search: string;
   items: Item[];
   leaving: boolean;
@@ -24,13 +24,10 @@ type PageOverviewProps = {
 };
 
 export default function PageOverview({ rings, search: searchProp, items, leaving, onLeave }: PageOverviewProps) {
-  const [ring, setRing] = useState<Ring | 'all'>('all');
+  const [selectedRing, setRing] = useState<Ring>(Ring.all);
   const [search, setSearch] = useState(searchProp);
 
   useEffect(() => {
-    if (rings.length > 0) {
-      setRing(rings[0]);
-    }
     setSearch(searchProp);
   }, [rings, searchProp]);
 
@@ -38,9 +35,10 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
     setRing(ring);
   };
 
-  const isRingActive = (ringName: string) => ring === ringName;
+  const isRingActive = (ring: Ring) => selectedRing === ring;
 
-  const itemMatchesRing = (item: Item) => ring === 'all' || item.ring === ring;
+  // TODO get to the bottom of this
+  const itemMatchesRing = (item: Item) => selectedRing === Ring.all || Ring[item.ring] === selectedRing;
 
   const itemMatchesSearch = (item: Item) => {
     return search.trim() === '' || containsSearchTerm(item.title, search) || containsSearchTerm(item.body, search) || containsSearchTerm(item.info, search);
@@ -75,10 +73,10 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
           </div>
           <div className='split__right'>
             <div className='nav'>
-              {Object.keys(rings).map((key) => (
-                <div className='nav__item' key={Ring[key]}>
-                  <Badge big onClick={handleRingClick(Ring[key])} type={isRingActive(Ring[key]) ? Ring[key] : 'empty'}>
-                    {Ring[key]}
+              {rings.map((ring) => (
+                <div className='nav__item' key={ring}>
+                  <Badge big onClick={handleRingClick(ring)} type={isRingActive(ring) ? ring : null}>
+                    {Ring[ring]}
                   </Badge>
                 </div>
               ))}
@@ -109,9 +107,10 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
                         </div>
                         <div className='split__right'>
                           <div className='nav nav--relations'>
-                            <div className='nav__item'>{quadrantsMap[item.quadrant].displayName}</div>
+                            <div className='nav__item'>{quadrantsMap.get(item.quadrant).displayName}</div>
                             <div className='nav__item'>
-                              <Badge type={item.ring}>{item.ring}</Badge>
+                              {/* TODO get to the bottom of this */}
+                              <Badge type={Ring[item.ring]}>{item.ring}</Badge>
                             </div>
                           </div>
                         </div>

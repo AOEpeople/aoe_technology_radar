@@ -191,7 +191,7 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
                 <div className='item-page__nav'>
                     <div className='item-page__nav__inner'>
                         <div className='item-page__header' style={getAnimationState('navHeader')}>
-                            <h3 className='headline'>{quadrantsMap[item.quadrant].displayName}</h3>
+                            <h3 className='headline'>{quadrantsMap.get(item.quadrant).displayName}</h3>
                         </div>
 
                         <ItemList items={itemsInRing} activeItem={item} headerStyle={getAnimationState('navHeader')}

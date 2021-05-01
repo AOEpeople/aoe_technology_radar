@@ -1,11 +1,11 @@
 import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
 import './badge.scss';
-import {Ring} from "../../config";
+import {Ring} from "../../model";
 type BadgeProps = {
   onClick?: MouseEventHandler;
   big?: boolean;
-  type: 'big' | 'all' | 'empty' | Ring;
+  type: Ring | null;
 };
 
 export default function Badge({ onClick, big, type, children }: React.PropsWithChildren<BadgeProps>) {
@@ -13,7 +13,7 @@ export default function Badge({ onClick, big, type, children }: React.PropsWithC
 
   return (
     <Comp
-      className={classNames('badge', `badge--${type}`, {
+      className={classNames('badge', `badge--${type != null ? Ring[type] : ''}`, {
         'badge--big': big === true,
       })}
       onClick={onClick}

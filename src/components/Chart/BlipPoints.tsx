@@ -1,5 +1,6 @@
 import React from 'react';
-import {FlagType, Ring} from '../../model';
+import { ScaleLinear } from 'd3';
+import { FlagType, Item, Blip, Point, Ring } from '../../model';
 import { quadrantsMap, chartConfig } from '../../config';
 import Link from '../Link/Link';
 import { NewBlip, ChangedBlip, DefaultBlip } from './BlipShapes';
@@ -9,10 +10,10 @@ See https://medium.com/create-code/build-a-radar-diagram-with-d3-js-9db6458a9248
 for a good explanation of formulas used to calculate various things in this component
 */
 
-const generateCoordinates = (enrichedBlip, xScale, yScale) => {
+function generateCoordinates(blip: Blip, xScale: ScaleLinear, yScale: ScaleLinear): Point {
     const pi = Math.PI,
-        ringRadius = chartConfig.ringsAttributes[enrichedBlip.ringPosition - 1].radius,
-        previousRingRadius = enrichedBlip.ringPosition == 1 ? 0 : chartConfig.ringsAttributes[enrichedBlip.ringPosition - 2].radius,
+        ringRadius = chartConfig.ringsAttributes[blip.ringPosition - 1].radius,
+        previousRingRadius = blip.ringPosition == 1 ? 0 : chartConfig.ringsAttributes[blip.ringPosition - 2].radius,
         ringPadding = 0.7;
 
     // radian between 0 and 90 degrees
@@ -23,7 +24,7 @@ const generateCoordinates = (enrichedBlip, xScale, yScale) => {
     Multiples of PI/2. To apply the calculated position to the specific quadrant.
     Order here is counter-clockwise, so we need to "invert" quadrant positions (i.e. swap 2 with 4)
     */
-    const shift = pi * [1, 4, 3, 2][enrichedBlip.quadrantPosition - 1] / 2;
+    const shift = pi * [1, 4, 3, 2][blip.quadrantPosition - 1] / 2;
 
     return {
         x: xScale(Math.cos(randomDegree + shift) * radius),
@@ -31,34 +32,62 @@ const generateCoordinates = (enrichedBlip, xScale, yScale) => {
     };
 };
 
-const randomBetween = (min, max) => {
+function randomBetween (min: number, max: number): number {
     return Math.random() * (max - min) + min;
 };
 
-const distanceBetween = (point1, point2) => {
+function distanceBetween(point1: Point, point2: Point): number {
     const a = point2.x - point1.x;
     const b = point2.y - point1.y;
     return Math.sqrt((a * a) + (b * b));
 };
 
-export default function BlipPoints({blips, xScale, yScale}) {
+function renderBlip(blip: Blip, index: number): JSX.Element {
+    const props = {
+        blip,
+        className: 'blip',
+        fill: blip.colour,
+        'data-background-color': blip.colour,
+        'data-text-color': blip.txtColour,
+        'data-tip': blip.title,
+        key: index
+    }
+    switch (blip.flag) {
+        case FlagType.new:
+          return <NewBlip {...props} />;
+        case FlagType.changed:
+          return <ChangedBlip {...props} />;
+        default:
+          return <DefaultBlip {...props} />;
+      }
+};
 
-    const enrichedBlips = blips.reduce((list, blip) => {
-        if (!blip.ring || !blip.quadrant) {
+const BlipPoints: React.FC<{
+    items: Item[]
+    xScale:ScaleLinear
+    yScale:ScaleLinear
+}> = ({items, xScale, yScale}) => {
+
+    const blips: Blip[] = items.reduce((list: Blip[], item: Item) => {
+        if (!item.ring || !item.quadrant) {
             // skip the blip if it doesn't have a ring or quadrant assigned
             return list;
         }
-        let enrichedBlip = { ...blip,
-            quadrantPosition: quadrantsMap[blip.quadrant].position,
-            ringPosition: Ring[blip.ring],
-            colour: quadrantsMap[blip.quadrant].colour,
-            txtColour: quadrantsMap[blip.quadrant].txtColour
+        const quadrantConfig = quadrantsMap.get(item.quadrant);
+
+        let blip: Blip = { ...item,
+            quadrantPosition: quadrantConfig.position,
+            // TODO get to the bottom of this
+            // @ts-ignore
+            ringPosition: Ring[item.ring],
+            colour: quadrantConfig.colour,
+            txtColour: quadrantConfig.txtColour
         };
 
         let point;
         let counter = 1;
         do {
-            point = generateCoordinates(enrichedBlip, xScale, yScale);
+            point = generateCoordinates(blip, xScale, yScale);
             counter++;
             /*
             Generate position of the new blip until it has a satisfactory distance to every other blip (so that they don't touch each other)
@@ -68,39 +97,18 @@ export default function BlipPoints({blips, xScale, yScale}) {
         } while (counter < 100
                 && (Math.abs(point.x - xScale(0)) < 15
                     || Math.abs(point.y - yScale(0)) < 15
-                    || list.some(item => distanceBetween(point, item) < chartConfig.blipSize + chartConfig.blipSize / 2)
+                    || list.some(b => distanceBetween(point, b.coordinates) < chartConfig.blipSize + chartConfig.blipSize / 2)
                 ));
 
-        enrichedBlip.x = point.x;
-        enrichedBlip.y = point.y;
+        blip.coordinates = point;
 
-        list.push(enrichedBlip);
+        list.push(blip);
         return list;
     }, []);
 
-    const renderBlip = (blip, index) => {
-        const props = {
-            blip,
-            className: 'blip',
-            fill: blip.colour,
-            'data-background-color': blip.colour,
-            'data-text-color': blip.txtColour,
-            'data-tip': blip.title,
-            key: index
-        }
-        switch (blip.flag) {
-            case FlagType.new:
-              return <NewBlip {...props} />;
-            case FlagType.changed:
-              return <ChangedBlip {...props} />;
-            default:
-              return <DefaultBlip {...props} />;
-          }
-    }
-
     return (
         <g className="blips">
-            {enrichedBlips.map((blip, index) => (
+            {blips.map((blip, index) => (
                 <Link pageName={`${blip.quadrant}/${blip.name}`} key={index}>
                     {renderBlip(blip, index)}
                 </Link>
@@ -108,3 +116,5 @@ export default function BlipPoints({blips, xScale, yScale}) {
         </g>
     );
 };
+
+export default BlipPoints;

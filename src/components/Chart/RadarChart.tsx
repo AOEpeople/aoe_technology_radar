@@ -1,7 +1,7 @@
 import React from 'react';
 import * as d3 from "d3";
 import ReactTooltip from 'react-tooltip';
-import { Ring } from '../../model';
+import { Item, Ring } from '../../model';
 import { chartConfig, quadrantsMap } from '../../config';
 import { YAxis, XAxis } from './Axes';
 import QuadrantRings from './QuadrantRings';
@@ -9,7 +9,11 @@ import BlipPoints from './BlipPoints';
 
 import './chart.scss';
 
-const RingLabel = ({ring, xScale, yScale}) => {
+const RingLabel: React.FC<{
+  ring: Ring
+  xScale: d3.ScaleLinear
+  yScale: d3.ScaleLinear
+}> = ({ring, xScale, yScale}) => {
     const ringRadius = chartConfig.ringsAttributes[ring - 1].radius,
       previousRingRadius = ring == 1 ? 0 : chartConfig.ringsAttributes[ring - 2].radius,
 
@@ -30,7 +34,10 @@ const RingLabel = ({ring, xScale, yScale}) => {
     );
 };
 
-export default function RadarChart({ blips }) {
+const RadarChart: React.FC<{
+  items: Item[]
+}> = ({ items }) => {
+
   const xScale = d3.scaleLinear()
     .domain(chartConfig.scale)
     .range([0, chartConfig.size]);
@@ -48,17 +55,19 @@ export default function RadarChart({ blips }) {
             <XAxis scale={xScale}/>
           </g>
 
-          {Object.keys(quadrantsMap).map((id, index) => (
-              <QuadrantRings key={index} quadrant={quadrantsMap[id]} xScale={xScale} />
+          {[...quadrantsMap.values()].map((value, index) => (
+              <QuadrantRings key={index} quadrant={value} xScale={xScale} />
           ))}
 
-          {[1, 2, 3, 4].map((ring, index) => (
+          {[Ring.adopt, Ring.trial, Ring.assess, Ring.hold].map((ring, index) => (
               <RingLabel key={index} ring={ring} xScale={xScale} yScale={yScale} />
           ))}
 
-          <BlipPoints blips={blips} xScale={xScale} yScale={yScale}/>
+          <BlipPoints items={items} xScale={xScale} yScale={yScale}/>
       </svg>
       <ReactTooltip className="tooltip" offset={{top: -5}}/>
     </div>
     );
 }
+
+export default RadarChart;

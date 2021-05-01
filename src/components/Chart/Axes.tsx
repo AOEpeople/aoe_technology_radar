@@ -2,7 +2,9 @@
 import ReactFauxDOM from 'react-faux-dom';
 import * as d3 from "d3";
 
-export const YAxis = ({ scale }) => {
+export const YAxis: React.FC<{
+    scale: d3.ScaleLinear
+}> = ({ scale }) => {
     const el = ReactFauxDOM.createElement('g');
 
     const axisGenerator = d3.axisLeft(scale).ticks(6);
@@ -15,7 +17,9 @@ export const YAxis = ({ scale }) => {
     return el.toReact();
 };
 
-export const XAxis = ({ scale }) => {
+export const XAxis: React.FC<{
+    scale: d3.ScaleLinear
+}> = ({ scale }) => {
     const el = ReactFauxDOM.createElement('g');
 
     const axisGenerator = d3.axisBottom(scale).ticks(6);

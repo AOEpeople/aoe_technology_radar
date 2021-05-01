@@ -13,5 +13,5 @@ const renderQuadrant = (quadrantName: string, groups: Group) => {
 
 export default function QuadrantGrid({ items }: { items: Item[] }) {
   const groups = groupByQuadrants(items);
-  return <div className='quadrant-grid'>{Object.keys(quadrantsMap).map((quadrantName) => renderQuadrant(quadrantName, groups))}</div>;
+  return <div className='quadrant-grid'>{[...quadrantsMap.keys()].map((quadrantName) => renderQuadrant(quadrantName, groups))}</div>;
 }

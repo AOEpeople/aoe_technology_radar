@@ -19,7 +19,9 @@ type PageIndexProps = {
 export default function PageIndex({ leaving, onLeave, items, releases }: PageIndexProps) {
   const newestRelease = releases.slice(-1)[0];
   const numberOfReleases = releases.length;
+  // @ts-ignore
   const showChart = homepageContent === HomepageOption.chart || homepageContent === HomepageOption.both;
+  // @ts-ignore
   const showColumns = homepageContent === HomepageOption.columns || homepageContent === HomepageOption.both;
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
@@ -28,7 +30,7 @@ export default function PageIndex({ leaving, onLeave, items, releases }: PageInd
         <HeroHeadline alt={`Version #${numberOfReleases}`}>{radarName}</HeroHeadline>
       </div>
       {showChart && (
-        <RadarGrid blips={featuredOnly(items)} />
+        <RadarGrid items={featuredOnly(items)} />
       )}
       {showColumns && (
         <QuadrantGrid items={featuredOnly(items)} />

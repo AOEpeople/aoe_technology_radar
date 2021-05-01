@@ -34,6 +34,14 @@ export type Item = ItemAttributes & {
   revisions: Revision[]
 }
 
+export type Blip = Item & {
+  quadrantPosition: number
+  ringPosition: number
+  colour: string
+  txtColour: string
+  coordinates?: Point
+}
+
 export type Revision = ItemAttributes & {
   body: string
   fileName: string
@@ -44,6 +52,15 @@ export type Quadrant = {
   [name: string]: Item[]
 }
 
+export type QuadrantConfig = {
+    id: string,
+    displayName: string,
+    colour: string,
+    txtColour: string,
+    position: number,
+    description: string
+}
+
 export type Radar = {
   items: Item[]
   releases: string[]
@@ -51,6 +68,11 @@ export type Radar = {
 
 export type Group = {
   [quadrant: string]: Quadrant
+}
+
+export type Point = {
+  x: number,
+  y: number
 }
 
 export const featuredOnly = (items: Item[]) => items.filter(item => item.featured);

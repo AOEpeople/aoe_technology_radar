@@ -55,7 +55,7 @@ export default function QuadrantSection({ quadrantName, groups, big = false, sho
         <div className='split'>
           {showTitle && (
             <div className="split__left">
-              <h4 className="headline">{quadrantsMap[quadrantName].displayName}</h4>
+              <h4 className="headline">{quadrantsMap.get(quadrantName).displayName}</h4>
             </div>
           )}
           {!big && (

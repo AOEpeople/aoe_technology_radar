@@ -1,9 +1,21 @@
 import React from 'react';
+import { Blip } from '../../model';
 import { chartConfig } from '../../config';
 
-export const ChangedBlip = ({blip, ...props}) => {
-    const centeredX = blip.x - chartConfig.blipSize/2,
-        centeredY = blip.y - chartConfig.blipSize/2;
+type VisualBlipProps = {
+    className: string,
+    fill: string,
+    'data-background-color': string,
+    'data-text-color': string,
+    'data-tip': string,
+    key: number
+}
+
+export const ChangedBlip: React.FC<
+    {blip: Blip} & VisualBlipProps
+> = ({blip, ...props}) => {
+    const centeredX = blip.coordinates.x - chartConfig.blipSize/2,
+        centeredY = blip.coordinates.y - chartConfig.blipSize/2;
 
     return (
         <rect
@@ -18,9 +30,11 @@ export const ChangedBlip = ({blip, ...props}) => {
     );
 };
 
-export const NewBlip = ({blip, ...props}) => {
-    const centeredX = blip.x - chartConfig.blipSize/2,
-        centeredY = blip.y - chartConfig.blipSize/2;
+export const NewBlip: React.FC<
+    {blip: Blip} & VisualBlipProps
+> = ({blip, ...props}) => {
+    const centeredX = blip.coordinates.x - chartConfig.blipSize/2,
+        centeredY = blip.coordinates.y - chartConfig.blipSize/2;
 
     /*
     The below is a predefined path of a triangle with rounded corners.
@@ -36,12 +50,14 @@ export const NewBlip = ({blip, ...props}) => {
     );
 };
 
-export const DefaultBlip = ({blip, ...props}) => {
+export const DefaultBlip: React.FC<
+    {blip: Blip} & VisualBlipProps
+> = ({blip, ...props}) => {
     return (
         <circle
             r={chartConfig.blipSize / 2}
-            cx={blip.x}
-            cy={blip.y}
+            cx={blip.coordinates.x}
+            cy={blip.coordinates.y}
             {...props}
         />
     );

@@ -35,7 +35,7 @@ const getPageByName = (items: Item[], pageName: string): page => {
     if (pageName === 'help-and-about-tech-radar') {
         return page.help;
     }
-    if (Object.keys(quadrantsMap).includes(pageName)) {
+    if (quadrantsMap.has(pageName)) {
         return page.quadrant;
     }
     if (getItemPageNames(items).includes(pageName)) {
@@ -75,7 +75,7 @@ export default function Router({pageName, items, releases, search}: RouterProps)
         case page.index:
             return <PageIndex leaving={leaving} items={items} onLeave={handlePageLeave} releases={releases}/>;
         case page.overview:
-            return <PageOverview items={items} rings={Object.values(Ring)} search={search} leaving={leaving}
+            return <PageOverview items={items} rings={[Ring.all, Ring.adopt, Ring.assess, Ring.hold, Ring.trial]} search={search} leaving={leaving}
                                  onLeave={handlePageLeave}/>;
         case page.help:
             return <PageHelp leaving={leaving} onLeave={handlePageLeave}/>;

@@ -10,12 +10,12 @@ import {quadrantsMap} from "../src/config";
         console.log('starting static')
         const radar = await createRadar();
 
-        copyFileSync('build/index.html', 'build/overview.html')
-        copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html')
+        copyFileSync('build/index.html', 'build/overview.html');
+        copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html');
 
-        Object.keys(quadrantsMap).forEach(quadrant => {
-            copyFileSync('build/index.html', 'build/' + quadrant + '.html')
-            mkdirSync('build/' + quadrant)
+        [...quadrantsMap.keys()].forEach(quadrant => {
+            copyFileSync('build/index.html', 'build/' + quadrant + '.html');
+            mkdirSync('build/' + quadrant);
         })
         radar.items.forEach(item => {
             copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html')

@@ -2,10 +2,14 @@ import React from 'react';
 import RadarChart from '../Chart/RadarChart';
 import IconLink from '../IconLink/IconLink';
 import { quadrantsMap } from '../../config';
+import { Item, QuadrantConfig } from '../../model';
 
 import './radar-grid.scss';
 
-const QuadrantLabel = ({quadrant}) => {
+const QuadrantLabel: React.FC<{
+    quadrant: QuadrantConfig
+}> = ({quadrant}) => {
+    
     const stylesMap = [
         {top: 0, left: 0},
         {top: 0, right: 0},
@@ -30,7 +34,7 @@ const QuadrantLabel = ({quadrant}) => {
     );
 };
 
-const Legend = () => {
+const Legend: React.FC = () => {
     return (
         <div className="radar-legend">
             <div className="wrapper">
@@ -49,15 +53,19 @@ const Legend = () => {
     );
 }
 
-export default function RadarGrid({ blips }) {
+const RadarGrid: React.FC<
+    {items: Item[]}
+> = ({ items }) => {
 
     return (
         <div className="radar-grid">
-            <RadarChart blips={blips} />
-            {Object.keys(quadrantsMap).map((id, index) => (
-                <QuadrantLabel key={index} quadrant={quadrantsMap[id]} />
+            <RadarChart items={items} />
+            {[...quadrantsMap.values()].map((value, index) => (
+                <QuadrantLabel key={index} quadrant={value} />
             ))}
             <Legend />
         </div>
     );
 }
+
+export default RadarGrid;
