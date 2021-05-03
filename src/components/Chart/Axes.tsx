@@ -1,33 +1,42 @@
 // TODO remove faux-dom and start using the React hook approach
-import ReactFauxDOM from 'react-faux-dom';
+import React, { useRef, useLayoutEffect } from 'react';
 import * as d3 from "d3";
 
 export const YAxis: React.FC<{
     scale: d3.ScaleLinear
 }> = ({ scale }) => {
-    const el = ReactFauxDOM.createElement('g');
+    
+    const ref = useRef<SVGSVGElement>(null);
 
-    const axisGenerator = d3.axisLeft(scale).ticks(6);
+    useLayoutEffect(() => {
+        const axisGenerator = d3.axisLeft(scale).ticks(6);
 
-    d3.select(el).attr('class', 'y-axis')
-      .call(axisGenerator)
-      .call(g => g.selectAll('.tick text').remove())
-      .call(g => g.selectAll('.tick line').remove())
-      .call(g => g.selectAll('.domain').remove());
-    return el.toReact();
+        d3.select(ref.current)
+            .attr('class', 'y-axis')
+            .call(axisGenerator)
+            .call(g => g.selectAll('.tick text').remove())
+            .call(g => g.selectAll('.tick line').remove())
+            .call(g => g.selectAll('.domain').remove());
+    }, [scale]);
+
+    return <g ref={ref} />;
 };
 
 export const XAxis: React.FC<{
     scale: d3.ScaleLinear
 }> = ({ scale }) => {
-    const el = ReactFauxDOM.createElement('g');
 
-    const axisGenerator = d3.axisBottom(scale).ticks(6);
-    d3.select(el).attr('class', 'x-axis')
-        .call(axisGenerator)
-        .call(g => g.selectAll('.tick text').remove())
-        .call(g => g.selectAll('.tick line').remove())
-        .call(g => g.selectAll('.domain').remove());
+    const ref = useRef<SVGSVGElement>(null);
 
-    return el.toReact();
+    useLayoutEffect(() => {
+        const axisGenerator = d3.axisBottom(scale).ticks(6);
+        d3.select(ref.current)
+            .attr('class', 'x-axis')
+            .call(axisGenerator)
+            .call(g => g.selectAll('.tick text').remove())
+            .call(g => g.selectAll('.tick line').remove())
+            .call(g => g.selectAll('.domain').remove());
+    }, [scale]);
+
+    return <g ref={ref} />;
 };
