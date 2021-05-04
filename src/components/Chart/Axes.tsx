@@ -1,11 +1,10 @@
-// TODO remove faux-dom and start using the React hook approach
 import React, { useRef, useLayoutEffect } from 'react';
 import * as d3 from "d3";
 
 export const YAxis: React.FC<{
     scale: d3.ScaleLinear
 }> = ({ scale }) => {
-    
+
     const ref = useRef<SVGSVGElement>(null);
 
     useLayoutEffect(() => {

@@ -7,14 +7,14 @@ import ItemList from '../ItemList/ItemList';
 import Flag from '../Flag/Flag';
 import { Group, Ring } from '../../model';
 import './quadrant-section.scss';
-const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: boolean) => {
-  const itemsInRing = groups[quadrantName][ringName] || [];
+const renderList = (ring: Ring, quadrantName: string, groups: Group, big: boolean) => {
+  const itemsInRing = groups[quadrantName][ring] || [];
 
   if (big) {
     return (
       <ItemList items={itemsInRing} noLeadingBorder>
-        <Badge type={ringName} big={big}>
-          {ringName}
+        <Badge type={ring} big={big}>
+          {Ring[ring]}
         </Badge>
       </ItemList>
     );
@@ -23,7 +23,7 @@ const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: bo
   return (
     <div className='ring-list'>
       <div className='ring-list__header'>
-        <Badge type={ringName}>{ringName}</Badge>
+        <Badge type={ring}>{Ring[ring]}</Badge>
       </div>
       {itemsInRing.map((item) => (
         <span key={item.name} className='ring-list__item'>
@@ -37,13 +37,13 @@ const renderList = (ringName: Ring, quadrantName: string, groups: Group, big: bo
   );
 };
 
-const renderRing = (ringName: Ring, quadrantName: string, groups: Group, big: boolean) => {
-  if (!showEmptyRings && (!groups[quadrantName] || !groups[quadrantName][ringName] || groups[quadrantName][ringName].length === 0)) {
+const renderRing = (ring: Ring, quadrantName: string, groups: Group, big: boolean) => {
+  if (!showEmptyRings && (!groups[quadrantName] || !groups[quadrantName][ring] || groups[quadrantName][ring].length === 0)) {
     return null;
   }
   return (
-    <div key={ringName} className='quadrant-section__ring'>
-      {renderList(ringName, quadrantName, groups, big)}
+    <div key={ring} className='quadrant-section__ring'>
+      {renderList(ring, quadrantName, groups, big)}
     </div>
   );
 };
@@ -65,7 +65,7 @@ export default function QuadrantSection({ quadrantName, groups, big = false, sho
           )}
         </div>
       </div>
-      <div className='quadrant-section__rings'>{Object.keys(Ring).map((key) => renderRing(Ring[key], quadrantName, groups, big))}</div>
+      <div className='quadrant-section__rings'>{[Ring.adopt, Ring.trial, Ring.assess, Ring.hold].map((ring) => renderRing(ring, quadrantName, groups, big))}</div>
     </div>
   );
 }

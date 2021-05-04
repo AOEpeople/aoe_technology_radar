@@ -12,7 +12,7 @@ import {
 } from '../../animation';
 import './item-page.scss';
 import {quadrantsMap} from '../../config';
-import {groupByQuadrants, Item} from '../../model';
+import {groupByQuadrants, Item, Ring} from '../../model';
 
 const getItem = (pageName: string, items: Item[]) => {
     const [quadrantName, itemName] = pageName.split('/');
@@ -199,7 +199,7 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
                             <div className='split'>
                                 <div className='split__left'>
                                     <Badge big type={item.ring}>
-                                        {item.ring}
+                                        {Ring[item.ring]}
                                     </Badge>
                                 </div>
                                 <div className='split__right'>
@@ -221,7 +221,7 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
                                 </div>
                                 <div className='split__right'>
                                     <Badge big type={item.ring}>
-                                        {item.ring}
+                                        {Ring[item.ring]}
                                     </Badge>
                                 </div>
                             </div>

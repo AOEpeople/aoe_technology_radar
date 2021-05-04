@@ -7,7 +7,9 @@ import { quadrantsMap } from '../src/config';
 import { radarPath, getAllMarkdownFiles } from './file';
 import { Item, Revision, ItemAttributes, Radar, FlagType, Ring } from '../src/model';
 
-type FMAttributes = ItemAttributes
+type FMAttributes = Omit<ItemAttributes, 'ring'> & {
+  ring: string // when reading from file it will be a String form, not numeric representation of the enum
+}
 
 marked.setOptions({
   highlight: code => hljs.highlightAuto(code).value,
@@ -27,14 +29,19 @@ export const createRadar = async (): Promise<Radar> => {
 };
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
-  const validQuadrants = Object.keys(quadrantsMap);
-
-  if (attributes.ring && !Ring[attributes.ring]) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${Object.values(Ring)}`);
+  const validRings = [];
+  for (var ring in Ring) {
+      if (isNaN(Number(ring))) {
+        validRings.push(ring);
+    }    
   }
 
-  if (attributes.quadrant && !validQuadrants.includes(attributes.quadrant)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${validQuadrants}`);
+  if (attributes.ring && !validRings.includes(attributes.ring)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${validRings}`);
+  }
+
+  if (attributes.quadrant && !quadrantsMap.has(attributes.quadrant)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrantsMap.keys()}`);
   }
 
   if (!attributes.quadrant || attributes.quadrant === '') {
@@ -45,7 +52,11 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
     attributes.title = path.basename(fileName);
   }
 
-  return attributes
+  return {
+    ...attributes,
+    // Convert string representation of the ring into enum value
+    ring: Ring[attributes.ring as keyof typeof Ring]
+  }
 };
 
 const createRevisionsFromFiles = (fileNames: string[]) =>

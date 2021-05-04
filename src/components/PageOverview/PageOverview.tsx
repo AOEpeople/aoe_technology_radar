@@ -37,8 +37,7 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
 
   const isRingActive = (ring: Ring) => selectedRing === ring;
 
-  // TODO get to the bottom of this
-  const itemMatchesRing = (item: Item) => selectedRing === Ring.all || Ring[item.ring] === selectedRing;
+  const itemMatchesRing = (item: Item) => selectedRing === Ring.all || item.ring === selectedRing;
 
   const itemMatchesSearch = (item: Item) => {
     return search.trim() === '' || containsSearchTerm(item.title, search) || containsSearchTerm(item.body, search) || containsSearchTerm(item.info, search);
@@ -109,8 +108,7 @@ export default function PageOverview({ rings, search: searchProp, items, leaving
                           <div className='nav nav--relations'>
                             <div className='nav__item'>{quadrantsMap.get(item.quadrant).displayName}</div>
                             <div className='nav__item'>
-                              {/* TODO get to the bottom of this */}
-                              <Badge type={Ring[item.ring]}>{item.ring}</Badge>
+                              <Badge type={item.ring}>{Ring[item.ring]}</Badge>
                             </div>
                           </div>
                         </div>

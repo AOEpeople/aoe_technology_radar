@@ -7,7 +7,7 @@ import SetTitle from '../SetTitle';
 import ItemRevisions from '../ItemRevisions/ItemRevisions';
 
 import { quadrantsMap } from '../../config';
-import { groupByQuadrants, Item } from '../../model';
+import { groupByQuadrants, Item, Ring } from '../../model';
 
 type PageItemMobileProps = {
   pageName: string;
@@ -45,7 +45,7 @@ export default function PageItemMobile({ pageName, items, leaving, onLeave }: Pa
                 </div>
                 <div className='split__right'>
                   <Badge big type={item.ring}>
-                    {item.ring}
+                    {Ring[item.ring]}
                   </Badge>
                 </div>
               </div>

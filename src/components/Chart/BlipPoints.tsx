@@ -77,9 +77,7 @@ const BlipPoints: React.FC<{
 
         let blip: Blip = { ...item,
             quadrantPosition: quadrantConfig.position,
-            // TODO get to the bottom of this
-            // @ts-ignore
-            ringPosition: Ring[item.ring],
+            ringPosition: item.ring,
             colour: quadrantConfig.colour,
             txtColour: quadrantConfig.txtColour
         };

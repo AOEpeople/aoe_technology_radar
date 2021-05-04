@@ -43,7 +43,7 @@ export const quadrantsMap: Map<string, QuadrantConfig> = new Map([
 
 export const chartConfig = {
     size: 800, //in px
-    scale: [-16, 16],
+    scale: [-16, 16], // arbitrary scale, could have any summetric values. 16 is good for dividing the chart into rings of proportional sizes/radius
     blipSize: 12, // in px, be careful when increasing this value as it may cause a lot of calculations during placing the blips on the chart
     ringsAttributes: [ // order from the centre outwards
       { radius: 8, arcWidth: 6 }, // radius values are based on the scale (not px!), arc width is in px

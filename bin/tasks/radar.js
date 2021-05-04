@@ -20,6 +20,7 @@ const marked_1 = __importDefault(require("marked"));
 const highlight_js_1 = __importDefault(require("highlight.js"));
 const config_1 = require("../src/config");
 const file_1 = require("./file");
+const model_1 = require("../src/model");
 marked_1.default.setOptions({
     highlight: code => highlight_js_1.default.highlightAuto(code).value,
 });
@@ -35,11 +36,17 @@ exports.createRadar = () => __awaiter(void 0, void 0, void 0, function* () {
     };
 });
 const checkAttributes = (fileName, attributes) => {
-    if (attributes.ring && !config_1.rings.includes(attributes.ring)) {
-        throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${config_1.rings}`);
+    const validRings = [];
+    for (var ring in model_1.Ring) {
+        if (isNaN(Number(ring))) {
+            validRings.push(ring);
+        }
     }
-    if (attributes.quadrant && !config_1.quadrants.includes(attributes.quadrant)) {
-        throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${config_1.quadrants}`);
+    if (attributes.ring && !validRings.includes(attributes.ring)) {
+        throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${validRings}`);
+    }
+    if (attributes.quadrant && !config_1.quadrantsMap.has(attributes.quadrant)) {
+        throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${config_1.quadrantsMap.keys()}`);
     }
     if (!attributes.quadrant || attributes.quadrant === '') {
         // throw new Error(`Error: ${fileName} has no 'quadrant' set`);
@@ -47,7 +54,9 @@ const checkAttributes = (fileName, attributes) => {
     if (!attributes.title || attributes.title === '') {
         attributes.title = path_1.default.basename(fileName);
     }
-    return attributes;
+    return Object.assign(Object.assign({}, attributes), { 
+        // Convert string representation of the ring into enum value
+        ring: model_1.Ring[attributes.ring] });
 };
 const createRevisionsFromFiles = (fileNames) => Promise.all(fileNames.map(fileName => {
     return new Promise((resolve, reject) => {
@@ -94,12 +103,12 @@ const ignoreEmptyRevisionBody = (revision, item) => {
     return revision.body;
 };
 const addRevisionToItem = (item = {
-    flag: 'default',
+    flag: model_1.FlagType.default,
     featured: true,
     revisions: [],
     name: '',
     title: '',
-    ring: 'trial',
+    ring: model_1.Ring.trial,
     quadrant: '',
     body: '',
     info: '',
@@ -119,10 +128,10 @@ const isNewItem = (item, allReleases) => item.revisions.length === 1 && isInLast
 const hasItemChanged = (item, allReleases) => item.revisions.length > 1 && isInLastRelease(item, allReleases);
 const getItemFlag = (item, allReleases) => {
     if (isNewItem(item, allReleases)) {
-        return 'new';
+        return model_1.FlagType.new;
     }
     if (hasItemChanged(item, allReleases)) {
-        return 'changed';
+        return model_1.FlagType.changed;
     }
-    return 'default';
+    return model_1.FlagType.default;
 };
