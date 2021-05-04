@@ -113,7 +113,7 @@ const addRevisionToItem = (item = {
     body: '',
     info: '',
 }, revision) => {
-    let newItem = Object.assign(Object.assign(Object.assign({}, item), revision), { body: ignoreEmptyRevisionBody(revision, item) });
+    let newItem = Object.assign(Object.assign(Object.assign({}, item), revision), { ring: revision.ring ? revision.ring : item.ring, body: ignoreEmptyRevisionBody(revision, item) });
     if (revisionCreatesNewHistoryEntry(revision)) {
         newItem = Object.assign(Object.assign({}, newItem), { revisions: [revision, ...newItem.revisions] });
     }

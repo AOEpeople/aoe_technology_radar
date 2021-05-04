@@ -141,6 +141,7 @@ const addRevisionToItem = (
   let newItem: Item = {
     ...item,
     ...revision,
+    ring: revision.ring ? revision.ring : item.ring, // prevent empty revision ring overriding the one from the item. This one field is special as it's an enum.
     body: ignoreEmptyRevisionBody(revision, item),
   };
 
