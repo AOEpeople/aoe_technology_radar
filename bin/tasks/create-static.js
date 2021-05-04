@@ -19,7 +19,7 @@ const config_1 = require("../src/config");
         const radar = yield radar_1.createRadar();
         fs_1.copyFileSync('build/index.html', 'build/overview.html');
         fs_1.copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html');
-        config_1.quadrants.forEach(quadrant => {
+        [...config_1.quadrantsMap.keys()].forEach(quadrant => {
             fs_1.copyFileSync('build/index.html', 'build/' + quadrant + '.html');
             fs_1.mkdirSync('build/' + quadrant);
         });

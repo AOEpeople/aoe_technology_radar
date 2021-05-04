@@ -1,4 +1,16 @@
-import { Ring } from "./config"
+export enum HomepageOption {
+  chart,
+  columns,
+  both
+}
+
+export enum Ring {
+  all = 0,
+  adopt = 1,
+  trial = 2,
+  assess = 3,
+  hold = 4
+}
 
 export type ItemAttributes = {
   name: string
@@ -8,7 +20,11 @@ export type ItemAttributes = {
   featured: boolean
 }
 
-export type FlagType = 'new' | 'changed' | 'default'
+export enum FlagType {
+  new = 'new',
+  changed = 'changed',
+  default = 'default'
+}
 
 export type Item = ItemAttributes & {
   featured: boolean
@@ -16,6 +32,14 @@ export type Item = ItemAttributes & {
   info: string
   flag: FlagType
   revisions: Revision[]
+}
+
+export type Blip = Item & {
+  quadrantPosition: number
+  ringPosition: number
+  colour: string
+  txtColour: string
+  coordinates?: Point
 }
 
 export type Revision = ItemAttributes & {
@@ -28,6 +52,15 @@ export type Quadrant = {
   [name: string]: Item[]
 }
 
+export type QuadrantConfig = {
+    id: string,
+    displayName: string,
+    colour: string,
+    txtColour: string,
+    position: number,
+    description: string
+}
+
 export type Radar = {
   items: Item[]
   releases: string[]
@@ -35,6 +68,11 @@ export type Radar = {
 
 export type Group = {
   [quadrant: string]: Quadrant
+}
+
+export type Point = {
+  x: number,
+  y: number
 }
 
 export const featuredOnly = (items: Item[]) => items.filter(item => item.featured);

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import Branding from '../Branding/Branding';
-import Link from '../Link/Link';
+import IconLink from '../IconLink/IconLink';
 import LogoLink from '../LogoLink/LogoLink';
 import Search from '../Search/Search';
 import { radarNameShort } from '../../config';
@@ -50,14 +50,10 @@ export default function Header({ pageName }: { pageName: string }) {
     <Branding logoContent={<LogoLink small={smallLogo} />}>
       <div className='nav'>
         <div className='nav__item'>
-          <Link pageName='help-and-about-tech-radar' className='icon-link'>
-            <span className='icon icon--question icon-link__icon'/>How to Use {radarNameShort}?
-          </Link>
+          <IconLink pageName="help-and-about-tech-radar" icon="question" text={`How to Use ${radarNameShort}?`} />
         </div>
         <div className='nav__item'>
-          <Link pageName='overview' className='icon-link'>
-            <span className='icon icon--overview icon-link__icon'/>Technologies Overview
-          </Link>
+          <IconLink pageName="overview" icon="overview" text="All Technologies" />
         </div>
         <div className='nav__item'>
           <button className='icon-link' onClick={handleOpenClick}>

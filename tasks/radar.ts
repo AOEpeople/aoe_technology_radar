@@ -3,11 +3,13 @@ import path from 'path';
 import frontmatter from 'front-matter';
 import marked from 'marked';
 import hljs from 'highlight.js';
-import { quadrants, rings } from '../src/config';
+import { quadrantsMap } from '../src/config';
 import { radarPath, getAllMarkdownFiles } from './file';
-import { Item, Revision, ItemAttributes, Radar } from '../src/model';
+import { Item, Revision, ItemAttributes, Radar, FlagType, Ring } from '../src/model';
 
-type FMAttributes = ItemAttributes
+type FMAttributes = Omit<ItemAttributes, 'ring'> & {
+  ring: string // when reading from file it will be a String form, not numeric representation of the enum
+}
 
 marked.setOptions({
   highlight: code => hljs.highlightAuto(code).value,
@@ -27,12 +29,19 @@ export const createRadar = async (): Promise<Radar> => {
 };
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
-  if (attributes.ring && !rings.includes(attributes.ring)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
+  const validRings = [];
+  for (var ring in Ring) {
+      if (isNaN(Number(ring))) {
+        validRings.push(ring);
+    }    
   }
 
-  if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
+  if (attributes.ring && !validRings.includes(attributes.ring)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${validRings}`);
+  }
+
+  if (attributes.quadrant && !quadrantsMap.has(attributes.quadrant)) {
+    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrantsMap.keys()}`);
   }
 
   if (!attributes.quadrant || attributes.quadrant === '') {
@@ -43,7 +52,11 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
     attributes.title = path.basename(fileName);
   }
 
-  return attributes
+  return {
+    ...attributes,
+    // Convert string representation of the ring into enum value
+    ring: Ring[attributes.ring as keyof typeof Ring]
+  }
 };
 
 const createRevisionsFromFiles = (fileNames: string[]) =>
@@ -113,12 +126,12 @@ const ignoreEmptyRevisionBody = (revision: Revision, item: Item) => {
 
 const addRevisionToItem = (
   item: Item = {
-    flag: 'default',
+    flag: FlagType.default,
     featured: true,
     revisions: [],
     name: '',
     title: '',
-    ring: 'trial',
+    ring: Ring.trial,
     quadrant: '',
     body: '',
     info: '',
@@ -128,6 +141,7 @@ const addRevisionToItem = (
   let newItem: Item = {
     ...item,
     ...revision,
+    ring: revision.ring ? revision.ring : item.ring, // prevent empty revision ring overriding the one from the item. This one field is special as it's an enum.
     body: ignoreEmptyRevisionBody(revision, item),
   };
 
@@ -165,10 +179,10 @@ const hasItemChanged = (item: Item, allReleases: string[]) =>
 
 const getItemFlag = (item: Item, allReleases: string[]): string => {
   if (isNewItem(item, allReleases)) {
-    return 'new';
+    return FlagType.new;
   }
   if (hasItemChanged(item, allReleases)) {
-    return 'changed';
+    return FlagType.changed;
   }
-  return 'default';
+  return FlagType.default;
 };

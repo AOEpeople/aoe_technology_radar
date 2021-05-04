@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Badge from '../Badge/Badge';
 import ItemList from '../ItemList/ItemList';
-import Link from '../Link/Link';
+import IconLink from '../IconLink/IconLink';
 import FooterEnd from '../FooterEnd/FooterEnd';
 import SetTitle from '../SetTitle';
 import ItemRevisions from '../ItemRevisions/ItemRevisions';
@@ -11,8 +11,8 @@ import {
     createAnimationRunner
 } from '../../animation';
 import './item-page.scss';
-import {translate} from '../../config';
-import {groupByQuadrants, Item} from '../../model';
+import {quadrantsMap} from '../../config';
+import {groupByQuadrants, Item, Ring} from '../../model';
 
 const getItem = (pageName: string, items: Item[]) => {
     const [quadrantName, itemName] = pageName.split('/');
@@ -191,7 +191,7 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
                 <div className='item-page__nav'>
                     <div className='item-page__nav__inner'>
                         <div className='item-page__header' style={getAnimationState('navHeader')}>
-                            <h3 className='headline'>{translate(item.quadrant)}</h3>
+                            <h3 className='headline'>{quadrantsMap.get(item.quadrant).displayName}</h3>
                         </div>
 
                         <ItemList items={itemsInRing} activeItem={item} headerStyle={getAnimationState('navHeader')}
@@ -199,14 +199,11 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
                             <div className='split'>
                                 <div className='split__left'>
                                     <Badge big type={item.ring}>
-                                        {item.ring}
+                                        {Ring[item.ring]}
                                     </Badge>
                                 </div>
                                 <div className='split__right'>
-                                    <Link className='icon-link' pageName={item.quadrant}>
-                                        <span className='icon icon--pie icon-link__icon'/>
-                                        Quadrant Overview
-                                    </Link>
+                                    <IconLink pageName={item.quadrant} icon="pie" text="Quadrant Overview" />
                                 </div>
                             </div>
                         </ItemList>
@@ -224,7 +221,7 @@ export default function PageItem({pageName, items, leaving, onLeave}: PageItemPr
                                 </div>
                                 <div className='split__right'>
                                     <Badge big type={item.ring}>
-                                        {item.ring}
+                                        {Ring[item.ring]}
                                     </Badge>
                                 </div>
                             </div>

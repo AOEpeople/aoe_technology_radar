@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 import {createRadar} from "./radar";
-import {save} from "./file";
-import {copyFileSync, mkdir, mkdirSync} from "fs";
-import {quadrants} from "../src/config";
+import {copyFileSync, mkdirSync} from "fs";
+import {quadrantsMap} from "../src/config";
 
 
 (async () => {
@@ -11,12 +10,12 @@ import {quadrants} from "../src/config";
         console.log('starting static')
         const radar = await createRadar();
 
-        copyFileSync('build/index.html', 'build/overview.html')
-        copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html')
+        copyFileSync('build/index.html', 'build/overview.html');
+        copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html');
 
-        quadrants.forEach(quadrant => {
-            copyFileSync('build/index.html', 'build/' + quadrant + '.html')
-            mkdirSync('build/' + quadrant)
+        [...quadrantsMap.keys()].forEach(quadrant => {
+            copyFileSync('build/index.html', 'build/' + quadrant + '.html');
+            mkdirSync('build/' + quadrant);
         })
         radar.items.forEach(item => {
             copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html')

@@ -2,9 +2,6 @@
 
 import {createRadar} from "./radar";
 import {save} from "./file";
-import {copyFileSync, mkdir, mkdirSync} from "fs";
-import {quadrants} from "../src/config";
-
 
 export const radarJsonGenerator = (async () => {
     try {
