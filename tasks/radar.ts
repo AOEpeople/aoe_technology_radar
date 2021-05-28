@@ -35,14 +35,6 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
     throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
   }
 
-  if (!attributes.quadrant || attributes.quadrant === '') {
-    // throw new Error(`Error: ${fileName} has no 'quadrant' set`);
-  }
-
-  if (!attributes.title || attributes.title === '') {
-    attributes.title = path.basename(fileName);
-  }
-
   return attributes
 };
 
@@ -76,9 +68,9 @@ const createRevisionsFromFiles = (fileNames: string[]) =>
   );
 
 const itemInfoFromFilename = (fileName: string) => {
-  const [release, nameWithSuffix] = fileName.split(path.sep).slice(-2);
+  const [release, name] = fileName.split(path.sep).slice(-2);
   return {
-    name: nameWithSuffix.substr(0, nameWithSuffix.length - 3),
+    name: path.basename(name, '.md'),
     release,
   };
 };
@@ -101,7 +93,7 @@ const createItems = (revisions: Revision[]) => {
     };
   }, {});
 
-  return Object.values(itemMap).sort((x, y) => (x.name > y.name ? 1 : -1));
+  return Object.values(itemMap).map(item => ({...item, ['title']: item.title || item.name})).sort((x, y) => (x.name > y.name ? 1 : -1));
 };
 
 const ignoreEmptyRevisionBody = (revision: Revision, item: Item) => {

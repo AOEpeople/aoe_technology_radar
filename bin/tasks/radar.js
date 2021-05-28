@@ -41,12 +41,6 @@ const checkAttributes = (fileName, attributes) => {
     if (attributes.quadrant && !config_1.quadrants.includes(attributes.quadrant)) {
         throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${config_1.quadrants}`);
     }
-    if (!attributes.quadrant || attributes.quadrant === '') {
-        // throw new Error(`Error: ${fileName} has no 'quadrant' set`);
-    }
-    if (!attributes.title || attributes.title === '') {
-        attributes.title = path_1.default.basename(fileName);
-    }
     return attributes;
 };
 const createRevisionsFromFiles = (fileNames) => Promise.all(fileNames.map(fileName => {
@@ -67,9 +61,9 @@ const createRevisionsFromFiles = (fileNames) => Promise.all(fileNames.map(fileNa
     });
 }));
 const itemInfoFromFilename = (fileName) => {
-    const [release, nameWithSuffix] = fileName.split(path_1.default.sep).slice(-2);
+    const [release, name] = fileName.split(path_1.default.sep).slice(-2);
     return {
-        name: nameWithSuffix.substr(0, nameWithSuffix.length - 3),
+        name: path_1.default.basename(name, '.md'),
         release,
     };
 };
@@ -85,7 +79,7 @@ const createItems = (revisions) => {
     const itemMap = revisions.reduce((items, revision) => {
         return Object.assign(Object.assign({}, items), { [revision.name]: addRevisionToItem(items[revision.name], revision) });
     }, {});
-    return Object.values(itemMap).sort((x, y) => (x.name > y.name ? 1 : -1));
+    return Object.values(itemMap).map(item => (Object.assign(Object.assign({}, item), { ['title']: item.title || item.name }))).sort((x, y) => (x.name > y.name ? 1 : -1));
 };
 const ignoreEmptyRevisionBody = (revision, item) => {
     if (!revision.body || revision.body.trim() === '') {
