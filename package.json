@@ -14,13 +14,13 @@
     "buildRadar": "scripts/buildRadar.js"
   },
   "scripts": {
+    "prepare": "husky install && yarn build:tasks && yarn build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:tasks": "tsc --project tsconfig.tasks.json",
     "test": "react-scripts test",
     "ts:check": "tsc --noEmit",
     "lint": "yarn ts:check",
-    "prepare": "husky install",
     "eject": "react-scripts eject"
   },
   "dependencies": {

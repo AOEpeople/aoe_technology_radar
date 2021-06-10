@@ -13,8 +13,6 @@ process.on("unhandledRejection", (err) => {
   throw err;
 });
 
-// TODO: execute yarn build:tasks to create bin folder with compiled radarJsonGenerator
-
 require("../bin/tasks/radarjson")
   .radarJsonGenerator()
   .then(() => {

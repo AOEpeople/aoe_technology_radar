@@ -14,6 +14,7 @@ process.on("unhandledRejection", (err) => {
 });
 
 const fs = require("fs-extra");
+const paths = require("../config/paths");
 
 const runCommand = (command, args) => {
   const cp = require("child_process");
@@ -37,17 +38,28 @@ const runCommand = (command, args) => {
   });
 };
 
-// TODO: Check if rd.json was created
-// TODO: Check how to empty folders without interfere with generateJson job
-// TODO: add dist folder for precompiled builder
+const buildTemplate = () => {
+  const packageManager = fs.existsSync(paths.appYarnLock) ? "yarn" : "npx";
 
-process.chdir("node_modules/aoe_technology_radar");
-fs.emptyDirSync("build");
-runCommand("yarn build")
-  .then(() => {
-    fs.copySync("build", "../../build");
-  })
-  .catch((error) => {
+  fs.emptyDirSync(paths.templateBuild);
+  process.chdir(paths.template);
+  return runCommand(`${packageManager} build`).catch((error) => {
     console.error(error);
     process.exit(1);
   });
+};
+
+// TODO: Use other output folder than bin for compiled tasks, because bin is misleading with node bin folder
+// TODO: add dist folder for precompiled builder
+
+if (fs.existsSync(paths.appRdJson)) {
+  buildTemplate().then(() => {
+    fs.copySync(paths.templateBuild, paths.appBuild);
+    console.log(`${paths.appBuild} was created and can be deployed.`);
+  });
+} else {
+  console.error(
+    `${paths.appRdJson} does not exist. You have to generate it first.`
+  );
+  process.exit(1);
+}
