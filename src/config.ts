@@ -6,16 +6,16 @@ export const radarNameShort = radarName;
 export const quadrants = [
     'languages-and-frameworks',
     'methods-and-patterns',
-    'platforms-and-aoe-services',
+    'platforms-and-services',
     'tools',
 ];
 
 export const rings = [
     'all',
-    'adopt',
-    'trial',
-    'assess',
-    'hold'
+    'emerging',
+    'appointed',
+    'preserving',
+    'sunset'
 ] as const;
 
 export type Ring = typeof rings[number]
@@ -27,7 +27,7 @@ export const showEmptyRings = false;
 const messages: { [k: string]: string } = {
     'languages-and-frameworks': 'Languages & Frameworks',
     'methods-and-patterns': 'Methods & Patterns',
-    'platforms-and-aoe-services': 'Platforms and Operations',
+    'platforms-and-services': 'Platforms and Operations',
     'tools': 'Tools',
 };
 

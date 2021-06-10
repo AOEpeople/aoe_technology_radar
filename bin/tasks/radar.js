@@ -93,7 +93,7 @@ const addRevisionToItem = (item = {
     revisions: [],
     name: '',
     title: '',
-    ring: 'trial',
+    ring: 'appointed',
     quadrant: '',
     body: '',
     info: '',

@@ -66,7 +66,7 @@ where the attributes of the item are listed:
 ```
 ---
 title:      "React"
-ring:       adopt
+ring:       emerging
 quadrant:   languages-and-frameworks
 ---
 
@@ -77,8 +77,8 @@ Following front-matter attributes are possible:
 
 * **title**: Name of the Item
 * **quadrant**: Quadrant. One of `languages-and-frameworks`,
-  `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
-* **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
+  `methods-and-patterns`, `platforms-and-services`, `tools`
+* **ring**: Ring section in radar. One of `emerging`, `appointed`, `preserving`, `sunset`
 * **info**: (optional) A short textual description of the item (visible in
   overview pages)
 * **featured**: (optional, default "true") If you set this to `false`, the item

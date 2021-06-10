@@ -6,22 +6,22 @@ exports.radarNameShort = exports.radarName;
 exports.quadrants = [
     'languages-and-frameworks',
     'methods-and-patterns',
-    'platforms-and-aoe-services',
+    'platforms-and-services',
     'tools',
 ];
 exports.rings = [
     'all',
-    'adopt',
-    'trial',
-    'assess',
-    'hold'
+    'emerging',
+    'appointed',
+    'preserving',
+    'sunset'
 ];
 exports.getItemPageNames = (items) => items.map(item => `${item.quadrant}/${item.name}`);
 exports.showEmptyRings = false;
 const messages = {
     'languages-and-frameworks': 'Languages & Frameworks',
     'methods-and-patterns': 'Methods & Patterns',
-    'platforms-and-aoe-services': 'Platforms and Operations',
+    'platforms-and-services': 'Platforms and Operations',
     'tools': 'Tools',
 };
 exports.translate = (key) => (messages[key] || '-');

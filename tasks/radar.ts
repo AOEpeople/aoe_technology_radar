@@ -110,7 +110,7 @@ const addRevisionToItem = (
     revisions: [],
     name: '',
     title: '',
-    ring: 'trial',
+    ring: 'appointed',
     quadrant: '',
     body: '',
     info: '',
