@@ -1,41 +1,42 @@
-import { outputFile } from 'fs-extra';
-import path from 'path';
-import { walk } from 'walk';
+import { outputFile } from "fs-extra";
+import path from "path";
+import { walk } from "walk";
 
-export const relativePath = (...relativePath: string[]): string => (
+export const relativePath = (...relativePath: string[]): string =>
   // path.resolve(__dirname, '..', ...relativePath)
-  path.resolve(...relativePath)
-);
+  path.resolve(...relativePath);
 
-export const radarPath = (...pathInSrc: string[]) => (
-  relativePath('radar', ...pathInSrc)
-);
+export const radarPath = (...pathInSrc: string[]) =>
+  relativePath("radar", ...pathInSrc);
 
-export const stylesPath = (...pathInSrc: string[]) => (
-  relativePath('styles', ...pathInSrc)
-);
+export const stylesPath = (...pathInSrc: string[]) =>
+  relativePath("styles", ...pathInSrc);
 
-export const assetsPath = (...pathInSrc: string[]) => (
-  relativePath('assets', ...pathInSrc)
-);
+export const assetsPath = (...pathInSrc: string[]) =>
+  relativePath("assets", ...pathInSrc);
 
-export const faviconPath = (...pathInSrc: string[]) => (
-    relativePath('assets/favicon.ico', ...pathInSrc)
-);
+export const faviconPath = (...pathInSrc: string[]) =>
+  relativePath("assets/favicon.ico", ...pathInSrc);
 
-export const jsPath = (...pathInSrc: string[]) => (
-  relativePath('js', ...pathInSrc)
-);
+export const jsPath = (...pathInSrc: string[]) =>
+  relativePath("js", ...pathInSrc);
 
-export const distPath = (...pathInDist: string[]) => (
-  relativePath('src', ...pathInDist)
-);
+export const publicPath = (...pathInDist: string[]) =>
+  relativePath("public", ...pathInDist);
 
-export const getAllMarkdownFiles = (folder: string) => (
-  getAllFiles(folder, isMarkdownFile)
-);
+export const buildPath = (...pathInDist: string[]) =>
+  relativePath("build", ...pathInDist);
 
-const getAllFiles = (folder: string, predicate: (s: string) => boolean): Promise<string[]> => (
+export const builderPath = (...pathInDist: string[]) =>
+  relativePath("node_modules", "aoe_technology_radar", "src", ...pathInDist);
+
+export const getAllMarkdownFiles = (folder: string) =>
+  getAllFiles(folder, isMarkdownFile);
+
+const getAllFiles = (
+  folder: string,
+  predicate: (s: string) => boolean
+): Promise<string[]> =>
   new Promise((resolve, reject) => {
     const walker = walk(folder, { followLinks: false });
     const files: string[] = [];
@@ -49,9 +50,9 @@ const getAllFiles = (folder: string, predicate: (s: string) => boolean): Promise
 
     walker.on("errors", (root, nodeStatsArray, next) => {
       nodeStatsArray.forEach(function (n) {
-        console.error("[ERROR] " + n.name)
+        console.error("[ERROR] " + n.name);
         if (n.error) {
-          console.error(n.error.message || (n.error.code + ": " + n.error.path));
+          console.error(n.error.message || n.error.code + ": " + n.error.path);
         }
       });
       next();
@@ -60,9 +61,9 @@ const getAllFiles = (folder: string, predicate: (s: string) => boolean): Promise
     walker.on("end", () => {
       resolve(files.sort());
     });
-  })
-);
+  });
 
 const isMarkdownFile = (name: string) => name.match(/\.md$/) !== null;
 
-export const save = (data: string | Buffer | DataView, fileName: string) => outputFile(distPath(fileName), data);
+export const save = (data: string | Buffer | DataView, fileName: string) =>
+  outputFile(buildPath(fileName), data);

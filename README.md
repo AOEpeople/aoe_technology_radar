@@ -24,9 +24,14 @@ Add the tech radar as a dependency
 yarn add https://github.com/aoepeople/aoe_technology_radar.git
 ```
 
+Generate json file based on md files
+```
+yarn generateJson
+```
+
 Build the radar
 ```
-yarn aoe_technology_radar
+yarn buildRadar
 ```
 
 Serve
@@ -35,20 +40,6 @@ cd build
 python3 -m http.server 8080
 ```
 Then open here: http://localhost:8080
-
-## Run a prepared static version
-
-In most cases you have the techradar available at `/techradar`, and for reasons want all correct pages to be accessable.
-
-Until this setup improves, you can use the following way to generate the correct techradar:
-
-```
-PUBLIC_URL=techradar/ yarn aoe_technology_radar
-yarn aoe_technology_radar-static
-cp -r build techradar
-```
-
-(This is rather workaroundish for now, but does the job.)
 
 ## Usage
 

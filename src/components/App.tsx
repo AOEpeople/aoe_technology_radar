@@ -1,57 +1,103 @@
-import React from 'react';
-import classNames from 'classnames';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
-import Router from './Router';
-import {BrowserRouter, Switch, Route, Redirect, useParams, useLocation} from 'react-router-dom';
-import {Item} from '../model';
+import React from "react";
+import classNames from "classnames";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import Router from "./Router";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+  useParams,
+  useLocation,
+} from "react-router-dom";
+import { Item } from "../model";
 
-const useQuery = () => {
-    return new URLSearchParams(useLocation().search);
+interface Params {
+  page: string;
 }
 
-const RouterWithPageParam = ({items, releases}: { items: Item[], releases: string[] }) => {
-    const {page} = useParams();
-    const query = useQuery();
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 
-    return <Router pageName={page} search={query.get('search') || ''} items={items} releases={releases}/>;
+const RouterWithPageParam = ({
+  items,
+  releases,
+}: {
+  items: Item[];
+  releases: string[];
+}) => {
+  const { page } = useParams<Params>();
+  const query = useQuery();
+
+  return (
+    <Router
+      pageName={page}
+      search={query.get("search") || ""}
+      items={items}
+      releases={releases}
+    />
+  );
 };
 
 const HeaderWithPageParam = () => {
-    const {page} = useParams();
+  const { page } = useParams<Params>();
 
-    return <Header pageName={page}/>
+  return <Header pageName={page} />;
 };
 
-const FooterWithPageParam = ({items}: { items: Item[]}) => {
-    const {page} = useParams();
+const FooterWithPageParam = ({ items }: { items: Item[] }) => {
+  const { page } = useParams<Params>();
 
-    return <Footer pageName={page} items={items}/>
+  return <Footer pageName={page} items={items} />;
 };
 
-export default function App({items, releases}: { items: Item[], releases: string[] }) {
+interface Data {
+  items: Item[];
+  releases: string[];
+}
+
+export default function App() {
+  const [data, setData] = React.useState<Data>();
+  React.useEffect(() => {
+    fetch("rd.json")
+      .then((response) => response.json())
+      .then((data: Data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error("fetch data", error);
+      });
+  }, []);
+
+  if (data) {
+    const { items, releases } = data;
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route path={'/techradar/:page(.+).html'}>
-                    <div>
-                        <div className='page'>
-                            <div className='page__header'>
-                                <HeaderWithPageParam/>
-                            </div>
-                            <div className={classNames('page__content')}>
-                                <RouterWithPageParam items={items} releases={releases}/>
-                            </div>
-                            <div className='page__footer'>
-                                <FooterWithPageParam items={items}/>
-                            </div>
-                        </div>
-                    </div>
-                </Route>
-                <Route path={'/'}>
-                    <Redirect to={'/techradar/index.html'}/>
-                </Route>
-            </Switch>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          <Route path={"/techradar/:page(.+).html"}>
+            <div>
+              <div className="page">
+                <div className="page__header">
+                  <HeaderWithPageParam />
+                </div>
+                <div className={classNames("page__content")}>
+                  <RouterWithPageParam items={items} releases={releases} />
+                </div>
+                <div className="page__footer">
+                  <FooterWithPageParam items={items} />
+                </div>
+              </div>
+            </div>
+          </Route>
+          <Route path={"/"}>
+            <Redirect to={"/techradar/index.html"} />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     );
+  }
+
+  return null;
 }

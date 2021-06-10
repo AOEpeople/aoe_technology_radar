@@ -16,20 +16,22 @@ exports.rings = [
     'assess',
     'hold'
 ];
-exports.getItemPageNames = (items) => items.map(item => `${item.quadrant}/${item.name}`);
+var getItemPageNames = function (items) { return items.map(function (item) { return item.quadrant + "/" + item.name; }); };
+exports.getItemPageNames = getItemPageNames;
 exports.showEmptyRings = false;
-const messages = {
+var messages = {
     'languages-and-frameworks': 'Languages & Frameworks',
     'methods-and-patterns': 'Methods & Patterns',
     'platforms-and-aoe-services': 'Platforms and Operations',
     'tools': 'Tools',
 };
-exports.translate = (key) => (messages[key] || '-');
+var translate = function (key) { return (messages[key] || '-'); };
+exports.translate = translate;
 function isMobileViewport() {
     // return false for server side rendering
     if (typeof window == 'undefined')
         return false;
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     return width < 1200;
 }
 exports.isMobileViewport = isMobileViewport;

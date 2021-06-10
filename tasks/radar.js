@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -51,26 +50,21 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
         to[j] = from[i];
     return to;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createRadar = void 0;
-var fs_extra_1 = require("fs-extra");
-var path_1 = __importDefault(require("path"));
-var front_matter_1 = __importDefault(require("front-matter"));
-var marked_1 = __importDefault(require("marked"));
-var highlight_js_1 = __importDefault(require("highlight.js"));
-var config_1 = require("../src/config");
-var file_1 = require("./file");
-marked_1.default.setOptions({
-    highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
+import { readFile } from 'fs-extra';
+import path from 'path';
+import frontmatter from 'front-matter';
+import marked from 'marked';
+import hljs from 'highlight.js';
+import { quadrants, rings } from '../src/config';
+import { radarPath, getAllMarkdownFiles } from './file';
+marked.setOptions({
+    highlight: function (code) { return hljs.highlightAuto(code).value; },
 });
-var createRadar = function () { return __awaiter(void 0, void 0, void 0, function () {
+export var createRadar = function () { return __awaiter(void 0, void 0, void 0, function () {
     var fileNames, revisions, allReleases, items, flaggedItems;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, file_1.getAllMarkdownFiles(file_1.radarPath())];
+            case 0: return [4 /*yield*/, getAllMarkdownFiles(radarPath())];
             case 1:
                 fileNames = _a.sent();
                 return [4 /*yield*/, createRevisionsFromFiles(fileNames)];
@@ -86,28 +80,27 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-exports.createRadar = createRadar;
 var checkAttributes = function (fileName, attributes) {
-    if (attributes.ring && !config_1.rings.includes(attributes.ring)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + config_1.rings);
+    if (attributes.ring && !rings.includes(attributes.ring)) {
+        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + rings);
     }
-    if (attributes.quadrant && !config_1.quadrants.includes(attributes.quadrant)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + config_1.quadrants);
+    if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
+        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + quadrants);
     }
     return attributes;
 };
 var createRevisionsFromFiles = function (fileNames) {
     return Promise.all(fileNames.map(function (fileName) {
         return new Promise(function (resolve, reject) {
-            fs_extra_1.readFile(fileName, 'utf8', function (err, data) {
+            readFile(fileName, 'utf8', function (err, data) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var fm = front_matter_1.default(data);
+                    var fm = frontmatter(data);
                     // add target attribute to external links
                     // todo: check path
-                    var html = marked_1.default(fm.body.replace(/\]\(\//g, '](/techradar/'));
+                    var html = marked(fm.body.replace(/\]\(\//g, '](/techradar/'));
                     html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
                     resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
                 }
@@ -116,9 +109,9 @@ var createRevisionsFromFiles = function (fileNames) {
     }));
 };
 var itemInfoFromFilename = function (fileName) {
-    var _a = fileName.split(path_1.default.sep).slice(-2), release = _a[0], name = _a[1];
+    var _a = fileName.split(path.sep).slice(-2), release = _a[0], name = _a[1];
     return {
-        name: path_1.default.basename(name, '.md'),
+        name: path.basename(name, '.md'),
         release: release,
     };
 };
