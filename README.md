@@ -80,3 +80,12 @@ the same name from older releases.
 
 If an item is overwritten in a new release, the attributes from the new item are
 merged with the old ones and a new history entry is created for that item.
+
+## Open points
+
+* static build necessary?
+* measure file sizes necessary?
+* dotenv necessary?
+* check browsers necessary?
+* copy public folder necessary?
+* specific webpack configurations necessary?
