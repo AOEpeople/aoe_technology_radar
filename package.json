@@ -11,7 +11,8 @@
   },
   "bin": {
     "generateJson": "scripts/generateJson.js",
-    "buildRadar": "scripts/buildRadar.js"
+    "buildRadar": "scripts/buildRadar.js",
+    "createStaticFiles": "bin/tasks/create-static.js"
   },
   "scripts": {
     "prepare": "husky install && yarn build:tasks && yarn build",

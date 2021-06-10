@@ -39,7 +39,23 @@ Serve
 cd build
 python3 -m http.server 8080
 ```
+
 Then open here: http://localhost:8080
+
+## Run a prepared static version
+
+In most cases you have the techradar available at `/techradar`, and for reasons want all correct pages to be accessable.
+
+Until this setup improves, you can use the following way to generate the correct techradar:
+
+```
+yarn generateJson
+PUBLIC_URL=techradar/ yarn buildRadar
+yarn createStaticFiles
+cp -r build techradar
+```
+
+(This is rather workaroundish for now, but does the job.)
 
 ## Usage
 
@@ -83,9 +99,9 @@ merged with the old ones and a new history entry is created for that item.
 
 ## Open points
 
-* static build necessary?
-* measure file sizes necessary?
-* dotenv necessary?
-* check browsers necessary?
-* copy public folder necessary?
-* specific webpack configurations necessary?
+* static build necessary? -> for SEO necessary
+* dotenv necessary? -> Could be necessary for other companies
+* measure file sizes necessary? -> no
+* check browsers necessary? -> no
+* copy public folder necessary? -> no
+* specific webpack configurations necessary? -> no
