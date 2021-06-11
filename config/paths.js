@@ -3,6 +3,7 @@
 const path = require("path");
 const fs = require("fs");
 
+const radarJson = "rd.json";
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = (relativePath = "") =>
   path.resolve(appDirectory, relativePath);
@@ -13,7 +14,7 @@ const resolveTemplate = (relativePath = "") =>
 module.exports = {
   template: resolveTemplate(),
   templateBuild: resolveTemplate("build"),
-  appRdJson: resolveApp("build/rd.json"),
+  appRdJson: resolveApp(`build/${radarJson}`),
   appBuild: resolveApp("build"),
   appYarnLock: resolveApp("yarn.lock"),
 };

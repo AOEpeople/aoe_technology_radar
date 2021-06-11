@@ -15,11 +15,11 @@ process.on("unhandledRejection", (err) => {
 
 const fs = require("fs-extra");
 const paths = require("../config/paths");
+const childProcess = require("child_process");
 
 const runCommand = (command, args) => {
-  const cp = require("child_process");
   return new Promise((resolve, reject) => {
-    const executedCommand = cp.spawn(command, args, {
+    const executedCommand = childProcess.spawn(command, args, {
       stdio: "inherit",
       shell: true,
     });
@@ -43,14 +43,12 @@ const buildTemplate = () => {
 
   fs.emptyDirSync(paths.templateBuild);
   process.chdir(paths.template);
+
   return runCommand(`${packageManager} build`).catch((error) => {
     console.error(error);
     process.exit(1);
   });
 };
-
-// TODO: Use other output folder than bin for compiled tasks, because bin is misleading with node bin folder
-// TODO: add dist folder for precompiled builder
 
 if (fs.existsSync(paths.appRdJson)) {
   buildTemplate().then(() => {

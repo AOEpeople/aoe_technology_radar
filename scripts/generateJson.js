@@ -13,10 +13,12 @@ process.on("unhandledRejection", (err) => {
   throw err;
 });
 
+const paths = require("../config/paths");
+
 require("../bin/tasks/radarjson")
   .radarJsonGenerator()
   .then(() => {
-    console.log("rd.json created");
+    console.log(`${paths.appRdJson} created.`);
   })
   .catch((err) => {
     if (err && err.message) {

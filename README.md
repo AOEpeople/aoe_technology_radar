@@ -13,9 +13,9 @@ The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
 The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
 (There is a list of planned features below in case someone wants to contribute :-)
 
-However please be aware:
+However, please be aware:
 * It would be nice to mention in radar that the generator is based on this repository.
-* Also when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
+* Also, when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
 
 ## Use and build
 
@@ -26,12 +26,12 @@ yarn add https://github.com/aoepeople/aoe_technology_radar.git
 
 Generate json file based on md files
 ```
-yarn generateJson
+yarn aoe_technology_radar:generateJson
 ```
 
 Build the radar
 ```
-yarn buildRadar
+yarn aoe_technology_radar:buildRadar
 ```
 
 Serve
@@ -44,14 +44,14 @@ Then open here: http://localhost:8080
 
 ## Run a prepared static version
 
-In most cases you have the techradar available at `/techradar`, and for reasons want all correct pages to be accessable.
+In most cases you have the techradar available at `/techradar`, and for reasons want all correct pages to be accessible.
 
 Until this setup improves, you can use the following way to generate the correct techradar:
 
 ```
-yarn generateJson
-PUBLIC_URL=techradar/ yarn buildRadar
-yarn createStaticFiles
+yarn aoe_technology_radar:generateJson
+PUBLIC_URL=/techradar yarn aoe_technology_radar:buildRadar
+yarn aoe_technology_radar:createStaticFiles
 cp -r build techradar
 ```
 
@@ -95,13 +95,25 @@ The name of the .md file acts as item identifier and may overwrite items with
 the same name from older releases.
 
 If an item is overwritten in a new release, the attributes from the new item are
-merged with the old ones and a new history entry is created for that item.
+merged with the old ones, and a new history entry is created for that item.
 
 ## Open points
 
-* static build necessary? -> for SEO necessary
 * dotenv necessary? -> Could be necessary for other companies
 * measure file sizes necessary? -> no
 * check browsers necessary? -> no
 * copy public folder necessary? -> no
 * specific webpack configurations necessary? -> no
+
+## TODOs
+
+* Use other output folder than bin for compiled tasks, because bin is misleading with node bin folder
+* add dist folder for precompiled builder
+* add default envs to .env file
+** add envs to readme
+* Check package.json scripts
+* Add documentation for build bin (tasks) folder
+* prettier on all files
+* check lint staged and prettier
+* convert scripts to typescript as well
+** move scripts paths.js and tasks in one folder
