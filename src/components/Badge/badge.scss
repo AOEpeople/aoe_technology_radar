@@ -25,20 +25,19 @@
     border-color: var(--color-gray-normal);
   }
   &--emerging {
-    background: var(--color-green);
-    border-color: var(--color-green);
-  }
-  &--appointed {
-    background: var(--color-orange);
-    border-color: var(--color-orange);
-  }
-  &--preserving {
     background: var(--color-blue);
     border-color: var(--color-blue);
   }
-  &--sunset {
-    background: var(--color-marine);
-    border-color: var(--color-marine);
+  &--appointed {
+    background: var(--color-green);
+    border-color: var(--color-green);
   }
+  &--preserving {
+    background: var(--color-orange);
+    border-color: var(--color-orange);
+  }
+  &--sunset {
+    background: var(--color-red);
+    border-color: var(--color-red);  }
 
 }

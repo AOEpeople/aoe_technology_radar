@@ -17,7 +17,7 @@ exports.rings = [
     'sunset'
 ];
 exports.getItemPageNames = (items) => items.map(item => `${item.quadrant}/${item.name}`);
-exports.showEmptyRings = false;
+exports.showEmptyRings = true;
 const messages = {
     'languages-and-frameworks': 'Languages & Frameworks',
     'methods-and-patterns': 'Methods & Patterns',

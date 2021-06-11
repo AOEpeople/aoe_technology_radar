@@ -22,7 +22,7 @@ export type Ring = typeof rings[number]
 
 export const getItemPageNames = (items: Item[]) => items.map(item => `${item.quadrant}/${item.name}`);
 
-export const showEmptyRings = false;
+export const showEmptyRings = true;
 
 const messages: { [k: string]: string } = {
     'languages-and-frameworks': 'Languages & Frameworks',

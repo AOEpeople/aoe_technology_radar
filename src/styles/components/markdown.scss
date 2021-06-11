@@ -10,7 +10,7 @@
     color: var(--color-gray-normal);
     text-decoration: underline;
     &:hover {
-      color: var(--color-gray-dark);
+      color: var(--color-blue-dark);
     }
   }
 
@@ -47,7 +47,7 @@
   pre {
     overflow-x: auto;
     padding: 10px;
-    background: var(--color-gray-dark);
+    background: var(--color-blue-dark);
     -webkit-overflow-scrolling: touch;
   }
 }

@@ -1,17 +1,21 @@
 @font-face {
   font-family: 'DIN';
-  src: url('./fonts/clanot-news.otf');
+  font-style: normal;
   font-weight: normal;
+  src: url("./fonts/VolvoNovum-Light.eot");
+  src: url("./fonts/VolvoNovum-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/VolvoNovum-Light.woff2") format("woff2"), url("./fonts/VolvoNovum-Light.woff") format("woff");
 }
 
 @font-face {
   font-family: 'DIN';
-  src: url('./fonts/clanot-thin.otf');
+  src: url("./fonts/VolvoNovum-Light.eot");
+  src: url("./fonts/VolvoNovum-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/VolvoNovum-Light.woff2") format("woff2"), url("./fonts/VolvoNovum-Light.woff") format("woff");
   font-weight: 300;
 }
 
 
 :root {
+  --color-blue-dark: #003F71;
   --color-gray-dark: #475157;
   --color-gray-dark-alt: #4F585E;
   --color-gray-dark-alt2: #434D53;
@@ -39,7 +43,7 @@
 
 
 body {
-  background: var(--color-gray-dark);
+  background: var(--color-blue-dark);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
