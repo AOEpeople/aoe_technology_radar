@@ -61,7 +61,7 @@ interface Data {
 export default function App() {
   const [data, setData] = React.useState<Data>();
   React.useEffect(() => {
-    fetch("rd.json")
+    fetch(`${process.env.PUBLIC_URL}/rd.json`)
       .then((response) => response.json())
       .then((data: Data) => {
         setData(data);
@@ -74,9 +74,9 @@ export default function App() {
   if (data) {
     const { items, releases } = data;
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
         <Switch>
-          <Route path={"/techradar/:page(.+).html"}>
+          <Route path={"/:page(.+).html"}>
             <div>
               <div className="page">
                 <div className="page__header">
@@ -92,7 +92,7 @@ export default function App() {
             </div>
           </Route>
           <Route path={"/"}>
-            <Redirect to={"/techradar/index.html"} />
+            <Redirect to={"/index.html"} />
           </Route>
         </Switch>
       </BrowserRouter>

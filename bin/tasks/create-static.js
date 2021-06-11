@@ -46,24 +46,27 @@ var config_1 = require("../src/config");
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                console.log('starting static');
+                console.log("starting static");
                 return [4 /*yield*/, radar_1.createRadar()];
             case 1:
                 radar = _a.sent();
-                fs_1.copyFileSync('build/index.html', 'build/overview.html');
-                fs_1.copyFileSync('build/index.html', 'build/help-and-about-tech-radar.html');
+                fs_1.copyFileSync("build/index.html", "build/overview.html");
+                fs_1.copyFileSync("build/index.html", "build/help-and-about-tech-radar.html");
                 config_1.quadrants.forEach(function (quadrant) {
-                    fs_1.copyFileSync('build/index.html', 'build/' + quadrant + '.html');
-                    fs_1.mkdirSync('build/' + quadrant);
+                    var destFolder = "build/" + quadrant;
+                    fs_1.copyFileSync("build/index.html", destFolder + ".html");
+                    if (!fs_1.existsSync(destFolder)) {
+                        fs_1.mkdirSync(destFolder);
+                    }
                 });
                 radar.items.forEach(function (item) {
-                    fs_1.copyFileSync('build/index.html', 'build/' + item.quadrant + '/' + item.name + '.html');
+                    fs_1.copyFileSync("build/index.html", "build/" + item.quadrant + "/" + item.name + ".html");
                 });
-                console.log('created static');
+                console.log("created static");
                 return [3 /*break*/, 3];
             case 2:
                 e_1 = _a.sent();
-                console.error('error:', e_1);
+                console.error("error:", e_1);
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
         }
