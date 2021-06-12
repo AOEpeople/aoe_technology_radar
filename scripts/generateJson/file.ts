@@ -1,9 +1,8 @@
 import { outputFile } from "fs-extra";
-import path from "path";
+import * as path from "path";
 import { walk } from "walk";
 
 export const relativePath = (...relativePath: string[]): string =>
-  // path.resolve(__dirname, '..', ...relativePath)
   path.resolve(...relativePath);
 
 export const radarPath = (...pathInSrc: string[]) =>
@@ -12,23 +11,14 @@ export const radarPath = (...pathInSrc: string[]) =>
 export const stylesPath = (...pathInSrc: string[]) =>
   relativePath("styles", ...pathInSrc);
 
-export const assetsPath = (...pathInSrc: string[]) =>
-  relativePath("assets", ...pathInSrc);
-
 export const faviconPath = (...pathInSrc: string[]) =>
   relativePath("assets/favicon.ico", ...pathInSrc);
 
 export const jsPath = (...pathInSrc: string[]) =>
   relativePath("js", ...pathInSrc);
 
-export const publicPath = (...pathInDist: string[]) =>
-  relativePath("public", ...pathInDist);
-
 export const buildPath = (...pathInDist: string[]) =>
   relativePath("build", ...pathInDist);
-
-export const builderPath = (...pathInDist: string[]) =>
-  relativePath("node_modules", "aoe_technology_radar", "src", ...pathInDist);
 
 export const getAllMarkdownFiles = (folder: string) =>
   getAllFiles(folder, isMarkdownFile);

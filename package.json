@@ -10,15 +10,15 @@
     "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
   },
   "bin": {
-    "aoe_technology_radar-generateJson": "scripts/generateJson.js",
-    "aoe_technology_radar-buildRadar": "scripts/buildRadar.js",
-    "aoe_technology_radar-createStaticFiles": "bin/tasks/create-static.js"
+    "aoe_technology_radar-generateJson": "dist_scripts/scripts/generateJson.js",
+    "aoe_technology_radar-buildRadar": "dist_scripts/scripts/buildRadar.js",
+    "aoe_technology_radar-createStaticFiles": "dist_scripts/scripts/createStaticFiles.js"
   },
   "scripts": {
-    "prepare": "husky install && yarn build:tasks && yarn build",
+    "prepare": "husky install && yarn build:scripts",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:tasks": "tsc --project tsconfig.tasks.json",
+    "build:scripts": "tsc --project tsconfig.scripts.json",
     "test": "react-scripts test",
     "ts:check": "tsc --noEmit",
     "lint": "yarn ts:check",

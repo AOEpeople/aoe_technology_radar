@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-"use strict";
+import * as fs from "fs-extra";
+import { spawn } from "child_process";
+import * as paths from "./paths";
 
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
@@ -13,13 +15,9 @@ process.on("unhandledRejection", (err) => {
   throw err;
 });
 
-const fs = require("fs-extra");
-const paths = require("../config/paths");
-const childProcess = require("child_process");
-
-const runCommand = (command, args) => {
-  return new Promise((resolve, reject) => {
-    const executedCommand = childProcess.spawn(command, args, {
+const runCommand = (command: string) =>
+  new Promise((resolve, reject) => {
+    const executedCommand = spawn(command, {
       stdio: "inherit",
       shell: true,
     });
@@ -30,13 +28,15 @@ const runCommand = (command, args) => {
 
     executedCommand.on("exit", (code) => {
       if (code === 0) {
-        resolve();
+        resolve(code);
       } else {
         reject();
       }
     });
+  }).catch((error) => {
+    console.error(error);
+    process.exit(1);
   });
-};
 
 const buildTemplate = () => {
   const packageManager = fs.existsSync(paths.appYarnLock) ? "yarn" : "npx";
@@ -44,10 +44,7 @@ const buildTemplate = () => {
   fs.emptyDirSync(paths.templateBuild);
   process.chdir(paths.template);
 
-  return runCommand(`${packageManager} build`).catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+  return runCommand(`${packageManager} build`);
 };
 
 if (fs.existsSync(paths.appRdJson)) {

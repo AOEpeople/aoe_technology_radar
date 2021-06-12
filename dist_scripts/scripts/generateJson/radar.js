@@ -1,3 +1,4 @@
+"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -8,6 +9,25 @@ var __assign = (this && this.__assign) || function () {
         return t;
     };
     return __assign.apply(this, arguments);
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -50,21 +70,27 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
         to[j] = from[i];
     return to;
 };
-import { readFile } from 'fs-extra';
-import path from 'path';
-import frontmatter from 'front-matter';
-import marked from 'marked';
-import hljs from 'highlight.js';
-import { quadrants, rings } from '../src/config';
-import { radarPath, getAllMarkdownFiles } from './file';
-marked.setOptions({
-    highlight: function (code) { return hljs.highlightAuto(code).value; },
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createRadar = void 0;
+var fs_extra_1 = require("fs-extra");
+var path = __importStar(require("path"));
+var front_matter_1 = __importDefault(require("front-matter"));
+// @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
+var marked_1 = __importDefault(require("marked"));
+var highlight_js_1 = __importDefault(require("highlight.js"));
+var file_1 = require("./file");
+var config_1 = require("../../src/config");
+marked_1.default.setOptions({
+    highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
-export var createRadar = function () { return __awaiter(void 0, void 0, void 0, function () {
+var createRadar = function () { return __awaiter(void 0, void 0, void 0, function () {
     var fileNames, revisions, allReleases, items, flaggedItems;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, getAllMarkdownFiles(radarPath())];
+            case 0: return [4 /*yield*/, file_1.getAllMarkdownFiles(file_1.radarPath())];
             case 1:
                 fileNames = _a.sent();
                 return [4 /*yield*/, createRevisionsFromFiles(fileNames)];
@@ -80,27 +106,28 @@ export var createRadar = function () { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
+exports.createRadar = createRadar;
 var checkAttributes = function (fileName, attributes) {
-    if (attributes.ring && !rings.includes(attributes.ring)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + rings);
+    if (attributes.ring && !config_1.rings.includes(attributes.ring)) {
+        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + config_1.rings);
     }
-    if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + quadrants);
+    if (attributes.quadrant && !config_1.quadrants.includes(attributes.quadrant)) {
+        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + config_1.quadrants);
     }
     return attributes;
 };
 var createRevisionsFromFiles = function (fileNames) {
     return Promise.all(fileNames.map(function (fileName) {
         return new Promise(function (resolve, reject) {
-            readFile(fileName, 'utf8', function (err, data) {
+            fs_extra_1.readFile(fileName, "utf8", function (err, data) {
                 if (err) {
                     reject(err);
                 }
                 else {
-                    var fm = frontmatter(data);
+                    var fm = front_matter_1.default(data);
                     // add target attribute to external links
                     // todo: check path
-                    var html = marked(fm.body.replace(/\]\(\//g, '](/techradar/'));
+                    var html = marked_1.default(fm.body.replace(/\]\(\//g, "](/techradar/"));
                     html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
                     resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
                 }
@@ -111,7 +138,7 @@ var createRevisionsFromFiles = function (fileNames) {
 var itemInfoFromFilename = function (fileName) {
     var _a = fileName.split(path.sep).slice(-2), release = _a[0], name = _a[1];
     return {
-        name: path.basename(name, '.md'),
+        name: path.basename(name, ".md"),
         release: release,
     };
 };
@@ -131,28 +158,30 @@ var createItems = function (revisions) {
         var _a;
         return __assign(__assign({}, items), (_a = {}, _a[revision.name] = addRevisionToItem(items[revision.name], revision), _a));
     }, {});
-    return Object.values(itemMap).map(function (item) {
+    return Object.values(itemMap)
+        .map(function (item) {
         var _a;
-        return (__assign(__assign({}, item), (_a = {}, _a['title'] = item.title || item.name, _a)));
-    }).sort(function (x, y) { return (x.name > y.name ? 1 : -1); });
+        return (__assign(__assign({}, item), (_a = {}, _a["title"] = item.title || item.name, _a)));
+    })
+        .sort(function (x, y) { return (x.name > y.name ? 1 : -1); });
 };
 var ignoreEmptyRevisionBody = function (revision, item) {
-    if (!revision.body || revision.body.trim() === '') {
+    if (!revision.body || revision.body.trim() === "") {
         return item.body;
     }
     return revision.body;
 };
 var addRevisionToItem = function (item, revision) {
     if (item === void 0) { item = {
-        flag: 'default',
+        flag: "default",
         featured: true,
         revisions: [],
-        name: '',
-        title: '',
-        ring: 'trial',
-        quadrant: '',
-        body: '',
-        info: '',
+        name: "",
+        title: "",
+        ring: "trial",
+        quadrant: "",
+        body: "",
+        info: "",
     }; }
     var newItem = __assign(__assign(__assign({}, item), revision), { body: ignoreEmptyRevisionBody(revision, item) });
     if (revisionCreatesNewHistoryEntry(revision)) {
@@ -161,10 +190,12 @@ var addRevisionToItem = function (item, revision) {
     return newItem;
 };
 var revisionCreatesNewHistoryEntry = function (revision) {
-    return revision.body.trim() !== '' || typeof revision.ring !== 'undefined';
+    return revision.body.trim() !== "" || typeof revision.ring !== "undefined";
 };
 var flagItem = function (items, allReleases) {
-    return items.map(function (item) { return (__assign(__assign({}, item), { flag: getItemFlag(item, allReleases) })); }, []);
+    return items.map(function (item) {
+        return (__assign(__assign({}, item), { flag: getItemFlag(item, allReleases) }));
+    }, []);
 };
 var isInLastRelease = function (item, allReleases) {
     return item.revisions[0].release === allReleases[allReleases.length - 1];
@@ -177,10 +208,10 @@ var hasItemChanged = function (item, allReleases) {
 };
 var getItemFlag = function (item, allReleases) {
     if (isNewItem(item, allReleases)) {
-        return 'new';
+        return "new";
     }
     if (hasItemChanged(item, allReleases)) {
-        return 'changed';
+        return "changed";
     }
-    return 'default';
+    return "default";
 };

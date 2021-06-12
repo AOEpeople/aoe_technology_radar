@@ -119,3 +119,5 @@ merged with the old ones, and a new history entry is created for that item.
 ** move scripts paths.js and tasks in one folder
 * Rename package to make more clear that this is a tech radar builder?
 * provide only one bin script with subcommands like react-scripts?
+* add tests for scripts
+* add tests for components

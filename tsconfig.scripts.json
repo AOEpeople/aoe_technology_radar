@@ -14,8 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "outDir": "bin",
+    "outDir": "dist_scripts",
     "noEmit": false
   },
-  "files": ["tasks/radarjson.ts", "tasks/create-static.ts"]
+  "include": ["scripts"]
 }

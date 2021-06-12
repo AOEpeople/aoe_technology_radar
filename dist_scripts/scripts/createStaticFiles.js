@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,21 +36,42 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { createRadar } from "./radar";
-import { save } from "./file";
-export var radarJsonGenerator = function () { return __awaiter(void 0, void 0, void 0, function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var fs_1 = require("fs");
+var radar_1 = require("./generateJson/radar");
+var config_1 = require("../src/config");
+// Do this as the first thing so that any code reading it knows the right env.
+process.env.BABEL_ENV = "production";
+process.env.NODE_ENV = "production";
+// Makes the script crash on unhandled rejections instead of silently
+// ignoring them. In the future, promise rejections that are not handled will
+// terminate the Node.js process with a non-zero exit code.
+process.on("unhandledRejection", function (err) {
+    throw err;
+});
+(function () { return __awaiter(void 0, void 0, void 0, function () {
     var radar, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                console.log("start");
-                return [4 /*yield*/, createRadar()];
+                console.log("starting static");
+                return [4 /*yield*/, radar_1.createRadar()];
             case 1:
                 radar = _a.sent();
-                save(JSON.stringify(radar), "rd.json");
-                save("import React from 'react';\nimport ReactDOM from 'react-dom';\nimport App from 'aoe_technology_radar/src/components/App';\nimport 'aoe_technology_radar/src/index.scss';\nimport radardata from './rd.json';\n\nReactDOM.render(\n    <React.StrictMode>\n        <App items={radardata.items as Item[]} releases={radardata.releases as string[]} />\n    </React.StrictMode>,\n    document.getElementById('root')\n);\n", "index.tsx");
-                console.log("Built radar");
+                fs_1.copyFileSync("build/index.html", "build/overview.html");
+                fs_1.copyFileSync("build/index.html", "build/help-and-about-tech-radar.html");
+                config_1.quadrants.forEach(function (quadrant) {
+                    var destFolder = "build/" + quadrant;
+                    fs_1.copyFileSync("build/index.html", destFolder + ".html");
+                    if (!fs_1.existsSync(destFolder)) {
+                        fs_1.mkdirSync(destFolder);
+                    }
+                });
+                radar.items.forEach(function (item) {
+                    fs_1.copyFileSync("build/index.html", "build/" + item.quadrant + "/" + item.name + ".html");
+                });
+                console.log("created static files.");
                 return [3 /*break*/, 3];
             case 2:
                 e_1 = _a.sent();
@@ -58,4 +80,4 @@ export var radarJsonGenerator = function () { return __awaiter(void 0, void 0, v
             case 3: return [2 /*return*/];
         }
     });
-}); };
+}); })();

@@ -1,16 +1,18 @@
-import { readFile } from 'fs-extra';
-import path from 'path';
-import frontmatter from 'front-matter';
-import marked from 'marked';
-import hljs from 'highlight.js';
-import { quadrants, rings } from '../src/config';
-import { radarPath, getAllMarkdownFiles } from './file';
-import { Item, Revision, ItemAttributes, Radar } from '../src/model';
+import { readFile } from "fs-extra";
+import * as path from "path";
+import frontMatter from "front-matter";
+// @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
+import marked from "marked";
+import highlight from "highlight.js";
 
-type FMAttributes = ItemAttributes
+import { radarPath, getAllMarkdownFiles } from "./file";
+import { quadrants, rings } from "../../src/config";
+import { Item, Revision, ItemAttributes, Radar } from "../../src/model";
+
+type FMAttributes = ItemAttributes;
 
 marked.setOptions({
-  highlight: code => hljs.highlightAuto(code).value,
+  highlight: (code) => highlight.highlightAuto(code).value,
 });
 
 export const createRadar = async (): Promise<Radar> => {
@@ -28,31 +30,35 @@ export const createRadar = async (): Promise<Radar> => {
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
   if (attributes.ring && !rings.includes(attributes.ring)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`);
+    throw new Error(
+      `Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`
+    );
   }
 
   if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
-    throw new Error(`Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`);
+    throw new Error(
+      `Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`
+    );
   }
 
-  return attributes
+  return attributes;
 };
 
 const createRevisionsFromFiles = (fileNames: string[]) =>
   Promise.all(
-    fileNames.map(fileName => {
+    fileNames.map((fileName) => {
       return new Promise<Revision>((resolve, reject) => {
-        readFile(fileName, 'utf8', (err, data) => {
+        readFile(fileName, "utf8", (err, data) => {
           if (err) {
             reject(err);
           } else {
-            const fm = frontmatter<FMAttributes>(data);
+            const fm = frontMatter<FMAttributes>(data);
             // add target attribute to external links
             // todo: check path
-            let html = marked(fm.body.replace(/\]\(\//g, '](/techradar/'));
+            let html = marked(fm.body.replace(/\]\(\//g, "](/techradar/"));
             html = html.replace(
               /a href="http/g,
-              'a target="_blank" rel="noopener noreferrer" href="http',
+              'a target="_blank" rel="noopener noreferrer" href="http'
             );
 
             resolve({
@@ -64,13 +70,13 @@ const createRevisionsFromFiles = (fileNames: string[]) =>
           }
         });
       });
-    }),
+    })
   );
 
 const itemInfoFromFilename = (fileName: string) => {
   const [release, name] = fileName.split(path.sep).slice(-2);
   return {
-    name: path.basename(name, '.md'),
+    name: path.basename(name, ".md"),
     release,
   };
 };
@@ -86,18 +92,23 @@ const getAllReleases = (revisions: Revision[]) =>
     .sort();
 
 const createItems = (revisions: Revision[]) => {
-  const itemMap = revisions.reduce<{[name: string]: Item}>((items, revision) => {
-    return {
-      ...items,
-      [revision.name]: addRevisionToItem(items[revision.name], revision),
-    };
-  }, {});
+  const itemMap = revisions.reduce<{ [name: string]: Item }>(
+    (items, revision) => {
+      return {
+        ...items,
+        [revision.name]: addRevisionToItem(items[revision.name], revision),
+      };
+    },
+    {}
+  );
 
-  return Object.values(itemMap).map(item => ({...item, ['title']: item.title || item.name})).sort((x, y) => (x.name > y.name ? 1 : -1));
+  return Object.values(itemMap)
+    .map((item) => ({ ...item, ["title"]: item.title || item.name }))
+    .sort((x, y) => (x.name > y.name ? 1 : -1));
 };
 
 const ignoreEmptyRevisionBody = (revision: Revision, item: Item) => {
-  if (!revision.body || revision.body.trim() === '') {
+  if (!revision.body || revision.body.trim() === "") {
     return item.body;
   }
   return revision.body;
@@ -105,17 +116,17 @@ const ignoreEmptyRevisionBody = (revision: Revision, item: Item) => {
 
 const addRevisionToItem = (
   item: Item = {
-    flag: 'default',
+    flag: "default",
     featured: true,
     revisions: [],
-    name: '',
-    title: '',
-    ring: 'trial',
-    quadrant: '',
-    body: '',
-    info: '',
+    name: "",
+    title: "",
+    ring: "trial",
+    quadrant: "",
+    body: "",
+    info: "",
   },
-  revision: Revision,
+  revision: Revision
 ): Item => {
   let newItem: Item = {
     ...item,
@@ -134,16 +145,17 @@ const addRevisionToItem = (
 };
 
 const revisionCreatesNewHistoryEntry = (revision: Revision) => {
-  return revision.body.trim() !== '' || typeof revision.ring !== 'undefined';
+  return revision.body.trim() !== "" || typeof revision.ring !== "undefined";
 };
 
 const flagItem = (items: Item[], allReleases: string[]) =>
   items.map(
-    item => ({
-      ...item,
-      flag: getItemFlag(item, allReleases),
-    } as Item),
-    [],
+    (item) =>
+      ({
+        ...item,
+        flag: getItemFlag(item, allReleases),
+      } as Item),
+    []
   );
 
 const isInLastRelease = (item: Item, allReleases: string[]) =>
@@ -157,10 +169,10 @@ const hasItemChanged = (item: Item, allReleases: string[]) =>
 
 const getItemFlag = (item: Item, allReleases: string[]): string => {
   if (isNewItem(item, allReleases)) {
-    return 'new';
+    return "new";
   }
   if (hasItemChanged(item, allReleases)) {
-    return 'changed';
+    return "changed";
   }
-  return 'default';
+  return "default";
 };
