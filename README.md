@@ -107,16 +107,13 @@ merged with the old ones, and a new history entry is created for that item.
 
 ## TODOs
 
-* Use other output folder than bin for compiled tasks, because bin is misleading with node bin folder
 * add dist folder for precompiled builder
 * add default envs to .env file
 ** add envs to readme
 * Check package.json scripts
-* Add documentation for build bin (tasks) folder
+* Add documentation for build dist_scripts folder
 * prettier on all files
 * check lint staged and prettier
-* convert scripts to typescript as well
-** move scripts paths.js and tasks in one folder
 * Rename package to make more clear that this is a tech radar builder?
 * provide only one bin script with subcommands like react-scripts?
 * add tests for scripts
