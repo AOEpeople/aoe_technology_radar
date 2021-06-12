@@ -26,12 +26,12 @@ yarn add https://github.com/aoepeople/aoe_technology_radar.git
 
 Generate json file based on md files
 ```
-yarn aoe_technology_radar:generateJson
+yarn aoe_technology_radar-generateJson
 ```
 
 Build the radar
 ```
-yarn aoe_technology_radar:buildRadar
+yarn aoe_technology_radar-buildRadar
 ```
 
 Serve
@@ -49,9 +49,9 @@ In most cases you have the techradar available at `/techradar`, and for reasons 
 Until this setup improves, you can use the following way to generate the correct techradar:
 
 ```
-yarn aoe_technology_radar:generateJson
-PUBLIC_URL=/techradar yarn aoe_technology_radar:buildRadar
-yarn aoe_technology_radar:createStaticFiles
+yarn aoe_technology_radar-generateJson
+PUBLIC_URL=/techradar yarn aoe_technology_radar-buildRadar
+yarn aoe_technology_radar-createStaticFiles
 cp -r build techradar
 ```
 
@@ -117,3 +117,5 @@ merged with the old ones, and a new history entry is created for that item.
 * check lint staged and prettier
 * convert scripts to typescript as well
 ** move scripts paths.js and tasks in one folder
+* Rename package to make more clear that this is a tech radar builder?
+* provide only one bin script with subcommands like react-scripts?
