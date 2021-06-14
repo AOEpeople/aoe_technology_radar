@@ -50,6 +50,7 @@ const buildTemplate = () => {
 if (fs.existsSync(paths.appRdJson)) {
   buildTemplate().then(() => {
     fs.copySync(paths.templateBuild, paths.appBuild);
+    fs.copySync(paths.appPublic, paths.appBuild);
     console.log(`${paths.appBuild} was created and can be deployed.`);
   });
 } else {
