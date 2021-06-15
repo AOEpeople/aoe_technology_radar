@@ -56,7 +56,7 @@ cp -r build techradar
 You can customize the following parts of the tech radar.
 
 ### Change title, description and headline
-Set the environment variable `RADAR_NAME`. The default is "AOE Technology Radar".
+Set the environment variable `REACT_APP_RADAR_NAME`. The default is "AOE Technology Radar".
 
 ### Host the application under a sub path
 To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar".

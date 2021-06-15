@@ -16,9 +16,15 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.featuredOnly = void 0;
-var featuredOnly = function (items) { return items.filter(function (item) { return item.featured; }); };
+exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.unfeaturedOnly = exports.featuredOnly = void 0;
+var featuredOnly = function (items) {
+    return items.filter(function (item) { return item.featured; });
+};
 exports.featuredOnly = featuredOnly;
+var unfeaturedOnly = function (items) {
+    return items.filter(function (item) { return !item.featured; });
+};
+exports.unfeaturedOnly = unfeaturedOnly;
 var groupByQuadrants = function (items) {
     return items.reduce(function (quadrants, item) {
         var _a;
@@ -52,5 +58,7 @@ var addItemToRing = function (ring, item) {
     if (ring === void 0) { ring = []; }
     return __spreadArray(__spreadArray([], ring), [item]);
 };
-var getFirstLetter = function (item) { return item.title.substr(0, 1).toUpperCase(); };
+var getFirstLetter = function (item) {
+    return item.title.substr(0, 1).toUpperCase();
+};
 exports.getFirstLetter = getFirstLetter;

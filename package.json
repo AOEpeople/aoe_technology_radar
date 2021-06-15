@@ -16,6 +16,7 @@
   },
   "scripts": {
     "prepare": "husky install && yarn build:scripts",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "build:scripts": "tsc --project tsconfig.scripts.json",
     "test": "react-scripts test",
