@@ -39,6 +39,10 @@
   &__title {
     font-size: 16px;
     color: var(--color-white);
+
+    &.greyed-out {
+      color: var(--color-gray-light-alt);
+    }
   }
 
   &__info {

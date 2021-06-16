@@ -1,31 +1,43 @@
-import React from 'react';
-import classNames from 'classnames';
-import Link from '../Link/Link';
-import Flag from '../Flag/Flag';
-import { Item as mItem } from '../../model';
-import './item.scss';
-type ItemProps = {
+import React from "react";
+import classNames from "classnames";
+import Link from "../Link/Link";
+import Flag from "../Flag/Flag";
+import { Item as mItem } from "../../model";
+import "./item.scss";
+
+type Props = {
   item: mItem;
   noLeadingBorder?: boolean;
   active?: boolean;
   style: React.CSSProperties;
+  greyedOut?: boolean;
 };
 
-export default function Item({ item, noLeadingBorder = false, active = false, style = {} }: ItemProps) {
-  return (
-    <Link
-      className={classNames('item', {
-        'item--no-leading-border': noLeadingBorder,
-        'is-active': active,
+const Item: React.FC<Props> = ({
+  item,
+  noLeadingBorder = false,
+  active = false,
+  style = {},
+  greyedOut = false,
+}) => (
+  <Link
+    className={classNames("item", {
+      "item--no-leading-border": noLeadingBorder,
+      "is-active": active,
+    })}
+    pageName={`${item.quadrant}/${item.name}`}
+    style={style}
+  >
+    <div
+      className={classNames("item__title", {
+        "greyed-out": greyedOut,
       })}
-      pageName={`${item.quadrant}/${item.name}`}
-      style={style}
     >
-      <div className='item__title'>
-        {item.title}
-        <Flag item={item} />
-      </div>
-      {item.info && <div className='item__info'>{item.info}</div>}
-    </Link>
-  );
-}
+      {item.title}
+      <Flag item={item} />
+    </div>
+    {item.info && <div className="item__info">{item.info}</div>}
+  </Link>
+);
+
+export default Item;

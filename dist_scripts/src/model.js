@@ -16,15 +16,15 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.unfeaturedOnly = exports.featuredOnly = void 0;
+exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.nonFeaturedOnly = exports.featuredOnly = void 0;
 var featuredOnly = function (items) {
     return items.filter(function (item) { return item.featured; });
 };
 exports.featuredOnly = featuredOnly;
-var unfeaturedOnly = function (items) {
+var nonFeaturedOnly = function (items) {
     return items.filter(function (item) { return !item.featured; });
 };
-exports.unfeaturedOnly = unfeaturedOnly;
+exports.nonFeaturedOnly = nonFeaturedOnly;
 var groupByQuadrants = function (items) {
     return items.reduce(function (quadrants, item) {
         var _a;
