@@ -1,21 +1,34 @@
-import React from 'react';
-import HeroHeadline from '../HeroHeadline/HeroHeadline';
-import Fadeable from '../Fadeable/Fadeable';
-import SetTitle from '../SetTitle';
+import React from "react";
+import HeroHeadline from "../HeroHeadline/HeroHeadline";
+import Fadeable from "../Fadeable/Fadeable";
+import SetTitle from "../SetTitle";
 
-export default function PageToolbox({ leaving, onLeave }: { leaving: boolean; onLeave: () => void }) {
+export default function PageToolbox({
+  leaving,
+  onLeave,
+}: {
+  leaving: boolean;
+  onLeave: () => void;
+}) {
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle title='Small AOE Toolbox' />
+      <SetTitle title="Small AOE Toolbox" />
       <HeroHeadline>Small AOE Toolbox</HeroHeadline>
-      <div className='fullpage-content'>
+      <div className="fullpage-content">
         <h3>Useful Tools</h3>
 
         <ul>
-          <li>Fiddler - free web debugging proxy ( http://www.telerik.com/fiddler )</li>
+          <li>
+            Fiddler - free web debugging proxy ( http://www.telerik.com/fiddler
+            )
+          </li>
           <li>SoapUI - Webservice Test Tool (https://www.soapui.org/ )</li>
           <li>Postman - API Test Tool ( https://www.getpostman.com/ )</li>
-          <li> Modelio - Simple free UML Modelling tool ( https://www.modelio.org/ )</li>
+          <li>
+            {" "}
+            Modelio - Simple free UML Modelling tool ( https://www.modelio.org/
+            )
+          </li>
         </ul>
 
         <h3>Useful Tools (commercial)</h3>

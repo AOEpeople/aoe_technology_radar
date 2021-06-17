@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React from "react";
 import Badge from "../Badge/Badge";
 import ItemList from "../ItemList/ItemList";
 import Link from "../Link/Link";

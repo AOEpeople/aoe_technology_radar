@@ -25,7 +25,6 @@ var nonFeaturedOnly = function (items) {
     return items.filter(function (item) { return !item.featured; });
 };
 exports.nonFeaturedOnly = nonFeaturedOnly;
-
 var groupByQuadrants = function (items) {
     return items.reduce(function (quadrants, item) {
         var _a;
@@ -59,5 +58,7 @@ var addItemToRing = function (ring, item) {
     if (ring === void 0) { ring = []; }
     return __spreadArray(__spreadArray([], ring), [item]);
 };
-var getFirstLetter = function (item) { return item.title.substr(0, 1).toUpperCase(); };
+var getFirstLetter = function (item) {
+    return item.title.substr(0, 1).toUpperCase();
+};
 exports.getFirstLetter = getFirstLetter;

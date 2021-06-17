@@ -1,4 +1,4 @@
-@import '../../styles/sccs-vars.scss';
+@import "../../styles/sccs-vars.scss";
 
 .quadrant-section {
   &__header {
@@ -18,7 +18,6 @@
 
     @media (max-width: $until-md) {
       flex-basis: 50%;
-
     }
   }
 }

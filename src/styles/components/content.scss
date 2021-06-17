@@ -1,15 +1,13 @@
 .fullpage-content {
+  font-size: 16px;
+  color: var(--color-white);
 
-    font-size: 16px;
+  & p,
+  & ul {
+    font-weight: lighter;
+  }
+
+  & a {
     color: var(--color-white);
-
-    & p,
-    & ul {
-        font-weight: lighter
-    }
-
-    & a {
-        color: var(--color-white);
-    }
-
+  }
 }

@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
-import './fadeable.scss';
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
+import "./fadeable.scss";
 
 type FadeableProps = {
   leaving: boolean;
   onLeave: () => void;
 };
 
-export default function Fadeable({ leaving, onLeave, children }: React.PropsWithChildren<FadeableProps>) {
+export default function Fadeable({
+  leaving,
+  onLeave,
+  children,
+}: React.PropsWithChildren<FadeableProps>) {
   const [faded, setFaded] = useState(leaving);
 
   useEffect(() => {
@@ -25,7 +29,10 @@ export default function Fadeable({ leaving, onLeave, children }: React.PropsWith
   };
 
   return (
-    <div className={classNames('fadable', { 'is-faded': faded })} onTransitionEnd={handleTransitionEnd}>
+    <div
+      className={classNames("fadable", { "is-faded": faded })}
+      onTransitionEnd={handleTransitionEnd}
+    >
       {children}
     </div>
   );

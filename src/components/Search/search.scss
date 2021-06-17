@@ -11,13 +11,13 @@
     width: 100%;
     box-sizing: border-box;
     padding: 10px 120px 10px 20px;
-    background: #3A444A;
+    background: #3a444a;
     display: block;
     border: none;
     color: var(--color-white);
     font-size: 16px;
     line-height: 1;
-    font-family: 'DIN';
+    font-family: "DIN";
     font-weight: normal;
 
     &::placeholder {
@@ -26,7 +26,7 @@
 
     &:focus {
       outline: none;
-      background: #2F393F;
+      background: #2f393f;
     }
   }
 
