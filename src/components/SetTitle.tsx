@@ -1,14 +1,14 @@
-import {useEffect} from "react";
-import {radarName} from "../config";
+import { useEffect } from "react";
+import { radarName } from "../config";
 
 type SetTitleProps = {
-  title: string
-}
+  title: string;
+};
 
-export default function SetTitle({title}: SetTitleProps) {
+export default function SetTitle({ title }: SetTitleProps) {
   useEffect(() => {
-    document.title = `${title} | ${radarName}`
-  }, [title])
+    document.title = `${title} | ${radarName}`;
+  }, [title]);
 
   return null;
 }

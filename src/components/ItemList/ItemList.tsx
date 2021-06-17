@@ -1,7 +1,7 @@
-import React from 'react';
-import Item from '../Item/Item';
-import { Item as mItem } from '../../model';
-import './item-list.scss';
+import React from "react";
+import Item from "../Item/Item";
+import { Item as mItem } from "../../model";
+import "./item-list.scss";
 type ItemListProps = {
   items: mItem[];
   activeItem?: mItem;
@@ -10,19 +10,30 @@ type ItemListProps = {
   itemStyle?: React.CSSProperties[];
 };
 
-export default function ItemList({ children, items, activeItem, noLeadingBorder, headerStyle = {}, itemStyle = [] }: React.PropsWithChildren<ItemListProps>) {
+export default function ItemList({
+  children,
+  items,
+  activeItem,
+  noLeadingBorder,
+  headerStyle = {},
+  itemStyle = [],
+}: React.PropsWithChildren<ItemListProps>) {
   return (
-    <div className='item-list'>
-      <div className='item-list__header' style={headerStyle}>
+    <div className="item-list">
+      <div className="item-list__header" style={headerStyle}>
         {children}
       </div>
-      <div className='item-list__list'>
+      <div className="item-list__list">
         {items.map((item, i) => (
           <Item
             key={item.name}
             item={item}
             noLeadingBorder={noLeadingBorder}
-            active={activeItem !== null && activeItem !== undefined && activeItem.name === item.name}
+            active={
+              activeItem !== null &&
+              activeItem !== undefined &&
+              activeItem.name === item.name
+            }
             style={itemStyle[i]}
           />
         ))}
