@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
+import * as fs from "fs-extra";
 import * as paths from "./paths";
-import { createRadar } from "./generateJson/radar";
-import { save } from "./generateJson/file";
 
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
@@ -15,7 +14,13 @@ process.on("unhandledRejection", (err) => {
   throw err;
 });
 
+fs.removeSync(paths.templateNodeModules);
+fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
+
 const generateJson = async () => {
+  const { createRadar } = require("./generateJson/radar");
+  const { save } = require("./generateJson/file");
+
   try {
     const radar = await createRadar();
 
