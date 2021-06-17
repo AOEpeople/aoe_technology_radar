@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.appYarnLock = exports.appPublic = exports.appBuild = exports.appRdJson = exports.templateBuild = exports.template = exports.radarJson = void 0;
+exports.appNodeModules = exports.appYarnLock = exports.appPublic = exports.appBuild = exports.appRdJson = exports.templateNodeModules = exports.templateBuild = exports.template = exports.radarJson = void 0;
 var path_1 = require("path");
 var fs_1 = require("fs");
 exports.radarJson = "rd.json";
@@ -16,7 +16,9 @@ var resolveTemplate = function (relativePath) {
 };
 exports.template = resolveTemplate();
 exports.templateBuild = resolveTemplate("build");
+exports.templateNodeModules = resolveTemplate("node_modules");
 exports.appRdJson = resolveApp("build/" + exports.radarJson);
 exports.appBuild = resolveApp("build");
 exports.appPublic = resolveApp("public");
 exports.appYarnLock = resolveApp("yarn.lock");
+exports.appNodeModules = resolveApp("node_modules");

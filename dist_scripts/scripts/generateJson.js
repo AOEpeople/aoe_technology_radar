@@ -56,9 +56,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var fs = __importStar(require("fs-extra"));
 var paths = __importStar(require("./paths"));
-var radar_1 = require("./generateJson/radar");
-var file_1 = require("./generateJson/file");
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
 process.env.NODE_ENV = "production";
@@ -68,24 +67,30 @@ process.env.NODE_ENV = "production";
 process.on("unhandledRejection", function (err) {
     throw err;
 });
+fs.removeSync(paths.templateNodeModules);
+fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
 var generateJson = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var radar, e_1;
+    var createRadar, save, radar, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 3, , 4]);
-                return [4 /*yield*/, radar_1.createRadar()];
+                createRadar = require("./generateJson/radar").createRadar;
+                save = require("./generateJson/file").save;
+                _a.label = 1;
             case 1:
-                radar = _a.sent();
-                return [4 /*yield*/, file_1.save(JSON.stringify(radar), paths.radarJson)];
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, createRadar()];
             case 2:
-                _a.sent();
-                return [3 /*break*/, 4];
+                radar = _a.sent();
+                return [4 /*yield*/, save(JSON.stringify(radar), paths.radarJson)];
             case 3:
+                _a.sent();
+                return [3 /*break*/, 5];
+            case 4:
                 e_1 = _a.sent();
                 console.error("error:", e_1);
-                return [3 /*break*/, 4];
-            case 4: return [2 /*return*/];
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
         }
     });
 }); };

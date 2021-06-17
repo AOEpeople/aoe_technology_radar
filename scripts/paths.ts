@@ -10,7 +10,9 @@ const resolveTemplate = (relativePath = "") =>
 
 export const template = resolveTemplate();
 export const templateBuild = resolveTemplate("build");
+export const templateNodeModules = resolveTemplate("node_modules");
 export const appRdJson = resolveApp(`build/${radarJson}`);
 export const appBuild = resolveApp("build");
 export const appPublic = resolveApp("public");
 export const appYarnLock = resolveApp("yarn.lock");
+export const appNodeModules = resolveApp("node_modules");

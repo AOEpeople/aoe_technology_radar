@@ -32,6 +32,8 @@ process.env.NODE_ENV = "production";
 process.on("unhandledRejection", function (err) {
     throw err;
 });
+fs.removeSync(paths.templateNodeModules);
+fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
 var runCommand = function (command) {
     return new Promise(function (resolve, reject) {
         var executedCommand = child_process_1.spawn(command, {
