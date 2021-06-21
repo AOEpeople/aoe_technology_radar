@@ -9,8 +9,6 @@ import { useAnimations } from "./useAnimations";
 import "./item-page.scss";
 import { translate } from "../../config";
 import {
-  featuredOnly,
-  nonFeaturedOnly,
   groupByQuadrants,
   Item,
 } from "../../model";
@@ -36,13 +34,9 @@ type Props = {
 
 const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
   const itemsInRing = getItemsInRing(pageName, items);
-  const featuredItemsInRing = featuredOnly(itemsInRing);
-  const nonFeaturedItemsInRing = nonFeaturedOnly(itemsInRing);
 
   const { getAnimationState, getAnimationStates } = useAnimations({
     itemsInRing,
-    featuredItemsInRing,
-    nonFeaturedItemsInRing,
     onLeave,
     leaving,
   });
@@ -62,10 +56,10 @@ const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
               <h3 className="headline">{translate(item.quadrant)}</h3>
             </div>
             <ItemList
-              items={featuredItemsInRing}
+              items={itemsInRing}
               activeItem={item}
               headerStyle={getAnimationState("navHeader")}
-              itemStyle={getAnimationStates("featuredItems")}
+              itemStyle={getAnimationStates("items")}
             >
               <div className="split">
                 <div className="split__left">
@@ -81,24 +75,6 @@ const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
                 </div>
               </div>
             </ItemList>
-
-            {nonFeaturedItemsInRing.length > 0 && (
-              <div className="item-page__non-featured-items">
-                <ItemList
-                  items={nonFeaturedItemsInRing}
-                  activeItem={item}
-                  headerStyle={getAnimationState("nonFeaturedItems")}
-                  itemStyle={getAnimationStates("nonFeaturedItems")}
-                  greyedOut={true}
-                >
-                  <div className="split">
-                    <div className="split__left">
-                      <h4 className="headline">Not featured anymore</h4>
-                    </div>
-                  </div>
-                </ItemList>
-              </div>
-            )}
 
             <div
               className="item-page__footer"

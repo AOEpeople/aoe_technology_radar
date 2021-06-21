@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import {
   Animation,
-  AnimationConfig as AbstractAnimationConfig,
   AnimationStates,
   createAnimation,
   createAnimationRunner,
@@ -10,25 +9,20 @@ import { Item } from "../../model";
 
 interface Props {
   itemsInRing: Item[];
-  featuredItemsInRing: Item[];
-  nonFeaturedItemsInRing: Item[];
   leaving: boolean;
   onLeave: () => void;
 }
 
 export const useAnimations = ({
   itemsInRing,
-  featuredItemsInRing,
-  nonFeaturedItemsInRing,
   leaving,
   onLeave,
 }: Props) => {
-  interface AnimationConfig extends AbstractAnimationConfig {
+  type AnimationConfig = {
     background: Animation;
     navHeader: Animation;
     text: Animation;
-    featuredItems: Animation[];
-    nonFeaturedItems: Animation[];
+    items: Animation[];
     footer: Animation;
   }
 
@@ -71,7 +65,7 @@ export const useAnimations = ({
         },
         600
       ),
-      featuredItems: featuredItemsInRing.map((item, i) =>
+      items: itemsInRing.map((item, i) =>
         createAnimation(
           {
             transform: "translateX(-40px)",
@@ -83,20 +77,6 @@ export const useAnimations = ({
             opacity: "1",
           },
           400 + 100 * i
-        )
-      ),
-      nonFeaturedItems: nonFeaturedItemsInRing.map((item, i) =>
-        createAnimation(
-          {
-            transform: "translateX(-40px)",
-            opacity: "0",
-          },
-          {
-            transition: "opacity 150ms ease-out, transform 300ms ease-out",
-            transform: "translateX(0px)",
-            opacity: "1",
-          },
-          400 + 100 * (featuredItemsInRing.length + i)
         )
       ),
       footer: createAnimation(
@@ -113,7 +93,7 @@ export const useAnimations = ({
         600 + itemsInRing.length * 100
       ),
     }),
-    [itemsInRing, featuredItemsInRing, nonFeaturedItemsInRing]
+    [itemsInRing]
   );
 
   const animationsOut: AnimationConfig = useMemo(
@@ -141,26 +121,15 @@ export const useAnimations = ({
         },
         0
       ),
-      featuredItems: featuredItemsInRing.map((item, i) =>
+      items: itemsInRing.map((item, i) =>
         createAnimation(
-          animationsIn.featuredItems[i].stateB,
+          animationsIn.items[i].stateB,
           {
             transition: "opacity 150ms ease-out, transform 300ms ease-out",
             transform: "translateX(40px)",
             opacity: "0",
           },
           100 + 50 * i
-        )
-      ),
-      nonFeaturedItems: nonFeaturedItemsInRing.map((item, i) =>
-        createAnimation(
-          animationsIn.nonFeaturedItems[i].stateB,
-          {
-            transition: "opacity 150ms ease-out, transform 300ms ease-out",
-            transform: "translateX(40px)",
-            opacity: "0",
-          },
-          100 + 50 * (featuredItemsInRing.length + i)
         )
       ),
       footer: createAnimation(
@@ -173,7 +142,7 @@ export const useAnimations = ({
         200 + itemsInRing.length * 50
       ),
     }),
-    [itemsInRing, featuredItemsInRing, nonFeaturedItemsInRing, animationsIn]
+    [itemsInRing, animationsIn]
   );
 
   const [animations, setAnimations] = useState<AnimationStates>(() => {
