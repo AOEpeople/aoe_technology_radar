@@ -1,5 +1,9 @@
 import React from "react";
 
+export interface AnimationConfig {
+  [k: string]: Animation | Animation[];
+}
+
 export type Animations = {
   [k: string]: Animation[];
 };
@@ -8,7 +12,7 @@ export type AnimationStates = {
   [k: string]: React.CSSProperties[];
 };
 
-type Animation = {
+export type Animation = {
   stateA: React.CSSProperties;
   stateB: React.CSSProperties;
   delay: number;
@@ -75,7 +79,7 @@ const getMaxAnimationsDuration = (animations: Animations) =>
   );
 
 export const createAnimationRunner = (
-  animationsIn: { [k: string]: Animation | Animation[] },
+  animationsIn: AnimationConfig,
   subscriber: () => void = () => {}
 ): AnimationRunner => {
   const animations = Object.entries(animationsIn).reduce(

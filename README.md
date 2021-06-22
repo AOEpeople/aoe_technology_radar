@@ -135,8 +135,10 @@ You can integrate images in your markdown. Put the image files in your public fo
 ```
 
 ## Development
+
 For local development you need a `rd.json` in the public folder. You can use `rd_example.json`.
 Then simply start the dev server
+
 ```
 yarn start
 ```

@@ -39,6 +39,8 @@ export type Group = {
 
 export const featuredOnly = (items: Item[]) =>
   items.filter((item) => item.featured);
+export const nonFeaturedOnly = (items: Item[]) =>
+  items.filter((item) => !item.featured);
 
 export const groupByQuadrants = (items: Item[]): Group =>
   items.reduce(
