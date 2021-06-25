@@ -117,6 +117,7 @@ var checkAttributes = function (fileName, attributes) {
     return attributes;
 };
 var createRevisionsFromFiles = function (fileNames) {
+    var publicUrl = process.env.PUBLIC_URL;
     return Promise.all(fileNames.map(function (fileName) {
         return new Promise(function (resolve, reject) {
             fs_extra_1.readFile(fileName, "utf8", function (err, data) {
@@ -127,7 +128,7 @@ var createRevisionsFromFiles = function (fileNames) {
                     var fm = front_matter_1.default(data);
                     // add target attribute to external links
                     // todo: check path
-                    var html = marked_1.default(fm.body.replace(/\]\(\//g, "](/techradar/"));
+                    var html = marked_1.default(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
                     html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
                     resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
                 }

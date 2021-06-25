@@ -44,34 +44,37 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
   return attributes;
 };
 
-const createRevisionsFromFiles = (fileNames: string[]) =>
-  Promise.all(
-    fileNames.map((fileName) => {
-      return new Promise<Revision>((resolve, reject) => {
-        readFile(fileName, "utf8", (err, data) => {
-          if (err) {
-            reject(err);
-          } else {
-            const fm = frontMatter<FMAttributes>(data);
-            // add target attribute to external links
-            // todo: check path
-            let html = marked(fm.body.replace(/\]\(\//g, "](/techradar/"));
-            html = html.replace(
-              /a href="http/g,
-              'a target="_blank" rel="noopener noreferrer" href="http'
-            );
+const createRevisionsFromFiles = (fileNames: string[]) => {
+  const publicUrl = process.env.PUBLIC_URL;
+  return Promise.all(
+    fileNames.map(
+      (fileName) =>
+        new Promise<Revision>((resolve, reject) => {
+          readFile(fileName, "utf8", (err, data) => {
+            if (err) {
+              reject(err);
+            } else {
+              const fm = frontMatter<FMAttributes>(data);
+              // add target attribute to external links
+              // todo: check path
+              let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}/`));
+              html = html.replace(
+                /a href="http/g,
+                'a target="_blank" rel="noopener noreferrer" href="http'
+              );
 
-            resolve({
-              ...itemInfoFromFilename(fileName),
-              ...checkAttributes(fileName, fm.attributes),
-              fileName,
-              body: html,
-            } as Revision);
-          }
-        });
-      });
-    })
+              resolve({
+                ...itemInfoFromFilename(fileName),
+                ...checkAttributes(fileName, fm.attributes),
+                fileName,
+                body: html,
+              } as Revision);
+            }
+          });
+        })
+    )
   );
+};
 
 const itemInfoFromFilename = (fileName: string) => {
   const [release, name] = fileName.split(path.sep).slice(-2);
