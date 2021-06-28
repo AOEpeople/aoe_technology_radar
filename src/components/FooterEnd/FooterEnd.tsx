@@ -66,7 +66,7 @@ export default function FooterEnd({ modifier }: { modifier?: "in-sidebar" }) {
       <div className="footer-copyright">
         <p>
           <a
-            href="https://www.aoe.com/en/copyright-meta/legal-information.html"
+            href="https://www.aoe.com/en/imprint.html"
             target="_blank"
             rel="noopener noreferrer"
           >
