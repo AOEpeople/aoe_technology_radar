@@ -15,7 +15,7 @@ interface Props {
   modifier?: "in-sidebar";
 }
 
-const FooterEnd: React.FC<Props> = (modifier) => (
+const FooterEnd: React.FC<Props> = ({ modifier }) => (
   <div
     className={classNames("footer-end", {
       [`footer-end__${modifier}`]: modifier,
