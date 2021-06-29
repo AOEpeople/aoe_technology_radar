@@ -1,27 +1,16 @@
-.social-icon {
-  font-weight: normal;
-  font-style: normal;
-  font-size: 16px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+.social-icon-a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
   background-color: var(--color-white);
   border-radius: 50%;
-  padding: 7px;
-  margin: 0 5px 0 5px;
+}
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: "liga";
+.social-icon {
+  font-size: 16px; /* Preferred icon size */
+  color: var(--color-gray-dark);
 }
