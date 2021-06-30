@@ -8,7 +8,6 @@ The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
 
 ## Usage for your own radar?
 The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
-(There is a list of planned features below in case someone wants to contribute :-)
 
 However, please be aware:
 
@@ -22,7 +21,7 @@ You can customize the following parts of the tech radar.
 Set the environment variable `REACT_APP_RADAR_NAME`. The default is "AOE Technology Radar".
 
 ### Host the application under a sub path
-To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar". The default is "/techradar".
+To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar". The default is "/build".
 
 ### Change the favicon
 To change the favicon, create a public folder in your application and put your favicon.ico in it.
@@ -58,7 +57,7 @@ Serve
 python3 -m http.server 8080
 ```
 
-Then open here: http://localhost:8080*PUBLIC_URL*
+Then open here: http://localhost:8080/build
 
 ### Run a prepared static version
 To have a better SEO ranking, you can generate a html file for every page.

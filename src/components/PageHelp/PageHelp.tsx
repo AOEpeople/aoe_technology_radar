@@ -68,8 +68,8 @@ export default function PageHelp({
           more-informed and better-aligned decisions.
         </p>
         <p>
-          We also hope that developers outside of AOE find the informations in
-          our technologie overview inspirational.
+          We also hope that developers outside of AOE find the information in
+          our technology overview inspirational.
         </p>
         <p>
           We group or categorize the items in 4 quadrants - (sometimes, when
@@ -81,7 +81,7 @@ export default function PageHelp({
             <strong>Languages and Frameworks:</strong> We've placed development
             languages (such as Scala or Golang) here, as well as more low-level
             development frameworks (such as Play or Symfony), which are useful
-            for implementing custom software of all kinds.{" "}
+            for implementing custom software of all kinds.
           </li>
           <li>
             <strong>Tools:</strong> Here we put different software tools - from
