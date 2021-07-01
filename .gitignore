@@ -11,10 +11,6 @@
 # production
 /build
 
-# local development
-/public/rd.json
-/public/messages.json
-
 # misc
 .idea
 .DS_Store

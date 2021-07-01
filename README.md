@@ -14,6 +14,86 @@ However, please be aware:
 - It would be nice to mention in radar that the generator is based on this repository.
 - Also, when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
 
+## Use and build the radar
+> Set the environment variable `PUBLIC_URL` properly. For more information see [Host the application under a sub path](#host-the-application-under-a-sub-path)
+
+Add the tech radar as a dependency
+```
+yarn add https://github.com/aoepeople/aoe_technology_radar.git
+```
+
+Generate json file based on md files
+```
+yarn aoe_technology_radar-generateJson
+```
+
+Build the radar
+```
+yarn aoe_technology_radar-buildRadar
+```
+
+Serve
+```
+python3 -m http.server 8080
+```
+
+Then open here: http://localhost:8080/build
+
+### Run a prepared static version
+To have a better SEO ranking, you can generate a html file for every page.
+
+Requirements
+* Generate the json file
+* Build the radar
+
+```
+yarn aoe_technology_radar-createStaticFiles
+```
+
+## Usage
+For a new Technology Radar release, create a folder of the release date
+(YYYY-MM-DD) under `/radar`. In each release folder create a folder for every
+quadrant and place the items there.
+
+### Maintaining items
+The items are written in Markdown format (.md)
+
+Each file has a [front-matter](https://github.com/jxson/front-matter) header
+where the attributes of the item are listed:
+
+```
+---
+title:      "React"
+ring:       adopt
+quadrant:   languages-and-frameworks
+---
+
+Text goes here. You can use **markdown** here.
+```
+
+Following front-matter attributes are possible:
+
+- **title**: Name of the Item
+- **quadrant**: Quadrant. One of `languages-and-frameworks`,
+  `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
+- **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
+- **info**: (optional) A short textual description of the item (visible in
+  overview pages)
+- **featured**: (optional, default "true") If you set this to `false`, the item
+  will not be visible in the radar quadrants but still be available in the overview.
+
+The name of the .md file acts as item identifier and may overwrite items with
+the same name from older releases.
+
+If an item is overwritten in a new release, the attributes from the new item are
+merged with the old ones, and a new history entry is created for that item.
+
+You can integrate images in your markdown. Put the image files in your public folder and reference them
+
+```
+![nice image](/images/nice-image.png)
+```
+
 ## Customize the tech radar
 You can customize the following parts of the tech radar.
 
@@ -126,86 +206,6 @@ To add a help page, create a public folder in your application and put a message
 ```
 
 > For more information see the source code of the [Messages Context](./src/context/MessagesContext/index.tsx).
-
-## Use and build the radar
-> Set the environment variable `PUBLIC_URL` properly. For more information see [Host the application under a sub path](#host-the-application-under-a-sub-path)
-
-Add the tech radar as a dependency
-```
-yarn add https://github.com/aoepeople/aoe_technology_radar.git
-```
-
-Generate json file based on md files
-```
-yarn aoe_technology_radar-generateJson
-```
-
-Build the radar
-```
-yarn aoe_technology_radar-buildRadar
-```
-
-Serve
-```
-python3 -m http.server 8080
-```
-
-Then open here: http://localhost:8080/build
-
-### Run a prepared static version
-To have a better SEO ranking, you can generate a html file for every page.
-
-Requirements
-* Generate the json file
-* Build the radar
-
-```
-yarn aoe_technology_radar-createStaticFiles
-```
-
-## Usage
-For a new Technology Radar release, create a folder of the release date
-(YYYY-MM-DD) under `/radar`. In each release folder create a folder for every
-quadrant and place the items there.
-
-### Maintaining items
-The items are written in Markdown format (.md)
-
-Each file has a [front-matter](https://github.com/jxson/front-matter) header
-where the attributes of the item are listed:
-
-```
----
-title:      "React"
-ring:       adopt
-quadrant:   languages-and-frameworks
----
-
-Text goes here. You can use **markdown** here.
-```
-
-Following front-matter attributes are possible:
-
-- **title**: Name of the Item
-- **quadrant**: Quadrant. One of `languages-and-frameworks`,
-  `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
-- **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
-- **info**: (optional) A short textual description of the item (visible in
-  overview pages)
-- **featured**: (optional, default "true") If you set this to `false`, the item
-  will not be visible in the radar quadrants but still be available in the overview.
-
-The name of the .md file acts as item identifier and may overwrite items with
-the same name from older releases.
-
-If an item is overwritten in a new release, the attributes from the new item are
-merged with the old ones, and a new history entry is created for that item.
-
-You can integrate images in your markdown. Put the image files in your public folder and reference them
-
-```
-![nice image](/images/nice-image.png)
-```
 
 ## Development
 For local development you need a `rd.json` in the public folder. You can use [rd_example.json](./rd_example.json).
