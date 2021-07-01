@@ -200,7 +200,12 @@ To add a help page, create a public folder in your application and put a message
         "name": "Hold",
         "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now."
       }
-    ]
+    ],
+    "sourcecodeLink": {
+      "href": "https://github.com/AOEpeople/aoe_technology_radar",
+      "name": "AOE Tech Radar on Github",
+      "description": "Contributions and source code of the AOE Tech Radar are on github:"
+    }
   }
 }
 ```
