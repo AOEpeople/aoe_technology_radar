@@ -22,14 +22,14 @@ Add the tech radar as a dependency
 yarn add https://github.com/aoepeople/aoe_technology_radar.git
 ```
 
-Generate json file based on md files
-```
-yarn aoe_technology_radar-generateJson
-```
-
 Build the radar
 ```
 yarn aoe_technology_radar-buildRadar
+```
+
+Generate json file based on md files
+```
+yarn aoe_technology_radar-generateJson
 ```
 
 Serve
@@ -43,8 +43,8 @@ Then open here: http://localhost:8080/build
 To have a better SEO ranking, you can generate a html file for every page.
 
 Requirements
-* Generate the json file
 * Build the radar
+* Generate the json file
 
 ```
 yarn aoe_technology_radar-createStaticFiles
