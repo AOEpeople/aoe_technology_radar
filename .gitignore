@@ -13,6 +13,7 @@
 
 # local development
 /public/rd.json
+/public/messages.json
 
 # misc
 .idea
