@@ -7,10 +7,12 @@ import Search from "../Search/Search";
 import { radarNameShort } from "../../config";
 import { useHistory } from "react-router-dom";
 import qs from "query-string";
+import { useMessages } from "../../context/MessagesContext";
 
 export default function Header({ pageName }: { pageName: string }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const { pageHelp } = useMessages();
   const history = useHistory();
   const searchRef = useRef<HTMLInputElement>(null);
 
@@ -49,12 +51,14 @@ export default function Header({ pageName }: { pageName: string }) {
   return (
     <Branding logoContent={<LogoLink small={smallLogo} />}>
       <div className="nav">
-        <div className="nav__item">
-          <Link pageName="help-and-about-tech-radar" className="icon-link">
-            <span className="icon icon--question icon-link__icon" />
-            How to Use {radarNameShort}?
-          </Link>
-        </div>
+        {pageHelp && (
+          <div className="nav__item">
+            <Link pageName="help-and-about-tech-radar" className="icon-link">
+              <span className="icon icon--question icon-link__icon" />
+              How to Use {radarNameShort}?
+            </Link>
+          </div>
+        )}
         <div className="nav__item">
           <Link pageName="overview" className="icon-link">
             <span className="icon icon--overview icon-link__icon" />

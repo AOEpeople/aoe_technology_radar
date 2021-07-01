@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import SocialIcon from "../SocialIcon/SocialIcon";
+import SocialLink from "../SocialLink/SocialLink";
 import "./footerend.scss";
 import { useMessages } from "../../context/MessagesContext";
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const FooterEnd: React.FC<Props> = ({ modifier }) => {
-  const { socialIcons } = useMessages();
+  const { socialLinks, legalInformationLink } = useMessages();
 
   return (
     <div
@@ -18,26 +18,33 @@ const FooterEnd: React.FC<Props> = ({ modifier }) => {
       })}
     >
       <div className="footer-social">
-        <div className="footer-social__label">
-          <p>Follow us:</p>
-        </div>
-        <div className="footer-social__links">
-          {socialIcons.map(({ href, iconName }) => (
-            <SocialIcon href={href} iconName={iconName} />
-          ))}
-        </div>
+        {socialLinks && (
+          <>
+            <div className="footer-social__label">
+              <p>Follow us:</p>
+            </div>
+            <div className="footer-social__links">
+              {socialLinks.map(({ href, iconName }) => (
+                <SocialLink href={href} iconName={iconName} key={iconName} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
-      <div className="footer-copyright">
-        <p>
-          <a
-            href="https://www.aoe.com/en/imprint.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Legal Information
-          </a>
-        </p>
-      </div>
+
+      {legalInformationLink && (
+        <div className="footer-copyright">
+          <p>
+            <a
+              href={legalInformationLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Legal Information
+            </a>
+          </p>
+        </div>
+      )}
     </div>
   );
 };

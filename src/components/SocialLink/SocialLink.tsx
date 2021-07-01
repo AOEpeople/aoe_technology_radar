@@ -24,7 +24,7 @@ export interface Props {
   iconName: keyof typeof icons;
 }
 
-const SocialIcon: React.FC<Props> = ({ href, iconName }) => {
+const SocialLink: React.FC<Props> = ({ href, iconName }) => {
   const Icon = icons[iconName];
 
   if (Icon) {
@@ -39,8 +39,8 @@ const SocialIcon: React.FC<Props> = ({ href, iconName }) => {
       </a>
     );
   }
-  console.log(`The icon is unknown: ${iconName}`);
+  console.error(`The iconname is unknown: ${iconName}`);
   return null;
 };
 
-export default SocialIcon;
+export default SocialLink;

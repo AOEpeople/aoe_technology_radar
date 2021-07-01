@@ -18,9 +18,24 @@ interface Params {
   page: string;
 }
 
-const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
+const useFetch = <D extends unknown>(url: string): D | undefined => {
+  const [data, setData] = React.useState<D>();
+
+  React.useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data: D) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error(`fetch ${url} failed. Did the file exist?`, error);
+      });
+  }, []);
+
+  return data;
 };
+
+const useQuery = () => new URLSearchParams(useLocation().search);
 
 const RouterWithPageParam = ({
   items,
@@ -60,30 +75,12 @@ interface Data {
 }
 
 export default function App() {
-  const [data, setData] = React.useState<Data>();
-  const [messages, setMessages] = React.useState<Messages>();
+  const data = useFetch<Data>(`${process.env.PUBLIC_URL}/rd.json`);
+  const messages = useFetch<Messages>(
+    `${process.env.PUBLIC_URL}/messages.json`
+  );
 
-  React.useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/rd.json`)
-      .then((response) => response.json())
-      .then((data: Data) => {
-        setData(data);
-      })
-      .catch((error) => {
-        console.error("fetch data", error);
-      });
-
-    fetch(`${process.env.PUBLIC_URL}/messages.json`)
-      .then((response) => response.json())
-      .then((messages: Messages) => {
-        setMessages(messages);
-      })
-      .catch((error) => {
-        console.error("fetch messages", error);
-      });
-  }, []);
-
-  if (data && messages) {
+  if (data) {
     const { items, releases } = data;
     return (
       <MessagesProvider messages={messages}>

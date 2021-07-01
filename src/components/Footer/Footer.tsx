@@ -22,14 +22,22 @@ const Footer: React.FC<Props> = ({ items, pageName }) => {
           !isMobileViewport() && getItemPageNames(items).includes(pageName),
       })}
     >
-      <Branding
-        modifier="footer"
-        logoContent={
-          <img src={assetUrl("logo.svg")} width="150px" height="60px" alt="" />
-        }
-      >
-        <span className="footnote">{footerFootnote}</span>
-      </Branding>
+      {footerFootnote && (
+        <Branding
+          modifier="footer"
+          logoContent={
+            <img
+              src={assetUrl("logo.svg")}
+              width="150px"
+              height="60px"
+              alt=""
+            />
+          }
+        >
+          <span className="footnote">{footerFootnote}</span>
+        </Branding>
+      )}
+
       <FooterEnd />
     </div>
   );

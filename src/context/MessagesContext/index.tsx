@@ -1,5 +1,5 @@
 import { createContext, FC, useContext } from "react";
-import { Props as SocialIcon } from "../../components/SocialIcon/SocialIcon";
+import { Props as SocialLink } from "../../components/SocialLink/SocialLink";
 
 interface Quadrant {
   name: string;
@@ -11,24 +11,32 @@ interface Ring {
   description: string;
 }
 
+interface Paragraph {
+  headline: string;
+  values: string[];
+}
+
 interface PageHelp {
-  introduction: string[];
-  whatIsTheRadar: string[];
-  howItIsCreated: string[];
-  howShouldItBeUsed: string[];
+  paragraphs: Paragraph[];
   quadrants: Quadrant[];
   rings: Ring[];
+  sourcecodeLink?: {
+    href: string;
+    name: string;
+    description: string;
+  };
 }
 
 export interface Messages {
-  footerFootnote: string;
-  socialIcons: SocialIcon[];
-  pageHelp: PageHelp;
+  footerFootnote?: string;
+  socialLinks?: SocialLink[];
+  legalInformationLink?: string;
+  pageHelp?: PageHelp;
 }
 
 const MessagesContext = createContext<Messages | undefined>(undefined);
 
-export const MessagesProvider: FC<{ messages: Messages }> = ({
+export const MessagesProvider: FC<{ messages?: Messages }> = ({
   messages,
   children,
 }) => (
@@ -42,5 +50,5 @@ export const useMessages = () => {
   if (context === undefined) {
     throw new Error("useMessages must be used within a MessagesProvider");
   }
-  return context;
+  return context || {};
 };
