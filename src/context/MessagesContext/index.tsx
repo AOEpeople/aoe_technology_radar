@@ -45,10 +45,4 @@ export const MessagesProvider: FC<{ messages?: Messages }> = ({
   </MessagesContext.Provider>
 );
 
-export const useMessages = () => {
-  const context = useContext(MessagesContext);
-  if (context === undefined) {
-    throw new Error("useMessages must be used within a MessagesProvider");
-  }
-  return context || {};
-};
+export const useMessages = () => useContext(MessagesContext) || {};
