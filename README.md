@@ -34,6 +34,99 @@ For reference have a look at [public/logo.svg](./public/logo.svg).
 To change the index.html, create a public folder in your application and put your index.html in it.
 For reference have a look at [public/index.html](./public/index.html).
 
+### Add social links to the footer and sidebar
+To add social links, create a public folder in your application and put a messages.json in it.
+```json
+{
+  "socialLinks": [
+    { "href": "https://www.facebook.com/aoepeople", "iconName": "facebook" },
+    { "href": "https://twitter.com/aoepeople", "iconName": "twitter" },
+    { "href": "https://www.linkedin.com/company/aoe", "iconName": "linkedIn" }
+  ]
+}
+```
+
+> For more information and the possible icon names see the source code of the [SocialLink Component](./src/components/SocialLink/SocialLink.tsx).
+
+### Add a legal information link to the footer and sidebar
+To add a link to legal information, create a public folder in your application and put a messages.json in it.
+```json
+{
+  "legalInformationLink": "https://www.aoe.com/en/imprint.html"
+}
+```
+
+### Add a footnote with the logo to the footer
+To add a footnote to the footer, create a public folder in your application and put a messages.json in it.
+```json
+{
+  "footerFootnote": "AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers."
+}
+```
+
+### Add a help page with explanations
+To add a help page, create a public folder in your application and put a messages.json in it.
+```json
+{
+  "pageHelp": {
+    "paragraphs": [
+      {
+        "headline": "Introduction",
+        "values": [
+          "Technology is moving fast and new technologies and innovations appear continuously.",
+          "It's essential for a development and technology company such as AOE to constantly improve and keep track with the latest useful innovations. It is important to openly look for innovations and new technologies and to question established technologies and methods every now and then.",
+          "But, it is also important to wisely choose which technologies to use in our daily work and in the different projects we are carrying out. As we all know: There is no silver bullet."
+        ]
+      },
+      {
+        "headline": "What is the AOE Technology Radar",
+        "values": [
+          "The Tech Radar is an overview of different technologies - from languages, frameworks, tools and patterns to platforms - that we consider \"new or mentionable\". The radar therefore doesn't provide an overview of all established technologies - but it focuses on items that have recently gained in importance or changed."
+        ]
+      }
+    ],
+    "quadrants": [
+      {
+        "name": "Languages and Frameworks",
+        "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
+      },
+      {
+        "name": "Tools",
+        "description": "Here we put different software tools - from small helpers to bigger software projects"
+      },
+      {
+        "name": "Methods and Patterns",
+        "description": "Patterns are so important, and a lot of them are valid for a long time (compared to some tools or frameworks). So, this is the category where we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc."
+      },
+      {
+        "name": "Platforms and Operations",
+        "description": "(including AOE internal Services): Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of."
+      }
+    ],
+    "rings": [
+      {
+        "name": "Adopt",
+        "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful."
+      },
+      {
+        "name": "Trial",
+        "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level."
+      },
+      {
+        "name": "Assess",
+        "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project."
+      },
+      {
+        "name": "Hold",
+        "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now."
+      }
+    ]
+  }
+}
+```
+
+> For more information see the source code of the [Messages Context](./src/context/MessagesContext/index.tsx).
+
 ## Use and build the radar
 > Set the environment variable `PUBLIC_URL` properly. For more information see [Host the application under a sub path](#host-the-application-under-a-sub-path)
 
@@ -115,7 +208,8 @@ You can integrate images in your markdown. Put the image files in your public fo
 ```
 
 ## Development
-For local development you need a `rd.json` in the public folder. You can use `rd_example.json`.
+For local development you need a `rd.json` in the public folder. You can use [rd_example.json](./rd_example.json).
+For several customizations you need a `messages.json` in the public folder. You can use [messages_example.json](./messages_example.json).
 Then simply start the dev server
 
 ```
