@@ -104,18 +104,39 @@ Set the environment variable `REACT_APP_RADAR_NAME`. The default is "AOE Technol
 To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar". The default is "/build".
 
 ### Change the favicon
-To change the favicon, create a public folder in your application and put your favicon.ico in it.
+To change the favicon, create a public folder in your application and put your `favicon.ico` in it.
 
 ### Change the logo
-To change the logo, create a public folder in your application and put your logo.svg in it.
+To change the logo, create a public folder in your application and put your `logo.svg` in it.
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Change the index.html
-To change the index.html, create a public folder in your application and put your index.html in it.
+To change the index.html, create a public folder in your application and put your `index.html` in it.
 For reference have a look at [public/index.html](./public/index.html).
 
+### Change the fonts
+To change the fonts, create a public folder in your application and put your fonts in it.
+Create a `fonts.css` in the public folder and load your fonts.
+> For now only 2 fonts will be used: `DIN normal` and `DIN 300`.
+> Therefore, you only can replace the font files itself, but need to use the font-family and font-weight.
+```css
+@font-face {
+    font-family: "DIN";
+    src: url("fonts/yourFontFileForNormal");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "DIN";
+    src: url("fonts/yourFontFileForThin");
+    font-weight: 300;
+}
+```
+
+For reference have a look at [public/fonts.css](./public/fonts.css).
+
 ### Add social links to the footer and sidebar
-To add social links, create a public folder in your application and put a messages.json in it.
+To add social links, create a public folder in your application and put a `messages.json` in it.
 ```json
 {
   "socialLinks": [
@@ -129,7 +150,7 @@ To add social links, create a public folder in your application and put a messag
 > For more information and the possible icon names see the source code of the [SocialLink Component](./src/components/SocialLink/SocialLink.tsx).
 
 ### Add a legal information link to the footer and sidebar
-To add a link to legal information, create a public folder in your application and put a messages.json in it.
+To add a link to legal information, create a public folder in your application and put a `messages.json` in it.
 ```json
 {
   "legalInformationLink": "https://www.aoe.com/en/imprint.html"
@@ -137,7 +158,7 @@ To add a link to legal information, create a public folder in your application a
 ```
 
 ### Add a footnote with the logo to the footer
-To add a footnote to the footer, create a public folder in your application and put a messages.json in it.
+To add a footnote to the footer, create a public folder in your application and put a `messages.json` in it.
 ```json
 {
   "footerFootnote": "AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers."
@@ -145,7 +166,7 @@ To add a footnote to the footer, create a public folder in your application and 
 ```
 
 ### Add a help page with explanations
-To add a help page, create a public folder in your application and put a messages.json in it.
+To add a help page, create a public folder in your application and put a `messages.json` in it.
 ```json
 {
   "pageHelp": {

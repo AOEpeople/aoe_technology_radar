@@ -30,7 +30,7 @@ const useFetch = <D extends unknown>(url: string): D | undefined => {
       .catch((error) => {
         console.error(`fetch ${url} failed. Did the file exist?`, error);
       });
-  }, []);
+  }, [url]);
 
   return data;
 };
