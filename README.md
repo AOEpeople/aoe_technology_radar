@@ -51,15 +51,14 @@ yarn aoe_technology_radar-createStaticFiles
 ```
 
 ## Usage
-For a new Technology Radar release, create a folder of the release date
-(YYYY-MM-DD) under `/radar`. In each release folder create a folder for every
-quadrant and place the items there.
+For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD) under `/radar`.
+
+In each release folder create a folder for every quadrant and place the items there.
 
 ### Maintaining items
 The items are written in Markdown format (.md)
 
-Each file has a [front-matter](https://github.com/jxson/front-matter) header
-where the attributes of the item are listed:
+Each file has a [front-matter](https://github.com/jxson/front-matter) header where the attributes of the item are listed:
 
 ```
 ---
@@ -108,14 +107,17 @@ To change the favicon, create a public folder in your application and put your `
 
 ### Change the logo
 To change the logo, create a public folder in your application and put your `logo.svg` in it.
+
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Change the index.html
 To change the index.html, create a public folder in your application and put your `index.html` in it.
+
 For reference have a look at [public/index.html](./public/index.html).
 
 ### Change the fonts
 To change the fonts, create a public folder in your application and put your fonts in it.
+
 Create a `fonts.css` in the public folder and load your fonts.
 > For now only 2 fonts will be used: `DIN normal` and `DIN 300`.
 > Therefore, you only can replace the font files itself, but need to use the font-family and font-weight.
@@ -235,7 +237,9 @@ To add a help page, create a public folder in your application and put a `messag
 
 ## Development
 For local development you need a `rd.json` in the public folder. You can use [rd_example.json](./rd_example.json).
+
 For several customizations you need a `messages.json` in the public folder. You can use [messages_example.json](./messages_example.json).
+
 Then simply start the dev server
 
 ```
@@ -244,6 +248,7 @@ yarn start
 
 ### Change scripts
 If you change one of the scripts in the scripts' folder, you have to compile them to JavaScript.
+
 Therefore, run `yarn build:scripts` and commit the results in dist_scripts.
 
 To make it more robust the script will be executed on commit.
