@@ -18,7 +18,7 @@ exports.showEmptyRings = false;
 var messages = {
     "languages-and-frameworks": "Languages & Frameworks",
     "methods-and-patterns": "Methods & Patterns",
-    "platforms-and-aoe-services": "Platforms and Operations",
+    "platforms-and-aoe-services": "Platforms & Operations",
     tools: "Tools",
 };
 var translate = function (key) { return messages[key] || "-"; };

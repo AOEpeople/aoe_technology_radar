@@ -62,14 +62,8 @@ var buildTemplate = function () {
     process.chdir(paths.template);
     return runCommand(packageManager + " build");
 };
-if (fs.existsSync(paths.appRdJson)) {
-    buildTemplate().then(function () {
-        fs.copySync(paths.templateBuild, paths.appBuild);
-        fs.copySync(paths.appPublic, paths.appBuild);
-        console.log(paths.appBuild + " was created and can be deployed.");
-    });
-}
-else {
-    console.error(paths.appRdJson + " does not exist. You have to generate it first.");
-    process.exit(1);
-}
+buildTemplate().then(function () {
+    fs.copySync(paths.templateBuild, paths.appBuild);
+    fs.copySync(paths.appPublic, paths.appBuild);
+    console.log(paths.appBuild + " was created and can be deployed.");
+});
