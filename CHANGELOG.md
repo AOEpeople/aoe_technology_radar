@@ -29,4 +29,4 @@ All notable changes to this project will be documented in this file.
 - Added script `aoe_technology_radar-generateJson` to generate the file `rd.json` based on your radar markdown files.
 - Renamed script `aoe_technology_radar-createStatic` to `aoe_technology_radar-createStaticFiles` to make clear that this script creates static files only.
 
-> For more information about the changes and customizations, please have a look in the ([readme.md](https://github.com/AOEpeople/aoe_technology_radar)).
+> For more information about the changes and customizations, please have a look in the [readme.md](https://github.com/AOEpeople/aoe_technology_radar).
