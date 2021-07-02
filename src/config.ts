@@ -23,7 +23,7 @@ export const showEmptyRings = false;
 const messages: { [k: string]: string } = {
   "languages-and-frameworks": "Languages & Frameworks",
   "methods-and-patterns": "Methods & Patterns",
-  "platforms-and-aoe-services": "Platforms and Operations",
+  "platforms-and-aoe-services": "Platforms & Operations",
   tools: "Tools",
 };
 
