@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+### Bug Fixes
+- Added aria-label attributes to the social links.
+- Removed scaling limitation in viewport meta tag.
+
 ## 3.0.1 (2021.07.02)
 ### Bug Fixes
 - Fixed the bug, that `aoe_technology_radar-buildRadar` could not be executed without `aoe_technology_radar-generateJson` running first.
