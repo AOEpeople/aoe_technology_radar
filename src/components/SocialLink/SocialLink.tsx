@@ -34,6 +34,7 @@ const SocialLink: React.FC<Props> = ({ href, iconName }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="social-icon-a"
+        aria-label={iconName}
       >
         <Icon className="social-icon" />
       </a>
