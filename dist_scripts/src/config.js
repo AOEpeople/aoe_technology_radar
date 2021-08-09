@@ -5,9 +5,9 @@ exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.quadrants = [
     "languages-and-frameworks",
-    "methods-and-patterns",
-    "platforms-and-aoe-services",
-    "tools",
+    "data-integration-and-transformation",
+    "data-storage-and-compute",
+    "platforms-and-tools",
 ];
 exports.rings = ["all", "adopt", "trial", "assess", "hold"];
 var getItemPageNames = function (items) {
