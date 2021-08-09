@@ -4,10 +4,10 @@ exports.assetUrl = exports.isMobileViewport = exports.translate = exports.showEm
 exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.quadrants = [
-    "languages-and-frameworks",
-    "methods-and-patterns",
-    "platforms-and-aoe-services",
-    "tools",
+    "integration-and-export",
+    "transformation",
+    "storage-and-compute",
+    "orchestration-and-observability",
 ];
 exports.rings = ["all", "adopt", "trial", "assess", "hold"];
 var getItemPageNames = function (items) {

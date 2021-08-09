@@ -5,10 +5,10 @@ export const radarName =
 export const radarNameShort = radarName;
 
 export const quadrants = [
-  "languages-and-frameworks",
-  "methods-and-patterns",
-  "platforms-and-aoe-services",
-  "tools",
+  "integration-and-export",
+  "transformation",
+  "storage-and-compute",
+  "orchestration-and-observability",
 ];
 
 export const rings = ["all", "adopt", "trial", "assess", "hold"] as const;
