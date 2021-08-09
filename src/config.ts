@@ -21,10 +21,10 @@ export const getItemPageNames = (items: Item[]) =>
 export const showEmptyRings = false;
 
 const messages: { [k: string]: string } = {
-  "languages-and-frameworks": "Languages & Frameworks",
-  "methods-and-patterns": "Methods & Patterns",
-  "platforms-and-aoe-services": "Platforms & Operations",
-  tools: "Tools",
+  "integration-and-export": "Data Integration & Export",
+  "transformation": "Data Transformation",
+  "storage-and-compute": "Data Storage and Compute",
+  "orchestration-and-observability": "Data Orchestration & Observability"
 };
 
 export const translate = (key: string) => messages[key] || "-";
