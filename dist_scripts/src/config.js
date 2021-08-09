@@ -16,10 +16,10 @@ var getItemPageNames = function (items) {
 exports.getItemPageNames = getItemPageNames;
 exports.showEmptyRings = false;
 var messages = {
-    "integration-and-export": "Data Integration & Export",
-    "transformation": "Data Transformation",
-    "storage-and-compute": "Data Storage and Compute",
-    "orchestration-and-observability": "Data Orchestration & Observability"
+    "integration-and-export": "Integration & Export",
+    "transformation": "Transformation & Modelling",
+    "storage-and-compute": "Storage & Compute",
+    "orchestration-and-observability": "Orchestration & Observability"
 };
 var translate = function (key) { return messages[key] || "-"; };
 exports.translate = translate;

@@ -21,10 +21,10 @@ export const getItemPageNames = (items: Item[]) =>
 export const showEmptyRings = false;
 
 const messages: { [k: string]: string } = {
-  "integration-and-export": "Data Integration & Export",
-  "transformation": "Data Transformation",
-  "storage-and-compute": "Data Storage and Compute",
-  "orchestration-and-observability": "Data Orchestration & Observability"
+  "integration-and-export": "Integration & Export",
+  "transformation": "Transformation & Modelling",
+  "storage-and-compute": "Storage & Compute",
+  "orchestration-and-observability": "Orchestration & Observability"
 };
 
 export const translate = (key: string) => messages[key] || "-";
