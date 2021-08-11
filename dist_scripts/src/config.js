@@ -4,10 +4,10 @@ exports.assetUrl = exports.isMobileViewport = exports.translate = exports.showEm
 exports.radarName = process.env.REACT_APP_RADAR_NAME || "Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.quadrants = [
-    "integration-and-export",
-    "transformation",
-    "storage-and-compute",
+    "extract-load-transform",
     "orchestration-and-observability",
+    "storage-and-compute",
+    "tools-and-methods"
 ];
 exports.rings = ["all", "adopt", "trial", "assess", "hold"];
 var getItemPageNames = function (items) {
@@ -16,10 +16,10 @@ var getItemPageNames = function (items) {
 exports.getItemPageNames = getItemPageNames;
 exports.showEmptyRings = false;
 var messages = {
-    "integration-and-export": "Integration & Export",
-    "transformation": "Transformation & Modelling",
+    "extract-load-transform": "Extract, Load, Transform",
+    "orchestration-and-observability": "Orchestration & Observability",
     "storage-and-compute": "Storage & Compute",
-    "orchestration-and-observability": "Orchestration & Observability"
+    "tools-and-methods": "Tools & Methods",
 };
 var translate = function (key) { return messages[key] || "-"; };
 exports.translate = translate;

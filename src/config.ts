@@ -5,10 +5,10 @@ export const radarName =
 export const radarNameShort = radarName;
 
 export const quadrants = [
-  "integration-and-export",
-  "transformation",
-  "storage-and-compute",
+  "extract-load-transform",
   "orchestration-and-observability",
+  "storage-and-compute",
+  "tools-and-methods"
 ];
 
 export const rings = ["all", "adopt", "trial", "assess", "hold"] as const;
@@ -21,10 +21,10 @@ export const getItemPageNames = (items: Item[]) =>
 export const showEmptyRings = false;
 
 const messages: { [k: string]: string } = {
-  "integration-and-export": "Integration & Export",
-  "transformation": "Transformation & Modelling",
+  "extract-load-transform": "Extract, Load, Transform",
+  "orchestration-and-observability": "Orchestration & Observability",
   "storage-and-compute": "Storage & Compute",
-  "orchestration-and-observability": "Orchestration & Observability"
+  "tools-and-methods": "Tools & Methods",
 };
 
 export const translate = (key: string) => messages[key] || "-";
