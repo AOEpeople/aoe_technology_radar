@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assetUrl = exports.isMobileViewport = exports.translate = exports.showEmptyRings = exports.getItemPageNames = exports.rings = exports.quadrants = exports.radarNameShort = exports.radarName = void 0;
-exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
+exports.radarName = process.env.REACT_APP_RADAR_NAME || "Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.quadrants = [
-    "languages-and-frameworks",
-    "data-integration-and-transformation",
-    "data-storage-and-compute",
-    "platforms-and-tools",
+    "data-ingestion",
+    "data-storage-and-processing",
+    "data-transformation-and-modelling",
+    "orchestration-and-observability"
 ];
 exports.rings = ["all", "adopt", "trial", "assess", "hold"];
 var getItemPageNames = function (items) {
@@ -16,10 +16,10 @@ var getItemPageNames = function (items) {
 exports.getItemPageNames = getItemPageNames;
 exports.showEmptyRings = false;
 var messages = {
-    "languages-and-frameworks": "Languages & Frameworks",
-    "methods-and-patterns": "Methods & Patterns",
-    "platforms-and-aoe-services": "Platforms & Operations",
-    tools: "Tools",
+    "data-ingestion": "Data Ingestion",
+    "data-storage-and-processing": "Data Storage & Processing",
+    "data-transformation-and-modelling": "Data Transformation & Modelling",
+    "orchestration-and-observability": "Orchestration & Observability"
 };
 var translate = function (key) { return messages[key] || "-"; };
 exports.translate = translate;

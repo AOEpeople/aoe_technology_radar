@@ -1,14 +1,14 @@
 import { Item } from "./model";
 
 export const radarName =
-  process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
+  process.env.REACT_APP_RADAR_NAME || "Technology Radar";
 export const radarNameShort = radarName;
 
 export const quadrants = [
-  "languages-and-frameworks",
-  "data-integration-and-transformation",
-  "data-storage-and-compute",
-  "platforms-and-tools",
+  "data-ingestion",
+  "data-storage-and-processing",
+  "data-transformation-and-modelling",
+  "orchestration-and-observability"
 ];
 
 export const rings = ["all", "adopt", "trial", "assess", "hold"] as const;
@@ -21,10 +21,10 @@ export const getItemPageNames = (items: Item[]) =>
 export const showEmptyRings = false;
 
 const messages: { [k: string]: string } = {
-  "languages-and-frameworks": "Languages & Frameworks",
-  "methods-and-patterns": "Methods & Patterns",
-  "platforms-and-aoe-services": "Platforms & Operations",
-  tools: "Tools",
+  "data-ingestion": "Data Ingestion",
+  "data-storage-and-processing": "Data Storage & Processing",
+  "data-transformation-and-modelling": "Data Transformation & Modelling",
+  "orchestration-and-observability": "Orchestration & Observability"
 };
 
 export const translate = (key: string) => messages[key] || "-";
