@@ -5,7 +5,7 @@ export const radarName =
 export const radarNameShort = radarName;
 
 export const quadrants = [
-  "data-ingestion",
+  "data-ingestion-and-export",
   "data-storage-and-processing",
   "data-transformation-and-modelling",
   "orchestration-and-observability"
@@ -21,7 +21,7 @@ export const getItemPageNames = (items: Item[]) =>
 export const showEmptyRings = false;
 
 const messages: { [k: string]: string } = {
-  "data-ingestion": "Data Ingestion",
+  "data-ingestion-and-export": "Data Ingestion & Export",
   "data-storage-and-processing": "Data Storage & Processing",
   "data-transformation-and-modelling": "Data Transformation & Modelling",
   "orchestration-and-observability": "Orchestration & Observability"

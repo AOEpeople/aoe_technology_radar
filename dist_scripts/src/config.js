@@ -4,7 +4,7 @@ exports.assetUrl = exports.isMobileViewport = exports.translate = exports.showEm
 exports.radarName = process.env.REACT_APP_RADAR_NAME || "Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.quadrants = [
-    "data-ingestion",
+    "data-ingestion-and-export",
     "data-storage-and-processing",
     "data-transformation-and-modelling",
     "orchestration-and-observability"
@@ -16,7 +16,7 @@ var getItemPageNames = function (items) {
 exports.getItemPageNames = getItemPageNames;
 exports.showEmptyRings = false;
 var messages = {
-    "data-ingestion": "Data Ingestion",
+    "data-ingestion-and-export": "Data Ingestion & Export",
     "data-storage-and-processing": "Data Storage & Processing",
     "data-transformation-and-modelling": "Data Transformation & Modelling",
     "orchestration-and-observability": "Orchestration & Observability"

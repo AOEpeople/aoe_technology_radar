@@ -32,7 +32,7 @@
           "release": "2021-01-01",
           "title": "Akeneo",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\akeneo.md",
           "body": "<p>We continue to use Akeneo with a variety of customers to store and process product data in a standardized format. It is the de facto standard for open source PIM&#39;s and therefore an integral part of our e-commerce solutions.</p>\n<p>In the meantime, Akeneo has been continuously developed and offers many new features that further facilitate product data collection.</p>\n<p>The recent switch to Elasticsearch and an update of Symfony improved runtime behaviour as well as scalability for future-prove use. Support for the latest release of PHP 8 is upcoming.</p>\n"
@@ -42,7 +42,7 @@
           "release": "2017-03-01",
           "title": "Akeneo",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\akeneo.md",
           "body": "<p>Akeneo is a Product Information Management system (also known as PIM, PCM or Product MDM) and helps centralize and harmonize all the technical and marketing information of products.</p>\n<p>We use Akeneo with success in our projects and products (For example in OM3), where it is responsible for:</p>\n<ul>\n<li>  Keeping product data separate from other applications - such as E-Commerce systems</li>\n<li>  Managing livecycles of products and managing product portfolios with their category structures</li>\n<li>  Managing attributes and families and therefore acting as attribute master for the suite</li>\n</ul>\n<p>The system has a modern and friendly user interface and product managers find things such as completenesscheck, translation views and mass editing very helpful.</p>\n<p>With delta export and import capabilities and the usage of Mongo DB as persitence backend, the performance is acceptable. We miss a richer API - but the system is extendable and based on PHP/Symfony 2.</p>\n"
         }
@@ -50,7 +50,7 @@
       "name": "akeneo",
       "title": "Akeneo",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>We continue to use Akeneo with a variety of customers to store and process product data in a standardized format. It is the de facto standard for open source PIM&#39;s and therefore an integral part of our e-commerce solutions.</p>\n<p>In the meantime, Akeneo has been continuously developed and offers many new features that further facilitate product data collection.</p>\n<p>The recent switch to Elasticsearch and an update of Symfony improved runtime behaviour as well as scalability for future-prove use. Support for the latest release of PHP 8 is upcoming.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -194,7 +194,7 @@
           "release": "2017-03-01",
           "title": "Ant",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\ant.md",
           "body": "<p>Apache Ant was build in 1997 to have something like Make in the C/C++ world for Java. Ant uses xml files to describe steps required to produce executable artifacts from source code. The main concepts of tasks and targets are programmable in an imperative style.</p>\n<p>Apache Ant was and is widely used by large software projects. Our recommendation is to stop using Apache Ant for new projects. If you are free to choose, we recommend Gradle as an Apache Ant replacement.</p>\n"
         }
@@ -202,7 +202,7 @@
       "name": "ant",
       "title": "Ant",
       "ring": "hold",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Apache Ant was build in 1997 to have something like Make in the C/C++ world for Java. Ant uses xml files to describe steps required to produce executable artifacts from source code. The main concepts of tasks and targets are programmable in an imperative style.</p>\n<p>Apache Ant was and is widely used by large software projects. Our recommendation is to stop using Apache Ant for new projects. If you are free to choose, we recommend Gradle as an Apache Ant replacement.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -217,7 +217,7 @@
           "release": "2019-11-01",
           "title": "Anypoint platform",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\anypoint-platform.md",
           "body": "<p>Recently our teams migrated some project from anypoint to <a href=\"/techradar/tools/apache-camel.html\">&quot;Apache Camel&quot;</a> or use <a href=\"/techradar/tools/alpakka.html\">&quot;Alpakka&quot;</a> for integration work. </p>\n"
@@ -227,7 +227,7 @@
           "release": "2017-03-01",
           "title": "Anypoint platform",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\anypoint-platform.md",
           "body": "<p>Anypoint platform (formally known as Mule or Mule ESB) is an Enterprise Integration Platform written in Java.</p>\n<p>Anypoint provide tools to use Enterprise Integration Patterns (EAI) and has a high number of ready-to-use connectors to communicate with software tools such as SAP, Salesforce, etc.</p>\n<p>Anypoint Community Version is Open Source and contribution is possible. The platform is pluggable with own connectors. Mulesoft is also driving the <a href=\"/techradar/tools/raml.html\">raml</a> specification and related Open Source tools.</p>\n<p>AOE is a Mulesoft Partner and we use both the Community and Enterprise Versions of Anypoint. We use Anypoint as an API Gateway to combine and transform data from multiple backends. We use it as ESB or Integration platform for loose coupling of software components. And we also use it as legacy modernization to provide modern APIs for legacy- or foreign software.</p>\n"
         }
@@ -235,7 +235,7 @@
       "name": "anypoint-platform",
       "title": "Anypoint platform",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Recently our teams migrated some project from anypoint to <a href=\"/techradar/tools/apache-camel.html\">&quot;Apache Camel&quot;</a> or use <a href=\"/techradar/tools/alpakka.html\">&quot;Alpakka&quot;</a> for integration work. </p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -320,7 +320,7 @@
           "release": "2019-11-01",
           "title": "Apollo Client",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\apollo-client.md",
           "body": "<p>The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/apollographql/apollo-client\">Apollo Client</a> is a tool to efficiently work together with an GraphQL server. \nIt makes it easy to run your queries and mutations, cache results, brings tooling to download schemas and generate types to name a few of the useful features.</p>\n"
         }
@@ -328,7 +328,7 @@
       "name": "apollo-client",
       "title": "Apollo Client",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/apollographql/apollo-client\">Apollo Client</a> is a tool to efficiently work together with an GraphQL server. \nIt makes it easy to run your queries and mutations, cache results, brings tooling to download schemas and generate types to name a few of the useful features.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -375,7 +375,7 @@
           "release": "2019-11-01",
           "title": "AsciiDoc",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\asciidoc.md",
           "body": ""
@@ -385,7 +385,7 @@
           "release": "2018-03-01",
           "title": "AsciiDoc",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\asciidoc.md",
           "body": "<p>AsciiDoc is a <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Lightweight_markup_language\">lightweight markup language</a> such as Markdown. \nWith a concise Syntax, it supports more features than Markdown without extensions such as Tables and Table of Contents.\nIt&#39;s easy to write complex documentation with AsciiDoc. And with Asciidoctor you can export your text to Pdf, HTML, etc.</p>\n<p>At AOE, we use AsciiDoc for Documentation in our Repositories.</p>\n"
         }
@@ -393,7 +393,7 @@
       "name": "asciidoc",
       "title": "AsciiDoc",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>AsciiDoc is a <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Lightweight_markup_language\">lightweight markup language</a> such as Markdown. \nWith a concise Syntax, it supports more features than Markdown without extensions such as Tables and Table of Contents.\nIt&#39;s easy to write complex documentation with AsciiDoc. And with Asciidoctor you can export your text to Pdf, HTML, etc.</p>\n<p>At AOE, we use AsciiDoc for Documentation in our Repositories.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -441,7 +441,7 @@
           "release": "2018-03-01",
           "title": "Axure",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\axure.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.axure.com/\">Axure</a> is a tool that enables the creation of flowcharts, wireframes, mockups, user journeys and more.\nThrough features such as conditional logic, dynamic content and animations it is possible to create highly functional and rich UI prototypes, which convey a realistic look and feel as to how the application to be developed should behave and look.</p>\n<p>We at AOE have used Axure successfully in several projects and it helped us a lot, particularly:</p>\n<ul>\n<li>as a basis for discussing how features should look, feel and work with customers</li>\n<li>as a basis for customers&#39; discussions with other stakeholders</li>\n<li>as a basis for discussion and specifications for developers as to how features should look and behave</li>\n</ul>\n<p>In conclusion, Axure is a great tool that provides all stakeholders with a common understanding and helped us a lot to specify requirements and find their implications.</p>\n"
         }
@@ -449,7 +449,7 @@
       "name": "axure",
       "title": "Axure",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.axure.com/\">Axure</a> is a tool that enables the creation of flowcharts, wireframes, mockups, user journeys and more.\nThrough features such as conditional logic, dynamic content and animations it is possible to create highly functional and rich UI prototypes, which convey a realistic look and feel as to how the application to be developed should behave and look.</p>\n<p>We at AOE have used Axure successfully in several projects and it helped us a lot, particularly:</p>\n<ul>\n<li>as a basis for discussing how features should look, feel and work with customers</li>\n<li>as a basis for customers&#39; discussions with other stakeholders</li>\n<li>as a basis for discussion and specifications for developers as to how features should look and behave</li>\n</ul>\n<p>In conclusion, Axure is a great tool that provides all stakeholders with a common understanding and helped us a lot to specify requirements and find their implications.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -561,7 +561,7 @@
           "release": "2019-11-01",
           "title": "Bower",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\bower.md",
           "body": ""
@@ -571,7 +571,7 @@
           "release": "2017-03-01",
           "title": "Bower",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\bower.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bower.io/\">Bower</a> is a package manager for frontend resources such as JavaScript libraries and CSS frameworks. Compared to <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/\">npm</a>, it has a somewhat different approach to loading and resolving the packages, resulting in a smaller and cleaner folder structure.</p>\n<p>In small web projects, this approach is good and sufficient, but larger projects will need more dependencies such as task runners or testing frameworks, which are not available through Bower. As most of the frontend libraries are also available through npm, it&#39;s not suprising that we ask ourselves why Bower is still needed.</p>\n<p>At AOE, we decided to use npm as the only package manager to avoid having multiple tools doing similar things. Developers only need to deal with one solution, which makes the project easier to maintain.</p>\n"
         }
@@ -579,7 +579,7 @@
       "name": "bower",
       "title": "Bower",
       "ring": "hold",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bower.io/\">Bower</a> is a package manager for frontend resources such as JavaScript libraries and CSS frameworks. Compared to <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/\">npm</a>, it has a somewhat different approach to loading and resolving the packages, resulting in a smaller and cleaner folder structure.</p>\n<p>In small web projects, this approach is good and sufficient, but larger projects will need more dependencies such as task runners or testing frameworks, which are not available through Bower. As most of the frontend libraries are also available through npm, it&#39;s not suprising that we ask ourselves why Bower is still needed.</p>\n<p>At AOE, we decided to use npm as the only package manager to avoid having multiple tools doing similar things. Developers only need to deal with one solution, which makes the project easier to maintain.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -617,7 +617,7 @@
           "release": "2021-01-01",
           "title": "Cockpit",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\cockpit.md",
           "body": "<p>We decided to put this CMS on hold due to other - more adopted - alternatives like strapi.</p>\n"
@@ -627,7 +627,7 @@
           "release": "2019-11-01",
           "title": "Cockpit",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\cockpit.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://getcockpit.com/\">Cockpit</a> is a self-hosted headless and api-driven content management system.</p>\n"
         }
@@ -635,7 +635,7 @@
       "name": "cockpit",
       "title": "Cockpit",
       "ring": "hold",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>We decided to put this CMS on hold due to other - more adopted - alternatives like strapi.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -650,7 +650,7 @@
           "release": "2019-11-01",
           "title": "Concourse",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\concourse-ci.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://concourse-ci.org/\">Concourse</a> is an open-source continuous &quot;thing-doer&quot;. It represents a general approach for automation which can be used for Continuous Integration and Continuous Delivery. Concourse CI follows a strict concept that is based on idempotency, immutability, declarative config, stateless workers, and reproducible builds. Pipelines are built on the mechanics of resources, tasks and jobs, which are all configured in one or multiple YAML files. \nConcourse claims to be &quot;simple&quot; but has a steep learning curve in the beginning till it gets simple to use.\nConcourse is used in the Congstar Team to automate infrastructure deployments.</p>\n"
         }
@@ -658,7 +658,7 @@
       "name": "concourse-ci",
       "title": "Concourse",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://concourse-ci.org/\">Concourse</a> is an open-source continuous &quot;thing-doer&quot;. It represents a general approach for automation which can be used for Continuous Integration and Continuous Delivery. Concourse CI follows a strict concept that is based on idempotency, immutability, declarative config, stateless workers, and reproducible builds. Pipelines are built on the mechanics of resources, tasks and jobs, which are all configured in one or multiple YAML files. \nConcourse claims to be &quot;simple&quot; but has a steep learning curve in the beginning till it gets simple to use.\nConcourse is used in the Congstar Team to automate infrastructure deployments.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -673,7 +673,7 @@
           "release": "2018-03-01",
           "title": "Consul",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\consul.md",
           "body": ""
@@ -683,7 +683,7 @@
           "release": "2017-03-01",
           "title": "Consul",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\consul.md",
           "body": "<p>Consul is a lightweight service to provide a service discovery registry with failure detection (health checks) for circuit breakers. It also provides configuration management with key/value storage.<br>The typical way to use it is that a consul master cluster takes care of the update and write processes and consul clients run locally on the apps host - data is shared accross the complete Consul cluster. The data can be accessed by using DNS and HTTP APIs.</p>\n<p>At AOE, we use Consul for settings distribution with consul-template as a way to do <a href=\"/techradar/methods-and-patterns/settings-injection.html\">Settings Injection</a> during deployment. Consul is also used as service discovery between apps inside <a href=\"/techradar/methods-and-patterns/microservices.html\">microservice</a> environments.</p>\n<p>With Vault there is another tool that can be used to manage and share secrets.</p>\n"
         }
@@ -691,7 +691,7 @@
       "name": "consul",
       "title": "Consul",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Consul is a lightweight service to provide a service discovery registry with failure detection (health checks) for circuit breakers. It also provides configuration management with key/value storage.<br>The typical way to use it is that a consul master cluster takes care of the update and write processes and consul clients run locally on the apps host - data is shared accross the complete Consul cluster. The data can be accessed by using DNS and HTTP APIs.</p>\n<p>At AOE, we use Consul for settings distribution with consul-template as a way to do <a href=\"/techradar/methods-and-patterns/settings-injection.html\">Settings Injection</a> during deployment. Consul is also used as service discovery between apps inside <a href=\"/techradar/methods-and-patterns/microservices.html\">microservice</a> environments.</p>\n<p>With Vault there is another tool that can be used to manage and share secrets.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -761,7 +761,7 @@
           "release": "2019-11-01",
           "title": "Cypress",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\cypress.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cypress.io/\">Cypress</a> is a new front-end testing tool (end2end). It comes as a simple node package and is therefore easy to use and maintain for front-end developers and testers. Cypress has a different approach than selenium, it runs in the browser and in the same loop as the device under test.</p>\n<p>Good:</p>\n<ul>\n<li><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/cypress-io/cypress\">Open source</a></li>\n<li><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements\">Locally installed</a></li>\n<li>Straightforward (installed via npm and all tests are written in Javascript)</li>\n<li>Good <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell\">documentation</a> and learning material</li>\n<li>Can be run in a <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.cypress.io/guides/guides/command-line.html#cypress-run\">headless mode</a></li>\n</ul>\n<p>Not so good:</p>\n<ul>\n<li>No cross-browser testing (only chrome and electron)</li>\n<li>Scenarios with multiple browser tabs can not be tested</li>\n<li>Relatively new test tool, though it is becoming more popular</li>\n</ul>\n<p>Example of a test :</p>\n<pre><code class=\"language-js\">describe(&#x27;My First Test&#x27;, function() {\n  it(&#x27;Visits the Kitchen Sink&#x27;, function() {\n    cy.visit(&#x27;https<span class=\"hljs-symbol\">://example</span>.cypress.io&#x27;)\n\n    cy.contains(&#x27;type&#x27;).click()\n\n    cy.url().should(&#x27;include&#x27;, &#x27;/commands/actions&#x27;)\n\n    cy.get(&#x27;.action-email&#x27;)\n      .type(&#x27;fake@email.com&#x27;)\n      .should(&#x27;have.value&#x27;, &#x27;fake@email.com&#x27;)\n  })\n})\n</code></pre>\n"
         }
@@ -769,7 +769,7 @@
       "name": "cypress",
       "title": "Cypress",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cypress.io/\">Cypress</a> is a new front-end testing tool (end2end). It comes as a simple node package and is therefore easy to use and maintain for front-end developers and testers. Cypress has a different approach than selenium, it runs in the browser and in the same loop as the device under test.</p>\n<p>Good:</p>\n<ul>\n<li><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/cypress-io/cypress\">Open source</a></li>\n<li><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements\">Locally installed</a></li>\n<li>Straightforward (installed via npm and all tests are written in Javascript)</li>\n<li>Good <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell\">documentation</a> and learning material</li>\n<li>Can be run in a <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.cypress.io/guides/guides/command-line.html#cypress-run\">headless mode</a></li>\n</ul>\n<p>Not so good:</p>\n<ul>\n<li>No cross-browser testing (only chrome and electron)</li>\n<li>Scenarios with multiple browser tabs can not be tested</li>\n<li>Relatively new test tool, though it is becoming more popular</li>\n</ul>\n<p>Example of a test :</p>\n<pre><code class=\"language-js\">describe(&#x27;My First Test&#x27;, function() {\n  it(&#x27;Visits the Kitchen Sink&#x27;, function() {\n    cy.visit(&#x27;https<span class=\"hljs-symbol\">://example</span>.cypress.io&#x27;)\n\n    cy.contains(&#x27;type&#x27;).click()\n\n    cy.url().should(&#x27;include&#x27;, &#x27;/commands/actions&#x27;)\n\n    cy.get(&#x27;.action-email&#x27;)\n      .type(&#x27;fake@email.com&#x27;)\n      .should(&#x27;have.value&#x27;, &#x27;fake@email.com&#x27;)\n  })\n})\n</code></pre>\n",
       "info": "",
       "release": "2019-11-01",
@@ -784,7 +784,7 @@
           "release": "2019-11-01",
           "title": "Dagger",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\dagger.md",
           "body": ""
@@ -794,7 +794,7 @@
           "release": "2017-03-01",
           "title": "Dagger",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\dagger.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://google.github.io/dagger/\">Dagger</a> is a fully static, compile-time <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://en.wikipedia.org/wiki/Dependency_injection\">dependency injection</a> framework for both Java and Android. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://google.github.io/dagger/\">Dagger</a> doesn&#39;t use reflections at runtime, it saves resources. For us, it is a perfect match for Android development.</p>\n<p>We at AOE use it as a base framework for every Android project.</p>\n"
         }
@@ -802,7 +802,7 @@
       "name": "dagger",
       "title": "Dagger",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://google.github.io/dagger/\">Dagger</a> is a fully static, compile-time <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://en.wikipedia.org/wiki/Dependency_injection\">dependency injection</a> framework for both Java and Android. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://google.github.io/dagger/\">Dagger</a> doesn&#39;t use reflections at runtime, it saves resources. For us, it is a perfect match for Android development.</p>\n<p>We at AOE use it as a base framework for every Android project.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -850,7 +850,7 @@
           "release": "2021-01-01",
           "title": "DDEV",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": true,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\ddev.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.ddev.com/ddev-local/\">DDEV</a> is an open source tool that makes it dead simple to get local PHP development environments up and running within minutes. It&#39;s powerful and flexible as a result of its per-project environment configurations, which can be extended, version controlled, and shared. In short, DDEV aims to allow development teams to use Docker in their workflow without the complexities of bespoke configuration.</p>\n<p>At AOE, we use DDEV in a variety of PHP projects (large and small). It has made the onboarding process extremely easy for new developers and developers who have already worked with DDEV feel right at home in other projects.</p>\n<p>DDEV makes adding needed dependencies super easy and so far has met every requirement we&#39;ve ever had. This is mainly because DDEV is just a wrapper for existing tools like Docker-Compose. However, it does take away a lot of the complexity that is normally involved in configuring these tools.</p>\n"
@@ -859,7 +859,7 @@
       "name": "ddev",
       "title": "DDEV",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.ddev.com/ddev-local/\">DDEV</a> is an open source tool that makes it dead simple to get local PHP development environments up and running within minutes. It&#39;s powerful and flexible as a result of its per-project environment configurations, which can be extended, version controlled, and shared. In short, DDEV aims to allow development teams to use Docker in their workflow without the complexities of bespoke configuration.</p>\n<p>At AOE, we use DDEV in a variety of PHP projects (large and small). It has made the onboarding process extremely easy for new developers and developers who have already worked with DDEV feel right at home in other projects.</p>\n<p>DDEV makes adding needed dependencies super easy and so far has met every requirement we&#39;ve ever had. This is mainly because DDEV is just a wrapper for existing tools like Docker-Compose. However, it does take away a lot of the complexity that is normally involved in configuring these tools.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -1031,7 +1031,7 @@
           "release": "2021-01-01",
           "title": "Drupal",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": true,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\drupal.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.drupal.org/\">Drupal</a> is an open source content management system and framework based on a PHP stack.\nIt has a huge community, so it&#39;s no wonder it&#39;s among the top 10 CMS worldwide in terms of market share.</p>\n<p>At AOE we consume Drupal mainly headless via JSON API. We appreciate its large feature set and mature plugin system as well as the general ecosystem.</p>\n<p>In addition, the extensive documentation and setup with <a href=\"/techradar/tools/ddev.html\">DDEV</a> make it easy to get started.</p>\n"
@@ -1040,7 +1040,7 @@
       "name": "drupal",
       "title": "Drupal",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.drupal.org/\">Drupal</a> is an open source content management system and framework based on a PHP stack.\nIt has a huge community, so it&#39;s no wonder it&#39;s among the top 10 CMS worldwide in terms of market share.</p>\n<p>At AOE we consume Drupal mainly headless via JSON API. We appreciate its large feature set and mature plugin system as well as the general ecosystem.</p>\n<p>In addition, the extensive documentation and setup with <a href=\"/techradar/tools/ddev.html\">DDEV</a> make it easy to get started.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -1221,7 +1221,7 @@
           "release": "2019-11-01",
           "title": "Falco",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\falco.md",
           "body": "<p>Falco is an open source project for intrusion and abnormality detection for Cloud Native platforms such as Kubernetes. \nIt detects abnormal application behavior and sends alerts via Slack, Fluentd, NATS, and more.</p>\n<p>We are assessing Falco to add another angle to host based intrusion detection and alerting.</p>\n"
         }
@@ -1229,7 +1229,7 @@
       "name": "falco",
       "title": "Falco",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Falco is an open source project for intrusion and abnormality detection for Cloud Native platforms such as Kubernetes. \nIt detects abnormal application behavior and sends alerts via Slack, Fluentd, NATS, and more.</p>\n<p>We are assessing Falco to add another angle to host based intrusion detection and alerting.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1300,7 +1300,7 @@
           "release": "2019-11-01",
           "title": "Flow",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\flowtype.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://flow.org/\">Flow</a> is a static type checker for JavaScript code. It&#39;s goal is to make code faster, smarter, \nmore confidently, and to a bigger scale.</p>\n"
         }
@@ -1308,7 +1308,7 @@
       "name": "flowtype",
       "title": "Flow",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://flow.org/\">Flow</a> is a static type checker for JavaScript code. It&#39;s goal is to make code faster, smarter, \nmore confidently, and to a bigger scale.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1346,7 +1346,7 @@
           "release": "2019-11-01",
           "title": "Galen",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\galen.md",
           "body": ""
@@ -1356,7 +1356,7 @@
           "release": "2017-03-01",
           "title": "Galen",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\galen.md",
           "body": "<p>With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://galenframework.com/\">Galen Framework</a>, layout testing can be automated to save you a lot of manual work. With its own specification language (Galen Spec), you can write tests to verify the correct look of the web page as well as the location and alignment of specific elements on a page.</p>\n<p>So, you can write simple tests such as &quot;The button should be green&quot; as well as more complex behavior specifications such as &quot;On mobile devices the button should be inside the viewport&quot;. Especially when testing a responsive website on multiple devices, browsers and resolutions, the manual testing effort gets expensive. To help with that, Galen runs its specifications fully automated with Selenium against the required browsers and devices.</p>\n<p>Whenever a test fails Galen writes a test report with screenshots to show the mismatching areas on the page to help testers and developers become aware of the problem.</p>\n<p>At AOE, the Galen Framework helps us to continuously test the UI for potential regression bugs introduced by new features.</p>\n"
         }
@@ -1364,7 +1364,7 @@
       "name": "galen",
       "title": "Galen",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://galenframework.com/\">Galen Framework</a>, layout testing can be automated to save you a lot of manual work. With its own specification language (Galen Spec), you can write tests to verify the correct look of the web page as well as the location and alignment of specific elements on a page.</p>\n<p>So, you can write simple tests such as &quot;The button should be green&quot; as well as more complex behavior specifications such as &quot;On mobile devices the button should be inside the viewport&quot;. Especially when testing a responsive website on multiple devices, browsers and resolutions, the manual testing effort gets expensive. To help with that, Galen runs its specifications fully automated with Selenium against the required browsers and devices.</p>\n<p>Whenever a test fails Galen writes a test report with screenshots to show the mismatching areas on the page to help testers and developers become aware of the problem.</p>\n<p>At AOE, the Galen Framework helps us to continuously test the UI for potential regression bugs introduced by new features.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1379,7 +1379,7 @@
           "release": "2018-03-01",
           "title": "Gatling",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\gatlin.md",
           "body": "<p>Gatling is now the de-facto tool of choice for load testing in all of our\nprojects, having superseded JMeter completely. We therefore moved it to the\n<strong>Adopt</strong> level. </p>\n"
         },
@@ -1388,7 +1388,7 @@
           "release": "2017-03-01",
           "title": "Gatling",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\gatlin.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://gatling.io/\">Gatling</a> is a highly capable load testing tool. It is designed for ease of use, maintainability and high performance.</p>\n<p>Out of the box, Gatling comes with excellent support of the HTTP protocol that makes it a tool of choice for load testing any HTTP server. As the core engine is actually protocol agnostic, it is perfectly possible to implement support for other protocols. For example, Gatling currently also ships <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://gatling.io/docs/current/\">JMS support</a>.</p>\n<p>Gatling is built with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://extranet.aoe.com/confluence/display/knowledge/Scala+Lang\">Scala Lang</a> and <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://extranet.aoe.com/confluence/display/knowledge/Akka\">Akka</a>. By making good use of Scala&#39;s native language features (such as as the extensive type system), it makes writing tests feel natural and expressive, instead of writing load tests based on a DSL encoded in some special syntax.</p>\n<p>This allows us to use all native Scala features to work with, with the focus on the ability to structure your tests as pure code, and actually unit test your load tests.</p>\n<p>Besides the very good performance, we definitely like the pure code-based approach. Gatling creates HTML-based reports with nice graphs and metrics about how and what was tested.</p>\n<p>We use Gatling as an alternative to Jmeter with success in some of our projects. We encourage teams to try Gatling for future load testing. There is an integrated test recorder similiar to what other test frameworks have to get you started with a basic test case.</p>\n"
         }
@@ -1396,7 +1396,7 @@
       "name": "gatlin",
       "title": "Gatling",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Gatling is now the de-facto tool of choice for load testing in all of our\nprojects, having superseded JMeter completely. We therefore moved it to the\n<strong>Adopt</strong> level. </p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -1434,7 +1434,7 @@
           "release": "2019-11-01",
           "title": "Gitlab",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\gitlab.md",
           "body": "<p>Moved to &quot;adopt&quot;: Gitlab has proven to be a very useful tool for code and the collaboration around it.\nWith <a href=\"/techradar/tools/gitlab-ci.html\">Gitlab CI</a> there is also a powerful tool to automate continuous integration and delivery.</p>\n"
         },
@@ -1443,7 +1443,7 @@
           "release": "2018-03-01",
           "title": "Gitlab",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\gitlab.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://about.gitlab.com/\">Gitlab</a> provides nearly the same feature set as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/\">Github</a>, but at a lower price. It also provides the possibility of hosting iternally, which is essential for us.</p>\n<p>We are migrating more and more repositories from <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://gitolite.com/gitolite/index.html\">gitolite</a>, even from SVN to gitlab, as it provides a more stable and user friendly interface.</p>\n<p>Gitlab also makes user/permission handling easier than our old gitolite. We don&#39;t need the IT team every time a new repository needs to be set up.</p>\n"
         }
@@ -1451,7 +1451,7 @@
       "name": "gitlab",
       "title": "Gitlab",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Moved to &quot;adopt&quot;: Gitlab has proven to be a very useful tool for code and the collaboration around it.\nWith <a href=\"/techradar/tools/gitlab-ci.html\">Gitlab CI</a> there is also a powerful tool to automate continuous integration and delivery.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1466,7 +1466,7 @@
           "release": "2019-11-01",
           "title": "Gitlab CI",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\gitlab-ci.md",
           "body": "<p>Moved to &quot;adopt&quot;.</p>\n"
         },
@@ -1475,7 +1475,7 @@
           "release": "2018-03-01",
           "title": "Gitlab CI",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\gitlab-ci.md",
           "body": "<p>Until now, we have been using <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://jenkins.io/\">Jenkins</a> for almost every single task that we have automated. With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://about.gitlab.com/features/gitlab-ci-cd/\">Gitlab CI</a> on the market, we have a number of new possibilities.</p>\n<p>Some of the highlights are:</p>\n<ul>\n<li>Multi-platform – you can execute builds on Unix, Windows, OSX, and any other platform that supports Go.</li>\n<li>Multi-language – build scripts are command-line driven and work with Java, PHP, Ruby, C and any other language.</li>\n<li>Pipeline – you can define multiple jobs per stage and you can trigger other builds.</li>\n<li>Autoscaling – you can automatically spin up and down VM&#39;s to make sure your builds get processed immediately and minimize costs.</li>\n<li>Build artifacts – you can upload binaries and other build artifacts to GitLab and browse and download them.</li>\n<li>Docker support – you can use custom Docker images, spin up services as part of testing, build new Docker images, even run on Kubernetes. </li>\n</ul>\n"
         }
@@ -1483,7 +1483,7 @@
       "name": "gitlab-ci",
       "title": "Gitlab CI",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Moved to &quot;adopt&quot;.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1539,7 +1539,7 @@
           "release": "2017-03-01",
           "title": "Gradle",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\gradle.md",
           "body": "<p>Gradle is a build automation tool originating in the Java space, providing declarative dependency management (like Maven) and support for custom functionality (like Ant). It has superb multi-project support and is extremely extensible via third-party plugins and also via self-written extensions and plugins that make it outstanding in its area.</p>\n<p>It uses a Groovy-based DSL to declaratively model your problem domain (Build automation) and provides a rich object model with extension points to customize the build logic. Because it is extremely easy to extend this DSL, you can easily provide a declarative interface to your customizations and add-ons.</p>\n<p>While providing plugins for building libs, apps and webapps in Java, Groovy and Scala out of the box it is not tied to the JVM as target platform, which is impressively shown by the native build support for C / C++.</p>\n<p>At AOE, it is used in various places already: to build <a href=\"/techradar/tools/anypoint-platform.html\">Anypoint</a>- and <a href=\"/techradar/languages-and-frameworks/spring-boot.html\">Spring Boot-</a> based applications; to build Android Apps; to automate the creation of Jenkins Jobs; to create Docker images and Debian packages and also do some deployment scripting with it.</p>\n"
         }
@@ -1547,7 +1547,7 @@
       "name": "gradle",
       "title": "Gradle",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Gradle is a build automation tool originating in the Java space, providing declarative dependency management (like Maven) and support for custom functionality (like Ant). It has superb multi-project support and is extremely extensible via third-party plugins and also via self-written extensions and plugins that make it outstanding in its area.</p>\n<p>It uses a Groovy-based DSL to declaratively model your problem domain (Build automation) and provides a rich object model with extension points to customize the build logic. Because it is extremely easy to extend this DSL, you can easily provide a declarative interface to your customizations and add-ons.</p>\n<p>While providing plugins for building libs, apps and webapps in Java, Groovy and Scala out of the box it is not tied to the JVM as target platform, which is impressively shown by the native build support for C / C++.</p>\n<p>At AOE, it is used in various places already: to build <a href=\"/techradar/tools/anypoint-platform.html\">Anypoint</a>- and <a href=\"/techradar/languages-and-frameworks/spring-boot.html\">Spring Boot-</a> based applications; to build Android Apps; to automate the creation of Jenkins Jobs; to create Docker images and Debian packages and also do some deployment scripting with it.</p>\n",
       "info": "",
       "release": "2017-03-01",
@@ -1681,7 +1681,7 @@
           "release": "2019-11-01",
           "title": "Grunt",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\grunt.md",
           "body": ""
@@ -1691,7 +1691,7 @@
           "release": "2017-03-01",
           "title": "Grunt",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\grunt.md",
           "body": "<p>Grunt is a JavaScript task runner that automates repetitive tasks. While Grunt served us well for a good amount of projects,\nother alternatives such as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://gulpjs.com/\">Gulp</a> emerged in the meantime and proved to be a better pick for the\nmajority of our teams.</p>\n<p>We have two main reasons for discarding Grunt in favor of other tools:</p>\n<h3 id=\"speed\">Speed</h3>\n<p>If a decent amount of tasks is reached, Grunt is known to run slower than other tools, because it heavily relies on I/O operations and\nalways stores the result of one task as files on the disk.</p>\n<h3 id=\"configuration\">Configuration</h3>\n<p>On large projects where a lot of automation is required, it can get very tedious to maintain complex and parallel running tasks.\nThe grunt configuration files sometimes simply don´t gave us the flexibility that we needed.</p>\n<p>Currently our preferred way to go is either simply use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.npmjs.com/misc/scripts\">NPM scripts</a> or rely on <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/concepts/loaders/\">Webpack loaders</a> for file preprocessing. For non-webpack projects we also utilize Gulp.</p>\n"
         }
@@ -1699,7 +1699,7 @@
       "name": "grunt",
       "title": "Grunt",
       "ring": "hold",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Grunt is a JavaScript task runner that automates repetitive tasks. While Grunt served us well for a good amount of projects,\nother alternatives such as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://gulpjs.com/\">Gulp</a> emerged in the meantime and proved to be a better pick for the\nmajority of our teams.</p>\n<p>We have two main reasons for discarding Grunt in favor of other tools:</p>\n<h3 id=\"speed\">Speed</h3>\n<p>If a decent amount of tasks is reached, Grunt is known to run slower than other tools, because it heavily relies on I/O operations and\nalways stores the result of one task as files on the disk.</p>\n<h3 id=\"configuration\">Configuration</h3>\n<p>On large projects where a lot of automation is required, it can get very tedious to maintain complex and parallel running tasks.\nThe grunt configuration files sometimes simply don´t gave us the flexibility that we needed.</p>\n<p>Currently our preferred way to go is either simply use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.npmjs.com/misc/scripts\">NPM scripts</a> or rely on <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/concepts/loaders/\">Webpack loaders</a> for file preprocessing. For non-webpack projects we also utilize Gulp.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1714,7 +1714,7 @@
           "release": "2018-03-01",
           "title": "Gulp",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\gulp.md",
           "body": ""
@@ -1724,7 +1724,7 @@
           "release": "2017-03-01",
           "title": "Gulp",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\gulp.md",
           "body": "<p>Gulp is a javascript task runner much like Grunt. The tasks are written in javascript code.</p>\n<p>It is a tool that helps you automate numerous tasks surrounding web development. A typical use is to configure preprocessors for Sass, to compile CSS or to optimize CSS, Javascript and Images.</p>\n<p>With Gulp and its many plugins you can also do stuff such as start a web server and reload the browser if changes happen.</p>\n<p>To get started you need to install Gulp on your machine via npm.</p>\n<pre><code class=\"language-javascript\">npm <span class=\"hljs-keyword\">install</span> gulp -g\n</code></pre>\n<p>You also need it locally in your project, so you have to install it as a dependency in your project .</p>\n<pre><code class=\"language-javascript\">npm install gulp --<span class=\"hljs-built_in\">save</span>-<span class=\"hljs-built_in\">dev</span>\n</code></pre>\n<p>You can split your tasks into various smaller sub-tasks and even split it up into smaller files.</p>\n<p>A basic Gulp task can look like this:</p>\n<pre><code class=\"language-javascript\"><span class=\"hljs-keyword\">const</span> gulp = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp&#x27;</span>);\n<span class=\"hljs-comment\">// Requires the gulp-sass plugin</span>\n<span class=\"hljs-keyword\">const</span> sass = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp-sass&#x27;</span>);\n<span class=\"hljs-keyword\">const</span> autoprefixer = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp-autoprefixer&#x27;</span>);\n<span class=\"hljs-keyword\">const</span> cssnano = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp-cssnano&#x27;</span>);\n\ngulp.<span class=\"hljs-title function_\">task</span>(<span class=\"hljs-string\">&#x27;sass&#x27;</span>, <span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>){\n  <span class=\"hljs-keyword\">return</span> gulp.<span class=\"hljs-title function_\">src</span>(<span class=\"hljs-string\">&#x27;app/scss/**/*.scss&#x27;</span>) <span class=\"hljs-comment\">// tell gulp where your source files are</span>\n    .<span class=\"hljs-title function_\">pipe</span>(<span class=\"hljs-title function_\">sass</span>()) <span class=\"hljs-comment\">// Converts sass into css with the help of a gulp plugin called gulp-sass</span>\n    .<span class=\"hljs-title function_\">pipe</span>(<span class=\"hljs-title function_\">autoprefixer</span>({<span class=\"hljs-attr\">browsers</span>: [<span class=\"hljs-string\">&#x27;last 2 versions&#x27;</span>]})) <span class=\"hljs-comment\">// auto prefixes the css for the last 2 versions of browser, like ie9 specific css</span>\n    .<span class=\"hljs-title function_\">pipe</span>(<span class=\"hljs-title function_\">cssnano</span>()) <span class=\"hljs-comment\">// minify the css</span>\n    .<span class=\"hljs-title function_\">pipe</span>(gulp.<span class=\"hljs-title function_\">dest</span>(<span class=\"hljs-string\">&#x27;app/css&#x27;</span>)) <span class=\"hljs-comment\">// tell gulp where to put the converted file. this is the first time where a file is written</span>\n});\n</code></pre>\n<p>you can now run this task simply by executing the following command in your terminal:</p>\n<pre><code class=\"language-javascript\"><span class=\"hljs-attribute\">gulp sass</span>\n</code></pre>\n"
         }
@@ -1732,7 +1732,7 @@
       "name": "gulp",
       "title": "Gulp",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Gulp is a javascript task runner much like Grunt. The tasks are written in javascript code.</p>\n<p>It is a tool that helps you automate numerous tasks surrounding web development. A typical use is to configure preprocessors for Sass, to compile CSS or to optimize CSS, Javascript and Images.</p>\n<p>With Gulp and its many plugins you can also do stuff such as start a web server and reload the browser if changes happen.</p>\n<p>To get started you need to install Gulp on your machine via npm.</p>\n<pre><code class=\"language-javascript\">npm <span class=\"hljs-keyword\">install</span> gulp -g\n</code></pre>\n<p>You also need it locally in your project, so you have to install it as a dependency in your project .</p>\n<pre><code class=\"language-javascript\">npm install gulp --<span class=\"hljs-built_in\">save</span>-<span class=\"hljs-built_in\">dev</span>\n</code></pre>\n<p>You can split your tasks into various smaller sub-tasks and even split it up into smaller files.</p>\n<p>A basic Gulp task can look like this:</p>\n<pre><code class=\"language-javascript\"><span class=\"hljs-keyword\">const</span> gulp = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp&#x27;</span>);\n<span class=\"hljs-comment\">// Requires the gulp-sass plugin</span>\n<span class=\"hljs-keyword\">const</span> sass = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp-sass&#x27;</span>);\n<span class=\"hljs-keyword\">const</span> autoprefixer = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp-autoprefixer&#x27;</span>);\n<span class=\"hljs-keyword\">const</span> cssnano = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&#x27;gulp-cssnano&#x27;</span>);\n\ngulp.<span class=\"hljs-title function_\">task</span>(<span class=\"hljs-string\">&#x27;sass&#x27;</span>, <span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>){\n  <span class=\"hljs-keyword\">return</span> gulp.<span class=\"hljs-title function_\">src</span>(<span class=\"hljs-string\">&#x27;app/scss/**/*.scss&#x27;</span>) <span class=\"hljs-comment\">// tell gulp where your source files are</span>\n    .<span class=\"hljs-title function_\">pipe</span>(<span class=\"hljs-title function_\">sass</span>()) <span class=\"hljs-comment\">// Converts sass into css with the help of a gulp plugin called gulp-sass</span>\n    .<span class=\"hljs-title function_\">pipe</span>(<span class=\"hljs-title function_\">autoprefixer</span>({<span class=\"hljs-attr\">browsers</span>: [<span class=\"hljs-string\">&#x27;last 2 versions&#x27;</span>]})) <span class=\"hljs-comment\">// auto prefixes the css for the last 2 versions of browser, like ie9 specific css</span>\n    .<span class=\"hljs-title function_\">pipe</span>(<span class=\"hljs-title function_\">cssnano</span>()) <span class=\"hljs-comment\">// minify the css</span>\n    .<span class=\"hljs-title function_\">pipe</span>(gulp.<span class=\"hljs-title function_\">dest</span>(<span class=\"hljs-string\">&#x27;app/css&#x27;</span>)) <span class=\"hljs-comment\">// tell gulp where to put the converted file. this is the first time where a file is written</span>\n});\n</code></pre>\n<p>you can now run this task simply by executing the following command in your terminal:</p>\n<pre><code class=\"language-javascript\"><span class=\"hljs-attribute\">gulp sass</span>\n</code></pre>\n",
       "info": "",
       "release": "2018-03-01",
@@ -1804,7 +1804,7 @@
           "release": "2018-03-01",
           "title": "Helm",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\helm.md",
           "body": "<p>For managing deployments within Kubernetes we use Helm, which makes templating Kubernetes configuration files super easy (also known as Helm charts).</p>\n"
         }
@@ -1834,7 +1834,7 @@
           "release": "2017-03-01",
           "title": "Hystrix ",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\hystrix.md",
           "body": "<p>Hystrix is a very powerful library for handling failures, fallbacks and latency management within complex distributed environments. Netflix developed it and after years of experience, they are using it in almost each of their microservices. It evolved to a great library for handling resilience in complex architectures and covers solutions for the most common resilience patterns like:</p>\n<ul>\n<li>  Fail fasts</li>\n<li>  Fail silent</li>\n<li>  Circuit Breaker</li>\n<li>  Fallbacks (Static, Stubbed)</li>\n</ul>\n<p>Beside from that purposes Hystrix also offers some helpful features like parallel and asynchronous execution, In-Request-Caching and other useful features for working with distributed systems.</p>\n<p>Another useful component that you are able to use with Hystrix is his dashboard that give you the ability of real time monitoring of external dependencies and how they behave. Alerting is also able via the dashboard.</p>\n"
         }
@@ -1842,7 +1842,7 @@
       "name": "hystrix",
       "title": "Hystrix ",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Hystrix is not actively mainatined anymore and some of its goals can now be handled with service meshs.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -1912,7 +1912,7 @@
           "release": "2018-03-01",
           "title": "Invision",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\invision.md",
           "body": "<p>Invision is an online tool used to work and collaborate on design and prototypes and to share them between clients and the team.</p>\n<p>We use it in many projects now to present prototypes and designs and it helps in understanding the planned user experience.\nAlso, we use this directly as a reference from the user stories to help the development teams in understanding and implementing the right frontend and backend functionalities.</p>\n"
         }
@@ -1920,7 +1920,7 @@
       "name": "invision",
       "title": "Invision",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Invision is an online tool used to work and collaborate on design and prototypes and to share them between clients and the team.</p>\n<p>We use it in many projects now to present prototypes and designs and it helps in understanding the planned user experience.\nAlso, we use this directly as a reference from the user stories to help the development teams in understanding and implementing the right frontend and backend functionalities.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -1958,7 +1958,7 @@
           "release": "2018-03-01",
           "title": "Jest",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\jest.md",
           "body": "<p>Updated to &quot;adopt&quot;.</p>\n"
         },
@@ -1967,7 +1967,7 @@
           "release": "2017-03-01",
           "title": "Jest ",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\jest.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://facebook.github.io/jest/\">Jest</a> is a javascript testing framework by facebook to test javascript code <strong>and</strong> react applications / components.</p>\n<p>We started using Jest (and <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/facebook/watchman\">watchmen</a>) instead of Karma because it:</p>\n<ul>\n<li>  gives us integrated mocking library</li>\n<li>  gives us integrated support for testing &quot;promises&quot;</li>\n<li>  gives us integrated code coverage report</li>\n<li>  automatically runs tests related to changed files (instead of all tests)</li>\n<li>  gives us parallel test execution</li>\n<li>  gives us snapshot testing for react components</li>\n</ul>\n<p>It is easy to set up. And even if you have a running setup with karma/chai you can easily replace karma with jest. With a small <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://medium.com/@RubenOostinga/combining-chai-and-jest-matchers-d12d1ffd0303#.3callo273\">workaround</a>, chai and jest test matchers work fine together.</p>\n"
         }
@@ -1975,7 +1975,7 @@
       "name": "jest",
       "title": "Jest",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Updated to &quot;adopt&quot;.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -1990,7 +1990,7 @@
           "release": "2017-03-01",
           "title": "Job DSL (Jenkins)",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\job-dsl.md",
           "body": "<p>The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin\">Job DSL </a>is a plugin for the Jenkins automation server. Jenkins jobs that automate parts of a software project are usually configured using the web interface of Jenkins. If Jenkins is the choice for your project and the number of build jobs tend to grow, the Job DSL plugin is your friend.</p>\n<p>The plugin allows Jenkins jobs to be described by code (Groovy DSL). This code is then used for generating Jenkins jobs. As a consequence, job configuration can be part of the project&#39;s source code. During the generation step, existing jobs are synchronized, overwritten or left alone, depending on the configuration. The same configuration manages deleting or ignoring jobs that are not described in code anymore. Jobs can easily be restored in case of data loss and changed without clicking buttons for hours. The automation also makes it easy to seed large numbers of homogeneous components and builds on different branches.</p>\n<p>The ability to treat Jenkins jobs as code is a big advantage. We highly suggest that every team automate the setup of their jobs and their pipelines. Another way of expressing build pipelines as code is the new <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://jenkins.io/doc/book/pipeline/\">Jenkins Pipeline</a> feature - but still we see the need of Job DSL seeder jobs to seed the Jenkins pipeline jobs themselves and any additional jobs.</p>\n"
         }
@@ -1998,7 +1998,7 @@
       "name": "job-dsl",
       "title": "Job DSL (Jenkins)",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin\">Job DSL </a>is a plugin for the Jenkins automation server. Jenkins jobs that automate parts of a software project are usually configured using the web interface of Jenkins. If Jenkins is the choice for your project and the number of build jobs tend to grow, the Job DSL plugin is your friend.</p>\n<p>The plugin allows Jenkins jobs to be described by code (Groovy DSL). This code is then used for generating Jenkins jobs. As a consequence, job configuration can be part of the project&#39;s source code. During the generation step, existing jobs are synchronized, overwritten or left alone, depending on the configuration. The same configuration manages deleting or ignoring jobs that are not described in code anymore. Jobs can easily be restored in case of data loss and changed without clicking buttons for hours. The automation also makes it easy to seed large numbers of homogeneous components and builds on different branches.</p>\n<p>The ability to treat Jenkins jobs as code is a big advantage. We highly suggest that every team automate the setup of their jobs and their pipelines. Another way of expressing build pipelines as code is the new <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://jenkins.io/doc/book/pipeline/\">Jenkins Pipeline</a> feature - but still we see the need of Job DSL seeder jobs to seed the Jenkins pipeline jobs themselves and any additional jobs.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -2013,7 +2013,7 @@
           "release": "2018-03-01",
           "title": "Keycloak",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\keycloak.md",
           "body": "<p>Most distributed systems still face a growing demand for user management, authentication, authorization and Single sign-on. In light of a growing security demand and specialization, the Open Source project JBoss Keycloak is a perfect match. </p>\n<p>Keyloak has been a growing project from the outset and has a strong community. Keyloak is based on standards such as OAuth2, OIDC and SAML2. Securing a distributed system is supported by adapters, which are provided by Keycloak developers for different technology stacks. If there is no adapter for your technology stack, an integration on the protocol level with a library is simple. Many configurable features require no coding in the integrated projects. The required configuration is managed via code and promoted as usual. </p>\n<p>We use Keycloak in our OM3 suite for several authentication-related use cases – such as user management for system users and Single sign-on for customers. The OAuth access tokens can be used to secure APIs that access sensitive information. In addition, Keycloak is part of the AOE infrastructure and helps in securing the various services to support employees and customers.</p>\n"
         },
@@ -2022,7 +2022,7 @@
           "release": "2017-03-01",
           "title": "Keycloak",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\keycloak.md",
           "body": "<p>User management, authentication, authorization and Single Sign-On are part of most distributed systems nowadays. Building these sensitive and serious parts on your own might be a problem due to knowledge- and budget restrictions. Because of growing requirements in that field (social logins, single sign-on, federation, two-factor authentication, etc.), as well as growing security concerns, building these things on your own has become more challenging during the past decade.</p>\n<p>As a consequence, the recommendation is: use an existing solution and connect it with your project&#39;s codebase using provided standards. Our recommended solution is the Open Source project JBoss Keycloak. We use Keycloak in our OM3 suite for several authentication-related use cases - such as user management for system users and single sign-on for customers. The OAuth access tokens can be used to secure APIs that access sensitive information.</p>\n<p>Keyloak is based on standards such as OAuth2, OIDC and SAML2. Securing a distributed system is supported by adapters, which are provided by the Keycloak developers for different technology stacks. If there is no adapter for your technology stack, an integration on protocol level with a library is simple. A lot of configurable features require no coding in the integrated projects.</p>\n<p>By design, the Keycloak project offers customizability and extensibility via so-called SPIs, e.g. a custom authenticator can be implemented to address project specific problems.</p>\n<p>Keycloak normally runs standalone and can use various database products. A docker image is available to start in a containerized environment.</p>\n<p>Keycloak might be overkill, depending on your project needs. For a simple integration with, for instance, a social login provider (Facebock, Twitter, etc.) Keycloak might be too much. For a JVM project, the pac4j library might be an alternative. If a cloud-based solution is preferred and data privacy concerns are not an issue, Auth0 might be the choice.</p>\n"
         }
@@ -2030,7 +2030,7 @@
       "name": "keycloak",
       "title": "Keycloak",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Most distributed systems still face a growing demand for user management, authentication, authorization and Single sign-on. In light of a growing security demand and specialization, the Open Source project JBoss Keycloak is a perfect match. </p>\n<p>Keyloak has been a growing project from the outset and has a strong community. Keyloak is based on standards such as OAuth2, OIDC and SAML2. Securing a distributed system is supported by adapters, which are provided by Keycloak developers for different technology stacks. If there is no adapter for your technology stack, an integration on the protocol level with a library is simple. Many configurable features require no coding in the integrated projects. The required configuration is managed via code and promoted as usual. </p>\n<p>We use Keycloak in our OM3 suite for several authentication-related use cases – such as user management for system users and Single sign-on for customers. The OAuth access tokens can be used to secure APIs that access sensitive information. In addition, Keycloak is part of the AOE infrastructure and helps in securing the various services to support employees and customers.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -2317,7 +2317,7 @@
           "release": "2017-03-01",
           "title": "NPM",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\npm.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/\">NPM</a> is one of, if not the most, popular package manager for JavaScript. Because of the big community, you can find nearly every dependency in npm.</p>\n<p>Instead of other package managers such as <a href=\"/techradar/tools/bower.html\">bower</a>, you have to write your packages as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/CommonJS\">modules</a>. This unifies the way you have to use, test and, of course, understand dependencies.</p>\n<p>NPM creates a tree for your dependencies and their nesting dependencies. Because of this, you don&#39;t need to handle version conflicts, since every dependency uses there own version of e.g. <a href=\"/techradar/tools/webpack.html\">webpack</a>.</p>\n<p>With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.npmjs.com/cli/shrinkwrap\">shrinkwrap</a> you have a robust tool to lock down and manage the versions of your dependencies - following the <a href=\"/techradar/methods-and-patterns/pin-external-dependencies.html\">Pin (external) dependencies</a> approach.</p>\n<p>For each package you have to classify your dependencies:</p>\n<ul>\n<li>  dependencies are needed for use without the need of pre compiling, e.g. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://lodash.com/\">lodash</a></li>\n<li>  devDependencies are needed for development only, e.g. testing frameworks or pre compiler e.g. <a href=\"/techradar/languages-and-frameworks/babel.html\">babel</a></li>\n<li>  peerDependencies you have to provide for using the package</li>\n</ul>\n<p>With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.npmjs.com/misc/scripts\">scripts</a> you get support for the most common build lifecycle steps, e.g. build, start, test ...</p>\n<p>Other useful features:</p>\n<ul>\n<li>  mirror support for your own repository (e.g. <a href=\"/techradar/platforms-and-aoe-services/artifactory.html\">artifactory</a>)</li>\n<li>  can be used for server and client JavaScript development (see <a href=\"/techradar/languages-and-frameworks/node-js.html\">node.js</a> )</li>\n</ul>\n"
         }
@@ -2325,7 +2325,7 @@
       "name": "npm",
       "title": "NPM",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/\">NPM</a> is one of, if not the most, popular package manager for JavaScript. Because of the big community, you can find nearly every dependency in npm.</p>\n<p>Instead of other package managers such as <a href=\"/techradar/tools/bower.html\">bower</a>, you have to write your packages as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/CommonJS\">modules</a>. This unifies the way you have to use, test and, of course, understand dependencies.</p>\n<p>NPM creates a tree for your dependencies and their nesting dependencies. Because of this, you don&#39;t need to handle version conflicts, since every dependency uses there own version of e.g. <a href=\"/techradar/tools/webpack.html\">webpack</a>.</p>\n<p>With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.npmjs.com/cli/shrinkwrap\">shrinkwrap</a> you have a robust tool to lock down and manage the versions of your dependencies - following the <a href=\"/techradar/methods-and-patterns/pin-external-dependencies.html\">Pin (external) dependencies</a> approach.</p>\n<p>For each package you have to classify your dependencies:</p>\n<ul>\n<li>  dependencies are needed for use without the need of pre compiling, e.g. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://lodash.com/\">lodash</a></li>\n<li>  devDependencies are needed for development only, e.g. testing frameworks or pre compiler e.g. <a href=\"/techradar/languages-and-frameworks/babel.html\">babel</a></li>\n<li>  peerDependencies you have to provide for using the package</li>\n</ul>\n<p>With <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.npmjs.com/misc/scripts\">scripts</a> you get support for the most common build lifecycle steps, e.g. build, start, test ...</p>\n<p>Other useful features:</p>\n<ul>\n<li>  mirror support for your own repository (e.g. <a href=\"/techradar/platforms-and-aoe-services/artifactory.html\">artifactory</a>)</li>\n<li>  can be used for server and client JavaScript development (see <a href=\"/techradar/languages-and-frameworks/node-js.html\">node.js</a> )</li>\n</ul>\n",
       "info": "",
       "release": "2019-11-01",
@@ -2340,7 +2340,7 @@
           "release": "2021-01-01",
           "title": "NX",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": true,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\nx.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://nx.dev/\">Nx</a> is a suite of powerful, extensible dev tools to help you architect, test, and build at any scale.\nIt is mainly applicable in the environment of React, Angular and Node.js and tries to simplify and streamline the work in a mono repo.</p>\n<p>At AOE, we are currently taking our first steps with NX in a mono repo that is home to both our React and Next.js based frontend and our <a href=\"/techradar/languages-and-frameworks/go-lang.html\">Go</a> / <a href=\"/techradar/languages-and-frameworks/flamingo.html\">Flamingo</a> based backend.</p>\n<p>The integration with the Node.js components (React, Next.js, Cypress) works smoothly and brings the expected benefits such as faster build times through intelligent caching.\nSupport for Go is currently only rudimentary, which is why NX still has to prove itself in this area.</p>\n<p>Especially in the environment of Node.js in combination with the use of a mono repo, NX is worth a look.</p>\n"
@@ -2349,7 +2349,7 @@
       "name": "nx",
       "title": "NX",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://nx.dev/\">Nx</a> is a suite of powerful, extensible dev tools to help you architect, test, and build at any scale.\nIt is mainly applicable in the environment of React, Angular and Node.js and tries to simplify and streamline the work in a mono repo.</p>\n<p>At AOE, we are currently taking our first steps with NX in a mono repo that is home to both our React and Next.js based frontend and our <a href=\"/techradar/languages-and-frameworks/go-lang.html\">Go</a> / <a href=\"/techradar/languages-and-frameworks/flamingo.html\">Flamingo</a> based backend.</p>\n<p>The integration with the Node.js components (React, Next.js, Cypress) works smoothly and brings the expected benefits such as faster build times through intelligent caching.\nSupport for Go is currently only rudimentary, which is why NX still has to prove itself in this area.</p>\n<p>Especially in the environment of Node.js in combination with the use of a mono repo, NX is worth a look.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -2364,7 +2364,7 @@
           "release": "2019-11-01",
           "title": "Open API",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\open-api.md",
           "body": "<p>The OpenAPI Specification is becoming a broadly adopted industry standard for describing modern REST APIs. Other initiatives like RAML have <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://blogs.mulesoft.com/dev/api-dev/open-api-raml-better-together/\">joined</a> the OpenAPI Initiative.</p>\n<p>OpenAPI v2 version is basically the former Swagger - and Swagger provides useful tools for OpenAPI like the online editor and viewer <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://editor.swagger.io/\">http://editor.swagger.io/</a>\nWe have also found that this version currently have a good tool support accross languages, so you will find API client and server generation tools for a lot of languages, which makes it quite easy to connect to an API that is described in OpenAPI standard.</p>\n<p><strong>OpenAPI v3</strong></p>\n<p>OpenAPI v3 adds more features to the specification - for example the ability to describe APIs supporting request/callback pattern.</p>\n<p>There is a very good api designer <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.apicur.io/\">https://www.apicur.io/</a> and a good mock generator <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://microcks.github.io/index.html\">http://microcks.github.io/index.html</a></p>\n<p>The general tool support is excellent. See <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://openapi.tools/\">https://openapi.tools/</a></p>\n"
         }
@@ -2372,7 +2372,7 @@
       "name": "open-api",
       "title": "Open API",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>The OpenAPI Specification is becoming a broadly adopted industry standard for describing modern REST APIs. Other initiatives like RAML have <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://blogs.mulesoft.com/dev/api-dev/open-api-raml-better-together/\">joined</a> the OpenAPI Initiative.</p>\n<p>OpenAPI v2 version is basically the former Swagger - and Swagger provides useful tools for OpenAPI like the online editor and viewer <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://editor.swagger.io/\">http://editor.swagger.io/</a>\nWe have also found that this version currently have a good tool support accross languages, so you will find API client and server generation tools for a lot of languages, which makes it quite easy to connect to an API that is described in OpenAPI standard.</p>\n<p><strong>OpenAPI v3</strong></p>\n<p>OpenAPI v3 adds more features to the specification - for example the ability to describe APIs supporting request/callback pattern.</p>\n<p>There is a very good api designer <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.apicur.io/\">https://www.apicur.io/</a> and a good mock generator <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://microcks.github.io/index.html\">http://microcks.github.io/index.html</a></p>\n<p>The general tool support is excellent. See <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://openapi.tools/\">https://openapi.tools/</a></p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -2387,7 +2387,7 @@
           "release": "2017-03-01",
           "title": "Oro Platform",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\oro-platform.md",
           "body": "<p>OroPlatform is a framework built on Symfony 2 with the purpose of providing the features you need in every business application that is not your core business logic. Hence, it serves you with a basic application, providing login and complex security, menus and menu management, history, audit trails, settings management, etc. It comes complete with a design and many widgets to be utilized in own entities. Other Features of OroPlatform are, for example, a WebSocket server-driven user interface, queue-based task runners, REST Interface, as well as messaging- and workflow systems.</p>\n<p>One of the central features is that entities, which are to be managed within the system, can be set up completely by configuring them using the UI. This in itself implies that it puts another abstraction layer upon doctrine and symfony defaults.</p>\n<p>As with every framework or application, the general-purpose goals and abstraction comes with drawbacks: In fact, OroPlatform modifies and extends the common way of doing things in Symfony in several places, which makes the developer&#39;s life hard at times. Also, the UI and package managing are set in such a way that they are hard to extend or replace. The many additional abstraction layers can result in decreased performance.</p>\n<p>On the other hand, OroPlatform gives you a good headstart for prototyping and frees you from rebuilding common requirements - which makes it a relevant choice for business applications with the need to manage several entities in a backend. Also, projects such <a href=\"/techradar/tools/akeneo.html\">Akeneo</a> or OroCRM use OroPlatform with success.</p>\n<p>Since the project is still young, the future development and improvements need to be watched. We classified the Framework as <em><strong>Assess</strong></em>.</p>\n"
         }
@@ -2395,7 +2395,7 @@
       "name": "oro-platform",
       "title": "Oro Platform",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>OroPlatform is a framework built on Symfony 2 with the purpose of providing the features you need in every business application that is not your core business logic. Hence, it serves you with a basic application, providing login and complex security, menus and menu management, history, audit trails, settings management, etc. It comes complete with a design and many widgets to be utilized in own entities. Other Features of OroPlatform are, for example, a WebSocket server-driven user interface, queue-based task runners, REST Interface, as well as messaging- and workflow systems.</p>\n<p>One of the central features is that entities, which are to be managed within the system, can be set up completely by configuring them using the UI. This in itself implies that it puts another abstraction layer upon doctrine and symfony defaults.</p>\n<p>As with every framework or application, the general-purpose goals and abstraction comes with drawbacks: In fact, OroPlatform modifies and extends the common way of doing things in Symfony in several places, which makes the developer&#39;s life hard at times. Also, the UI and package managing are set in such a way that they are hard to extend or replace. The many additional abstraction layers can result in decreased performance.</p>\n<p>On the other hand, OroPlatform gives you a good headstart for prototyping and frees you from rebuilding common requirements - which makes it a relevant choice for business applications with the need to manage several entities in a backend. Also, projects such <a href=\"/techradar/tools/akeneo.html\">Akeneo</a> or OroCRM use OroPlatform with success.</p>\n<p>Since the project is still young, the future development and improvements need to be watched. We classified the Framework as <em><strong>Assess</strong></em>.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -2433,7 +2433,7 @@
           "release": "2021-01-01",
           "title": "PACT",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\pact.md",
           "body": "<p>At AOE we continue to use PACT but would like to use it even more. It therefore remains in the trail ring but was faded out from the overview page.</p>\n"
@@ -2443,7 +2443,7 @@
           "release": "2018-03-01",
           "title": "PACT",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\pact.md",
           "body": "<p>PACT (<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://pact.io/\">http://pact.io/</a>) is a family of frameworks that provides support for <em>Consumer Driven Contract testing</em> accross different langauages and frameworks.</p>\n<p>Consumer Driven Contract testing is a pattern for testing interfaces/boundaries between services.</p>\n<p>It allows &quot;consumers&quot; to run tests against a defined Mock and record the defined interactions (=PACT).\nIt puts &quot;providers&quot; in the position to run the PACT tests inside theire Continuous Integration Pipelines, so that the provider knows if he might break any consumers.</p>\n<p>This approach makes sense in organisations where teams collaborate more closely (See <a href=\"/techradar/methods-and-patterns/strategic-domain-driven-design.html\">Strategic Domain Driven Design</a> ), e.g. to build <a href=\"/techradar/methods-and-patterns/microservices.html\">Microservice oriented architectures</a></p>\n<p>Consumer Driven Contract Testing and how it can be conducted with PACT is documented very nicely on the official PACT website: <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.pact.io/\">https://docs.pact.io/</a>.</p>\n"
         }
@@ -2451,7 +2451,7 @@
       "name": "pact",
       "title": "PACT",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>At AOE we continue to use PACT but would like to use it even more. It therefore remains in the trail ring but was faded out from the overview page.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -2489,7 +2489,7 @@
           "release": "2017-03-01",
           "title": "phan",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\phan.md",
           "body": "<p>Phan is a static code analyzer for PHP7, which is very fast, since it uses the PHP 7 AST (abstract syntax tree). Phan basically offers some of the safety that otherwise only compiled type-safe languages have - such as checking function references and return types.</p>\n<p>We expect at least the following benefits:</p>\n<ul>\n<li>  Decreased bug density; possible bugs and issues are found early</li>\n<li>  Safer code and higher code quality</li>\n</ul>\n<p>We think Phan can be used in the deployment pipeline or as commit hooks for PHP 7-based applications. For a full Feature list check <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/etsy/phan#features\">here</a>.</p>\n"
         }
@@ -2497,7 +2497,7 @@
       "name": "phan",
       "title": "phan",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Phan is a static code analyzer for PHP7, which is very fast, since it uses the PHP 7 AST (abstract syntax tree). Phan basically offers some of the safety that otherwise only compiled type-safe languages have - such as checking function references and return types.</p>\n<p>We expect at least the following benefits:</p>\n<ul>\n<li>  Decreased bug density; possible bugs and issues are found early</li>\n<li>  Safer code and higher code quality</li>\n</ul>\n<p>We think Phan can be used in the deployment pipeline or as commit hooks for PHP 7-based applications. For a full Feature list check <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/etsy/phan#features\">here</a>.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -2590,7 +2590,7 @@
           "release": "2021-01-01",
           "title": "Plant UML",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\plant-uml.md",
           "body": ""
@@ -2600,7 +2600,7 @@
           "release": "2019-11-01",
           "title": "Plant UML",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\plant-uml.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://plantuml.com/\">PlantUML</a> is an open source project that allows to create UML diagrams in a text-based and declarative way.</p>\n<p>Since it is integrated in tools like Confluence, IntelliJ and Gitlab we use it a lot to quickly document results of software design sessions.</p>\n<p>Another similar tools that use just plain javascript to render the diagrams is <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://mermaid-js.github.io/mermaid/#/\">mermaid</a></p>\n"
         }
@@ -2608,7 +2608,7 @@
       "name": "plant-uml",
       "title": "Plant UML",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://plantuml.com/\">PlantUML</a> is an open source project that allows to create UML diagrams in a text-based and declarative way.</p>\n<p>Since it is integrated in tools like Confluence, IntelliJ and Gitlab we use it a lot to quickly document results of software design sessions.</p>\n<p>Another similar tools that use just plain javascript to render the diagrams is <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://mermaid-js.github.io/mermaid/#/\">mermaid</a></p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -2678,7 +2678,7 @@
           "release": "2017-03-01",
           "title": "PostCSS",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\postcss.md",
           "body": "<p>PostCSS is a tool for transforming stylesheets with JavaScript plugins. It comes with a parser that reads your CSS file into an AST, pipes it through the loaded plugins and finally\nstringifies it back into a (transformed) CSS output file.</p>\n<p>We at AOE love PostCSS because it gives us the power to use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/css-modules/css-modules\">CSS Modules</a>, which finally ends the curse of global CSS.</p>\n<p>It also has a huge list of more than 350 other <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://postcss.parts/\">available plugins</a>.\nSure, not all of them are useful, but the sheer number of plugins shows how easy it is to write your own plugin for it.\nIn fact, it´s just a matter of writing a single JS function.</p>\n<p>Finally, PostCSS is very fast and easy to setup because it runs 100% in JavaScript.\nCompared to <a href=\"/techradar/languages-and-frameworks/sass.html\">SASS</a> as a preprocessor, it feels much more powerful but at the same time less bloated with superfluous functionality because everything comes in its own little plugin</p>\n"
         }
@@ -2686,7 +2686,7 @@
       "name": "postcss",
       "title": "PostCSS",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>PostCSS is a tool for transforming stylesheets with JavaScript plugins. It comes with a parser that reads your CSS file into an AST, pipes it through the loaded plugins and finally\nstringifies it back into a (transformed) CSS output file.</p>\n<p>We at AOE love PostCSS because it gives us the power to use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/css-modules/css-modules\">CSS Modules</a>, which finally ends the curse of global CSS.</p>\n<p>It also has a huge list of more than 350 other <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://postcss.parts/\">available plugins</a>.\nSure, not all of them are useful, but the sheer number of plugins shows how easy it is to write your own plugin for it.\nIn fact, it´s just a matter of writing a single JS function.</p>\n<p>Finally, PostCSS is very fast and easy to setup because it runs 100% in JavaScript.\nCompared to <a href=\"/techradar/languages-and-frameworks/sass.html\">SASS</a> as a preprocessor, it feels much more powerful but at the same time less bloated with superfluous functionality because everything comes in its own little plugin</p>\n",
       "info": "",
       "release": "2017-03-01",
@@ -2701,7 +2701,7 @@
           "release": "2019-11-01",
           "title": "PostgreSQL",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\postgres.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.postgresql.org/\">PostgreSQL</a> is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>\n"
@@ -2710,7 +2710,7 @@
       "name": "postgres",
       "title": "PostgreSQL",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.postgresql.org/\">PostgreSQL</a> is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -2725,7 +2725,7 @@
           "release": "2019-11-01",
           "title": "Postman",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\postman.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.getpostman.com/\">Postman</a> is an API testing and documentation tool. Requests can be bundled into folders \nand easily be configured to be executed against multiple environments. Responses can be evaluated using the &quot;test&quot; feature.</p>\n<p>Even automated testing is possible using <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/package/newman\">Newman</a> as an addition to Postman.</p>\n"
@@ -2734,7 +2734,7 @@
       "name": "postman",
       "title": "Postman",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.getpostman.com/\">Postman</a> is an API testing and documentation tool. Requests can be bundled into folders \nand easily be configured to be executed against multiple environments. Responses can be evaluated using the &quot;test&quot; feature.</p>\n<p>Even automated testing is possible using <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/package/newman\">Newman</a> as an addition to Postman.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -2850,7 +2850,7 @@
           "release": "2019-11-01",
           "title": "RabbitMQ",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\rabbitmq.md",
           "body": "<p>RabbitMQ has proven to work very well for messaging in our projects, thats why we updated it to &quot;adopt&quot;. </p>\n"
         },
@@ -2859,7 +2859,7 @@
           "release": "2017-03-01",
           "title": "RabbitMQ",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\rabbitmq.md",
           "body": "<p>RabbitMQ is an Open Source message broker - implementing the Advanced Message Queuing Protocol (AMQP) protocol. It provides a reliable and scalable way to transport data between loosely coupled applications, using different EAI patterns such as the Publish &amp; Subscriber pattern. AMQP supports direct and fan-out exchanges (broadcasts) as well as topics. Queuing mechanisms allow for robust architectures, mitigating the risks of application downtimes. Typically, a RabbitMQ server can easily buffer millions of messages. RabbitMQ supports JMS in addition to AMQP. It is not intended to use JMS for new systems, but it makes RabbitMQ useful for integrating legacy systems.</p>\n<p>There are several alternative solutions to RabbitMQ, e. g. the free Apache ActiveMQ, which is integrated in <a href=\"/techradar/tools/anypoint-platform.html\">Anypoint platform</a>. ActiveMQ implements a somewhat simpler routing concept than RabbitMQ, but offers more protocols. Commercial products in this area are offered by IBM (Websphere MQ), Fiorano and almost every vendor of ESB products.</p>\n<p>We use RabbitMQ internally for transferring messages safely in our logging ecosystem between <a href=\"/techradar/platforms-and-aoe-services/elk-stack.html\">Logstash</a> proxies and servers using direct and fan-out exchanges for delivering messages to appropriate destinations. RabbitMQ is also used to asynchronously trigger Jenkins jobs from our SCMs to mitigate heavy load on the SCMs, usually caused by Jenkins polls for SCM changes. Additionally, some critical events for monitoring are using RabbitMQ for guaranteed notification. </p>\n<p>RabbitMQ is rated &quot;Trial&quot;. It fits into our approach to build robust, <a href=\"/techradar/methods-and-patterns/resilience-thinking.html\">resilient systems</a> and use <a href=\"/techradar/methods-and-patterns/decoupling-infrastructure-via-messaging.html\">asyncronous messages</a> for loosely coupled communications between components. In practice, RabbitMQ proved to be stable and dealt well with service interruptions from failures and maintenance slots. A common pain point is RabbitMQ as a single point of failure disrupting the data flow in a system. This issue is currently approached by setting up a HA cluster for RabbitMQ. The outcome of this approach will clarify the extent of future usage of RabbitMQ in our systems.</p>\n"
         }
@@ -2867,7 +2867,7 @@
       "name": "rabbitmq",
       "title": "RabbitMQ",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>RabbitMQ has proven to work very well for messaging in our projects, thats why we updated it to &quot;adopt&quot;. </p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -2891,7 +2891,7 @@
           "release": "2017-03-01",
           "title": "RAML",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\raml.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://raml.org/\">RAML</a> (the RESTful API Modelling Language) is a YAML-based API specification language. It&#39;s now available in <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#defining-types\">version 1.0</a>. The philosophy behind it is to <a href=\"/techradar/methods-and-patterns/api-first-design-approach.html\">specify the API before implementation</a>.</p>\n<p>If you follow this philosophy, you can design your API and discuss it with your clients and team before implementing a single line of code. API consumers are able to implement against the API before it&#39;s really up and running. The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/mulesoft/api-console\">api-console</a> provides a beautiful online documentation with &quot;try it&quot; features for your raml definition.</p>\n<p>The RAML ecosystem provides a rich toolset for code generation (e.g. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://rawgit.com/mulesoft/api-designer/master/dist/index.html#/?xDisableProxy=true\">online editor</a>;<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://apiworkbench.com/\"> api-workbench</a>), automatically generated documentation, code generation (e.g. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/Jumpscale/go-raml\">go-raml</a>), mocking, testing and much more. We prefer RAML over Swagger because of this.</p>\n"
         }
@@ -3024,7 +3024,7 @@
           "release": "2017-03-01",
           "title": "Rest Assured (Testing)",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\rest-assured.md",
           "body": "<p><strong><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/rest-assured/rest-assured\">REST-assured</a></strong> is a Java DSL for simplifying testing of REST-based services built on top of HTTP Builder. It supports the most important http request methods and can be used to validate and verify the response of these requests.</p>\n<p>At AOE, we use REST-assured with Spock to automate our API testing. We appreciate the easy-to-use DSL, which uses the Given-When-Then template (also known as Gherkin language). This template helps other project members to understand the code/test easily.</p>\n<p>Because of the seamless integration with Spock and our positive experience in one of our major projects, we classify REST-assured as <em>assess.</em></p>\n"
         }
@@ -3032,7 +3032,7 @@
       "name": "rest-assured",
       "title": "Rest Assured (Testing)",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><strong><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/rest-assured/rest-assured\">REST-assured</a></strong> is a Java DSL for simplifying testing of REST-based services built on top of HTTP Builder. It supports the most important http request methods and can be used to validate and verify the response of these requests.</p>\n<p>At AOE, we use REST-assured with Spock to automate our API testing. We appreciate the easy-to-use DSL, which uses the Given-When-Then template (also known as Gherkin language). This template helps other project members to understand the code/test easily.</p>\n<p>Because of the seamless integration with Spock and our positive experience in one of our major projects, we classify REST-assured as <em>assess.</em></p>\n",
       "info": "",
       "release": "2017-03-01",
@@ -3071,7 +3071,7 @@
           "release": "2017-03-01",
           "title": "RxJava",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\rxjava.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/ReactiveX/RxJava\">RxJava</a> is the Open Source Java implementation of ReactiveX. The main concept heavily relies on the Observer- (and Subscriber)-Pattern. An Observer emits a stream of data, which can be consumed by Subscribers. The Subscriber reacts (That&#39;s where the &#39;Rx&#39; comes from) asynchronously to those data events. Reactive Extensions were originally developed by Mircosoft&#39;s Erik Meijer and his team and have been ported to all major programming languages after being released to the public as Open Source software. We use RxJava (but actually RxAndroid to be precise) in the Congstar Android App to let the UI layer react to changes in the underlaying data layer.</p>\n"
         }
@@ -3079,7 +3079,7 @@
       "name": "rxjava",
       "title": "RxJava",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/ReactiveX/RxJava\">RxJava</a> is the Open Source Java implementation of ReactiveX. The main concept heavily relies on the Observer- (and Subscriber)-Pattern. An Observer emits a stream of data, which can be consumed by Subscribers. The Subscriber reacts (That&#39;s where the &#39;Rx&#39; comes from) asynchronously to those data events. Reactive Extensions were originally developed by Mircosoft&#39;s Erik Meijer and his team and have been ported to all major programming languages after being released to the public as Open Source software. We use RxJava (but actually RxAndroid to be precise) in the Congstar Android App to let the UI layer react to changes in the underlaying data layer.</p>\n",
       "info": "",
       "release": "2017-03-01",
@@ -3259,7 +3259,7 @@
           "release": "2019-11-01",
           "title": "SonarQube",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\sonarqube.md",
           "body": "<p>At AOE, we are using SonarQube to get a historical overview of the code quality in our Projects. With SonarQube, you can get a quick insight into the condition of your code. It analyzes many languages and provides numerous static analysis rules.\nSonarQube is also being used for Static Application Security Testing (SAST) which scans our code for potential security vulnerabilities and is an essential element of our Secure Software Development Lifecycle.</p>\n"
         },
@@ -3268,7 +3268,7 @@
           "release": "2018-03-01",
           "title": "SonarQube",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\sonarqube.md",
           "body": "<p>At AOE, we&#39;re evaluating SonarQube to get an historical overview of the code quality of our Projects. With SonarQube, you can get a quick hint about the condition of your code. It analyzes many languages and provides numerous static analysis rules.</p>\n"
         }
@@ -3276,7 +3276,7 @@
       "name": "sonarqube",
       "title": "SonarQube",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>At AOE, we are using SonarQube to get a historical overview of the code quality in our Projects. With SonarQube, you can get a quick insight into the condition of your code. It analyzes many languages and provides numerous static analysis rules.\nSonarQube is also being used for Static Application Security Testing (SAST) which scans our code for potential security vulnerabilities and is an essential element of our Secure Software Development Lifecycle.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -3378,7 +3378,7 @@
           "release": "2017-03-01",
           "title": "Spring REST Docs",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\spring-rest-docs.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://projects.spring.io/spring-restdocs/\">Spring REST Docs</a> auto generates <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://asciidoctor.org/\">Asciidoctor</a> snippets with the help of <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle#spring-mvc-test-framework\">Spring MVC Test</a> or <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://extranet.aoe.com/confluence/pages/viewpage.action?pageId=86937862\">RestAssured</a>.  So you can be sure that your tests are inline with the documentation.</p>\n<p>At AOE, we use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://projects.spring.io/spring-restdocs/\">Spring REST Docs</a> to document our Rest Services and Hal Resources. We also use it to auto generate <a href=\"/techradar/tools/wiremock.html\">Wiremock</a> Stubs, so the consumer of the service can test against the exact API of the service.</p>\n"
         }
@@ -3386,7 +3386,7 @@
       "name": "spring-rest-docs",
       "title": "Spring REST Docs",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://projects.spring.io/spring-restdocs/\">Spring REST Docs</a> auto generates <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://asciidoctor.org/\">Asciidoctor</a> snippets with the help of <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle#spring-mvc-test-framework\">Spring MVC Test</a> or <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://extranet.aoe.com/confluence/pages/viewpage.action?pageId=86937862\">RestAssured</a>.  So you can be sure that your tests are inline with the documentation.</p>\n<p>At AOE, we use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://projects.spring.io/spring-restdocs/\">Spring REST Docs</a> to document our Rest Services and Hal Resources. We also use it to auto generate <a href=\"/techradar/tools/wiremock.html\">Wiremock</a> Stubs, so the consumer of the service can test against the exact API of the service.</p>\n",
       "info": "",
       "release": "2017-03-01",
@@ -3401,7 +3401,7 @@
           "release": "2019-11-01",
           "title": "Storybook",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\storybook.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://storybook.js.org/\">Storybook</a> is a user interface development environment and playground for UI components. The tool enables developers to create components independently and showcase components interactively in an isolated development environment.\nStorybook runs outside of the main app so users can develop UI components in isolation without worrying about app specific dependencies and requirements.</p>\n"
         }
@@ -3409,7 +3409,7 @@
       "name": "storybook",
       "title": "Storybook",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://storybook.js.org/\">Storybook</a> is a user interface development environment and playground for UI components. The tool enables developers to create components independently and showcase components interactively in an isolated development environment.\nStorybook runs outside of the main app so users can develop UI components in isolation without worrying about app specific dependencies and requirements.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -3580,7 +3580,7 @@
           "release": "2018-03-01",
           "title": "Terraform",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\terraform.md",
           "body": "<p>For the infrastructure of our OM3 projects we run multiple Kubernetes clusters, and to orchestrate the infrastructure provisioning we quickly decided to go with Terraform.\nTerraform allows us to easily manage our infrastructure, from AWS EC2 instances to RabbitMQ message queues.\nAlso, the Kops installer for Kubernetes on AWS uses Terraform as its main building brick, and we can trigger Kops via Terraform.</p>\n<p>We bring terraform together with <a href=\"/techradar/tools/helm.html\">Helm</a> to manage similar parts of the infrastructure, for example a shared file with domainname to application mappings allows us to provision Route 53 DNS entries via Terraform and then roll out Kubernetes Ingress definitions with the appropriate hostname to service mapping via Helm.</p>\n"
         }
@@ -3635,7 +3635,7 @@
           "release": "2017-03-01",
           "title": "TYPO3 as a Framework",
           "ring": "hold",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\typo3-as-a-framework.md",
           "body": "<p>We should avoid building new projects around TYPO3 by default. A lot of past projects started with CMS-only features in the beginning, and, for example, developed toward highly customized E-Commerce platforms. Instead of rearranging the architecture in a useful way, functionality was built on top of TYPO3&#39;s core and its extension framework Extbase. In the context of larger projects, this lead to deployment monoliths and the inability to integrate new technologies.</p>\n<p>While in the past it was easy to kickstart a TYPO3 project with AOE&#39;s custom-tailored kickstarter, we now have a lot of knowledge and tools available to start projects with a much smarter architecture.\nThis does not mean you shouldn&#39;t use TYPO3 anymore, but use it as the tool it is: a content management system.</p>\n"
         }
@@ -3643,7 +3643,7 @@
       "name": "typo3-as-a-framework",
       "title": "TYPO3 as a Framework",
       "ring": "hold",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>We should avoid building new projects around TYPO3 by default. A lot of past projects started with CMS-only features in the beginning, and, for example, developed toward highly customized E-Commerce platforms. Instead of rearranging the architecture in a useful way, functionality was built on top of TYPO3&#39;s core and its extension framework Extbase. In the context of larger projects, this lead to deployment monoliths and the inability to integrate new technologies.</p>\n<p>While in the past it was easy to kickstart a TYPO3 project with AOE&#39;s custom-tailored kickstarter, we now have a lot of knowledge and tools available to start projects with a much smarter architecture.\nThis does not mean you shouldn&#39;t use TYPO3 anymore, but use it as the tool it is: a content management system.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -3658,7 +3658,7 @@
           "release": "2019-11-01",
           "title": "Vault",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2019-11-01\\vault.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.vaultproject.io/\">Hashicorp Vault</a> is a Go application with a Rest/Cli interface that you can use to securely access secrets.\nA secret can be any  sensitive data, such as credentials, certificates, access tokens, encryption keys etc. \nVaults key features are a secure secret storage, dynamic secretes (create on-demand secrets), data encryption, secret leasing, renewal and revocation.</p>\n"
         }
@@ -3666,7 +3666,7 @@
       "name": "vault",
       "title": "Vault",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.vaultproject.io/\">Hashicorp Vault</a> is a Go application with a Rest/Cli interface that you can use to securely access secrets.\nA secret can be any  sensitive data, such as credentials, certificates, access tokens, encryption keys etc. \nVaults key features are a secure secret storage, dynamic secretes (create on-demand secrets), data encryption, secret leasing, renewal and revocation.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -3745,7 +3745,7 @@
           "release": "2018-03-01",
           "title": "Webpack",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\webpack.md",
           "body": "<p>In the last few years, Webpack has grown to become the de-facto standard for Web\nbundling in the JavaScript-Ecosystem. With Version 3, Webpack is a more robust\nand better documented bundler with nice new features such as\n<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/plugins/module-concatenation-plugin/\">scope hoisting</a>.\nBecause of this, and because of the continuously growing community, we have adopted Webpack for nearly\nevery single-page application we have.</p>\n"
         },
@@ -3754,7 +3754,7 @@
           "release": "2017-03-01",
           "title": "Webpack",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\webpack.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/\">Webpack</a> is a web bundler for JavaScript applications. Instead of writing scripts to build and bundle your app like you would with <a href=\"/techradar/tools/gulp.html\">Gulp</a>, you just define what files you want to load into your bundle.</p>\n<p>In the following example, we define that JavaScript files should be handled by babel-loader, excluding the files from node_modules. The logic behind the process comes from the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/concepts/loaders/\">loader</a>. You can find the right loader in <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/search?q=loader%20webpack&amp;page=1&amp;ranking=optimal\">npm</a>.</p>\n<pre><code>{\n    test: <span class=\"hljs-regexp\">/\\.js$/</span>,\n    loader: <span class=\"hljs-string\">&#x27;babel-loader&#x27;</span>,\n    <span class=\"hljs-keyword\">exclude</span>: <span class=\"hljs-regexp\">/node_modules/</span>,\n}\n</code></pre>\n<p>On top of that you can use <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/plugins/\">plugins</a> to optimize your bundle like uglifying your code or put your common libraries in a separate file.</p>\n<p>Under the hood, you&#39;ve got nice features such as:</p>\n<ul>\n<li>  <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/guides/tree-shaking/\">tree shaking</a> to just bundle the features from a library you need</li>\n<li>  <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/guides/code-splitting/\">chunk splitting</a> to split your code to manage the load prioritization</li>\n</ul>\n<p>The configuration is simple and there is excellent and extensive <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/configuration/\">documentation</a>.</p>\n"
         }
@@ -3762,7 +3762,7 @@
       "name": "webpack",
       "title": "Webpack",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>In the last few years, Webpack has grown to become the de-facto standard for Web\nbundling in the JavaScript-Ecosystem. With Version 3, Webpack is a more robust\nand better documented bundler with nice new features such as\n<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webpack.js.org/plugins/module-concatenation-plugin/\">scope hoisting</a>.\nBecause of this, and because of the continuously growing community, we have adopted Webpack for nearly\nevery single-page application we have.</p>\n",
       "info": "",
       "release": "2018-03-01",
@@ -3777,7 +3777,7 @@
           "release": "2021-01-01",
           "title": "Wiremock",
           "ring": "adopt",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "featured": false,
           "fileName": "C:\\projects\\techradar\\radar\\2021-01-01\\wiremock.md",
           "body": "<p>Updated to &quot;adopt&quot;.</p>\n"
@@ -3787,7 +3787,7 @@
           "release": "2017-03-01",
           "title": "Wiremock",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\wiremock.md",
           "body": "<p><strong><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://wiremock.org/docs/\">WireMock</a></strong> is an HTTP mock server - it can be used to mock APIs for testing.</p>\n<p>At its core, it is a web server that can be prepared to serve canned responses to particular requests (stubbing), and that captures incoming requests so that they can be checked later (verification). It also has an assortment of other useful features including record/playback of interactions with other APIs, injection of faults and delays, simulation of stateful behavior.</p>\n<p>It can be used as a library by any JVM application, or run as a standalone process either on the same host as the system under test or a remote server. All of WireMock&#39;s features are accessible via its REST (JSON) interface and its Java API. Additionally, the mock server can be configured via JSON files.</p>\n<p>At AOE, we use WireMock as a standalone server to mock APIs that are outside our system context to get a stable environment for testing and rapid feedback. Besides the decoupled test and development advantages, the mocked APIs can also be used in contract-based tests. We also use embedded WireMock in functional tests to stub external services. The explicit test of faults are especially helpful in building and testing the <a href=\"/techradar/methods-and-patterns/resilience-thinking.html\">resilience of your application</a>.</p>\n<p>Because of the features such as flexible deployment, powerful request matching and record/payback interactions, as well as the fact that the server runs stable in our project environments, we classify WireMock as <em>trial</em>.</p>\n"
         }
@@ -3795,7 +3795,7 @@
       "name": "wiremock",
       "title": "Wiremock",
       "ring": "adopt",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Updated to &quot;adopt&quot;.</p>\n",
       "info": "",
       "release": "2021-01-01",
@@ -3833,7 +3833,7 @@
           "release": "2017-03-01",
           "title": "XMLUnit",
           "ring": "assess",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2017-03-01\\xmlunit.md",
           "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.xmlunit.org/\">XMLUnit</a> is a Java and .NET testing framework for XML documents. It is very useful for performing contract tests with SOAP interfaces or other XML-based message types.</p>\n<p>Comparing strings of XML can lead to instable tests because of the changing order of elements or changed values, etc. XMLUnit provides features to address these issues. It is possible to validate against an XML Schema, use XPath queries or compare against expected outcomes. It also comes with a nice diff-engine which makes it easy to check the parts of an XML document that are important.</p>\n"
         }
@@ -3841,7 +3841,7 @@
       "name": "xmlunit",
       "title": "XMLUnit",
       "ring": "assess",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"http://www.xmlunit.org/\">XMLUnit</a> is a Java and .NET testing framework for XML documents. It is very useful for performing contract tests with SOAP interfaces or other XML-based message types.</p>\n<p>Comparing strings of XML can lead to instable tests because of the changing order of elements or changed values, etc. XMLUnit provides features to address these issues. It is possible to validate against an XML Schema, use XPath queries or compare against expected outcomes. It also comes with a nice diff-engine which makes it easy to check the parts of an XML document that are important.</p>\n",
       "info": "",
       "release": "2019-11-01",
@@ -3856,7 +3856,7 @@
           "release": "2018-03-01",
           "title": "Yarn",
           "ring": "trial",
-          "quadrant": "data-ingestion",
+          "quadrant": "data-ingestion-and-export",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\yarn.md",
           "body": "<p>Yarn is a dependency management tool for frontend (node) projects similar to npm. It also uses the npm registry and \ninfrastructure. According to Yarn, the benefits are that Yarn is much faster, automatically writes a .lock file and \nbuilds up a local cache to be even faster when installing packages again.</p>\n<p>At AOE, we started using Yarn in different projects to evaluate if we can switch to Yarn for all projects.</p>\n"
         }
@@ -3864,7 +3864,7 @@
       "name": "yarn",
       "title": "Yarn",
       "ring": "trial",
-      "quadrant": "data-ingestion",
+      "quadrant": "data-ingestion-and-export",
       "body": "<p>Yarn is a dependency management tool for frontend (node) projects similar to npm. It also uses the npm registry and \ninfrastructure. According to Yarn, the benefits are that Yarn is much faster, automatically writes a .lock file and \nbuilds up a local cache to be even faster when installing packages again.</p>\n<p>At AOE, we started using Yarn in different projects to evaluate if we can switch to Yarn for all projects.</p>\n",
       "info": "",
       "release": "2019-11-01",
