@@ -11,7 +11,7 @@ export const quadrants = [
   "data-outgest",
   "data-qa",
   "orchestration-and-dashboard",
-  "retrival-query",
+  "retrieval-query",
 ];
 
 export const rings = ["all", "adopt", "trial", "assess", "hold"] as const;
@@ -30,7 +30,7 @@ const messages: { [k: string]: string } = {
   "data-qa": "Data Quality Assurance",
   "data-storage-and-processing": "Unknown",
   "orchestration-and-dashboard": "Orchestration & Dashboard",
-  "retrival-query": "Retrieval & Query"
+  "retrieval-query": "Retrieval & Query"
 };
 
 export const translate = (key: string) => messages[key] || "-";
