@@ -8,7 +8,7 @@ export const quadrants = [
   "data-ingestion-and-export",
   "data-storage-and-processing",
   "data-transformation-and-modelling",
-  "orchestration-and-observability"
+  "orchestration-and-dashboard"
 ];
 
 export const rings = ["all", "adopt", "trial", "assess", "hold"] as const;
