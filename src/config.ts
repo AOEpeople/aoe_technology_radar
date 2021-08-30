@@ -5,10 +5,13 @@ export const radarName =
 export const radarNameShort = radarName;
 
 export const quadrants = [
-  "data-ingestion-and-export",
+  "data-ingestion",
   "data-storage-and-processing",
-  "data-transformation-and-modelling",
-  "orchestration-and-dashboard"
+  "data-transformation",
+  "data-outgest",
+  "data-qa",
+  "orchestration-and-dashboard",
+  "retrival-query",
 ];
 
 export const rings = ["all", "adopt", "trial", "assess", "hold"] as const;
@@ -21,10 +24,13 @@ export const getItemPageNames = (items: Item[]) =>
 export const showEmptyRings = false;
 
 const messages: { [k: string]: string } = {
-  "data-ingestion-and-export": "Data Ingestion & Export",
-  "data-storage-and-processing": "Data Storage & Processing",
-  "data-transformation-and-modelling": "Data Transformation & Modelling",
-  "orchestration-and-observability": "Orchestration, Observability & Discovery"
+  "data-ingestion": "Ingest",
+  "data-transformation": "Transformation",
+  "data-outgest": "Outgest",
+  "data-qa": "Data Quality Assurance",
+  "data-storage-and-processing": "Unknown",
+  "orchestration-and-dashboard": "Orchestration & Dashboard",
+  "retrival-query": "Retrieval & Query"
 };
 
 export const translate = (key: string) => messages[key] || "-";
