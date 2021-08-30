@@ -24,7 +24,7 @@ const messages: { [k: string]: string } = {
   "data-ingestion-and-export": "Data Ingestion & Export",
   "data-storage-and-processing": "Data Storage & Processing",
   "data-transformation-and-modelling": "Data Transformation & Modelling",
-  "orchestration-and-observability": "Orchestration & Observability"
+  "orchestration-and-observability": "Orchestration, Observability & Discovery"
 };
 
 export const translate = (key: string) => messages[key] || "-";

@@ -19,7 +19,7 @@ var messages = {
     "data-ingestion-and-export": "Data Ingestion & Export",
     "data-storage-and-processing": "Data Storage & Processing",
     "data-transformation-and-modelling": "Data Transformation & Modelling",
-    "orchestration-and-observability": "Orchestration & Observability"
+    "orchestration-and-observability": "Orchestration, Observability & Discovery"
 };
 var translate = function (key) { return messages[key] || "-"; };
 exports.translate = translate;
