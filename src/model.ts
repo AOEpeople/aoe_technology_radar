@@ -5,7 +5,7 @@ export type ItemAttributes = {
   ring: Ring;
   quadrant: string;
   title: string;
-  featured: boolean;
+  featured?: boolean;
 };
 
 export type FlagType = "new" | "changed" | "default";

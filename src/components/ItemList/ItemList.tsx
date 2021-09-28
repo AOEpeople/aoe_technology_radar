@@ -33,14 +33,14 @@ const ItemList: React.FC<ItemListProps> = ({
     </div>
     <div className="item-list__list">
       {featuredItems.map((item, i) => (
-        <Item
-          key={item.name}
-          item={item}
-          noLeadingBorder={noLeadingBorder}
-          active={activeItem?.name === item.name}
-          style={itemStyle[i]}
-          greyedOut={false}
-        />
+        // <Item
+        //   key={item.name}
+        //   item={item}
+        //   noLeadingBorder={noLeadingBorder}
+        //   active={activeItem?.name === item.name}
+        //   style={itemStyle[i]}
+        //   greyedOut={false}
+        // />
       ))}
       {nonFeaturedItems.map((item, i) => (
         <Item
