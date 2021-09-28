@@ -8,6 +8,6 @@ describe("Item", () => {
   it("Should render the item", () => {
     render(<Item item={testItem} />, { wrapper: MemoryRouter });
 
-    expect(screen.queryByText(testItem.title)).not.toBeInTheDocument();
+    expect(screen.queryByText(testItem.title)).toBeInTheDocument();
   });
 });
