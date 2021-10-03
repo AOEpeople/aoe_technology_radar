@@ -110,6 +110,22 @@ To change the logo, create a public folder in your application and put your `log
 
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
+### Change the rings and quadrants config
+To change the default rings and quadrants of the radar, you can place a custom `config.json` file within the `public` folder.
+The content should look as follows:
+
+```json
+{
+  "quadrants": {
+    "languages-and-frameworks": "Languages & Frameworks",
+    "methods-and-patterns": "Methods & Patterns",
+    "platforms-and-aoe-services": "Platforms & Operations",
+    "tools": "Tools"
+  },
+  "rings":["all", "adopt", "trial", "assess", "hold"]
+}
+```
+
 ### Change the index.html
 To change the index.html, create a public folder in your application and put your `index.html` in it.
 

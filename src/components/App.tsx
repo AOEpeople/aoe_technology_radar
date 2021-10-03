@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { Item } from "../model";
 import { Messages, MessagesProvider } from "../context/MessagesContext";
+import { ConfigData } from "../config";
 
 interface Params {
   page: string;
@@ -40,9 +41,11 @@ const useQuery = () => new URLSearchParams(useLocation().search);
 const RouterWithPageParam = ({
   items,
   releases,
+  config,
 }: {
   items: Item[];
   releases: string[];
+  config: ConfigData;
 }) => {
   const { page } = useParams<Params>();
   const query = useQuery();
@@ -53,6 +56,7 @@ const RouterWithPageParam = ({
       search={query.get("search") || ""}
       items={items}
       releases={releases}
+      config={config}
     />
   );
 };
@@ -79,8 +83,11 @@ export default function App() {
   const messages = useFetch<Messages>(
     `${process.env.PUBLIC_URL}/messages.json`
   );
+  const config = useFetch<ConfigData>(
+    `${process.env.PUBLIC_URL}/config.json`
+  );
 
-  if (data) {
+  if (data && config) {
     const { items, releases } = data;
     return (
       <MessagesProvider messages={messages}>
@@ -93,7 +100,7 @@ export default function App() {
                     <HeaderWithPageParam />
                   </div>
                   <div className={classNames("page__content")}>
-                    <RouterWithPageParam items={items} releases={releases} />
+                    <RouterWithPageParam config={config} items={items} releases={releases} />
                   </div>
                   <div className="page__footer">
                     <FooterWithPageParam items={items} />

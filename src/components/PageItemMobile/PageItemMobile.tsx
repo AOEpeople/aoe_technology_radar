@@ -6,12 +6,13 @@ import Fadeable from "../Fadeable/Fadeable";
 import SetTitle from "../SetTitle";
 import ItemRevisions from "../ItemRevisions/ItemRevisions";
 
-import { translate } from "../../config";
+import { ConfigData, translate } from "../../config";
 import { groupByQuadrants, Item } from "../../model";
 
 type PageItemMobileProps = {
   pageName: string;
   items: Item[];
+  config: ConfigData;
   leaving: boolean;
   onLeave: () => void;
 };
@@ -19,6 +20,7 @@ type PageItemMobileProps = {
 export default function PageItemMobile({
   pageName,
   items,
+  config,
   leaving,
   onLeave,
 }: PageItemMobileProps) {
@@ -47,7 +49,7 @@ export default function PageItemMobile({
             <div className="mobile-item-page__header">
               <div className="split">
                 <div className="split__left">
-                  <h3 className="headline">{translate(item.quadrant)}</h3>
+                  <h3 className="headline">{translate(config, item.quadrant)}</h3>
                   <h1 className="hero-headline hero-headline--inverse">
                     {item.title}
                   </h1>
@@ -73,7 +75,7 @@ export default function PageItemMobile({
         <ItemList items={itemsInRing} activeItem={item}>
           <div className="split">
             <div className="split__left">
-              <h3 className="headline">{translate(item.quadrant)}</h3>
+              <h3 className="headline">{translate(config, item.quadrant)}</h3>
             </div>
             <div className="split__right">
               <Link className="icon-link" pageName={item.quadrant}>

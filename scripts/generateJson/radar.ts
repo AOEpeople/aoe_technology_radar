@@ -1,4 +1,5 @@
 import { readFile } from "fs-extra";
+import { readFileSync } from "fs";
 import * as path from "path";
 import frontMatter from "front-matter";
 // @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
@@ -6,8 +7,8 @@ import marked from "marked";
 import highlight from "highlight.js";
 
 import { radarPath, getAllMarkdownFiles } from "./file";
-import { quadrants, rings } from "../../src/config";
 import { Item, Revision, ItemAttributes, Radar } from "../../src/model";
+import { appBuild } from "../paths";
 
 type FMAttributes = ItemAttributes;
 
@@ -29,12 +30,16 @@ export const createRadar = async (): Promise<Radar> => {
 };
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
-  if (attributes.ring && !rings.includes(attributes.ring)) {
+  const rawConf = readFileSync(path.resolve(appBuild, 'config.json'), 'utf-8');
+  const config = JSON.parse(rawConf);
+
+  if (attributes.ring && !config.rings.includes(attributes.ring)) {
     throw new Error(
-      `Error: ${fileName} has an illegal value for 'ring' - must be one of ${rings}`
+      `Error: ${fileName} has an illegal value for 'ring' - must be one of ${config.rings}`
     );
   }
 
+  const quadrants = Object.keys(config.quadrants);
   if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
     throw new Error(
       `Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`
@@ -50,7 +55,7 @@ const createRevisionsFromFiles = (fileNames: string[]) => {
     fileNames.map(
       (fileName) =>
         new Promise<Revision>((resolve, reject) => {
-          readFile(fileName, "utf8", (err, data) => {
+          readFile(fileName, "utf8", async (err, data) => {
             if (err) {
               reject(err);
             } else {
