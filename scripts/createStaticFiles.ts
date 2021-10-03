@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-import { copyFileSync, mkdirSync, existsSync } from "fs";
+import { copyFileSync, mkdirSync, existsSync, readFileSync } from "fs";
 import { createRadar } from "./generateJson/radar";
-import { quadrants } from "../src/config";
 
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
@@ -22,8 +21,9 @@ process.on("unhandledRejection", (err) => {
 
     copyFileSync("build/index.html", "build/overview.html");
     copyFileSync("build/index.html", "build/help-and-about-tech-radar.html");
-
-    quadrants.forEach((quadrant) => {
+    const rawConf = readFileSync("build/config.json", "utf-8");
+    const config = JSON.parse(rawConf);
+    Object.keys(config.quadrants).forEach((quadrant) => {
       const destFolder = `build/${quadrant}`;
       copyFileSync("build/index.html", `${destFolder}.html`);
       if (!existsSync(destFolder)) {

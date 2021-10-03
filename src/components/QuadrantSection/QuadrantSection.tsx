@@ -1,5 +1,4 @@
-import React from "react";
-import { translate, rings, Ring, showEmptyRings } from "../../config";
+import { translate, showEmptyRings, ConfigData } from "../../config";
 import Badge from "../Badge/Badge";
 import Link from "../Link/Link";
 import ItemList from "../ItemList/ItemList";
@@ -7,7 +6,7 @@ import Flag from "../Flag/Flag";
 import { Group } from "../../model";
 import "./quadrant-section.scss";
 const renderList = (
-  ringName: Ring,
+  ringName: string,
   quadrantName: string,
   groups: Group,
   big: boolean
@@ -42,7 +41,7 @@ const renderList = (
 };
 
 const renderRing = (
-  ringName: Ring,
+  ringName: string,
   quadrantName: string,
   groups: Group,
   big: boolean
@@ -65,10 +64,12 @@ const renderRing = (
 export default function QuadrantSection({
   quadrantName,
   groups,
+  config,
   big = false,
 }: {
   quadrantName: string;
   groups: Group;
+  config: ConfigData;
   big?: boolean;
 }) {
   return (
@@ -76,7 +77,7 @@ export default function QuadrantSection({
       <div className="quadrant-section__header">
         <div className="split">
           <div className="split__left">
-            <h4 className="headline">{translate(quadrantName)}</h4>
+            <h4 className="headline">{translate(config, quadrantName)}</h4>
           </div>
           {!big && (
             <div className="split__right">
@@ -89,7 +90,7 @@ export default function QuadrantSection({
         </div>
       </div>
       <div className="quadrant-section__rings">
-        {rings.map((ringName) =>
+        {config.rings.map((ringName: string) =>
           renderRing(ringName, quadrantName, groups, big)
         )}
       </div>

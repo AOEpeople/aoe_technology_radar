@@ -76,13 +76,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createRadar = void 0;
 var fs_extra_1 = require("fs-extra");
+var fs_1 = require("fs");
 var path = __importStar(require("path"));
 var front_matter_1 = __importDefault(require("front-matter"));
 // @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
 var marked_1 = __importDefault(require("marked"));
 var highlight_js_1 = __importDefault(require("highlight.js"));
 var file_1 = require("./file");
-var config_1 = require("../../src/config");
+var paths_1 = require("../paths");
 marked_1.default.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
@@ -108,11 +109,14 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
 }); };
 exports.createRadar = createRadar;
 var checkAttributes = function (fileName, attributes) {
-    if (attributes.ring && !config_1.rings.includes(attributes.ring)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + config_1.rings);
+    var rawConf = fs_1.readFileSync(path.resolve(paths_1.appBuild, 'config.json'), 'utf-8');
+    var config = JSON.parse(rawConf);
+    if (attributes.ring && !config.rings.includes(attributes.ring)) {
+        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + config.rings);
     }
-    if (attributes.quadrant && !config_1.quadrants.includes(attributes.quadrant)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + config_1.quadrants);
+    var quadrants = Object.keys(config.quadrants);
+    if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
+        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + quadrants);
     }
     return attributes;
 };
@@ -120,19 +124,21 @@ var createRevisionsFromFiles = function (fileNames) {
     var publicUrl = process.env.PUBLIC_URL;
     return Promise.all(fileNames.map(function (fileName) {
         return new Promise(function (resolve, reject) {
-            fs_extra_1.readFile(fileName, "utf8", function (err, data) {
-                if (err) {
-                    reject(err);
-                }
-                else {
-                    var fm = front_matter_1.default(data);
-                    // add target attribute to external links
-                    // todo: check path
-                    var html = marked_1.default(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
-                    html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
-                    resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
-                }
-            });
+            fs_extra_1.readFile(fileName, "utf8", function (err, data) { return __awaiter(void 0, void 0, void 0, function () {
+                var fm, html;
+                return __generator(this, function (_a) {
+                    if (err) {
+                        reject(err);
+                    }
+                    else {
+                        fm = front_matter_1.default(data);
+                        html = marked_1.default(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
+                        html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
+                        resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
+                    }
+                    return [2 /*return*/];
+                });
+            }); });
         });
     }));
 };

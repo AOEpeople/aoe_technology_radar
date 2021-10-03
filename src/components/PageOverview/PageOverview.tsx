@@ -8,8 +8,8 @@ import Fadeable from "../Fadeable/Fadeable";
 import SetTitle from "../SetTitle";
 import Flag from "../Flag/Flag";
 import { groupByFirstLetter, Item } from "../../model";
+import { ConfigData, translate } from "../../config";
 import { useMessages } from "../../context/MessagesContext";
-import { translate, Ring } from "../../config";
 
 const containsSearchTerm = (text = "", term = "") => {
   // TODO search refinement
@@ -20,9 +20,10 @@ const containsSearchTerm = (text = "", term = "") => {
 };
 
 type PageOverviewProps = {
-  rings: readonly ("all" | Ring)[];
+  rings: readonly ("all" | string)[];
   search: string;
   items: Item[];
+  config: ConfigData;
   leaving: boolean;
   onLeave: () => void;
 };
@@ -31,10 +32,11 @@ export default function PageOverview({
   rings,
   search: searchProp,
   items,
+  config,
   leaving,
   onLeave,
 }: PageOverviewProps) {
-  const [ring, setRing] = useState<Ring | "all">("all");
+  const [ring, setRing] = useState<string | "all">("all");
   const [search, setSearch] = useState(searchProp);
   const { pageOverview } = useMessages();
   const title = pageOverview?.title || 'Technologies Overview';
@@ -46,7 +48,7 @@ export default function PageOverview({
     setSearch(searchProp);
   }, [rings, searchProp]);
 
-  const handleRingClick = (ring: Ring) => () => {
+  const handleRingClick = (ring: string) => () => {
     setRing(ring);
   };
 
@@ -134,7 +136,7 @@ export default function PageOverview({
                         <div className="split__right">
                           <div className="nav nav--relations">
                             <div className="nav__item">
-                              {translate(item.quadrant)}
+                              {translate(config, item.quadrant)}
                             </div>
                             <div className="nav__item">
                               <Badge type={item.ring}>{item.ring}</Badge>

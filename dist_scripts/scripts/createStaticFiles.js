@@ -39,7 +39,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
 var radar_1 = require("./generateJson/radar");
-var config_1 = require("../src/config");
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
 process.env.NODE_ENV = "production";
@@ -50,7 +49,7 @@ process.on("unhandledRejection", function (err) {
     throw err;
 });
 (function () { return __awaiter(void 0, void 0, void 0, function () {
-    var radar, e_1;
+    var radar, rawConf, config, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -61,7 +60,9 @@ process.on("unhandledRejection", function (err) {
                 radar = _a.sent();
                 fs_1.copyFileSync("build/index.html", "build/overview.html");
                 fs_1.copyFileSync("build/index.html", "build/help-and-about-tech-radar.html");
-                config_1.quadrants.forEach(function (quadrant) {
+                rawConf = fs_1.readFileSync("build/config.json", "utf-8");
+                config = JSON.parse(rawConf);
+                Object.keys(config.quadrants).forEach(function (quadrant) {
                     var destFolder = "build/" + quadrant;
                     fs_1.copyFileSync("build/index.html", destFolder + ".html");
                     if (!fs_1.existsSync(destFolder)) {

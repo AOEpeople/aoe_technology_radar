@@ -1,8 +1,6 @@
-import { Ring } from "./config";
-
 export type ItemAttributes = {
   name: string;
-  ring: Ring;
+  ring: string;
   quadrant: string;
   title: string;
   featured?: boolean;

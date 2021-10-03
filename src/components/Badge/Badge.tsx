@@ -1,11 +1,10 @@
 import React, { MouseEventHandler } from "react";
 import classNames from "classnames";
 import "./badge.scss";
-import { Ring } from "../../config";
 type BadgeProps = {
   onClick?: MouseEventHandler;
   big?: boolean;
-  type: "big" | "all" | "empty" | Ring;
+  type: "big" | "all" | "empty" | string;
 };
 
 export default function Badge({

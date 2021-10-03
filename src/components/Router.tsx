@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PageIndex from "./PageIndex/PageIndex";
 import PageOverview from "./PageOverview/PageOverview";
 import PageHelp from "./PageHelp/PageHelp";
@@ -6,10 +6,9 @@ import PageQuadrant from "./PageQuadrant/PageQuadrant";
 import PageItem from "./PageItem/PageItem";
 import PageItemMobile from "./PageItemMobile/PageItemMobile";
 import {
-  quadrants,
+  ConfigData,
   getItemPageNames,
   isMobileViewport,
-  rings,
 } from "../config";
 import { Item } from "../model";
 
@@ -18,6 +17,7 @@ type RouterProps = {
   items: Item[];
   releases: string[];
   search: string;
+  config: ConfigData;
 };
 
 enum page {
@@ -30,7 +30,7 @@ enum page {
   notFound,
 }
 
-const getPageByName = (items: Item[], pageName: string): page => {
+const getPageByName = (items: Item[], pageName: string, config: ConfigData): page => {
   if (pageName === "index") {
     return page.index;
   }
@@ -40,7 +40,7 @@ const getPageByName = (items: Item[], pageName: string): page => {
   if (pageName === "help-and-about-tech-radar") {
     return page.help;
   }
-  if (quadrants.includes(pageName)) {
+  if (Object.keys(config.quadrants).includes(pageName)) {
     return page.quadrant;
   }
   if (getItemPageNames(items).includes(pageName)) {
@@ -55,6 +55,7 @@ export default function Router({
   items,
   releases,
   search,
+  config
 }: RouterProps) {
   const [statePageName, setStatePageName] = useState(pageName);
   const [leaving, setLeaving] = useState(false);
@@ -62,14 +63,14 @@ export default function Router({
 
   useEffect(() => {
     const nowLeaving =
-      getPageByName(items, pageName) !== getPageByName(items, statePageName);
+      getPageByName(items, pageName, config) !== getPageByName(items, statePageName, config);
     if (nowLeaving) {
       setLeaving(true);
       setNextPageName(pageName);
     } else {
       setStatePageName(pageName);
     }
-  }, [pageName, items, statePageName]);
+  }, [pageName, items, config, statePageName]);
 
   const handlePageLeave = () => {
     setStatePageName(nextPageName);
@@ -82,12 +83,13 @@ export default function Router({
     }, 0);
   };
 
-  switch (getPageByName(items, statePageName)) {
+  switch (getPageByName(items, statePageName, config)) {
     case page.index:
       return (
         <PageIndex
           leaving={leaving}
           items={items}
+          config={config}
           onLeave={handlePageLeave}
           releases={releases}
         />
@@ -96,7 +98,8 @@ export default function Router({
       return (
         <PageOverview
           items={items}
-          rings={rings}
+          config={config}
+          rings={config.rings}
           search={search}
           leaving={leaving}
           onLeave={handlePageLeave}
@@ -110,6 +113,7 @@ export default function Router({
           leaving={leaving}
           onLeave={handlePageLeave}
           items={items}
+          config={config}
           pageName={statePageName}
         />
       );
@@ -117,6 +121,7 @@ export default function Router({
       return (
         <PageItemMobile
           items={items}
+          config={config}
           pageName={statePageName}
           leaving={leaving}
           onLeave={handlePageLeave}
@@ -126,6 +131,7 @@ export default function Router({
       return (
         <PageItem
           items={items}
+          config={config}
           pageName={statePageName}
           leaving={leaving}
           onLeave={handlePageLeave}

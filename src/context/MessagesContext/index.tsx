@@ -6,11 +6,6 @@ interface Quadrant {
   description: string;
 }
 
-interface Ring {
-  name: string;
-  description: string;
-}
-
 interface Paragraph {
   headline: string;
   values: string[];
@@ -20,7 +15,7 @@ interface PageHelp {
   paragraphs: Paragraph[];
   quadrantsPreDescription?: string;
   quadrants: Quadrant[];
-  rings: Ring[];
+  rings: {name: string, description: string }[];
   ringsPreDescription?: string;
   sourcecodeLink?: {
     href: string;

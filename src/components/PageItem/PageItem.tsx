@@ -7,7 +7,7 @@ import SetTitle from "../SetTitle";
 import ItemRevisions from "../ItemRevisions/ItemRevisions";
 import { useAnimations } from "./useAnimations";
 import "./item-page.scss";
-import { translate } from "../../config";
+import { ConfigData, translate } from "../../config";
 import {
   groupByQuadrants,
   Item,
@@ -29,11 +29,12 @@ const getItemsInRing = (pageName: string, items: Item[]) => {
 type Props = {
   pageName: string;
   items: Item[];
+  config: ConfigData;
   leaving: boolean;
   onLeave: () => void;
 };
 
-const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
+const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }) => {
   const { pageItem } = useMessages();
   const quadrantOverview = pageItem?.quadrantOverview || 'Quadrant Overview';
 
@@ -57,7 +58,7 @@ const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
               className="item-page__header"
               style={getAnimationState("navHeader")}
             >
-              <h3 className="headline">{translate(item.quadrant)}</h3>
+              <h3 className="headline">{translate(config, item.quadrant)}</h3>
             </div>
             <ItemList
               items={itemsInRing}
