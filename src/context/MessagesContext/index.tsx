@@ -18,13 +18,16 @@ interface Paragraph {
 
 interface PageHelp {
   paragraphs: Paragraph[];
+  quadrantsPreDescription?: string;
   quadrants: Quadrant[];
   rings: Ring[];
+  ringsPreDescription?: string;
   sourcecodeLink?: {
     href: string;
     name: string;
     description: string;
   };
+  headlinePrefix?: string
 }
 
 interface PageOverview {
