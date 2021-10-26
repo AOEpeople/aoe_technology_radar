@@ -87,6 +87,9 @@
   "pageOverview": {
     "title": "Technologies Overview"
   },
+  "pageItem": {
+    "quadrantOverview": "Quadrant Overview"
+  },
   "legalInformationLink": "https://www.aoe.com/en/imprint.html",
   "search": "What are you looking for?"
 }
