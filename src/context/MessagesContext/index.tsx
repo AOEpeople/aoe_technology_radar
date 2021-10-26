@@ -51,6 +51,7 @@ export interface Messages {
   pageItem?: PageItem;
   pageIndex?: PageIndex;
   searchPlaceholder?: string;
+  revisionsText?: string;
 }
 
 const MessagesContext = createContext<Messages | undefined>(undefined);
