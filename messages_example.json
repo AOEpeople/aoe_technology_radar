@@ -1,16 +1,9 @@
 {
   "footerFootnote": "AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers.",
-  "socialLinksLabel": "Follow us:",
-  "socialLinks": [
-    { "href": "https://www.facebook.com/aoepeople", "iconName": "facebook" },
-    { "href": "https://twitter.com/aoepeople", "iconName": "twitter" },
-    { "href": "https://www.linkedin.com/company/aoe", "iconName": "linkedIn" },
-    { "href": "https://www.xing.com/company/aoe", "iconName": "xing" },
-    { "href": "https://www.instagram.com/aoepeople", "iconName": "instagram" },
-    { "href": "https://www.youtube.com/user/aoepeople", "iconName": "youtube" },
-    { "href": "https://github.com/aoepeople", "iconName": "github" }
-  ],
+  "legalInformationLabel": "Legal Information",
+  "legalInformationLink": "https://www.aoe.com/en/imprint.html",
   "pageHelp": {
+    "headlinePrefix": "How to use the",
     "paragraphs": [
       {
         "headline": "Introduction",
@@ -43,63 +36,91 @@
         ]
       }
     ],
-    "quadrantsPreDescription": "The quadrants are:",
     "quadrants": [
       {
-        "name": "Languages and Frameworks",
-        "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
+        "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds.",
+        "name": "Languages and Frameworks"
       },
       {
-        "name": "Tools",
-        "description": "Here we put different software tools - from small helpers to bigger software projects"
+        "description": "Here we put different software tools - from small helpers to bigger software projects",
+        "name": "Tools"
       },
       {
-        "name": "Methods and Patterns",
-        "description": "Patterns are so important, and a lot of them are valid for a long time (compared to some tools or frameworks). So, this is the category where we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc."
+        "description": "Patterns are so important, and a lot of them are valid for a long time (compared to some tools or frameworks). So, this is the category where we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc.",
+        "name": "Methods and Patterns"
       },
       {
-        "name": "Platforms and Operations",
-        "description": "(including AOE internal Services): Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of."
+        "description": "(including AOE internal Services): Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of.",
+        "name": "Platforms and Operations"
+      }
+    ],
+    "quadrantsPreDescription": "The quadrants are:",
+    "rings": [
+      {
+        "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful.",
+        "name": "Adopt"
+      },
+      {
+        "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level.",
+        "name": "Trial"
+      },
+      {
+        "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project.",
+        "name": "Assess"
+      },
+      {
+        "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now.",
+        "name": "Hold"
       }
     ],
     "ringsPreDescription": "Each of the items is classified in one of these rings:",
-    "rings": [
-      {
-        "name": "Adopt",
-        "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful."
-      },
-      {
-        "name": "Trial",
-        "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level."
-      },
-      {
-        "name": "Assess",
-        "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project."
-      },
-      {
-        "name": "Hold",
-        "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now."
-      }
-    ],
     "sourcecodeLink": {
+      "description": "Contributions and source code of the AOE Tech Radar are on github:",
       "href": "https://github.com/AOEpeople/aoe_technology_radar",
-      "name": "AOE Tech Radar on Github",
-      "description": "Contributions and source code of the AOE Tech Radar are on github:"
-    },
-    "headlinePrefix": "How to use the"
-  },
-  "pageOverview": {
-    "title": "Technologies Overview"
-  },
-  "pageItem": {
-    "quadrantOverview": "Quadrant Overview"
+      "name": "AOE Tech Radar on Github"
+    }
   },
   "pageIndex": {
     "publishedLabel": "Quadrant Overview"
   },
-  "legalInformationLink": "https://www.aoe.com/en/imprint.html",
-  "legalInformationLabel": "Legal Information",
+  "pageItem": {
+    "quadrantOverview": "Quadrant Overview"
+  },
+  "pageOverview": {
+    "title": "Technologies Overview"
+  },
+  "revisionsText": "Revisions:",
   "searchLabel": "Search",
   "searchPlaceholder": "What are you looking for?",
-  "revisionsText": "Revisions:"
+  "socialLinks": [
+    {
+      "href": "https://www.facebook.com/aoepeople",
+      "iconName": "facebook"
+    },
+    {
+      "href": "https://twitter.com/aoepeople",
+      "iconName": "twitter"
+    },
+    {
+      "href": "https://www.linkedin.com/company/aoe",
+      "iconName": "linkedIn"
+    },
+    {
+      "href": "https://www.xing.com/company/aoe",
+      "iconName": "xing"
+    },
+    {
+      "href": "https://www.instagram.com/aoepeople",
+      "iconName": "instagram"
+    },
+    {
+      "href": "https://www.youtube.com/user/aoepeople",
+      "iconName": "youtube"
+    },
+    {
+      "href": "https://github.com/aoepeople",
+      "iconName": "github"
+    }
+  ],
+  "socialLinksLabel": "Follow us:"
 }
