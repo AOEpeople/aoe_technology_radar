@@ -50,6 +50,7 @@ export interface Messages {
   pageOverview?: PageOverview;
   pageItem?: PageItem;
   pageIndex?: PageIndex;
+  searchLabel?: string;
   searchPlaceholder?: string;
   revisionsText?: string;
 }

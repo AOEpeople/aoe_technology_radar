@@ -97,6 +97,7 @@
     "publishedLabel": "Quadrant Overview"
   },
   "legalInformationLink": "https://www.aoe.com/en/imprint.html",
-  "search": "What are you looking for?",
+  "searchLabel": "Search",
+  "searchPlaceholder": "What are you looking for?",
   "revisionsText": "Revisions:"
 }

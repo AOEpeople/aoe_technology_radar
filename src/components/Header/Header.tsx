@@ -12,7 +12,7 @@ import { useMessages } from "../../context/MessagesContext";
 export default function Header({ pageName }: { pageName: string }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const { pageHelp } = useMessages();
+  const { searchLabel, pageHelp, pageOverview } = useMessages();
   const history = useHistory();
   const searchRef = useRef<HTMLInputElement>(null);
 
@@ -55,20 +55,20 @@ export default function Header({ pageName }: { pageName: string }) {
           <div className="nav__item">
             <Link pageName="help-and-about-tech-radar" className="icon-link">
               <span className="icon icon--question icon-link__icon" />
-              How to Use {radarNameShort}?
+              {pageHelp.headlinePrefix || 'How to use' } {radarNameShort}?
             </Link>
           </div>
         )}
         <div className="nav__item">
           <Link pageName="overview" className="icon-link">
             <span className="icon icon--overview icon-link__icon" />
-            Technologies Overview
+            { pageOverview?.title || 'Technologies Overview' }
           </Link>
         </div>
         <div className="nav__item">
           <button className="icon-link" onClick={handleOpenClick}>
             <span className="icon icon--search icon-link__icon" />
-            Search
+            { searchLabel || 'Search' }
           </button>
           <div className={classNames("nav__search", { "is-open": searchOpen })}>
             <Search
