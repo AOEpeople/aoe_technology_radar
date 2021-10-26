@@ -44,7 +44,9 @@ interface PageIndex {
 
 export interface Messages {
   footerFootnote?: string;
+  socialLinksLabel?: string;
   socialLinks?: SocialLink[];
+  legalInformationLabel?: string;
   legalInformationLink?: string;
   pageHelp?: PageHelp;
   pageOverview?: PageOverview;

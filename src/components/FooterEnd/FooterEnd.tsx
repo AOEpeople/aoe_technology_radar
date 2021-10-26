@@ -9,7 +9,7 @@ interface Props {
 }
 
 const FooterEnd: React.FC<Props> = ({ modifier }) => {
-  const { socialLinks, legalInformationLink } = useMessages();
+  const { socialLinksLabel, socialLinks, legalInformationLink, legalInformationLabel } = useMessages();
 
   return (
     <div
@@ -21,7 +21,7 @@ const FooterEnd: React.FC<Props> = ({ modifier }) => {
         {socialLinks && (
           <>
             <div className="footer-social__label">
-              <p>Follow us:</p>
+              <p>{socialLinksLabel ?? 'Follow us:' }</p>
             </div>
             <div className="footer-social__links">
               {socialLinks.map(({ href, iconName }) => (
@@ -40,7 +40,7 @@ const FooterEnd: React.FC<Props> = ({ modifier }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Legal Information
+              {legalInformationLabel || 'Legal Information'}
             </a>
           </p>
         </div>
