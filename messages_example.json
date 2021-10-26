@@ -90,6 +90,9 @@
   "pageItem": {
     "quadrantOverview": "Quadrant Overview"
   },
+  "pageIndex": {
+    "publishedLabel": "Quadrant Overview"
+  },
   "legalInformationLink": "https://www.aoe.com/en/imprint.html",
   "search": "What are you looking for?"
 }

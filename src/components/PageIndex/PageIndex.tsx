@@ -7,6 +7,7 @@ import Fadeable from "../Fadeable/Fadeable";
 import SetTitle from "../SetTitle";
 import { radarName, radarNameShort } from "../../config";
 import { MomentInput } from "moment";
+import { useMessages } from "../../context/MessagesContext";
 
 type PageIndexProps = {
   leaving: boolean;
@@ -21,6 +22,9 @@ export default function PageIndex({
   items,
   releases,
 }: PageIndexProps) {
+  const { pageIndex } = useMessages();
+  const publishedLabel = pageIndex?.publishedLabel || 'Published';
+
   const newestRelease = releases.slice(-1)[0];
   const numberOfReleases = releases.length;
   return (
@@ -33,7 +37,7 @@ export default function PageIndex({
       </div>
       <QuadrantGrid items={featuredOnly(items)} />
       <div className="publish-date">
-        Published {formatRelease(newestRelease)}
+        {publishedLabel} {formatRelease(newestRelease)}
       </div>
     </Fadeable>
   );
