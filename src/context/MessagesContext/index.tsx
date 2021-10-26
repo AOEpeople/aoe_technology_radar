@@ -31,12 +31,17 @@ interface PageOverview {
   title: string;
 }
 
+interface PageItem {
+  quadrantOverview: string;
+}
+
 export interface Messages {
   footerFootnote?: string;
   socialLinks?: SocialLink[];
   legalInformationLink?: string;
   pageHelp?: PageHelp;
   pageOverview?: PageOverview;
+  pageItem?: PageItem;
   searchPlaceholder?: string;
 }
 

@@ -12,6 +12,7 @@ import {
   groupByQuadrants,
   Item,
 } from "../../model";
+import { useMessages } from "../../context/MessagesContext";
 
 const getItem = (pageName: string, items: Item[]) => {
   const [quadrantName, itemName] = pageName.split("/");
@@ -33,6 +34,9 @@ type Props = {
 };
 
 const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
+  const { pageItem } = useMessages();
+  const quadrantOverview = pageItem?.quadrantOverview || 'Quadrant Overview';
+
   const itemsInRing = getItemsInRing(pageName, items);
 
   const { getAnimationState, getAnimationStates } = useAnimations({
@@ -70,7 +74,7 @@ const PageItem: React.FC<Props> = ({ pageName, items, leaving, onLeave }) => {
                 <div className="split__right">
                   <Link className="icon-link" pageName={item.quadrant}>
                     <span className="icon icon--pie icon-link__icon" />
-                    Quadrant Overview
+                    {quadrantOverview}
                   </Link>
                 </div>
               </div>
