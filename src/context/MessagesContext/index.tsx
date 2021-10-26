@@ -35,6 +35,10 @@ interface PageItem {
   quadrantOverview: string;
 }
 
+interface PageIndex {
+  publishedLabel: string;
+}
+
 export interface Messages {
   footerFootnote?: string;
   socialLinks?: SocialLink[];
@@ -42,6 +46,7 @@ export interface Messages {
   pageHelp?: PageHelp;
   pageOverview?: PageOverview;
   pageItem?: PageItem;
+  pageIndex?: PageIndex;
   searchPlaceholder?: string;
 }
 
