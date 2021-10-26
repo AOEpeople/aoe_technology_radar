@@ -42,6 +42,7 @@
         ]
       }
     ],
+    "quadrantsPreDescription": "The quadrants are:",
     "quadrants": [
       {
         "name": "Languages and Frameworks",
@@ -60,6 +61,7 @@
         "description": "(including AOE internal Services): Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of."
       }
     ],
+    "ringsPreDescription": "Each of the items is classified in one of these rings:",
     "rings": [
       {
         "name": "Adopt",
@@ -82,7 +84,8 @@
       "href": "https://github.com/AOEpeople/aoe_technology_radar",
       "name": "AOE Tech Radar on Github",
       "description": "Contributions and source code of the AOE Tech Radar are on github:"
-    }
+    },
+    "headlinePrefix": "How to use the"
   },
   "pageOverview": {
     "title": "Technologies Overview"

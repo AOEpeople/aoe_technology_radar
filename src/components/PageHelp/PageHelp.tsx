@@ -14,11 +14,12 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
   const { pageHelp } = useMessages();
 
   if (pageHelp) {
-    const { paragraphs, quadrants, rings, sourcecodeLink } = pageHelp;
+    const { paragraphs, quadrants, rings, sourcecodeLink, headlinePrefix, quadrantsPreDescription, ringsPreDescription } = pageHelp;
+    const title = `${headlinePrefix || 'How to use the'} ${radarName}`;
     return (
       <Fadeable leaving={leaving} onLeave={onLeave}>
-        <SetTitle title={"How to use the " + radarName} />
-        <HeroHeadline>How to use the {radarName}</HeroHeadline>
+        <SetTitle title={title}/>
+        <HeroHeadline>{title}</HeroHeadline>
         <div className="fullpage-content">
           {paragraphs.map(({ headline, values }) => (
             <React.Fragment key={headline}>
@@ -29,7 +30,7 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
             </React.Fragment>
           ))}
 
-          <p>The quadrants are:</p>
+          <p>{quadrantsPreDescription ?? "The quadrants are:"}</p>
           <ul>
             {quadrants.map(({ name, description }) => (
               <li key={name}>
@@ -38,7 +39,7 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
             ))}
           </ul>
 
-          <p>Each of the items is classified in one of these rings:</p>
+          <p>{ringsPreDescription ?? "Each of the items is classified in one of these rings:"}</p>
           <ul>
             {rings.map(({ name, description }) => (
               <li key={name}>
