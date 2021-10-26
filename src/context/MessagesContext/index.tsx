@@ -32,6 +32,7 @@ export interface Messages {
   socialLinks?: SocialLink[];
   legalInformationLink?: string;
   pageHelp?: PageHelp;
+  searchPlaceholder?: string;
 }
 
 const MessagesContext = createContext<Messages | undefined>(undefined);

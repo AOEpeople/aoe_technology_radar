@@ -1,4 +1,5 @@
 import React, { FormEvent } from "react";
+import { useMessages } from "../../context/MessagesContext";
 import classNames from "classnames";
 import "./search.scss";
 
@@ -18,6 +19,7 @@ function Search(
   { value, onChange, onClose, open = false, onSubmit = () => {} }: SearchProps,
   ref: any
 ) {
+  const { searchPlaceholder } = useMessages();
   const closable = onClose !== undefined;
 
   const handleSubmit = (e: FormEvent) => {
@@ -44,7 +46,7 @@ function Search(
           onChange(e.target.value);
         }}
         className="search__field"
-        placeholder="What are you looking for?"
+        placeholder={searchPlaceholder}
         ref={ref}
       />
       <span className={classNames("search__button", { "is-open": open })}>
