@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaGithub,
   FaInstagram,
+  FaExternalLinkAlt
 } from "react-icons/fa";
 
 const icons = {
@@ -25,23 +26,18 @@ export interface Props {
 }
 
 const SocialLink: React.FC<Props> = ({ href, iconName }) => {
-  const Icon = icons[iconName];
-
-  if (Icon) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="social-icon-a"
-        aria-label={iconName}
-      >
-        <Icon className="social-icon" />
-      </a>
-    );
-  }
-  console.error(`The iconname is unknown: ${iconName}`);
-  return null;
+  const Icon = icons[iconName] || FaExternalLinkAlt;
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-icon-a"
+      aria-label={iconName}
+    >
+      <Icon className="social-icon" />
+    </a>
+  );
 };
 
 export default SocialLink;
