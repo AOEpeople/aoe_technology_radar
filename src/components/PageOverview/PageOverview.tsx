@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
 import HeroHeadline from "../HeroHeadline/HeroHeadline";
 import Badge from "../Badge/Badge";
@@ -8,6 +8,7 @@ import Fadeable from "../Fadeable/Fadeable";
 import SetTitle from "../SetTitle";
 import Flag from "../Flag/Flag";
 import { groupByFirstLetter, Item } from "../../model";
+import { useMessages } from "../../context/MessagesContext";
 import { translate, Ring } from "../../config";
 
 const containsSearchTerm = (text = "", term = "") => {
@@ -35,6 +36,8 @@ export default function PageOverview({
 }: PageOverviewProps) {
   const [ring, setRing] = useState<Ring | "all">("all");
   const [search, setSearch] = useState(searchProp);
+  const { pageOverview } = useMessages();
+  const title = pageOverview?.title || 'Technologies Overview';
 
   useEffect(() => {
     if (rings.length > 0) {
@@ -81,9 +84,9 @@ export default function PageOverview({
 
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle title="Technologies Overview" />
+      <SetTitle title={title} />
       <HeadlineGroup>
-        <HeroHeadline>Technologies Overview</HeroHeadline>
+        <HeroHeadline>{title}</HeroHeadline>
       </HeadlineGroup>
       <div className="filter">
         <div className="split split--filter">

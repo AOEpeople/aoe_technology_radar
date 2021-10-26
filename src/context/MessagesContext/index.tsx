@@ -27,11 +27,16 @@ interface PageHelp {
   };
 }
 
+interface PageOverview {
+  title: string;
+}
+
 export interface Messages {
   footerFootnote?: string;
   socialLinks?: SocialLink[];
   legalInformationLink?: string;
   pageHelp?: PageHelp;
+  pageOverview?: PageOverview;
   searchPlaceholder?: string;
 }
 
