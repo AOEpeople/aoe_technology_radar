@@ -19,7 +19,7 @@ function Search(
   { value, onChange, onClose, open = false, onSubmit = () => {} }: SearchProps,
   ref: any
 ) {
-  const { searchPlaceholder } = useMessages();
+  const { searchLabel, searchPlaceholder } = useMessages();
   const closable = onClose !== undefined;
 
   const handleSubmit = (e: FormEvent) => {
@@ -52,7 +52,7 @@ function Search(
       <span className={classNames("search__button", { "is-open": open })}>
         <button type="submit" className="button">
           <span className="icon icon--search button__icon" />
-          Search
+          { searchLabel }
         </button>
       </span>
       {closable && (
