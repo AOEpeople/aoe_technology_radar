@@ -38,7 +38,6 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
                       'a': ['href', 'target']
                     },
                   });
-                  console.log(content);
                   return (
                     <p key={index} dangerouslySetInnerHTML={sanitize(element)}></p>
                   )
