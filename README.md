@@ -19,7 +19,7 @@ However, please be aware:
 
 Add the tech radar as a dependency
 ```
-yarn add https://github.com/aoepeople/aoe_technology_radar.git
+yarn add aoe_technology_radar
 ```
 
 Build the radar
