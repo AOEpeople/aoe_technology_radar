@@ -2,7 +2,7 @@
   "name": "aoe_technology_radar",
   "version": "3.1.1",
   "description": "AOE Technology Radar",
-  "private": true,
+  "private": false,
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "Apache-2.0",
   "repository": {
