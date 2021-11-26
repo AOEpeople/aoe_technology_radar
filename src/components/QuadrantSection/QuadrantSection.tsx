@@ -1,4 +1,4 @@
-import { translate, showEmptyRings, ConfigData } from "../../config";
+import { translate, ConfigData } from "../../config";
 import Badge from "../Badge/Badge";
 import Link from "../Link/Link";
 import ItemList from "../ItemList/ItemList";
@@ -44,10 +44,11 @@ const renderRing = (
   ringName: string,
   quadrantName: string,
   groups: Group,
+  renderIfEmpty: boolean,
   big: boolean
 ) => {
   if (
-    !showEmptyRings &&
+    !renderIfEmpty &&
     (!groups[quadrantName] ||
       !groups[quadrantName][ringName] ||
       groups[quadrantName][ringName].length === 0)
@@ -91,7 +92,7 @@ export default function QuadrantSection({
       </div>
       <div className="quadrant-section__rings">
         {config.rings.map((ringName: string) =>
-          renderRing(ringName, quadrantName, groups, big)
+          renderRing(ringName, quadrantName, groups, config.showEmptyRings, big)
         )}
       </div>
     </div>
