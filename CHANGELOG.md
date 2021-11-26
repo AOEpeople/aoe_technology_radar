@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ## Unreleased
+### Features
+- Added `showEmptyRings` option to `config.json`, which enables display of headers for rings containing no items.
+
+## 3.1.1
+
+## 3.1.0
 ### Bug Fixes
 - Added aria-label attributes to the social links.
 - Removed scaling limitation in viewport meta tag.

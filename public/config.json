@@ -5,5 +5,6 @@
     "platforms-and-aoe-services": "Platforms & Operations",
     "tools": "Tools"
   },
-  "rings":["all", "adopt", "trial", "assess", "hold"]
+  "rings":["all", "adopt", "trial", "assess", "hold"],
+  "showEmptyRings": false
 }

@@ -112,6 +112,8 @@ For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Change the rings and quadrants config
 To change the default rings and quadrants of the radar, you can place a custom `config.json` file within the `public` folder.
+The `showEmptyRings` option can be enabled to display the header for a ring even when it contains no items (helpful to
+reinforce the order of the rings).
 The content should look as follows:
 
 ```json
@@ -119,10 +121,11 @@ The content should look as follows:
   "quadrants": {
     "languages-and-frameworks": "Languages & Frameworks",
     "methods-and-patterns": "Methods & Patterns",
-    "platforms-and-aoe-services": "Platforms & Operations",
+    "platforms-and-operations": "Platforms & Operations",
     "tools": "Tools"
   },
-  "rings":["all", "adopt", "trial", "assess", "hold"]
+  "rings":["all", "adopt", "trial", "assess", "hold"],
+  "showEmptyRings": true
 }
 ```
 

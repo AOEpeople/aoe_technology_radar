@@ -3,6 +3,7 @@ import { Item } from "./model";
 export interface ConfigData {
   quadrants: { [key: string]: string };
   rings: string[];
+  showEmptyRings: boolean;
 }
 
 export const radarName =
@@ -11,8 +12,6 @@ export const radarNameShort = radarName;
 
 export const getItemPageNames = (items: Item[]) =>
   items.map((item) => `${item.quadrant}/${item.name}`);
-
-export const showEmptyRings = false;
 
 export function isMobileViewport() {
   // return false for server side rendering
