@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 ### Bug Fixes
+- Fixed dependent projects failing to build without dependency `@types/sanitize-html`.
+
+## 3.1.1
+
+## 3.1.0
+### Bug Fixes
 - Added aria-label attributes to the social links.
 - Removed scaling limitation in viewport meta tag.
 

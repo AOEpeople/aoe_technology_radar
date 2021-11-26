@@ -30,6 +30,7 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.0",
+    "@types/sanitize-html": "^2.5.0",
     "@types/walk": "^2.3.1",
     "classnames": "^2.3.1",
     "front-matter": "^4.0.2",
@@ -53,7 +54,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/sanitize-html": "^2.5.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1"
