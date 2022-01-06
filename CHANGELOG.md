@@ -2,12 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## Unreleased
+
+## 3.1.2
 ### Features
 - Added `showEmptyRings` option to `config.json`, which enables display of headers for rings containing no items.
-
-## 3.1.1
-
-## 3.1.0
 ### Bug Fixes
 - Fixed dependent projects failing to build without dependency `@types/sanitize-html`.
 
