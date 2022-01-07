@@ -7,7 +7,7 @@ import marked from "marked";
 import highlight from "highlight.js";
 
 import { radarPath, getAllMarkdownFiles } from "./file";
-import { Item, Revision, ItemAttributes, Radar } from "../../src/model";
+import { Item, Revision, ItemAttributes, Radar, FlagType } from "../../src/model";
 import { appBuild } from "../paths";
 
 type FMAttributes = ItemAttributes;
@@ -124,7 +124,7 @@ const ignoreEmptyRevisionBody = (revision: Revision, item: Item) => {
 
 const addRevisionToItem = (
   item: Item = {
-    flag: "default",
+    flag: FlagType.default,
     featured: true,
     revisions: [],
     name: "",
@@ -177,10 +177,10 @@ const hasItemChanged = (item: Item, allReleases: string[]) =>
 
 const getItemFlag = (item: Item, allReleases: string[]): string => {
   if (isNewItem(item, allReleases)) {
-    return "new";
+    return FlagType.new;
   }
   if (hasItemChanged(item, allReleases)) {
-    return "changed";
+    return FlagType.changed;
   }
-  return "default";
+  return FlagType.changed;
 };

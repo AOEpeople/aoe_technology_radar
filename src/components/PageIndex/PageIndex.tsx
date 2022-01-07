@@ -1,7 +1,8 @@
 import { formatRelease } from "../../date";
-import { featuredOnly, Item } from "../../model";
+import { featuredOnly, Item, HomepageOption } from "../../model";
 import HeroHeadline from "../HeroHeadline/HeroHeadline";
 import QuadrantGrid from "../QuadrantGrid/QuadrantGrid";
+import RadarGrid from '../RadarGrid/RadarGrid';
 import Fadeable from "../Fadeable/Fadeable";
 import SetTitle from "../SetTitle";
 import { ConfigData, radarName, radarNameShort } from "../../config";
@@ -28,6 +29,8 @@ export default function PageIndex({
 
   const newestRelease = releases.slice(-1)[0];
   const numberOfReleases = releases.length;
+  const showChart = config.homepageContent === HomepageOption.chart || config.homepageContent === HomepageOption.both;
+  const showColumns = config.homepageContent === HomepageOption.columns || config.homepageContent === HomepageOption.both;
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle title={radarNameShort} />
@@ -36,7 +39,12 @@ export default function PageIndex({
           {radarName}
         </HeroHeadline>
       </div>
-      <QuadrantGrid items={featuredOnly(items)} config={config} />
+      {showChart && (
+        <RadarGrid items={featuredOnly(items)} config={config} />
+      )}
+      {showColumns && (
+        <QuadrantGrid items={featuredOnly(items)} config={config} />
+      )}
       <div className="publish-date">
         {publishedLabel} {formatRelease(newestRelease)}
       </div>

@@ -1,6 +1,7 @@
 import React, { MouseEventHandler } from "react";
 import classNames from "classnames";
 import "./badge.scss";
+
 type BadgeProps = {
   onClick?: MouseEventHandler;
   big?: boolean;

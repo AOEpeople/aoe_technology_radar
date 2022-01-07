@@ -1,7 +1,5 @@
-import React from "react";
+import { FlagType } from "../../model";
 import "./flag.scss";
-
-export type FlagType = "new" | "changed" | "default";
 
 interface ItemFlag {
   flag: FlagType;
@@ -16,7 +14,7 @@ export default function Flag({
 }) {
   const ucFirst = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-  if (item.flag !== "default") {
+  if (item.flag !== FlagType.default) {
     let name = item.flag.toUpperCase();
     let title = ucFirst(item.flag);
     if (short === true) {

@@ -83,6 +83,7 @@ var front_matter_1 = __importDefault(require("front-matter"));
 var marked_1 = __importDefault(require("marked"));
 var highlight_js_1 = __importDefault(require("highlight.js"));
 var file_1 = require("./file");
+var model_1 = require("../../src/model");
 var paths_1 = require("../paths");
 marked_1.default.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
@@ -180,7 +181,7 @@ var ignoreEmptyRevisionBody = function (revision, item) {
 };
 var addRevisionToItem = function (item, revision) {
     if (item === void 0) { item = {
-        flag: "default",
+        flag: model_1.FlagType.default,
         featured: true,
         revisions: [],
         name: "",
@@ -215,10 +216,10 @@ var hasItemChanged = function (item, allReleases) {
 };
 var getItemFlag = function (item, allReleases) {
     if (isNewItem(item, allReleases)) {
-        return "new";
+        return model_1.FlagType.new;
     }
     if (hasItemChanged(item, allReleases)) {
-        return "changed";
+        return model_1.FlagType.changed;
     }
-    return "default";
+    return model_1.FlagType.changed;
 };

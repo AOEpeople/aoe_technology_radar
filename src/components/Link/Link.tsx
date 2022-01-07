@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RLink } from "react-router-dom";
 import "./link.scss";
+
 type LinkProps = {
   pageName: string;
   style?: React.CSSProperties;

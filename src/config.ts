@@ -1,9 +1,17 @@
-import { Item } from "./model";
+import {Item, HomepageOption, QuadrantConfig} from './model';
 
 export interface ConfigData {
   quadrants: { [key: string]: string };
   rings: string[];
   showEmptyRings: boolean;
+  quadrantsMap: { [quadrant: string]: QuadrantConfig };
+  chartConfig: {
+    size: number,
+    scale: number[],
+    blipSize: number,
+    ringsAttributes: {radius: number, arcWidth: number}[]
+  };
+  homepageContent: HomepageOption;
 }
 
 export const radarName =

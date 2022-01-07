@@ -1,3 +1,9 @@
+export enum HomepageOption {
+  chart = "chart",
+  columns = "columns",
+  both = "both"
+}
+
 export type ItemAttributes = {
   name: string;
   ring: string;
@@ -6,7 +12,11 @@ export type ItemAttributes = {
   featured?: boolean;
 };
 
-export type FlagType = "new" | "changed" | "default";
+export enum FlagType {
+  new = 'new',
+  changed = 'changed',
+  default = 'default'
+}
 
 export type Item = ItemAttributes & {
   featured: boolean;
@@ -15,6 +25,14 @@ export type Item = ItemAttributes & {
   flag: FlagType;
   revisions: Revision[];
 };
+
+export type Blip = Item & {
+  quadrantPosition: number
+  ringPosition: number
+  colour: string
+  txtColour: string
+  coordinates: Point
+}
 
 export type Revision = ItemAttributes & {
   body: string;
@@ -25,6 +43,13 @@ export type Revision = ItemAttributes & {
 export type Quadrant = {
   [name: string]: Item[];
 };
+
+export type QuadrantConfig = {
+    colour: string,
+    txtColour: string,
+    position: number,
+    description: string
+}
 
 export type Radar = {
   items: Item[];
@@ -39,6 +64,11 @@ export const featuredOnly = (items: Item[]) =>
   items.filter((item) => item.featured);
 export const nonFeaturedOnly = (items: Item[]) =>
   items.filter((item) => !item.featured);
+
+export type Point = {
+  x: number,
+  y: number
+}
 
 export const groupByQuadrants = (items: Item[]): Group =>
   items.reduce(

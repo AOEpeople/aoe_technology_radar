@@ -1,4 +1,3 @@
-import React from "react";
 import Badge from "../Badge/Badge";
 import { formatRelease } from "../../date";
 import { Revision } from "../../model";

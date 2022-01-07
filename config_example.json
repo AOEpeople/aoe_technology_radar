@@ -1,9 +1,0 @@
-{
-  "quadrants": {
-    "languages-and-frameworks": "Languages & Frameworks",
-    "methods-and-patterns": "Methods & Patterns",
-    "platforms-and-aoe-services": "Platforms & Operations",
-    "tools": "Tools"
-  },
-  "rings":["all", "adopt", "trial", "assess", "hold"]
-}

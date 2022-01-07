@@ -33,14 +33,13 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
               <React.Fragment key={headline}>
                 <h3>{headline}</h3>
                 {values.map((element, index) => {
-                  const content = sanitizeHtml(element, {
-                    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li'],
-                    allowedAttributes: {
-                      'a': ['href', 'target']
-                    },
-                  });
                   return (
-                    <p key={index} dangerouslySetInnerHTML={sanitize(element)}></p>
+                    <p key={index} dangerouslySetInnerHTML={sanitize(element, {
+                      allowedTags: ['b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li'],
+                      allowedAttributes: {
+                        'a': ['href', 'target']
+                      },
+                    })}></p>
                   )
                 })
               }

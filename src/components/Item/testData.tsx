@@ -1,7 +1,7 @@
-import { Item } from "../../model";
+import { FlagType, Item } from "../../model";
 
 export const item: Item = {
-  flag: "default",
+  flag: FlagType.default,
   featured: false,
   revisions: [
     {
