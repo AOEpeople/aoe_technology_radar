@@ -46,7 +46,7 @@ export default function PageIndex({
         <QuadrantGrid items={featuredOnly(items)} config={config} />
       )}
       <div className="publish-date">
-        {publishedLabel} {formatRelease(newestRelease)}
+        {publishedLabel} {formatRelease(newestRelease, config.dateFormat)}
       </div>
     </Fadeable>
   );

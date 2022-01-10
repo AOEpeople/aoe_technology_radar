@@ -2,12 +2,18 @@ import Badge from "../Badge/Badge";
 import { formatRelease } from "../../date";
 import { Revision } from "../../model";
 
-export default function ItemRevision({ revision }: { revision: Revision }) {
+export default function ItemRevision({
+  revision,
+  dateFormat,
+}: {
+  revision: Revision;
+  dateFormat?: string
+}) {
   return (
     <div className="item-revision">
       <div>
         <Badge type={revision.ring}>
-          {revision.ring} | {formatRelease(revision.release)}
+          {revision.ring} | {formatRelease(revision.release, dateFormat)}
         </Badge>
       </div>
       <div

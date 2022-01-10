@@ -64,5 +64,6 @@
         "arcWidth": 2
       }
     ]
-  }
+  },
+  "dateFormat": "MMMM YYYY"
 }

@@ -1,13 +1,15 @@
-import React from "react";
 import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
 import ItemRevision from "../ItemRevision/ItemRevision";
 import { Revision } from "../../model";
 import "./item-revisions.scss";
 import { useMessages } from "../../context/MessagesContext";
+
 export default function ItemRevisions({
   revisions,
+  dateFormat,
 }: {
   revisions: Revision[];
+  dateFormat?: string
 }) {
   const { revisionsText } = useMessages();
   return (
@@ -17,7 +19,7 @@ export default function ItemRevisions({
       </HeadlineGroup>
 
       {revisions.map((revision) => (
-        <ItemRevision key={revision.release} revision={revision} />
+        <ItemRevision key={revision.release} revision={revision} dateFormat={dateFormat} />
       ))}
     </div>
   );

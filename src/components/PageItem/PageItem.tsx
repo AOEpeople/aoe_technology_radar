@@ -116,7 +116,7 @@ const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }
               dangerouslySetInnerHTML={{ __html: item.body }}
             />
             {item.revisions.length > 1 && (
-              <ItemRevisions revisions={item.revisions.slice(1)} />
+              <ItemRevisions revisions={item.revisions.slice(1)} dateFormat={config.dateFormat} />
             )}
           </div>
         </div>
