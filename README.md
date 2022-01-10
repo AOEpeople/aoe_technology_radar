@@ -186,6 +186,8 @@ To add a footnote to the footer, create a public folder in your application and 
 }
 ```
 
+> The footnote information may include HTML like `<a href="https://foo.bar">My Link</a>` which will be sanitized.
+
 ### Add a help page with explanations
 To add a help page, create a public folder in your application and put a `messages.json` in it.
 ```json
@@ -251,6 +253,8 @@ To add a help page, create a public folder in your application and put a `messag
   }
 }
 ```
+
+> The information in `description`s  for `rings` and `quadrants` as well as the `values` for `paragraphs` may include HTML like `<a href="https://foo.bar">My Link</a>` which will be sanitized.
 
 > For more information see the source code of the [Messages Context](./src/context/MessagesContext/index.tsx).
 

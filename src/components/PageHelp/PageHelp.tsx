@@ -1,22 +1,15 @@
 import React from "react";
-import sanitizeHtml from 'sanitize-html';
 import HeroHeadline from "../HeroHeadline/HeroHeadline";
 import Fadeable from "../Fadeable/Fadeable";
 import SetTitle from "../SetTitle";
 import { radarName } from "../../config";
 import { useMessages } from "../../context/MessagesContext";
+import { sanitize } from "../../sanitize";
 
 interface Props {
   leaving: boolean;
   onLeave: () => void;
 }
-
-const sanitize = (dirty: string, options: sanitizeHtml.IOptions = {}) => ({
-  __html: sanitizeHtml(
-    dirty,
-    options
-  )
-});
 
 const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
   const { pageHelp } = useMessages();
@@ -34,12 +27,7 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
                 <h3>{headline}</h3>
                 {values.map((element, index) => {
                   return (
-                    <p key={index} dangerouslySetInnerHTML={sanitize(element, {
-                      allowedTags: ['b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li'],
-                      allowedAttributes: {
-                        'a': ['href', 'target']
-                      },
-                    })}></p>
+                    <p key={index} dangerouslySetInnerHTML={sanitize(element)}></p>
                   )
                 })
               }
@@ -50,7 +38,7 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
           <ul>
             {quadrants.map(({ name, description }) => (
               <li key={name}>
-                <strong>{name}:</strong> <span dangerouslySetInnerHTML={sanitize(description)}></span>
+                <strong>{name}:</strong> <span dangerouslySetInnerHTML={sanitize(description, {})}></span>
               </li>
             ))}
           </ul>
@@ -59,7 +47,7 @@ const PageHelp: React.FC<Props> = ({ leaving, onLeave }) => {
           <ul>
             {rings.map(({ name, description }) => (
               <li key={name}>
-                <strong>{name}:</strong> <span dangerouslySetInnerHTML={sanitize(description)}></span>
+                <strong>{name}:</strong> <span dangerouslySetInnerHTML={sanitize(description, {})}></span>
               </li>
             ))}
           </ul>

@@ -6,6 +6,7 @@ import { assetUrl, getItemPageNames, isMobileViewport } from "../../config";
 import { Item } from "../../model";
 import "./footer.scss";
 import { useMessages } from "../../context/MessagesContext";
+import { sanitize } from "../../sanitize";
 
 interface Props {
   items: Item[];
@@ -34,7 +35,7 @@ const Footer: React.FC<Props> = ({ items, pageName }) => {
             />
           }
         >
-          <span className="footnote">{footerFootnote}</span>
+          <div className="footnote" dangerouslySetInnerHTML={sanitize(footerFootnote)}></div>
         </Branding>
       )}
 
