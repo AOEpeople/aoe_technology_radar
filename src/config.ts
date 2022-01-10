@@ -12,6 +12,7 @@ export interface ConfigData {
     ringsAttributes: {radius: number, arcWidth: number}[]
   };
   homepageContent: HomepageOption;
+  dateFormat?: string;
 }
 
 export const radarName =

@@ -110,6 +110,20 @@ To change the logo, create a public folder in your application and put your `log
 
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
+### Change the logo
+By default the Date format used in the app is `"MMMM YYYY"`.
+You can change this by editing the config file as shown below.
+Please be sure you are entering a valid [moment.js format string](https://momentjs.com/docs/#/displaying/format).
+
+```json
+{
+  // ...
+  "dateFormat": "MMMM YYYY"
+}
+```
+
+For reference have a look at [public/logo.svg](./public/logo.svg).
+
 ### Change the rings and quadrants config
 To change the default rings and quadrants of the radar, you can place a custom `config.json` file within the `public` folder.
 The `showEmptyRings` option can be enabled to display the header for a ring even when it contains no items (helpful to
