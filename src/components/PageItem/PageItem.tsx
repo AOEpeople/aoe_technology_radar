@@ -1,5 +1,6 @@
 import React from "react";
 import Badge from "../Badge/Badge";
+import EditButton from "../EditButton/EditButton";
 import ItemList from "../ItemList/ItemList";
 import Link from "../Link/Link";
 import FooterEnd from "../FooterEnd/FooterEnd";
@@ -47,6 +48,7 @@ const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }
   });
 
   const item = getItem(pageName, items);
+  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : ''
 
   return (
     <>
@@ -99,10 +101,11 @@ const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }
           >
             <div className="item-page__header">
               <div className="split">
-                <div className="split__left">
+                <div className="split__left hero-headline__wrapper">
                   <h1 className="hero-headline hero-headline--inverse">
                     {item.title}
                   </h1>
+                  {editButton}
                 </div>
                 <div className="split__right">
                   <Badge big type={item.ring}>

@@ -50,6 +50,12 @@
   }
 }
 
+.hero-headline__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .mobile-item-page {
   background: #fff;
   margin: 0 -15px;
