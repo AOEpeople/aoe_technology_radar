@@ -1,5 +1,5 @@
-import React from "react";
 import Badge from "../Badge/Badge";
+import EditButton from "../EditButton/EditButton";
 import ItemList from "../ItemList/ItemList";
 import Link from "../Link/Link";
 import Fadeable from "../Fadeable/Fadeable";
@@ -40,6 +40,7 @@ export default function PageItemMobile({
 
   const item = getItem(pageName, items);
   const itemsInRing = getItemsInRing(pageName, items);
+  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : ''
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle title={item.title} />
@@ -53,6 +54,7 @@ export default function PageItemMobile({
                   <h1 className="hero-headline hero-headline--inverse">
                     {item.title}
                   </h1>
+                  {editButton}
                 </div>
                 <div className="split__right">
                   <Badge big type={item.ring}>

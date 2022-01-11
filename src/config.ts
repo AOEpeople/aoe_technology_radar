@@ -13,6 +13,10 @@ export interface ConfigData {
   };
   homepageContent: HomepageOption;
   dateFormat?: string;
+  editLink?: {
+    radarLink: string,
+    title?: string
+  }
 }
 
 export const radarName =
