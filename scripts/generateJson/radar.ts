@@ -182,5 +182,5 @@ const getItemFlag = (item: Item, allReleases: string[]): string => {
   if (hasItemChanged(item, allReleases)) {
     return FlagType.changed;
   }
-  return FlagType.changed;
+  return FlagType.default;
 };
