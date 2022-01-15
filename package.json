@@ -39,7 +39,7 @@
     "front-matter": "^4.0.2",
     "fs-extra": "^10.0.0",
     "highlight.js": "^11.2.0",
-    "marked": "^2.0.7",
+    "marked": "^4.0.10",
     "moment": "^2.29.1",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
