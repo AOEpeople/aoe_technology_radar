@@ -110,7 +110,7 @@ To change the logo, create a public folder in your application and put your `log
 
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
-### Change the logo
+### Change the date format
 By default the Date format used in the app is `"MMMM YYYY"`.
 You can change this by editing the config file as shown below.
 Please be sure you are entering a valid [moment.js format string](https://momentjs.com/docs/#/displaying/format).
@@ -123,6 +123,20 @@ Please be sure you are entering a valid [moment.js format string](https://moment
 ```
 
 For reference have a look at [public/logo.svg](./public/logo.svg).
+
+### Edit from published radar
+
+You can activate the `editLink` feature which will display a small edit button next to a technology which let's you jump directly to a gitlab / github / etc. edit page:
+
+```json
+{
+  // ...
+  "editLink": {
+    "radarLink": "https://github.com/AOEpeople/techradar/edit/main/radar",
+    "title": "Edit"
+  }
+}
+```
 
 ### Change the rings and quadrants config
 To change the default rings and quadrants of the radar, you can place a custom `config.json` file within the `public` folder.

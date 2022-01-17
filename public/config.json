@@ -65,9 +65,5 @@
       }
     ]
   },
-  "dateFormat": "MMMM YYYY",
-  "editLink": {
-    "radarLink": "https://github.com/AOEpeople/techradar/edit/main/radar",
-    "title": "Edit"
-  }
+  "dateFormat": "MMMM YYYY"
 }
