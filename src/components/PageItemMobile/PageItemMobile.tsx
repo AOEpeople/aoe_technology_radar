@@ -40,7 +40,7 @@ export default function PageItemMobile({
 
   const item = getItem(pageName, items);
   const itemsInRing = getItemsInRing(pageName, items);
-  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : ''
+  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : null
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle title={item.title} />

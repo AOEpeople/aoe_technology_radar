@@ -48,7 +48,7 @@ const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }
   });
 
   const item = getItem(pageName, items);
-  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : ''
+  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : null
 
   return (
     <>
