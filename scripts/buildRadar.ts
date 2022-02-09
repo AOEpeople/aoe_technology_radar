@@ -42,12 +42,12 @@ const runCommand = (command: string) =>
   });
 
 const buildTemplate = () => {
-  const packageManager = fs.existsSync(paths.appYarnLock) ? "yarn" : "npx";
+  const packageManager = fs.existsSync(paths.appYarnLock) ? "yarn" : "npm";
 
   fs.emptyDirSync(paths.templateBuild);
   process.chdir(paths.template);
 
-  return runCommand(`${packageManager} build`);
+  return runCommand(`${packageManager} run build`);
 };
 
 buildTemplate().then(() => {
