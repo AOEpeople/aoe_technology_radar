@@ -97,7 +97,7 @@ marked_1.marked.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
 var createRadar = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var fileNames, revisions, allReleases, items, flaggedItems;
+    var fileNames, revisions, filterdRevisions, allReleases, items, flaggedItems;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, (0, file_1.getAllMarkdownFiles)((0, file_1.radarPath)())];
@@ -106,8 +106,9 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
                 return [4 /*yield*/, createRevisionsFromFiles(fileNames)];
             case 2:
                 revisions = _a.sent();
-                allReleases = getAllReleases(revisions);
-                items = createItems(revisions);
+                filterdRevisions = revisions.filter(function (r) { return r !== undefined; });
+                allReleases = getAllReleases(filterdRevisions);
+                items = createItems(filterdRevisions);
                 flaggedItems = flagItem(items, allReleases);
                 items.forEach(function (item) { return checkAttributes(item.name, item); });
                 return [2 /*return*/, {
@@ -119,7 +120,7 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
 }); };
 exports.createRadar = createRadar;
 var checkAttributes = function (fileName, attributes) {
-    var rawConf = (0, fs_1.readFileSync)(path.resolve(paths_1.appBuild, 'config.json'), 'utf-8');
+    var rawConf = fs_1.readFileSync(path.resolve(paths_1.appBuild, "config.json"), "utf-8");
     var config = JSON.parse(rawConf);
     if (!config.rings.includes(attributes.ring)) {
         throw new Error("Error: ".concat(fileName, " has an illegal value for 'ring' - must be one of ").concat(config.rings));
@@ -128,27 +129,24 @@ var checkAttributes = function (fileName, attributes) {
     if (!quadrants.includes(attributes.quadrant)) {
         throw new Error("Error: ".concat(fileName, " has an illegal value for 'quadrant' - must be one of ").concat(quadrants));
     }
+    if (config.radar && attributes.radars) {
+        if (!attributes.radars.includes(config.radar)) {
+            return undefined;
+        }
+    }
     return attributes;
 };
 var createRevisionsFromFiles = function (fileNames) {
     var publicUrl = process.env.PUBLIC_URL;
     return Promise.all(fileNames.map(function (fileName) {
-        return new Promise(function (resolve, reject) {
-            (0, fs_extra_1.readFile)(fileName, "utf8", function (err, data) { return __awaiter(void 0, void 0, void 0, function () {
-                var fm, html;
-                return __generator(this, function (_a) {
-                    if (err) {
-                        reject(err);
-                    }
-                    else {
-                        fm = (0, front_matter_1.default)(data);
-                        html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(publicUrl, "/")));
-                        html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
-                        resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), fm.attributes), { fileName: fileName, body: html }));
-                    }
-                    return [2 /*return*/];
-                });
-            }); });
+        return fs_extra_1.readFile(fileName, "utf8").then(function (data) {
+            var fm = front_matter_1.default(data);
+            var html = marked_1.marked(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
+            html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
+            var attributes = checkAttributes(fileName, fm.attributes);
+            if (attributes) {
+                return __assign(__assign(__assign({}, itemInfoFromFilename(fileName)), attributes), { fileName: fileName, body: html });
+            }
         });
     }));
 };
