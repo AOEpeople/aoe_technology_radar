@@ -10,6 +10,7 @@ export type ItemAttributes = {
   quadrant: string;
   title: string;
   featured?: boolean;
+  radars?: string[];
 };
 
 export enum FlagType {

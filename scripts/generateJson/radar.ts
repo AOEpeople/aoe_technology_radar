@@ -18,9 +18,10 @@ marked.setOptions({
 
 export const createRadar = async (): Promise<Radar> => {
   const fileNames = await getAllMarkdownFiles(radarPath());
-  const revisions = await createRevisionsFromFiles(fileNames);
-  const allReleases = getAllReleases(revisions);
-  const items = createItems(revisions);
+  const revisions: (Revision|undefined)[]  = await createRevisionsFromFiles(fileNames);
+  const filterdRevisions : Revision[] = revisions.filter(r => r !== undefined) as Revision[];
+  const allReleases = getAllReleases(filterdRevisions);
+  const items = createItems(filterdRevisions);
   const flaggedItems = flagItem(items, allReleases);
 
   items.forEach(item => checkAttributes(item.name, item))
@@ -32,7 +33,7 @@ export const createRadar = async (): Promise<Radar> => {
 };
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
-  const rawConf = readFileSync(path.resolve(appBuild, 'config.json'), 'utf-8');
+  const rawConf = readFileSync(path.resolve(appBuild, "config.json"), "utf-8");
   const config = JSON.parse(rawConf);
 
   if (!config.rings.includes(attributes.ring)) {
@@ -48,6 +49,12 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
     );
   }
 
+  if (config.radar && attributes.radars) {
+    if (!attributes.radars.includes(config.radar)) {
+      return undefined;
+    }
+  }
+
   return attributes;
 };
 
@@ -56,28 +63,22 @@ const createRevisionsFromFiles = (fileNames: string[]) => {
   return Promise.all(
     fileNames.map(
       (fileName) =>
-        new Promise<Revision>((resolve, reject) => {
-          readFile(fileName, "utf8", async (err, data) => {
-            if (err) {
-              reject(err);
-            } else {
-              const fm = frontMatter<FMAttributes>(data);
-              // add target attribute to external links
-              // todo: check path
-              let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}/`));
-              html = html.replace(
-                /a href="http/g,
-                'a target="_blank" rel="noopener noreferrer" href="http'
-              );
-
-              resolve({
-                ...itemInfoFromFilename(fileName),
-                ...fm.attributes,
-                fileName,
-                body: html,
-              } as Revision);
-            }
-          });
+        readFile(fileName, "utf8").then(data => {
+          const fm = frontMatter<FMAttributes>(data);
+          let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}/`));
+          html = html.replace(
+            /a href="http/g,
+            'a target="_blank" rel="noopener noreferrer" href="http'
+          );
+          const attributes = checkAttributes(fileName, fm.attributes);
+          if (attributes) {
+            return {
+              ...itemInfoFromFilename(fileName),
+              ...attributes,
+              fileName,
+              body: html,
+            } as Revision;
+          }
         })
     )
   );
