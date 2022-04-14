@@ -19,9 +19,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.nonFeaturedOnly = exports.featuredOnly = exports.FlagType = exports.HomepageOption = void 0;
 var HomepageOption;
 (function (HomepageOption) {
-    HomepageOption[HomepageOption["chart"] = 0] = "chart";
-    HomepageOption[HomepageOption["columns"] = 1] = "columns";
-    HomepageOption[HomepageOption["both"] = 2] = "both";
+    HomepageOption["chart"] = "chart";
+    HomepageOption["columns"] = "columns";
+    HomepageOption["both"] = "both";
 })(HomepageOption = exports.HomepageOption || (exports.HomepageOption = {}));
 var FlagType;
 (function (FlagType) {

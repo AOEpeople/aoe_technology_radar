@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 import * as path from "path";
 import frontMatter from "front-matter";
 // @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
-import marked from "marked";
+import { marked } from "marked";
 import highlight from "highlight.js";
 
 import { radarPath, getAllMarkdownFiles } from "./file";
@@ -13,7 +13,7 @@ import { appBuild } from "../paths";
 type FMAttributes = ItemAttributes;
 
 marked.setOptions({
-  highlight: (code) => highlight.highlightAuto(code).value,
+  highlight: (code: any) => highlight.highlightAuto(code).value,
 });
 
 export const createRadar = async (): Promise<Radar> => {

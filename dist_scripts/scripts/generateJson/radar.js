@@ -80,12 +80,12 @@ var fs_1 = require("fs");
 var path = __importStar(require("path"));
 var front_matter_1 = __importDefault(require("front-matter"));
 // @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
-var marked_1 = __importDefault(require("marked"));
+var marked_1 = require("marked");
 var highlight_js_1 = __importDefault(require("highlight.js"));
 var file_1 = require("./file");
 var model_1 = require("../../src/model");
 var paths_1 = require("../paths");
-marked_1.default.setOptions({
+marked_1.marked.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
 var createRadar = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -133,7 +133,7 @@ var createRevisionsFromFiles = function (fileNames) {
                     }
                     else {
                         fm = front_matter_1.default(data);
-                        html = marked_1.default(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
+                        html = marked_1.marked(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
                         html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
                         resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
                     }
@@ -221,5 +221,5 @@ var getItemFlag = function (item, allReleases) {
     if (hasItemChanged(item, allReleases)) {
         return model_1.FlagType.changed;
     }
-    return model_1.FlagType.changed;
+    return model_1.FlagType.default;
 };
