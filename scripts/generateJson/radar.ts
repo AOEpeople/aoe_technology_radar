@@ -111,7 +111,7 @@ const createItems = (revisions: Revision[]) => {
   );
 
   return Object.values(itemMap)
-    .map((item) => ({ ...item, ["title"]: item.title || item.name }))
+    .map((item) => ({ ...item, "title": item.title || item.name }))
     .sort((x, y) => (x.name > y.name ? 1 : -1));
 };
 
