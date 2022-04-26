@@ -1,5 +1,53 @@
 # Changelog
 
+## Version v3.2.0 (2022-04-26)
+
+### Features
+
+- provide edito button to jump directly to the item in a repo (7e65a17e)
+- allow to use custom date output formats (dc84d192)
+- sanitize HTML in footer (e0113c44)
+
+### Fixes
+
+- **revisions:** double revisions on fade-out (00dc431c)
+- **codestyle:** remove unnecessary computed property (91d802ab)
+- **marked:** compatibility with marked 4 (9dd3bd87)
+- make build work with npm (39618b7e)
+- use correct default flag type (d226eeb5)
+- Prevent overriding the ring with empty value (c1157a77)
+- Sort out Ring enum typing issues (15feb9bc)
+
+### Refactoring
+
+- return `null` when `editLink` config is not defined (72883ca2)
+
+### Ops and CI/CD
+
+- **deps:** bump minimist from 1.2.5 to 1.2.6 (e070b905)
+- **deps:** bump moment from 2.29.1 to 2.29.2 (91bc99ab)
+- **semanticore:** add semanticore (1bd7f2f5)
+- **deps:** bump url-parse from 1.5.7 to 1.5.10 (bf01bab7)
+- **deps:** bump follow-redirects from 1.14.7 to 1.14.8 (17328672)
+- **deps:** bump url-parse from 1.5.3 to 1.5.7 (d12c0928)
+
+### Documentation
+
+- **changelog:** remove header to let semanticore do its magic (44af047b)
+- move `editLink` config into readme (fcdbb403)
+
+### Other
+
+- Bump marked from 2.1.3 to 4.0.10 (54152e5a)
+- Bump nanoid from 3.1.28 to 3.2.0 (95fefb55)
+- Bump follow-redirects from 1.14.4 to 1.14.7 (c2bd8dd3)
+- Get rid of react-faux-dom dependency (622da055)
+- Add types (b1e63528)
+- Re-order quadrants in the chart (e8eff6bd)
+- Add basic typing to config objects (725b6f99)
+- Full Radar grid with chart (13ba3120)
+- First stab at the radar chart (ad4c8475)
+
 ## 3.1.2
 ### Features
 - Added `showEmptyRings` option to `config.json`, which enables display of headers for rings containing no items.
