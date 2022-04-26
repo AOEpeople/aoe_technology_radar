@@ -142,7 +142,7 @@ const addRevisionToItem = (
     body: ignoreEmptyRevisionBody(revision, item),
   };
 
-  if (revisionCreatesNewHistoryEntry(revision)) {
+  if (revisionCreatesNewHistoryEntry(revision, item)) {
     newItem = {
       ...newItem,
       revisions: [revision, ...newItem.revisions],
@@ -152,8 +152,8 @@ const addRevisionToItem = (
   return newItem;
 };
 
-const revisionCreatesNewHistoryEntry = (revision: Revision) => {
-  return revision.body.trim() !== "" || typeof revision.ring !== "undefined";
+const revisionCreatesNewHistoryEntry = (revision: Revision, item: Item) => {
+  return revision.body.trim() !== "" || (typeof revision.ring !== "undefined" && revision.ring !== item.ring) || (typeof revision.quadrant !== "undefined" && revision.quadrant !== item.quadrant);
 };
 
 const flagItem = (items: Item[], allReleases: string[]) =>

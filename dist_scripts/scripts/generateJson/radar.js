@@ -167,10 +167,7 @@ var createItems = function (revisions) {
         return __assign(__assign({}, items), (_a = {}, _a[revision.name] = addRevisionToItem(items[revision.name], revision), _a));
     }, {});
     return Object.values(itemMap)
-        .map(function (item) {
-        var _a;
-        return (__assign(__assign({}, item), (_a = {}, _a["title"] = item.title || item.name, _a)));
-    })
+        .map(function (item) { return (__assign(__assign({}, item), { "title": item.title || item.name })); })
         .sort(function (x, y) { return (x.name > y.name ? 1 : -1); });
 };
 var ignoreEmptyRevisionBody = function (revision, item) {
@@ -192,13 +189,13 @@ var addRevisionToItem = function (item, revision) {
         info: "",
     }; }
     var newItem = __assign(__assign(__assign({}, item), revision), { body: ignoreEmptyRevisionBody(revision, item) });
-    if (revisionCreatesNewHistoryEntry(revision)) {
+    if (revisionCreatesNewHistoryEntry(revision, item)) {
         newItem = __assign(__assign({}, newItem), { revisions: __spreadArray([revision], newItem.revisions) });
     }
     return newItem;
 };
-var revisionCreatesNewHistoryEntry = function (revision) {
-    return revision.body.trim() !== "" || typeof revision.ring !== "undefined";
+var revisionCreatesNewHistoryEntry = function (revision, item) {
+    return revision.body.trim() !== "" || (typeof revision.ring !== "undefined" && revision.ring !== item.ring) || (typeof revision.quadrant !== "undefined" && revision.quadrant !== item.quadrant);
 };
 var flagItem = function (items, allReleases) {
     return items.map(function (item) {
