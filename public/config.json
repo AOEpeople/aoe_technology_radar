@@ -30,7 +30,7 @@
       "colour": "#F25244",
       "txtColour": "#444444",
       "position": 3,
-      "description": "Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of."
+      "description": "This quadrant clusters technologies around the operation of software and infrastructure related platforms, tools and services."
     },
     "tools": {
       "colour": "#F2A25C",
