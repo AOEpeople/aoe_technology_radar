@@ -1,5 +1,23 @@
 # Changelog
 
+## Version v3.2.1 (2022-05-11)
+
+### Fixes
+
+- **dependencies:** hard pin for now (183d71a4)
+
+### Ops and CI/CD
+
+- **deps:** bump async from 2.6.3 to 2.6.4 (1af0d3e9)
+
+### Chores and tidying
+
+- Update config.json (340877f9)
+
+### Other
+
+- v3.2.0 (8e449257)
+
 ## Version v3.2.0 (2022-04-26)
 
 ### Features
