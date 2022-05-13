@@ -8,11 +8,11 @@ const templateDirectory = realpathSync(__dirname);
 const resolveTemplate = (relativePath = "") =>
   resolve(templateDirectory, "../..", relativePath);
 
-export const template = resolveTemplate();
-export const templateBuild = resolveTemplate("build");
-export const templateNodeModules = resolveTemplate("node_modules");
-export const appRdJson = resolveApp(`build/${radarJson}`);
-export const appBuild = resolveApp("build");
-export const appPublic = resolveApp("public");
-export const appYarnLock = resolveApp("yarn.lock");
-export const appNodeModules = resolveApp("node_modules");
+export const template = resolveTemplate(); // this repository
+export const templateBuild = resolveTemplate("build"); // build folder in this repository
+export const templateNodeModules = resolveTemplate("node_modules"); // node_modules folder in this repository
+export const appRdJson = resolveApp(`build/${radarJson}`); // build/rd.json in project
+export const appBuild = resolveApp("build"); // build folder in project
+export const appPublic = resolveApp("public"); // public folder in project
+export const appYarnLock = resolveApp("yarn.lock"); // yarn.lock in project
+export const appNodeModules = resolveApp("node_modules"); // node_modules folder in project

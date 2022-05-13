@@ -6,7 +6,7 @@ The repository is now found here: https://github.com/AOEpeople/techradar
 
 The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
 
-## Usage for your own radar?
+## Create your own radar
 The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
 
 However, please be aware:
@@ -14,44 +14,44 @@ However, please be aware:
 - It would be nice to mention in radar that the generator is based on this repository.
 - Also, when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
 
-## Use and build the radar
-> Set the environment variable `PUBLIC_URL` properly. For more information see [Host the application under a sub path](#host-the-application-under-a-sub-path)
-
-Add the tech radar as a dependency
+### Use and build the radar
+Create a new yarn3 project and add the tech radar as a dependency
 ```
-yarn add aoe_technology_radar
+npm i aoe_technology_radar
 ```
 
 Build the radar
 ```
-yarn aoe_technology_radar-buildRadar
+npx aoe_technology_radar-buildRadar
 ```
 
-Generate json file based on md files
+Generate the `rd.json` file containing the radar data
 ```
-yarn aoe_technology_radar-generateJson
+npx aoe_technology_radar-generateJson
 ```
 
 Serve
 ```
+cd build
 python3 -m http.server 8080
 ```
 
-Then open here: http://localhost:8080/build
+Then open here: http://localhost:8080/
 
 ### Run a prepared static version
-To have a better SEO ranking, you can generate a html file for every page.
+
+To have a better SEO ranking or deploy to S3, you can generate a html file for every page.
 
 Requirements
 * Build the radar
-* Generate the json file
+* Generate the `rd.json` file
 
 ```
-yarn aoe_technology_radar-createStaticFiles
+npx aoe_technology_radar-createStaticFiles
 ```
 
-## Usage
-For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD) under `/radar`.
+## Authoring Techradar contents
+For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD) under `./radar`.
 
 In each release folder create a folder for every quadrant and place the items there.
 
@@ -100,19 +100,19 @@ You can customize the following parts of the tech radar.
 Set the environment variable `REACT_APP_RADAR_NAME`. The default is "AOE Technology Radar".
 
 ### Host the application under a sub path
-To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar". The default is "/build".
+To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar". The default is "/".
 
 ### Change the favicon
-To change the favicon, create a public folder in your application and put your `favicon.ico` in it.
+To change the favicon, create a folder named `public` and put your `favicon.ico` in it.
 
 ### Change the logo
-To change the logo, create a public folder in your application and put your `logo.svg` in it.
+To change the logo, create a folder named `public` and put your `logo.svg` in it.
 
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Change the date format
 By default the Date format used in the app is `"MMMM YYYY"`.
-You can change this by editing the config file as shown below.
+You can change this by editing the `config.js` file as shown below.
 Please be sure you are entering a valid [moment.js format string](https://momentjs.com/docs/#/displaying/format).
 
 ```json
@@ -125,7 +125,6 @@ Please be sure you are entering a valid [moment.js format string](https://moment
 For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Edit from published radar
-
 You can activate the `editLink` feature which will display a small edit button next to a technology which let's you jump directly to a gitlab / github / etc. edit page:
 
 ```json
@@ -287,19 +286,14 @@ To add a help page, create a public folder in your application and put a `messag
 > For more information see the source code of the [Messages Context](./src/context/MessagesContext/index.tsx).
 
 ## Development
-For local development you need a `rd.json` in the public folder. You can use [rd_example.json](./rd_example.json).
-
-For several customizations you need a `messages.json` in the public folder. You can use [messages_example.json](./messages_example.json).
-
-Then simply start the dev server
-
+Then simply start the dev server:
 ```
-yarn start
+npm run start
 ```
 
 ### Change scripts
 If you change one of the scripts in the scripts' folder, you have to compile them to JavaScript.
 
-Therefore, run `yarn build:scripts` and commit the results in dist_scripts.
+Therefore, run `npm run build:scripts` and commit the results in dist_scripts.
 
 To make it more robust the script will be executed on commit.

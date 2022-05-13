@@ -5,7 +5,10 @@ interface Props {
   alt?: string;
 }
 
-const HeroHeadline: React.FC<Props> = ({ children, alt }) => (
+const HeroHeadline: React.FC<React.PropsWithChildren<Props>> = ({
+  children,
+  alt,
+}) => (
   <div className="hero-headline">
     {children} <span className="hero-headline__alt">{alt}</span>
   </div>

@@ -1,0 +1,19 @@
+name: Test AOE Technology Radar
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+    - run: yarn
+    - run: yarn lint
+    - run: yarn build
+    - run: git diff --quiet || (echo 'workspace is dirty after rebuilding' ; git diff ; exit 1)

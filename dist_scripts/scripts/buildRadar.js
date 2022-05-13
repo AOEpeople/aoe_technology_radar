@@ -2,7 +2,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -36,7 +40,7 @@ fs.removeSync(paths.templateNodeModules);
 fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
 var runCommand = function (command) {
     return new Promise(function (resolve, reject) {
-        var executedCommand = child_process_1.spawn(command, {
+        var executedCommand = (0, child_process_1.spawn)(command, {
             stdio: "inherit",
             shell: true,
         });
@@ -60,10 +64,11 @@ var buildTemplate = function () {
     var packageManager = fs.existsSync(paths.appYarnLock) ? "yarn" : "npm";
     fs.emptyDirSync(paths.templateBuild);
     process.chdir(paths.template);
-    return runCommand(packageManager + " run build");
+    return runCommand("".concat(packageManager, " run build"));
 };
 buildTemplate().then(function () {
     fs.copySync(paths.templateBuild, paths.appBuild);
+    fs.ensureDirSync(paths.appPublic);
     fs.copySync(paths.appPublic, paths.appBuild);
-    console.log(paths.appBuild + " was created and can be deployed.");
+    console.log("".concat(paths.appBuild, " was created and can be deployed."));
 });

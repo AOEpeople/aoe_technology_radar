@@ -12,7 +12,11 @@ var __assign = (this && this.__assign) || function () {
 };
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -65,10 +69,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -92,7 +100,7 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
     var fileNames, revisions, allReleases, items, flaggedItems;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, file_1.getAllMarkdownFiles(file_1.radarPath())];
+            case 0: return [4 /*yield*/, (0, file_1.getAllMarkdownFiles)((0, file_1.radarPath)())];
             case 1:
                 fileNames = _a.sent();
                 return [4 /*yield*/, createRevisionsFromFiles(fileNames)];
@@ -101,6 +109,7 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
                 allReleases = getAllReleases(revisions);
                 items = createItems(revisions);
                 flaggedItems = flagItem(items, allReleases);
+                items.forEach(function (item) { return checkAttributes(item.name, item); });
                 return [2 /*return*/, {
                         items: flaggedItems,
                         releases: allReleases,
@@ -110,14 +119,14 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
 }); };
 exports.createRadar = createRadar;
 var checkAttributes = function (fileName, attributes) {
-    var rawConf = fs_1.readFileSync(path.resolve(paths_1.appBuild, 'config.json'), 'utf-8');
+    var rawConf = (0, fs_1.readFileSync)(path.resolve(paths_1.appBuild, 'config.json'), 'utf-8');
     var config = JSON.parse(rawConf);
-    if (attributes.ring && !config.rings.includes(attributes.ring)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'ring' - must be one of " + config.rings);
+    if (!config.rings.includes(attributes.ring)) {
+        throw new Error("Error: ".concat(fileName, " has an illegal value for 'ring' - must be one of ").concat(config.rings));
     }
     var quadrants = Object.keys(config.quadrants);
-    if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
-        throw new Error("Error: " + fileName + " has an illegal value for 'quadrant' - must be one of " + quadrants);
+    if (!quadrants.includes(attributes.quadrant)) {
+        throw new Error("Error: ".concat(fileName, " has an illegal value for 'quadrant' - must be one of ").concat(quadrants));
     }
     return attributes;
 };
@@ -125,17 +134,17 @@ var createRevisionsFromFiles = function (fileNames) {
     var publicUrl = process.env.PUBLIC_URL;
     return Promise.all(fileNames.map(function (fileName) {
         return new Promise(function (resolve, reject) {
-            fs_extra_1.readFile(fileName, "utf8", function (err, data) { return __awaiter(void 0, void 0, void 0, function () {
+            (0, fs_extra_1.readFile)(fileName, "utf8", function (err, data) { return __awaiter(void 0, void 0, void 0, function () {
                 var fm, html;
                 return __generator(this, function (_a) {
                     if (err) {
                         reject(err);
                     }
                     else {
-                        fm = front_matter_1.default(data);
-                        html = marked_1.marked(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
+                        fm = (0, front_matter_1.default)(data);
+                        html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(publicUrl, "/")));
                         html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
-                        resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), checkAttributes(fileName, fm.attributes)), { fileName: fileName, body: html }));
+                        resolve(__assign(__assign(__assign({}, itemInfoFromFilename(fileName)), fm.attributes), { fileName: fileName, body: html }));
                     }
                     return [2 /*return*/];
                 });
@@ -155,7 +164,7 @@ var getAllReleases = function (revisions) {
         .reduce(function (allReleases, _a) {
         var release = _a.release;
         if (!allReleases.includes(release)) {
-            return __spreadArray(__spreadArray([], allReleases), [release]);
+            return __spreadArray(__spreadArray([], allReleases, true), [release], false);
         }
         return allReleases;
     }, [])
@@ -190,7 +199,7 @@ var addRevisionToItem = function (item, revision) {
     }; }
     var newItem = __assign(__assign(__assign({}, item), revision), { body: ignoreEmptyRevisionBody(revision, item) });
     if (revisionCreatesNewHistoryEntry(revision, item)) {
-        newItem = __assign(__assign({}, newItem), { revisions: __spreadArray([revision], newItem.revisions) });
+        newItem = __assign(__assign({}, newItem), { revisions: __spreadArray([revision], newItem.revisions, true) });
     }
     return newItem;
 };

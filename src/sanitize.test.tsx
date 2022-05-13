@@ -16,5 +16,3 @@ describe("sanitize", () => {
     expect(res.__html).toEqual("<a href=\"https://example.org\">Example.org</a>");
   });
 });
-
-

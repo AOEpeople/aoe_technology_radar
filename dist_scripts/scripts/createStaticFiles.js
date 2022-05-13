@@ -55,22 +55,22 @@ process.on("unhandledRejection", function (err) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
                 console.log("starting static");
-                return [4 /*yield*/, radar_1.createRadar()];
+                return [4 /*yield*/, (0, radar_1.createRadar)()];
             case 1:
                 radar = _a.sent();
-                fs_1.copyFileSync("build/index.html", "build/overview.html");
-                fs_1.copyFileSync("build/index.html", "build/help-and-about-tech-radar.html");
-                rawConf = fs_1.readFileSync("build/config.json", "utf-8");
+                (0, fs_1.copyFileSync)("build/index.html", "build/overview.html");
+                (0, fs_1.copyFileSync)("build/index.html", "build/help-and-about-tech-radar.html");
+                rawConf = (0, fs_1.readFileSync)("build/config.json", "utf-8");
                 config = JSON.parse(rawConf);
                 Object.keys(config.quadrants).forEach(function (quadrant) {
-                    var destFolder = "build/" + quadrant;
-                    fs_1.copyFileSync("build/index.html", destFolder + ".html");
-                    if (!fs_1.existsSync(destFolder)) {
-                        fs_1.mkdirSync(destFolder);
+                    var destFolder = "build/".concat(quadrant);
+                    (0, fs_1.copyFileSync)("build/index.html", "".concat(destFolder, ".html"));
+                    if (!(0, fs_1.existsSync)(destFolder)) {
+                        (0, fs_1.mkdirSync)(destFolder);
                     }
                 });
                 radar.items.forEach(function (item) {
-                    fs_1.copyFileSync("build/index.html", "build/" + item.quadrant + "/" + item.name + ".html");
+                    (0, fs_1.copyFileSync)("build/index.html", "build/".concat(item.quadrant, "/").concat(item.name, ".html"));
                 });
                 console.log("created static files.");
                 return [3 /*break*/, 3];

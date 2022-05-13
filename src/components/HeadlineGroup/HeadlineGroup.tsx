@@ -6,7 +6,10 @@ interface Props {
   secondary?: boolean;
 }
 
-const HeadlineGroup: React.FC<Props> = ({ children, secondary = false }) => (
+const HeadlineGroup: React.FC<React.PropsWithChildren<Props>> = ({
+  children,
+  secondary = false,
+}) => (
   <div
     className={classNames("headline-group", {
       "headline-group--secondary": secondary,

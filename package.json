@@ -2,7 +2,6 @@
   "name": "aoe_technology_radar",
   "version": "3.2.1",
   "description": "AOE Technology Radar",
-  "private": false,
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "Apache-2.0",
   "repository": {
@@ -10,63 +9,59 @@
     "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
   },
   "bin": {
-    "aoe_technology_radar-generateJson": "dist_scripts/scripts/generateJson.js",
     "aoe_technology_radar-buildRadar": "dist_scripts/scripts/buildRadar.js",
-    "aoe_technology_radar-createStaticFiles": "dist_scripts/scripts/createStaticFiles.js"
+    "aoe_technology_radar-createStaticFiles": "dist_scripts/scripts/createStaticFiles.js",
+    "aoe_technology_radar-generateJson": "dist_scripts/scripts/generateJson.js"
   },
   "scripts": {
-    "prepare": "husky install && yarn build:scripts",
+    "prepare": "husky install && npm run build:scripts",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:scripts": "tsc --project tsconfig.scripts.json",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "ts:check": "tsc --noEmit",
-    "lint": "yarn ts:check && eslint src/**/*.tsx"
+    "lint": "npm run ts:check && eslint src/**/*.tsx"
   },
   "dependencies": {
+    "@apideck/better-ajv-errors": "0.3.3",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
     "@types/d3": "7.1.0",
     "@types/fs-extra": "9.0.13",
-    "@types/marked": "2.0.3",
-    "@types/node": "16.10.1",
-    "@types/react": "17.0.24",
-    "@types/react-dom": "17.0.9",
-    "@types/react-router-dom": "5.3.0",
-    "@types/react-tooltip": "4.2.4",
-    "@types/sanitize-html": "2.5.0",
+    "@types/jest": "27.5.1",
+    "@types/node": "17.0.33",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.4",
+    "@types/sanitize-html": "2.6.2",
     "@types/walk": "2.3.1",
     "classnames": "2.3.1",
-    "d3": "7.2.1",
+    "d3": "7.4.4",
     "front-matter": "4.0.2",
-    "fs-extra": "10.0.0",
-    "highlight.js": "11.2.0",
-    "marked": "4.0.10",
-    "moment": "2.29.1",
-    "query-string": "7.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "4.2.0",
-    "react-router-dom": "5.3.0",
-    "react-scripts": "4.0.3",
+    "fs-extra": "10.1.0",
+    "highlight.js": "11.5.1",
+    "husky": "8.0.1",
+    "marked": "4.0.15",
+    "moment": "2.29.3",
+    "postcss-normalize": "^10.0.1",
+    "query-string": "7.1.1",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-icons": "4.3.1",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "5.0.1",
     "react-tooltip": "4.2.21",
-    "sanitize-html": "2.5.2",
-    "sass": "1.42.1",
-    "typescript": "4.3.5",
-    "walk": "2.3.15"
+    "sanitize-html": "2.7.0",
+    "sass": "1.51.0",
+    "typescript": "4.6.4",
+    "walk": "2.3.15",
+    "yaml": "2.0.1"
   },
   "devDependencies": {
-    "@testing-library/dom": "^8.6.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "@typescript-eslint/parser": "5.23.0",
+    "eslint": "8.15.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-react": "7.29.4",
+    "yallist": "4.0.0"
   },
   "browserslist": {
     "production": [

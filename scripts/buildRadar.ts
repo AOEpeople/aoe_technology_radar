@@ -52,6 +52,7 @@ const buildTemplate = () => {
 
 buildTemplate().then(() => {
   fs.copySync(paths.templateBuild, paths.appBuild);
+  fs.ensureDirSync(paths.appPublic)
   fs.copySync(paths.appPublic, paths.appBuild);
   console.log(`${paths.appBuild} was created and can be deployed.`);
 });

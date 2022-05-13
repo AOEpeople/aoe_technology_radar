@@ -23,6 +23,8 @@ export const createRadar = async (): Promise<Radar> => {
   const items = createItems(revisions);
   const flaggedItems = flagItem(items, allReleases);
 
+  items.forEach(item => checkAttributes(item.name, item))
+
   return {
     items: flaggedItems,
     releases: allReleases,
@@ -33,14 +35,14 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
   const rawConf = readFileSync(path.resolve(appBuild, 'config.json'), 'utf-8');
   const config = JSON.parse(rawConf);
 
-  if (attributes.ring && !config.rings.includes(attributes.ring)) {
+  if (!config.rings.includes(attributes.ring)) {
     throw new Error(
       `Error: ${fileName} has an illegal value for 'ring' - must be one of ${config.rings}`
     );
   }
 
   const quadrants = Object.keys(config.quadrants);
-  if (attributes.quadrant && !quadrants.includes(attributes.quadrant)) {
+  if (!quadrants.includes(attributes.quadrant)) {
     throw new Error(
       `Error: ${fileName} has an illegal value for 'quadrant' - must be one of ${quadrants}`
     );
@@ -70,7 +72,7 @@ const createRevisionsFromFiles = (fileNames: string[]) => {
 
               resolve({
                 ...itemInfoFromFilename(fileName),
-                ...checkAttributes(fileName, fm.attributes),
+                ...fm.attributes,
                 fileName,
                 body: html,
               } as Revision);
