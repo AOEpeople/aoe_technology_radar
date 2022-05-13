@@ -1,5 +1,25 @@
 # Changelog
 
+## Version v3.3.0 (2022-05-13)
+
+### Features
+
+- **react:** update to react 18 (f28aad8b)
+
+### Fixes
+
+- **deps:** pin dependency postcss-normalize to 10.0.1 (bb89746f)
+- **versions:** version (48910005)
+
+### Ops and CI/CD
+
+- **github:** remove yarn and check unchecked files (bda08778)
+- **semanticore:** update package.json upon release (f4c5c9ed)
+
+### Chores and tidying
+
+- **deps:** add renovate.json (ce16a271)
+
 ## Version v3.2.1 (2022-05-11)
 
 ### Fixes
