@@ -15,14 +15,14 @@ interface PageHelp {
   paragraphs: Paragraph[];
   quadrantsPreDescription?: string;
   quadrants: Quadrant[];
-  rings: {name: string, description: string }[];
+  rings: { name: string; description: string }[];
   ringsPreDescription?: string;
   sourcecodeLink?: {
     href: string;
     name: string;
     description: string;
   };
-  headlinePrefix?: string
+  headlinePrefix?: string;
 }
 
 interface PageOverview {
@@ -54,10 +54,9 @@ export interface Messages {
 
 const MessagesContext = createContext<Messages | undefined>(undefined);
 
-export const MessagesProvider: FC<{ messages?: Messages }> = ({
-  messages,
-  children,
-}) => (
+export const MessagesProvider: FC<
+  React.PropsWithChildren<{ messages?: Messages }>
+> = ({ messages, children }) => (
   <MessagesContext.Provider value={messages}>
     {children}
   </MessagesContext.Provider>

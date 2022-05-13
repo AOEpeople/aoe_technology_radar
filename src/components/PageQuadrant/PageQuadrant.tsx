@@ -30,7 +30,12 @@ export default function PageQuadrant({
       <HeadlineGroup>
         <HeroHeadline>{translate(config, pageName)}</HeroHeadline>
       </HeadlineGroup>
-      <QuadrantSection groups={groups} quadrantName={pageName} config={config} big />
+      <QuadrantSection
+        groups={groups}
+        quadrantName={pageName}
+        config={config}
+        big
+      />
     </Fadeable>
   );
 }

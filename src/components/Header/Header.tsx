@@ -5,7 +5,7 @@ import Link from "../Link/Link";
 import LogoLink from "../LogoLink/LogoLink";
 import Search from "../Search/Search";
 import { radarNameShort } from "../../config";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import qs from "query-string";
 import { useMessages } from "../../context/MessagesContext";
 
@@ -13,7 +13,7 @@ export default function Header({ pageName }: { pageName: string }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
   const { searchLabel, pageHelp, pageOverview } = useMessages();
-  const history = useHistory();
+  const navigate = useNavigate();
   const searchRef = useRef<HTMLInputElement>(null);
 
   const openSearch = () => {
@@ -29,7 +29,7 @@ export default function Header({ pageName }: { pageName: string }) {
   };
 
   const handleSearchSubmit = () => {
-    history.push({
+    navigate({
       pathname: "/overview.html",
       search: qs.stringify({ search: search }),
     });
@@ -55,20 +55,20 @@ export default function Header({ pageName }: { pageName: string }) {
           <div className="nav__item">
             <Link pageName="help-and-about-tech-radar" className="icon-link">
               <span className="icon icon--question icon-link__icon" />
-              {pageHelp.headlinePrefix || 'How to use' } {radarNameShort}?
+              {pageHelp.headlinePrefix || "How to use"} {radarNameShort}?
             </Link>
           </div>
         )}
         <div className="nav__item">
           <Link pageName="overview" className="icon-link">
             <span className="icon icon--overview icon-link__icon" />
-            { pageOverview?.title || 'Technologies Overview' }
+            {pageOverview?.title || "Technologies Overview"}
           </Link>
         </div>
         <div className="nav__item">
           <button className="icon-link" onClick={handleOpenClick}>
             <span className="icon icon--search icon-link__icon" />
-            { searchLabel || 'Search' }
+            {searchLabel || "Search"}
           </button>
           <div className={classNames("nav__search", { "is-open": searchOpen })}>
             <Search

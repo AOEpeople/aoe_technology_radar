@@ -1,7 +1,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -18,10 +22,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.save = exports.getAllMarkdownFiles = exports.buildPath = exports.jsPath = exports.faviconPath = exports.stylesPath = exports.radarPath = exports.relativePath = void 0;
@@ -41,7 +49,7 @@ var radarPath = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         pathInSrc[_i] = arguments[_i];
     }
-    return exports.relativePath.apply(void 0, __spreadArray(["radar"], pathInSrc));
+    return exports.relativePath.apply(void 0, __spreadArray(["radar"], pathInSrc, false));
 };
 exports.radarPath = radarPath;
 var stylesPath = function () {
@@ -49,7 +57,7 @@ var stylesPath = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         pathInSrc[_i] = arguments[_i];
     }
-    return exports.relativePath.apply(void 0, __spreadArray(["styles"], pathInSrc));
+    return exports.relativePath.apply(void 0, __spreadArray(["styles"], pathInSrc, false));
 };
 exports.stylesPath = stylesPath;
 var faviconPath = function () {
@@ -57,7 +65,7 @@ var faviconPath = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         pathInSrc[_i] = arguments[_i];
     }
-    return exports.relativePath.apply(void 0, __spreadArray(["assets/favicon.ico"], pathInSrc));
+    return exports.relativePath.apply(void 0, __spreadArray(["assets/favicon.ico"], pathInSrc, false));
 };
 exports.faviconPath = faviconPath;
 var jsPath = function () {
@@ -65,7 +73,7 @@ var jsPath = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         pathInSrc[_i] = arguments[_i];
     }
-    return exports.relativePath.apply(void 0, __spreadArray(["js"], pathInSrc));
+    return exports.relativePath.apply(void 0, __spreadArray(["js"], pathInSrc, false));
 };
 exports.jsPath = jsPath;
 var buildPath = function () {
@@ -73,7 +81,7 @@ var buildPath = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         pathInDist[_i] = arguments[_i];
     }
-    return exports.relativePath.apply(void 0, __spreadArray(["build"], pathInDist));
+    return exports.relativePath.apply(void 0, __spreadArray(["build"], pathInDist, false));
 };
 exports.buildPath = buildPath;
 var getAllMarkdownFiles = function (folder) {
@@ -82,7 +90,7 @@ var getAllMarkdownFiles = function (folder) {
 exports.getAllMarkdownFiles = getAllMarkdownFiles;
 var getAllFiles = function (folder, predicate) {
     return new Promise(function (resolve, reject) {
-        var walker = walk_1.walk(folder, { followLinks: false });
+        var walker = (0, walk_1.walk)(folder, { followLinks: false });
         var files = [];
         walker.on("file", function (root, fileStat, next) {
             if (predicate(fileStat.name)) {
@@ -106,6 +114,6 @@ var getAllFiles = function (folder, predicate) {
 };
 var isMarkdownFile = function (name) { return name.match(/\.md$/) !== null; };
 var save = function (data, fileName) {
-    return fs_extra_1.outputFile(exports.buildPath(fileName), data);
+    return (0, fs_extra_1.outputFile)((0, exports.buildPath)(fileName), data);
 };
 exports.save = save;

@@ -1,1 +1,4 @@
-module.exports = {};
+module.exports = {
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+};

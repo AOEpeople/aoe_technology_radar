@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
+
 import PageIndex from "./PageIndex/PageIndex";
 import PageOverview from "./PageOverview/PageOverview";
 import PageHelp from "./PageHelp/PageHelp";
 import PageQuadrant from "./PageQuadrant/PageQuadrant";
 import PageItem from "./PageItem/PageItem";
 import PageItemMobile from "./PageItemMobile/PageItemMobile";
-import {
-  ConfigData,
-  getItemPageNames,
-  isMobileViewport,
-} from "../config";
+import { ConfigData, getItemPageNames, isMobileViewport } from "../config";
 import { Item } from "../model";
 
 type RouterProps = {
@@ -30,7 +27,11 @@ enum page {
   notFound,
 }
 
-const getPageByName = (items: Item[], pageName: string, config: ConfigData): page => {
+const getPageByName = (
+  items: Item[],
+  pageName: string,
+  config: ConfigData
+): page => {
   if (pageName === "index") {
     return page.index;
   }
@@ -55,7 +56,7 @@ export default function Router({
   items,
   releases,
   search,
-  config
+  config,
 }: RouterProps) {
   const [statePageName, setStatePageName] = useState(pageName);
   const [leaving, setLeaving] = useState(false);
@@ -63,7 +64,8 @@ export default function Router({
 
   useEffect(() => {
     const nowLeaving =
-      getPageByName(items, pageName, config) !== getPageByName(items, statePageName, config);
+      getPageByName(items, pageName, config) !==
+      getPageByName(items, statePageName, config);
     if (nowLeaving) {
       setLeaving(true);
       setNextPageName(pageName);

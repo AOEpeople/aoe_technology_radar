@@ -10,10 +10,14 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.nonFeaturedOnly = exports.featuredOnly = exports.FlagType = exports.HomepageOption = void 0;
@@ -47,7 +51,7 @@ exports.groupByQuadrants = groupByQuadrants;
 var groupByFirstLetter = function (items) {
     var index = items.reduce(function (letterIndex, item) {
         var _a;
-        return (__assign(__assign({}, letterIndex), (_a = {}, _a[exports.getFirstLetter(item)] = addItemToList(letterIndex[exports.getFirstLetter(item)], item), _a)));
+        return (__assign(__assign({}, letterIndex), (_a = {}, _a[(0, exports.getFirstLetter)(item)] = addItemToList(letterIndex[(0, exports.getFirstLetter)(item)], item), _a)));
     }, {});
     return Object.keys(index)
         .sort()
@@ -64,11 +68,11 @@ var addItemToQuadrant = function (quadrant, item) {
 };
 var addItemToList = function (list, item) {
     if (list === void 0) { list = []; }
-    return __spreadArray(__spreadArray([], list), [item]);
+    return __spreadArray(__spreadArray([], list, true), [item], false);
 };
 var addItemToRing = function (ring, item) {
     if (ring === void 0) { ring = []; }
-    return __spreadArray(__spreadArray([], ring), [item]);
+    return __spreadArray(__spreadArray([], ring, true), [item], false);
 };
 var getFirstLetter = function (item) {
     return item.title.substr(0, 1).toUpperCase();

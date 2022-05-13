@@ -11,7 +11,7 @@ type ItemListProps = {
   itemStyle?: React.CSSProperties[];
 };
 
-const ItemList: React.FC<ItemListProps> = ({
+const ItemList: React.FC<React.PropsWithChildren<ItemListProps>> = ({
   children,
   items,
   activeItem,
