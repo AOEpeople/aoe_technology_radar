@@ -39,14 +39,11 @@ export default function PageOverview({
   const [ring, setRing] = useState<string | "all">("all");
   const [search, setSearch] = useState(searchProp);
   const { pageOverview } = useMessages();
-  const title = pageOverview?.title || 'Technologies Overview';
+  const title = pageOverview?.title || "Technologies Overview";
 
   useEffect(() => {
-    if (rings.length > 0) {
-      setRing(rings[0]);
-    }
     setSearch(searchProp);
-  }, [rings, searchProp]);
+  }, [searchProp]);
 
   const handleRingClick = (ring: string) => () => {
     setRing(ring);
@@ -97,7 +94,7 @@ export default function PageOverview({
           </div>
           <div className="split__right">
             <div className="nav">
-              {rings.map((ringName) => (
+              {["all", ...rings].map((ringName) => (
                 <div className="nav__item" key={ringName}>
                   <Badge
                     big
