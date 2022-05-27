@@ -120,7 +120,7 @@ var createRadar = function () { return __awaiter(void 0, void 0, void 0, functio
 }); };
 exports.createRadar = createRadar;
 var checkAttributes = function (fileName, attributes) {
-    var rawConf = fs_1.readFileSync(path.resolve(paths_1.appBuild, "config.json"), "utf-8");
+    var rawConf = (0, fs_1.readFileSync)(path.resolve(paths_1.appBuild, "config.json"), "utf-8");
     var config = JSON.parse(rawConf);
     if (!config.rings.includes(attributes.ring)) {
         throw new Error("Error: ".concat(fileName, " has an illegal value for 'ring' - must be one of ").concat(config.rings));
@@ -129,19 +129,25 @@ var checkAttributes = function (fileName, attributes) {
     if (!quadrants.includes(attributes.quadrant)) {
         throw new Error("Error: ".concat(fileName, " has an illegal value for 'quadrant' - must be one of ").concat(quadrants));
     }
-    if (config.radar && attributes.radars) {
-        if (!attributes.radars.includes(config.radar)) {
-            return undefined;
+    if (config.tags) {
+        for (var _i = 0, _a = config.tags; _i < _a.length; _i++) {
+            var tag = _a[_i];
+            if (attributes.tags && attributes.tags.includes(tag)) {
+                return attributes;
+            }
         }
+        return undefined;
     }
-    return attributes;
+    else {
+        return attributes;
+    }
 };
 var createRevisionsFromFiles = function (fileNames) {
     var publicUrl = process.env.PUBLIC_URL;
     return Promise.all(fileNames.map(function (fileName) {
-        return fs_extra_1.readFile(fileName, "utf8").then(function (data) {
-            var fm = front_matter_1.default(data);
-            var html = marked_1.marked(fm.body.replace(/\]\(\//g, "](" + publicUrl + "/"));
+        return (0, fs_extra_1.readFile)(fileName, "utf8").then(function (data) {
+            var fm = (0, front_matter_1.default)(data);
+            var html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(publicUrl, "/")));
             html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
             var attributes = checkAttributes(fileName, fm.attributes);
             if (attributes) {
