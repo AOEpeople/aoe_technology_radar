@@ -10,6 +10,8 @@ import { radarPath, getAllMarkdownFiles } from "./file";
 import { Item, Revision, ItemAttributes, Radar, FlagType } from "../../src/model";
 import { appBuild } from "../paths";
 
+import type { ConfigData } from "../../src/config";
+
 type FMAttributes = ItemAttributes;
 
 marked.setOptions({
@@ -34,7 +36,7 @@ export const createRadar = async (): Promise<Radar> => {
 
 const checkAttributes = (fileName: string, attributes: FMAttributes) => {
   const rawConf = readFileSync(path.resolve(appBuild, "config.json"), "utf-8");
-  const config = JSON.parse(rawConf);
+  const config = JSON.parse(rawConf) as ConfigData;
 
   if (!config.rings.includes(attributes.ring)) {
     throw new Error(
@@ -49,13 +51,17 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
     );
   }
 
-  if (config.radar && attributes.radars) {
-    if (!attributes.radars.includes(config.radar)) {
-      return undefined;
+  if (config.tags) {
+    for (let tag of config.tags) {
+      if (attributes.tags && attributes.tags.includes(tag)) {
+        return attributes;
+      }
     }
+    return undefined;
+  } else {
+    return attributes;
   }
 
-  return attributes;
 };
 
 const createRevisionsFromFiles = (fileNames: string[]) => {

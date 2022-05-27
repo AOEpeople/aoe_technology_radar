@@ -156,26 +156,26 @@ The content should look as follows:
 }
 ```
 
-### Create different Radars
-To create different radars with one set of blips put a `radars` entry in your frontmatter:
+### Filter with tags / create different Radars
+To create different radars with one set of blips put a `tags` entry in your frontmatter:
 ```yaml
 ---
 title: Item
 ring: adopt
 quadrant: tools
-radars: [radar-1, radar-2]
+tags: [radar-1, radar-2]
 ---
 ```
 
-Then, to select the blips put a `radar` entry in the `config.json` for generating the site:
+Then, to select the blips put a `tags` entry in the `config.json` for generating the site:
 ```json
 {
-  "radar": "radar-1",
+  "tags": ["radar-1"],
   "quadrants": {
     ...
 ```
 
-This will only add blips with the defined radar into the output.
+This will only add blips with the defined tags into the output.
 
 ### Change the index.html
 To change the index.html, create a public folder in your application and put your `index.html` in it.

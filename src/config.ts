@@ -1,6 +1,7 @@
 import {Item, HomepageOption, QuadrantConfig} from './model';
 
 export interface ConfigData {
+  tags?: string[];
   quadrants: { [key: string]: string };
   rings: string[];
   showEmptyRings: boolean;
