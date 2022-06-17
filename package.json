@@ -23,7 +23,7 @@
     "lint": "npm run ts:check && eslint src/**/*.tsx"
   },
   "dependencies": {
-    "@apideck/better-ajv-errors": "0.3.3",
+    "@apideck/better-ajv-errors": "0.3.4",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
     "@types/d3": "7.1.0",
