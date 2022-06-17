@@ -40,7 +40,7 @@
     "fs-extra": "10.1.0",
     "highlight.js": "11.5.1",
     "husky": "8.0.1",
-    "marked": "4.0.15",
+    "marked": "4.0.17",
     "moment": "2.29.3",
     "postcss-normalize": "10.0.1",
     "query-string": "7.1.1",
