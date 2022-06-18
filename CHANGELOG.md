@@ -1,5 +1,37 @@
 # Changelog
 
+## Version v3.3.1 (2022-06-18)
+
+### Fixes
+
+- **search:** do not filter "adopt" by default (f0f4e58a)
+- **deps:** update dependency yaml to v2.1.0 (e3615d93)
+
+### Ops and CI/CD
+
+- **renovate:** change all commits to chore (85de5ffe)
+
+### Chores and tidying
+
+- **deps:** update dependency eslint to v8.18.0 (2f340c36)
+- **deps:** update dependency typescript to v4.7.4 (10b93d4b)
+- **deps:** update react monorepo to v18.2.0 (f7c37f6d)
+- **deps:** update dependency react-icons to v4.4.0 (d1eeacd0)
+- **deps:** update dependency yaml to v2.1.1 (0afc7df8)
+- **deps:** update dependency @types/jest to v28 (d733bb4a)
+- **deps:** update dependency @testing-library/react to v13.3.0 (984d0154)
+- **deps:** update dependency @types/react to v18.0.14 (80e3e156)
+- **deps:** update dependency @types/jest to v27.5.2 (3f022e58)
+- **deps:** update dependency @apideck/better-ajv-errors to v0.3.4 (14723687)
+- **deps:** update dependency @types/react-dom to v18.0.5 (2e2bba35)
+- **deps:** update dependency @types/d3 to v7.4.0 (919160e8)
+- **deps:** update dependency eslint-plugin-react to v7.30.0 (c998c2f6)
+- **deps:** update dependency marked to v4.0.17 (457fb2e9)
+- **deps:** update dependency @typescript-eslint/parser to v5.28.0 (b60682ac)
+- **deps:** update dependency sass to v1.52.3 (e619385d)
+- **deps:** update dependency typescript to v4.7.3 (c3994b33)
+- **deps:** update dependency eslint to v8.17.0 (b585874b)
+
 ## Version v3.3.0 (2022-05-13)
 
 ### Features
