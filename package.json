@@ -35,7 +35,7 @@
     "@types/sanitize-html": "2.6.2",
     "@types/walk": "2.3.1",
     "classnames": "2.3.1",
-    "d3": "7.4.4",
+    "d3": "7.6.1",
     "front-matter": "4.0.2",
     "fs-extra": "10.1.0",
     "highlight.js": "11.5.1",
