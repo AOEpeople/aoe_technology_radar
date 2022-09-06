@@ -1,5 +1,32 @@
 # Changelog
 
+## Version v3.3.2 (2022-09-06)
+
+### Ops and CI/CD
+
+- **deps:** bump terser from 5.13.1 to 5.14.2 (b30f7fe5)
+
+### Chores and tidying
+
+- **deps:** update dependency @testing-library/react to v13.4.0 (2fb4720f)
+- **deps:** update dependency @types/react to v18.0.18 (9a541dc5)
+- **deps:** update dependency sanitize-html to v2.7.1 (9ebd1f78)
+- **deps:** update dependency @types/react-dom to v18.0.6 (724aa8ad)
+- **deps:** update dependency eslint to v8.23.0 (af708c24)
+- **deps:** update dependency @apideck/better-ajv-errors to v0.3.6 (93816450)
+- **deps:** update dependency sass to v1.54.8 (ce6185d9)
+- **deps:** update dependency @testing-library/jest-dom to v5.16.5 (6fc891de)
+- **deps:** update dependency moment to 2.29.4 [security] (56da9b1f)
+- **deps:** update dependency d3 to v7.6.1 (45547c2d)
+- **deps:** update dependency eslint-plugin-react to v7.30.1 (d63f123f)
+- **deps:** update dependency @types/jest to v28.1.8 (a71170b3)
+- **deps:** update dependency @typescript-eslint/parser to v5.33.1 (ea536f51)
+
+### Other
+
+- Switch to use tags for selecting radar blips (63a9f5c2)
+- Enable multiple radars (faadd868)
+
 ## Version v3.3.1 (2022-06-18)
 
 ### Fixes
