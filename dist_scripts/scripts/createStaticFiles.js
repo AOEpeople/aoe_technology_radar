@@ -48,12 +48,11 @@ process.env.NODE_ENV = "production";
 process.on("unhandledRejection", function (err) {
     throw err;
 });
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var radar, rawConf, config, e_1;
+var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var radar, rawConf, config;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 2, , 3]);
                 console.log("starting static");
                 return [4 /*yield*/, (0, radar_1.createRadar)()];
             case 1:
@@ -72,13 +71,17 @@ process.on("unhandledRejection", function (err) {
                 radar.items.forEach(function (item) {
                     (0, fs_1.copyFileSync)("build/index.html", "build/".concat(item.quadrant, "/").concat(item.name, ".html"));
                 });
-                console.log("created static files.");
-                return [3 /*break*/, 3];
-            case 2:
-                e_1 = _a.sent();
-                console.error("error:", e_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
+                return [2 /*return*/];
         }
     });
-}); })();
+}); };
+createStaticFiles()
+    .then(function () {
+    console.log("created static files.");
+})
+    .catch(function (err) {
+    if (err && err.message) {
+        console.error(err.message);
+    }
+    process.exit(1);
+});

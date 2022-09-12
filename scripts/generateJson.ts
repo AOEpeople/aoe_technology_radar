@@ -21,13 +21,8 @@ const generateJson = async () => {
   const { createRadar } = require("./generateJson/radar");
   const { save } = require("./generateJson/file");
 
-  try {
-    const radar = await createRadar();
-
-    await save(JSON.stringify(radar), paths.radarJson);
-  } catch (e) {
-    console.error("error:", e);
-  }
+  const radar = await createRadar();
+  await save(JSON.stringify(radar), paths.radarJson);
 };
 
 generateJson()
