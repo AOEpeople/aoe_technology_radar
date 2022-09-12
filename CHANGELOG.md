@@ -1,5 +1,23 @@
 # Changelog
 
+## Version v3.3.3 (2022-09-12)
+
+### Fixes
+
+- **exeptions:** do not ignore build errors (e47417b5)
+
+### Chores and tidying
+
+- **deps:** update dependency eslint to v8.23.1 (aba7f36e)
+- **deps:** update dependency @types/react to v18.0.19 (50022ed7)
+- **deps:** update dependency sass to v1.54.9 (6d048535)
+- **deps:** update dependency eslint-plugin-react to v7.31.8 (d4051feb)
+- **deps:** update dependency @types/jest to v29 (2a9b1660)
+- **deps:** update dependency typescript to v4.8.3 (1c56d77a)
+- **deps:** update dependency marked to v4.1.0 (d275efdc)
+- **deps:** update dependency highlight.js to v11.6.0 (64d945c8)
+- **deps:** update dependency @typescript-eslint/parser to v5.37.0 (3a5b09c6)
+
 ## Version v3.3.2 (2022-09-06)
 
 ### Ops and CI/CD
