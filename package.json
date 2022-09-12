@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "5.37.0",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-react": "7.31.8",
     "yallist": "4.0.0"
