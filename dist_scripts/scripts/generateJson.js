@@ -74,27 +74,19 @@ process.on("unhandledRejection", function (err) {
 fs.removeSync(paths.templateNodeModules);
 fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
 var generateJson = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var createRadar, save, radar, e_1;
+    var createRadar, save, radar;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 createRadar = require("./generateJson/radar").createRadar;
                 save = require("./generateJson/file").save;
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 4, , 5]);
                 return [4 /*yield*/, createRadar()];
-            case 2:
+            case 1:
                 radar = _a.sent();
                 return [4 /*yield*/, save(JSON.stringify(radar), paths.radarJson)];
-            case 3:
+            case 2:
                 _a.sent();
-                return [3 /*break*/, 5];
-            case 4:
-                e_1 = _a.sent();
-                console.error("error:", e_1);
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                return [2 /*return*/];
         }
     });
 }); };
