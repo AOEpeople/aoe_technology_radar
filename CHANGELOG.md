@@ -1,5 +1,22 @@
 # Changelog
 
+## Version v3.3.4 (2022-09-13)
+
+### Fixes
+
+- **build:** check if radar folder exists (48cf4b53)
+- **build:** create random hash for cache invalidation #209 (af9d7c87)
+- **build:** export REACT_APP variables during build (4535ef3b)
+
+### Documentation
+
+- **readme:** remove yarn, fixes #162 (5e0158c2)
+
+### Chores and tidying
+
+- **deps:** update dependency classnames to v2.3.2 (a2843ad6)
+- **codestyle:** cleanup and reformat (37c43712)
+
 ## Version v3.3.3 (2022-09-12)
 
 ### Fixes
