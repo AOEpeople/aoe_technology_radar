@@ -36,6 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var child_process_1 = require("child_process");
+var crypto_1 = require("crypto");
 var fs = __importStar(require("fs-extra"));
 var paths = __importStar(require("./paths"));
 // Do this as the first thing so that any code reading it knows the right env.
@@ -54,7 +55,7 @@ var runCommand = function (command) {
         var executedCommand = (0, child_process_1.spawn)(command, {
             stdio: "inherit",
             shell: true,
-            env: __assign({ REACT_APP_RADAR_NAME: "AOE Technology Radar" }, process.env),
+            env: __assign({ REACT_APP_RADAR_NAME: "AOE Technology Radar", REACT_APP_BUILDHASH: (0, crypto_1.randomBytes)(10).toString("hex") }, process.env),
         });
         executedCommand.on("error", function (error) {
             reject(error);

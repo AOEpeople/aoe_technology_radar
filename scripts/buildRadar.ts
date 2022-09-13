@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { spawn } from "child_process";
+import { randomBytes } from "crypto";
 import * as fs from "fs-extra";
 
 import * as paths from "./paths";
@@ -23,7 +24,11 @@ const runCommand = (command: string) =>
     const executedCommand = spawn(command, {
       stdio: "inherit",
       shell: true,
-      env: { REACT_APP_RADAR_NAME: "AOE Technology Radar", ...process.env },
+      env: {
+        REACT_APP_RADAR_NAME: "AOE Technology Radar",
+        REACT_APP_BUILDHASH: randomBytes(10).toString("hex"),
+        ...process.env,
+      },
     });
 
     executedCommand.on("error", (error) => {
