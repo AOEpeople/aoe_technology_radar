@@ -1,5 +1,6 @@
-import React, { MouseEventHandler } from "react";
 import classNames from "classnames";
+import React, { MouseEventHandler } from "react";
+
 import "./badge.scss";
 
 type BadgeProps = {

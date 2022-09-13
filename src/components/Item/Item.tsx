@@ -1,8 +1,9 @@
-import React from "react";
 import classNames from "classnames";
-import Link from "../Link/Link";
-import Flag from "../Flag/Flag";
+import React from "react";
+
 import { Item as mItem } from "../../model";
+import Flag from "../Flag/Flag";
+import Link from "../Link/Link";
 import "./item.scss";
 
 type Props = {

@@ -1,4 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+
 import {
   Animation,
   AnimationStates,
@@ -13,18 +14,14 @@ interface Props {
   onLeave: () => void;
 }
 
-export const useAnimations = ({
-  itemsInRing,
-  leaving,
-  onLeave,
-}: Props) => {
+export const useAnimations = ({ itemsInRing, leaving, onLeave }: Props) => {
   type AnimationConfig = {
     background: Animation;
     navHeader: Animation;
     text: Animation;
     items: Animation[];
     footer: Animation;
-  }
+  };
 
   type AnimationNames = keyof AnimationConfig;
 

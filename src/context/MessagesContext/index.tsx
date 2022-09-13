@@ -1,4 +1,5 @@
-import { createContext, FC, useContext } from "react";
+import { FC, createContext, useContext } from "react";
+
 import { Props as SocialLink } from "../../components/SocialLink/SocialLink";
 
 interface Quadrant {

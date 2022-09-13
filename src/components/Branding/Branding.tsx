@@ -1,6 +1,8 @@
-import React from "react";
 import classNames from "classnames";
+import React from "react";
+
 import "./branding.scss";
+
 type BrandingProps = {
   logoContent: React.ReactNode;
   modifier?: "backlink" | "logo" | "content" | "footer";

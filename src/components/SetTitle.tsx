@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { radarName } from "../config";
 
 type SetTitleProps = {

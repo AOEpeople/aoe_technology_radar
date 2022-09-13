@@ -1,6 +1,7 @@
 import React from "react";
+
+import { featuredOnly, Item as mItem, nonFeaturedOnly } from "../../model";
 import Item from "../Item/Item";
-import { featuredOnly, nonFeaturedOnly, Item as mItem } from "../../model";
 import "./item-list.scss";
 
 type ItemListProps = {

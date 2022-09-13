@@ -1,13 +1,14 @@
-import React, { useState, useRef } from "react";
 import classNames from "classnames";
+import qs from "query-string";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { radarNameShort } from "../../config";
+import { useMessages } from "../../context/MessagesContext";
 import Branding from "../Branding/Branding";
 import Link from "../Link/Link";
 import LogoLink from "../LogoLink/LogoLink";
 import Search from "../Search/Search";
-import { radarNameShort } from "../../config";
-import { useNavigate } from "react-router-dom";
-import qs from "query-string";
-import { useMessages } from "../../context/MessagesContext";
 
 export default function Header({ pageName }: { pageName: string }) {
   const [searchOpen, setSearchOpen] = useState(false);

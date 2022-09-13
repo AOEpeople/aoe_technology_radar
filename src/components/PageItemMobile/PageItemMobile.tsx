@@ -1,13 +1,12 @@
+import { ConfigData, translate } from "../../config";
+import { Item, groupByQuadrants } from "../../model";
 import Badge from "../Badge/Badge";
 import EditButton from "../EditButton/EditButton";
-import ItemList from "../ItemList/ItemList";
-import Link from "../Link/Link";
 import Fadeable from "../Fadeable/Fadeable";
-import SetTitle from "../SetTitle";
+import ItemList from "../ItemList/ItemList";
 import ItemRevisions from "../ItemRevisions/ItemRevisions";
-
-import { ConfigData, translate } from "../../config";
-import { groupByQuadrants, Item } from "../../model";
+import Link from "../Link/Link";
+import SetTitle from "../SetTitle";
 
 type PageItemMobileProps = {
   pageName: string;
@@ -40,7 +39,13 @@ export default function PageItemMobile({
 
   const item = getItem(pageName, items);
   const itemsInRing = getItemsInRing(pageName, items);
-  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : null
+  const editButton = config.editLink ? (
+    <EditButton
+      baseUrl={config.editLink.radarLink}
+      item={item}
+      title={config.editLink.title}
+    />
+  ) : null;
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle title={item.title} />
@@ -50,7 +55,9 @@ export default function PageItemMobile({
             <div className="mobile-item-page__header">
               <div className="split">
                 <div className="split__left">
-                  <h3 className="headline">{translate(config, item.quadrant)}</h3>
+                  <h3 className="headline">
+                    {translate(config, item.quadrant)}
+                  </h3>
                   <h1 className="hero-headline hero-headline--inverse">
                     {item.title}
                   </h1>

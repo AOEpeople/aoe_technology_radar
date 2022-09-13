@@ -1,13 +1,13 @@
 import React from "react";
 import {
+  FaExternalLinkAlt,
   FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaXing,
-  FaYoutube,
   FaGithub,
   FaInstagram,
-  FaExternalLinkAlt
+  FaLinkedinIn,
+  FaTwitter,
+  FaXing,
+  FaYoutube,
 } from "react-icons/fa";
 
 const icons = {

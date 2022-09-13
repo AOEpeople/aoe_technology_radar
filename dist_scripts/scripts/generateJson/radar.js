@@ -83,16 +83,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createRadar = void 0;
-var fs_extra_1 = require("fs-extra");
-var fs_1 = require("fs");
-var path = __importStar(require("path"));
 var front_matter_1 = __importDefault(require("front-matter"));
-// @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
-var marked_1 = require("marked");
+var fs_1 = require("fs");
+var fs_extra_1 = require("fs-extra");
 var highlight_js_1 = __importDefault(require("highlight.js"));
-var file_1 = require("./file");
+var marked_1 = require("marked");
+var path = __importStar(require("path"));
 var model_1 = require("../../src/model");
 var paths_1 = require("../paths");
+var file_1 = require("./file");
 marked_1.marked.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
@@ -180,7 +179,7 @@ var createItems = function (revisions) {
         return __assign(__assign({}, items), (_a = {}, _a[revision.name] = addRevisionToItem(items[revision.name], revision), _a));
     }, {});
     return Object.values(itemMap)
-        .map(function (item) { return (__assign(__assign({}, item), { "title": item.title || item.name })); })
+        .map(function (item) { return (__assign(__assign({}, item), { title: item.title || item.name })); })
         .sort(function (x, y) { return (x.name > y.name ? 1 : -1); });
 };
 var ignoreEmptyRevisionBody = function (revision, item) {
@@ -208,7 +207,10 @@ var addRevisionToItem = function (item, revision) {
     return newItem;
 };
 var revisionCreatesNewHistoryEntry = function (revision, item) {
-    return revision.body.trim() !== "" || (typeof revision.ring !== "undefined" && revision.ring !== item.ring) || (typeof revision.quadrant !== "undefined" && revision.quadrant !== item.quadrant);
+    return (revision.body.trim() !== "" ||
+        (typeof revision.ring !== "undefined" && revision.ring !== item.ring) ||
+        (typeof revision.quadrant !== "undefined" &&
+            revision.quadrant !== item.quadrant));
 };
 var flagItem = function (items, allReleases) {
     return items.map(function (item) {

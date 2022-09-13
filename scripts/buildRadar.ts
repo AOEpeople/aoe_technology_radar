@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-
-import * as fs from "fs-extra";
 import { spawn } from "child_process";
+import * as fs from "fs-extra";
+
 import * as paths from "./paths";
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -52,7 +52,7 @@ const buildTemplate = () => {
 
 buildTemplate().then(() => {
   fs.copySync(paths.templateBuild, paths.appBuild);
-  fs.ensureDirSync(paths.appPublic)
+  fs.ensureDirSync(paths.appPublic);
   fs.copySync(paths.appPublic, paths.appBuild);
   console.log(`${paths.appBuild} was created and can be deployed.`);
 });

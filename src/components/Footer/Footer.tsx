@@ -1,12 +1,13 @@
-import React from "react";
 import classNames from "classnames";
+import React from "react";
+
+import { assetUrl, getItemPageNames, isMobileViewport } from "../../config";
+import { useMessages } from "../../context/MessagesContext";
+import { Item } from "../../model";
+import { sanitize } from "../../sanitize";
 import Branding from "../Branding/Branding";
 import FooterEnd from "../FooterEnd/FooterEnd";
-import { assetUrl, getItemPageNames, isMobileViewport } from "../../config";
-import { Item } from "../../model";
 import "./footer.scss";
-import { useMessages } from "../../context/MessagesContext";
-import { sanitize } from "../../sanitize";
 
 interface Props {
   items: Item[];
@@ -35,7 +36,10 @@ const Footer: React.FC<Props> = ({ items, pageName }) => {
             />
           }
         >
-          <div className="footnote" dangerouslySetInnerHTML={sanitize(footerFootnote)}></div>
+          <div
+            className="footnote"
+            dangerouslySetInnerHTML={sanitize(footerFootnote)}
+          ></div>
         </Branding>
       )}
 

@@ -1,10 +1,10 @@
 import React from "react";
-import RadarChart from "../Chart/RadarChart";
+
 import { ConfigData } from "../../config";
 import { Item, QuadrantConfig } from "../../model";
-
-import "./radar-grid.scss";
+import RadarChart from "../Chart/RadarChart";
 import Link from "../Link/Link";
+import "./radar-grid.scss";
 
 const QuadrantLabel: React.FC<{
   quadrantConfig: QuadrantConfig;
@@ -19,7 +19,10 @@ const QuadrantLabel: React.FC<{
   ];
 
   return (
-    <div className="quadrant-label" style={stylesMap[quadrantConfig.position - 1]}>
+    <div
+      className="quadrant-label"
+      style={stylesMap[quadrantConfig.position - 1]}
+    >
       <div className="split">
         <div className="split__left">
           <small>Quadrant {quadrantConfig.position}</small>
@@ -65,7 +68,12 @@ const RadarGrid: React.FC<{ items: Item[]; config: ConfigData }> = ({
     <div className="radar-grid">
       <RadarChart items={items} config={config} />
       {Object.entries(config.quadrantsMap).map(([name, quadrant], index) => (
-        <QuadrantLabel key={index} quadrantConfig={quadrant} quadrantName={name} quadrantLabel={config.quadrants[name]} />
+        <QuadrantLabel
+          key={index}
+          quadrantConfig={quadrant}
+          quadrantName={name}
+          quadrantLabel={config.quadrants[name]}
+        />
       ))}
       <Legend />
     </div>

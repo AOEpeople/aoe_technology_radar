@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.appNodeModules = exports.appYarnLock = exports.appPublic = exports.appBuild = exports.appRdJson = exports.templateNodeModules = exports.templateBuild = exports.template = exports.radarJson = void 0;
-var path_1 = require("path");
 var fs_1 = require("fs");
+var path_1 = require("path");
 exports.radarJson = "rd.json";
 var appDirectory = (0, fs_1.realpathSync)(process.cwd());
 var resolveApp = function (relativePath) {
