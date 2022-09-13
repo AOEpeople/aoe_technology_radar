@@ -15,7 +15,7 @@ However, please be aware:
 - Also, when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
 
 ### Use and build the radar
-Create a new yarn3 project and add the tech radar as a dependency
+Create a new npm project and add the tech radar as a dependency
 ```
 npm i aoe_technology_radar
 ```
