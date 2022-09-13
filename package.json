@@ -33,7 +33,7 @@
     "@types/react-dom": "18.0.6",
     "@types/sanitize-html": "2.6.2",
     "@types/walk": "2.3.1",
-    "classnames": "2.3.1",
+    "classnames": "2.3.2",
     "d3": "7.6.1",
     "front-matter": "4.0.2",
     "fs-extra": "10.1.0",
