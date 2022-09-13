@@ -1,6 +1,7 @@
-import React, { FormEvent } from "react";
-import { useMessages } from "../../context/MessagesContext";
 import classNames from "classnames";
+import React, { FormEvent } from "react";
+
+import { useMessages } from "../../context/MessagesContext";
 import "./search.scss";
 
 type SearchProps = {
@@ -52,7 +53,7 @@ function Search(
       <span className={classNames("search__button", { "is-open": open })}>
         <button type="submit" className="button">
           <span className="icon icon--search button__icon" />
-          { searchLabel }
+          {searchLabel}
         </button>
       </span>
       {closable && (

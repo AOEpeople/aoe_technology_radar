@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./hero-headline.scss";
 
 interface Props {

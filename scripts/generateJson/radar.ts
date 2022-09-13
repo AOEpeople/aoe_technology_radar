@@ -1,18 +1,21 @@
-import { readFile } from "fs-extra";
-import { readFileSync } from "fs";
-import * as path from "path";
 import frontMatter from "front-matter";
-// @ts-ignore esModuleInterop is activated in tsconfig.scripts.json, but IDE typescript uses default typescript config
-import { marked } from "marked";
+import { readFileSync } from "fs";
+import { readFile } from "fs-extra";
 import highlight from "highlight.js";
+import { marked } from "marked";
+import * as path from "path";
 
-import { radarPath, getAllMarkdownFiles } from "./file";
-import { Item, Revision, ItemAttributes, Radar, FlagType } from "../../src/model";
+import {
+  FlagType,
+  Item,
+  ItemAttributes,
+  Radar,
+  Revision,
+} from "../../src/model";
 import { appBuild } from "../paths";
+import { getAllMarkdownFiles, radarPath } from "./file";
 
 import type { ConfigData } from "../../src/config";
-
-type FMAttributes = ItemAttributes;
 
 marked.setOptions({
   highlight: (code: any) => highlight.highlightAuto(code).value,
@@ -20,13 +23,17 @@ marked.setOptions({
 
 export const createRadar = async (): Promise<Radar> => {
   const fileNames = await getAllMarkdownFiles(radarPath());
-  const revisions: (Revision|undefined)[]  = await createRevisionsFromFiles(fileNames);
-  const filterdRevisions : Revision[] = revisions.filter(r => r !== undefined) as Revision[];
+  const revisions: (Revision | undefined)[] = await createRevisionsFromFiles(
+    fileNames
+  );
+  const filterdRevisions: Revision[] = revisions.filter(
+    (r) => r !== undefined
+  ) as Revision[];
   const allReleases = getAllReleases(filterdRevisions);
   const items = createItems(filterdRevisions);
   const flaggedItems = flagItem(items, allReleases);
 
-  items.forEach(item => checkAttributes(item.name, item))
+  items.forEach((item) => checkAttributes(item.name, item));
 
   return {
     items: flaggedItems,
@@ -34,7 +41,7 @@ export const createRadar = async (): Promise<Radar> => {
   };
 };
 
-const checkAttributes = (fileName: string, attributes: FMAttributes) => {
+const checkAttributes = (fileName: string, attributes: ItemAttributes) => {
   const rawConf = readFileSync(path.resolve(appBuild, "config.json"), "utf-8");
   const config = JSON.parse(rawConf) as ConfigData;
 
@@ -61,31 +68,29 @@ const checkAttributes = (fileName: string, attributes: FMAttributes) => {
   } else {
     return attributes;
   }
-
 };
 
 const createRevisionsFromFiles = (fileNames: string[]) => {
   const publicUrl = process.env.PUBLIC_URL;
   return Promise.all(
-    fileNames.map(
-      (fileName) =>
-        readFile(fileName, "utf8").then(data => {
-          const fm = frontMatter<FMAttributes>(data);
-          let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}/`));
-          html = html.replace(
-            /a href="http/g,
-            'a target="_blank" rel="noopener noreferrer" href="http'
-          );
-          const attributes = checkAttributes(fileName, fm.attributes);
-          if (attributes) {
-            return {
-              ...itemInfoFromFilename(fileName),
-              ...attributes,
-              fileName,
-              body: html,
-            } as Revision;
-          }
-        })
+    fileNames.map((fileName) =>
+      readFile(fileName, "utf8").then((data) => {
+        const fm = frontMatter<ItemAttributes>(data);
+        let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}/`));
+        html = html.replace(
+          /a href="http/g,
+          'a target="_blank" rel="noopener noreferrer" href="http'
+        );
+        const attributes = checkAttributes(fileName, fm.attributes);
+        if (attributes) {
+          return {
+            ...itemInfoFromFilename(fileName),
+            ...attributes,
+            fileName,
+            body: html,
+          } as Revision;
+        }
+      })
     )
   );
 };
@@ -120,7 +125,7 @@ const createItems = (revisions: Revision[]) => {
   );
 
   return Object.values(itemMap)
-    .map((item) => ({ ...item, "title": item.title || item.name }))
+    .map((item) => ({ ...item, title: item.title || item.name }))
     .sort((x, y) => (x.name > y.name ? 1 : -1));
 };
 
@@ -162,7 +167,12 @@ const addRevisionToItem = (
 };
 
 const revisionCreatesNewHistoryEntry = (revision: Revision, item: Item) => {
-  return revision.body.trim() !== "" || (typeof revision.ring !== "undefined" && revision.ring !== item.ring) || (typeof revision.quadrant !== "undefined" && revision.quadrant !== item.quadrant);
+  return (
+    revision.body.trim() !== "" ||
+    (typeof revision.ring !== "undefined" && revision.ring !== item.ring) ||
+    (typeof revision.quadrant !== "undefined" &&
+      revision.quadrant !== item.quadrant)
+  );
 };
 
 const flagItem = (items: Item[], allReleases: string[]) =>

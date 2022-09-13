@@ -1,10 +1,11 @@
-import { translate, ConfigData } from "../../config";
-import Badge from "../Badge/Badge";
-import Link from "../Link/Link";
-import ItemList from "../ItemList/ItemList";
-import Flag from "../Flag/Flag";
+import { ConfigData, translate } from "../../config";
 import { Group } from "../../model";
+import Badge from "../Badge/Badge";
+import Flag from "../Flag/Flag";
+import ItemList from "../ItemList/ItemList";
+import Link from "../Link/Link";
 import "./quadrant-section.scss";
+
 const renderList = (
   ringName: string,
   quadrantName: string,

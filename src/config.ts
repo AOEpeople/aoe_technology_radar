@@ -1,4 +1,4 @@
-import {Item, HomepageOption, QuadrantConfig} from './model';
+import { HomepageOption, Item, QuadrantConfig } from "./model";
 
 export interface ConfigData {
   tags?: string[];
@@ -7,17 +7,17 @@ export interface ConfigData {
   showEmptyRings: boolean;
   quadrantsMap: { [quadrant: string]: QuadrantConfig };
   chartConfig: {
-    size: number,
-    scale: number[],
-    blipSize: number,
-    ringsAttributes: {radius: number, arcWidth: number}[]
+    size: number;
+    scale: number[];
+    blipSize: number;
+    ringsAttributes: { radius: number; arcWidth: number }[];
   };
   homepageContent: HomepageOption;
   dateFormat?: string;
   editLink?: {
-    radarLink: string,
-    title?: string
-  }
+    radarLink: string;
+    title?: string;
+  };
 }
 
 export const radarName =

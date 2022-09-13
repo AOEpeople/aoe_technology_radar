@@ -1,5 +1,5 @@
-import { resolve } from "path";
 import { realpathSync } from "fs";
+import { resolve } from "path";
 
 export const radarJson = "rd.json";
 const appDirectory = realpathSync(process.cwd());

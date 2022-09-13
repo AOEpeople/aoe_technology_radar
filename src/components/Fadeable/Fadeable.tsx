@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
 import classNames from "classnames";
+import React, { useEffect, useState } from "react";
+
 import "./fadeable.scss";
 
 type FadeableProps = {

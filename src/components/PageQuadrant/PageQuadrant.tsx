@@ -1,12 +1,12 @@
 import React from "react";
-import HeroHeadline from "../HeroHeadline/HeroHeadline";
-import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
-import QuadrantSection from "../QuadrantSection/QuadrantSection";
-import Fadeable from "../Fadeable/Fadeable";
-import SetTitle from "../SetTitle";
 
 import { ConfigData, translate } from "../../config";
-import { featuredOnly, groupByQuadrants, Item } from "../../model";
+import { Item, featuredOnly, groupByQuadrants } from "../../model";
+import Fadeable from "../Fadeable/Fadeable";
+import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
+import HeroHeadline from "../HeroHeadline/HeroHeadline";
+import QuadrantSection from "../QuadrantSection/QuadrantSection";
+import SetTitle from "../SetTitle";
 
 type PageQuadrantProps = {
   leaving: boolean;

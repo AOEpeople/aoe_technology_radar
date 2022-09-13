@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
-import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
-import HeroHeadline from "../HeroHeadline/HeroHeadline";
-import Badge from "../Badge/Badge";
-import Link from "../Link/Link";
-import Search from "../Search/Search";
-import Fadeable from "../Fadeable/Fadeable";
-import SetTitle from "../SetTitle";
-import Flag from "../Flag/Flag";
-import { groupByFirstLetter, Item } from "../../model";
+import { useEffect, useState } from "react";
+
 import { ConfigData, translate } from "../../config";
 import { useMessages } from "../../context/MessagesContext";
+import { Item, groupByFirstLetter } from "../../model";
+import Badge from "../Badge/Badge";
+import Fadeable from "../Fadeable/Fadeable";
+import Flag from "../Flag/Flag";
+import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
+import HeroHeadline from "../HeroHeadline/HeroHeadline";
+import Link from "../Link/Link";
+import Search from "../Search/Search";
+import SetTitle from "../SetTitle";
 
 const containsSearchTerm = (text = "", term = "") => {
   // TODO search refinement

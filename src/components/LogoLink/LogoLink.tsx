@@ -1,8 +1,10 @@
-import React from "react";
 import classNames from "classnames";
-import Link from "../Link/Link";
+import React from "react";
+
 import { assetUrl, radarNameShort } from "../../config";
+import Link from "../Link/Link";
 import "./logo-link.scss";
+
 export default function LogoLink({ small = false }: { small?: boolean }) {
   return (
     <Link

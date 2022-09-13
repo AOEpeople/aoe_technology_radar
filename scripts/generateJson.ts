@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
 import * as fs from "fs-extra";
+
 import * as paths from "./paths";
 
 // Do this as the first thing so that any code reading it knows the right env.

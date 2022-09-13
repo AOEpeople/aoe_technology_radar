@@ -1,19 +1,17 @@
 import React from "react";
+
+import { ConfigData, translate } from "../../config";
+import { useMessages } from "../../context/MessagesContext";
+import { Item, groupByQuadrants } from "../../model";
 import Badge from "../Badge/Badge";
 import EditButton from "../EditButton/EditButton";
-import ItemList from "../ItemList/ItemList";
-import Link from "../Link/Link";
 import FooterEnd from "../FooterEnd/FooterEnd";
-import SetTitle from "../SetTitle";
+import ItemList from "../ItemList/ItemList";
 import ItemRevisions from "../ItemRevisions/ItemRevisions";
-import { useAnimations } from "./useAnimations";
+import Link from "../Link/Link";
+import SetTitle from "../SetTitle";
 import "./item-page.scss";
-import { ConfigData, translate } from "../../config";
-import {
-  groupByQuadrants,
-  Item,
-} from "../../model";
-import { useMessages } from "../../context/MessagesContext";
+import { useAnimations } from "./useAnimations";
 
 const getItem = (pageName: string, items: Item[]) => {
   const [quadrantName, itemName] = pageName.split("/");
@@ -35,9 +33,15 @@ type Props = {
   onLeave: () => void;
 };
 
-const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }) => {
+const PageItem: React.FC<Props> = ({
+  pageName,
+  items,
+  config,
+  leaving,
+  onLeave,
+}) => {
   const { pageItem } = useMessages();
-  const quadrantOverview = pageItem?.quadrantOverview || 'Quadrant Overview';
+  const quadrantOverview = pageItem?.quadrantOverview || "Quadrant Overview";
 
   const itemsInRing = getItemsInRing(pageName, items);
 
@@ -48,7 +52,13 @@ const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }
   });
 
   const item = getItem(pageName, items);
-  const editButton = config.editLink ? <EditButton baseUrl={config.editLink.radarLink} item={item} title={config.editLink.title}/> : null
+  const editButton = config.editLink ? (
+    <EditButton
+      baseUrl={config.editLink.radarLink}
+      item={item}
+      title={config.editLink.title}
+    />
+  ) : null;
 
   return (
     <>
@@ -119,7 +129,10 @@ const PageItem: React.FC<Props> = ({ pageName, items, config, leaving, onLeave }
               dangerouslySetInnerHTML={{ __html: item.body }}
             />
             {item.revisions.length > 1 && (
-              <ItemRevisions revisions={item.revisions.slice(1)} dateFormat={config.dateFormat} />
+              <ItemRevisions
+                revisions={item.revisions.slice(1)}
+                dateFormat={config.dateFormat}
+              />
             )}
           </div>
         </div>

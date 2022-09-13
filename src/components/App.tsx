@@ -1,19 +1,20 @@
-import React from "react";
 import classNames from "classnames";
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
-import Router from "./Router";
+import React from "react";
 import {
   BrowserRouter,
-  Routes,
-  Route,
   Navigate,
-  useParams,
+  Route,
+  Routes,
   useLocation,
+  useParams,
 } from "react-router-dom";
-import { Item } from "../model";
-import { Messages, MessagesProvider } from "../context/MessagesContext";
+
 import { ConfigData } from "../config";
+import { Messages, MessagesProvider } from "../context/MessagesContext";
+import { Item } from "../model";
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
+import Router from "./Router";
 
 const useFetch = <D extends unknown>(url: string): D | undefined => {
   const [data, setData] = React.useState<D>();
@@ -35,7 +36,7 @@ const useFetch = <D extends unknown>(url: string): D | undefined => {
 const useQuery = () => new URLSearchParams(useLocation().search);
 
 const usePage = (params: Record<string, string | undefined>) => {
-  return (params['*'] || '').replace(".html", "");
+  return (params["*"] || "").replace(".html", "");
 };
 
 const RouterWithPageParam = ({
