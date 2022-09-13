@@ -80,11 +80,15 @@ interface Data {
 }
 
 export default function App() {
-  const data = useFetch<Data>(`${process.env.PUBLIC_URL}/rd.json`);
-  const messages = useFetch<Messages>(
-    `${process.env.PUBLIC_URL}/messages.json`
+  const data = useFetch<Data>(
+    `${process.env.PUBLIC_URL}/rd.json?${process.env.REACT_APP_BUILDHASH}`
   );
-  const config = useFetch<ConfigData>(`${process.env.PUBLIC_URL}/config.json`);
+  const messages = useFetch<Messages>(
+    `${process.env.PUBLIC_URL}/messages.json?${process.env.REACT_APP_BUILDHASH}`
+  );
+  const config = useFetch<ConfigData>(
+    `${process.env.PUBLIC_URL}/config.json?${process.env.REACT_APP_BUILDHASH}`
+  );
 
   if (data && config) {
     const { items, releases } = data;
