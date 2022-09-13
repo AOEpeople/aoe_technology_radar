@@ -23,6 +23,7 @@ const runCommand = (command: string) =>
     const executedCommand = spawn(command, {
       stdio: "inherit",
       shell: true,
+      env: { REACT_APP_RADAR_NAME: "AOE Technology Radar", ...process.env },
     });
 
     executedCommand.on("error", (error) => {
