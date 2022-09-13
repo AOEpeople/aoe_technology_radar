@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import * as fs from "fs-extra";
 
+import { radarPath } from "./generateJson/file";
 import * as paths from "./paths";
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -16,6 +17,15 @@ process.on("unhandledRejection", (err) => {
 
 fs.removeSync(paths.templateNodeModules);
 fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
+
+try {
+  fs.statSync(radarPath());
+} catch (e) {
+  console.error(
+    `${radarPath()} not found. Please create ${radarPath()} and add your markdown files to build the techradar.`
+  );
+  process.exit(1);
+}
 
 const generateJson = async () => {
   const { createRadar } = require("./generateJson/radar");

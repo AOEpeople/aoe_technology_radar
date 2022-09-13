@@ -61,6 +61,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = __importStar(require("fs-extra"));
+var file_1 = require("./generateJson/file");
 var paths = __importStar(require("./paths"));
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
@@ -73,6 +74,13 @@ process.on("unhandledRejection", function (err) {
 });
 fs.removeSync(paths.templateNodeModules);
 fs.ensureSymlinkSync(paths.appNodeModules, paths.templateNodeModules);
+try {
+    fs.statSync((0, file_1.radarPath)());
+}
+catch (e) {
+    console.error("".concat((0, file_1.radarPath)(), " not found. Please create ").concat((0, file_1.radarPath)(), " and add your markdown files to build the techradar."));
+    process.exit(1);
+}
 var generateJson = function () { return __awaiter(void 0, void 0, void 0, function () {
     var createRadar, save, radar;
     return __generator(this, function (_a) {
