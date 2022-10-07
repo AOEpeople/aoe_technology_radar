@@ -30,6 +30,11 @@ Generate the `rd.json` file containing the radar data
 npx aoe_technology_radar-generateJson
 ```
 
+Run the Prepare script 
+```
+npm run prepare
+```
+
 Serve
 ```
 cd build
