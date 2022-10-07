@@ -53,8 +53,6 @@ npx aoe_technology_radar-createStaticFiles
 ## Authoring Techradar contents
 For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD) under `./radar`.
 
-In each release folder create a folder for every quadrant and place the items there.
-
 ### Maintaining items
 The items are written in Markdown format (.md)
 
