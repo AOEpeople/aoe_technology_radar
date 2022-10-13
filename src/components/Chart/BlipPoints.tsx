@@ -36,7 +36,7 @@ function generateCoordinates(
     Multiples of PI/2. To apply the calculated position to the specific quadrant.
     Order here is counter-clockwise, so we need to "invert" quadrant positions (i.e. swap 2 with 4)
     */
-  const shift = (pi * [1, 4, 3, 2][blip.quadrantPosition - 1]) / 2;
+  const shift = (pi * [1, 4, 2, 3][blip.quadrantPosition - 1]) / 2;
 
   return {
     x: xScale(Math.cos(randomDegree + shift) * radius),
