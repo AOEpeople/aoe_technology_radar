@@ -8,6 +8,7 @@ import EditButton from "../EditButton/EditButton";
 import FooterEnd from "../FooterEnd/FooterEnd";
 import ItemList from "../ItemList/ItemList";
 import ItemRevisions from "../ItemRevisions/ItemRevisions";
+import ItemTags from "../ItemTags/ItemTags";
 import Link from "../Link/Link";
 import SetTitle from "../SetTitle";
 import "./item-page.scss";
@@ -128,6 +129,7 @@ const PageItem: React.FC<Props> = ({
               className="markdown"
               dangerouslySetInnerHTML={{ __html: item.body }}
             />
+            <ItemTags tags={item.tags} />
             {item.revisions.length > 1 && (
               <ItemRevisions
                 revisions={item.revisions.slice(1)}
