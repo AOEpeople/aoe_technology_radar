@@ -111,3 +111,29 @@ const addItemToRing = (ring: Item[] = [], item: Item) => [...ring, item];
 
 export const getFirstLetter = (item: Item) =>
   item.title.substr(0, 1).toUpperCase();
+
+export type Tag = string;
+
+export const filteredOnly = (items: Item[], tags: Tag[] | string) => {
+  return items.filter((item: Item) => {
+    const { tags: itemTags } = item;
+
+    if (typeof itemTags === "undefined") {
+      return false;
+    }
+
+    if (Array.isArray(tags)) {
+      return tags.every(tag => itemTags.includes(tag));
+    }
+
+    return itemTags.includes(tags);
+  });
+}
+
+export const getTags = (items: Item[]): Tag[] => {
+  const tags: Tag[] = items.reduce((acc: Tag[], item: Item) => {
+    return !item.tags ? acc : acc.concat(item.tags);
+  }, []).sort();
+
+  return Array.from(new Set(tags));
+};

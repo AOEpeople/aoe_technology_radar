@@ -20,7 +20,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.nonFeaturedOnly = exports.featuredOnly = exports.FlagType = exports.HomepageOption = void 0;
+exports.getTags = exports.filteredOnly = exports.getFirstLetter = exports.groupByFirstLetter = exports.groupByQuadrants = exports.nonFeaturedOnly = exports.featuredOnly = exports.FlagType = exports.HomepageOption = void 0;
 var HomepageOption;
 (function (HomepageOption) {
     HomepageOption["chart"] = "chart";
@@ -78,3 +78,23 @@ var getFirstLetter = function (item) {
     return item.title.substr(0, 1).toUpperCase();
 };
 exports.getFirstLetter = getFirstLetter;
+var filteredOnly = function (items, tags) {
+    return items.filter(function (item) {
+        var itemTags = item.tags;
+        if (typeof itemTags === "undefined") {
+            return false;
+        }
+        if (Array.isArray(tags)) {
+            return tags.every(function (tag) { return itemTags.includes(tag); });
+        }
+        return itemTags.includes(tags);
+    });
+};
+exports.filteredOnly = filteredOnly;
+var getTags = function (items) {
+    var tags = items.reduce(function (acc, item) {
+        return !item.tags ? acc : acc.concat(item.tags);
+    }, []).sort();
+    return Array.from(new Set(tags));
+};
+exports.getTags = getTags;

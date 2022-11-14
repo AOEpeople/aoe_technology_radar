@@ -5,6 +5,7 @@ import EditButton from "../EditButton/EditButton";
 import Fadeable from "../Fadeable/Fadeable";
 import ItemList from "../ItemList/ItemList";
 import ItemRevisions from "../ItemRevisions/ItemRevisions";
+import ItemTags from "../ItemTags/ItemTags";
 import Link from "../Link/Link";
 import SetTitle from "../SetTitle";
 
@@ -74,6 +75,7 @@ export default function PageItemMobile({
               className="markdown"
               dangerouslySetInnerHTML={{ __html: item.body }}
             />
+            <ItemTags tags={item.tags} />
             {item.revisions.length > 1 && (
               <ItemRevisions revisions={item.revisions.slice(1)} />
             )}

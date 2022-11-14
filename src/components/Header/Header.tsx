@@ -5,17 +5,27 @@ import { useNavigate } from "react-router-dom";
 
 import { radarNameShort } from "../../config";
 import { useMessages } from "../../context/MessagesContext";
+import { useSearchParamState } from "../../hooks/use-search-param-state";
+import { Tag } from "../../model";
 import Branding from "../Branding/Branding";
 import Link from "../Link/Link";
 import LogoLink from "../LogoLink/LogoLink";
 import Search from "../Search/Search";
+import TagsModal from "../TagsModal/TagsModal";
 
-export default function Header({ pageName }: { pageName: string }) {
+export default function Header({
+  pageName,
+  tags,
+}: {
+  pageName: string;
+  tags: Tag[];
+}) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
   const { searchLabel, pageHelp, pageOverview } = useMessages();
   const navigate = useNavigate();
   const searchRef = useRef<HTMLInputElement>(null);
+  const [searchParamState, setSearchParamsState] = useSearchParamState();
 
   const openSearch = () => {
     setSearchOpen(true);
@@ -30,9 +40,12 @@ export default function Header({ pageName }: { pageName: string }) {
   };
 
   const handleSearchSubmit = () => {
+    let { tags } = searchParamState;
+    tags = Array.isArray(tags) ? tags.join("|") : tags;
+
     navigate({
       pathname: "/overview.html",
-      search: qs.stringify({ search: search }),
+      search: qs.stringify({ search: search, tags }),
     });
 
     setSearchOpen(false);
@@ -47,6 +60,31 @@ export default function Header({ pageName }: { pageName: string }) {
     }, 0);
   };
 
+  const handleTagChange = (tag: Tag) => {
+    const { search, tags = [] } = searchParamState;
+    let newTags;
+
+    // Toggle changed item in tags searchParam depends on type Array or String
+    if (Array.isArray(tags)) {
+      newTags = tags.includes(tag)
+        ? tags.filter((item: string) => item !== tag)
+        : [...tags, tag];
+    } else {
+      newTags = tags !== tag ? [tags, tag] : [];
+    }
+
+    setSearchParamsState({
+      tags: newTags,
+      search,
+    });
+  };
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const toggleModal = function () {
+    setModalIsOpen(!modalIsOpen);
+  };
+
   const smallLogo = pageName !== "index";
 
   return (
@@ -58,6 +96,14 @@ export default function Header({ pageName }: { pageName: string }) {
               <span className="icon icon--question icon-link__icon" />
               {pageHelp.headlinePrefix || "How to use"} {radarNameShort}?
             </Link>
+          </div>
+        )}
+        {Boolean(tags.length) && (
+          <div className="nav__item">
+            <button className="icon-link" onClick={toggleModal}>
+              <span className="icon icon--filter icon-link__icon" />
+              Filter
+            </button>
           </div>
         )}
         <div className="nav__item">
@@ -81,6 +127,14 @@ export default function Header({ pageName }: { pageName: string }) {
               ref={searchRef}
             />
           </div>
+          {Boolean(tags.length) && (
+            <TagsModal
+              tags={tags}
+              isOpen={modalIsOpen}
+              closeModal={toggleModal}
+              handleTagChange={handleTagChange}
+            />
+          )}
         </div>
       </div>
     </Branding>

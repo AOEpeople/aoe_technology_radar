@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RLink } from "react-router-dom";
 
+import { useSearchParamState } from "../../hooks/use-search-param-state";
 import "./link.scss";
 
 type LinkProps = {
@@ -15,8 +16,17 @@ function Link({
   className,
   style = {},
 }: React.PropsWithChildren<LinkProps>) {
+  const [searchParamState] = useSearchParamState(undefined, {
+    parseOptions: { decode: false },
+  });
+  const { tags } = searchParamState;
+
   return (
-    <RLink to={`/${pageName}.html`} style={style} {...{ className }}>
+    <RLink
+      to={tags ? `/${pageName}.html?tags=${tags}` : `/${pageName}.html`}
+      style={style}
+      {...{ className }}
+    >
       {children}
     </RLink>
   );
