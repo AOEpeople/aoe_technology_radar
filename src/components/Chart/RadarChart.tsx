@@ -75,6 +75,10 @@ const RadarChart: React.FC<{
           <XAxis scale={xScale} />
         </g>
 
+        {Object.values(config.quadrantsMap).map((value, index) => {
+          console.log(value)
+          return null
+        })}
         {Object.values(config.quadrantsMap).map((value, index) => (
           <QuadrantRings
             key={index}
