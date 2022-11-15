@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v3.4.1 (2022-11-15)
+
+### Fixes
+
+- **radar:** angle arc colors (5a45f204)
+
 ## Version v3.4.0 (2022-11-15)
 
 ### Features
