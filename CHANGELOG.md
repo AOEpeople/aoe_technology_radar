@@ -1,5 +1,57 @@
 # Changelog
 
+## Version v3.4.0 (2022-11-15)
+
+### Features
+
+- support items filtering by tags on UI (f54d4937)
+
+### Fixes
+
+- **buttons:** use pointer cursor (8d1ddfc4)
+- use same order of quadrants for radar and grid visualization (36b63db1)
+- **nth-check:** remove vulnerability by overriding @svgr/webpack (97a74bb1)
+
+### Ops and CI/CD
+
+- **deps:** bump loader-utils from 2.0.2 to 2.0.4 (92ce9174)
+- **deps:** bump minimatch and recursive-readdir (796355ed)
+
+### Chores and tidying
+
+- **deps:** update dependency sass to v1.56.1 (bc5a45dc)
+- **deps:** update dependency marked to v4.2.2 (3000b839)
+- **deps:** update dependency sanitize-html to v2.7.3 (5cd247be)
+- **deps:** update dependency eslint to v8.27.0 (3b3b2103)
+- **deps:** update dependency @types/node to v18.11.9 (341ff9dc)
+- **deps:** update dependency react-router-dom to v6.4.3 (d4fe1046)
+- **deps:** update dependency husky to v8.0.2 (26440a80)
+- **deps:** update dependency @types/react to v18.0.25 (0a21d44b)
+- **deps:** update dependency react-icons to v4.6.0 (3af1916c)
+- **deps:** update dependency @types/react-dom to v18.0.9 (f7453063)
+- **deps:** update dependency @types/jest to v29.2.3 (159b5c2c)
+- **deps:** update dependency @typescript-eslint/parser to v5.43.0 (a754d31e)
+- **deps:** update dependency @trivago/prettier-plugin-sort-imports to v3.4.0 (369b1c97)
+- **deps:** update dependency @svgr/webpack to v6.5.1 (838c8099)
+- **deps:** update dependency react-tooltip to v4.5.0 (5ffa9892)
+- **deps:** update dependency @typescript-eslint/parser to v5.40.0 (c119d67f)
+- **deps:** update dependency react-tooltip to v4.3.0 (c8a5c725)
+- **deps:** update dependency sass to v1.55.0 (29fd1506)
+- **deps:** update dependency eslint-plugin-react to v7.31.10 (4b7fab4e)
+- **deps:** update dependency eslint to v8.25.0 (bbb4b15c)
+- **deps:** update dependency yaml to v2.1.3 (c223a9b3)
+- **deps:** update dependency marked to v4.1.1 (d6ce0f0b)
+- **deps:** update dependency typescript to v4.8.4 (5bb99efc)
+- **deps:** update dependency @types/react to v18.0.21 (474e9556)
+- **deps:** update dependency react-router-dom to v6.4.2 (3c83b3f3)
+- **deps:** update dependency sanitize-html to v2.7.2 (81ac9bf6)
+- **deps:** update dependency @types/jest to v29.1.2 (44656d0a)
+
+### Other
+
+- Add Run the Prepare Script (ee0bec6c)
+- No longer necessary to have quadrant subfolders? (1e814249)
+
 ## Version v3.3.4 (2022-09-13)
 
 ### Fixes
