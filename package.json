@@ -38,7 +38,7 @@
     "classnames": "2.3.2",
     "d3": "7.6.1",
     "front-matter": "4.0.2",
-    "fs-extra": "10.1.0",
+    "fs-extra": "11.1.0",
     "highlight.js": "11.6.0",
     "husky": "8.0.2",
     "marked": "4.2.2",
