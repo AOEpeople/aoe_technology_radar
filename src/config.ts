@@ -38,8 +38,10 @@ export function isMobileViewport() {
   return width < 1200;
 }
 
+export const publicUrl = (process.env.PUBLIC_URL || "").replace(/\/$/, '') + "/";
+
 export function assetUrl(file: string) {
-  return process.env.PUBLIC_URL + "/" + file;
+  return publicUrl + file;
 }
 
 export function translate(config: ConfigData, key: string) {

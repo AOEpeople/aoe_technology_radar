@@ -15,7 +15,7 @@ import {
 import { appBuild } from "../paths";
 import { getAllMarkdownFiles, radarPath } from "./file";
 
-import type { ConfigData } from "../../src/config";
+import { ConfigData, publicUrl } from "../../src/config";
 
 marked.setOptions({
   highlight: (code: any) => highlight.highlightAuto(code).value,
@@ -71,12 +71,11 @@ const checkAttributes = (fileName: string, attributes: ItemAttributes) => {
 };
 
 const createRevisionsFromFiles = (fileNames: string[]) => {
-  const publicUrl = process.env.PUBLIC_URL;
   return Promise.all(
     fileNames.map((fileName) =>
       readFile(fileName, "utf8").then((data) => {
         const fm = frontMatter<ItemAttributes>(data);
-        let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}/`));
+        let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}`));
         html = html.replace(
           /a href="http/g,
           'a target="_blank" rel="noopener noreferrer" href="http'

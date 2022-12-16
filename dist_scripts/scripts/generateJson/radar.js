@@ -92,6 +92,7 @@ var path = __importStar(require("path"));
 var model_1 = require("../../src/model");
 var paths_1 = require("../paths");
 var file_1 = require("./file");
+var config_1 = require("../../src/config");
 marked_1.marked.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
@@ -142,11 +143,10 @@ var checkAttributes = function (fileName, attributes) {
     }
 };
 var createRevisionsFromFiles = function (fileNames) {
-    var publicUrl = process.env.PUBLIC_URL;
     return Promise.all(fileNames.map(function (fileName) {
         return (0, fs_extra_1.readFile)(fileName, "utf8").then(function (data) {
             var fm = (0, front_matter_1.default)(data);
-            var html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(publicUrl, "/")));
+            var html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(config_1.publicUrl)));
             html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
             var attributes = checkAttributes(fileName, fm.attributes);
             if (attributes) {
