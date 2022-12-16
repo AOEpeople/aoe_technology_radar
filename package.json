@@ -62,7 +62,7 @@
     "@trivago/prettier-plugin-sort-imports": "3.4.0",
     "@types/marked": "4.0.8",
     "@types/node": "18.11.9",
-    "@typescript-eslint/parser": "5.43.0",
+    "@typescript-eslint/parser": "5.46.1",
     "eslint": "8.29.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-react-app": "7.0.1",
