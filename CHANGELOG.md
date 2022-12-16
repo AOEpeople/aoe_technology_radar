@@ -1,5 +1,30 @@
 # Changelog
 
+## Version v3.4.2 (2022-12-16)
+
+### Fixes
+
+- **codegen:** PUBLIC_URL fallback (4686cc2e)
+
+### Ops and CI/CD
+
+- **deps:** bump decode-uri-component from 0.2.0 to 0.2.2 (f39c2533)
+
+### Chores and tidying
+
+- **deps:** update dependency typescript to v4.9.4 (e462bcce)
+- **deps:** update dependency @types/node to v18.11.15 (a04fa68c)
+- **deps:** update dependency @trivago/prettier-plugin-sort-imports to v4 (765d8ef2)
+- **deps:** update dependency highlight.js to v11.7.0 (fbc82e1b)
+- **deps:** update dependency @typescript-eslint/parser to v5.46.1 (29d773ed)
+- **deps:** update dependency @types/jest to v29.2.4 (8cc3250b)
+- **deps:** update dependency react-icons to v4.7.1 (cbd66ab9)
+- **deps:** update dependency fs-extra to v11 (1f4820c2)
+- **deps:** update dependency react-tooltip to v4.5.1 (239e1b7f)
+- **deps:** update dependency marked to v4.2.4 (112f43a1)
+- **deps:** update dependency eslint to v8.29.0 (df28e46a)
+- **deps:** update dependency eslint-plugin-react to v7.31.11 (064c9038)
+
 ## Version v3.4.1 (2022-11-15)
 
 ### Fixes
