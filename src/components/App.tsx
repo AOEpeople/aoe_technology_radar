@@ -8,7 +8,7 @@ import {
   useParams,
 } from "react-router-dom";
 
-import { ConfigData } from "../config";
+import { ConfigData, publicUrl } from "../config";
 import { Messages, MessagesProvider } from "../context/MessagesContext";
 import { useSearchParamState } from "../hooks/use-search-param-state";
 import { Item, filteredOnly, getTags } from "../model";
@@ -90,20 +90,20 @@ interface Data {
 
 export default function App() {
   const data = useFetch<Data>(
-    `${process.env.PUBLIC_URL}/rd.json?${process.env.REACT_APP_BUILDHASH}`
+    `${publicUrl}rd.json?${process.env.REACT_APP_BUILDHASH}`
   );
   const messages = useFetch<Messages>(
-    `${process.env.PUBLIC_URL}/messages.json?${process.env.REACT_APP_BUILDHASH}`
+    `${publicUrl}messages.json?${process.env.REACT_APP_BUILDHASH}`
   );
   const config = useFetch<ConfigData>(
-    `${process.env.PUBLIC_URL}/config.json?${process.env.REACT_APP_BUILDHASH}`
+    `${publicUrl}config.json?${process.env.REACT_APP_BUILDHASH}`
   );
 
   if (data && config) {
     const { items, releases } = data;
     return (
       <MessagesProvider messages={messages}>
-        <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
+        <BrowserRouter basename={`${publicUrl}`}>
           <Routes>
             <Route
               path={"/*"}

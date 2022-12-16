@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.translate = exports.assetUrl = exports.isMobileViewport = exports.getItemPageNames = exports.radarNameShort = exports.radarName = void 0;
+exports.translate = exports.assetUrl = exports.publicUrl = exports.isMobileViewport = exports.getItemPageNames = exports.radarNameShort = exports.radarName = void 0;
 exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
 exports.radarNameShort = exports.radarName;
 var getItemPageNames = function (items) {
@@ -17,8 +17,9 @@ function isMobileViewport() {
     return width < 1200;
 }
 exports.isMobileViewport = isMobileViewport;
+exports.publicUrl = (process.env.PUBLIC_URL || "").replace(/\/$/, '') + "/";
 function assetUrl(file) {
-    return process.env.PUBLIC_URL + "/" + file;
+    return exports.publicUrl + file;
 }
 exports.assetUrl = assetUrl;
 function translate(config, key) {
