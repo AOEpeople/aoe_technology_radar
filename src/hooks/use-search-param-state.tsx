@@ -1,10 +1,6 @@
 /* @Libs */
-import {
-  type ParseOptions,
-  type StringifyOptions,
-  parse,
-  stringify,
-} from "query-string";
+import { type ParseOptions, type StringifyOptions } from "query-string";
+import queryString from "query-string";
 
 /* @Hooks */
 import { type SetStateAction, useMemo, useRef } from "react";
@@ -48,7 +44,7 @@ export function useSearchParamState<
   const state = useMemo(
     () => ({
       ...initialStateRef.current,
-      ...(parse(location.search, {
+      ...(queryString.parse(location.search, {
         ...initialStringifyOptions,
         ...parseOptions,
       }) as State),
@@ -59,7 +55,7 @@ export function useSearchParamState<
   function setSearchParamsState(s: SetStateAction<State>) {
     const newState = typeof s === "function" ? s(state) : s;
 
-    const stringifyState = stringify(
+    const stringifyState = queryString.stringify(
       { ...state, ...newState },
       { ...initialParseOptions, ...stringifyOptions }
     );
