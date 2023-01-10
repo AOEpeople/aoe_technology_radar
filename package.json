@@ -40,7 +40,7 @@
     "front-matter": "4.0.2",
     "fs-extra": "11.1.0",
     "highlight.js": "11.7.0",
-    "husky": "8.0.2",
+    "husky": "8.0.3",
     "marked": "4.2.4",
     "moment": "2.29.4",
     "postcss-normalize": "10.0.1",
