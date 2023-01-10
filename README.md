@@ -30,7 +30,7 @@ Generate the `rd.json` file containing the radar data
 npx aoe_technology_radar-generateJson
 ```
 
-Run the Prepare script 
+Run the Prepare script
 ```
 npm run prepare
 ```
@@ -206,6 +206,25 @@ Create a `fonts.css` in the public folder and load your fonts.
 ```
 
 For reference have a look at [public/fonts.css](./public/fonts.css).
+
+### Change the styles
+
+To change the styles, create a `styles.css` in the `public` folder and apply your style modifications.
+Styles defined in `public/styles.css` will overload the default styles.
+
+For reference have a look at [src/styles/main.scss](./src/styles/main.scss) and all it's included files.
+
+> Important: The custom styles must be defined as pure CSS,
+> as there is no further pre-processing of other file formats such as SCSS for custom style overloads.
+
+You can also reference custom icons or images in your styles as follows.
+The icons should be placed in the `public` folder as well (e.g. in a specific `icons` or `images` directory):
+
+```css
+body {
+  background-image: url('/images/my-custom-background-image.png');
+}
+```
 
 ### Add social links to the footer and sidebar
 To add social links, create a public folder in your application and put a `messages.json` in it.
