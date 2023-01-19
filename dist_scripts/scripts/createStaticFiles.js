@@ -42,6 +42,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
 var xml_sitemap_1 = __importDefault(require("xml-sitemap"));
+var config_1 = require("../src/config");
 var radar_1 = require("./generateJson/radar");
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "production";
@@ -75,9 +76,9 @@ var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, f
                 sitemap = new xml_sitemap_1.default();
                 radar.items.forEach(function (item) {
                     (0, fs_1.copyFileSync)("build/index.html", "build/".concat(item.quadrant, "/").concat(item.name, ".html"));
-                    sitemap.add("".concat(process.env.PUBLIC_URL, "/").concat(item.quadrant, "/").concat(item.name, ".html"), {
-                        lastmod: 'now',
-                        changefreq: 'weekly'
+                    sitemap.add("".concat(config_1.publicUrl).concat(item.quadrant, "/").concat(item.name, ".html"), {
+                        lastmod: "now",
+                        changefreq: "weekly",
                     });
                 });
                 (0, fs_1.writeFileSync)("build/sitemap.xml", sitemap.xml);

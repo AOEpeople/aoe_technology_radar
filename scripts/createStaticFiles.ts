@@ -1,6 +1,14 @@
 #!/usr/bin/env node
-import { copyFileSync, mkdirSync, existsSync, readFileSync, writeFileSync } from "fs";
+import {
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+} from "fs";
 import XmlSitemap from "xml-sitemap";
+
+import { publicUrl } from "../src/config";
 import { createRadar } from "./generateJson/radar";
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -39,9 +47,9 @@ const createStaticFiles = async () => {
       `build/${item.quadrant}/${item.name}.html`
     );
 
-    sitemap.add(`${process.env.PUBLIC_URL}/${item.quadrant}/${item.name}.html`, {
-      lastmod: 'now',
-      changefreq: 'weekly'
+    sitemap.add(`${publicUrl}${item.quadrant}/${item.name}.html`, {
+      lastmod: "now",
+      changefreq: "weekly",
     });
   });
 
