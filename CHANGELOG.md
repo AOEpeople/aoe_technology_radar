@@ -1,5 +1,53 @@
 # Changelog
 
+## Version v3.5.0 (2023-01-19)
+
+### Features
+
+- allow/describe how to define custom styles (f71edaef)
+- provide sitemap (caff3640)
+
+### Fixes
+
+- **sitemap:** correct prefix (2c97343b)
+- **badges:** use relative coloring for badges (a48e0bb7)
+- **build:** do not generate sourcemap, fixes #295 (e4d9a6fb)
+
+### Ops and CI/CD
+
+- **deps:** bump json5 from 1.0.1 to 1.0.2 (3df8aec1)
+
+### Chores and tidying
+
+- **deps:** update dependency @typescript-eslint/parser to v5.48.2 (1bb5fdb0)
+- **deps:** update dependency @types/react to v18.0.27 (9208f523)
+- **deps:** update dependency react-router-dom to v6.7.0 (f01684fc)
+- **deps:** update dependency @types/jest to v29.2.6 (4ff746ac)
+- **deps:** update dependency eslint-plugin-react to v7.32.1 (cf1d0704)
+- **deps:** update dependency eslint to v8.32.0 (540a9a5d)
+- **deps:** update dependency marked to v4.2.12 (c22c308b)
+- **deps:** update dependency d3 to v7.8.2 (7537c9a8)
+- **deps:** update dependency eslint-plugin-react to v7.32.0 (692cbb60)
+- **deps:** update dependency @types/fs-extra to v11.0.1 (0e5f7ec2)
+- **deps:** update dependency marked to v4.2.5 (e2c0f3e7)
+- **deps:** update dependency @types/fs-extra to v11 (29d9bf58)
+- **deps:** update dependency husky to v8.0.3 (a87c3be5)
+- **deps:** update dependency yaml to v2.2.1 (2b371ca2)
+- **deps:** update dependency react-router-dom to v6.6.2 (bff64b22)
+- **deps:** update dependency eslint-config-prettier to v8.6.0 (06d7e5ad)
+- **deps:** update dependency @typescript-eslint/parser to v5.48.1 (6ca06dac)
+- **deps:** update dependency query-string to v8 (beec091e)
+- **deps:** update dependency @types/react-dom to v18.0.10 (6ef01dae)
+- **deps:** update dependency sanitize-html to v2.8.1 (ed373c51)
+- **deps:** update dependency @types/jest to v29.2.5 (301ed5f1)
+- **deps:** update dependency eslint to v8.31.0 (c9290047)
+- **deps:** update dependency react-router-dom to v6.6.1 (e551f4c8)
+- **deps:** update dependency @types/node to v18.11.18 (e5b38e63)
+- **deps:** update dependency d3 to v7.8.0 (7aba927c)
+- **deps:** update dependency sass to v1.57.1 (5e922824)
+- **deps:** update dependency query-string to v7.1.3 (7d0a6dd7)
+- **deps:** update dependency @types/react to v18.0.26 (63cf8010)
+
 ## Version v3.4.2 (2022-12-16)
 
 ### Fixes
