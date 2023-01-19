@@ -27,6 +27,7 @@ const runCommand = (command: string) =>
       env: {
         REACT_APP_RADAR_NAME: "AOE Technology Radar",
         REACT_APP_BUILDHASH: randomBytes(10).toString("hex"),
+        GENERATE_SOURCEMAP: "false",
         ...process.env,
       },
     });
