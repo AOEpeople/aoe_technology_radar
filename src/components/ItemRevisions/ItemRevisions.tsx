@@ -1,3 +1,4 @@
+import { ConfigData } from "../../config";
 import { useMessages } from "../../context/MessagesContext";
 import { Revision } from "../../model";
 import HeadlineGroup from "../HeadlineGroup/HeadlineGroup";
@@ -6,9 +7,11 @@ import "./item-revisions.scss";
 
 export default function ItemRevisions({
   revisions,
+  config,
   dateFormat,
 }: {
   revisions: Revision[];
+  config: ConfigData;
   dateFormat?: string;
 }) {
   const { revisionsText } = useMessages();
@@ -25,6 +28,7 @@ export default function ItemRevisions({
           key={revision.release}
           revision={revision}
           dateFormat={dateFormat}
+          config={config}
         />
       ))}
     </div>
