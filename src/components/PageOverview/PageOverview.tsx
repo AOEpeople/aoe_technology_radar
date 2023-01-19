@@ -101,6 +101,7 @@ export default function PageOverview({
                     big
                     onClick={handleRingClick(ringName)}
                     type={isRingActive(ringName) ? ringName : "empty"}
+                    config={config}
                   >
                     {ringName}
                   </Badge>
@@ -137,7 +138,9 @@ export default function PageOverview({
                               {translate(config, item.quadrant)}
                             </div>
                             <div className="nav__item">
-                              <Badge type={item.ring}>{item.ring}</Badge>
+                              <Badge type={item.ring} config={config}>
+                                {item.ring}
+                              </Badge>
                             </div>
                           </div>
                         </div>

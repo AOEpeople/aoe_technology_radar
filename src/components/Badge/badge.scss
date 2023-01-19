@@ -24,19 +24,19 @@
     background: var(--color-gray-normal);
     border-color: var(--color-gray-normal);
   }
-  &--adopt {
+  &--first {
     background: var(--color-green);
     border-color: var(--color-green);
   }
-  &--trial {
+  &--second {
     background: var(--color-orange);
     border-color: var(--color-orange);
   }
-  &--assess {
+  &--third {
     background: var(--color-blue);
     border-color: var(--color-blue);
   }
-  &--hold {
+  &--fourth {
     background: var(--color-marine);
     border-color: var(--color-marine);
   }

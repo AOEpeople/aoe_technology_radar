@@ -10,6 +10,7 @@ const renderList = (
   ringName: string,
   quadrantName: string,
   groups: Group,
+  config: ConfigData,
   big: boolean
 ) => {
   const itemsInRing = groups[quadrantName][ringName] || [];
@@ -17,7 +18,7 @@ const renderList = (
   if (big) {
     return (
       <ItemList items={itemsInRing} noLeadingBorder>
-        <Badge type={ringName} big={big}>
+        <Badge type={ringName} big={big} config={config}>
           {ringName}
         </Badge>
       </ItemList>
@@ -27,7 +28,9 @@ const renderList = (
   return (
     <div className="ring-list">
       <div className="ring-list__header">
-        <Badge type={ringName}>{ringName}</Badge>
+        <Badge type={ringName} config={config}>
+          {ringName}
+        </Badge>
       </div>
       {itemsInRing.map((item) => (
         <span key={item.name} className="ring-list__item">
@@ -45,11 +48,11 @@ const renderRing = (
   ringName: string,
   quadrantName: string,
   groups: Group,
-  renderIfEmpty: boolean,
+  config: ConfigData,
   big: boolean
 ) => {
   if (
-    !renderIfEmpty &&
+    !config.showEmptyRings &&
     (!groups[quadrantName] ||
       !groups[quadrantName][ringName] ||
       groups[quadrantName][ringName].length === 0)
@@ -58,7 +61,7 @@ const renderRing = (
   }
   return (
     <div key={ringName} className="quadrant-section__ring">
-      {renderList(ringName, quadrantName, groups, big)}
+      {renderList(ringName, quadrantName, groups, config, big)}
     </div>
   );
 };
@@ -93,7 +96,7 @@ export default function QuadrantSection({
       </div>
       <div className="quadrant-section__rings">
         {config.rings.map((ringName: string) =>
-          renderRing(ringName, quadrantName, groups, config.showEmptyRings, big)
+          renderRing(ringName, quadrantName, groups, config, big)
         )}
       </div>
     </div>

@@ -65,7 +65,7 @@ export default function PageItemMobile({
                   {editButton}
                 </div>
                 <div className="split__right">
-                  <Badge big type={item.ring}>
+                  <Badge big type={item.ring} config={config}>
                     {item.ring}
                   </Badge>
                 </div>
@@ -77,7 +77,10 @@ export default function PageItemMobile({
             />
             <ItemTags tags={item.tags} />
             {item.revisions.length > 1 && (
-              <ItemRevisions revisions={item.revisions.slice(1)} />
+              <ItemRevisions
+                revisions={item.revisions.slice(1)}
+                config={config}
+              />
             )}
           </div>
         </div>

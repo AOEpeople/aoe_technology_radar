@@ -81,7 +81,7 @@ const PageItem: React.FC<Props> = ({
             >
               <div className="split">
                 <div className="split__left">
-                  <Badge big type={item.ring}>
+                  <Badge big type={item.ring} config={config}>
                     {item.ring}
                   </Badge>
                 </div>
@@ -119,7 +119,7 @@ const PageItem: React.FC<Props> = ({
                   {editButton}
                 </div>
                 <div className="split__right">
-                  <Badge big type={item.ring}>
+                  <Badge big type={item.ring} config={config}>
                     {item.ring}
                   </Badge>
                 </div>
@@ -134,6 +134,7 @@ const PageItem: React.FC<Props> = ({
               <ItemRevisions
                 revisions={item.revisions.slice(1)}
                 dateFormat={config.dateFormat}
+                config={config}
               />
             )}
           </div>
