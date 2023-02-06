@@ -54,7 +54,7 @@ process.on("unhandledRejection", function (err) {
     throw err;
 });
 var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var radar, rawConf, config, sitemap;
+    var radar, rawConf, config, sitemap, sitemapOptions;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -74,12 +74,14 @@ var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, f
                     }
                 });
                 sitemap = new xml_sitemap_1.default();
+                sitemapOptions = {
+                    lastmod: "now",
+                    changefreq: "weekly",
+                };
+                sitemap.add("".concat(config_1.publicUrl, "/index.html"), sitemapOptions);
                 radar.items.forEach(function (item) {
                     (0, fs_1.copyFileSync)("build/index.html", "build/".concat(item.quadrant, "/").concat(item.name, ".html"));
-                    sitemap.add("".concat(config_1.publicUrl).concat(item.quadrant, "/").concat(item.name, ".html"), {
-                        lastmod: "now",
-                        changefreq: "weekly",
-                    });
+                    sitemap.add("".concat(config_1.publicUrl).concat(item.quadrant, "/").concat(item.name, ".html"), sitemapOptions);
                 });
                 (0, fs_1.writeFileSync)("build/sitemap.xml", sitemap.xml);
                 return [2 /*return*/];
