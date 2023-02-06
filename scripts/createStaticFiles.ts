@@ -40,6 +40,12 @@ const createStaticFiles = async () => {
   });
 
   const sitemap = new XmlSitemap();
+  const sitemapOptions = {
+    lastmod: "now",
+    changefreq: "weekly",
+  }
+
+  sitemap.add(`${publicUrl}/index.html`, sitemapOptions);
 
   radar.items.forEach((item) => {
     copyFileSync(
@@ -47,10 +53,7 @@ const createStaticFiles = async () => {
       `build/${item.quadrant}/${item.name}.html`
     );
 
-    sitemap.add(`${publicUrl}${item.quadrant}/${item.name}.html`, {
-      lastmod: "now",
-      changefreq: "weekly",
-    });
+    sitemap.add(`${publicUrl}${item.quadrant}/${item.name}.html`, sitemapOptions);
   });
 
   writeFileSync("build/sitemap.xml", sitemap.xml);
