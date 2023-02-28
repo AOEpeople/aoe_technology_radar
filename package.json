@@ -15,8 +15,8 @@
   },
   "scripts": {
     "prepare": "husky install && npm run build:scripts",
-    "start": "GENERATE_SOURCEMAP=false react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "start": "cross-env GENERATE_SOURCEMAP=false react-scripts start",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "build:scripts": "tsc --project tsconfig.scripts.json",
     "test": "react-scripts test --watchAll=false",
     "ts:check": "tsc --noEmit",
@@ -64,6 +64,7 @@
     "@types/marked": "4.0.8",
     "@types/node": "18.14.2",
     "@typescript-eslint/parser": "5.54.0",
+    "cross-env": "7.0.3",
     "eslint": "8.35.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-config-react-app": "7.0.1",
