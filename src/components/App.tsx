@@ -10,8 +10,10 @@ import {
 
 import { ConfigData, publicUrl } from "../config";
 import { Messages, MessagesProvider } from "../context/MessagesContext";
+import { Data } from "../interfaces/data";
 import { useSearchParamState } from "../hooks/use-search-param-state";
 import { Item, filteredOnly, getTags } from "../model";
+import { asygetDataByRing } from "../services/ring";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Router from "./Router";
@@ -83,10 +85,6 @@ const FooterWithPageParam = ({ items }: { items: Item[] }) => {
   return <Footer pageName={page || ""} items={filteredItems} />;
 };
 
-interface Data {
-  items: Item[];
-  releases: string[];
-}
 
 export default function App() {
   const data = useFetch<Data>(

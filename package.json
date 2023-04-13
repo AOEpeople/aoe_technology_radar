@@ -1,9 +1,10 @@
 {
-  "name": "aoe_technology_radar",
+  "name": "aoe_radar",
   "version": "3.5.0",
   "description": "AOE Technology Radar",
   "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
   "license": "Apache-2.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
@@ -35,6 +36,7 @@
     "@types/react-modal": "3.13.1",
     "@types/sanitize-html": "2.8.0",
     "@types/walk": "2.3.1",
+    "aoe_technology_radar": "3.5.0",
     "classnames": "2.3.2",
     "d3": "7.8.2",
     "front-matter": "4.0.2",
@@ -43,6 +45,7 @@
     "husky": "8.0.3",
     "marked": "4.2.12",
     "moment": "2.29.4",
+    "node-fetch": "3.3.1",
     "postcss-normalize": "10.0.1",
     "query-string": "8.1.0",
     "react": "18.2.0",
