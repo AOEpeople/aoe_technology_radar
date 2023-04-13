@@ -13,6 +13,7 @@ import { Messages, MessagesProvider } from "../context/MessagesContext";
 import { Data } from "../interfaces/data";
 import { useSearchParamState } from "../hooks/use-search-param-state";
 import { Item, filteredOnly, getTags } from "../model";
+import FilterRadar from "../perfi/components/FilterRadar/FilterRadar";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Router from "./Router";
@@ -96,6 +97,8 @@ export default function App() {
     `${publicUrl}config.json?${process.env.REACT_APP_BUILDHASH}`
   );
 
+  const [uniqueRings, setUniqueRings] = React.useState<string[]>([]);
+
   if (data && config) {
     const { items, releases } = data;
     return (
@@ -109,6 +112,7 @@ export default function App() {
                   <div className="page">
                     <div className="page__header">
                       <HeaderWithPageParam items={items} />
+                      <FilterRadar items={items} onChange={setUniqueRings} />
                     </div>
                     <div className={classNames("page__content")}>
                       <RouterWithPageParam
