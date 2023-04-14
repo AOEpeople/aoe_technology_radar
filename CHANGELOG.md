@@ -1,5 +1,49 @@
 # Changelog
 
+## Version v3.5.1 (2023-04-14)
+
+### Fixes
+
+- include index.html in sitemap (d2e54003)
+
+### Ops and CI/CD
+
+- **deps:** bump webpack from 5.72.1 to 5.79.0 (cd144101)
+- **deps:** bump dns-packet from 5.3.1 to 5.4.0 (#337) (5845fc10)
+
+### Chores and tidying
+
+- **deps:** update dependency @typescript-eslint/parser to v5.58.0 (114534c1)
+- **deps:** update dependency eslint to v8.38.0 (e906c79a)
+- **deps:** update actions/setup-go action to v4 (58a31cb8)
+- **deps:** update dependency marked to v4.3.0 (cd98daa2)
+- **deps:** update dependency @types/jest to v29.5.0 (af11d27c)
+- **deps:** update dependency fs-extra to v11.1.1 (14effde0)
+- **deps:** update dependency d3 to v7.8.4 (62b2657d)
+- **deps:** update dependency sass to v1.62.0 (d469d428)
+- **deps:** update dependency @types/react to v18.0.35 (9799892c)
+- **deps:** update dependency react-router-dom to v6.10.0 (ff9c013b)
+- **deps:** update dependency eslint-config-prettier to v8.8.0 (4144445d)
+- **deps:** update dependency react-icons to v4.8.0 (8768d109)
+- **deps:** update dependency @types/sanitize-html to v2.9.0 (a059778e)
+- **deps:** update dependency @types/node to v18.15.11 (98e5f186)
+- **deps:** update dependency @testing-library/react to v14 (#334) (db086f30)
+- **deps:** update dependency sass to v1.58.3 (bb35b88b)
+- **deps:** update dependency sanitize-html to v2.10.0 (ad5013e7)
+- **deps:** update react monorepo (d0c7b6bd)
+- **deps:** update dependency @trivago/prettier-plugin-sort-imports to v4.1.1 (b7467481)
+- **deps:** update dependency @types/node to v18.14.2 (caebaad6)
+- **deps:** update dependency typescript to v4.9.5 (2f2b365d)
+- **deps:** update dependency eslint-plugin-react to v7.32.2 (3f79d4ba)
+- **deps:** update dependency eslint to v8.35.0 (bfafa19d)
+- **deps:** update dependency react-router-dom to v6.8.2 (0c977536)
+- **deps:** update dependency @types/jest to v29.4.0 (a688e401)
+- **deps:** update dependency @typescript-eslint/parser to v5.54.0 (a3efebc7)
+
+### Other
+
+- Add cross-env to allow building on windows too. (#333) (77acfddf)
+
 ## Version v3.5.0 (2023-01-19)
 
 ### Features
