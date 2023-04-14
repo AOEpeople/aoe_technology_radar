@@ -78,7 +78,7 @@ var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, f
                     lastmod: "now",
                     changefreq: "weekly",
                 };
-                sitemap.add("".concat(config_1.publicUrl, "/index.html"), sitemapOptions);
+                sitemap.add("".concat(config_1.publicUrl, "index.html"), sitemapOptions);
                 radar.items.forEach(function (item) {
                     (0, fs_1.copyFileSync)("build/index.html", "build/".concat(item.quadrant, "/").concat(item.name, ".html"));
                     sitemap.add("".concat(config_1.publicUrl).concat(item.quadrant, "/").concat(item.name, ".html"), sitemapOptions);

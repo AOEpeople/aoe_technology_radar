@@ -45,7 +45,7 @@ const createStaticFiles = async () => {
     changefreq: "weekly",
   }
 
-  sitemap.add(`${publicUrl}/index.html`, sitemapOptions);
+  sitemap.add(`${publicUrl}index.html`, sitemapOptions);
 
   radar.items.forEach((item) => {
     copyFileSync(
