@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v3.5.2 (2023-04-14)
+
+### Fixes
+
+- fix build (24a295cb)
+
 ## Version v3.5.1 (2023-04-14)
 
 ### Fixes
