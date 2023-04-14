@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@apideck/better-ajv-errors": "0.3.6",
-    "@svgr/webpack": "6.5.1",
+    "@svgr/webpack": "7.0.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.0.0",
     "@types/d3": "7.4.0",
