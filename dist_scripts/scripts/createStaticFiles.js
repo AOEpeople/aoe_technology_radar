@@ -42,6 +42,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
 var xml_sitemap_1 = __importDefault(require("xml-sitemap"));
+var jsdom_1 = require("jsdom");
 var config_1 = require("../src/config");
 var radar_1 = require("./generateJson/radar");
 // Do this as the first thing so that any code reading it knows the right env.
@@ -80,7 +81,26 @@ var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, f
                 };
                 sitemap.add("".concat(config_1.publicUrl, "index.html"), sitemapOptions);
                 radar.items.forEach(function (item) {
-                    (0, fs_1.copyFileSync)("build/index.html", "build/".concat(item.quadrant, "/").concat(item.name, ".html"));
+                    var targetPath = "build/".concat(item.quadrant, "/").concat(item.name, ".html");
+                    (0, fs_1.copyFileSync)("build/index.html", targetPath);
+                    jsdom_1.JSDOM.fromFile(targetPath).then(function (dom) {
+                        var document = dom.window.document;
+                        var rootEl = document.getElementById("root");
+                        if (rootEl) {
+                            var textNode = document.createElement("div");
+                            var bodyFragment = jsdom_1.JSDOM.fragment(item.body);
+                            textNode.appendChild(bodyFragment);
+                            var headlineNode = document.createElement("h1");
+                            var titleText = document.createTextNode(item.title);
+                            headlineNode.appendChild(titleText);
+                            rootEl.appendChild(headlineNode);
+                            rootEl.appendChild(textNode);
+                        }
+                        else {
+                            console.warn('Element with ID "root" not found. Static site content will be empty.');
+                        }
+                        (0, fs_1.writeFileSync)(targetPath, dom.serialize());
+                    });
                     sitemap.add("".concat(config_1.publicUrl).concat(item.quadrant, "/").concat(item.name, ".html"), sitemapOptions);
                 });
                 (0, fs_1.writeFileSync)("build/sitemap.xml", sitemap.xml);

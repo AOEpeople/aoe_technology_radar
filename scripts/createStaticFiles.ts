@@ -7,6 +7,7 @@ import {
   writeFileSync,
 } from "fs";
 import XmlSitemap from "xml-sitemap";
+import { JSDOM } from 'jsdom';
 
 import { publicUrl } from "../src/config";
 import { createRadar } from "./generateJson/radar";
@@ -48,10 +49,36 @@ const createStaticFiles = async () => {
   sitemap.add(`${publicUrl}index.html`, sitemapOptions);
 
   radar.items.forEach((item) => {
+    const targetPath = `build/${item.quadrant}/${item.name}.html`
     copyFileSync(
       "build/index.html",
-      `build/${item.quadrant}/${item.name}.html`
+      targetPath
     );
+
+    JSDOM.fromFile(targetPath).then(dom => {
+      const document = dom.window.document;
+      const rootEl = document.getElementById("root")
+
+      if (rootEl) {
+        const textNode = document.createElement("div")
+        const bodyFragment = JSDOM.fragment(item.body);
+        textNode.appendChild(bodyFragment)
+
+        const headlineNode = document.createElement("h1")
+        const titleText = document.createTextNode(item.title);
+        headlineNode.appendChild(titleText)
+
+        rootEl.appendChild(headlineNode)
+        rootEl.appendChild(textNode)
+      } else {
+        console.warn('Element with ID "root" not found. Static site content will be empty.')
+      }
+
+      writeFileSync(
+        targetPath,
+        dom.serialize()
+      );
+    });
 
     sitemap.add(`${publicUrl}${item.quadrant}/${item.name}.html`, sitemapOptions);
   });
