@@ -146,6 +146,8 @@ const addRevisionToItem = (
     quadrant: "",
     body: "",
     info: "",
+    angleFraction: Math.random(),
+    radiusFraction: Math.random()
   },
   revision: Revision
 ): Item => {
