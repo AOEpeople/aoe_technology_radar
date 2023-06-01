@@ -125,17 +125,19 @@ export const filteredOnly = (items: Item[], tags: Tag[] | string) => {
     }
 
     if (Array.isArray(tags)) {
-      return tags.every(tag => itemTags.includes(tag));
+      return tags.every((tag) => itemTags.includes(tag));
     }
 
     return itemTags.includes(tags);
   });
-}
+};
 
 export const getTags = (items: Item[]): Tag[] => {
-  const tags: Tag[] = items.reduce((acc: Tag[], item: Item) => {
-    return !item.tags ? acc : acc.concat(item.tags);
-  }, []).sort();
+  const tags: Tag[] = items
+    .reduce((acc: Tag[], item: Item) => {
+      return !item.tags ? acc : acc.concat(item.tags);
+    }, [])
+    .sort();
 
   return Array.from(new Set(tags));
 };

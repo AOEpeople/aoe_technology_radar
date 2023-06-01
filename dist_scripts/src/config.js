@@ -17,7 +17,7 @@ function isMobileViewport() {
     return width < 1200;
 }
 exports.isMobileViewport = isMobileViewport;
-exports.publicUrl = (process.env.PUBLIC_URL || "").replace(/\/$/, '') + "/";
+exports.publicUrl = (process.env.PUBLIC_URL || "").replace(/\/$/, "") + "/";
 function assetUrl(file) {
     return exports.publicUrl + file;
 }

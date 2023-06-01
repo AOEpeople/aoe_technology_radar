@@ -26,7 +26,8 @@ function generateCoordinates(
     ringPadding = 0.7;
 
   // radian between 0 and 90 degrees
-  const randomDegree = ((0.1 + (blip.angleFraction || Math.random()) * .8) * 90 * pi) / 180;
+  const randomDegree =
+    ((0.1 + (blip.angleFraction || Math.random()) * 0.8) * 90 * pi) / 180;
   // random distance from the centre of the radar, but within given ring. Also, with some "padding" so the points don't touch ring borders.
   const radius = pointBetween(
     previousRingRadius + ringPadding,
