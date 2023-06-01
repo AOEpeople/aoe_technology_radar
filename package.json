@@ -78,7 +78,8 @@
     "node": ">=16"
   },
   "overrides": {
-    "@svgr/webpack": "$@svgr/webpack"
+    "@svgr/webpack": "$@svgr/webpack",
+    "xml2js": "0.5.0"
   },
   "browserslist": {
     "production": [
