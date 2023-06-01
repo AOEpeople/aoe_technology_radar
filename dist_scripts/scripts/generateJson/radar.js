@@ -89,10 +89,10 @@ var fs_extra_1 = require("fs-extra");
 var highlight_js_1 = __importDefault(require("highlight.js"));
 var marked_1 = require("marked");
 var path = __importStar(require("path"));
+var config_1 = require("../../src/config");
 var model_1 = require("../../src/model");
 var paths_1 = require("../paths");
 var file_1 = require("./file");
-var config_1 = require("../../src/config");
 marked_1.marked.setOptions({
     highlight: function (code) { return highlight_js_1.default.highlightAuto(code).value; },
 });
@@ -200,7 +200,7 @@ var addRevisionToItem = function (item, revision) {
         body: "",
         info: "",
         angleFraction: Math.random(),
-        radiusFraction: Math.random()
+        radiusFraction: Math.random(),
     }; }
     var newItem = __assign(__assign(__assign({}, item), revision), { body: ignoreEmptyRevisionBody(revision, item) });
     if (revisionCreatesNewHistoryEntry(revision, item)) {

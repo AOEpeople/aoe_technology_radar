@@ -41,8 +41,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
-var xml_sitemap_1 = __importDefault(require("xml-sitemap"));
 var jsdom_1 = require("jsdom");
+var xml_sitemap_1 = __importDefault(require("xml-sitemap"));
 var config_1 = require("../src/config");
 var radar_1 = require("./generateJson/radar");
 // Do this as the first thing so that any code reading it knows the right env.

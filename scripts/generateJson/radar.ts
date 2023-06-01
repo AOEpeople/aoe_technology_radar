@@ -5,6 +5,7 @@ import highlight from "highlight.js";
 import { marked } from "marked";
 import * as path from "path";
 
+import { ConfigData, publicUrl } from "../../src/config";
 import {
   FlagType,
   Item,
@@ -14,8 +15,6 @@ import {
 } from "../../src/model";
 import { appBuild } from "../paths";
 import { getAllMarkdownFiles, radarPath } from "./file";
-
-import { ConfigData, publicUrl } from "../../src/config";
 
 marked.setOptions({
   highlight: (code: any) => highlight.highlightAuto(code).value,
@@ -147,7 +146,7 @@ const addRevisionToItem = (
     body: "",
     info: "",
     angleFraction: Math.random(),
-    radiusFraction: Math.random()
+    radiusFraction: Math.random(),
   },
   revision: Revision
 ): Item => {

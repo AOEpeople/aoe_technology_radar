@@ -92,9 +92,11 @@ var filteredOnly = function (items, tags) {
 };
 exports.filteredOnly = filteredOnly;
 var getTags = function (items) {
-    var tags = items.reduce(function (acc, item) {
+    var tags = items
+        .reduce(function (acc, item) {
         return !item.tags ? acc : acc.concat(item.tags);
-    }, []).sort();
+    }, [])
+        .sort();
     return Array.from(new Set(tags));
 };
 exports.getTags = getTags;

@@ -1,1 +1,1 @@
-declare module 'xml-sitemap';
+declare module "xml-sitemap";
