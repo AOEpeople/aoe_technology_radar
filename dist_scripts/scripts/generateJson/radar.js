@@ -199,6 +199,8 @@ var addRevisionToItem = function (item, revision) {
         quadrant: "",
         body: "",
         info: "",
+        angleFraction: Math.random(),
+        radiusFraction: Math.random()
     }; }
     var newItem = __assign(__assign(__assign({}, item), revision), { body: ignoreEmptyRevisionBody(revision, item) });
     if (revisionCreatesNewHistoryEntry(revision, item)) {

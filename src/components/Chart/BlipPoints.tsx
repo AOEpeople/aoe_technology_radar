@@ -26,7 +26,7 @@ function generateCoordinates(
     ringPadding = 0.7;
 
   // radian between 0 and 90 degrees
-  const randomDegree = ((blip.angleFraction || Math.random()) * 90 * pi) / 180;
+  const randomDegree = ((0.1 + (blip.angleFraction || Math.random()) * .8) * 90 * pi) / 180;
   // random distance from the centre of the radar, but within given ring. Also, with some "padding" so the points don't touch ring borders.
   const radius = pointBetween(
     previousRingRadius + ringPadding,
@@ -34,7 +34,7 @@ function generateCoordinates(
     blip.radiusFraction || Math.random()
   );
 
-  /* 
+  /*
     Multiples of PI/2. To apply the calculated position to the specific quadrant.
     Order here is counter-clockwise, so we need to "invert" quadrant positions (i.e. swap 2 with 4)
     */
