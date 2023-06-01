@@ -1,5 +1,35 @@
 # Changelog
 
+## Version v3.5.3 (2023-06-01)
+
+### Fixes
+
+- deterministic behaviour for radar by storing the random fractions when generating rd.json (#372) (3b272dac)
+- generate static files content (71e39745)
+
+### Ops and CI/CD
+
+- **deps:** update transitive dependency xml2js to v0.5.0 (34e6f0eb)
+
+### Chores and tidying
+
+- **deps:** update react monorepo (b82d5a9d)
+- **deps:** remove unused dependency yaml (8dd67b76)
+- **deps:** update dependency highlight.js to v11.8.0 (398b3026)
+- **deps:** update dependency @types/marked to v4.3.1 (c1a0c194)
+- **deps:** update dependency @types/react-modal to v3.16.0 (a7370854)
+- **deps:** update dependency @types/node to v18.16.16 (2e2def59)
+- **deps:** update dependency @types/jest to v29.5.2 (b0820aa5)
+- **deps:** update dependency jsdom to v21.1.2 (f0276509)
+- **deps:** update dependency sass to v1.62.1 (eeb40569)
+- **deps:** update dependency @typescript-eslint/parser to v5.59.8 (fcd15907)
+- **deps:** update dependency eslint to v8.41.0 (90863555)
+- **deps:** update dependency yaml to v2.2.2 [security] (37dbc4ed)
+
+### Other
+
+- style: run prettier on pre-commit hook (99487126)
+
 ## Version v3.5.2 (2023-04-14)
 
 ### Fixes
