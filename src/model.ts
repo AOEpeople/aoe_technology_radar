@@ -25,6 +25,8 @@ export type Item = ItemAttributes & {
   info: string;
   flag: FlagType;
   revisions: Revision[];
+  angleFraction?: number;
+  radiusFraction?: number;
 };
 
 export type Blip = Item & {
