@@ -5,9 +5,11 @@ exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.titleFormat = process.env.REACT_APP_RADAR_TITLE_FORMAT || "%TECHNOLOGY_NAME% | %APP_TITLE%";
 function setTitle(document, title) {
-    document.title = exports.titleFormat
-        .replace("%TECHNOLOGY_NAME%", title)
-        .replace("%APP_TITLE%", exports.radarName);
+    document.title = title
+        ? exports.titleFormat
+            .replace("%TECHNOLOGY_NAME%", title)
+            .replace("%APP_TITLE%", exports.radarName)
+        : exports.radarName;
 }
 exports.setTitle = setTitle;
 var getItemPageNames = function (items) {

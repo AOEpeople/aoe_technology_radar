@@ -3,12 +3,12 @@ import { useEffect } from "react";
 import { setTitle } from "../config";
 
 type SetTitleProps = {
-  title: string;
+  title?: string;
 };
 
 export default function SetTitle({ title }: SetTitleProps) {
   useEffect(() => {
-    setTitle(document, title)
+    setTitle(document, title);
   }, [title]);
 
   return null;
