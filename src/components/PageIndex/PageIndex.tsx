@@ -1,6 +1,6 @@
 import { MomentInput } from "moment";
 
-import { ConfigData, radarName, radarNameShort } from "../../config";
+import { ConfigData, radarName } from "../../config";
 import { useMessages } from "../../context/MessagesContext";
 import { formatRelease } from "../../date";
 import { HomepageOption, Item, featuredOnly } from "../../model";
@@ -38,7 +38,7 @@ export default function PageIndex({
     config.homepageContent === HomepageOption.both;
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
-      <SetTitle title={radarNameShort} />
+      <SetTitle />
       <div className="headline-group">
         <HeroHeadline alt={`Version #${numberOfReleases}`}>
           {radarName}
