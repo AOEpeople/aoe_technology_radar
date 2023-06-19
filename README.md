@@ -102,6 +102,14 @@ You can customize the following parts of the tech radar.
 ### Change title, description and headline
 Set the environment variable `REACT_APP_RADAR_NAME`. The default is "AOE Technology Radar".
 
+Set the environment variable `REACT_APP_RADAR_TITLE_FORMAT` to define the title format for each technology page.
+You can use two placeholders here:
+
+- `%TECHNOLOGY_NAME%`: The name of the technology will be inserted
+- `%APP_TITLE%`: The base app name (from `REACT_APP_RADAR_NAME`) will be inserted
+
+For example: `%TECHNOLOGY_NAME% | %APP_TITLE%`
+
 ### Host the application under a sub path
 To host the application under a sub path, set the environment variable `PUBLIC_URL`, e.g. "/techradar". The default is "/".
 

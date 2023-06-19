@@ -9,7 +9,7 @@ import {
 import { JSDOM } from "jsdom";
 import XmlSitemap from "xml-sitemap";
 
-import { publicUrl } from "../src/config";
+import { publicUrl, setTitle } from "../src/config";
 import { createRadar } from "./generateJson/radar";
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -55,6 +55,10 @@ const createStaticFiles = async () => {
     JSDOM.fromFile(targetPath).then((dom) => {
       const document = dom.window.document;
       const rootEl = document.getElementById("root");
+
+      document.title = 'test'
+
+      setTitle(document, item.title)
 
       if (rootEl) {
         const textNode = document.createElement("div");

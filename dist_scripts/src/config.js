@@ -1,8 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.translate = exports.assetUrl = exports.publicUrl = exports.isMobileViewport = exports.getItemPageNames = exports.radarNameShort = exports.radarName = void 0;
+exports.translate = exports.assetUrl = exports.publicUrl = exports.isMobileViewport = exports.getItemPageNames = exports.setTitle = exports.titleFormat = exports.radarNameShort = exports.radarName = void 0;
 exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
 exports.radarNameShort = exports.radarName;
+exports.titleFormat = process.env.REACT_APP_RADAR_TITLE_FORMAT || "%TECHNOLOGY_NAME% | %APP_TITLE%";
+function setTitle(document, title) {
+    document.title = exports.titleFormat
+        .replace("%TECHNOLOGY_NAME%", title)
+        .replace("%APP_TITLE%", exports.radarName);
+}
+exports.setTitle = setTitle;
 var getItemPageNames = function (items) {
     return items.map(function (item) { return "".concat(item.quadrant, "/").concat(item.name); });
 };

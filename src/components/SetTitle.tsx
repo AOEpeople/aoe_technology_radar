@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { radarName } from "../config";
+import { setTitle } from "../config";
 
 type SetTitleProps = {
   title: string;
@@ -8,7 +8,7 @@ type SetTitleProps = {
 
 export default function SetTitle({ title }: SetTitleProps) {
   useEffect(() => {
-    document.title = `${title} | ${radarName}`;
+    setTitle(document, title)
   }, [title]);
 
   return null;
