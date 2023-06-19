@@ -86,6 +86,8 @@ var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, f
                     jsdom_1.JSDOM.fromFile(targetPath).then(function (dom) {
                         var document = dom.window.document;
                         var rootEl = document.getElementById("root");
+                        document.title = "test";
+                        (0, config_1.setTitle)(document, item.title);
                         if (rootEl) {
                             var textNode = document.createElement("div");
                             var bodyFragment = jsdom_1.JSDOM.fragment(item.body);
