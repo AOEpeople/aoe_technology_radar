@@ -67,6 +67,12 @@ const createStaticFiles = async () => {
 
         rootEl.appendChild(headlineNode);
         rootEl.appendChild(textNode);
+
+        // remove the <noscript> element as page has already been hydrated with static content
+        const noscriptEl = document.getElementsByTagName("noscript");
+        if (noscriptEl[0]) {
+          noscriptEl[0].remove();
+        }
       } else {
         console.warn(
           'Element with ID "root" not found. Static site content will be empty.'
