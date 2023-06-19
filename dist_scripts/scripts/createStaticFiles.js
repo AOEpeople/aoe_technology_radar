@@ -95,6 +95,11 @@ var createStaticFiles = function () { return __awaiter(void 0, void 0, void 0, f
                             headlineNode.appendChild(titleText);
                             rootEl.appendChild(headlineNode);
                             rootEl.appendChild(textNode);
+                            // remove the <noscript> element as page has already been hydrated with static content
+                            var noscriptEl = document.getElementsByTagName("noscript");
+                            if (noscriptEl[0]) {
+                                noscriptEl[0].remove();
+                            }
                         }
                         else {
                             console.warn('Element with ID "root" not found. Static site content will be empty.');
