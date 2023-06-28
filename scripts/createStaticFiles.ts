@@ -56,8 +56,6 @@ const createStaticFiles = async () => {
       const document = dom.window.document;
       const rootEl = document.getElementById("root");
 
-      document.title = "test";
-
       setTitle(document, item.title);
 
       if (rootEl) {
