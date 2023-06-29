@@ -1,5 +1,30 @@
 # Changelog
 
+## Version v3.6.0 (2023-06-29)
+
+### Features
+
+- allow to define format for page title (810db6ae)
+
+### Fixes
+
+- remove &lt;noscript&gt; when static content is generated and rendered already (8876d3b1)
+
+### Refactoring
+
+- remove test code (dd9ce8ed)
+- prevent duplicated title for index page by making prop optional (0d2265c5)
+
+### Chores and tidying
+
+- **deps:** update dependency @types/node to v18.16.18 (fbb23ab3)
+- **deps:** update dependency react-router-dom to v6.14.0 (12ed5828)
+- **deps:** update dependency jsdom to v22 (4ae9299a)
+- **deps:** update react monorepo (9d53b958)
+- **deps:** update dependency xml2js to v0.6.0 (769cc905)
+- **deps:** update dependency react-icons to v4.10.1 (28aed80c)
+- **deps:** update dependency d3 to v7.8.5 (fcc77016)
+
 ## Version v3.5.3 (2023-06-01)
 
 ### Fixes
