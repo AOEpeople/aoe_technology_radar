@@ -9,17 +9,6 @@
           "release": "2018-03-01",
           "title": "ADR",
           "ring": "assess",
-          "tags": [
-            "devops",
-            "documentation",
-            "frontend",
-            "quality assurance",
-            "security",
-            "ux/ui",
-            "quality assurance",
-            "quality assurance",
-            "quality assurance"
-          ],
           "quadrant": "methods-and-patterns",
           "fileName": "C:\\projects\\techradar\\radar\\2018-03-01\\adr.md",
           "body": "<p>Architecture Decision Records</p>\n<p>ADR is a lightweight documentation of important architecture decisions taken by the team.\nWithout documentation of the architecture and the architecture decisions, new team members can only do two things:</p>\n<ul>\n<li>either (blindy) accept what they find and see or</li>\n<li>(blindy) change things</li>\n</ul>\n<p>It goes without saying that both options aren&#39;t right.</p>\n<p>Therefore, we suggest documenting the important architecture decisions. We use a simple tool such as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/npryce/adr-tools\">https://github.com/npryce/adr-tools</a> and store them in version control.\nIn larger projects with many teams we also establish a regular &quot;architecture board / COI&quot; with regular meetings.\nOften, the architecture decisions are taken in such meetings.</p>\n<p>The main purpose of this documentation is to:</p>\n<ul>\n<li>inform new team members about the previous architecture decisions and their purpose and backgrounds</li>\n<li>inform the whole team (including all people who were absent)</li>\n<li>create documentation that can be used to remember things (e.g. conventions, patterns, etc.)</li>\n</ul>\n"
@@ -28,17 +17,6 @@
       "name": "adr",
       "title": "ADR",
       "ring": "assess",
-      "tags": [
-        "devops",
-        "documentation",
-        "frontend",
-        "quality assurance",
-        "security",
-        "ux/ui",
-        "quality assurance",
-        "quality assurance",
-        "quality assurance"
-      ],
       "quadrant": "methods-and-patterns",
       "body": "<p>Architecture Decision Records</p>\n<p>ADR is a lightweight documentation of important architecture decisions taken by the team.\nWithout documentation of the architecture and the architecture decisions, new team members can only do two things:</p>\n<ul>\n<li>either (blindy) accept what they find and see or</li>\n<li>(blindy) change things</li>\n</ul>\n<p>It goes without saying that both options aren&#39;t right.</p>\n<p>Therefore, we suggest documenting the important architecture decisions. We use a simple tool such as <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/npryce/adr-tools\">https://github.com/npryce/adr-tools</a> and store them in version control.\nIn larger projects with many teams we also establish a regular &quot;architecture board / COI&quot; with regular meetings.\nOften, the architecture decisions are taken in such meetings.</p>\n<p>The main purpose of this documentation is to:</p>\n<ul>\n<li>inform new team members about the previous architecture decisions and their purpose and backgrounds</li>\n<li>inform the whole team (including all people who were absent)</li>\n<li>create documentation that can be used to remember things (e.g. conventions, patterns, etc.)</li>\n</ul>\n",
       "info": "",
