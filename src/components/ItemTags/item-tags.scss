@@ -1,0 +1,11 @@
+.item-tags {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+
+  &__badges {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+}

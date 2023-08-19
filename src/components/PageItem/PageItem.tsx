@@ -129,7 +129,7 @@ const PageItem: React.FC<Props> = ({
               className="markdown"
               dangerouslySetInnerHTML={{ __html: item.body }}
             />
-            <ItemTags tags={item.tags} />
+            <ItemTags tags={item.tags} config={config} />
             {item.revisions.length > 1 && (
               <ItemRevisions
                 revisions={item.revisions.slice(1)}
