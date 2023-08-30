@@ -83,7 +83,7 @@ const FooterWithPageParam = ({ items }: { items: Item[] }) => {
   return <Footer pageName={page || ""} items={filteredItems} />;
 };
 
-interface Data {
+export interface Data {
   items: Item[];
   releases: string[];
 }

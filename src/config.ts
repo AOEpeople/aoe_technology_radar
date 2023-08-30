@@ -48,6 +48,8 @@ export function isMobileViewport() {
   return width < 1200;
 }
 
+export const customMode =
+    process.env.REACT_APP_CUSTOM_MODE === "true" || false;
 export const publicUrl =
   (process.env.PUBLIC_URL || "").replace(/\/$/, "") + "/";
 
