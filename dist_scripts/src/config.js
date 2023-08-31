@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.translate = exports.assetUrl = exports.publicUrl = exports.customMode = exports.isMobileViewport = exports.getItemPageNames = exports.setTitle = exports.titleFormat = exports.radarNameShort = exports.radarName = void 0;
+exports.translate = exports.assetUrl = exports.publicUrl = exports.isCustomMode = exports.isMobileViewport = exports.getItemPageNames = exports.setTitle = exports.titleFormat = exports.radarNameShort = exports.radarName = void 0;
 exports.radarName = process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
 exports.radarNameShort = exports.radarName;
 exports.titleFormat = process.env.REACT_APP_RADAR_TITLE_FORMAT || "%TECHNOLOGY_NAME% | %APP_TITLE%";
@@ -26,7 +26,7 @@ function isMobileViewport() {
     return width < 1200;
 }
 exports.isMobileViewport = isMobileViewport;
-exports.customMode = process.env.REACT_APP_CUSTOM_MODE === "true" || false;
+exports.isCustomMode = process.env.REACT_APP_CUSTOM_MODE === "true" || false;
 exports.publicUrl = (process.env.PUBLIC_URL || "").replace(/\/$/, "") + "/";
 function assetUrl(file) {
     return exports.publicUrl + file;

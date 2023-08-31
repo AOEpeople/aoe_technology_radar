@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
-import {ConfigData, publicUrl} from "../../config";
-import {customMode} from "../../config";
 import {Data} from "../../components/App";
+import {ConfigData, publicUrl} from "../../config";
+import {isCustomMode} from "../../config";
 import {Item} from "../../model";
 
 type ConfigContextType = {
@@ -12,9 +12,8 @@ type ConfigContextType = {
     resetConfigContext: () => void;
     addItemToData: (item: Item | null) => void;
     updateDataContext: (data: Data | null) => void;
-    emptyDataContext: () => void,
-    resetDataContext: () => void,
-
+    emptyDataContext: () => void;
+    resetDataContext: () => void;
 };
 
 const ConfigContext = createContext<ConfigContextType | undefined>(undefined);
@@ -34,14 +33,16 @@ interface ConfigProviderProps {
 export const ConfigProvider: React.FC<ConfigProviderProps> = ({children}) => {
     const [config, setConfig] = useState<ConfigData | null>(null);
     const [data, setData] = useState<Data | null>(null);
-    const [customMode, setCustomMode] = useState(false);
+    const [customMode, setCustomMode] = useState(isCustomMode);
 
-    const defaultConfigPath = `${publicUrl}config.json?${process.env.REACT_APP_BUILDHASH}`
-    const customConfigPath = `${publicUrl}newConfig.json?${process.env.REACT_APP_BUILDHASH}`
-    const defaultDataPath = `${publicUrl}rd.json?${process.env.REACT_APP_BUILDHASH}`
-    const customDataPath = `${publicUrl}newRd.json?${process.env.REACT_APP_BUILDHASH}`
+    const defaultConfigPath = `${publicUrl}config.json?${process.env.REACT_APP_BUILDHASH}`;
+    const customConfigPath = `${publicUrl}newConfig.json?${process.env.REACT_APP_BUILDHASH}`;
+    const defaultDataPath = `${publicUrl}rd.json?${process.env.REACT_APP_BUILDHASH}`;
+    const customDataPath = `${publicUrl}newRd.json?${process.env.REACT_APP_BUILDHASH}`;
 
-    const fetchData = async <D extends unknown>(url: string): Promise<D | null> => {
+    const fetchData = async <D extends unknown>(
+        url: string
+    ): Promise<D | null> => {
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -80,12 +81,10 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({children}) => {
         }
     }
 
-
     const resetConfigContext = async () => {
         const defaultConfig = await fetchData<ConfigData>(defaultConfigPath);
         setConfig(defaultConfig);
     };
-
 
     const updateDataContext = (data: Data | null) => {
         setData(data);
@@ -100,12 +99,12 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({children}) => {
 
     const emptyDataContext = () => {
         setData(null);
-    }
+    };
 
     const resetDataContext = async () => {
         const defaultData = await fetchData<Data>(defaultDataPath);
         setData(defaultData);
-    }
+    };
 
     const addItemToData = (newItem: Item | null) => {
         if (data) {
@@ -114,7 +113,6 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({children}) => {
             setData(newData);
         }
     };
-
 
     useEffect(() => {
         setFirstConfig();
