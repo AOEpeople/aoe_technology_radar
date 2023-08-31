@@ -1,0 +1,92 @@
+
+:root {
+    --color-red: #f25244;
+}
+
+.drawer-content {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: scroll;
+}
+
+.dawer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Component Styles */
+.drawer-container {
+    overflow: auto;
+    max-height: 80vh;
+
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -390px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.drawer.open {
+    right: 0;
+    overflow: scroll;
+}
+
+
+.drawer-open-button {
+    position: fixed;
+    top: 45%;
+    right: 20px;
+    background: var(--color-red);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hidden {
+    display: none;
+}
+
+.save-button {
+    margin: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    background: var(--color-red);
+    border-color: var(--color-red);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background: #e0e0e0;
+}
+
+.error-message {
+    color: red;
+}
