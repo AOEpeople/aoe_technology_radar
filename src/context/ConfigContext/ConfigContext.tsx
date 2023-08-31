@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
+
 import {Data} from "../../components/App";
 import {ConfigData, publicUrl} from "../../config";
 import {isCustomMode} from "../../config";
@@ -56,6 +57,13 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({children}) => {
         }
     };
 
+
+    const dataToJsonString = () => {
+        const newData =JSON.stringify(data);
+        console.log(newData);
+
+    }
+
     async function setFirstConfig() {
         let configPath: string;
         let dataPath: string;
@@ -84,6 +92,7 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({children}) => {
     const resetConfigContext = async () => {
         const defaultConfig = await fetchData<ConfigData>(defaultConfigPath);
         setConfig(defaultConfig);
+        dataToJsonString()
     };
 
     const updateDataContext = (data: Data | null) => {

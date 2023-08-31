@@ -49,7 +49,7 @@ export function isMobileViewport() {
 }
 
 export const isCustomMode =
-    process.env.REACT_APP_CUSTOM_MODE === "true" || false;
+  process.env.REACT_APP_CUSTOM_MODE === "true" || false;
 export const publicUrl =
   (process.env.PUBLIC_URL || "").replace(/\/$/, "") + "/";
 
