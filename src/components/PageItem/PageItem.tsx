@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ConfigData, translate } from "../../config";
+import { formatRelease } from "../../date";
 import { useMessages } from "../../context/MessagesContext";
 import { Item, groupByQuadrants } from "../../model";
 import Badge from "../Badge/Badge";
@@ -120,7 +121,7 @@ const PageItem: React.FC<Props> = ({
                 </div>
                 <div className="split__right">
                   <Badge big type={item.ring} config={config}>
-                    {item.ring}
+                    {item.ring} | {formatRelease(item.revisions[0].release, config.dateFormat)}
                   </Badge>
                 </div>
               </div>

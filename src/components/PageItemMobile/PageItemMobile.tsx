@@ -1,4 +1,5 @@
 import { ConfigData, translate } from "../../config";
+import { formatRelease } from "../../date";
 import { Item, groupByQuadrants } from "../../model";
 import Badge from "../Badge/Badge";
 import EditButton from "../EditButton/EditButton";
@@ -66,7 +67,7 @@ export default function PageItemMobile({
                 </div>
                 <div className="split__right">
                   <Badge big type={item.ring} config={config}>
-                    {item.ring}
+                    {item.ring} | {formatRelease(item.revisions[0].release, config.dateFormat)}
                   </Badge>
                 </div>
               </div>
