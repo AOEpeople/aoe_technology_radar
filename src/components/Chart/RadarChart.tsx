@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import React from "react";
+import React, { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
 
 import { ConfigData } from "../../config";
@@ -62,6 +62,10 @@ const RadarChart: React.FC<{
     .scaleLinear()
     .domain(config.chartConfig.scale)
     .range([config.chartConfig.size, 0]);
+
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  }, [items]);
 
   return (
     <div className="chart" style={{ maxWidth: `${config.chartConfig.size}px` }}>
