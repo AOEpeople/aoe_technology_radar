@@ -145,7 +145,13 @@ var checkAttributes = function (fileName, attributes) {
 var createRevisionsFromFiles = function (fileNames) {
     return Promise.all(fileNames.map(function (fileName) {
         return (0, fs_extra_1.readFile)(fileName, "utf8").then(function (data) {
-            var fm = (0, front_matter_1.default)(data);
+            var fm;
+            try {
+                fm = fm = (0, front_matter_1.default)(data);
+            }
+            catch (err) {
+                throw new Error("Error processing file ".concat(fileName, ": ").concat(err === null || err === void 0 ? void 0 : err.toString()));
+            }
             var html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(config_1.publicUrl)));
             html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
             var attributes = checkAttributes(fileName, fm.attributes);

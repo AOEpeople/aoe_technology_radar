@@ -73,7 +73,13 @@ const createRevisionsFromFiles = (fileNames: string[]) => {
   return Promise.all(
     fileNames.map((fileName) =>
       readFile(fileName, "utf8").then((data) => {
-        const fm = frontMatter<ItemAttributes>(data);
+        let fm;
+        try {
+          fm = fm = frontMatter<ItemAttributes>(data);
+        } catch(err) {
+          throw new Error(`Error processing file ${fileName}: ${err?.toString()}`);
+        }
+
         let html = marked(fm.body.replace(/\]\(\//g, `](${publicUrl}`));
         html = html.replace(
           /a href="http/g,
