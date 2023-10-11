@@ -11,11 +11,14 @@ type BadgeProps = {
   config: ConfigData;
 };
 
+const defaultRingClasses = ["first", "second", "third", "fourth"];
+
 const badgeClass = (type: string, config: ConfigData) => {
-  if (!config.rings.includes(type)) {
+  const ringIndex = config.rings.indexOf(type);
+  if (ringIndex < 0 || ringIndex >= defaultRingClasses.length) {
     return type;
   }
-  return ["first", "second", "third", "fourth"][config.rings.indexOf(type)];
+  return defaultRingClasses[config.rings.indexOf(type)];
 };
 
 export default function Badge({
