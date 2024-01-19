@@ -1,43 +1,48 @@
 {
+  "tags": [],
   "quadrants": {
     "languages-and-frameworks": "Languages & Frameworks",
-    "methods-and-patterns": "Methods & Patterns",
-    "platforms-and-aoe-services": "Platforms & Operations",
+    "methods-and-patterns": "Techniques",
+    "platforms-and-aoe-services": "Platforms",
     "tools": "Tools"
   },
   "rings": [
     "adopt",
     "trial",
     "assess",
-    "hold"
+    "stop"
   ],
   "showEmptyRings": false,
   "homepageContent": "both",
   "quadrantsMap": {
     "languages-and-frameworks": {
-      "colour": "#84BFA4",
+      "colour": "#7092F5",
       "txtColour": "#444444",
       "position": 1,
-      "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
+      "description": "These include development languages, as well as more low-level development frameworks, which are useful for implementing custom software of all kinds."
     },
     "methods-and-patterns": {
-      "colour": "#248EA6",
+      "colour": "#535EAA",
       "txtColour": "white",
       "position": 2,
-      "description": "Here we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc."
+      "description": "These include elements of a software development process, such as experience design; and ways of structuring software, such as microservices."
     },
     "platforms-and-aoe-services": {
-      "colour": "#F25244",
+      "colour": "#436D84",
       "txtColour": "#444444",
       "position": 3,
-      "description": "This quadrant clusters technologies around the operation of software and infrastructure related platforms, tools and services."
+      "description": "Things that we build software on top of such as mobile technologies like Android, virtual platforms like the JVM, or generic kinds of platforms like hybrid clouds."
     },
     "tools": {
-      "colour": "#F2A25C",
+      "colour": "#278489",
       "txtColour": "white",
       "position": 4,
-      "description": "Here we put different software tools - from small helpers to bigger software projects"
+      "description": "These can be components, such as databases, software development tools, such as versions control systems; or more generic categories of tools, such as the notion of polyglot persistence."
     }
+  },
+  "editLink": {
+    "radarLink": "https://github.com/medic/cht-tech-radar-contributors/tree/main/radar",
+    "title": "Edit"
   },
   "chartConfig": {
     "size": 800,

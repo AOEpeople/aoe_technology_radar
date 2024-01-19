@@ -1,126 +1,90 @@
 {
-  "footerFootnote": "AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers.",
+  "footerFootnote": "The Community Health Toolkit (CHT) is a project by a group of leading organizations who have come together to support the development of digital health initiatives in the hardest-to-reach areas. It provides a collection of open source technologies and open access design, technical, and implementer resources that help you build and deploy digital tools for community health. Together, we envision a world where healthcare is of the highest attainable quality, equitable, accessible, and delivered by people who are trusted in their communities.  ",
   "legalInformationLabel": "Legal Information",
-  "legalInformationLink": "https://www.aoe.com/en/imprint.html",
+  "legalInformationLink": "https://docs.google.com/document/d/1MaI1rgYMNyCZF2eEjBuvnBDoCYHDKlx4k_N5pkDiWu8/edit#heading=h.9sdb6g11dv40",
+  "socialLinks": [
+    { "href": "https://forum.communityhealthtoolkit.org/", "iconName": "todo" },
+    { "href": "https://github.com/medic", "iconName": "github" }
+  ],
   "pageHelp": {
-    "headlinePrefix": "How to use the",
     "paragraphs": [
       {
         "headline": "Introduction",
         "values": [
           "Technology is moving fast and new technologies and innovations appear continuously.",
-          "It's essential for a development and technology company such as AOE to constantly improve and keep track with the latest useful innovations. It is important to openly look for innovations and new technologies and to question established technologies and methods every now and then.",
+          "It's essential for a development toolkit such as the Community Health Toolkit to constantly improve and keep track with the latest useful innovations. It is important to openly look for innovations and new technologies and to question established technologies and methods every now and then.",
           "But, it is also important to wisely choose which technologies to use in our daily work and in the different projects we are carrying out. As we all know: There is no silver bullet."
         ]
       },
       {
-        "headline": "What is the AOE Technology Radar",
+        "headline": "What is the Technology Radar",
         "values": [
-          "The Tech Radar is an overview of different technologies - from languages, frameworks, tools and patterns to platforms - that we consider \"new or mentionable\". The radar therefore doesn't provide an overview of all established technologies - but it focuses on items that have recently gained in importance or changed."
+          "The CHT Technology Radar for Contributors provides an useful view for developers to know what languages/tools/platforms/techniques to use while contributing to CHT tools themselves."
+        ]
+      },
+      {
+        "headline": "Audience",
+        "values": [
+          "Contributors, developers, engineers"
         ]
       },
       {
         "headline": "How it is created",
         "values": [
-          "The items in the technology radar are raised by the different teams and therefore a lot of the items are related to the work and challenges the teams face in the different projects. In fact, we don't include anything on the radar, which we haven't already tried ourselves at least once.",
+          "The items in the technology radar are raised by the different contributors and therefore a lot of the items are related to the work and challenges the contributors face in the different initiatives. In fact, we don't include anything on the radar that we haven't tried ourselves at least once.",
           "There have been a lot of valuable discussions in different expert groups about the classification and details of each of technologies and innovations. And the result of all this can be found in the latest technology radar."
         ]
       },
       {
         "headline": "How should it be used",
         "values": [
-          "The radar acts as an overview of technologies that we think everyone in the teams should currently know about.",
-          "Its goal is to act as a guide and inspiration for the daily work in the teams. Its purpose is also to provide helpful information and a bird's-eye perspective - so that decisions can be taken with a much deeper understanding of the subject matter. This results in more-informed and better-aligned decisions.",
-          "We also hope that developers outside of AOE find the information in our technology overview inspirational.",
+          "The radar acts as an overview of technologies that we think everyone in the community should currently know about.",
+          "Its goal is to act as a guide and inspiration for the daily work in the community. Its purpose is also to provide helpful information and a bird's-eye perspective - so that decisions can be taken with a much deeper understanding of the subject matter. This results in more informed and coordinated decisions.",
+          "We also hope that developers outside of CHT Community find the information in our technology overview inspirational.",
           "We group or categorize the items in 4 quadrants - (sometimes, when it's not 100% clear where a item belongs, we choose the best fit)."
         ]
       }
     ],
     "quadrants": [
       {
-        "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds.",
-        "name": "Languages and Frameworks"
+        "name": "Languages & Frameworks",
+        "description": "These include development languages, as well as more low-level development frameworks, which are useful for implementing custom software of all kinds."
       },
       {
-        "description": "Here we put different software tools - from small helpers to bigger software projects",
-        "name": "Tools"
+        "name": "Tools",
+        "description": "These can be components, such as databases, software development tools, such as versions control systems; or more generic categories of tools, such as the notion of polyglot persistence."
       },
       {
-        "description": "Patterns are so important, and a lot of them are valid for a long time (compared to some tools or frameworks). So, this is the category where we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc.",
-        "name": "Methods and Patterns"
+        "name": "Techniques",
+        "description": "These include elements of a software development process, such as experience design; and ways of structuring software, such as microservices."
       },
       {
-        "description": "(including AOE internal Services): Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of.",
-        "name": "Platforms and Operations"
+        "name": "Platforms",
+        "description": "Things that we build software on top of such as mobile technologies like Android, virtual platforms like the JVM, or generic kinds of platforms like hybrid clouds."
       }
     ],
-    "quadrantsPreDescription": "The quadrants are:",
     "rings": [
       {
-        "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful.",
-        "name": "Adopt"
+        "name": "Adopt",
+        "description": "The Adopt ring represents blips that we think you should seriously consider using. We don't say that you should use these for every project; any tool should only be used in an appropriate context. However we do think that a blip in the Adopt ring represents something where there's no doubt that it's proven and mature for use."
       },
       {
-        "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level.",
-        "name": "Trial"
+        "name": "Trial",
+        "description": "The Trial ring is for blips that we think are ready for use, but not as completely proven as those in the Adopt ring. So for most organizations we think you should use these on a trial basis, to decide whether they should be part of your toolkit. Typically we've used trial blips in production, but we realize that readers are more cautious than us."
       },
       {
-        "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project.",
-        "name": "Assess"
+        "name": "Assess",
+        "description": "The Assess ring are things to look at closely, but not necessarily trial yet - unless you think they would be a particularly good fit for you. Typically, blips in the Assess ring are things that we think are interesting and worth keeping an eye on."
       },
       {
-        "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now.",
-        "name": "Hold"
+        "name": "Stop",
+        "description": "The Stop ring is for things that, even though they are accepted in the industry, we haven't had a good experience with. Therefore we are calling them out to warn you that you may run into trouble with them as well. Sometimes it means we think they're irredeemably flawed, or just being misused. We do place things in the Stop ring that we wish the industry wouldn't use."
       }
     ],
-    "ringsPreDescription": "Each of the items is classified in one of these rings:",
     "sourcecodeLink": {
-      "description": "Contributions and source code of the AOE Tech Radar are on github:",
-      "href": "https://github.com/AOEpeople/aoe_technology_radar",
-      "name": "AOE Tech Radar on Github"
+      "href": "https://github.com/medic/cht-tech-radar-contributors",
+      "name": "CHT Technology Radar for Contributors on GitHub",
+      "description": "Contributions and source code of the CHT Technology Radar for Contributors are on GitHub. Inspired by AOE Tech Radar."
     }
-  },
-  "pageIndex": {
-    "publishedLabel": "Quadrant Overview"
-  },
-  "pageItem": {
-    "quadrantOverview": "Quadrant Overview"
-  },
-  "pageOverview": {
-    "title": "Technologies Overview"
-  },
-  "revisionsText": "Revisions:",
-  "searchLabel": "Search",
-  "searchPlaceholder": "What are you looking for?",
-  "socialLinks": [
-    {
-      "href": "https://www.facebook.com/aoepeople",
-      "iconName": "facebook"
-    },
-    {
-      "href": "https://twitter.com/aoepeople",
-      "iconName": "twitter"
-    },
-    {
-      "href": "https://www.linkedin.com/company/aoe",
-      "iconName": "linkedIn"
-    },
-    {
-      "href": "https://www.xing.com/company/aoe",
-      "iconName": "xing"
-    },
-    {
-      "href": "https://www.instagram.com/aoepeople",
-      "iconName": "instagram"
-    },
-    {
-      "href": "https://www.youtube.com/user/aoepeople",
-      "iconName": "youtube"
-    },
-    {
-      "href": "https://github.com/aoepeople",
-      "iconName": "github"
-    }
-  ],
-  "socialLinksLabel": "Follow us:"
+  }
 }
