@@ -1,17 +1,16 @@
 {
-  "name": "aoe_technology_radar",
-  "version": "3.6.0",
-  "description": "AOE Technology Radar",
-  "author": "AOE GmbH <contact-de@aoe.com> (http://www.aoe.com)",
+  "name": "cht_technology_radar",
+  "version": "1.0.0",
+  "description": "CHT Technology Radar Core",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AOEpeople/aoe_technology_radar.git"
+    "url": "https://github.com/medic/cht-tech-radar-core.git"
   },
   "bin": {
-    "aoe_technology_radar-buildRadar": "dist_scripts/scripts/buildRadar.js",
-    "aoe_technology_radar-createStaticFiles": "dist_scripts/scripts/createStaticFiles.js",
-    "aoe_technology_radar-generateJson": "dist_scripts/scripts/generateJson.js"
+    "cht_technology_radar-buildRadar": "dist_scripts/scripts/buildRadar.js",
+    "cht_technology_radar-createStaticFiles": "dist_scripts/scripts/createStaticFiles.js",
+    "cht_technology_radar-generateJson": "dist_scripts/scripts/generateJson.js"
   },
   "scripts": {
     "prepare": "husky install && npm run build:scripts",

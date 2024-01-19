@@ -55,7 +55,7 @@ var runCommand = function (command) {
         var executedCommand = (0, child_process_1.spawn)(command, {
             stdio: "inherit",
             shell: true,
-            env: __assign({ REACT_APP_RADAR_NAME: "AOE Technology Radar", REACT_APP_RADAR_TITLE_FORMAT: "%TECHNOLOGY_NAME% | %APP_TITLE%", REACT_APP_BUILDHASH: (0, crypto_1.randomBytes)(10).toString("hex"), GENERATE_SOURCEMAP: "false" }, process.env),
+            env: __assign({ REACT_APP_RADAR_NAME: "CHT Technology Radar", REACT_APP_RADAR_TITLE_FORMAT: "%TECHNOLOGY_NAME% | %APP_TITLE%", REACT_APP_BUILDHASH: (0, crypto_1.randomBytes)(10).toString("hex"), GENERATE_SOURCEMAP: "false" }, process.env),
         });
         executedCommand.on("error", function (error) {
             reject(error);

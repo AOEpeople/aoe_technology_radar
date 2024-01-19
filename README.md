@@ -1,47 +1,39 @@
-# AOE Technology Radar
-A static site generator for AOE Technology Radar
+# CHT Technology Radar Core
+A static site generator for the CHT Technology Radars.
 
-## Looking for the AOE Tech Radar content?
-The repository is now found here: https://github.com/AOEpeople/techradar
+## Looking for the CHT Technology Radars content?
+The repository for the [CHT Technology Radar for Implementers](https://docs.communityhealthtoolkit.org/cht-tech-radar-implementers/index.html) can be found [here](https://github.com/medic/cht-tech-radar-implementers).
 
-The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
-
-## Create your own radar
-The generator is free to use under Open Source License - in fact there are already some other Radars published based on our Radar and there are also Contributions back.
-
-However, please be aware:
-
-- It would be nice to mention in radar that the generator is based on this repository.
-- Also, when you want to reuse the CSS and Styling: Change the font (it is a licensed font) and the colors (It using AOE CI)
+The repository for the [CHT Technology Radar for Contributors](https://docs.communityhealthtoolkit.org/cht-tech-radar-contributors/index.html) can be found [here](https://github.com/medic/cht-tech-radar-contributors).
 
 ### Use and build the radar
-Create a new npm project and add the tech radar as a dependency
+Create a new npm project and add the tech radar as a dependency:
 ```
-npm i aoe_technology_radar
-```
-
-Build the radar
-```
-npx aoe_technology_radar-buildRadar
+npm i cht_technology_radar
 ```
 
-Generate the `rd.json` file containing the radar data
+Build the radar:
 ```
-npx aoe_technology_radar-generateJson
+npx cht_technology_radar-buildRadar
 ```
 
-Run the Prepare script
+Generate the `rd.json` file containing the radar data:
+```
+npx cht_technology_radar-generateJson
+```
+
+Run the Prepare script:
 ```
 npm run prepare
 ```
 
-Serve
+Serve:
 ```
 cd build
 python3 -m http.server 8080
 ```
 
-Then open here: http://localhost:8080/
+Then open the generated radar here: http://localhost:8080/.
 
 ### Run a prepared static version
 
@@ -52,55 +44,14 @@ Requirements
 * Generate the `rd.json` file
 
 ```
-npx aoe_technology_radar-createStaticFiles
-```
-
-## Authoring Techradar contents
-For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD) under `./radar`.
-
-### Maintaining items
-The items are written in Markdown format (.md)
-
-Each file has a [front-matter](https://github.com/jxson/front-matter) header where the attributes of the item are listed:
-
-```
----
-title:      "React"
-ring:       adopt
-quadrant:   languages-and-frameworks
----
-
-Text goes here. You can use **markdown** here.
-```
-
-Following front-matter attributes are possible:
-
-- **title**: Name of the Item
-- **quadrant**: Quadrant. One of `languages-and-frameworks`,
-  `methods-and-patterns`, `platforms-and-aoe-services`, `tools`
-- **ring**: Ring section in radar. One of `trial`, `assess`, `adopt`, `hold`
-- **info**: (optional) A short textual description of the item (visible in
-  overview pages)
-- **featured**: (optional, default "true") If you set this to `false`, the item
-  will not be visible in the radar quadrants but still be available in the overview.
-
-The name of the .md file acts as item identifier and may overwrite items with
-the same name from older releases.
-
-If an item is overwritten in a new release, the attributes from the new item are
-merged with the old ones, and a new history entry is created for that item.
-
-You can integrate images in your markdown. Put the image files in your public folder and reference them
-
-```
-![nice image](/images/nice-image.png)
+npx cht_technology_radar-createStaticFiles
 ```
 
 ## Customize the tech radar
 You can customize the following parts of the tech radar.
 
 ### Change title, description and headline
-Set the environment variable `REACT_APP_RADAR_NAME`. The default is "AOE Technology Radar".
+Set the environment variable `REACT_APP_RADAR_NAME`. The default is "CHT Technology Radar".
 
 Set the environment variable `REACT_APP_RADAR_TITLE_FORMAT` to define the title format for each technology page.
 You can use two placeholders here:
@@ -133,8 +84,6 @@ Please be sure you are entering a valid [moment.js format string](https://moment
 }
 ```
 
-For reference have a look at [public/logo.svg](./public/logo.svg).
-
 ### Edit from published radar
 You can activate the `editLink` feature which will display a small edit button next to a technology which let's you jump directly to a gitlab / github / etc. edit page:
 
@@ -142,7 +91,7 @@ You can activate the `editLink` feature which will display a small edit button n
 {
   // ...
   "editLink": {
-    "radarLink": "https://github.com/AOEpeople/techradar/edit/main/radar",
+    "radarLink": "https://github.com/medic/cht-tech-radar-contributors/tree/main/radar",
     "title": "Edit"
   }
 }
@@ -162,7 +111,7 @@ The content should look as follows:
     "platforms-and-operations": "Platforms & Operations",
     "tools": "Tools"
   },
-  "rings":["all", "adopt", "trial", "assess", "hold"],
+  "rings":["all", "adopt", "trial", "assess", "stop"],
   "showEmptyRings": true
 }
 ```
@@ -188,33 +137,6 @@ Then, to select the blips put a `tags` entry in the `config.json` for generating
 
 This will only add blips with the defined tags into the output.
 
-### Change the index.html
-To change the index.html, create a public folder in your application and put your `index.html` in it.
-
-For reference have a look at [public/index.html](./public/index.html).
-
-### Change the fonts
-To change the fonts, create a public folder in your application and put your fonts in it.
-
-Create a `fonts.css` in the public folder and load your fonts.
-> For now only 2 fonts will be used: `DIN normal` and `DIN 300`.
-> Therefore, you only can replace the font files itself, but need to use the font-family and font-weight.
-```css
-@font-face {
-    font-family: "DIN";
-    src: url("fonts/yourFontFileForNormal");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "DIN";
-    src: url("fonts/yourFontFileForThin");
-    font-weight: 300;
-}
-```
-
-For reference have a look at [public/fonts.css](./public/fonts.css).
-
 ### Change the styles
 
 To change the styles, create a `styles.css` in the `public` folder and apply your style modifications.
@@ -239,9 +161,8 @@ To add social links, create a public folder in your application and put a `messa
 ```json
 {
   "socialLinks": [
-    { "href": "https://www.facebook.com/aoepeople", "iconName": "facebook" },
-    { "href": "https://twitter.com/aoepeople", "iconName": "twitter" },
-    { "href": "https://www.linkedin.com/company/aoe", "iconName": "linkedIn" }
+    { "href": "https://forum.communityhealthtoolkit.org/", "iconName": "todo" },
+    { "href": "https://github.com/medic", "iconName": "github" }
   ]
 }
 ```
@@ -252,7 +173,7 @@ To add social links, create a public folder in your application and put a `messa
 To add a link to legal information, create a public folder in your application and put a `messages.json` in it.
 ```json
 {
-  "legalInformationLink": "https://www.aoe.com/en/imprint.html"
+  "legalInformationLink": "https://docs.google.com/document/d/1MaI1rgYMNyCZF2eEjBuvnBDoCYHDKlx4k_N5pkDiWu8/edit#heading=h.9sdb6g11dv40"
 }
 ```
 
@@ -260,7 +181,7 @@ To add a link to legal information, create a public folder in your application a
 To add a footnote to the footer, create a public folder in your application and put a `messages.json` in it.
 ```json
 {
-  "footerFootnote": "AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers."
+  "footerFootnote": "The Community Health Toolkit (CHT) is a project by a group of leading organizations who have come together to support the development of digital health initiatives in the hardest-to-reach areas. It provides a collection of open source technologies and open access design, technical, and implementer resources that help you build and deploy digital tools for community health. Together, we envision a world where healthcare is of the highest attainable quality, equitable, accessible, and delivered by people who are trusted in their communities."
 }
 ```
 
@@ -276,57 +197,79 @@ To add a help page, create a public folder in your application and put a `messag
         "headline": "Introduction",
         "values": [
           "Technology is moving fast and new technologies and innovations appear continuously.",
-          "It's essential for a development and technology company such as AOE to constantly improve and keep track with the latest useful innovations. It is important to openly look for innovations and new technologies and to question established technologies and methods every now and then.",
+          "It's essential for a development toolkit such as the Community Health Toolkit to constantly improve and keep track with the latest useful innovations. It is important to openly look for innovations and new technologies and to question established technologies and methods every now and then.",
           "But, it is also important to wisely choose which technologies to use in our daily work and in the different projects we are carrying out. As we all know: There is no silver bullet."
         ]
       },
       {
-        "headline": "What is the AOE Technology Radar",
+        "headline": "What is the Technology Radar",
         "values": [
-          "The Tech Radar is an overview of different technologies - from languages, frameworks, tools and patterns to platforms - that we consider \"new or mentionable\". The radar therefore doesn't provide an overview of all established technologies - but it focuses on items that have recently gained in importance or changed."
+          "The CHT Technology Radar for Contributors provides an useful view for developers to know what languages/tools/platforms/techniques to use while contributing to CHT tools themselves."
+        ]
+      },
+      {
+        "headline": "Audience",
+        "values": [
+          "Contributors, developers, engineers"
+        ]
+      },
+      {
+        "headline": "How it is created",
+        "values": [
+          "The items in the technology radar are raised by the different contributors and therefore a lot of the items are related to the work and challenges the contributors face in the different initiatives. In fact, we don't include anything on the radar that we haven't tried ourselves at least once.",
+          "There have been a lot of valuable discussions in different expert groups about the classification and details of each of technologies and innovations. And the result of all this can be found in the latest technology radar."
+        ]
+      },
+      {
+        "headline": "How should it be used",
+        "values": [
+          "The radar acts as an overview of technologies that we think everyone in the community should currently know about.",
+          "Its goal is to act as a guide and inspiration for the daily work in the community. Its purpose is also to provide helpful information and a bird's-eye perspective - so that decisions can be taken with a much deeper understanding of the subject matter. This results in more informed and coordinated decisions.",
+          "We also hope that developers outside of CHT Community find the information in our technology overview inspirational.",
+          "We group or categorize the items in 4 quadrants - (sometimes, when it's not 100% clear where a item belongs, we choose the best fit)."
         ]
       }
     ],
     "quadrants": [
       {
-        "name": "Languages and Frameworks",
-        "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds."
+        "name": "Languages & Frameworks",
+        "description": "These include development languages, as well as more low-level development frameworks, which are useful for implementing custom software of all kinds."
       },
       {
         "name": "Tools",
-        "description": "Here we put different software tools - from small helpers to bigger software projects"
+        "description": "These can be components, such as databases, software development tools, such as versions control systems; or more generic categories of tools, such as the notion of polyglot persistence."
       },
       {
-        "name": "Methods and Patterns",
-        "description": "Patterns are so important, and a lot of them are valid for a long time (compared to some tools or frameworks). So, this is the category where we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc."
+        "name": "Techniques",
+        "description": "These include elements of a software development process, such as experience design; and ways of structuring software, such as microservices."
       },
       {
-        "name": "Platforms and Operations",
-        "description": "(including AOE internal Services): Here we include infrastructure platforms and services. We also use this category to communicate news about AOE services that we want all AOE teams to be aware of."
+        "name": "Platforms",
+        "description": "Things that we build software on top of such as mobile technologies like Android, virtual platforms like the JVM, or generic kinds of platforms like hybrid clouds."
       }
     ],
     "rings": [
       {
         "name": "Adopt",
-        "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful."
+        "description": "The Adopt ring represents blips that we think you should seriously consider using. We don't say that you should use these for every project; any tool should only be used in an appropriate context. However we do think that a blip in the Adopt ring represents something where there's no doubt that it's proven and mature for use."
       },
       {
         "name": "Trial",
-        "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level."
+        "description": "The Trial ring is for blips that we think are ready for use, but not as completely proven as those in the Adopt ring. So for most organizations we think you should use these on a trial basis, to decide whether they should be part of your toolkit. Typically we've used trial blips in production, but we realize that readers are more cautious than us."
       },
       {
         "name": "Assess",
-        "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project."
+        "description": "The Assess ring are things to look at closely, but not necessarily trial yet - unless you think they would be a particularly good fit for you. Typically, blips in the Assess ring are things that we think are interesting and worth keeping an eye on."
       },
       {
-        "name": "Hold",
-        "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now."
+        "name": "Stop",
+        "description": "The Stop ring is for things that, even though they are accepted in the industry, we haven't had a good experience with. Therefore we are calling them out to warn you that you may run into trouble with them as well. Sometimes it means we think they're irredeemably flawed, or just being misused. We do place things in the Stop ring that we wish the industry wouldn't use."
       }
     ],
     "sourcecodeLink": {
-      "href": "https://github.com/AOEpeople/aoe_technology_radar",
-      "name": "AOE Tech Radar on Github",
-      "description": "Contributions and source code of the AOE Tech Radar are on github:"
+      "href": "https://github.com/medic/cht-tech-radar-contributors",
+      "name": "CHT Technology Radar for Contributors on GitHub",
+      "description": "Contributions and source code of the CHT Technology Radar for Contributors are on GitHub. Inspired by AOE Tech Radar."
     }
   }
 }
@@ -348,3 +291,7 @@ If you change one of the scripts in the scripts' folder, you have to compile the
 Therefore, run `npm run build:scripts` and commit the results in dist_scripts.
 
 To make it more robust the script will be executed on commit.
+
+## Note
+The CHT Technology Radars are built starting from the [AOE Tech Radar content](https://www.aoe.com/techradar/index.html).
+If you want to build your own Technical Radar you may want to have a look at [AOE Tech Radar GitHub repository](https://github.com/AOEpeople/aoe_technology_radar).

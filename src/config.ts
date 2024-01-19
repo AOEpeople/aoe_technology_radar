@@ -21,7 +21,7 @@ export interface ConfigData {
 }
 
 export const radarName =
-  process.env.REACT_APP_RADAR_NAME || "AOE Technology Radar";
+  process.env.REACT_APP_RADAR_NAME || "CHT Technology Radar";
 export const radarNameShort = radarName;
 export const titleFormat =
   process.env.REACT_APP_RADAR_TITLE_FORMAT || "%TECHNOLOGY_NAME% | %APP_TITLE%";
