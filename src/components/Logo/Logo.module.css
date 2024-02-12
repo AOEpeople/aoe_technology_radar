@@ -1,0 +1,50 @@
+.logo {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60px;
+  gap: 16px;
+  transition: padding-left 200ms ease-in-out;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    background: url("../../icons/back.svg") no-repeat 50% 50%;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+}
+
+.src {
+  width: 150px;
+  transition: width 200ms ease-in-out;
+}
+
+.subline {
+  position: relative;
+  top: -2px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.logo.small {
+  .subline {
+    opacity: 0.8;
+  }
+  .src {
+    width: 75px;
+  }
+
+  &:hover {
+    padding-left: 30px;
+    &:before {
+      opacity: 1;
+    }
+  }
+}
