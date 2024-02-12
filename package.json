@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
+    "build:icons": "npx @svgr/cli --typescript --no-prettier --out-dir src/components/Icons -- src/icons",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "fix": "prettier . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "npm run build:icons"
   },
   "dependencies": {
     "clsx": "^2.1.0",
