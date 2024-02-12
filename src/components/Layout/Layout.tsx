@@ -3,6 +3,7 @@ import type { FC, ReactNode } from "react";
 
 import styles from "./Layout.module.css";
 
+import { Footer } from "@/components/Footer/Footer";
 import { Logo } from "@/components/Logo/Logo";
 import { Navigation } from "@/components/Navigation/Navigation";
 import { cn } from "@/lib/utils";
@@ -27,8 +28,8 @@ export const Layout: FC<LayoutProps> = ({
         <Navigation />
       </header>
       <main className={cn(styles.content)}>{children}</main>
-      <footer className={cn(styles.container, styles.header)}>
-        <h2>Footer</h2>
+      <footer className={cn(styles.container, styles.footer)}>
+        <Footer />
       </footer>
     </div>
   );

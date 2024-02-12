@@ -1,0 +1,27 @@
+.branding {
+  padding: 20px 0;
+  border-top: 1px solid;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 150px;
+}
+
+.description {
+  font-size: 12px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    margin: 0 60px 0 0;
+  }
+}
