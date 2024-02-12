@@ -1,0 +1,23 @@
+.layout {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout.default {
+  .content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
