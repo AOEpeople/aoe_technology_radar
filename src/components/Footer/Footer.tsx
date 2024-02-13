@@ -1,8 +1,7 @@
 import logo from "../../../public/logo.svg";
 import styles from "./Footer.module.css";
 
-import { getAppName } from "@/lib/config";
-import { getMessages } from "@/lib/data";
+import { getAppName, getMessages } from "@/lib/data";
 
 export function Footer() {
   const appName = getAppName();

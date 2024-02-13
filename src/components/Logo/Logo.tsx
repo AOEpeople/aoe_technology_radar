@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import logo from "../../../public/logo.svg";
 import styles from "./Logo.module.css";
 
-import { getAppName } from "@/lib/config";
+import { getAppName } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export function Logo() {

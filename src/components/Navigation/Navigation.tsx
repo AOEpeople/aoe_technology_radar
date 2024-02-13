@@ -6,7 +6,7 @@ import IconFilter from "@/components/Icons/Filter";
 import IconOverview from "@/components/Icons/Overview";
 import IconQuestion from "@/components/Icons/Question";
 import IconSearch from "@/components/Icons/Search";
-import { getAppName } from "@/lib/config";
+import { getAppName } from "@/lib/data";
 
 export function Navigation() {
   return (
@@ -15,22 +15,22 @@ export function Navigation() {
         <li className={styles.item}>
           <Link href="/help-and-about-tech-radar">
             <IconQuestion className={styles.icon} />
-            How to use {getAppName()}?
+            <span className={styles.label}>How to use {getAppName()}?</span>
           </Link>
         </li>
         <li className={styles.item}>
           <IconFilter className={styles.icon} />
-          Filter
+          <span className={styles.label}>Filter</span>
         </li>
         <li className={styles.item}>
           <Link href="/overview">
             <IconOverview className={styles.icon} />
-            Technologies Overview
+            <span className={styles.label}>Technologies Overview</span>
           </Link>
         </li>
         <li className={styles.item}>
           <IconSearch className={styles.icon} />
-          Search
+          <span className={styles.label}>Search</span>
         </li>
       </ul>
     </nav>
