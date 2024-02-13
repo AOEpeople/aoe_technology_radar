@@ -2,15 +2,20 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { getQuadrant, getQuadrants } from "@/lib/data";
+import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
 const QuadrantPage: CustomPage = () => {
   const { query } = useRouter();
   const quadrant = getQuadrant(query.quadrant as string);
+
+  if (!quadrant) return null;
+
   return (
     <>
       <Head>
-        <title>Quadrant Page</title>
+        <title>{formatTitle(quadrant.title)}</title>
+        <meta name="description" content={quadrant.description} />
       </Head>
 
       <h1>Quadrant: {query.quadrant}</h1>

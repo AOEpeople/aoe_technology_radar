@@ -1,14 +1,13 @@
 import Head from "next/head";
 
+import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
 const HelpAndAbout: CustomPage = () => {
   return (
     <>
       <Head>
-        <title>Help and About</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{formatTitle("Help and About")}</title>
       </Head>
 
       <h1>Help and about</h1>
