@@ -31,6 +31,10 @@
   font-size: 18px;
   opacity: 0;
   transition: opacity 200ms ease-in-out;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .logo.small {

@@ -1,0 +1,58 @@
+{
+  "quadrants": [
+    {
+      "id": "languages-and-frameworks",
+      "title": "Languages & Frameworks",
+      "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds.",
+      "color": "#84BFA4",
+      "position": 1
+    },
+    {
+      "id": "methods-and-patterns",
+      "title": "Methods & Patterns",
+      "description": "Here we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc.",
+      "color": "#248EA6",
+      "position": 2
+    },
+    {
+      "id": "platforms-and-aoe-services",
+      "title": "Platforms & Operations",
+      "description": "This quadrant clusters technologies around the operation of software and infrastructure related platforms, tools and services.",
+      "color": "#F25244",
+      "position": 3
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "description": "Here we put different software tools - from small helpers to bigger software projects.",
+      "color": "#F2A25C",
+      "position": 4
+    }
+  ],
+  "rings": [
+    {
+      "id": "adopt",
+      "title": "Adopt",
+      "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful.",
+      "color": "#5cb449"
+    },
+    {
+      "id": "trial",
+      "title": "Trial",
+      "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level.",
+      "color": "#faa03d"
+    },
+    {
+      "id": "assess",
+      "title": "Assess",
+      "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project.",
+      "color": "#029df7"
+    },
+    {
+      "id": "hold",
+      "title": "Hold",
+      "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now.",
+      "color": "#688190"
+    }
+  ]
+}
