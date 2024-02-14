@@ -1,5 +1,5 @@
-import config from "../data/config.json";
-import messages from "../data/messages.json";
+import config from "../../data/config.json";
+import messages from "../../data/messages.json";
 
 import { Quadrant, Ring } from "@/lib/types";
 

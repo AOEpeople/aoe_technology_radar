@@ -16,6 +16,10 @@
 # generated
 /src/components/Icons/
 
+/data/*
+!/data/config.json
+!/data/messages.json
+
 # misc
 .DS_Store
 *.pem
@@ -34,4 +38,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
