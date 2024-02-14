@@ -21,6 +21,7 @@ export interface Item {
   ring: string;
   quadrant: string;
   flag: Flag;
+  tags: string[];
   revisions?: Revision[];
 }
 
