@@ -1,0 +1,35 @@
+.quadrants {
+  --cols: 1;
+  --gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.quadrant {
+  margin-bottom: 20px;
+  flex: 1 0
+    calc(100% / var(--cols) - var(--gap) / var(--cols) * (var(--cols) - 1));
+}
+
+.header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  margin: 0;
+}
+
+.link {
+}
+
+@media (min-width: 1024px) {
+  .quadrant {
+    --cols: 2;
+  }
+}

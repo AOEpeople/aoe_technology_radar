@@ -29,3 +29,11 @@
     opacity: 1;
   }
 }
+
+.isSmall {
+  font-size: 14px;
+
+  .link {
+    padding: 8px;
+  }
+}

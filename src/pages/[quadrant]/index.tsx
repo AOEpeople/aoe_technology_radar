@@ -1,15 +1,25 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useMemo } from "react";
 
-import { getQuadrant, getQuadrants } from "@/lib/data";
+import { RingList } from "@/components/RingList/RingList";
+import {
+  getItems,
+  getQuadrant,
+  getQuadrants,
+  sortByFeaturedAndTitle,
+} from "@/lib/data";
 import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
 const QuadrantPage: CustomPage = () => {
   const { query } = useRouter();
   const quadrant = getQuadrant(query.quadrant as string);
-
-  if (!quadrant) return null;
+  const items = useMemo(
+    () => quadrant?.id && getItems(quadrant.id).sort(sortByFeaturedAndTitle),
+    [quadrant?.id],
+  );
+  if (!quadrant || !items) return null;
 
   return (
     <>
@@ -18,8 +28,10 @@ const QuadrantPage: CustomPage = () => {
         <meta name="description" content={quadrant.description} />
       </Head>
 
-      <h1>Quadrant: {query.quadrant}</h1>
-      <pre>{JSON.stringify(quadrant)}</pre>
+      <h1>{quadrant.title}</h1>
+      <h2>{quadrant.description}</h2>
+
+      <RingList items={items} />
     </>
   );
 };
