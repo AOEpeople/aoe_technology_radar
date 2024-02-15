@@ -1,0 +1,39 @@
+.rings {
+  --cols: 1;
+  --gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.ring {
+  margin-bottom: 20px;
+  flex: 1 0
+    calc(100% / var(--cols) - var(--gap) / var(--cols) * (var(--cols) - 1));
+}
+
+.badge {
+  margin-bottom: 20px;
+}
+
+.list {
+}
+
+@media (min-width: 768px) {
+  .ring {
+    --cols: 2;
+  }
+
+  .isSmall .ring {
+    --cols: 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ring {
+    --cols: 4;
+  }
+}

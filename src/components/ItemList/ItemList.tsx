@@ -6,14 +6,25 @@ import { FlagBadge } from "@/components/Badge/Badge";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-interface ItemListProps {
+export interface ItemListProps {
   items: Item[];
   activeId?: string;
+  size?: "small" | "default";
+  className?: string;
 }
 
-export function ItemList({ items, activeId }: ItemListProps) {
+export function ItemList({
+  items,
+  activeId,
+  size = "default",
+  className,
+}: ItemListProps) {
   return (
-    <ul className={styles.list}>
+    <ul
+      className={cn(styles.list, className, {
+        [styles.isSmall]: size === "small",
+      })}
+    >
       {items.map((item) => (
         <li className={styles.item} key={item.id}>
           <Link
@@ -24,7 +35,11 @@ export function ItemList({ items, activeId }: ItemListProps) {
             href={`/${item.quadrant}/${item.id}`}
           >
             {item.title}
-            <FlagBadge className={styles.flag} flag={item.flag} />
+            <FlagBadge
+              className={styles.flag}
+              flag={item.flag}
+              short={size == "small"}
+            />
           </Link>
         </li>
       ))}

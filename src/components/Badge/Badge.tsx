@@ -28,8 +28,11 @@ export function Badge({
     () => (color ? ({ "--badge": color } as CSSProperties) : undefined),
     [color],
   );
+
+  const Component = props.onClick ? "button" : "span";
+
   return (
-    <button
+    <Component
       {...props}
       style={style}
       className={cn(
@@ -40,7 +43,7 @@ export function Badge({
       )}
     >
       {children}
-    </button>
+    </Component>
   );
 }
 
