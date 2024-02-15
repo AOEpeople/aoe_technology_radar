@@ -1,0 +1,28 @@
+.badge {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 6px 15px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  font-size: 12px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.size-small {
+  padding: 4px 8px;
+  font-size: 9px;
+}
+
+.size-large {
+  padding: 7px 20px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.colored {
+  color: var(--foreground);
+  background-color: var(--badge);
+}
