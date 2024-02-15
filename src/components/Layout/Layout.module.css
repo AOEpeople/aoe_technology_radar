@@ -17,6 +17,7 @@
 .layout.default {
   .content {
     max-width: var(--max-width);
+    min-height: calc(100vh - 250px);
     margin: 0 auto;
     padding: 20px;
   }
