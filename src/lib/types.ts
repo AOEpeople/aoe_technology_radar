@@ -38,5 +38,4 @@ export interface Quadrant {
   description: string;
   color: string;
   position: number;
-  items?: Item[];
 }

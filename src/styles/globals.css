@@ -7,12 +7,19 @@
 
   --foreground: #fff;
   --background: #173d7a;
+  --highlight: #029df7;
+  --border: rgba(255, 255, 255, 0.1);
+  --badge: #333; /* local color which get's overridden by the element */
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -24,6 +31,8 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-weight: 400;
+  line-height: 1.3em;
 }
 
 a {
@@ -35,6 +44,10 @@ p {
   margin-bottom: 1em;
 }
 
+strong {
+  font-weight: 700;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -44,8 +57,29 @@ svg {
   display: block;
 }
 
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1em;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 37px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+ul,
+ol {
+  padding-left: 16px;
+  margin-bottom: 1em;
 }
