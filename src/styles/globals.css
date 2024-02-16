@@ -9,6 +9,10 @@
   --background: #173d7a;
   --highlight: #029df7;
   --border: rgba(255, 255, 255, 0.1);
+
+  --overlay: #081a37b5;
+  --dialog-bg: #173d7a;
+
   --badge: #333; /* local color which get's overridden by the element */
 }
 
@@ -25,7 +29,8 @@ html {
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
