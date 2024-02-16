@@ -22,7 +22,10 @@ export const Layout: FC<LayoutProps> = ({
   layoutClass = "default",
 }) => {
   return (
-    <div className={cn(styles.layout, font.className, styles[layoutClass])}>
+    <div
+      id="layout"
+      className={cn(styles.layout, font.className, styles[layoutClass])}
+    >
       <header className={cn(styles.container, styles.header)}>
         <Logo />
         <Navigation />

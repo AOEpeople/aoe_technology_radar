@@ -1,7 +1,17 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import styles from "./Navigation.module.css";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/Dialog/Dialog";
 import IconFilter from "@/components/Icons/Filter";
 import IconOverview from "@/components/Icons/Overview";
 import IconQuestion from "@/components/Icons/Question";
@@ -19,8 +29,19 @@ export function Navigation() {
           </Link>
         </li>
         <li className={styles.item}>
-          <IconFilter className={styles.icon} />
-          <span className={styles.label}>Filter</span>
+          <Dialog>
+            <DialogTrigger asChild>
+              <a href="#">
+                <IconFilter className={styles.icon} />
+                <span className={styles.label}>Filter</span>
+              </a>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Filter by Tags</DialogTitle>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </li>
         <li className={styles.item}>
           <Link href="/overview">
