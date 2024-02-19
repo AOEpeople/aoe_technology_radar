@@ -1,3 +1,4 @@
+import Fuse from "fuse.js";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
@@ -11,7 +12,7 @@ import { CustomPage } from "@/pages/_app";
 const Overview: CustomPage = () => {
   const router = useRouter();
   const ring = router.query.ring as string | undefined;
-  const query = router.query.query as string | undefined;
+  const query = (router.query.query as string) || "";
 
   const onRingChange = useCallback(
     (ring: string) => {
@@ -27,15 +28,38 @@ const Overview: CustomPage = () => {
     [router, ring],
   );
 
-  const items = useMemo(() => {
-    if (!ring && !query) return getItems();
-    return getItems().filter((item) => {
-      if (ring && item.ring !== ring) return false;
-      return !(
-        query && !item.title.toLowerCase().includes(query.toLowerCase())
-      );
+  const { items, index } = useMemo(() => {
+    const items = getItems().filter((item) => !ring || item.ring === ring);
+    const index = new Fuse(items, {
+      threshold: 0.3,
+      includeScore: true,
+      keys: [
+        {
+          name: "title",
+          weight: 1.5,
+        },
+        {
+          name: "tags",
+          weight: 1,
+        },
+        {
+          name: "body",
+          weight: 0.9,
+        },
+        {
+          name: "revision.body",
+          weight: 0.7,
+        },
+      ],
     });
-  }, [query, ring]);
+
+    return { items, index };
+  }, [ring]);
+
+  const results = useMemo(() => {
+    if (!query) return items;
+    return index.search(query).map((result) => result.item);
+  }, [query, index, items]);
 
   return (
     <>
@@ -51,7 +75,7 @@ const Overview: CustomPage = () => {
         onQueryChange={onQueryChange}
       />
 
-      <ItemList items={items} size="large" />
+      <ItemList items={results} size="large" hideRing={!!ring} />
     </>
   );
 };

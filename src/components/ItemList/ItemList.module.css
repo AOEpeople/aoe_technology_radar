@@ -18,6 +18,7 @@
 
 .ring {
   flex: 0 0 auto;
+  margin-left: 16px;
   align-self: baseline;
 }
 
@@ -58,11 +59,10 @@
   .link {
     display: flex;
     flex-wrap: wrap;
-    padding: 16px;
   }
 
   .quadrant {
-    margin: 0 16px 0 auto;
+    margin-left: auto;
   }
 
   @media (min-width: 768px) {
