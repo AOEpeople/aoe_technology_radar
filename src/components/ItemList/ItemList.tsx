@@ -11,6 +11,7 @@ export interface ItemListProps {
   items: Item[];
   activeId?: string;
   size?: "small" | "default" | "large";
+  hideRing?: boolean;
   className?: string;
 }
 
@@ -18,6 +19,7 @@ export function ItemList({
   items,
   activeId,
   size = "default",
+  hideRing = false,
   className,
 }: ItemListProps) {
   return (
@@ -48,11 +50,13 @@ export function ItemList({
                 <span className={styles.quadrant}>
                   {getQuadrant(item.quadrant)?.title}
                 </span>
-                <RingBadge
-                  className={styles.ring}
-                  ring={item.ring}
-                  size="small"
-                />
+                {!hideRing && (
+                  <RingBadge
+                    className={styles.ring}
+                    ring={item.ring}
+                    size="small"
+                  />
+                )}
               </div>
             )}
           </Link>

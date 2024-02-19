@@ -16,6 +16,7 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
     "clsx": "^2.1.0",
+    "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.9.0",
     "marked": "^12.0.0",
