@@ -3,16 +3,13 @@ import Link from "next/link";
 import styles from "./QuadrantList.module.css";
 
 import { RingList } from "@/components/RingList/RingList";
-import {
-  getQuadrant,
-  groupItemsByQuadrant,
-  groupItemsByRing,
-} from "@/lib/data";
+import { getQuadrant, groupItemsByQuadrant } from "@/lib/data";
 import { Item } from "@/lib/types";
 
 interface RingListProps {
   items: Item[];
 }
+
 export function QuadrantList({ items }: RingListProps) {
   const quadrants = groupItemsByQuadrant(items);
   return (

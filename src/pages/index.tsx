@@ -1,4 +1,3 @@
-import { ItemList } from "@/components/ItemList/ItemList";
 import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
 import { getAppName, getItems, getReleases } from "@/lib/data";
 import { CustomPage } from "@/pages/_app";

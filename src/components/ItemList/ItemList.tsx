@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export interface ItemListProps {
   items: Item[];
   activeId?: string;
-  size?: "small" | "default";
+  size?: "small" | "default" | "large";
   className?: string;
 }
 
@@ -23,6 +23,7 @@ export function ItemList({
     <ul
       className={cn(styles.list, className, {
         [styles.isSmall]: size === "small",
+        [styles.large]: size === "large",
       })}
     >
       {items.map((item) => (

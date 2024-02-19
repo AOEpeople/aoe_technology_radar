@@ -24,7 +24,7 @@ export default function App({ Component, pageProps, router }: CustomAppProps) {
         <link rel="icon" href={assetUrl("/favicon.ico")} />
       </Head>
       <Layout layoutClass={Component.layoutClass}>
-        <Component {...pageProps} key={router.asPath} />
+        <Component {...pageProps} />
       </Layout>
     </>
   );
