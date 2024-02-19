@@ -11,7 +11,23 @@
 }
 
 .flag {
+  flex: 0 0 auto;
+  align-self: baseline;
   margin-left: 8px;
+}
+
+.ring {
+  flex: 0 0 auto;
+  align-self: baseline;
+}
+
+.quadrant {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.info {
+  flex-basis: 100%;
 }
 
 .link {
@@ -35,5 +51,24 @@
 
   .link {
     padding: 8px;
+  }
+}
+
+.isLarge {
+  .link {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .quadrant {
+    margin: 0 16px 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .info {
+      flex-basis: auto;
+      margin-left: auto;
+    }
   }
 }

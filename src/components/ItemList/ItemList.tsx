@@ -2,7 +2,8 @@ import Link from "next/link";
 
 import styles from "./ItemList.module.css";
 
-import { FlagBadge } from "@/components/Badge/Badge";
+import { FlagBadge, RingBadge } from "@/components/Badge/Badge";
+import { getQuadrant } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +24,7 @@ export function ItemList({
     <ul
       className={cn(styles.list, className, {
         [styles.isSmall]: size === "small",
-        [styles.large]: size === "large",
+        [styles.isLarge]: size === "large",
       })}
     >
       {items.map((item) => (
@@ -41,6 +42,19 @@ export function ItemList({
               flag={item.flag}
               short={size == "small"}
             />
+
+            {size === "large" && (
+              <div className={styles.info}>
+                <span className={styles.quadrant}>
+                  {getQuadrant(item.quadrant)?.title}
+                </span>
+                <RingBadge
+                  className={styles.ring}
+                  ring={item.ring}
+                  size="small"
+                />
+              </div>
+            )}
           </Link>
         </li>
       ))}

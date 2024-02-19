@@ -51,7 +51,7 @@ const Overview: CustomPage = () => {
         onQueryChange={onQueryChange}
       />
 
-      <ItemList items={items} />
+      <ItemList items={items} size="large" />
     </>
   );
 };
