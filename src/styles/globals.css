@@ -18,6 +18,7 @@
 
 * {
   box-sizing: border-box;
+  outline-color: var(--highlight);
   padding: 0;
   margin: 0;
 }
@@ -87,4 +88,23 @@ ul,
 ol {
   padding-left: 16px;
   margin-bottom: 1em;
+}
+
+input {
+  background: var(--foreground);
+  color: var(--background);
+  border: 1px solid transparent;
+  padding: 10px 12px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--highlight);
+  }
+}
+
+input::-webkit-search-cancel-button {
+  display: none;
 }

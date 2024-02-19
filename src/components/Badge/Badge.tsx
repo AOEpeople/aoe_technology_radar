@@ -15,6 +15,8 @@ import { cn } from "@/lib/utils";
 interface BadgeProps extends ComponentPropsWithoutRef<"span"> {
   children?: ReactNode;
   color?: string;
+  selectable?: boolean;
+  selected?: boolean;
   size?: "small" | "medium" | "large";
 }
 
@@ -22,6 +24,8 @@ export function Badge({
   children,
   color,
   size = "medium",
+  selectable,
+  selected,
   ...props
 }: BadgeProps) {
   const style = useMemo(
@@ -40,6 +44,8 @@ export function Badge({
         styles.badge,
         styles[`size-${size}`],
         color && styles.colored,
+        selectable && styles.selectable,
+        selected && styles.selected,
       )}
     >
       {children}

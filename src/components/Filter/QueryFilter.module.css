@@ -1,0 +1,25 @@
+.filter {
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.input {
+  padding-right: 50px;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0;
+  background: transparent;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .filter {
+    flex: 1 1 auto;
+  }
+}

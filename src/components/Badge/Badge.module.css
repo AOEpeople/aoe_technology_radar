@@ -27,3 +27,24 @@
   color: var(--foreground);
   background-color: var(--badge);
 }
+
+.selectable {
+  cursor: pointer;
+
+  &:not(.selected) {
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    background: transparent;
+  }
+
+  &:not(.colored) {
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    background: transparent;
+
+    &.selected {
+      color: var(--background);
+      background: #fff;
+    }
+  }
+}
