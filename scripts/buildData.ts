@@ -25,7 +25,7 @@ function dataPath(...paths: string[]): string {
 
 function convertToHtml(markdown: string): string {
   if (config.basePath) {
-    markdown = markdown.replace(/\]\(\//g, `](${config.basePath}`);
+    markdown = markdown.replace(/]\(\//g, `](${config.basePath}/`);
   }
 
   let html = marked.parse(markdown.trim()) as string;
@@ -34,6 +34,15 @@ function convertToHtml(markdown: string): string {
     'a target="_blank" rel="noopener noreferrer" href="http',
   );
   return html;
+}
+
+function readMarkdownFile(filePath: string) {
+  const id = path.basename(filePath, ".md");
+  const fileContent = fs.readFileSync(filePath, "utf8");
+  const { data, content } = matter(fileContent);
+  const body = convertToHtml(content);
+
+  return { id, data, body };
 }
 
 // Function to recursively read Markdown files and parse them
@@ -48,12 +57,8 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
       if (entry.isDirectory()) {
         await readDir(fullPath);
       } else if (entry.isFile() && entry.name.endsWith(".md")) {
-        const fileContent = fs.readFileSync(fullPath, "utf8");
-
         const releaseDate = path.basename(path.dirname(fullPath));
-        const id = path.basename(fullPath, ".md");
-        const { data, content } = matter(fileContent);
-        const body = convertToHtml(content);
+        const { id, data, body } = readMarkdownFile(fullPath);
 
         if (!items[id]) {
           items[id] = {
@@ -153,9 +158,13 @@ function postProcessItems(items: Item[]): {
   return { releases, tags, items: processedItems };
 }
 
-// Parse the data and write it to JSON file
+// Parse the data and write radar data to JSON file
 parseDirectory(dataPath("radar")).then((items) => {
   const data = postProcessItems(items);
   const json = JSON.stringify(data, null, 2);
   fs.writeFileSync(dataPath("data.json"), json);
 });
+
+// write about data to JSON file
+const about = readMarkdownFile(dataPath("about.md"));
+fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));

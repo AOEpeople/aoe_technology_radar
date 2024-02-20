@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import about from "../../data/about.json";
+
 import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
@@ -10,7 +12,7 @@ const HelpAndAbout: CustomPage = () => {
         <title>{formatTitle("Help and About")}</title>
       </Head>
 
-      <h1>Help and about</h1>
+      <div dangerouslySetInnerHTML={{ __html: about.body }} />
     </>
   );
 };

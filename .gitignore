@@ -17,6 +17,7 @@
 /src/components/Icons/
 
 /data/*
+!/data/about.md
 !/data/config.json
 !/data/messages.json
 
