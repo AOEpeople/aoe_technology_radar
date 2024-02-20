@@ -1,0 +1,11 @@
+.radar {
+  padding: 50px;
+  position: relative;
+}
+
+.svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}

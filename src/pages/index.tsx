@@ -1,10 +1,19 @@
 import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
-import { getAppName, getItems, getReleases } from "@/lib/data";
+import { Radar } from "@/components/Radar/Radar";
+import {
+  getAppName,
+  getItems,
+  getQuadrants,
+  getReleases,
+  getRings,
+} from "@/lib/data";
 import { CustomPage } from "@/pages/_app";
 
 const Home: CustomPage = () => {
   const appName = getAppName();
   const version = getReleases().length;
+  const rings = getRings();
+  const quadrants = getQuadrants();
   const items = getItems(undefined, true);
   return (
     <>
@@ -12,6 +21,7 @@ const Home: CustomPage = () => {
         {appName}{" "}
         <span style={{ color: "var(--highlight)" }}>Version #{version}</span>
       </h1>
+      <Radar quadrants={quadrants} rings={rings} />
       <QuadrantList items={items} />
     </>
   );

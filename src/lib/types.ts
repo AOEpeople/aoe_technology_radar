@@ -30,6 +30,8 @@ export interface Ring {
   title: string;
   description: string;
   color: string;
+  radius?: number;
+  strokeWidth?: number;
 }
 
 export interface Quadrant {
