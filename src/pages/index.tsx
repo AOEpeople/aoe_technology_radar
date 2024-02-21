@@ -19,7 +19,9 @@ const Home: CustomPage = () => {
     <>
       <h1>
         {appName}{" "}
-        <span style={{ color: "var(--highlight)" }}>Version #{version}</span>
+        <span style={{ color: "var(--highlight)", whiteSpace: "nowrap" }}>
+          Version #{version}
+        </span>
       </h1>
       <Radar quadrants={quadrants} rings={rings} items={items} />
       <QuadrantList items={items} />
