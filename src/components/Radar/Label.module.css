@@ -1,0 +1,46 @@
+.label {
+  width: 240px;
+  min-height: 210px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin: 0 0 15px;
+  border-bottom: 2px solid var(--quadrant-color);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.title {
+  margin: 0 0 10px;
+}
+
+.icon {
+  fill: var(--highlight);
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+  width: 16px;
+  height: 16px;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.position-2,
+.position-4 {
+  left: auto;
+  right: 0;
+}
+
+.position-3,
+.position-4 {
+  top: auto;
+  bottom: 0;
+}

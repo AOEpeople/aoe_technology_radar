@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import styles from "./Radar.module.css";
 
 import { Blip } from "@/components/Radar/Blip";
+import { Label } from "@/components/Radar/Label";
 import { Item, Quadrant, Ring } from "@/lib/types";
 
 export interface RadarProps {
@@ -139,6 +140,11 @@ export const Radar: FC<RadarProps> = ({
         ))}
         <g>{items.map((item) => renderItem(item))}</g>
       </svg>
+      <div className={styles.labels}>
+        {quadrants.map((quadrant) => (
+          <Label key={quadrant.id} quadrant={quadrant} />
+        ))}
+      </div>
     </div>
   );
 };
