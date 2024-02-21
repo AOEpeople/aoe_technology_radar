@@ -1,16 +1,24 @@
+import Link from "next/link";
 import React, { FC } from "react";
 
 import styles from "./Radar.module.css";
 
-import { Quadrant, Ring } from "@/lib/types";
+import { Blip } from "@/components/Radar/Blip";
+import { Item, Quadrant, Ring } from "@/lib/types";
 
 export interface RadarProps {
   size?: number;
   quadrants: Quadrant[];
   rings: Ring[];
+  items: Item[];
 }
 
-export const Radar: FC<RadarProps> = ({ size = 800, quadrants, rings }) => {
+export const Radar: FC<RadarProps> = ({
+  size = 800,
+  quadrants = [],
+  rings = [],
+  items = [],
+}) => {
   const viewBoxSize = size;
   const center = size / 2;
   const startAngles = [270, 0, 180, 90]; // Corresponding to positions 1, 2, 3, and 4 respectively
@@ -22,8 +30,8 @@ export const Radar: FC<RadarProps> = ({ size = 800, quadrants, rings }) => {
   ): { x: number; y: number } => {
     const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
     return {
-      x: center + radius * Math.cos(angleInRadians),
-      y: center + radius * Math.sin(angleInRadians),
+      x: Math.round(center + radius * Math.cos(angleInRadians)),
+      y: Math.round(center + radius * Math.sin(angleInRadians)),
     };
   };
 
@@ -71,6 +79,41 @@ export const Radar: FC<RadarProps> = ({ size = 800, quadrants, rings }) => {
     );
   };
 
+  // Function to place items inside their rings and quadrants
+  const renderItem = (item: Item) => {
+    const ring = rings.find((r) => r.id === item.ring);
+    const quadrant = quadrants.find((q) => q.id === item.quadrant);
+    if (!ring || !quadrant) return null; // If no ring or quadrant, don't render item
+
+    const padding = 15; // Padding in pixels
+    const paddingAngle = 10; // Padding in degrees
+
+    // Random factors to determine position within the ring
+    const [randomRadius, randomAngleFactor] = item.random || [
+      Math.sqrt(Math.random()),
+      Math.random(),
+    ];
+    const innerRadius =
+      (rings[rings.indexOf(ring) - 1]?.radius || 0) + padding / center; // Add inner padding
+    const outerRadius = (ring.radius || 1) - padding / center; // Subtract outer padding
+    const ringWidth = (outerRadius - innerRadius) * center; // Width of the ring in the SVG
+
+    // Calculate the position within the ring
+    const itemRadius = innerRadius * center + randomRadius * ringWidth;
+    // Calculate the angle with padding offset, avoiding the exact edges
+    const startAngle = startAngles[quadrant.position - 1] + paddingAngle;
+    const endAngle = startAngle + 90 - 2 * paddingAngle; // Subtract padding from both sides
+    const itemAngle = startAngle + (endAngle - startAngle) * randomAngleFactor;
+
+    // Convert polar coordinates to cartesian for the item's position
+    const { x, y } = polarToCartesian(itemRadius, itemAngle);
+    return (
+      <Link key={item.id} href={`/${item.quadrant}/${item.id}`}>
+        <Blip flag={item.flag} color={quadrant.color} x={x} y={y} />
+      </Link>
+    );
+  };
+
   return (
     <div className={styles.radar}>
       <svg
@@ -80,7 +123,7 @@ export const Radar: FC<RadarProps> = ({ size = 800, quadrants, rings }) => {
         viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}
       >
         {quadrants.map((quadrant) => (
-          <g className={`quadrant quadrant-${quadrant.id}`} key={quadrant.id}>
+          <g key={quadrant.id} data-quadrant={quadrant.id}>
             {renderGlow(quadrant.position, quadrant.color)}
             {rings.map((ring) => (
               <path
@@ -94,6 +137,7 @@ export const Radar: FC<RadarProps> = ({ size = 800, quadrants, rings }) => {
             ))}
           </g>
         ))}
+        <g>{items.map((item) => renderItem(item))}</g>
       </svg>
     </div>
   );
