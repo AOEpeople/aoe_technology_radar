@@ -10,6 +10,7 @@
   vertical-align: middle;
   width: 22px;
   margin: 0 6px 0 0;
+  fill: var(--highlight);
 }
 
 @media (max-width: 900px) {
