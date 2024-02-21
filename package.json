@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build:icons": "npx @svgr/cli --typescript --no-prettier --out-dir src/components/Icons -- src/icons",
+    "build:icons": "npx @svgr/cli --typescript --no-dimensions --no-prettier --out-dir src/components/Icons -- src/icons",
     "build:data": "tsx scripts/buildData.ts",
     "build": "next build",
     "start": "next start",
