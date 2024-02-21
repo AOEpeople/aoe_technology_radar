@@ -23,6 +23,7 @@ export interface Item {
   flag: Flag;
   tags: string[];
   revisions?: Revision[];
+  random?: [radius: number, angle: number];
 }
 
 export interface Ring {

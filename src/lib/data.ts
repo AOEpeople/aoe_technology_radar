@@ -12,6 +12,10 @@ export function getAppName() {
   return messages.radarName;
 }
 
+export function getChartConfig() {
+  return config.chart;
+}
+
 export function getFlag(flag: Exclude<Flag, Flag.Default>) {
   return config.flags[flag];
 }

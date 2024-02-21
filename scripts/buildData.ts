@@ -144,6 +144,8 @@ function postProcessItems(items: Item[]): {
 
   const processedItems = items.map((item) => ({
     ...item,
+    // @todo: Maybe we should use a better random number generator to avoid overlapping of blips
+    random: [Math.sqrt(Math.random()), Math.random()] as [number, number],
     flag: getFlag(item, latestRelease),
     // only keep revision which ring or body is different
     revisions: item.revisions?.filter((revision, index, revisions) => {
