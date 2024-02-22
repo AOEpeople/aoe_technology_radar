@@ -63,6 +63,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
         if (!items[id]) {
           items[id] = {
             id,
+            release: releaseDate,
             title: data.title || id,
             ring: data.ring,
             quadrant: data.quadrant,
@@ -73,6 +74,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             revisions: [],
           };
         } else {
+          items[id].release = releaseDate;
           items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;

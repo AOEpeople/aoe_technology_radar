@@ -22,6 +22,7 @@ export interface Item {
   quadrant: string;
   flag: Flag;
   tags: string[];
+  release: Release;
   revisions?: Revision[];
   random?: [radius: number, angle: number];
 }
