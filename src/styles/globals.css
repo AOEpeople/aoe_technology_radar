@@ -7,6 +7,7 @@
 
   --foreground: #fff;
   --background: #173d7a;
+  --text: #575757;
   --highlight: #029df7;
   --border: rgba(255, 255, 255, 0.1);
 
@@ -93,6 +94,14 @@ ul,
 ol {
   padding-left: 16px;
   margin-bottom: 1em;
+}
+
+pre {
+  margin-bottom: 1em;
+}
+
+code {
+  font-family: var(--font-mono);
 }
 
 input {

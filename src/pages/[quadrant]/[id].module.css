@@ -1,0 +1,22 @@
+.layout {
+}
+
+.sidebar {
+}
+
+.content {
+  margin-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    display: flex;
+  }
+  .sidebar {
+    width: 360px;
+    padding: 110px 0 0 60px;
+  }
+  .content {
+    flex: 1;
+  }
+}

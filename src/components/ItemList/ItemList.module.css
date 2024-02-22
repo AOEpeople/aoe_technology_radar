@@ -34,6 +34,7 @@
 .link {
   display: block;
   padding: 10px;
+  border-radius: 6px;
 
   &.isFadedOut {
     opacity: 0.65;

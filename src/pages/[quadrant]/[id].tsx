@@ -2,7 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 
+import styles from "./[id].module.css";
+
 import { RingBadge } from "@/components/Badge/Badge";
+import { ItemDetail } from "@/components/ItemDetail/ItemDetail";
 import { ItemList } from "@/components/ItemList/ItemList";
 import {
   getItem,
@@ -33,10 +36,15 @@ const ItemPage: CustomPage = () => {
         <meta name="description" content={quadrant.description} />
       </Head>
 
-      <h1>{item.title}</h1>
-      <RingBadge ring={item.ring} size="large" />
-      <div dangerouslySetInnerHTML={{ __html: item.body }}></div>
-      <ItemList items={relatedItems} activeId={item.id} />
+      <div className={styles.layout}>
+        <section className={styles.content}>
+          <ItemDetail item={item} />
+        </section>
+        <aside className={styles.sidebar}>
+          <h3>{quadrant.title}</h3>
+          <ItemList items={relatedItems} activeId={item.id} />
+        </aside>
+      </div>
     </>
   );
 };
