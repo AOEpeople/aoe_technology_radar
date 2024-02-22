@@ -9,10 +9,16 @@
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+  fill: currentColor;
+}
+
+.ringLabels {
+  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
-  .labels {
+  .labels,
+  .ringLabels {
     display: none;
   }
 }
