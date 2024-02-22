@@ -150,13 +150,17 @@ function postProcessItems(items: Item[]): {
     random: [Math.sqrt(Math.random()), Math.random()] as [number, number],
     flag: getFlag(item, latestRelease),
     // only keep revision which ring or body is different
-    revisions: item.revisions?.filter((revision, index, revisions) => {
-      const { ring, body } = revision;
-      return (
-        ring !== item.ring ||
-        (body != "" && body != item.body && body !== revisions[index - 1]?.body)
-      );
-    }),
+    revisions: item.revisions
+      ?.filter((revision, index, revisions) => {
+        const { ring, body } = revision;
+        return (
+          ring !== item.ring ||
+          (body != "" &&
+            body != item.body &&
+            body !== revisions[index - 1]?.body)
+        );
+      })
+      .reverse(),
   }));
 
   return { releases, tags, items: processedItems };

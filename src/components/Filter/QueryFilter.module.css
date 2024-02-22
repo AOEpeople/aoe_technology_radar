@@ -18,6 +18,10 @@
   border: none;
 }
 
+.icon {
+  fill: var(--highlight);
+}
+
 @media (min-width: 768px) {
   .filter {
     flex: 1 1 auto;
