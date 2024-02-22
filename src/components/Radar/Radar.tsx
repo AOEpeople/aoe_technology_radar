@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 
 import styles from "./Radar.module.css";
 
@@ -115,6 +115,37 @@ export const Radar: FC<RadarProps> = ({
     );
   };
 
+  const renderRingLabels = () => {
+    return rings.map((ring, index) => {
+      const outerRadius = ring.radius || 1;
+      const innerRadius = rings[index - 1]?.radius || 0;
+      const position = ((outerRadius + innerRadius) / 2) * center;
+
+      return (
+        <Fragment key={ring.id}>
+          <text
+            x={center + position}
+            y={center}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fontSize="12"
+          >
+            {ring.title}
+          </text>
+          <text
+            x={center - position}
+            y={center}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fontSize="12"
+          >
+            {ring.title}
+          </text>
+        </Fragment>
+      );
+    });
+  };
+
   return (
     <div className={styles.radar}>
       <svg
@@ -138,7 +169,8 @@ export const Radar: FC<RadarProps> = ({
             ))}
           </g>
         ))}
-        <g>{items.map((item) => renderItem(item))}</g>
+        <g className={styles.items}>{items.map((item) => renderItem(item))}</g>
+        <g className={styles.ringLabels}>{renderRingLabels()}</g>
       </svg>
       <div className={styles.labels}>
         {quadrants.map((quadrant) => (
