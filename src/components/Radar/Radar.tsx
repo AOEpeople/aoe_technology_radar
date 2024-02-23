@@ -1,11 +1,22 @@
-import Link from "next/link";
-import React, { FC, Fragment } from "react";
+import React, {
+  CSSProperties,
+  FC,
+  MouseEvent,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import styles from "./Radar.module.css";
 
-import { Blip } from "@/components/Radar/Blip";
+import { Chart } from "@/components/Radar/Chart";
 import { Label } from "@/components/Radar/Label";
+import { getChartConfig } from "@/lib/data";
 import { Item, Quadrant, Ring } from "@/lib/types";
+import { cn } from "@/lib/utils";
+
+const { blipSize } = getChartConfig();
+const halfBlipSize = blipSize / 2;
 
 export interface RadarProps {
   size?: number;
@@ -20,163 +31,81 @@ export const Radar: FC<RadarProps> = ({
   rings = [],
   items = [],
 }) => {
-  const viewBoxSize = size;
-  const center = size / 2;
-  const startAngles = [270, 0, 180, 90]; // Corresponding to positions 1, 2, 3, and 4 respectively
+  const radarRef = useRef<HTMLDivElement>(null);
+  const [tooltip, setTooltip] = useState({
+    show: false,
+    text: "",
+    color: "",
+    x: 0,
+    y: 0,
+  });
 
-  // Helper function to convert polar coordinates to cartesian
-  const polarToCartesian = (
-    radius: number,
-    angleInDegrees: number,
-  ): { x: number; y: number } => {
-    const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
-    return {
-      x: Math.round(center + radius * Math.cos(angleInRadians)),
-      y: Math.round(center + radius * Math.sin(angleInRadians)),
-    };
+  const tooltipStyle = useMemo(
+    () =>
+      ({
+        left: tooltip.x,
+        top: tooltip.y,
+        ...(tooltip.color ? { "--tooltip": tooltip.color } : undefined),
+      }) as CSSProperties,
+    [tooltip],
+  );
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const link =
+      e.target instanceof Element && e.target.closest("a[data-tooltip]");
+    if (link) {
+      const text = link.getAttribute("data-tooltip") || "";
+      const color = link.getAttribute("data-tooltip-color") || "";
+      const linkRect = link.getBoundingClientRect();
+      const radarRect = radarRef.current!.getBoundingClientRect();
+
+      // Adjusting tooltip position to be relative to the radar container
+      const x = linkRect.left - radarRect.left + halfBlipSize;
+      const y = linkRect.top - radarRect.top;
+
+      setTooltip({
+        text,
+        color,
+        show: !!text,
+        x,
+        y,
+      });
+    } else {
+      if (tooltip.show) {
+        setTooltip({ ...tooltip, show: false });
+      }
+    }
   };
 
-  // Function to generate the path for a ring segment
-  const describeArc = (radiusPercentage: number, position: number): string => {
-    // Define the start and end angles based on the quadrant position
-    const startAngle = startAngles[position - 1];
-    const endAngle = startAngle + 90;
-
-    const radius = radiusPercentage * center; // Convert percentage to actual radius
-    const start = polarToCartesian(radius, endAngle);
-    const end = polarToCartesian(radius, startAngle);
-
-    // prettier-ignore
-    return [
-      "M", start.x, start.y,
-      "A", radius, radius, 0, 0, 0, end.x, end.y,
-    ].join(" ");
-  };
-
-  const renderGlow = (position: number, color: string) => {
-    const gradientId = `glow-${position}`;
-
-    const cx = position === 1 || position === 3 ? 1 : 0;
-    const cy = position === 1 || position === 2 ? 1 : 0;
-
-    const x = position === 1 || position === 3 ? 0 : center;
-    const y = position === 1 || position === 2 ? 0 : center;
-    return (
-      <>
-        <defs>
-          <radialGradient id={gradientId} x={0} y={0} r={1} cx={cx} cy={cy}>
-            <stop offset="0%" stopColor={color} stopOpacity={0.5}></stop>
-            <stop offset="100%" stopColor={color} stopOpacity={0}></stop>
-          </radialGradient>
-        </defs>
-        <rect
-          width={center}
-          height={center}
-          x={x}
-          y={y}
-          fill={`url(#${gradientId})`}
-        />
-      </>
-    );
-  };
-
-  // Function to place items inside their rings and quadrants
-  const renderItem = (item: Item) => {
-    const ring = rings.find((r) => r.id === item.ring);
-    const quadrant = quadrants.find((q) => q.id === item.quadrant);
-    if (!ring || !quadrant) return null; // If no ring or quadrant, don't render item
-
-    const padding = 15; // Padding in pixels
-    const paddingAngle = 10; // Padding in degrees
-
-    // Random factors to determine position within the ring
-    const [randomRadius, randomAngleFactor] = item.random || [
-      Math.sqrt(Math.random()),
-      Math.random(),
-    ];
-    const innerRadius =
-      (rings[rings.indexOf(ring) - 1]?.radius || 0) + padding / center; // Add inner padding
-    const outerRadius = (ring.radius || 1) - padding / center; // Subtract outer padding
-    const ringWidth = (outerRadius - innerRadius) * center; // Width of the ring in the SVG
-
-    // Calculate the position within the ring
-    const itemRadius = innerRadius * center + randomRadius * ringWidth;
-    // Calculate the angle with padding offset, avoiding the exact edges
-    const startAngle = startAngles[quadrant.position - 1] + paddingAngle;
-    const endAngle = startAngle + 90 - 2 * paddingAngle; // Subtract padding from both sides
-    const itemAngle = startAngle + (endAngle - startAngle) * randomAngleFactor;
-
-    // Convert polar coordinates to cartesian for the item's position
-    const { x, y } = polarToCartesian(itemRadius, itemAngle);
-    return (
-      <Link key={item.id} href={`/${item.quadrant}/${item.id}`}>
-        <Blip flag={item.flag} color={quadrant.color} x={x} y={y} />
-      </Link>
-    );
-  };
-
-  const renderRingLabels = () => {
-    return rings.map((ring, index) => {
-      const outerRadius = ring.radius || 1;
-      const innerRadius = rings[index - 1]?.radius || 0;
-      const position = ((outerRadius + innerRadius) / 2) * center;
-
-      return (
-        <Fragment key={ring.id}>
-          <text
-            x={center + position}
-            y={center}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontSize="12"
-          >
-            {ring.title}
-          </text>
-          <text
-            x={center - position}
-            y={center}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontSize="12"
-          >
-            {ring.title}
-          </text>
-        </Fragment>
-      );
-    });
+  const handleMouseLeave = () => {
+    setTooltip({ ...tooltip, show: false });
   };
 
   return (
-    <div className={styles.radar}>
-      <svg
-        className={styles.svg}
-        width={viewBoxSize}
-        height={viewBoxSize}
-        viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}
-      >
-        {quadrants.map((quadrant) => (
-          <g key={quadrant.id} data-quadrant={quadrant.id}>
-            {renderGlow(quadrant.position, quadrant.color)}
-            {rings.map((ring) => (
-              <path
-                key={`${ring.id}-${quadrant.id}`}
-                data-key={`${ring.id}-${quadrant.id}`}
-                d={describeArc(ring.radius || 0.5, quadrant.position)}
-                fill="none"
-                stroke={quadrant.color}
-                strokeWidth={ring.strokeWidth || 2}
-              />
-            ))}
-          </g>
-        ))}
-        <g className={styles.items}>{items.map((item) => renderItem(item))}</g>
-        <g className={styles.ringLabels}>{renderRingLabels()}</g>
-      </svg>
+    <div
+      ref={radarRef}
+      className={styles.radar}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Chart
+        className={styles.chart}
+        size={size}
+        quadrants={quadrants}
+        rings={rings}
+        items={items}
+      />
       <div className={styles.labels}>
         {quadrants.map((quadrant) => (
           <Label key={quadrant.id} quadrant={quadrant} />
         ))}
       </div>
+      <span
+        className={cn(styles.tooltip, tooltip.show && styles.isShown)}
+        style={tooltipStyle}
+      >
+        {tooltip.text}
+      </span>
     </div>
   );
 };

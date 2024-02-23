@@ -1,0 +1,9 @@
+.ringLabels {
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .ringLabels {
+    display: none;
+  }
+}
