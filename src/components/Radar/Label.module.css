@@ -20,15 +20,6 @@
   margin: 0 0 10px;
 }
 
-.icon {
-  fill: var(--highlight);
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px 0 0;
-  width: 16px;
-  height: 16px;
-}
-
 .description {
   font-size: 14px;
 }
