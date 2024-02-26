@@ -11,12 +11,8 @@ import styles from "./Radar.module.css";
 
 import { Chart } from "@/components/Radar/Chart";
 import { Label } from "@/components/Radar/Label";
-import { getChartConfig } from "@/lib/data";
 import { Item, Quadrant, Ring } from "@/lib/types";
 import { cn } from "@/lib/utils";
-
-const { blipSize } = getChartConfig();
-const halfBlipSize = blipSize / 2;
 
 export interface RadarProps {
   size?: number;
@@ -60,7 +56,7 @@ export const Radar: FC<RadarProps> = ({
       const radarRect = radarRef.current!.getBoundingClientRect();
 
       // Adjusting tooltip position to be relative to the radar container
-      const x = linkRect.left - radarRect.left + halfBlipSize;
+      const x = linkRect.left - radarRect.left + linkRect.width / 2;
       const y = linkRect.top - radarRect.top;
 
       setTooltip({
