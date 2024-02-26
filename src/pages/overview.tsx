@@ -32,6 +32,7 @@ const Overview: CustomPage = () => {
     const items = getItems().filter((item) => !ring || item.ring === ring);
     const index = new Fuse(items, {
       threshold: 0.3,
+      distance: 500,
       includeScore: true,
       keys: [
         {
