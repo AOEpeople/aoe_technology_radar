@@ -20,6 +20,13 @@
   margin: -15px 0 0 -60px;
 }
 
+.icon {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  margin: 8px auto;
+}
+
 .ring {
   float: left;
   margin: -45px 0 0 0;
@@ -67,5 +74,13 @@
 
   .ring {
     margin-top: -20px;
+  }
+}
+
+.revision.hint {
+  .content {
+    font-size: 14px;
+    background: var(--border);
+    color: var(--foreground);
   }
 }
