@@ -11,6 +11,7 @@ import styles from "./Radar.module.css";
 
 import { Chart } from "@/components/Radar/Chart";
 import { Label } from "@/components/Radar/Label";
+import { Legend } from "@/components/Radar/Legend";
 import { Item, Quadrant, Ring } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -96,6 +97,7 @@ export const Radar: FC<RadarProps> = ({
           <Label key={quadrant.id} quadrant={quadrant} />
         ))}
       </div>
+      <Legend />
       <span
         className={cn(styles.tooltip, tooltip.show && styles.isShown)}
         style={tooltipStyle}

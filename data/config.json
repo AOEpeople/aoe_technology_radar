@@ -67,12 +67,17 @@
     "new": {
       "color": "#f1235a",
       "title": "New",
-      "titleShort": "N"
+      "titleShort": "N",
+      "description": "New in this version"
     },
     "changed": {
       "color": "#40a7d1",
       "title": "Changed",
-      "titleShort": "C"
+      "titleShort": "C",
+      "description": "Recently changed"
+    },
+    "default": {
+      "description": "Unchanged"
     }
   },
   "chart": {

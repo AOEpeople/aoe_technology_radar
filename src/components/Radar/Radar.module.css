@@ -2,6 +2,7 @@
   padding: 0 15px;
   margin-bottom: 60px;
   position: relative;
+  transition: padding 200ms ease-in-out;
 }
 
 .chart {
@@ -67,7 +68,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .radar {
     padding: 150px 15px;
   }
