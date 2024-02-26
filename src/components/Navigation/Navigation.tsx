@@ -41,8 +41,10 @@ export function Navigation() {
           </Link>
         </li>
         <li className={styles.item}>
-          <IconSearch className={styles.icon} />
-          <span className={styles.label}>Search</span>
+          <Link href="/overview">
+            <IconSearch className={styles.icon} />
+            <span className={styles.label}>Search</span>
+          </Link>
         </li>
       </ul>
     </nav>
