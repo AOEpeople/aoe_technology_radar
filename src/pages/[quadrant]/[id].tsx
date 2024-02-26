@@ -7,6 +7,7 @@ import styles from "./[id].module.css";
 import { RingBadge } from "@/components/Badge/Badge";
 import { ItemDetail } from "@/components/ItemDetail/ItemDetail";
 import { ItemList } from "@/components/ItemList/ItemList";
+import { QuadrantLink } from "@/components/QuadrantLink/QuadrantLink";
 import {
   getItem,
   getItems,
@@ -42,6 +43,11 @@ const ItemPage: CustomPage = () => {
         </section>
         <aside className={styles.sidebar}>
           <h3>{quadrant.title}</h3>
+          <div className={styles.ringAndQuadrant}>
+            <RingBadge ring={item.ring} />
+            <QuadrantLink quadrant={quadrant} label="Quadrant Overview" />
+          </div>
+
           <ItemList items={relatedItems} activeId={item.id} />
         </aside>
       </div>

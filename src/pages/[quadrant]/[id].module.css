@@ -1,11 +1,13 @@
-.layout {
-}
-
-.sidebar {
-}
-
 .content {
   margin-bottom: 60px;
+}
+
+.ringAndQuadrant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
 }
 
 @media (min-width: 1024px) {

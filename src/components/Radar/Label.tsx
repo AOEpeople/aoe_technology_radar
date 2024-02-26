@@ -3,7 +3,7 @@ import { CSSProperties, useMemo } from "react";
 
 import styles from "./Label.module.css";
 
-import Pie from "@/components/Icons/Pie";
+import { QuadrantLink } from "@/components/QuadrantLink/QuadrantLink";
 import { Quadrant } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -24,10 +24,7 @@ export function Label({ quadrant }: LabelProps) {
     >
       <div className={styles.header}>
         <span>Quadrant {quadrant.position}</span>
-        <Link href={`/${quadrant.id}`}>
-          <Pie className={styles.icon} />
-          <span>Zoom in</span>
-        </Link>
+        <QuadrantLink quadrant={quadrant} />
       </div>
       <h3 className={styles.title}>{quadrant.title}</h3>
       <p className={styles.description}>{quadrant.description}</p>
