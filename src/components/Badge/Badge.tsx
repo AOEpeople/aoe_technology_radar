@@ -57,6 +57,7 @@ interface RingBadgeProps extends Omit<BadgeProps, "color" | "children"> {
   ring: string;
   release?: string;
 }
+
 export function RingBadge({
   ring: ringName,
   release,
@@ -76,14 +77,25 @@ export function RingBadge({
   );
 }
 
+// Type guard to check if flag has the required attributes
+function hasRequiredFlagAttributes(flag: any): flag is {
+  color: string;
+  title: string;
+  titleShort: string;
+} {
+  return "color" in flag && "title" in flag && "titleShort" in flag;
+}
+
 interface FlagBadgeProps
   extends Omit<BadgeProps, "color" | "children" | "size"> {
   flag: Flag;
   short?: boolean;
 }
+
 export function FlagBadge({ flag: flagName, short, ...props }: FlagBadgeProps) {
   if (flagName === Flag.Default) return null;
   const flag = getFlag(flagName);
+  if (!flag || !hasRequiredFlagAttributes(flag)) return null;
 
   return (
     <Badge color={flag.color} size="small" {...props}>

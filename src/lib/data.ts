@@ -16,7 +16,11 @@ export function getChartConfig() {
   return config.chart;
 }
 
-export function getFlag(flag: Exclude<Flag, Flag.Default>) {
+export function getFlags() {
+  return config.flags;
+}
+
+export function getFlag(flag: Flag) {
   return config.flags[flag];
 }
 
