@@ -1,18 +1,7 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import styles from "./Navigation.module.css";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/Dialog/Dialog";
-import IconFilter from "@/components/Icons/Filter";
 import IconOverview from "@/components/Icons/Overview";
 import IconQuestion from "@/components/Icons/Question";
 import IconSearch from "@/components/Icons/Search";
@@ -28,6 +17,7 @@ export function Navigation() {
             <span className={styles.label}>How to use {getAppName()}?</span>
           </Link>
         </li>
+        {/*
         <li className={styles.item}>
           <Dialog>
             <DialogTrigger asChild>
@@ -43,6 +33,7 @@ export function Navigation() {
             </DialogContent>
           </Dialog>
         </li>
+        */}
         <li className={styles.item}>
           <Link href="/overview">
             <IconOverview className={styles.icon} />
