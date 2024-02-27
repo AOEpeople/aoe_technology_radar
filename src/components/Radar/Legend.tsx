@@ -12,7 +12,6 @@ function Icon({
   flag,
   ...props
 }: { flag: Flag } & ComponentPropsWithoutRef<"svg">) {
-  console.log("render Icon", flag);
   switch (flag) {
     case Flag.New:
       return <BlipNew {...props} />;
