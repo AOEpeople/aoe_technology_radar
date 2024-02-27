@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 import Search from "../Icons/Search";
 import styles from "./QueryFilter.module.css";
@@ -8,16 +8,23 @@ interface QueryFilterProps {
   onChange: (value: string) => void;
 }
 export function QueryFilter({ value, onChange }: QueryFilterProps) {
+  const [val, setVal] = useState(value);
   const _onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setVal(e.target.value);
     onChange(e.target.value);
   };
+
+  useEffect(() => {
+    setVal(value);
+  }, [value]);
 
   return (
     <div className={styles.filter}>
       <input
         className={styles.input}
+        id="search"
         type="search"
-        value={value}
+        value={val}
         onChange={_onChange}
       />
       <button className={styles.button} type="submit">
