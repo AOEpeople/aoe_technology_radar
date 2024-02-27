@@ -36,6 +36,10 @@ export function getReleases(): string[] {
   return data.releases;
 }
 
+export function getTags(): string[] {
+  return data.tags;
+}
+
 export function getQuadrants(): Quadrant[] {
   return config.quadrants;
 }

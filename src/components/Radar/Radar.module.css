@@ -1,6 +1,5 @@
 .radar {
-  padding: 0 15px;
-  margin-bottom: 60px;
+  padding: 0 15px 30px;
   position: relative;
   transition: padding 200ms ease-in-out;
 }

@@ -2,6 +2,7 @@ import styles from "./ItemDetail.module.css";
 
 import { RingBadge } from "@/components/Badge/Badge";
 import Attention from "@/components/Icons/Attention";
+import { Tag } from "@/components/Tags/Tags";
 import { getReleases } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -19,7 +20,12 @@ interface ItemProps {
 export function ItemDetail({ item }: ItemProps) {
   return (
     <>
-      <h1 className={styles.title}>{item.title}</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{item.title}</h1>
+        {item.tags.map((tag) => (
+          <Tag key={tag} tag={tag} />
+        ))}
+      </div>
       <div className={styles.revisions}>
         {isNotMaintained(item.release) && (
           <div className={cn(styles.revision, styles.hint)}>
