@@ -24,7 +24,7 @@ export interface Item {
   tags: string[];
   release: Release;
   revisions?: Revision[];
-  random?: [radius: number, angle: number];
+  position: [x: number, y: number];
 }
 
 export interface Ring {
