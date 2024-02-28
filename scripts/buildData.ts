@@ -6,8 +6,15 @@ import { markedHighlight } from "marked-highlight";
 import path from "path";
 
 import config from "../next.config.mjs";
+import Positioner from "./positioner";
 
+import { getChartConfig, getQuadrants, getRings } from "@/lib/data";
 import { Flag, Item } from "@/lib/types";
+
+const rings = getRings();
+const quadrants = getQuadrants();
+const { size } = getChartConfig();
+const positioner = new Positioner(size, quadrants, rings);
 
 const marked = new Marked(
   markedHighlight({
@@ -72,6 +79,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             flag: Flag.Default,
             tags: data.tags || [],
             revisions: [],
+            position: [0, 0],
           };
         } else {
           items[id].release = releaseDate;
@@ -146,8 +154,7 @@ function postProcessItems(items: Item[]): {
 
   const processedItems = items.map((item) => ({
     ...item,
-    // @todo: Maybe we should use a better random number generator to avoid overlapping of blips
-    random: [Math.sqrt(Math.random()), Math.random()] as [number, number],
+    position: positioner.getNextPosition(item.quadrant, item.ring),
     flag: getFlag(item, latestRelease),
     // only keep revision which ring or body is different
     revisions: item.revisions

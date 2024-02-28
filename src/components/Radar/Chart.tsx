@@ -86,29 +86,8 @@ const _Chart: FC<ChartProps> = ({
     const ring = rings.find((r) => r.id === item.ring);
     const quadrant = quadrants.find((q) => q.id === item.quadrant);
     if (!ring || !quadrant) return null; // If no ring or quadrant, don't render item
+    const [x, y] = item.position;
 
-    const padding = 15; // Padding in pixels
-    const paddingAngle = 10; // Padding in degrees
-
-    // Random factors to determine position within the ring
-    const [randomRadius, randomAngleFactor] = item.random || [
-      Math.sqrt(Math.random()),
-      Math.random(),
-    ];
-    const innerRadius =
-      (rings[rings.indexOf(ring) - 1]?.radius || 0) + padding / center; // Add inner padding
-    const outerRadius = (ring.radius || 1) - padding / center; // Subtract outer padding
-    const ringWidth = (outerRadius - innerRadius) * center; // Width of the ring in the SVG
-
-    // Calculate the position within the ring
-    const itemRadius = innerRadius * center + randomRadius * ringWidth;
-    // Calculate the angle with padding offset, avoiding the exact edges
-    const startAngle = startAngles[quadrant.position - 1] + paddingAngle;
-    const endAngle = startAngle + 90 - 2 * paddingAngle; // Subtract padding from both sides
-    const itemAngle = startAngle + (endAngle - startAngle) * randomAngleFactor;
-
-    // Convert polar coordinates to cartesian for the item's position
-    const { x, y } = polarToCartesian(itemRadius, itemAngle);
     return (
       <Link
         key={item.id}
