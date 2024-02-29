@@ -5,15 +5,17 @@ import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
 import path from "path";
 
-import config from "../next.config.mjs";
+import config from "../data/config.json";
+import nextConfig from "../next.config.mjs";
 import Positioner from "./positioner";
 
-import { getChartConfig, getQuadrants, getRings } from "@/lib/data";
 import { Flag, Item } from "@/lib/types";
 
-const rings = getRings();
-const quadrants = getQuadrants();
-const { size } = getChartConfig();
+const {
+  rings,
+  quadrants,
+  chart: { size },
+} = config;
 const positioner = new Positioner(size, quadrants, rings);
 
 const marked = new Marked(
@@ -31,8 +33,8 @@ function dataPath(...paths: string[]): string {
 }
 
 function convertToHtml(markdown: string): string {
-  if (config.basePath) {
-    markdown = markdown.replace(/]\(\//g, `](${config.basePath}/`);
+  if (nextConfig.basePath) {
+    markdown = markdown.replace(/]\(\//g, `](${nextConfig.basePath}/`);
   }
 
   let html = marked.parse(markdown.trim()) as string;
