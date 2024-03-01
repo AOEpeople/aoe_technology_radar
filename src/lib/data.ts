@@ -36,6 +36,10 @@ export function getReleases(): string[] {
   return data.releases;
 }
 
+export function getSocialLinks() {
+  return config.social;
+}
+
 export function getTags(): string[] {
   return data.tags;
 }
