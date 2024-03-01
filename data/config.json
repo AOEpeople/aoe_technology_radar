@@ -83,5 +83,35 @@
   "chart": {
     "size": 800,
     "blipSize": 12
-  }
+  },
+  "social": [
+    {
+      "href": "https://www.facebook.com/aoepeople",
+      "icon": "facebook"
+    },
+    {
+      "href": "https://twitter.com/aoepeople",
+      "icon": "x"
+    },
+    {
+      "href": "https://www.linkedin.com/company/aoe",
+      "icon": "linkedIn"
+    },
+    {
+      "href": "https://www.xing.com/company/aoe",
+      "icon": "xing"
+    },
+    {
+      "href": "https://www.instagram.com/aoepeople",
+      "icon": "instagram"
+    },
+    {
+      "href": "https://www.youtube.com/user/aoepeople",
+      "icon": "youtube"
+    },
+    {
+      "href": "https://github.com/aoepeople",
+      "icon": "github"
+    }
+  ]
 }

@@ -1,0 +1,28 @@
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.icon {
+  fill: var(--background);
+  width: 16px;
+  height: 16px;
+}
+
+.link {
+  border: 1px solid var(--border);
+  background: var(--foreground);
+  padding: 6px;
+  border-radius: 50%;
+
+  &:hover {
+    background: var(--background);
+    .icon {
+      fill: var(--foreground);
+    }
+  }
+}
