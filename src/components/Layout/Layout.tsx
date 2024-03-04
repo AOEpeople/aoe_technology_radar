@@ -1,5 +1,5 @@
 import { Roboto } from "next/font/google";
-import type { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
 import styles from "./Layout.module.css";
 
