@@ -4,6 +4,7 @@ import { CSSProperties, useMemo } from "react";
 import styles from "./Label.module.css";
 
 import { QuadrantLink } from "@/components/QuadrantLink/QuadrantLink";
+import { getLabel } from "@/lib/data";
 import { Quadrant } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +24,9 @@ export function Label({ quadrant }: LabelProps) {
       style={style}
     >
       <div className={styles.header}>
-        <span>Quadrant {quadrant.position}</span>
+        <span>
+          {getLabel("quadrant")} {quadrant.position}
+        </span>
         <QuadrantLink quadrant={quadrant} />
       </div>
       <h3 className={styles.title}>{quadrant.title}</h3>

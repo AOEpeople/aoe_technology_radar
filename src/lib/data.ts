@@ -1,15 +1,14 @@
 import config from "../../data/config.json";
 import data from "../../data/data.json";
-import messages from "../../data/messages.json";
 
 import { Flag, Item, Quadrant, Ring } from "@/lib/types";
 
-export function getMessages() {
-  return messages;
+export function getLabel(key: keyof typeof config.labels) {
+  return config.labels[key] || "";
 }
 
 export function getAppName() {
-  return messages.radarName;
+  return getLabel("title");
 }
 
 export function getChartConfig() {

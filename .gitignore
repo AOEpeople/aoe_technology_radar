@@ -19,7 +19,6 @@
 /data/*
 !/data/about.md
 !/data/config.json
-!/data/messages.json
 
 # misc
 .DS_Store

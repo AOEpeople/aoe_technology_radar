@@ -11,6 +11,7 @@ import { QuadrantLink } from "@/components/QuadrantLink/QuadrantLink";
 import {
   getItem,
   getItems,
+  getLabel,
   getQuadrant,
   sortByFeaturedAndTitle,
 } from "@/lib/data";
@@ -45,7 +46,10 @@ const ItemPage: CustomPage = () => {
           <h3>{quadrant.title}</h3>
           <div className={styles.ringAndQuadrant}>
             <RingBadge ring={item.ring} />
-            <QuadrantLink quadrant={quadrant} label="Quadrant Overview" />
+            <QuadrantLink
+              quadrant={quadrant}
+              label={getLabel("quadrantOverview")}
+            />
           </div>
 
           <ItemList items={relatedItems} activeId={item.id} />

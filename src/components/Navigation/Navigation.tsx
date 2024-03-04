@@ -5,7 +5,7 @@ import styles from "./Navigation.module.css";
 import IconOverview from "@/components/Icons/Overview";
 import IconQuestion from "@/components/Icons/Question";
 import IconSearch from "@/components/Icons/Search";
-import { getAppName } from "@/lib/data";
+import { getAppName, getLabel } from "@/lib/data";
 
 export function Navigation() {
   return (
@@ -14,36 +14,19 @@ export function Navigation() {
         <li className={styles.item}>
           <Link href="/help-and-about-tech-radar">
             <IconQuestion className={styles.icon} />
-            <span className={styles.label}>How to use {getAppName()}?</span>
+            <span className={styles.label}>{getLabel("pageAbout")}</span>
           </Link>
         </li>
-        {/*
-        <li className={styles.item}>
-          <Dialog>
-            <DialogTrigger asChild>
-              <a href="#">
-                <IconFilter className={styles.icon} />
-                <span className={styles.label}>Filter</span>
-              </a>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Filter by Tags</DialogTitle>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-        </li>
-        */}
         <li className={styles.item}>
           <Link href="/overview">
             <IconOverview className={styles.icon} />
-            <span className={styles.label}>Technologies Overview</span>
+            <span className={styles.label}>{getLabel("pageOverview")}</span>
           </Link>
         </li>
         <li className={styles.item}>
           <Link href="/overview">
             <IconSearch className={styles.icon} />
-            <span className={styles.label}>Search</span>
+            <span className={styles.label}>{getLabel("pageSearch")}</span>
           </Link>
         </li>
       </ul>
