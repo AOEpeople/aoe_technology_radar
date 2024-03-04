@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./QuadrantLink.module.css";
 
 import Pie from "@/components/Icons/Pie";
+import { getLabel } from "@/lib/data";
 import { Quadrant } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +14,7 @@ interface QuadrantLinkProps {
 }
 export function QuadrantLink({
   quadrant,
-  label = "Zoom in",
+  label = getLabel("zoomIn"),
   className,
 }: QuadrantLinkProps) {
   return (

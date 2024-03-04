@@ -5,11 +5,12 @@ import { useCallback, useMemo } from "react";
 
 import { Filter } from "@/components/Filter/Filter";
 import { ItemList } from "@/components/ItemList/ItemList";
-import { getItems } from "@/lib/data";
+import { getItems, getLabel } from "@/lib/data";
 import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
 const Overview: CustomPage = () => {
+  const title = getLabel("pageOverview");
   const router = useRouter();
   const ring = router.query.ring as string | undefined;
   const query = (router.query.query as string) || "";
@@ -65,10 +66,10 @@ const Overview: CustomPage = () => {
   return (
     <>
       <Head>
-        <title>{formatTitle("Technologies Overview")}</title>
+        <title>{formatTitle(title)}</title>
       </Head>
 
-      <h1>Technologies Overview</h1>
+      <h1>{title}</h1>
       <Filter
         query={query}
         ring={ring}

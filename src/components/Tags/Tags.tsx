@@ -5,6 +5,7 @@ import styles from "./Tags.module.css";
 
 import IconRemove from "@/components/Icons/Close";
 import IconTag from "@/components/Icons/Tag";
+import { getLabel } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 type TagProps = {
@@ -36,7 +37,7 @@ interface TagsProps {
 export function Tags({ tags, activeTag, className }: TagsProps) {
   return (
     <div className={cn(styles.tags, className)}>
-      <h3>Filter by Tag</h3>
+      <h3>{getLabel("filterByTag")}</h3>
       {tags.map((tag) => (
         <Tag key={tag} tag={tag} isActive={activeTag == tag} scroll={false} />
       ))}

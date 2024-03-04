@@ -2,17 +2,14 @@ import logo from "../../../public/logo.svg";
 import styles from "./Footer.module.css";
 
 import { SocialLinks } from "@/components/SocialLinks/SocialLinks";
-import { getAppName, getMessages } from "@/lib/data";
+import { getAppName, getLabel } from "@/lib/data";
 
 export function Footer() {
-  const appName = getAppName();
-  const { footerFootnote } = getMessages();
-
   return (
     <div className={styles.footer}>
       <div className={styles.branding}>
-        <img src={logo.src} className={styles.logo} alt={appName} />
-        <p className={styles.description}>{footerFootnote}</p>
+        <img src={logo.src} className={styles.logo} alt={getAppName()} />
+        <p className={styles.description}>{getLabel("footer")}</p>
         <SocialLinks className={styles.socialLinks} />
       </div>
     </div>
