@@ -1,4 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npm run lint && npm rum prettier && npm run build:scripts && git add dist_scripts
