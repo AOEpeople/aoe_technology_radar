@@ -15,6 +15,10 @@ export function getChartConfig() {
   return config.chart;
 }
 
+export function getColors() {
+  return config.colors;
+}
+
 export function getFlags() {
   return config.flags;
 }

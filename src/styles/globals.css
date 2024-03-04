@@ -7,15 +7,12 @@
 
   --foreground: #fff;
   --background: #173d7a;
+  --content: #fff;
   --text: #575757;
+  --link: #029df7;
   --highlight: #029df7;
   --border: rgba(255, 255, 255, 0.1);
   --tag: rgba(255, 255, 255, 0.1);
-
-  --overlay: #081a37b5;
-  --dialog-bg: #173d7a;
-
-  --badge: #333; /* local color which get's overridden by the element */
 }
 
 * {

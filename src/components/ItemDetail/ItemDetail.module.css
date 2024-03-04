@@ -44,14 +44,14 @@
 }
 
 .content {
-  background: var(--foreground);
+  background: var(--content);
   color: var(--text);
   border-radius: 6px;
   padding: 30px 15px;
 }
 
 .content a {
-  color: var(--highlight);
+  color: var(--link);
 }
 
 @media (min-width: 768px) {
