@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 
-import config from "../../next.config.mjs";
+import config from "../../next.config.js";
 
 export function cn(...inputs: ClassValue[]) {
   return clsx(inputs);
