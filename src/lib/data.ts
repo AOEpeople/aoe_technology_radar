@@ -62,6 +62,10 @@ export function getItems(quadrant?: string, featured?: boolean): Item[] {
   }) as Item[];
 }
 
+export function getImprintUrl() {
+  return config.imprint;
+}
+
 export function getItem(id: string): Item | undefined {
   return data.items.find((item) => item.id === id) as Item;
 }
