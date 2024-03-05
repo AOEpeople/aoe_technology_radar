@@ -48,7 +48,7 @@ export function getTags(): string[] {
 }
 
 export function getQuadrants(): Quadrant[] {
-  return config.quadrants;
+  return config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
 }
 
 export function getQuadrant(id: string): Quadrant | undefined {

@@ -13,9 +13,10 @@ import { Flag, Item } from "@/lib/types";
 
 const {
   rings,
-  quadrants,
   chart: { size },
 } = config;
+
+const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
 const positioner = new Positioner(size, quadrants, rings);
 
 const marked = new Marked(
