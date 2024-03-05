@@ -14,6 +14,18 @@
   margin: 0 0 30px;
 }
 
+.imprint {
+  opacity: 0.7;
+  display: block;
+  font-size: 12px;
+  text-decoration: underline;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 @media (min-width: 768px) {
   .branding {
     display: flex;
@@ -27,6 +39,10 @@
 
   .description {
     margin: 0 50px 0;
+  }
+
+  .imprint {
+    text-align: right;
   }
 }
 
