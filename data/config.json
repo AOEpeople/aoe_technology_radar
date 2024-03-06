@@ -1,5 +1,6 @@
 {
   "basePath": "/techradar",
+  "editUrl": "https://github.dev/AOEpeople/techradar/blob/main/radar/{release}/{id}.md",
   "colors": {
     "foreground": "#fcf2e6",
     "background": "#113521",

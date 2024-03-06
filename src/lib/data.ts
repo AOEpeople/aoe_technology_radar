@@ -1,6 +1,7 @@
 import config from "../../data/config.json";
 import data from "../../data/data.json";
 
+import { format } from "@/lib/format";
 import { Flag, Item, Quadrant, Ring } from "@/lib/types";
 
 export function getLabel(key: keyof typeof config.labels) {
@@ -45,6 +46,11 @@ export function getSocialLinks() {
 
 export function getTags(): string[] {
   return data.tags;
+}
+
+export function getEditUrl(props: { id: string; release: string }) {
+  if (!config.editUrl) return "";
+  return format(config.editUrl, props);
 }
 
 export function getQuadrants(): Quadrant[] {

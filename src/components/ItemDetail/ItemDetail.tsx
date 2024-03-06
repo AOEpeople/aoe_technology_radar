@@ -1,9 +1,9 @@
 import styles from "./ItemDetail.module.css";
 
 import { RingBadge } from "@/components/Badge/Badge";
-import Attention from "@/components/Icons/Attention";
+import { Attention, Edit } from "@/components/Icons";
 import { Tag } from "@/components/Tags/Tags";
-import { getLabel, getReleases } from "@/lib/data";
+import { getEditUrl, getLabel, getReleases } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -31,14 +31,19 @@ export function ItemDetail({ item }: ItemProps) {
         {notMaintainedText && isNotMaintained(item.release) && (
           <div className={cn(styles.revision, styles.hint)}>
             <span className={styles.release}>
-              <Attention className={styles.icon} />
+              <Attention className={styles.notMaintainedIcon} />
             </span>
             <div className={styles.content}>{notMaintainedText}</div>
           </div>
         )}
-        <Revision release={item.release} ring={item.ring} body={item.body} />
+        <Revision
+          id={item.id}
+          release={item.release}
+          ring={item.ring}
+          body={item.body}
+        />
         {item.revisions?.map((revision, index) => (
-          <Revision key={index} {...revision} />
+          <Revision key={index} id={item.id} {...revision} />
         ))}
       </div>
     </>
@@ -46,13 +51,15 @@ export function ItemDetail({ item }: ItemProps) {
 }
 
 interface RevisionProps {
+  id: string;
   release: string;
   ring: string;
   body?: string;
 }
 
-function Revision({ release, ring, body }: RevisionProps) {
+function Revision({ id, release, ring, body }: RevisionProps) {
   const date = new Date(release);
+  const editLink = getEditUrl({ id, release });
   const formattedDate = date.toLocaleDateString("en-US", {
     month: "short",
     year: "numeric",
@@ -65,6 +72,11 @@ function Revision({ release, ring, body }: RevisionProps) {
       <div className={styles.content}>
         <RingBadge className={styles.ring} ring={ring} size="large" />
         {body ? <div dangerouslySetInnerHTML={{ __html: body }} /> : null}
+        {editLink && (
+          <a href={editLink} target="_blank" className={styles.editLink}>
+            <Edit />
+          </a>
+        )}
       </div>
     </div>
   );
