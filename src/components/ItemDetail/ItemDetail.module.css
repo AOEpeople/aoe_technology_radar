@@ -9,10 +9,27 @@
   margin: 0 30px 0 0;
 }
 
+.editLink {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
 .revision {
   padding: 30px 0 15px 35px;
-  margin-left: 5px;
+  margin-left: 20px;
   border-left: 1px solid var(--border);
+
+  &:hover {
+    .editLink {
+      opacity: 1;
+    }
+  }
 }
 
 .release {
@@ -31,7 +48,7 @@
   margin: -15px 0 0 -60px;
 }
 
-.icon {
+.notMaintainedIcon {
   fill: currentColor;
   width: 24px;
   height: 24px;
@@ -44,6 +61,7 @@
 }
 
 .content {
+  position: relative;
   background: var(--content);
   color: var(--text);
   border-radius: 6px;

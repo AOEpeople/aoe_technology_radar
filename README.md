@@ -59,17 +59,18 @@ The ideal logo is 150px x 60px. For reference have a look at [public/logo.svg](.
 
 Copy the [`config.json`](./data/config.json) next to the `package.json` and adapt it to your needs.
 
-| Attribute | Description                                                                       |
-| --------- | --------------------------------------------------------------------------------- |
-| basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar` |
-| colors    | A map of colors for the radar. Can be any valid CSS color value                   |
-| quadrants | Config of the 4 quadrants of the radar. See config below.                         |
-| rings     | Config of the rings of the radar. See config below.                               |
-| flags     | Config of the flags of the radar. See config below                                |
-| chart     | If you hava a lot of items, you can increase the `size` to scale down the radar   |
-| social    | Social links in the footer. See config below                                      |
-| imprint   | URL to the legal information                                                      |
-| labels    | Configure the labels to change the texts and labels of the radar                  |
+| Attribute | Description                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
+| colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
+| quadrants | Config of the 4 quadrants of the radar. See config below.                                                                      |
+| rings     | Config of the rings of the radar. See config below.                                                                            |
+| flags     | Config of the flags of the radar. See config below                                                                             |
+| chart     | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
+| social    | Social links in the footer. See config below                                                                                   |
+| imprint   | URL to the legal information                                                                                                   |
+| labels    | Configure the labels to change the texts and labels of the radar                                                               |
+| editUrl   | (optional) If set, an edit button will be shown next to the revision.<br/> You can use placeholders for `{id}` and `{release}` |
 
 #### `config.quadrants`
 
