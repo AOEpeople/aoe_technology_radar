@@ -1,9 +1,9 @@
 {
   "name": "aoe_technology_radar",
-  "version": "4.0.0-alpha.5",
+  "version": "4.0.0-alpha.6",
   "private": true,
   "bin": {
-    "techradar": "./bin/techradar.sh"
+    "techradar": "./bin/techradar.js"
   },
   "scripts": {
     "dev": "next dev --turbo",
