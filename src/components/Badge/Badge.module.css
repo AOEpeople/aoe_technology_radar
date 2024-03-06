@@ -44,7 +44,7 @@
 
     &.selected {
       color: var(--background);
-      background: #fff;
+      background: var(--foreground);
     }
   }
 }
