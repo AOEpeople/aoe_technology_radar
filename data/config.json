@@ -1,11 +1,12 @@
 {
   "basePath": "/techradar",
   "colors": {
-    "foreground": "#fff",
-    "background": "#173d7a",
+    "foreground": "#fcf2e6",
+    "background": "#113521",
+    "highlight": "#d4a373",
     "content": "#fff",
     "text": "#575757",
-    "highlight": "#029df7",
+    "link": "#bc6c25",
     "border": "rgba(255, 255, 255, 0.1)",
     "tag": "rgba(255, 255, 255, 0.1)"
   },
@@ -13,26 +14,26 @@
     {
       "id": "languages-and-frameworks",
       "title": "Languages & Frameworks",
-      "description": "We've placed development languages (such as Scala or Golang) here, as well as more low-level development frameworks (such as Play or Symfony), which are useful for implementing custom software of all kinds.",
-      "color": "#84BFA4"
+      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
+      "color": "#a3b18a"
     },
     {
       "id": "methods-and-patterns",
       "title": "Methods & Patterns",
-      "description": "Here we put information on methods and patterns concerning development, continuous x, testing, organization, architecture, etc.",
-      "color": "#248EA6"
+      "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
+      "color": "#588157"
     },
     {
-      "id": "platforms-and-aoe-services",
+      "id": "platforms-and-operations",
       "title": "Platforms & Operations",
-      "description": "This quadrant clusters technologies around the operation of software and infrastructure related platforms, tools and services.",
-      "color": "#F25244"
+      "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
+      "color": "#3f633e"
     },
     {
       "id": "tools",
       "title": "Tools",
-      "description": "Here we put different software tools - from small helpers to bigger software projects.",
-      "color": "#F2A25C"
+      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
+      "color": "#40713f"
     }
   ],
   "rings": [
@@ -40,7 +41,7 @@
       "id": "adopt",
       "title": "Adopt",
       "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful.",
-      "color": "#5cb449",
+      "color": "#588157",
       "radius": 0.5,
       "strokeWidth": 5
     },
@@ -48,7 +49,7 @@
       "id": "trial",
       "title": "Trial",
       "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level.",
-      "color": "#faa03d",
+      "color": "#457b9d",
       "radius": 0.69,
       "strokeWidth": 3
     },
@@ -56,7 +57,7 @@
       "id": "assess",
       "title": "Assess",
       "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project.",
-      "color": "#029df7",
+      "color": "#bc6c25",
       "radius": 0.85,
       "strokeWidth": 2
     },
@@ -64,7 +65,7 @@
       "id": "hold",
       "title": "Hold",
       "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now.",
-      "color": "#688190",
+      "color": "#d62828",
       "radius": 1,
       "strokeWidth": 0.75
     }
@@ -122,7 +123,7 @@
   ],
   "imprint": "https://www.aoe.com/en/imprint.html",
   "labels": {
-    "title": "AOE Technology Radar",
+    "title": "Technology Radar",
     "imprint": "Legal Information",
     "quadrant": "Quadrant",
     "quadrantOverview": "Quadrant Overview",

@@ -52,6 +52,10 @@
 
 .content a {
   color: var(--link);
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 @media (min-width: 768px) {
