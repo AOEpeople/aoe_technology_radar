@@ -53,7 +53,7 @@ Run `npm install` to install the dependencies
 ### Step 2: Change logo and the favicon
 
 Create a folder named `public` and put your `logo.svg` and `favicon.ico` in it.
-For reference have a look at [public/logo.svg](./public/logo.svg).
+The ideal logo is 150px x 60px. For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Step 3: Configure the radar
 
