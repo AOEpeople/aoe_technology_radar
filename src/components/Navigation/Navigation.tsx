@@ -4,8 +4,7 @@ import styles from "./Navigation.module.css";
 
 import IconOverview from "@/components/Icons/Overview";
 import IconQuestion from "@/components/Icons/Question";
-import IconSearch from "@/components/Icons/Search";
-import { getAppName, getLabel } from "@/lib/data";
+import { getLabel } from "@/lib/data";
 
 export function Navigation() {
   return (
@@ -23,12 +22,14 @@ export function Navigation() {
             <span className={styles.label}>{getLabel("pageOverview")}</span>
           </Link>
         </li>
+        {/*
         <li className={styles.item}>
           <Link href="/overview">
             <IconSearch className={styles.icon} />
             <span className={styles.label}>{getLabel("pageSearch")}</span>
           </Link>
         </li>
+        */}
       </ul>
     </nav>
   );
