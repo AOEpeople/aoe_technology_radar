@@ -41,7 +41,7 @@
     {
       "id": "adopt",
       "title": "Adopt",
-      "description": "We can clearly recommend this technology. We have used it for longer period of time in many teams and it has proven to be stable and useful.",
+      "description": "",
       "color": "#588157",
       "radius": 0.5,
       "strokeWidth": 5
@@ -49,7 +49,7 @@
     {
       "id": "trial",
       "title": "Trial",
-      "description": "We have used it with success and recommend to have a closer look at the technology in this ring. The goal of items here is to look at them more closely, with the goal to bring them to the adopt level.",
+      "description": "",
       "color": "#457b9d",
       "radius": 0.69,
       "strokeWidth": 3
@@ -57,7 +57,7 @@
     {
       "id": "assess",
       "title": "Assess",
-      "description": "We have tried it out and we find it promising. We recommend having a look at these items when you face a specific need for the technology in your project.",
+      "description": "",
       "color": "#bc6c25",
       "radius": 0.85,
       "strokeWidth": 2
@@ -65,7 +65,7 @@
     {
       "id": "hold",
       "title": "Hold",
-      "description": "This category is a bit special. Unlike the others, we recommend to stop doing or using something. That does not mean that they are bad and it often might be ok to use them in existing projects. But we move things here if we think we shouldn't do them anymore - because we see better options or alternatives now.",
+      "description": "",
       "color": "#d62828",
       "radius": 1,
       "strokeWidth": 0.75
@@ -94,10 +94,6 @@
   },
   "social": [
     {
-      "href": "https://www.facebook.com/aoepeople",
-      "icon": "facebook"
-    },
-    {
       "href": "https://twitter.com/aoepeople",
       "icon": "x"
     },
@@ -108,14 +104,6 @@
     {
       "href": "https://www.xing.com/company/aoe",
       "icon": "xing"
-    },
-    {
-      "href": "https://www.instagram.com/aoepeople",
-      "icon": "instagram"
-    },
-    {
-      "href": "https://www.youtube.com/user/aoepeople",
-      "icon": "youtube"
     },
     {
       "href": "https://github.com/aoepeople",
@@ -130,7 +118,7 @@
     "quadrantOverview": "Quadrant Overview",
     "zoomIn": "Zoom in",
     "filterByTag": "Filter by Tag",
-    "footer": "AOE is a leading global provider of services for digital transformation and digital business models. AOE relies exclusively on established Enterprise Open Source technologies. This leads to innovative solutions, digital products and portals in agile software projects, and helps build long-lasting, strategic partnerships with our customers.",
+    "footer": "The technology radar is a project by AOE GmbH. Feel free to build your own radar based on the open source project.",
     "notUpdated": "This item was not updated in last three versions of the Radar. Should it have appeared in one of the more recent editions, there is a good chance it remains pertinent. However, if the item dates back further, its relevance may have diminished and our current evaluation could vary. Regrettably, our capacity to consistently revisit items from past Radar editions is limited.",
     "notFound": "404 - Page not found",
     "pageAbout": "How to use AOE Technology Radar?",
