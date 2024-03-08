@@ -44,7 +44,7 @@ if (
 if (RECREATE_DIR) {
   // Remove existing builder dir if it exists
   if (fs.existsSync(BUILDER_DIR)) {
-    fs.rmdirSync(BUILDER_DIR, { recursive: true });
+    fs.rmSync(BUILDER_DIR, { recursive: true });
   }
 
   // Copy source dir to builder dir
@@ -65,7 +65,7 @@ if (RECREATE_DIR) {
 }
 
 if (fs.existsSync(path.join(BUILDER_DIR, "data", "radar"))) {
-  fs.rmdirSync(path.join(BUILDER_DIR, "data", "radar"), { recursive: true });
+  fs.rmSync(path.join(BUILDER_DIR, "data", "radar"), { recursive: true });
 }
 
 try {
@@ -100,7 +100,7 @@ if (PARAMETER === "build") {
   info("Building techradar");
   execSync("npm run build", { stdio: "inherit" });
   if (fs.existsSync(path.join(CWD, "build"))) {
-    fs.rmdirSync(path.join(CWD, "build"), { recursive: true });
+    fs.rmSync(path.join(CWD, "build"), { recursive: true });
   }
   info(`Copying techradar to ${path.join(CWD, "build")}`);
   fs.renameSync(path.join(BUILDER_DIR, "out"), path.join(CWD, "build"));
