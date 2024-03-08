@@ -16,7 +16,10 @@ const {
   chart: { size },
 } = config;
 
+const ringIds = rings.map((r) => r.id);
 const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
+const quadrantIds = quadrants.map((q) => q.id);
+const tags = (config as { tags?: string[] }).tags || [];
 const positioner = new Positioner(size, quadrants, rings);
 
 const marked = new Marked(
@@ -151,11 +154,36 @@ function postProcessItems(items: Item[]): {
   tags: string[];
   items: Item[];
 } {
-  const releases = getUniqueReleases(items);
-  const tags = getUniqueTags(items);
-  const latestRelease = releases[releases.length - 1];
+  const filteredItems = items.filter((item) => {
+    // check if the items' quadrant and ring are valid
+    if (!item.quadrant || !item.ring) {
+      console.warn(`Item ${item.id} has no quadrant or ring`);
+      return false;
+    }
 
-  const processedItems = items.map((item) => ({
+    if (!quadrantIds.includes(item.quadrant)) {
+      console.warn(`Item ${item.id} has invalid quadrant ${item.quadrant}`);
+      return false;
+    }
+
+    if (!ringIds.includes(item.ring)) {
+      console.warn(`Item ${item.id} has invalid ring ${item.ring}`);
+      return false;
+    }
+
+    // check if config has a key `tags` and if it is an array
+    if (Array.isArray(tags) && tags.length) {
+      // if tags are specified, only keep items that have at least one of the tags
+      return item.tags.some((tag) => tags.includes(tag));
+    }
+
+    return true;
+  });
+
+  const releases = getUniqueReleases(filteredItems);
+  const uniqueTags = getUniqueTags(filteredItems);
+  const latestRelease = releases[releases.length - 1];
+  const processedItems = filteredItems.map((item) => ({
     ...item,
     position: positioner.getNextPosition(item.quadrant, item.ring),
     flag: getFlag(item, latestRelease),
@@ -173,7 +201,7 @@ function postProcessItems(items: Item[]): {
       .reverse(),
   }));
 
-  return { releases, tags, items: processedItems };
+  return { releases, tags: uniqueTags, items: processedItems };
 }
 
 // Parse the data and write radar data to JSON file

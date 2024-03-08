@@ -70,6 +70,7 @@ Copy the [`config.json`](./data/config.json) next to the `package.json` and adap
 | social    | Social links in the footer. See config below                                                                                   |
 | imprint   | URL to the legal information                                                                                                   |
 | labels    | Configure the labels to change the texts and labels of the radar                                                               |
+| tags      | (optional) Use to render only items, which contain at least one of the specified tags. e.g `["frontend", "backend"]`           |
 | editUrl   | (optional) If set, an edit button will be shown next to the revision.<br/> You can use placeholders for `{id}` and `{release}` |
 
 #### `config.quadrants`
