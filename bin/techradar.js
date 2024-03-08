@@ -16,9 +16,57 @@ function info(message) {
   console.log(`\x1b[32m${message}\x1b[0m`);
 }
 
+function warn(message) {
+  console.warn(`Warning: ${message}`);
+}
+
 function error(message) {
   console.error(`Error: ${message}`);
   process.exit(1);
+}
+
+function bootstrap() {
+  if (!fs.existsSync(path.join(CWD, "radar"))) {
+    warn(
+      "Could not find radar directory. Created a bootstrap radar directory in your current working directory. Feel free to customize it.",
+    );
+    fs.cpSync(
+      path.join(BUILDER_DIR, "data", "radar"),
+      path.join(CWD, "radar"),
+      {
+        recursive: true,
+      },
+    );
+  }
+
+  if (!fs.existsSync(path.join(CWD, "public"))) {
+    warn(
+      "Could not find public directory. Created a public radar directory in your current working directory.",
+    );
+    fs.cpSync(path.join(BUILDER_DIR, "public"), path.join(CWD, "public"), {
+      recursive: true,
+    });
+  }
+
+  if (!fs.existsSync(path.join(CWD, "config.json"))) {
+    warn(
+      "Could not find a config.json. Created a bootstrap config.json in your current working directory. Customize it to your needs.",
+    );
+    fs.copyFileSync(
+      path.join(BUILDER_DIR, "data", "config.json"),
+      path.join(CWD, "config.json"),
+    );
+  }
+
+  if (!fs.existsSync(path.join(CWD, "about.md"))) {
+    warn(
+      "Could not find a about.md. Created a bootstrap about.md in your current working directory. Customize it to your needs.",
+    );
+    fs.copyFileSync(
+      path.join(BUILDER_DIR, "data", "about.md"),
+      path.join(CWD, "about.md"),
+    );
+  }
 }
 
 // Calculate current hash of package.json
@@ -59,16 +107,16 @@ if (RECREATE_DIR) {
     process.chdir(BUILDER_DIR);
     info("Installing npm packages");
     execSync("npm install", { stdio: "inherit" });
+    bootstrap();
   } catch (e) {
     error("Could not install npm packages");
   }
 }
 
-if (fs.existsSync(path.join(BUILDER_DIR, "data", "radar"))) {
-  fs.rmSync(path.join(BUILDER_DIR, "data", "radar"), { recursive: true });
-}
-
 try {
+  if (fs.existsSync(path.join(BUILDER_DIR, "data", "radar"))) {
+    fs.rmSync(path.join(BUILDER_DIR, "data", "radar"), { recursive: true });
+  }
   fs.cpSync(path.join(CWD, "radar"), path.join(BUILDER_DIR, "data", "radar"), {
     recursive: true,
   });

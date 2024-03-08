@@ -21,6 +21,13 @@ new `config.json` based on the documentation below. You can find a reference imp
 our [repo](https://github.com/AOEpeople/techradar). The old version is still available in the `v3`
 branch.
 
+Version 4.0.0 also removes the .html extension from the URLs. If you want to support the old URLs,
+we recommend to add a redirect rule. For nginx, you can use the following rule:
+
+```nginx
+rewrite ^/techradar/(.+)\.html$ /techradar/$1/ permanent;
+```
+
 ## Create your own radar
 
 The generator is free to use under Open Source License - in fact there are already some other Radars
@@ -47,16 +54,18 @@ file like the following and adapt to your needs:
 }
 ```
 
-Run `npm install` to install the dependencies
+Run `npm install` to install the dependencies and run `npm run build` to create the initial radar.
+This will also create a basic bootstrap of all required files, including the `config.json` and
+the `about.md` if they do not exist yet.
 
 ### Step 2: Change logo and the favicon
 
-Create a folder named `public` and put your `logo.svg` and `favicon.ico` in it.
+Place your `logo.svg` and `favicon.ico` in the `public` folder next to the `package.json`.
 The ideal logo is 150px x 60px. For reference have a look at [public/logo.svg](./public/logo.svg).
 
 ### Step 3: Configure the radar
 
-Copy the [`config.json`](./data/config.json) next to the `package.json` and adapt it to your needs.
+Open the `config.json` file and configure the radar to your needs.
 
 | Attribute | Description                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -110,13 +119,14 @@ Copy the [`config.json`](./data/config.json) next to the `package.json` and adap
 
 ### Step 4: Add a help page with explanations
 
-Create a file `about.md` next to the `package.json` file. This file will be shown on
+Edit the `about.md` file next to the `package.json` file. The contents will be shown on
 the `/help-and-about-tech-radar` page. Optionally you can change the title of the menu by
 setting `labels.pageAbout` in your `config.json`.
 
 ### Step 5: Create the radar items
 
-For a new Technology Radar release, create a folder of the release date (YYYY-MM-DD)
+Remove or edit existing items in the `radar` folder.
+For a new release, create a folder of the release date (YYYY-MM-DD)
 under `./radar`. e.g. `./radar/2024-03-01`.
 
 The items are written in Markdown format (.md)
@@ -178,12 +188,10 @@ Your final file and folder structure should look like this:
     └── demo-item-3.md
 ```
 
-Run `npm run build` to build the radar and
-upload the files of the `./build` folder to your server.
+Run `npm run build` to build the radar and upload the files of the `./build` folder to your server.
 
 You can view a development version of the radar by running `npm run serve` and open the radar in
-your
-browser at `http://localhost:3000`.
+your browser at `http://localhost:3000`.
 
 ## Development
 
