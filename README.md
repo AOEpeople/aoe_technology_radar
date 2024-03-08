@@ -29,9 +29,8 @@ mention in radar that the generator is based on this repository.
 
 ### Step 1: Create a new project
 
-Create a new npm project by creating a new folder with a `package.json` file like the following and
-adapt to your
-needs:
+Ensure node.js ist installed and create a new project by creating a new folder with a `package.json`
+file like the following and adapt to your needs:
 
 ```json
 {
@@ -185,3 +184,9 @@ upload the files of the `./build` folder to your server.
 You can view a development version of the radar by running `npm run serve` and open the radar in
 your
 browser at `http://localhost:3000`.
+
+## Development
+
+If you want to change core functionality of the radar, you can clone this repository and put your
+radar's markdown-files, config.json and about.md in the `data` folder. Running `npm run dev` will
+start the development server with your and will be available at `http://localhost:3000`.
