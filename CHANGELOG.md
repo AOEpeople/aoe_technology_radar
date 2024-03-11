@@ -1,5 +1,99 @@
 # Changelog
 
+## Version v3.7.0 (2024-03-11)
+
+### Features
+
+- prepare release of v4.0.0 (e1a24ad1)
+- rewrite deprecated internal links with .html extension (3f79b626)
+- bootstrap radar and config files if they are not present (6dbcd45a)
+- remove items with invalid quadrant or ring and optionally filter by tags (cfaa40a2)
+- migrate Bash builder script to node.js for enhanced cross-platform compatibility (7ed4ca9e)
+- add configurable edit link next to revision (b7efe806)
+- set basePath via config (a9561a55)
+- add imprint to footer (6dd5d5c0)
+- make colors configurable (e1386c03)
+- replace static labels with configurable values (f7e36ddc)
+- add social links in footer (5ef0f078)
+- add basic 404 error page (0eb6997e)
+- add basic script to build techradar (2682ea4e)
+- prevent overlapping of blips (535c9e8a)
+- add tag filter on homepage (13591b96)
+- add radar legend (0d62c0d7)
+- add commitlint (9025da3a)
+- add QuadrantLink (0c38e49b)
+- add hint if item was not updated within the last 3 releases (7d840993)
+- extract svg creation in chart component and add tooltip (50242e8d)
+- add revisions to detail page (d5cb8410)
+- add radar labels (36c2c844)
+- add radar labels (dd4e5d1d)
+- render blips on radar (16f29cd4)
+- [WIP] add radar component (1b7634a2)
+- add contents of about page (563d8deb)
+- add fuse.js to overview page (c29e518f)
+- add size large to ItemList (5f0c2500)
+- add basic overview page (1f3e1045)
+- add dialog (38a59b02)
+- add QuadrantList and RingList to render items on homepage and quadrant page (86c1d909)
+- add ItemList (56033846)
+- add badges (f910c9e1)
+- add script to build JSON from markdown files (29afa825)
+- add seo title and favicon respecting basePath (554607a5)
+- add config, types and add basic quadrant page (57d7e853)
+- cleanup (ab005e03)
+
+### Fixes
+
+- replace deprecated `rmdirSync` with `rmSync` (d5668e1d)
+- badge's background color (2cb531b6)
+- run `npm run build:data` in testjob (adcade98)
+- add local state to query filter input (452def13)
+- use actual blip width to position tooltip (8fe400f7)
+- add white-space: pre-wrap to wrap long code blocks (7915aba2)
+
+### Ops and CI/CD
+
+- add caching of npm modules (e9143da5)
+
+### Documentation
+
+- add development hint (9e0d0cc9)
+- update screenshot with preconfigured theme (6846ecd7)
+- add demo items for development (396ea4bf)
+- update readme (e4c52c80)
+
+### Chores and tidying
+
+- cleanup after rebase (9a6399c0)
+- update dependencies (9d18d97a)
+- hide search from navigation (b1c4887b)
+- create new configuration to differentiate from AOE ci (25a714e9)
+- remove position from quadrant config (dc629d83)
+- update next and eslint-config-next (8a982b99)
+- remove superfluous `npm run lint` (14e663c2)
+- remove console.log (e42b175a)
+- add renovate.json (a07dd91c)
+- improve search (4c0bfa1a)
+- use border-color in footer (15664d2d)
+- update dependencies (608b23a8)
+- link search to overview page (37d9fd61)
+- hide filter in navigation (baf5514f)
+- add latest release date to items (0aa51f2d)
+- Prevent word break title (42943a93)
+- Refactor icons and set fill via CSS (97898b02)
+- remove next and vercel logo (2e0f3204)
+- add icon components via svgr/cli (8b44da35)
+- add footer (40549cdb)
+- add basic layout (57cdb91e)
+- use turbopack (f3979f2a)
+- add .prettierrc and commit fixed files (4b5a7abb)
+- add husky and commit-hook to use prettier (f15164c5)
+- add prettier (064918ff)
+
+### Other
+
+- Initial commit from Create Next App (81a15c9c)
+
 ## Version v3.6.0 (2023-06-29)
 
 ### Features
