@@ -1,5 +1,24 @@
 # Changelog
 
+## Version v4.0.0 (2024-03-11)
+
+Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
+on [Next.js](https://nextjs.org/) to provide enhanced static site generation. The visualization has
+been rewritten without the need for the D3 dependency. New features include a fuzzy search based on
+Fuse.js, non-overlapping blips on the radar, and a reworked tag filter on the homepage.
+
+To migrate from the old version please migrate your `package.json`'s scripts and create a
+new `config.json` based on the documentation below. You can find a reference implementation in
+our [repo](https://github.com/AOEpeople/techradar). The old version is still available in the `v3`
+branch.
+
+Version 4.0.0 also removes the .html extension from the URLs. If you want to support the old URLs,
+we recommend to add a redirect rule. For nginx, you can use the following rule:
+
+```nginx
+rewrite ^/techradar/(.+)\.html$ /techradar/$1/ permanent;
+```
+
 ## Version v3.6.0 (2023-06-29)
 
 ### Features
