@@ -37,6 +37,9 @@ function dataPath(...paths: string[]): string {
 }
 
 function convertToHtml(markdown: string): string {
+  // replace deprecated internal links with .html extension
+  markdown = markdown.replace(/(]\(\/[^)]+)\.html/g, "$1/");
+
   if (nextConfig.basePath) {
     markdown = markdown.replace(/]\(\//g, `](${nextConfig.basePath}/`);
   }
