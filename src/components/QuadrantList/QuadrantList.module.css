@@ -31,8 +31,8 @@
 .link {
 }
 
-@media (min-width: 1024px) {
-  .quadrant {
+@media (min-width: 1220px) {
+  .quadrants {
     --cols: 2;
   }
 }

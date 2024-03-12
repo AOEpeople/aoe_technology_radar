@@ -11,6 +11,7 @@
 }
 
 .flag {
+  display: inline;
   flex: 0 0 auto;
   align-self: baseline;
   margin-left: 8px;

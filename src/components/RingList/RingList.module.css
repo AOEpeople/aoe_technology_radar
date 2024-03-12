@@ -19,23 +19,20 @@
   margin-bottom: 20px;
 }
 
-.list {
-}
-
 @media (min-width: 480px) {
-  .ring {
+  .rings {
     --cols: 2;
   }
 }
 
 @media (min-width: 768px) {
-  .isSmall .ring {
+  .rings.isSmall {
     --cols: 4;
   }
 }
 
 @media (min-width: 1024px) {
-  .ring {
+  .rings {
     --cols: 4;
   }
 }

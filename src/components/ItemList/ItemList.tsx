@@ -38,7 +38,7 @@ export function ItemList({
             })}
             href={`/${item.quadrant}/${item.id}`}
           >
-            {item.title}
+            <span className={styles.title}>{item.title}</span>
             <FlagBadge
               className={styles.flag}
               flag={item.flag}
