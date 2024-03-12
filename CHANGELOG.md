@@ -1,5 +1,16 @@
 # Changelog
 
+## Version v4.0.1 (2024-03-12)
+
+### Fixes
+
+- unignore data files to include them in npm package (0eda733b)
+- remove `private`-flag from package.json (eb440902)
+
+### Chores and tidying
+
+- update commitlint dependencies (60b0c0e1)
+
 ## Version v4.0.0 (2024-03-11)
 
 Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
