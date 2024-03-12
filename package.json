@@ -16,8 +16,8 @@
     "postinstall": "npm run build:icons"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.0.3",
-    "@commitlint/config-conventional": "^19.0.3",
+    "@commitlint/cli": "^19.1.0",
+    "@commitlint/config-conventional": "^19.1.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20",
