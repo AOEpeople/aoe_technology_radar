@@ -55,10 +55,15 @@ function convertToHtml(markdown: string): string {
 function readMarkdownFile(filePath: string) {
   const id = path.basename(filePath, ".md");
   const fileContent = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(fileContent);
-  const body = convertToHtml(content);
 
-  return { id, data, body };
+  try {
+    const { data, content } = matter(fileContent);
+    const body = convertToHtml(content);
+    return { id, data, body };
+  } catch (error) {
+    console.error(`Failed parsing ${filePath}: ${error}`);
+    process.exit(1);
+  }
 }
 
 // Function to recursively read Markdown files and parse them
