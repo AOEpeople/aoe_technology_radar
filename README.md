@@ -70,6 +70,7 @@ Open the `config.json` file and configure the radar to your needs.
 | Attribute | Description                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
+| toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
 | colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
 | quadrants | Config of the 4 quadrants of the radar. See config below.                                                                      |
 | rings     | Config of the rings of the radar. See config below.                                                                            |
@@ -80,6 +81,15 @@ Open the `config.json` file and configure the radar to your needs.
 | labels    | Configure the labels to change the texts and labels of the radar                                                               |
 | tags      | (optional) Use to render only items, which contain at least one of the specified tags. e.g `["frontend", "backend"]`           |
 | editUrl   | (optional) If set, an edit button will be shown next to the revision.<br/> You can use placeholders for `{id}` and `{release}` |
+
+#### `config.toggles`
+
+| Attribute        | Description                                             |
+| ---------------- | ------------------------------------------------------- |
+| showChart        | Render the radar visualization on the homepage?         |
+| showTagFilter    | Render the tag filter below the radar?                  |
+| showQuadrantList | Render the items below the radar?                       |
+| showEmptyRings   | If set to `true` it will render empty rings in the list |
 
 #### `config.quadrants`
 

@@ -8,6 +8,10 @@ export function getLabel(key: keyof typeof config.labels) {
   return config.labels[key] || "";
 }
 
+export function getToggle(key: keyof typeof config.toggles) {
+  return config.toggles[key] || false;
+}
+
 export function getAppName() {
   return getLabel("title");
 }
@@ -80,10 +84,11 @@ export const sortByFeaturedAndTitle = (a: Item, b: Item) =>
   Number(b.featured) - Number(a.featured) || a.title.localeCompare(b.title);
 
 export const groupItemsByRing = (items: Item[]) => {
+  const showEmptyRings = getToggle("showEmptyRings");
   return getRings().reduce(
     (acc, ring) => {
       const ringItems = items.filter((item) => item.ring === ring.id);
-      if (ringItems.length) acc[ring.id] = ringItems;
+      if (ringItems.length || showEmptyRings) acc[ring.id] = ringItems;
       return acc;
     },
     {} as { [ringId: string]: Item[] },

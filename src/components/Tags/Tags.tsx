@@ -35,9 +35,10 @@ interface TagsProps {
 }
 
 export function Tags({ tags, activeTag, className }: TagsProps) {
+  const label = getLabel("filterByTag");
   return (
     <div className={cn(styles.tags, className)}>
-      <h3>{getLabel("filterByTag")}</h3>
+      {!!label && <h3>{label}</h3>}
       {tags.map((tag) => (
         <Tag key={tag} tag={tag} isActive={activeTag == tag} scroll={false} />
       ))}

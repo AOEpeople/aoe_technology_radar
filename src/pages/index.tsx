@@ -11,6 +11,7 @@ import {
   getReleases,
   getRings,
   getTags,
+  getToggle,
 } from "@/lib/data";
 import { CustomPage } from "@/pages/_app";
 
@@ -35,14 +36,18 @@ const Home: CustomPage = () => {
           Version #{version}
         </span>
       </h1>
-      <Radar
-        size={chartConfig.size}
-        quadrants={quadrants}
-        rings={rings}
-        items={items}
-      />
-      {tags.length > 0 && <Tags tags={tags} activeTag={tag} />}
-      <QuadrantList items={items} />
+      {getToggle("showChart") && (
+        <Radar
+          size={chartConfig.size}
+          quadrants={quadrants}
+          rings={rings}
+          items={items}
+        />
+      )}
+      {getToggle("showTagFilter") && tags.length > 0 && (
+        <Tags tags={tags} activeTag={tag} />
+      )}
+      {getToggle("showQuadrantList") && <QuadrantList items={items} />}
     </>
   );
 };

@@ -9,4 +9,8 @@ if (userConfig.colors)
 
 if (userConfig.labels)
   config.labels = { ...defaultConfig.labels, ...userConfig.labels };
+
+if (userConfig.toggles)
+  config.toggles = { ...defaultConfig.toggles, ...userConfig.toggles };
+
 export default config;
