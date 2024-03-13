@@ -1,5 +1,16 @@
 # Changelog
 
+## Version v4.0.2 (2024-03-13)
+
+### Fixes
+
+- remove empty revisions to fix typescript error and use default flag for first release (9381aa9d)
+- avoid line-breaks before flag and improve responsive lists (b6b4709e)
+
+### Chores and tidying
+
+- improve output on markdown parsing errors (858e10b7)
+
 ## Version v4.0.1 (2024-03-12)
 
 ### Fixes
