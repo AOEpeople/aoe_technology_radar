@@ -24,7 +24,7 @@ const Home: CustomPage = () => {
   const quadrants = getQuadrants();
   const tags = getTags();
   const items = getItems(undefined, true).filter(
-    (item) => !tag || item.tags.includes(tag),
+    (item) => !tag || item.tags?.includes(tag),
   );
 
   return (
@@ -41,7 +41,7 @@ const Home: CustomPage = () => {
         rings={rings}
         items={items}
       />
-      <Tags tags={tags} activeTag={tag} />
+      {tags.length > 0 && <Tags tags={tags} activeTag={tag} />}
       <QuadrantList items={items} />
     </>
   );

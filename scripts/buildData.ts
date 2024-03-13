@@ -134,7 +134,7 @@ function getUniqueReleases(items: Item[]): string[] {
 function getUniqueTags(items: Item[]): string[] {
   const tags = new Set<string>();
   for (const item of items) {
-    for (const tag of item.tags) {
+    for (const tag of item.tags || []) {
       tags.add(tag);
     }
   }
@@ -187,7 +187,7 @@ function postProcessItems(items: Item[]): {
     // check if config has a key `tags` and if it is an array
     if (Array.isArray(tags) && tags.length) {
       // if tags are specified, only keep items that have at least one of the tags
-      return item.tags.some((tag) => tags.includes(tag));
+      return item.tags?.some((tag) => tags.includes(tag));
     }
 
     return true;
@@ -217,6 +217,11 @@ function postProcessItems(items: Item[]): {
     // unset revisions if there are none
     if (!processedItem.revisions?.length) {
       delete processedItem.revisions;
+    }
+
+    // unset tags if there are none
+    if (!processedItem.tags?.length) {
+      delete processedItem.tags;
     }
 
     return processedItem;
