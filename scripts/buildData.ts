@@ -141,12 +141,17 @@ function getUniqueTags(items: Item[]): string[] {
   return Array.from(tags).sort();
 }
 
-function getFlag(item: Item, latestRelease: string): Flag {
+function getFlag(item: Item, allReleases: string[]): Flag {
+  // return default flag if this is the first edition of the radar
+  if (allReleases.length === 1) {
+    return Flag.Default;
+  }
+
+  const latestRelease = allReleases[allReleases.length - 1];
   const revisions = item.revisions || [];
-  const isInLatestRelease = !!(
-    revisions.length &&
-    revisions[revisions.length - 1].release === latestRelease
-  );
+  const isInLatestRelease =
+    revisions.length > 0 &&
+    revisions[revisions.length - 1].release === latestRelease;
 
   if (revisions.length == 1 && isInLatestRelease) {
     return Flag.New;
@@ -190,24 +195,32 @@ function postProcessItems(items: Item[]): {
 
   const releases = getUniqueReleases(filteredItems);
   const uniqueTags = getUniqueTags(filteredItems);
-  const latestRelease = releases[releases.length - 1];
-  const processedItems = filteredItems.map((item) => ({
-    ...item,
-    position: positioner.getNextPosition(item.quadrant, item.ring),
-    flag: getFlag(item, latestRelease),
-    // only keep revision which ring or body is different
-    revisions: item.revisions
-      ?.filter((revision, index, revisions) => {
-        const { ring, body } = revision;
-        return (
-          ring !== item.ring ||
-          (body != "" &&
-            body != item.body &&
-            body !== revisions[index - 1]?.body)
-        );
-      })
-      .reverse(),
-  }));
+  const processedItems = filteredItems.map((item) => {
+    const processedItem = {
+      ...item,
+      position: positioner.getNextPosition(item.quadrant, item.ring),
+      flag: getFlag(item, releases),
+      // only keep revision which ring or body is different
+      revisions: item.revisions
+        ?.filter((revision, index, revisions) => {
+          const { ring, body } = revision;
+          return (
+            ring !== item.ring ||
+            (body != "" &&
+              body != item.body &&
+              body !== revisions[index - 1]?.body)
+          );
+        })
+        .reverse(),
+    };
+
+    // unset revisions if there are none
+    if (!processedItem.revisions?.length) {
+      delete processedItem.revisions;
+    }
+
+    return processedItem;
+  });
 
   return { releases, tags: uniqueTags, items: processedItems };
 }
