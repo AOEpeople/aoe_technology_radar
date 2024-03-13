@@ -5,8 +5,8 @@ import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
 import path from "path";
 
-import config from "../data/config.json";
 import nextConfig from "../next.config.js";
+import config from "../src/lib/config";
 import Positioner from "./positioner";
 
 import { Flag, Item } from "@/lib/types";

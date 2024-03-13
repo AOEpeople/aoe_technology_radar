@@ -53,7 +53,7 @@ function bootstrap() {
       "Could not find a config.json. Created a bootstrap config.json in your current working directory. Customize it to your needs.",
     );
     fs.copyFileSync(
-      path.join(BUILDER_DIR, "data", "config.json"),
+      path.join(BUILDER_DIR, "data", "config.default.json"),
       path.join(CWD, "config.json"),
     );
   }
@@ -77,7 +77,7 @@ function calculateHash(file) {
   return hashSum.digest("hex");
 }
 
-const CURRENT_HASH = calculateHash(path.join(CWD, "package.json"));
+const CURRENT_HASH = calculateHash(path.join(CWD, "package-lock.json"));
 
 // Check if builder dir needs to be recreated
 let RECREATE_DIR = false;

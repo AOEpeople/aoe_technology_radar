@@ -1,5 +1,5 @@
-import config from "../../data/config.json";
 import data from "../../data/data.json";
+import config from "./config";
 
 import { format } from "@/lib/format";
 import { Flag, Item, Quadrant, Ring } from "@/lib/types";

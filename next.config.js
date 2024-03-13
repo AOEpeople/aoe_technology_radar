@@ -1,5 +1,3 @@
-// @ts-check
-
 const config = require("./data/config.json");
 const basePath =
   config.basePath && config.basePath !== "/" ? config.basePath : "";
