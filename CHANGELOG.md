@@ -1,5 +1,25 @@
 # Changelog
 
+## Version v4.1.0 (2024-03-14)
+
+### Features
+
+- throw error if no single radar item was found (c267082c)
+- add custom.css support (1a7ea352)
+- add social icon GitLab (76b5c38e)
+- reintroduce `config.toggles` to hide parts of the radar and change behaviour (92b7c282)
+- improve config values by extending default config (04053c67)
+
+### Fixes
+
+- allow tags to be optional in items (5750723c)
+
+### Chores and tidying
+
+- update dependencies (f94c94ff)
+- update dependencies (3c982420)
+- commit updated package-lock.json (c5186353)
+
 ## Version v4.0.2 (2024-03-13)
 
 ### Fixes
