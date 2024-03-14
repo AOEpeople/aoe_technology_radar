@@ -233,6 +233,13 @@ function postProcessItems(items: Item[]): {
 // Parse the data and write radar data to JSON file
 parseDirectory(dataPath("radar")).then((items) => {
   const data = postProcessItems(items);
+
+  if (data.items.length === 0) {
+    console.error("No valid radar items found.");
+    console.log("Please check the markdown files in the `radar` directory.");
+    process.exit(1);
+  }
+
   const json = JSON.stringify(data, null, 2);
   fs.writeFileSync(dataPath("data.json"), json);
 });
