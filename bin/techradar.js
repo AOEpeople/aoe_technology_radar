@@ -17,7 +17,7 @@ function info(message) {
 }
 
 function warn(message) {
-  console.warn(`Warning: ${message}`);
+  console.log(`\x1b[33mWarning: ${message}\x1b[0m`);
 }
 
 function error(message) {
@@ -30,20 +30,16 @@ function bootstrap() {
     warn(
       "Could not find radar directory. Created a bootstrap radar directory in your current working directory. Feel free to customize it.",
     );
-    fs.cpSync(
-      path.join(BUILDER_DIR, "data", "radar"),
-      path.join(CWD, "radar"),
-      {
-        recursive: true,
-      },
-    );
+    fs.cpSync(path.join(SOURCE_DIR, "data", "radar"), path.join(CWD, "radar"), {
+      recursive: true,
+    });
   }
 
   if (!fs.existsSync(path.join(CWD, "public"))) {
     warn(
       "Could not find public directory. Created a public radar directory in your current working directory.",
     );
-    fs.cpSync(path.join(BUILDER_DIR, "public"), path.join(CWD, "public"), {
+    fs.cpSync(path.join(SOURCE_DIR, "public"), path.join(CWD, "public"), {
       recursive: true,
     });
   }
@@ -53,7 +49,7 @@ function bootstrap() {
       "Could not find a config.json. Created a bootstrap config.json in your current working directory. Customize it to your needs.",
     );
     fs.copyFileSync(
-      path.join(BUILDER_DIR, "data", "config.default.json"),
+      path.join(SOURCE_DIR, "data", "config.default.json"),
       path.join(CWD, "config.json"),
     );
   }
@@ -63,8 +59,16 @@ function bootstrap() {
       "Could not find a about.md. Created a bootstrap about.md in your current working directory. Customize it to your needs.",
     );
     fs.copyFileSync(
-      path.join(BUILDER_DIR, "data", "about.md"),
+      path.join(SOURCE_DIR, "data", "about.md"),
       path.join(CWD, "about.md"),
+    );
+  }
+
+  if (!fs.existsSync(path.join(CWD, "custom.css"))) {
+    warn("Created a bootstrap custom.css in your current working directory.");
+    fs.copyFileSync(
+      path.join(SOURCE_DIR, "src", "styles", "custom.css"),
+      path.join(CWD, "custom.css"),
     );
   }
 }
@@ -77,7 +81,7 @@ function calculateHash(file) {
   return hashSum.digest("hex");
 }
 
-const CURRENT_HASH = calculateHash(path.join(CWD, "package-lock.json"));
+const CURRENT_HASH = calculateHash(path.join(CWD, "package.json"));
 
 // Check if builder dir needs to be recreated
 let RECREATE_DIR = false;
@@ -107,11 +111,12 @@ if (RECREATE_DIR) {
     process.chdir(BUILDER_DIR);
     info("Installing npm packages");
     execSync("npm install", { stdio: "inherit" });
-    bootstrap();
   } catch (e) {
     error("Could not install npm packages");
   }
 }
+
+bootstrap();
 
 try {
   if (fs.existsSync(path.join(BUILDER_DIR, "data", "radar"))) {
@@ -126,6 +131,10 @@ try {
   fs.copyFileSync(
     path.join(CWD, "about.md"),
     path.join(BUILDER_DIR, "data", "about.md"),
+  );
+  fs.copyFileSync(
+    path.join(CWD, "custom.css"),
+    path.join(BUILDER_DIR, "src", "styles", "custom.css"),
   );
   fs.copyFileSync(
     path.join(CWD, "config.json"),

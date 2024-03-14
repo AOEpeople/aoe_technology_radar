@@ -203,8 +203,50 @@ Run `npm run build` to build the radar and upload the files of the `./build` fol
 You can view a development version of the radar by running `npm run serve` and open the radar in
 your browser at `http://localhost:3000`.
 
+## Advanced styling with `custom.css`
+
+If you need to customize the radar's styles, you can add custom CSS rules to the `custom.css` file.
+
+Be aware that this might break with future versions of the radar as we use css-modules in the
+components which generates dynamic, hashed class names and the layout structure might change.
+
+Therefore, it's advised the `[attribute^=value]` selector that matches elements whose attribute
+value begins
+with a specified value. As an example, if you want to always show the subline in the header use
+the following rule:
+
+```css
+[class^="subline__Logo"] {
+  display: block;
+  opacity: 1;
+}
+```
+
+If you want to include assets like images or fonts, use `../../public/` as the base path.
+Adding a background image to the page could be archived like this:
+
+```css
+body {
+  background: url("../../public/background.png");
+}
+```
+
+Changing the font-family of the headlines:
+
+```css
+h1,
+h2,
+h3 {
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+```
+
+Changes to the css file will not be reflected in the development server. You need to
+run `npm run serve` or `npm run build` to see the changes.
+
 ## Development
 
 If you want to change core functionality of the radar, you can clone this repository and put your
-radar's markdown-files, config.json and about.md in the `data` folder. Running `npm run dev` will
-start the development server with your and will be available at `http://localhost:3000`.
+radar's markdown-files, config.json and about.md in the `data` folder. Run `npm run build:data` to
+parse the markdown files and create a `data.json` and then run `npm run dev` to start the
+development server, which will be available at `http://localhost:3000`.

@@ -5,8 +5,9 @@ import Head from "next/head";
 import { Layout, type LayoutClass } from "@/components/Layout/Layout";
 import { formatTitle } from "@/lib/format";
 import { assetUrl } from "@/lib/utils";
-import "@/styles/globals.css";
-import "@/styles/hljs.css";
+import "@/styles/_globals.css";
+import "@/styles/_hljs.css";
+import "@/styles/custom.css";
 
 export type CustomPage<P = {}, IP = P> = NextPage<P, IP> & {
   layoutClass?: LayoutClass;
