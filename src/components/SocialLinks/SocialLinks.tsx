@@ -3,6 +3,7 @@ import styles from "./SocialLinks.module.css";
 import {
   SocialFacebook,
   SocialGithub,
+  SocialGitlab,
   SocialInstagram,
   SocialLinkedin,
   SocialX,
@@ -22,6 +23,8 @@ function getIcon(name: string) {
       return SocialFacebook;
     case "github":
       return SocialGithub;
+    case "gitlab":
+      return SocialGitlab;
     case "instagram":
       return SocialInstagram;
     case "linkedin":
@@ -45,9 +48,14 @@ export function SocialLinks({ className }: SocialLinksProps) {
         const Icon = getIcon(link.icon);
         return (
           Icon && (
-            <li key={i} className={styles.link}>
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                {Icon && <Icon className={styles.icon} />}
+            <li key={i}>
+              <a
+                href={link.href}
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className={styles.icon} />
               </a>
             </li>
           )

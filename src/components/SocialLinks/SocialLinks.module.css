@@ -14,6 +14,7 @@
 }
 
 .link {
+  display: block;
   border: 1px solid var(--border);
   background: var(--foreground);
   padding: 6px;

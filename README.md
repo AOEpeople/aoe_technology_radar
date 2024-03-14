@@ -122,10 +122,10 @@ Open the `config.json` file and configure the radar to your needs.
 
 #### `config.social.[]`
 
-| Attribute | Description                                                                  |
-| --------- | ---------------------------------------------------------------------------- |
-| href      | URL to the website                                                           |
-| icon      | One of `facebook`, `github`, `instagram`, `linkedin`, `x`, `xing`, `youtube` |
+| Attribute | Description                                                                            |
+| --------- | -------------------------------------------------------------------------------------- |
+| href      | URL to the website                                                                     |
+| icon      | One of `facebook`, `github`, `gitlab`, `instagram`, `linkedin`, `x`, `xing`, `youtube` |
 
 ### Step 4: Add a help page with explanations
 
