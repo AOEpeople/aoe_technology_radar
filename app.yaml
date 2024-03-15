@@ -1,0 +1,10 @@
+runtime: python310
+
+handlers:
+  - url: /
+    static_files: out/index.html
+    upload: out/index.html
+
+  - url: /techradar/(.*)
+    static_files: out/\1
+    upload: out/(.*)
