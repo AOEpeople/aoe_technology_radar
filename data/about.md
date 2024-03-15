@@ -2,10 +2,9 @@
 
 ### Introduction
 
-Edit this file to your needs to provide an introduction to the technology radar. Explain the purpose
-of the radar and how it is created. This is a good place to explain the quadrants and rings, too.
+We make use of a Technology Radar to visualise our current tech strategy. This radar shows which technologies we are using actively, which ones we are assessing, etc…
+The concept of the Technology radar is popularised by [Thoughtworks](https://www.thoughtworks.com/radar/byor).
 
-### Contributing to the AOE Technology Radar
+### How do we maintain it?
 
-Contributions and source code of the AOE Tech Radar are on
-GitHub: [AOE Tech Radar on GitHub](https://github.com/AOEpeople/aoe_technology_radar)
+The technology radar is maintained by everyone in the Software & IT architecture team. It is open for contribution for everyone in BioLizard and depends on their active participation to share lessons learned, pitfalls, and contribute to good practices on using the technologies.

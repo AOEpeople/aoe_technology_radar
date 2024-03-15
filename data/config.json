@@ -1,10 +1,10 @@
 {
-  "basePath": "/techradar",
-  "editUrl": "https://github.dev/AOEpeople/techradar/blob/main/radar/{release}/{id}.md",
+  "basePath": "",
+  "editUrl": "https://github.dev/lizard-bio/biolizard-tech-radar/blob/main/radar/{release}/{id}.md",
   "colors": {
-    "foreground": "#fcf2e6",
-    "background": "#113521",
-    "highlight": "#d4a373",
+    "foreground": "#dfe4e4",
+    "background": "#08a18b",
+    "highlight": "#ffdc80",
     "content": "#fff",
     "text": "#575757",
     "link": "#bc6c25",
@@ -13,28 +13,28 @@
   },
   "quadrants": [
     {
-      "id": "languages-and-frameworks",
+      "id": "Languages and Frameworks",
       "title": "Languages & Frameworks",
       "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
-      "color": "#a3b18a"
+      "color": "#006455"
     },
     {
-      "id": "methods-and-patterns",
+      "id": "Techniques",
       "title": "Methods & Patterns",
       "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
-      "color": "#588157"
+      "color": "#017665"
     },
     {
-      "id": "platforms-and-operations",
-      "title": "Platforms & Operations",
+      "id": "Platforms",
+      "title": "Platforms",
       "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
-      "color": "#3f633e"
+      "color": "#017665"
     },
     {
-      "id": "tools",
+      "id": "Tools",
       "title": "Tools",
       "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
-      "color": "#40713f"
+      "color": "#006455"
     }
   ],
   "rings": [
@@ -94,34 +94,30 @@
   },
   "social": [
     {
-      "href": "https://twitter.com/aoepeople",
+      "href": "https://twitter.com/BioLizard_nv",
       "icon": "x"
     },
     {
-      "href": "https://www.linkedin.com/company/aoe",
+      "href": "https://www.linkedin.com/company/biolizard",
       "icon": "linkedIn"
     },
     {
-      "href": "https://www.xing.com/company/aoe",
-      "icon": "xing"
-    },
-    {
-      "href": "https://github.com/aoepeople",
+      "href": "https://github.com/lizard-bio",
       "icon": "github"
     }
   ],
-  "imprint": "https://www.aoe.com/en/imprint.html",
+  "imprint": "https://lizard.bio",
   "labels": {
     "title": "Technology Radar",
-    "imprint": "Legal Information",
+    "imprint": "BioLizard website",
     "quadrant": "Quadrant",
     "quadrantOverview": "Quadrant Overview",
     "zoomIn": "Zoom in",
     "filterByTag": "Filter by Tag",
-    "footer": "The technology radar is a project by AOE GmbH. Feel free to build your own radar based on the open source project.",
+    "footer": "The technology radar is inspired by an open source project from AOE GmbH.",
     "notUpdated": "This item was not updated in last three versions of the Radar. Should it have appeared in one of the more recent editions, there is a good chance it remains pertinent. However, if the item dates back further, its relevance may have diminished and our current evaluation could vary. Regrettably, our capacity to consistently revisit items from past Radar editions is limited.",
     "notFound": "404 - Page not found",
-    "pageAbout": "How to use AOE Technology Radar?",
+    "pageAbout": "How to use the BioLizard Technology Radar?",
     "pageOverview": "Technologies Overview",
     "pageSearch": "Search",
     "searchPlaceholder": "What are you looking for?"
