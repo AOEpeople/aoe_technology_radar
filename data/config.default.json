@@ -1,5 +1,6 @@
 {
   "basePath": "/techradar",
+  "baseUrl": "",
   "editUrl": "https://github.dev/AOEpeople/techradar/blob/main/radar/{release}/{id}.md",
   "toggles": {
     "showChart": true,

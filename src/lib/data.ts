@@ -80,6 +80,10 @@ export function getImprintUrl() {
   return config.imprint;
 }
 
+export function getAbsoluteUrl(path: string = "/") {
+  return `${config.baseUrl}${path}`;
+}
+
 export function getItem(id: string): Item | undefined {
   return data.items.find((item) => item.id === id) as Item;
 }
