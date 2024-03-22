@@ -71,6 +71,7 @@ Open the `config.json` file and configure the radar to your needs.
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
 | toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
+| sections  | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
 | colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
 | quadrants | Config of the 4 quadrants of the radar. See config below.                                                                      |
 | rings     | Config of the rings of the radar. See config below.                                                                            |
@@ -90,6 +91,10 @@ Open the `config.json` file and configure the radar to your needs.
 | showTagFilter    | Render the tag filter below the radar?                  |
 | showQuadrantList | Render the items below the radar?                       |
 | showEmptyRings   | If set to `true` it will render empty rings in the list |
+
+#### `config.sections`
+
+An array with of `radar`, `tags`, `list` in order you want them to appear on the page.
 
 #### `config.quadrants`
 

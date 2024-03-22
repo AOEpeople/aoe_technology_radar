@@ -10,6 +10,7 @@ import {
   getQuadrants,
   getReleases,
   getRings,
+  getSections,
   getTags,
   getToggle,
 } from "@/lib/data";
@@ -20,6 +21,7 @@ const Home: CustomPage = () => {
   const tag = router.query.tag as string | undefined;
   const appName = getAppName();
   const chartConfig = getChartConfig();
+  const sections = getSections();
   const version = getReleases().length;
   const rings = getRings();
   const quadrants = getQuadrants();
@@ -36,18 +38,32 @@ const Home: CustomPage = () => {
           Version #{version}
         </span>
       </h1>
-      {getToggle("showChart") && (
-        <Radar
-          size={chartConfig.size}
-          quadrants={quadrants}
-          rings={rings}
-          items={items}
-        />
-      )}
-      {getToggle("showTagFilter") && tags.length > 0 && (
-        <Tags tags={tags} activeTag={tag} />
-      )}
-      {getToggle("showQuadrantList") && <QuadrantList items={items} />}
+      {sections.map((section) => {
+        switch (section) {
+          case "radar":
+            return (
+              getToggle("showChart") && (
+                <Radar
+                  size={chartConfig.size}
+                  quadrants={quadrants}
+                  rings={rings}
+                  items={items}
+                />
+              )
+            );
+          case "tags":
+            return (
+              getToggle("showTagFilter") &&
+              tags.length > 0 && <Tags tags={tags} activeTag={tag} />
+            );
+          case "list":
+            return (
+              getToggle("showQuadrantList") && <QuadrantList items={items} />
+            );
+          default:
+            return null;
+        }
+      })}
     </>
   );
 };
