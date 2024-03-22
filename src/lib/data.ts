@@ -12,6 +12,10 @@ export function getToggle(key: keyof typeof config.toggles) {
   return config.toggles[key] || false;
 }
 
+export function getSections() {
+  return config.sections;
+}
+
 export function getAppName() {
   return getLabel("title");
 }
