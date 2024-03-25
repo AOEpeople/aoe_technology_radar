@@ -222,7 +222,7 @@ with a specified value. As an example, if you want to always show the subline in
 the following rule:
 
 ```css
-[class^="subline__Logo"] {
+[class^="Logo_subline"] {
   display: block;
   opacity: 1;
 }

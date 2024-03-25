@@ -5,7 +5,7 @@
     "techradar": "./bin/techradar.js"
   },
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build:icons": "npx @svgr/cli --typescript --no-dimensions --no-prettier --out-dir src/components/Icons -- src/icons",
     "build:data": "tsx scripts/buildData.ts",
     "build": "next build",
