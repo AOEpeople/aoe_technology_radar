@@ -44,6 +44,7 @@ const Home: CustomPage = () => {
             return (
               getToggle("showChart") && (
                 <Radar
+                  key={section}
                   size={chartConfig.size}
                   quadrants={quadrants}
                   rings={rings}
@@ -54,11 +55,15 @@ const Home: CustomPage = () => {
           case "tags":
             return (
               getToggle("showTagFilter") &&
-              tags.length > 0 && <Tags tags={tags} activeTag={tag} />
+              tags.length > 0 && (
+                <Tags key={section} tags={tags} activeTag={tag} />
+              )
             );
           case "list":
             return (
-              getToggle("showQuadrantList") && <QuadrantList items={items} />
+              getToggle("showQuadrantList") && (
+                <QuadrantList key={section} items={items} />
+              )
             );
           default:
             return null;
