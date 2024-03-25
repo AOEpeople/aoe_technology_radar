@@ -13,7 +13,4 @@ if (userConfig.labels)
 if (userConfig.toggles)
   config.toggles = { ...defaultConfig.toggles, ...userConfig.toggles };
 
-if (userConfig.sections)
-  config.sections = { ...defaultConfig.sections, ...userConfig.sections };
-
 export default config;
