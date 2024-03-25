@@ -1,5 +1,23 @@
 # Changelog
 
+## Version v4.2.0 (2024-03-25)
+
+### Features
+
+- add sitemap.xml (a8172e65)
+- allow to change order of sections on main page (7c08e520)
+
+### Fixes
+
+- use webpack for dev-server to keep consistent css-module classnames (335ecf6d)
+
+### Chores and tidying
+
+- **deps:** update @types/react (4fc9babf)
+- **deps:** update dependencies (43513bb1)
+- **deps:** update dependencies (3dff4eda)
+- add key attribute to homepage components and remove superfluous deep-merge (7dfd28bd)
+
 ## Version v4.1.0 (2024-03-14)
 
 ### Features
