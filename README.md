@@ -207,7 +207,7 @@ Your final file and folder structure should look like this:
 Run `npm run build` to build the radar and upload the files of the `./build` folder to your server.
 
 You can view a development version of the radar by running `npm run serve` and open the radar in
-your browser at `http://localhost:3000`.
+your browser at `http://localhost:3000/techradar` or the path you specified via `basePath`.
 
 ## Advanced styling with `custom.css`
 
@@ -255,4 +255,5 @@ run `npm run serve` or `npm run build` to see the changes.
 If you want to change core functionality of the radar, you can clone this repository and put your
 radar's markdown-files, config.json and about.md in the `data` folder. Run `npm run build:data` to
 parse the markdown files and create a `data.json` and then run `npm run dev` to start the
-development server, which will be available at `http://localhost:3000`.
+development server, which will be available at `http://localhost:3000/techradar` or the path
+you specified via `basePath`.
