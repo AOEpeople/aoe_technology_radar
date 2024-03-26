@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
@@ -7,6 +8,7 @@ import {
   getAppName,
   getChartConfig,
   getItems,
+  getLabel,
   getQuadrants,
   getReleases,
   getRings,
@@ -20,6 +22,7 @@ const Home: CustomPage = () => {
   const router = useRouter();
   const tag = router.query.tag as string | undefined;
   const appName = getAppName();
+  const metaDescription = getLabel("metaDescription");
   const chartConfig = getChartConfig();
   const sections = getSections();
   const version = getReleases().length;
@@ -32,6 +35,12 @@ const Home: CustomPage = () => {
 
   return (
     <>
+      <Head>
+        {metaDescription && (
+          <meta name="description" content={metaDescription} />
+        )}
+      </Head>
+
       <h1>
         {appName}{" "}
         <span style={{ color: "var(--highlight)", whiteSpace: "nowrap" }}>

@@ -133,6 +133,7 @@
     "pageAbout": "How to use AOE Technology Radar?",
     "pageOverview": "Technologies Overview",
     "pageSearch": "Search",
-    "searchPlaceholder": "What are you looking for?"
+    "searchPlaceholder": "What are you looking for?",
+    "metaDescription": ""
   }
 }
