@@ -1,5 +1,16 @@
 # Changelog
 
+## Version v4.3.0 (2024-03-26)
+
+### Features
+
+- add configurable meta description for homepage (8c407ca0)
+- support alternative logos like png (d254ec1a)
+
+### Fixes
+
+- mention basePath in local URL and set default to /techradar (969306c7)
+
 ## Version v4.2.0 (2024-03-25)
 
 ### Features
