@@ -7,7 +7,7 @@ SRC_DIR = .
 BUILD_DIR = out
 
 # Google App Engine project ID
-PROJECT_ID = biolizard-online-cloud-330511
+PROJECT_ID = diesel-acolyte-418314
 
 # Google App Engine version
 VERSION = v1

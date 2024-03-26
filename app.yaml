@@ -5,6 +5,6 @@ handlers:
     static_files: out/index.html
     upload: out/index.html
 
-  - url: /techradar/(.*)
+  - url: /(.*)
     static_files: out/\1
     upload: out/(.*)
