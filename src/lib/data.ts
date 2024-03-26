@@ -3,6 +3,7 @@ import config from "./config";
 
 import { format } from "@/lib/format";
 import { Flag, Item, Quadrant, Ring } from "@/lib/types";
+import { assetUrl } from "@/lib/utils";
 
 export function getLabel(key: keyof typeof config.labels) {
   return config.labels[key] || "";
@@ -18,6 +19,10 @@ export function getSections() {
 
 export function getAppName() {
   return getLabel("title");
+}
+
+export function getLogoUrl() {
+  return assetUrl("/" + config.logoFile);
 }
 
 export function getChartConfig() {

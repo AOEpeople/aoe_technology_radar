@@ -63,6 +63,9 @@ the `about.md` if they do not exist yet.
 Place your `logo.svg` and `favicon.ico` in the `public` folder next to the `package.json`.
 The ideal logo is 150px x 60px. For reference have a look at [public/logo.svg](./public/logo.svg).
 
+If you want to use a file other than an SVG, copy it to the `public` folder and set the name of the
+file as `logoFile` inside the `config.json`. e.g. `"logoFile": "acme-logo.png"`
+
 ### Step 3: Configure the radar
 
 Open the `config.json` file and configure the radar to your needs.
@@ -71,6 +74,7 @@ Open the `config.json` file and configure the radar to your needs.
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
 | baseUrl   | Set to the full URL, where the radar will be hosted. Will be used for sitemap.xml. `https://www.aoe.com/techradar`             |
+| logoFile  | (optional) Filepath in public folder. Default is `logo.svg`                                                                    |
 | toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
 | sections  | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
 | colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
