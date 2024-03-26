@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.3.1 (2024-03-26)
+
+### Chores and tidying
+
+- update dependencies and sync version (cca35eaa)
+
 ## Version v4.3.0 (2024-03-26)
 
 ### Features

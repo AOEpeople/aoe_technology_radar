@@ -1,6 +1,6 @@
 {
   "name": "aoe_technology_radar",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "bin": {
     "techradar": "./bin/techradar.js"
   },
