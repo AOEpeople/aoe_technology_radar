@@ -13,7 +13,6 @@ import {
   getReleases,
   getRings,
   getSections,
-  getTags,
   getToggle,
 } from "@/lib/data";
 import { CustomPage } from "@/pages/_app";
@@ -28,7 +27,6 @@ const Catalogue: CustomPage = () => {
   const version = getReleases().length;
   const rings = getRings();
   const quadrants = getQuadrants();
-  const tags = getTags();
   const items = getItems(undefined, true).filter(
     (item) => !tag || item.tags?.includes(tag),
   );
@@ -79,6 +77,7 @@ const Catalogue: CustomPage = () => {
             <h2>{quadrant.description}</h2>
 
             <ItemDetailedList
+              key={quadrant.id}
               items={items.filter((item) => item.quadrant === quadrant.id)}
             />
           </>

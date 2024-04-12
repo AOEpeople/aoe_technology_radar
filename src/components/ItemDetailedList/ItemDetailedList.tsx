@@ -7,7 +7,7 @@ import { getQuadrant } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-export interface ItemListProps {
+export interface ItemDetailedListProps {
   items: Item[];
   activeId?: string;
   size?: "small" | "default" | "large";
@@ -21,7 +21,7 @@ export function ItemDetailedList({
   size = "default",
   hideRing = false,
   className,
-}: ItemListProps) {
+}: ItemDetailedListProps) {
   return (
     <ul
       className={cn(styles.list, className, {
