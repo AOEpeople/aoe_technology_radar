@@ -14,6 +14,7 @@ export interface Revision {
 
 export interface Item {
   id: string;
+  blipId?: number;
   title: string;
   info?: string;
   body: string;

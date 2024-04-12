@@ -96,7 +96,13 @@ const _Chart: FC<ChartProps> = ({
         data-tooltip-color={quadrant.color}
         tabIndex={-1}
       >
-        <Blip flag={item.flag} color={quadrant.color} x={x} y={y} />
+        <Blip
+          flag={item.flag}
+          id={item.blipId}
+          color={quadrant.color}
+          x={x}
+          y={y}
+        />
       </Link>
     );
   };
@@ -154,7 +160,7 @@ const _Chart: FC<ChartProps> = ({
           ))}
         </g>
       ))}
-      <g className={styles.items}>{items.map((item) => renderItem(item))}</g>
+      <g className={styles.items}>{items.map(renderItem)}</g>
       <g className={styles.ringLabels}>{renderRingLabels()}</g>
     </svg>
   );

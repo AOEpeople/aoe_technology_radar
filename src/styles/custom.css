@@ -1,2 +1,8 @@
 /* Use this file to optionally override global css styles and use with caution. */
 /* See README.md for hints and examples: https://github.com/AOEpeople/aoe_technology_radar/ */
+
+.blipText {
+  font-size: 10px;
+  font-weight: 500;
+  fill: white;
+}

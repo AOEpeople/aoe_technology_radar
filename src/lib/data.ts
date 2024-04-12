@@ -75,10 +75,30 @@ export function getQuadrant(id: string): Quadrant | undefined {
 }
 
 export function getItems(quadrant?: string, featured?: boolean): Item[] {
-  return data.items.filter((item) => {
-    if (quadrant && item.quadrant !== quadrant) return false;
-    return !(featured && !item.featured);
-  }) as Item[];
+  const itemsData = data.items as Item[];
+
+  const sortItems = (item1: Item, item2: Item) => {
+    const quadrantsSort = item1.quadrant.localeCompare(item2.quadrant);
+    if (quadrantsSort === 0) {
+      const ringOrder = ["adopt", "assess", "trial", "hold"];
+      const ringIndex1 = ringOrder.indexOf(item1.ring);
+      const ringIndex2 = ringOrder.indexOf(item2.ring);
+
+      /*  if (ringIndex1 === ringIndex2) {
+        return item1.release.localeCompare(item2.release);
+      } */
+      return ringIndex1 - ringIndex2;
+    }
+    return quadrantsSort;
+  };
+
+  return itemsData
+    .toSorted(sortItems)
+    .map((item, index) => ({ ...item, blipId: index + 1 }))
+    .filter((item) => {
+      if (quadrant && item.quadrant !== quadrant) return false;
+      return !(featured && !item.featured);
+    }) as Item[];
 }
 
 export function getImprintUrl() {
