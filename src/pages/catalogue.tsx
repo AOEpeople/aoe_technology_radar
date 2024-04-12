@@ -1,13 +1,9 @@
-import { Quando } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { ItemDetail } from "@/components/ItemDetail/ItemDetail";
-import { ItemList } from "@/components/ItemList/ItemList";
+import { ItemDetailedList } from "@/components/ItemDetailedList/ItemDetailedList";
 import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
 import { Radar } from "@/components/Radar/Radar";
-import { RingList } from "@/components/RingList/RingList";
-import { Tags } from "@/components/Tags/Tags";
 import {
   getAppName,
   getChartConfig,
@@ -82,7 +78,7 @@ const Catalogue: CustomPage = () => {
             <h1>{quadrant.title}</h1>
             <h2>{quadrant.description}</h2>
 
-            <ItemList
+            <ItemDetailedList
               items={items.filter((item) => item.quadrant === quadrant.id)}
             />
           </>
