@@ -8,7 +8,7 @@ quadrant: languages-and-frameworks
 
 Go went from #54 to #13 on the [TIOBE index](http://www.tiobe.com/tiobe-index/) in January 2017, and it became the TIOBE programming language of the year 2016.
 
-Here at AOE, we use several services written in Go on a daily basis, such as Mattermost, Docker, Consul and Kubernetes. Also, more and more applications, such as GitLab, incorporate Go-based services to "off load" heavy work.
+Here at DCX, we use several services written in Go on a daily basis, such as Mattermost, Docker, Consul and Kubernetes. Also, more and more applications, such as GitLab, incorporate Go-based services to "off load" heavy work.
 
 Go, as a programming language, has some very interesting features such as native support for concurrency (go routines), static compiled binaries with a very small memory footprint, cross compiling and much more. A big advantage of Go is the very flat learning curve, which allows developers from more dynamic languages such as PHP to be proficient in a very short time.
 

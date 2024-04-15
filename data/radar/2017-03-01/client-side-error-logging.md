@@ -12,5 +12,5 @@ We can easily track backend exceptions in the server logs, but what about client
 With client-side error logging, we send errors to a central server to see instantly what is going wrong.
 With this method errors can be found and resolved quickly before they affect even more users.
 
-At AOE, we use the Open Source solution [Sentry](https://sentry.io/welcome/).io.
+At DCX, we use the Open Source solution [Sentry](https://sentry.io/welcome/).io.
 It can handle multiple projects and teams and integrates well with other services such as Mattermost/Slack and Issue Tracking Systems.

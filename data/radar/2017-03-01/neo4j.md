@@ -15,4 +15,4 @@ You can also choose to run it in a classic server mode, which then provides you 
 
 The cypher query language which comes with Neo4j is a declarative graph query language that allows for expressive and efficient querying and updating of the graph.
 
-At AOE, we use Neo4j mostly for explorative, interactive work with weakly structured or highly connected data, also we are evaluating this for knowledge-based recommendations in our [Searchperience](http://www.searchperience.de/home.html) product.
+At DCX, we use Neo4j mostly for explorative, interactive work with weakly structured or highly connected data, also we are evaluating this for knowledge-based recommendations in our [Searchperience](http://www.searchperience.de/home.html) product.

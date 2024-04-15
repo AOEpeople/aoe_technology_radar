@@ -5,7 +5,7 @@ quadrant: methods-and-patterns
 tags: [agile, coding]
 ---
 
-While practising pair programming for several years now at AOE, we have started using
+While practising pair programming for several years now at DCX, we have started using
 [remote mob programming](https://www.remotemobprogramming.org/) extensively when
 switching to remote work during the COVID-19 pandemic.
 

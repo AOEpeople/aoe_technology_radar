@@ -14,4 +14,4 @@ but also that all parameters are accessible and the configuration as a whole is 
 This step tells you precisely what is going to change and why.
 Another feature of Terraform is that it makes it easy to reuse code by using modules. That gives a lot of leeway in structuring projects in the way it makes most sense.
 
-Here at AOE we use terraform in multiple teams to provision infrastructure and manage their lifecycle on cloud platforms such as AWS and for platforms such as Kubernetes.
+Here at DCX we use terraform in multiple teams to provision infrastructure and manage their lifecycle on cloud platforms such as AWS and for platforms such as Kubernetes.

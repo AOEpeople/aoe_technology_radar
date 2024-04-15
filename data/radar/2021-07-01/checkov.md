@@ -16,4 +16,4 @@ It scans cloud infrastructure provisioned using
 
 and detects security and compliance misconfigurations.
 
-At AOE we use Checkov in CI/CD processes to get insights into our Terraform-Modules.
+At DCX we use Checkov in CI/CD processes to get insights into our Terraform-Modules.

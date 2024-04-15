@@ -10,4 +10,4 @@ It is fully interoperable with Java but has a big ecosystem of tools and framewo
 
 Scala provides one of the best high-level concurrency- and async features on the language level as well as on the framework level, making it the default choice of twitter and the like.
 
-At AOE, we already use Scala in various projects to create scalable backend systems (Play, Akka) or for batch processing (Spark).
+At DCX, we already use Scala in various projects to create scalable backend systems (Play, Akka) or for batch processing (Spark).

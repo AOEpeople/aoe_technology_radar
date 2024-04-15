@@ -12,4 +12,4 @@ This allows the user to query the data by pre-defined labels and keeps the costs
 
 Another benefit is the fact that does not have an endpoint for mutating log data which makes the data immutable from a potential compromised system.
 
-We at AOE are using it for longer term log archiving in several Kubernetes clusters.
+We at DCX are using it for longer term log archiving in several Kubernetes clusters.

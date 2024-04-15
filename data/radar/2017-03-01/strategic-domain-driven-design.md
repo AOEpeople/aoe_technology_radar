@@ -7,7 +7,7 @@ tags: [architecture]
 
 Design of distributed applications need to be done wisely. Strategic Domain Driven Design is an approach for modelling large-scale applications and systems and is introduced in the last part of Eric Evans' book _**Domain Driven Design**_.
 
-Domain driven design is a well-known pattern family and has been established at AOE for quite some time now. Unlike Domain Driven Design, which focuses on the tactical design in an application, strategic domain driven design is an approach that is very helpful for the high-level strategic design of an application and distributed software architecture.
+Domain driven design is a well-known pattern family and has been established at DCX for quite some time now. Unlike Domain Driven Design, which focuses on the tactical design in an application, strategic domain driven design is an approach that is very helpful for the high-level strategic design of an application and distributed software architecture.
 
 It is a pattern family focused on using and defining Bounded Context and thinking explicitly of the different relationship patterns and the required "translation" of similar "concepts" between the bounded contexts. It is helpful to argue and find a good strategic architecture in alignment with the requirements, the domain and by considering Conway's Law.
 A context map and a common conceptional core help to understand and improve the overall strategic picture. Especially with the [Microservice](/methods-and-patterns/microservices.html) approach, it is important to define and connect services following the low coupling - high cohesion principles by idendifying fitting bounded contexts.

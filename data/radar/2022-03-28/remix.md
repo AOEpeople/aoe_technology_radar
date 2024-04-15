@@ -13,4 +13,4 @@ every loading state.
 Most web apps fetch inside of components, creating request waterfalls which leads to slower page loads. Remix loads data
 in parallel on the server and sends a fully formed HTML document
 
-At AOE we use Remix for our enterprise web applications to provide a first class UX and fast page loads.
+At DCX we use Remix for our enterprise web applications to provide a first class UX and fast page loads.

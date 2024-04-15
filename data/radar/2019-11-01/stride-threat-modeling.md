@@ -16,4 +16,4 @@ The acronym stands for:
 - Denial of service
 - Elevation of privilege
 
-AOE is applying the threat model in collaborative sessions using the [Elevation of Privilege Card Game](https://social.technet.microsoft.com/wiki/contents/articles/285.elevation-of-privilege-the-game.aspx) which helps to spark imagination and makes threats more tangible.
+DCX is applying the threat model in collaborative sessions using the [Elevation of Privilege Card Game](https://social.technet.microsoft.com/wiki/contents/articles/285.elevation-of-privilege-the-game.aspx) which helps to spark imagination and makes threats more tangible.

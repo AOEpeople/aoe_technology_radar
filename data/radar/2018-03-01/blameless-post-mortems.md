@@ -14,4 +14,4 @@ Based on trust, and under the assumption that every person involved had good int
 
 The post mortem documentation usually consists of both a timeline of the events leading to an incident and the steps taken to its remediation, as well as future actions and learnings for increasing resilience and stability of our services.
 
-At AOE, we strive to conduct a Blameless Post Mortem meeting after every user-visible incident.
+At DCX, we strive to conduct a Blameless Post Mortem meeting after every user-visible incident.

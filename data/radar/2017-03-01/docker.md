@@ -15,4 +15,4 @@ A CI environment building the containers allows us to package and test the whole
 
 Backed by services such as [Kubernetes](/platforms-and-operations/kubernetes.html), we can deploy Docker containers on a flexible infrastructure and enable our developers to test their software more easily in different environments.
 
-Here at AOE, we assess Docker in different projects to become more flexible and faster, which increases our focus on development of even better and more stable software.
+Here at DCX, we assess Docker in different projects to become more flexible and faster, which increases our focus on development of even better and more stable software.

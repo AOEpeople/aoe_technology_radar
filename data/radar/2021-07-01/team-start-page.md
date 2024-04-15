@@ -18,4 +18,4 @@ It normally displays all team members with their roles and contact data as well 
 
 Simply things, everyone should know.
 
-At AOE we care to have a team start page for each team in our wiki.
+At DCX we care to have a team start page for each team in our wiki.

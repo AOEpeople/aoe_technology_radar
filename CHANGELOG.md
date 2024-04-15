@@ -73,14 +73,14 @@
 
 ## Version v4.0.0 (2024-03-11)
 
-Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
+Version 4.0.0 is a complete rewrite of the DCX Technology Radar. It is now based
 on [Next.js](https://nextjs.org/) to provide enhanced static site generation. The visualization has
 been rewritten without the need for the D3 dependency. New features include a fuzzy search based on
 Fuse.js, non-overlapping blips on the radar, and a reworked tag filter on the homepage.
 
 To migrate from the old version please migrate your `package.json`'s scripts and create a
 new `config.json` based on the documentation below. You can find a reference implementation in
-our [repo](https://github.com/AOEpeople/techradar). The old version is still available in the `v3`
+our [repo](https://github.com/DCXpeople/techradar). The old version is still available in the `v3`
 branch.
 
 Version 4.0.0 also removes the .html extension from the URLs. If you want to support the old URLs,
@@ -521,34 +521,34 @@ rewrite ^/techradar/(.+)\.html$ /techradar/$1/ permanent;
 
 ## 3.0.1 (2021.07.02)
 ### Bug Fixes
-- Fixed the bug, that `aoe_technology_radar-buildRadar` could not be executed without `aoe_technology_radar-generateJson` running first.
+- Fixed the bug, that `DCX_technology_radar-buildRadar` could not be executed without `DCX_technology_radar-generateJson` running first.
 
 ## 3.0.0 (2021.07.02)
 ### Features
-- The `rd.json` (markdown data) isn't part of the bundle anymore. It will be fetched and therefore can be cached by the browser. ([#50](https://github.com/AOEpeople/aoe_technology_radar/issues/50))
-- Non featured articles will be separated to the bottom of the list in quadrant view. Therefore, you can see what isn't featured anymore. ([#78](https://github.com/AOEpeople/aoe_technology_radar/issues/78))
+- The `rd.json` (markdown data) isn't part of the bundle anymore. It will be fetched and therefore can be cached by the browser. ([#50](https://github.com/DCXpeople/DCX_technology_radar/issues/50))
+- Non featured articles will be separated to the bottom of the list in quadrant view. Therefore, you can see what isn't featured anymore. ([#78](https://github.com/DCXpeople/DCX_technology_radar/issues/78))
 - Customize the Tech Radar instead of forking it.
-    - Host the application under a sub path. ([#59](https://github.com/AOEpeople/aoe_technology_radar/issues/59))
+    - Host the application under a sub path. ([#59](https://github.com/DCXpeople/DCX_technology_radar/issues/59))
     - Change the name of your tech radar.
     - Change the logo.
     - Change the favicon.
     - Replace the index.html.
-    - Change the fonts. ([#88](https://github.com/AOEpeople/aoe_technology_radar/issues/88))
-    - Change the texts on the help page. ([#86](https://github.com/AOEpeople/aoe_technology_radar/issues/86))
-    - Change the footer footnode. ([#86](https://github.com/AOEpeople/aoe_technology_radar/issues/86))
-    - Change the social links. ([#86](https://github.com/AOEpeople/aoe_technology_radar/issues/86))
-    - Change the legal information link. ([#86](https://github.com/AOEpeople/aoe_technology_radar/issues/86))
+    - Change the fonts. ([#88](https://github.com/DCXpeople/DCX_technology_radar/issues/88))
+    - Change the texts on the help page. ([#86](https://github.com/DCXpeople/DCX_technology_radar/issues/86))
+    - Change the footer footnode. ([#86](https://github.com/DCXpeople/DCX_technology_radar/issues/86))
+    - Change the social links. ([#86](https://github.com/DCXpeople/DCX_technology_radar/issues/86))
+    - Change the legal information link. ([#86](https://github.com/DCXpeople/DCX_technology_radar/issues/86))
 
 ### Bug Fixes
-- Fix social links ([#49](https://github.com/AOEpeople/aoe_technology_radar/issues/49))
+- Fix social links ([#49](https://github.com/DCXpeople/DCX_technology_radar/issues/49))
 
 ### Changes
-- Simplified the dependencies, scripts and build process ([#81](https://github.com/AOEpeople/aoe_technology_radar/pull/81))
+- Simplified the dependencies, scripts and build process ([#81](https://github.com/DCXpeople/DCX_technology_radar/pull/81))
     - node-sass is not needed anymore
 
 ### Breaking Changes
-- Renamed script `aoe_technology_radar` to `aoe_technology_radar-buildRadar` to make clear that this script builds the radar.
-- Added script `aoe_technology_radar-generateJson` to generate the file `rd.json` based on your radar markdown files.
-- Renamed script `aoe_technology_radar-createStatic` to `aoe_technology_radar-createStaticFiles` to make clear that this script creates static files only.
+- Renamed script `DCX_technology_radar` to `DCX_technology_radar-buildRadar` to make clear that this script builds the radar.
+- Added script `DCX_technology_radar-generateJson` to generate the file `rd.json` based on your radar markdown files.
+- Renamed script `DCX_technology_radar-createStatic` to `DCX_technology_radar-createStaticFiles` to make clear that this script creates static files only.
 
-> For more information about the changes and customizations, please have a look in the [readme.md](https://github.com/AOEpeople/aoe_technology_radar).
+> For more information about the changes and customizations, please have a look in the [readme.md](https://github.com/DCXpeople/DCX_technology_radar).

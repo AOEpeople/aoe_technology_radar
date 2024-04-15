@@ -14,5 +14,5 @@ prop interpolations and defining variants upfront.
 Stitches has a fully typed API to provide an awesome developer experience. It comes with built-in theme support,
 server-side rendering & much more.
 
-At AOE we use Stitches when we want to write performant and scalable CSS, but don't want to give up the flexibility and
+At DCX we use Stitches when we want to write performant and scalable CSS, but don't want to give up the flexibility and
 developer experience of React components.

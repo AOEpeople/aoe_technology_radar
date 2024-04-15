@@ -9,8 +9,8 @@ tags: [devops]
 Amazon EKS runs Kubernetes control plane instances across multiple Availability Zones to ensure high availability.
 It also provides automated version upgrades and patching for them.
 
-Amazon EKS is fully supported by [Terraform](https://www.aoe.com/techradar/platforms-and-operations/terraform.html) which brings the advantage that its configuration is written in code,
-which fulfils the [infrastructure as code](https://www.aoe.com/techradar/platforms-and-operations/infrastructure-as-code.html) philosophy.
+Amazon EKS is fully supported by [Terraform](https://www.DCX.com/techradar/platforms-and-operations/terraform.html) which brings the advantage that its configuration is written in code,
+which fulfils the [infrastructure as code](https://www.DCX.com/techradar/platforms-and-operations/infrastructure-as-code.html) philosophy.
 Amazon has also implemented important (security) features to their service to ensure that Amazon EKS is well integrated into the broader AWS landscape.
 Kubernetes version upgrades and security patches are provided in a reliable schedule and with proper documentation.
 Alongside with the managed service, Amazons also provides its own [EKS distribution](https://aws.amazon.com/de/blogs/opensource/introducing-amazon-eks-distro/) which closes the gap for on-premise installations.

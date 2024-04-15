@@ -1,24 +1,24 @@
-# AOE Technology Radar
+# DCX Technology Radar
 
-A static site generator for AOE Technology Radar
+A static site generator for DCX Technology Radar
 
-![Screenshot of the AOE Technology Radar](./docs/assets/screenshot-techradar.png)
+![Screenshot of the DCX Technology Radar](./docs/assets/screenshot-techradar.png)
 
-## Looking for the AOE Tech Radar content?
+## Looking for the DCX Tech Radar content?
 
-- The repository is now found here: https://github.com/AOEpeople/techradar
-- The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
+- The repository is now found here: https://github.com/DCXpeople/techradar
+- The DCX Tech radar is deployed here: https://www.DCX.com/techradar/index.html
 
 ## ✨ Version 4.0.0
 
-Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
+Version 4.0.0 is a complete rewrite of the DCX Technology Radar. It is now based
 on [Next.js](https://nextjs.org/) to provide enhanced static site generation. The visualization has
 been rewritten without the need for the D3 dependency. New features include a fuzzy search based on
 Fuse.js, non-overlapping blips on the radar, and a reworked tag filter on the homepage.
 
 To migrate from the old version please migrate your `package.json`'s scripts and create a
 new `config.json` based on the documentation below. You can find a reference implementation in
-our [repo](https://github.com/AOEpeople/techradar). The old version is still available in the `v3`
+our [repo](https://github.com/DCXpeople/techradar). The old version is still available in the `v3`
 branch.
 
 Version 4.0.0 also removes the .html extension from the URLs. If you want to support the old URLs,
@@ -41,7 +41,7 @@ file like the following and adapt to your needs:
 
 ```json
 {
-  "name": "aoe-techradar",
+  "name": "DCX-techradar",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -49,7 +49,7 @@ file like the following and adapt to your needs:
     "serve": "techradar serve"
   },
   "dependencies": {
-    "aoe_technology_radar": "^4"
+    "DCX_technology_radar": "^4"
   }
 }
 ```
@@ -73,7 +73,7 @@ Open the `config.json` file and configure the radar to your needs.
 | Attribute | Description                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
-| baseUrl   | Set to the full URL, where the radar will be hosted. Will be used for sitemap.xml. `https://www.aoe.com/techradar`             |
+| baseUrl   | Set to the full URL, where the radar will be hosted. Will be used for sitemap.xml. `https://www.DCX.com/techradar`             |
 | logoFile  | (optional) Filepath in public folder. Default is `logo.svg`                                                                    |
 | toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
 | sections  | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |

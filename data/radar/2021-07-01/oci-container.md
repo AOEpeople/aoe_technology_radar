@@ -15,4 +15,4 @@ In a CI environment building the containers allows us to package and test the wh
 
 Backed by services such as [Kubernetes](/platforms-and-operations/kubernetes.html) and [Helm](/platforms-and-operations/helm.html), we can deploy containers on a flexible infrastructure and enable our developers to test their software more easily in different environments.
 
-Here at AOE, we use containers in different projects to become more flexible and faster, which increases our focus on development of even better and more stable software.
+Here at DCX, we use containers in different projects to become more flexible and faster, which increases our focus on development of even better and more stable software.

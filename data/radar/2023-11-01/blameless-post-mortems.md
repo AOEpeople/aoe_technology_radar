@@ -16,4 +16,4 @@ Based on trust and the assumption that everyone involved had good intentions to 
 
 The post-mortem documentation usually includes a timeline of the events leading to an incident and the steps taken for its remediation, as well as future actions and lessons learned to enhance the resilience and stability of our services.
 
-At AOE, we make it a priority to conduct a Blameless Post Mortem meeting after every user-visible incident.
+At DCX, we make it a priority to conduct a Blameless Post Mortem meeting after every user-visible incident.

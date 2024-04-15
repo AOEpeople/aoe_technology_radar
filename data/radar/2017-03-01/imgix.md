@@ -8,4 +8,4 @@ quadrant: platforms-and-operations
 
 Especially when dealing with user-generated uploads, it is getting hard to create different versions for any supported device and breakpoint of your web page. Doing this manually is hardly an option.
 
-At AOE, we decided to use imgix as an image processing service for some projects to solve this problem. The benefits of imgix are the simple API to create responsive images in real-time as well as the fast delivery over their CDN.
+At DCX, we decided to use imgix as an image processing service for some projects to solve this problem. The benefits of imgix are the simple API to create responsive images in real-time as well as the fast delivery over their CDN.

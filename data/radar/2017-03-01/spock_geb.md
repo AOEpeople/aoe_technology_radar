@@ -8,7 +8,7 @@ quadrant: languages-and-frameworks
 
 [gebish.org](http://www.gebish.org) - Geb is a browser automation solution. It brings together the power of WebDriver, the elegance of jQuery content selection, the robustness of Page Object modelling and the expressiveness of the Groovy language. It can be used for scripting, scraping and general automation or as a functional/web/acceptance testing solution via integration with testing frameworks such as Spock, JUnit & TestNG.
 
-At AOE, we use Spock in combination with Geb in various projects for black-box testing. Mainly, we implement our functional integration and acceptance testing automation with these frameworks, which work together seamlessly. And, we also like the convenience of extending the tests with Groovy built-ins or custom extensions.
+At DCX, we use Spock in combination with Geb in various projects for black-box testing. Mainly, we implement our functional integration and acceptance testing automation with these frameworks, which work together seamlessly. And, we also like the convenience of extending the tests with Groovy built-ins or custom extensions.
 
 Because of the successful use in two of our large projects and the wide range of opportunities within the testing domain with Spock and Geb, we classify this combo with adopt.
 

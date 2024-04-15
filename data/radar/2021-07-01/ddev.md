@@ -10,7 +10,7 @@ tags: [coding, ci/cd]
 It's powerful and flexible as a result of its per-project environment configurations, which can be extended, version controlled, and shared.
 In short, DDEV aims to allow development teams to use Docker in their workflow without the complexities of bespoke configuration.
 
-At AOE, we use DDEV in a variety of PHP projects (large and small).
+At DCX, we use DDEV in a variety of PHP projects (large and small).
 It has made the onboarding process extremely easy for new developers and developers who have already worked with DDEV feel right at home in other projects.
 
 DDEV makes adding needed dependencies super easy and so far has met every requirement we've ever had.

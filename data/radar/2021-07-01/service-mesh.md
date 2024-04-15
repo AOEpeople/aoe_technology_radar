@@ -20,4 +20,4 @@ service mesh implementations:
 - [Kuma](https://kuma.io/)
 - and many more...
 
-At AOE we are using service meshes in multiple projects and are assessing best-practices and service mesh implementations.
+At DCX we are using service meshes in multiple projects and are assessing best-practices and service mesh implementations.

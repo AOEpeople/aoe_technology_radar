@@ -13,4 +13,4 @@ The shared language-neutral protobuf definition allows you to create all code fo
 From a technical point of view, gRPC uses HTTP/2 as a transport, directly benefitting from the default TLS encryption.
 Besides gRPC, other frameworks also use protobuf RPC definitions. These frameworks include twirp from twitch, which makes it easy to change the transport/control layer with only very small changes to the application code.
 
-We at AOE plan to assess gRPC for microservice architectures which are more RPC style and less REST style.
+We at DCX plan to assess gRPC for microservice architectures which are more RPC style and less REST style.

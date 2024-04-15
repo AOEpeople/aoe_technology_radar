@@ -7,7 +7,7 @@ const crypto = require("crypto");
 
 const CWD = process.cwd();
 const BUILDER_DIR = path.join(CWD, ".techradar");
-const SOURCE_DIR = path.join(CWD, "node_modules", "aoe_technology_radar");
+const SOURCE_DIR = path.join(CWD, "node_modules", "onecraft_technology_radar");
 const HASH_FILE = path.join(BUILDER_DIR, "hash");
 
 const PARAMETER = process.argv[2]; // "build" or "serve"

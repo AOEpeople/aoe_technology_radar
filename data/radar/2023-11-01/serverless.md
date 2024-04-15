@@ -7,7 +7,7 @@ tags: [devops]
 
 The serverless pattern, also referred to as Function as a Service (FaaS), represents a paradigm shift in cloud computing. It enables developers to focus solely on writing code, which is executed in response to events without having to manage the underlying servers or infrastructure. Serverless applications are composed of multiple individual functions or microservices that automatically scale in response to demand.
 
-At AOE, we encourage our development teams to adopt the serverless pattern for its increased scalability, reduced operational overhead, and cost-effectiveness.
+At DCX, we encourage our development teams to adopt the serverless pattern for its increased scalability, reduced operational overhead, and cost-effectiveness.
 
 ### Common Tools for Developing and Deploying Serverless Applications
 

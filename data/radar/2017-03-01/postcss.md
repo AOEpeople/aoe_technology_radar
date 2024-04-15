@@ -6,7 +6,7 @@ quadrant: tools
 
 PostCSS is a tool for transforming stylesheets with JavaScript plugins. It comes with a parser that reads your CSS file into an AST, pipes it through the loaded plugins and finally stringifies it back into a (transformed) CSS output file.
 
-We at AOE love PostCSS because it gives us the power to use [CSS Modules](https://github.com/css-modules/css-modules), which finally ends the curse of global CSS.
+We at DCX love PostCSS because it gives us the power to use [CSS Modules](https://github.com/css-modules/css-modules), which finally ends the curse of global CSS.
 
 It also has a huge list of more than 350 other [available plugins](http://postcss.parts/).
 Sure, not all of them are useful, but the sheer number of plugins shows how easy it is to write your own plugin for it.

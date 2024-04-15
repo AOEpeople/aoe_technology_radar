@@ -12,7 +12,7 @@ Furthermore, as one of the most important design aspects is consistency, one can
 It also helps speed up parallel implementation.
 A team that consumes the API can start working directly after the API design because it can easily be mocked.
 
-There are several tools for modelling an API, but here at AOE we mainly use [RAML](/tools/raml.html) as it provides a rich set of tools for generating documentation, mocking and more.
+There are several tools for modelling an API, but here at DCX we mainly use [RAML](/tools/raml.html) as it provides a rich set of tools for generating documentation, mocking and more.
 For mocking we use [WireMock](/tools/wiremock.html), for example.
 
 Related to the "API-First" approach is the "Headless" approach where an existing application (with or without existing API) is used as a backend for a separate frontend.

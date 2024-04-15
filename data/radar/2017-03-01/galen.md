@@ -10,4 +10,4 @@ So, you can write simple tests such as "The button should be green" as well as m
 
 Whenever a test fails Galen writes a test report with screenshots to show the mismatching areas on the page to help testers and developers become aware of the problem.
 
-At AOE, the Galen Framework helps us to continuously test the UI for potential regression bugs introduced by new features.
+At DCX, the Galen Framework helps us to continuously test the UI for potential regression bugs introduced by new features.

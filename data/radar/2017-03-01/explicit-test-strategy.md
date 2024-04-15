@@ -6,7 +6,7 @@ quadrant: methods-and-patterns
 
 According to the [ISTQB Glossar](https://glossary.istqb.org/)- a **Test Strategy** is an abstract specification that comprises the designated test levels (unit, integration, system and acceptance tests) and the implementation of each level for a whole organization or for an application. This test strategy can be applicable to one or more projects.
 
-At AOE, we established an explicit test strategy for many of our projects. The coordination of the test levels improves the effectivity of test runs and helps to avoid testing gaps, double inspection and overhead. Every test level has a different focus. Tests that are executed on one level don't have to be implemented on others.
+At DCX, we established an explicit test strategy for many of our projects. The coordination of the test levels improves the effectivity of test runs and helps to avoid testing gaps, double inspection and overhead. Every test level has a different focus. Tests that are executed on one level don't have to be implemented on others.
 
 These are the test levels that we implement as a standard in the software deployment pipeline of our projects and that handle multiple integrated components and services:
 

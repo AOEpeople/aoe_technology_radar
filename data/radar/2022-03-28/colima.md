@@ -7,7 +7,7 @@ featured: false
 
 [Colima](https://github.com/abiosoft/colima) provides container runtimes on macOS with minimal setup.
 
-At AOE, we are using Colima as drop-in replacement
+At DCX, we are using Colima as drop-in replacement
 for [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 The main benefits are

@@ -14,4 +14,4 @@ and secure API services:
 - Multi-Protocol Support: Supports HTTP, HTTPS, WebSockets and gRPC
 - Customization: Plugins for authentication, authorization and traffic management
 
-At AOE, we are currently assessing Apache APISIX in one of our cloud infrastructure projects.
+At DCX, we are currently assessing Apache APISIX in one of our cloud infrastructure projects.

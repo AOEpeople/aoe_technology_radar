@@ -21,7 +21,7 @@ Sass has been widely adopted for many years and has evolved to an industry-stand
 The learning curve is very smooth as Sass is fully compatible to CSS, meaning that all features are optional:
 Starting with Sass is as easy as renaming .css-files to .scss in a first step and then refactoring it step-by-step with the use of Sass features.
 
-At AOE, Sass has been recommended by the frontend COI and is used in nearly every current project.
+At DCX, Sass has been recommended by the frontend COI and is used in nearly every current project.
 
 More information:
 

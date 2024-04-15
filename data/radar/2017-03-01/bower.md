@@ -9,5 +9,5 @@ quadrant: tools
 In small web projects, this approach is good and sufficient, but larger projects will need more dependencies such as task runners or testing frameworks, which are not available through Bower.
 As most of the frontend libraries are also available through npm, it's not surprising that we ask ourselves why Bower is still needed.
 
-At AOE, we decided to use npm as the only package manager to avoid having multiple tools doing similar things.
+At DCX, we decided to use npm as the only package manager to avoid having multiple tools doing similar things.
 Developers only need to deal with one solution, which makes the project easier to maintain.

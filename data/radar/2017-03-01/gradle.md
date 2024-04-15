@@ -11,4 +11,4 @@ It uses a Groovy-based DSL to declaratively model your problem domain (Build aut
 
 While providing plugins for building libs, apps and webapps in Java, Groovy and Scala out of the box it is not tied to the JVM as target platform, which is impressively shown by the native build support for C / C++.
 
-At AOE, it is used in various places already: to build [Anypoint](/tools/anypoint-platform.html)- and [Spring Boot-](/languages-and-frameworks/spring-boot.html) based applications; to build Android Apps; to automate the creation of Jenkins Jobs; to create Docker images and Debian packages and also do some deployment scripting with it.
+At DCX, it is used in various places already: to build [Anypoint](/tools/anypoint-platform.html)- and [Spring Boot-](/languages-and-frameworks/spring-boot.html) based applications; to build Android Apps; to automate the creation of Jenkins Jobs; to create Docker images and Debian packages and also do some deployment scripting with it.

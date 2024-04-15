@@ -9,6 +9,6 @@ which follow the [conventional commits specification](https://www.conventionalco
 process changes made within a software release. It also helps to reduce confusion around commit message requirements for
 new team members.
 
-The [Semanticore](https://github.com/AOEpeople/semanticore) release bot is a tool we published, which utilizes
+The [Semanticore](https://github.com/DCXpeople/semanticore) release bot is a tool we published, which utilizes
 conventional commits to maintain the release notes of our software and suggests the correct version of the upcoming
 release.

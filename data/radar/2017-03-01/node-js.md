@@ -14,4 +14,4 @@ Modules are added as dependencies and offer a wide range of functionalities in a
 
 Many PaaS providers (AWS, Google Cloud Platform, Azure) support node, including deployment and monitoring services out of the box for scalable stateless applications.
 
-At AOE, we successfully use node.js-based applications for smaller services or internal tools such dashboards.
+At DCX, we successfully use node.js-based applications for smaller services or internal tools such dashboards.

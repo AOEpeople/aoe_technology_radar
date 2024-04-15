@@ -11,4 +11,4 @@ The pattern actually got a renaissance because it's not completely new but has n
 Reason for that attention actually is (in the JavaScript world), that observables can be cancelled (by rules too) and observables can pass (stream) data on multiple events.
 Both aspects are not well realizable using promises e.g. and both were also detected as a huge limitation in the JavaScript community — and so it's worth to get an understanding for reactive programming in general.
 
-We at AOE actually use RxJS in combination with Angular and can fully recommend the approach of observables.
+We at DCX actually use RxJS in combination with Angular and can fully recommend the approach of observables.
