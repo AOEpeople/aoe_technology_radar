@@ -8,6 +8,7 @@
     "dev": "next dev",
     "build:icons": "npx @svgr/cli --typescript --no-dimensions --no-prettier --out-dir src/components/Icons -- src/icons",
     "build:data": "tsx scripts/buildData.ts",
+    "build:markdown": "tsx scripts/buildMarkdown.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -44,5 +45,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0"
   }
 }
