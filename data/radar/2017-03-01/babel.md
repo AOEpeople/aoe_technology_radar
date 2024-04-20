@@ -11,7 +11,7 @@ Without Babel you had to use the feature set of your oldest browser or use featu
 In general, Babel is split in 2 ways to bring you the new goodies you want.
 
 1. New syntax will be compiled to old EcmaScript 5 code e.g.:
-
+   
    - [arrow-functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
    - [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
    - [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
@@ -19,7 +19,7 @@ In general, Babel is split in 2 ways to bring you the new goodies you want.
    - [...](https://babeljs.io/learn-es2015/)
 
 2. New globals and functions are provided by [babel-polyfill](http://babeljs.io/docs/usage/polyfill/) e.g.:
-
+   
    - [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
    - [Array.find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
    - [Array.includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)

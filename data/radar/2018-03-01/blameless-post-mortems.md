@@ -5,7 +5,7 @@ quadrant: methods-and-patterns
 ---
 
 > Failure and invention are inseparable twins.
->
+> 
 > — <cite>Jeff Bezos</cite>
 
 Blameless Post Mortems provide a concept of dealing with failures that inevitably occur when developing and operating complex software solutions. After any major incident or outage, the team gets together to perform an in-depth analysis of what happened and what can be done to mitigate the risk of similar issues happening in the future.

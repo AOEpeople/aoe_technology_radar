@@ -11,7 +11,6 @@ import config from "./../data/config.json";
  * @returns The generated slug.
  */
 function generateSlug(input: string): string {
-  console.log("input", input);
   return input
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -36,15 +35,13 @@ for (const quadrant of config.quadrants) {
 fs.createReadStream("./data/data.csv")
   .pipe(
     csv({
-      mapHeaders: ({ header, index }) => generateSlug(header),
+      mapHeaders: ({ header, index }) => generateSlug(header), // Generate slugs for the CSV headers
     }),
   )
   .on("headers", (headers) => {
     console.log("headers", headers);
   })
   .on("data", (row: DataRow) => {
-    console.log("row", row);
-
     const slug = generateSlug(row.name);
     const fileName = `${slug}.md`;
 

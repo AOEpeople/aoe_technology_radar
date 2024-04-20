@@ -15,14 +15,12 @@ To get started you need to install Gulp on your machine via npm.
 
 ```javascript
 npm install gulp -g
-
 ```
 
 You also need it locally in your project, so you have to install it as a dependency in your project .
 
 ```javascript
 npm install gulp --save-dev
-
 ```
 
 You can split your tasks into various smaller sub-tasks and even split it up into smaller files.
