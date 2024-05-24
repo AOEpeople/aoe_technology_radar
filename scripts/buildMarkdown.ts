@@ -57,6 +57,23 @@ tags: ${row.category}
 
 ${row.description}`;
 
+    // Find the latest folder with filename
+    const folderList = fs.readdirSync("./data/radar/");
+    const lastFolder = folderList.reverse().find((currentFolder) => {
+      if (fs.existsSync(`./data/radar/${currentFolder}/${fileName}`)) {
+        return currentFolder;
+      }
+    });
+    if (lastFolder) {
+      const lastUpdatedDate = new Date(lastFolder);
+      const lastModifiedDate = new Date(row.modified);
+      // Compare the last modified date with the last updated date
+      if (lastModifiedDate < lastUpdatedDate) {
+        console.log(`Skipping ${fileName} because it is already up to date`);
+        return;
+      }
+    }
+
     const folder = `./data/radar/${actualDate}`;
 
     if (!fs.existsSync(folder)) {
