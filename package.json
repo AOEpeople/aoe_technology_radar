@@ -1,5 +1,5 @@
 {
-  "name": "aoe_technology_radar",
+  "name": "MOHARA Technology Radar",
   "version": "4.3.0",
   "bin": {
     "techradar": "./bin/techradar.js"

@@ -70,4 +70,4 @@ item belongs, we choose the best fit.
 ### Contributing to the MOHARA Technology Radar
 
 Contributions and source code of the AOE Tech Radar are on
-GitHub: [MOHARA Technology Radar on GitHub](https://github.com/HelloMOHARA/technology-radar)
+GitHub: [MOHARA Technology Radar on GitHub](https://github.com/HelloMOHARA/mohara-technology-radar)
