@@ -1,7 +1,7 @@
 {
   "basePath": "/",
   "baseUrl": "technology-radar.mohara.co",
-  "editUrl": "https://github.com/HelloMOHARA/technology-radar/tree/main/radar/{release}/{id}.md",
+  "editUrl": "https://github.com/HelloMOHARA/mohara-technology-radar/tree/main/radar/{release}/{id}.md",
   "logoFile": "logo.svg",
   "toggles": {
     "showChart": true,
