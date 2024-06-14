@@ -149,7 +149,7 @@ your browser at `http://localhost:3000/techradar` or the path you specified via 
 
 ## Advanced styling with `custom.css`
 
-If you need to customize the radar's styles, you can add custom CSS rules to the `custom.css` file.
+If you need to customize the radar's styles, you can add custom CSS rules to the `./src/custom.css` file.
 
 Be aware that this might break with future versions of the radar as we use css-modules in the
 components which generates dynamic, hashed class names and the layout structure might change.
