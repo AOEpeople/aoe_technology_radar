@@ -3,7 +3,7 @@ title: "AWS"
 ring: adopt
 quadrant: platforms-and-operations
 featured: true
-tags: [Cloud, DevOps, Infrastructure]
+tags: [Cloud]
 ---
 
 [AWS](https://aws.amazon.com/) is a comprehensive, evolving cloud computing platform provided by Amazon.

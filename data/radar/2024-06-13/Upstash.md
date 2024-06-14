@@ -3,7 +3,7 @@ title: "Upstash"
 ring: assess
 quadrant: platforms-and-operations
 featured: true
-tags: [Database, Redis, Serverless]
+tags: [Database, Serverless]
 ---
 
 [Upstash](https://upstash.com/) is a serverless data platform for Redis and Kafka.

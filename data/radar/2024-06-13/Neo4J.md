@@ -3,7 +3,7 @@ title: "Neo4J"
 ring: trial
 quadrant: tools
 featured: true
-tags: [Graph Database, Data Management, Backend]
+tags: [Database]
 ---
 
 [Neo4J](https://neo4j.com/) is a graph database management system developed by Neo4j, Inc.

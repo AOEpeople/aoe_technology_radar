@@ -3,7 +3,7 @@ title: "PHPStorm"
 ring: adopt
 quadrant: tools
 featured: false
-tags: [IDE, Development Tool]
+tags: []
 ---
 
 [PHPStorm](https://www.jetbrains.com/phpstorm/) is a commercial, cross-platform IDE for PHP, developed by JetBrains.

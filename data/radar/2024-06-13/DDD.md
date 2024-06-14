@@ -3,7 +3,7 @@ title: "DDD"
 ring: adopt
 quadrant: techniques
 featured: true
-tags: [Software Design, Architecture, Development Methodology]
+tags: [Architecture, Documentation]
 ---
 
 [Domain-Driven Design (DDD)](https://www.domainlanguage.com/ddd/) is a software design approach focusing on modeling software to match a domain according to input from domain experts.

@@ -3,7 +3,7 @@ title: "Auth0"
 ring: hold
 quadrant: platforms-and-operations
 featured: false
-tags: [Authentication, Security]
+tags: [Authentication]
 ---
 
 [Auth0](https://auth0.com/) is an easy-to-implement, adaptable authentication and authorization platform.

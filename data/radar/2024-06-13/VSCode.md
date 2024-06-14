@@ -3,7 +3,7 @@ title: "VSCode"
 ring: adopt
 quadrant: tools
 featured: false
-tags: [IDE, Development Tool, Open Source]
+tags: []
 ---
 
 [VSCode](https://code.visualstudio.com/) is a free, open-source code editor developed by Microsoft.

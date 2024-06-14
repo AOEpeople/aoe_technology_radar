@@ -3,7 +3,7 @@ title: "C4 Models"
 ring: adopt
 quadrant: techniques
 featured: true
-tags: [Architecture, Documentation, Software Design]
+tags: [Architecture, Documentation]
 ---
 
 [C4 Models](https://c4model.com/) are a set of software architecture diagrams created by Simon Brown. They consist of a hierarchical set of diagrams for context, containers, components, and code.

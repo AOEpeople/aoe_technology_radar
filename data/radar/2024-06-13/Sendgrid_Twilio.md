@@ -3,7 +3,7 @@ title: "Sendgrid Twilio"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Email, Communication, Marketing]
+tags: [Email]
 ---
 
 [Sendgrid Twilio](https://sendgrid.com/) is a cloud-based service that provides email delivery and marketing automation services.

@@ -3,7 +3,7 @@ title: "Unity"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Game Development, 3D, Cross-Platform]
+tags: []
 ---
 
 [Unity](https://unity.com/) is a cross-platform game engine developed by Unity Technologies.

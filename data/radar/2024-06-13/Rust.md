@@ -3,7 +3,7 @@ title: "Rust"
 ring: hold
 quadrant: languages-and-frameworks
 featured: true
-tags: [Programming Language, Systems Programming, Performance]
+tags: [Programming Language]
 ---
 
 [Rust](https://www.rust-lang.org/) is a systems programming language focused on safety and performance. It prevents segfaults and guarantees thread safety.

@@ -1,9 +1,9 @@
 ---
 title: "Firebase"
 ring: adopt
-quadrant: tools
+quadrant: platforms-and-operations
 featured: true
-tags: [Backend, Mobile Development, Web Development]
+tags: [Authentication, Database]
 ---
 
 [Firebase](https://firebase.google.com/) is a platform developed by Google for creating mobile and web applications.

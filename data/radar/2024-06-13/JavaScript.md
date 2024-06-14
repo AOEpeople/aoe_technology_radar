@@ -3,7 +3,7 @@ title: "JavaScript"
 ring: adopt
 quadrant: languages-and-frameworks
 featured: true
-tags: [Programming Language, Frontend, Web Development]
+tags: [Programming Language, Frontend, Backend, Web Development]
 ---
 
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) is a core technology of the web, enabling interactive and dynamic content on websites. It is supported by all modern web browsers and has a vast ecosystem of libraries and frameworks.

@@ -3,7 +3,7 @@ title: "Expo"
 ring: adopt
 quadrant: platforms-and-operations
 featured: true
-tags: [Mobile Development, JavaScript, Cross-Platform]
+tags: [Mobile Development]
 ---
 
 [Expo](https://expo.dev/) is an open-source platform for making universal native apps for Android, iOS, and the web with JavaScript and React.

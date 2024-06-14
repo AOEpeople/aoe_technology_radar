@@ -3,7 +3,7 @@ title: "Segment"
 ring: adopt
 quadrant: platforms-and-operations
 featured: false
-tags: [Customer Data, Analytics, Integration]
+tags: []
 ---
 
 [Segment](https://segment.com/) is a customer data platform that helps you collect, clean, and control your customer data.

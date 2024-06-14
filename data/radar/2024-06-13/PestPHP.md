@@ -3,7 +3,7 @@ title: "PestPHP"
 ring: adopt
 quadrant: tools
 featured: false
-tags: [Testing, PHP, Web Development]
+tags: [Testing]
 ---
 
 [PestPHP](https://pestphp.com/) is an elegant PHP testing framework with a focus on simplicity.

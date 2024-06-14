@@ -3,7 +3,7 @@ title: "Laravel Shift"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Automation, Web Development]
+tags: [Web Development]
 ---
 
 [Laravel Shift](https://laravelshift.com/) is a tool that automates upgrading your Laravel applications.

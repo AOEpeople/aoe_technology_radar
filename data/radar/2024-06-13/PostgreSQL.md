@@ -3,7 +3,7 @@ title: "PostgreSQL"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Database, SQL, Backend]
+tags: [Database]
 ---
 
 [PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system.

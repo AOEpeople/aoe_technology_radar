@@ -3,7 +3,7 @@ title: "GCP"
 ring: assess
 quadrant: platforms-and-operations
 featured: true
-tags: [Cloud, DevOps, Infrastructure]
+tags: [Cloud]
 ---
 
 [GCP](https://cloud.google.com/) is a suite of cloud computing services provided by Google.

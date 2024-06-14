@@ -1,9 +1,9 @@
 ---
 title: "Datadog"
 ring: adopt
-quadrant: tools
+quadrant: platforms-and-operations
 featured: true
-tags: [Monitoring, Analytics, DevOps]
+tags: [Monitoring, Testing]
 ---
 
 [Datadog](https://www.datadoghq.com/) is a monitoring and security platform for cloud applications.

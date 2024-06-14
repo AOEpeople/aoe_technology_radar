@@ -3,7 +3,7 @@ title: "Jest"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Testing, JavaScript, Frontend]
+tags: [Testing, JavaScript, Frontend, Backend]
 ---
 
 [Jest](https://jestjs.io/) is a JavaScript testing framework maintained by Facebook.

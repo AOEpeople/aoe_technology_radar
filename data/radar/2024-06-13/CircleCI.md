@@ -3,7 +3,7 @@ title: "CircleCI"
 ring: hold
 quadrant: platforms-and-operations
 featured: false
-tags: [CI/CD, DevOps, Automation]
+tags: [CI/CD, DevOps]
 ---
 
 [CircleCI](https://circleci.com/) is a CI/CD tool that automates your software development process.
