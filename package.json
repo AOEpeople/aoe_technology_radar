@@ -13,7 +13,7 @@
     "lint": "next lint",
     "fix": "prettier . --write",
     "prepare": "husky",
-    "postinstall": "npm run build:icons"
+    "postinstall": "npm run build:icons && npm run build:data"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
