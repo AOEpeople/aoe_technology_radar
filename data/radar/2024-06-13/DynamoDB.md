@@ -3,7 +3,7 @@ title: "DynamoDB"
 ring: assess
 quadrant: platforms-and-operations
 featured: true
-tags: [Database, NoSQL, Cloud]
+tags: [Database]
 ---
 
 [DynamoDB](https://aws.amazon.com/dynamodb/) is a key-value and document database that delivers single-digit millisecond performance at any scale.

@@ -3,7 +3,7 @@ title: "Stripe"
 ring: adopt
 quadrant: platforms-and-operations
 featured: true
-tags: [Payment Processing, E-commerce, Finance]
+tags: []
 ---
 
 [Stripe](https://stripe.com/) is a technology company that builds economic infrastructure for the internet.

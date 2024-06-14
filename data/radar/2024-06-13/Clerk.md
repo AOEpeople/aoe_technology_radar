@@ -3,7 +3,7 @@ title: "Clerk"
 ring: trial
 quadrant: tools
 featured: true
-tags: [Authentication, User Management, React]
+tags: [Authentication]
 ---
 
 [Clerk](https://clerk.dev/) provides drop-in authentication, authorization, and user management for Next.js

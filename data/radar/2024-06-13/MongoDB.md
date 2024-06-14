@@ -3,7 +3,7 @@ title: "MongoDB"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Database, NoSQL, Backend]
+tags: [Database]
 ---
 
 [MongoDB](https://www.mongodb.com/) is a source-available cross-platform document-oriented database program.

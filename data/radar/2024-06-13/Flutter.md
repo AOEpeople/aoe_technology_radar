@@ -3,7 +3,7 @@ title: "Flutter"
 ring: assess
 quadrant: languages-and-frameworks
 featured: true
-tags: [UI Toolkit, Mobile Development, Cross-Platform]
+tags: [Mobile Development, Framework]
 ---
 
 [Flutter](https://flutter.dev/) is an open-source UI software development toolkit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, and the web from a single codebase.

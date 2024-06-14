@@ -3,7 +3,7 @@ title: "Next.js"
 ring: adopt
 quadrant: languages-and-frameworks
 featured: true
-tags: [JavaScript, Frontend, Web Development, Framework]
+tags: [Frontend, Web Development, Framework, Backend]
 ---
 
 [Next.js](https://nextjs.org/) is a React framework that enables server-side rendering and static site generation for React applications.

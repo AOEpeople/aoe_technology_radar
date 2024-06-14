@@ -3,7 +3,7 @@ title: "Sentry"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [Error Tracking, Monitoring, DevOps]
+tags: [Monitoring, DevOps]
 ---
 
 [Sentry](https://sentry.io/) provides error tracking that helps developers monitor and fix crashes in real-time.

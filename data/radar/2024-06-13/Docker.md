@@ -3,7 +3,7 @@ title: "Docker"
 ring: hold
 quadrant: tools
 featured: true
-tags: [Containerization, DevOps, CI/CD]
+tags: [DevOps]
 ---
 
 [Docker](https://www.docker.com/) is a set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers.

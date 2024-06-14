@@ -3,7 +3,7 @@ title: "OWASP"
 ring: adopt
 quadrant: techniques
 featured: true
-tags: [Security, Best Practices, Web Development]
+tags: [Security, Web Development]
 ---
 
 [OWASP](https://owasp.org/) is an open community dedicated to enabling organizations to conceive, develop, acquire, operate, and maintain applications that can be trusted.

@@ -3,7 +3,7 @@ title: "Neon (Vercel)"
 ring: trial
 quadrant: platforms-and-operations
 featured: true
-tags: [Database, PostgreSQL, Cloud]
+tags: [Database, Cloud, Serverless]
 ---
 
 [Neon](https://neon.tech/) is a serverless Postgres database platform.

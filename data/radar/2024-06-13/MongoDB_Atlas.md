@@ -3,7 +3,7 @@ title: "MongoDB Atlas"
 ring: adopt
 quadrant: platforms-and-operations
 featured: true
-tags: [Database, NoSQL, Cloud]
+tags: [Database]
 ---
 
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is a multi-cloud database service by MongoDB.

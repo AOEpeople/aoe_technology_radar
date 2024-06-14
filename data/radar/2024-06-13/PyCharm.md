@@ -3,7 +3,7 @@ title: "PyCharm"
 ring: adopt
 quadrant: tools
 featured: false
-tags: [IDE, Python, Development Tool]
+tags: []
 ---
 
 [PyCharm](https://www.jetbrains.com/pycharm/) is an IDE for Python, developed by JetBrains.

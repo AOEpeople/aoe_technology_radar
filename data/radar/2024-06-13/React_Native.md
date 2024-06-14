@@ -3,7 +3,7 @@ title: "React Native"
 ring: adopt
 quadrant: languages-and-frameworks
 featured: true
-tags: [JavaScript, Mobile Development, Cross-Platform]
+tags: [JavaScript, Mobile Development, Framework]
 ---
 
 [React Native](https://reactnative.dev/) is a framework for building native apps using React. It allows developers to use the same codebase for building applications for both iOS and Android platforms.

@@ -3,7 +3,7 @@ title: "Scrum"
 ring: adopt
 quadrant: techniques
 featured: false
-tags: [Project Management, Development Methodology]
+tags: []
 ---
 
 [Scrum](https://www.scrum.org/) is an agile process framework for managing complex knowledge work, with an initial emphasis on software development.

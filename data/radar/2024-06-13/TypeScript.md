@@ -3,7 +3,7 @@ title: "TypeScript"
 ring: adopt
 quadrant: languages-and-frameworks
 featured: true
-tags: [Programming Language, Fullstack, JavaScript, Web Development]
+tags: [Programming Language, Backend, Frontend, Web Development]
 ---
 
 [TypeScript](https://www.typescriptlang.org/) is a statically typed superset of JavaScript that adds type safety and enhances developer productivity. It helps catch errors early and improves code maintainability.

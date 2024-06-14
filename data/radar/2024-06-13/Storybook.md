@@ -3,7 +3,7 @@ title: "Storybook"
 ring: adopt
 quadrant: tools
 featured: true
-tags: [UI Development, Frontend, JavaScript]
+tags: [Testing, Frontend, JavaScript]
 ---
 
 [Storybook](https://storybook.js.org/) is an open-source tool for developing UI components in isolation for React, Vue, Angular, and more.
