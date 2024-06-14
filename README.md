@@ -1,74 +1,14 @@
-# AOE Technology Radar
+# MOHARA Technology Radar
 
-A static site generator for AOE Technology Radar
+A static site generator for MOHARA Technology Radar.
 
-![Screenshot of the AOE Technology Radar](./docs/assets/screenshot-techradar.png)
+This repository was created using the [AOE Technology Radar](https://github.com/AOEpeople/aoe_technology_radar/tree/main)
 
-## Looking for the AOE Tech Radar content?
+## Configuration
 
-- The repository is now found here: https://github.com/AOEpeople/techradar
-- The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
+### Configure the radar
 
-## ✨ Version 4.0.0
-
-Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
-on [Next.js](https://nextjs.org/) to provide enhanced static site generation. The visualization has
-been rewritten without the need for the D3 dependency. New features include a fuzzy search based on
-Fuse.js, non-overlapping blips on the radar, and a reworked tag filter on the homepage.
-
-To migrate from the old version please migrate your `package.json`'s scripts and create a
-new `config.json` based on the documentation below. You can find a reference implementation in
-our [repo](https://github.com/AOEpeople/techradar). The old version is still available in the `v3`
-branch.
-
-Version 4.0.0 also removes the .html extension from the URLs. If you want to support the old URLs,
-we recommend to add a redirect rule. For nginx, you can use the following rule:
-
-```nginx
-rewrite ^/techradar/(.+)\.html$ /techradar/$1/ permanent;
-```
-
-## Create your own radar
-
-The generator is free to use under Open Source License - in fact there are already some other Radars
-published based on our Radar and there are also Contributions back. However, it would be nice to
-mention in radar that the generator is based on this repository.
-
-### Step 1: Create a new project
-
-Ensure node.js ist installed and create a new project by creating a new folder with a `package.json`
-file like the following and adapt to your needs:
-
-```json
-{
-  "name": "aoe-techradar",
-  "version": "1.0.0",
-  "license": "MIT",
-  "scripts": {
-    "build": "techradar build",
-    "serve": "techradar serve"
-  },
-  "dependencies": {
-    "aoe_technology_radar": "^4"
-  }
-}
-```
-
-Run `npm install` to install the dependencies and run `npm run build` to create the initial radar.
-This will also create a basic bootstrap of all required files, including the `config.json` and
-the `about.md` if they do not exist yet.
-
-### Step 2: Change logo and the favicon
-
-Place your `logo.svg` and `favicon.ico` in the `public` folder next to the `package.json`.
-The ideal logo is 150px x 60px. For reference have a look at [public/logo.svg](./public/logo.svg).
-
-If you want to use a file other than an SVG, copy it to the `public` folder and set the name of the
-file as `logoFile` inside the `config.json`. e.g. `"logoFile": "acme-logo.png"`
-
-### Step 3: Configure the radar
-
-Open the `config.json` file and configure the radar to your needs.
+Open the `data/config.json` file and configure the radar to your needs.
 
 | Attribute | Description                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -137,17 +77,11 @@ An array with of `radar`, `tags`, `list` in order you want them to appear on the
 | href      | URL to the website                                                                     |
 | icon      | One of `facebook`, `github`, `gitlab`, `instagram`, `linkedin`, `x`, `xing`, `youtube` |
 
-### Step 4: Add a help page with explanations
+## Create the radar items
 
-Edit the `about.md` file next to the `package.json` file. The contents will be shown on
-the `/help-and-about-tech-radar` page. Optionally you can change the title of the menu by
-setting `labels.pageAbout` in your `config.json`.
-
-### Step 5: Create the radar items
-
-Remove or edit existing items in the `radar` folder.
+Remove or edit existing items in the `/data/radar` folder.
 For a new release, create a folder of the release date (YYYY-MM-DD)
-under `./radar`. e.g. `./radar/2024-03-01`.
+under `./data/radar`. e.g. `./data/radar/2024-03-01`.
 
 The items are written in Markdown format (.md)
 
@@ -186,7 +120,7 @@ reference them
 ![nice image](/images/optional-content-image.png)
 ```
 
-### Step 6: Build your radar
+## Build the radar
 
 Your final file and folder structure should look like this:
 
