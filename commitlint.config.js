@@ -17,6 +17,8 @@ module.exports = {
         "cd",
         "build",
         "doc",
+        "docs",
+        "style",
         "perf",
         "chore",
         "update",
