@@ -3,7 +3,7 @@ title: "Google Analytics"
 ring: adopt
 quadrant: tools
 featured: false
-tags: [Data]
+tags: [Monitoring]
 ---
 
 [Google Analytics](https://analytics.google.com/) is a web analytics service offered by Google that tracks and reports website traffic.

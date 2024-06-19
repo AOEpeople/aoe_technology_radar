@@ -1,7 +1,7 @@
 ---
 title: "Application Metrics"
 ring: hold
-quadrant: techniques
+quadrant: platforms-and-operations
 featured: false
 tags: [Monitoring, DevOps]
 ---
