@@ -3,6 +3,7 @@ import styles from "./ItemDetail.module.css";
 import { RingBadge } from "@/components/Badge/Badge";
 import { Attention, Edit } from "@/components/Icons";
 import { Tag } from "@/components/Tags/Tags";
+import { Teams } from "@/components/Teams/Teams";
 import { getEditUrl, getLabel, getReleases } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -25,6 +26,11 @@ export function ItemDetail({ item }: ItemProps) {
         <h1 className={styles.title}>{item.title}</h1>
         {item.tags?.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
+      {item.teams && (
+        <div className={styles.teams}>
+          <Teams teams={item.teams} />
+        </div>
+      )}
       <div className={styles.revisions}>
         {notMaintainedText && isNotMaintained(item.release) && (
           <div className={cn(styles.revision, styles.hint)}>

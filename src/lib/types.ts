@@ -25,6 +25,7 @@ export interface Item {
   release: Release;
   revisions?: Revision[];
   position: [x: number, y: number];
+  teams?: string[];
 }
 
 export interface Ring {

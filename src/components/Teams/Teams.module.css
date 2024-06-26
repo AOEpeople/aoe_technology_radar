@@ -1,0 +1,34 @@
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 6px 0 -5px;
+}
+
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 20px;
+}
+
+.teamtitle {
+  margin: 0 30px 0 0;
+}
+
+.team {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 6px 15px 5px;
+  margin: 6px;
+  text-transform: uppercase;
+  border: 1px solid var(--team);
+  border-radius: 13px;
+  background: var(--team);
+  font-size: 14px;
+  line-height: 1;
+  overflow: hidden;
+  text-decoration: none;
+}

@@ -172,6 +172,7 @@ Following front-matter attributes are possible:
 - **tags**: Optional tags for filtering.
 - **featured**: (optional, default "true") If you set this to `false`, the item
   will not be visible in the radar quadrants but still be available in the overview.
+- **teams**: Optional list of teams, which are currently using this item.
 
 The name of the .md file acts as item identifier and may overwrite items with
 the same name from older releases.

@@ -94,6 +94,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             tags: data.tags || [],
             revisions: [],
             position: [0, 0],
+            teams: data.teams || [],
           };
         } else {
           items[id].release = releaseDate;
@@ -102,6 +103,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].ring = data.ring || items[id].ring;
           items[id].quadrant = data.quadrant || items[id].quadrant;
           items[id].tags = data.tags || items[id].tags;
+          items[id].teams = data.teams || items[id].teams;
           items[id].featured =
             typeof data.featured === "boolean"
               ? data.featured
@@ -222,6 +224,11 @@ function postProcessItems(items: Item[]): {
     // unset tags if there are none
     if (!processedItem.tags?.length) {
       delete processedItem.tags;
+    }
+
+    // unset teams if there are none
+    if (!processedItem.teams?.length) {
+      delete processedItem.teams;
     }
 
     return processedItem;
