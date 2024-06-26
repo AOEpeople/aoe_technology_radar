@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.3.0.1 (2024-06-21)
+
+### Features
+
+- add teams definition per technology
+
 ## Version v4.3.0 (2024-03-26)
 
 ### Features
