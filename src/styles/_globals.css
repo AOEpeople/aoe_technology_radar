@@ -92,6 +92,10 @@ ol {
   margin-bottom: 1em;
 }
 
+ol {
+  padding-left: 26px;
+}
+
 pre {
   margin-bottom: 1em;
   white-space: pre-wrap;
