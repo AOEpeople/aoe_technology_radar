@@ -22,7 +22,12 @@ export function getAppName() {
 }
 
 export function getLogoUrl() {
-  return assetUrl("/" + config.logoFile);
+  return assetUrl(config.logoFile);
+}
+
+export function getJsUrl(): string {
+  if (!config.jsFile) return "";
+  return assetUrl(config.jsFile);
 }
 
 export function getChartConfig() {
