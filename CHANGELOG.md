@@ -1,5 +1,20 @@
 # Changelog
 
+## Version v4.4.0 (2024-07-01)
+
+### Features
+
+- add `jsFile` option to include custom JavaScript (6a5b8637)
+
+### Fixes
+
+- **css:** increase ol padding to accommodate two-digit list items (a443aef0)
+
+### Chores and tidying
+
+- update dependencies (717bc238)
+- update dependencies and sync version (cca35eaa)
+
 ## Version v4.3.0 (2024-03-26)
 
 ### Features
