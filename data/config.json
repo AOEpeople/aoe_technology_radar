@@ -14,26 +14,26 @@
   "quadrants": [
     {
       "id": "Languages and Frameworks",
-      "title": "Languages & Frameworks",
-      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
+      "title": "Languages and Frameworks",
+      "description": "Programming languages and computational frameworks tailored for spatial omics analysis, enabling robust data processing and algorithm development.",
       "color": "#006455"
     },
     {
       "id": "Techniques",
-      "title": "Methods & Patterns",
-      "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
+      "title": "Techniques",
+      "description": "Innovative analytical techniques and data integration patterns specific to spatial omics, enhancing understanding of spatially resolved molecular data.",
       "color": "#017665"
     },
     {
       "id": "Platforms",
       "title": "Platforms",
-      "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
+      "description": "Specialized open-source and commercial platforms and tools designed for the management, analysis, and visualization of spatial omics data, supporting scalable and efficient research workflows.",
       "color": "#017665"
     },
     {
       "id": "Tools",
       "title": "Tools",
-      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
+      "description": "Essential software tools and applications for spatial omics research, ranging from data preprocessing to advanced spatial visualization and interpretation.",
       "color": "#006455"
     }
   ],
@@ -67,7 +67,7 @@
       "title": "Hold",
       "description": "",
       "color": "#d62828",
-      "radius": 1,
+      "radius": 0.1,
       "strokeWidth": 0.75
     }
   ],
@@ -89,8 +89,8 @@
     }
   },
   "chart": {
-    "size": 800,
-    "blipSize": 12
+    "size": 850,
+    "blipSize": 10
   },
   "social": [
     {
@@ -108,7 +108,7 @@
   ],
   "imprint": "https://lizard.bio",
   "labels": {
-    "title": "Technology Radar",
+    "title": "Spatial omics technology Radar",
     "imprint": "BioLizard website",
     "quadrant": "Quadrant",
     "quadrantOverview": "Quadrant Overview",

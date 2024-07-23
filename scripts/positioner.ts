@@ -8,7 +8,7 @@ const startAngles = [270, 0, 180, 90];
 
 export default class Positioner {
   private readonly centerRadius: number;
-  private readonly minDistance: number = 20;
+  private readonly minDistance: number = 10;
   private readonly paddingRing: number = 15;
   private readonly paddingAngle: number = 10;
   private positions: Record<string, Position[]> = {};

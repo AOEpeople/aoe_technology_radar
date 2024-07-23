@@ -189,6 +189,7 @@ Your final file and folder structure should look like this:
 ```
 
 Run `npm run build` to build the radar and upload the files of the `./build` folder to your server.
+Note: alternatively run `npm run build:data` to build the radar before continuing below.
 
 You can view a development version of the radar by running `npm run serve` and open the radar in
 your browser at `http://localhost:3000`.
