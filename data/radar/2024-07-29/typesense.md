@@ -1,6 +1,6 @@
 ---
 title: "Typesense"
-ring: trial
+ring: assess
 quadrant: tools
 featured: true
 tags: [Backend, Search, AI]
@@ -18,4 +18,4 @@ Key features of Typesense include:
 - **Scoped API Keys**: Manage multi-tenant data securely.
 - **High Availability**: Ensure resilience with easy clustering setups.
 
-MOHARA is trialing Typesense to improve search capabilities within its applications. With vector searching capabilities it also looks promising for RAG applications.
+MOHARA is assessing Typesense to improve search capabilities within its applications. With vector searching capabilities it also looks promising for RAG applications.
