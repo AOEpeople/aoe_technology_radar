@@ -159,6 +159,7 @@ title: "React"
 ring: adopt
 quadrant: languages-and-frameworks
 tags: [frontend, coding]
+teams: [capybara, star]
 ---
 
 Text goes here. You can use **markdown** here.
