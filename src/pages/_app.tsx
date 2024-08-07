@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 
 import { Layout, type LayoutClass } from "@/components/Layout/Layout";
+import { getJsUrl } from "@/lib/data";
 import { formatTitle } from "@/lib/format";
 import { assetUrl } from "@/lib/utils";
 import "@/styles/_globals.css";
@@ -18,6 +20,7 @@ type CustomAppProps = AppProps & {
 };
 
 export default function App({ Component, pageProps, router }: CustomAppProps) {
+  const jsUrl = getJsUrl();
   return (
     <>
       <Head>
@@ -27,6 +30,7 @@ export default function App({ Component, pageProps, router }: CustomAppProps) {
       </Head>
       <Layout layoutClass={Component.layoutClass}>
         <Component {...pageProps} />
+        {jsUrl && <Script src={jsUrl} />}
       </Layout>
     </>
   );

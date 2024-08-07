@@ -75,6 +75,7 @@ Open the `config.json` file and configure the radar to your needs.
 | basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
 | baseUrl   | Set to the full URL, where the radar will be hosted. Will be used for sitemap.xml. `https://www.aoe.com/techradar`             |
 | logoFile  | (optional) Filepath in public folder. Default is `logo.svg`                                                                    |
+| jsFile    | (optional) Filepath in public folder or URL to enable include of custom script                                                 |
 | toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
 | sections  | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
 | colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
