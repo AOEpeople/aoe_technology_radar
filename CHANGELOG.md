@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.4.0.1 PDig (2024-08-07)
+
+### Chores and tidying
+
+- update PDig version
+
 ## Version v4.4.0 (2024-07-01)
 
 ### Features
