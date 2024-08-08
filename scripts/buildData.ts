@@ -71,7 +71,9 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
   const items: Record<string, Item> = {};
 
   async function readDir(dirPath: string) {
-    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+    const entries = fs
+      .readdirSync(dirPath, { withFileTypes: true })
+      .sort((a, b) => a.name.localeCompare(b.name));
 
     for (const entry of entries) {
       const fullPath = path.join(dirPath, entry.name);
@@ -103,7 +105,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].ring = data.ring || items[id].ring;
           items[id].quadrant = data.quadrant || items[id].quadrant;
           items[id].tags = data.tags || items[id].tags;
-          items[id].teams = data.teams || items[id].teams;
+          items[id].teams = data.teams || [];
           items[id].featured =
             typeof data.featured === "boolean"
               ? data.featured
