@@ -1,5 +1,6 @@
 {
-  "name": "aoe_technology_radar",
+  "name": "@porscheofficial/porschedigital-technology-radar",
+  "private": true,
   "version": "4.4.0.1",
   "bin": {
     "techradar": "./bin/techradar.js"
@@ -41,6 +42,9 @@
     "react-dom": "^18",
     "tsx": "^4.15.8",
     "typescript": "^5"
+  },
+  "dependencies": {
+    "chokidar": "3.6.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

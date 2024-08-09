@@ -2,15 +2,16 @@
 
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execSync, spawn } = require("child_process");
 const crypto = require("crypto");
+const chokidar = require("chokidar");
 
 const CWD = process.cwd();
 const BUILDER_DIR = path.join(CWD, ".techradar");
 const SOURCE_DIR = path.join(CWD, "node_modules", "aoe_technology_radar");
 const HASH_FILE = path.join(BUILDER_DIR, "hash");
 
-const PARAMETER = process.argv[2]; // "build" or "serve"
+const PARAMETER = process.argv[2]; // "build" or "serve" or "dev"
 
 function info(message) {
   console.log(`\x1b[32m${message}\x1b[0m`);
@@ -23,6 +24,18 @@ function warn(message) {
 function error(message) {
   console.error(`Error: ${message}`);
   process.exit(1);
+}
+
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
 
 function bootstrap() {
@@ -161,4 +174,92 @@ if (PARAMETER === "build") {
   }
   info(`Copying techradar to ${path.join(CWD, "build")}`);
   fs.renameSync(path.join(BUILDER_DIR, "out"), path.join(CWD, "build"));
+}
+
+if (PARAMETER === "dev") {
+  info("Developing techradar");
+
+  // Let's spawn this a child process, so that it doesn't block our main thread
+  // The process is killed when the main thread is killed
+  spawn("npm", ["run", "dev"], { stdio: "inherit", detached: false });
+
+  // Watch certain files for changes
+  // These variables could be used in the rest of this file as well,
+  // but we want to focus on additive changes, so that it's easy to pull the latest updates from origin.
+  const RADAR_CONTENT_DIR_SOURCE = path.join(CWD, "radar");
+  const RADAR_CONTENT_DIR_BUILD = path.join(BUILDER_DIR, "data", "radar");
+
+  const ABOUT_FILE_SOURCE = path.join(CWD, "about.md");
+  const ABOUT_FILE_BUILD = path.join(BUILDER_DIR, "data", "about.md");
+
+  const CUSTOMCSS_FILE_SOURCE = path.join(CWD, "custom.css");
+  const CUSTOMCSS_FILE_BUILD = path.join(
+    BUILDER_DIR,
+    "src",
+    "styles",
+    "custom.css",
+  );
+
+  const CONFIG_FILE_SOURCE = path.join(CWD, "config.json");
+  const CONFIG_FILE_BUILD = path.join(BUILDER_DIR, "data", "config.json");
+
+  // Initialize watching of source directory and files with chokidar
+  const assetsToWatch = [
+    RADAR_CONTENT_DIR_SOURCE,
+    ABOUT_FILE_SOURCE,
+    CUSTOMCSS_FILE_SOURCE,
+    CONFIG_FILE_SOURCE,
+  ];
+  const watcher = chokidar.watch(assetsToWatch, {
+    ignored: /^\./, // Ignore dotfiles
+    persistent: true,
+    ignoreInitial: true,
+    depth: 5,
+  });
+
+  // Rebuild the data when a change is detected
+  // Debounce the function to avoid multiple rebuilds at the same time
+  const rebuildData = debounce(({ path }) => {
+    try {
+      // First copy over the changed file to the build directory
+      switch (path) {
+        case ABOUT_FILE_SOURCE:
+          info("about.md changed");
+          fs.copyFileSync(ABOUT_FILE_SOURCE, ABOUT_FILE_BUILD);
+          break;
+        case CUSTOMCSS_FILE_SOURCE:
+          info("custom.css changed");
+          fs.copyFileSync(CUSTOMCSS_FILE_SOURCE, CUSTOMCSS_FILE_BUILD);
+          break;
+        case CONFIG_FILE_SOURCE:
+          info("config.json changed");
+          fs.copyFileSync(CONFIG_FILE_SOURCE, CONFIG_FILE_BUILD);
+          break;
+        default:
+          if (path.startsWith(RADAR_CONTENT_DIR_SOURCE)) {
+            const file = path.replace(RADAR_CONTENT_DIR_SOURCE, "");
+            info(`${file} changed, going to rebuild the data.`);
+            if (fs.existsSync(RADAR_CONTENT_DIR_BUILD)) {
+              fs.rmSync(RADAR_CONTENT_DIR_BUILD, { recursive: true });
+            }
+            fs.cpSync(RADAR_CONTENT_DIR_SOURCE, RADAR_CONTENT_DIR_BUILD, {
+              recursive: true,
+            });
+          } else {
+            info("Unknown file changed");
+          }
+      }
+
+      // Now rebuild the json files, so that the next.js server can pick up the changes
+      execSync("npm run build:data", { stdio: "inherit" });
+    } catch (error) {
+      error("Unable to rebuild data. Please restart the server.", error);
+    }
+  }, 1000);
+
+  // Event handlers
+  watcher
+    .on("add", (path) => rebuildData({ path }))
+    .on("change", (path) => rebuildData({ path }))
+    .on("unlink", (path) => rebuildData({ path }));
 }
