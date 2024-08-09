@@ -1,5 +1,15 @@
 # Changelog
 
+## Version v4.4.0.2 PDig (2024-08-07)
+
+### Features
+
+- development feature for auto rebuild
+
+### Fixes
+
+- fixed team display per technology
+
 ## Version v4.4.0.1 PDig (2024-08-07)
 
 ### Chores and tidying
