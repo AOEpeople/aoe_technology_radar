@@ -93,6 +93,7 @@ Open the `config.json` file and configure the radar to your needs.
 
 | Attribute        | Description                                             |
 | ---------------- | ------------------------------------------------------- |
+| showSearch       | Render the radar search on the header?                  |
 | showChart        | Render the radar visualization on the homepage?         |
 | showTagFilter    | Render the tag filter below the radar?                  |
 | showQuadrantList | Render the items below the radar?                       |
