@@ -3,7 +3,7 @@ title: "AdminJS"
 ring: trial
 quadrant: tools
 featured: true
-tags: [Backend, Frontend, Web development]
+tags: [Backend, Frontend, Web development, Admin portal]
 ---
 
 [AdminJS](https://adminjs.co/) is an open-source admin panel for applications, particularly effective in managing the content of web applications. It seamlessly integrates with your existing databases and backend frameworks, providing a robust interface for database operations without needing additional code. AdminJS supports a variety of ORM libraries like Sequelize, Mongoose, and TypeORM, and offers a customizable dashboard that can be tailored with custom components and actions.
