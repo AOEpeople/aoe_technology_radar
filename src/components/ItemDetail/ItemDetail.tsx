@@ -26,11 +26,6 @@ export function ItemDetail({ item }: ItemProps) {
         <h1 className={styles.title}>{item.title}</h1>
         {item.tags?.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
-      {item.teams && (
-        <div className={styles.teams}>
-          <Teams teams={item.teams} />
-        </div>
-      )}
       <div className={styles.revisions}>
         {notMaintainedText && isNotMaintained(item.release) && (
           <div className={cn(styles.revision, styles.hint)}>
@@ -45,6 +40,7 @@ export function ItemDetail({ item }: ItemProps) {
           release={item.release}
           ring={item.ring}
           body={item.body}
+          teams={item.teams}
         />
         {item.revisions?.map((revision, index) => (
           <Revision key={index} id={item.id} {...revision} />
@@ -59,9 +55,10 @@ interface RevisionProps {
   release: string;
   ring: string;
   body?: string;
+  teams?: string[];
 }
 
-function Revision({ id, release, ring, body }: RevisionProps) {
+function Revision({ id, release, ring, body, teams }: RevisionProps) {
   const date = new Date(release);
   const editLink = getEditUrl({ id, release });
   const formattedDate = date.toLocaleDateString("en-US", {
@@ -80,6 +77,11 @@ function Revision({ id, release, ring, body }: RevisionProps) {
           <a href={editLink} target="_blank" className={styles.editLink}>
             <Edit />
           </a>
+        )}
+        {teams && (
+          <div className={styles.teams}>
+            <Teams teams={teams} />
+          </div>
         )}
       </div>
     </div>

@@ -10,6 +10,7 @@ export interface Revision {
   release: Release;
   ring: string;
   body?: string;
+  teams?: string[];
 }
 
 export interface Item {
