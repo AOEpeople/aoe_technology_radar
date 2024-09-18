@@ -116,6 +116,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           release: releaseDate,
           ring: data.ring,
           body,
+          teams: data.teams,
         });
       }
     }
