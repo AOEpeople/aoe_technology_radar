@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.4.0.3 PDig (2024-09-18)
+
+### Features
+
+- teams are now visualized for each version in a technology detail page
+
 ## Version v4.4.0.2 PDig (2024-08-07)
 
 ### Features
