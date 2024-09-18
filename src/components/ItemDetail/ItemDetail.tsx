@@ -78,7 +78,7 @@ function Revision({ id, release, ring, body, teams }: RevisionProps) {
             <Edit />
           </a>
         )}
-        {teams && (
+        {!!teams && teams.length > 0 && (
           <div className={styles.teams}>
             <Teams teams={teams} />
           </div>
