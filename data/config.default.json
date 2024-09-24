@@ -7,10 +7,11 @@
   "toggles": {
     "showChart": true,
     "showTagFilter": true,
+    "showTeamFilter": true,
     "showQuadrantList": true,
     "showEmptyRings": false
   },
-  "sections": ["radar", "tags", "list"],
+  "sections": ["radar", "tags", "teams", "list"],
   "colors": {
     "foreground": "#fcf2e6",
     "background": "#113521",
@@ -128,6 +129,7 @@
     "quadrantOverview": "Quadrant Overview",
     "zoomIn": "Zoom in",
     "filterByTag": "Filter by Tag",
+    "filterByTeam": "Filter by Team",
     "footer": "The technology radar is a project by AOE GmbH. Feel free to build your own radar based on the open source project.",
     "notUpdated": "This item was not updated in last three versions of the Radar. Should it have appeared in one of the more recent editions, there is a good chance it remains pertinent. However, if the item dates back further, its relevance may have diminished and our current evaluation could vary. Regrettably, our capacity to consistently revisit items from past Radar editions is limited.",
     "notFound": "404 - Page not found",

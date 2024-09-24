@@ -66,6 +66,16 @@ export function getTags(): string[] {
   return data.tags;
 }
 
+export function getTeams(): string[] {
+  const teamsSet = new Set<string>();
+  data.items.forEach((item) => {
+    if (item.teams) {
+      item.teams.forEach((team) => teamsSet.add(team));
+    }
+  });
+  return Array.from(teamsSet).sort();
+}
+
 export function getEditUrl(props: { id: string; release: string }) {
   if (!config.editUrl) return "";
   return format(config.editUrl, props);
@@ -84,6 +94,14 @@ export function getItems(quadrant?: string, featured?: boolean): Item[] {
     if (quadrant && item.quadrant !== quadrant) return false;
     return !(featured && !item.featured);
   }) as Item[];
+}
+
+export function getFilteredItems(tag?: string, team?: string): Item[] {
+  return getItems().filter(
+    (item) =>
+      (!tag || item.tags?.includes(tag)) &&
+      (!team || item.teams?.includes(team)),
+  );
 }
 
 export function getImprintUrl() {
