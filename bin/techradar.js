@@ -79,58 +79,22 @@ function debounce(func, wait) {
 }
 
 function bootstrap() {
-  if (!fs.existsSync(fileMapping["radar-dir"].buildSource)) {
-    warn(
-      "Could not find radar directory. Created a bootstrap radar directory in your current working directory. Feel free to customize it.",
-    );
-    fs.cpSync(
-      fileMapping["radar-dir"].bootstrappingSource,
-      fileMapping["radar-dir"].buildSource,
-      {
+  for (const file of Object.values(fileMapping)) {
+    const relativeBuildPath = `./${path.relative(CWD, file.buildSource)}`;
+
+    if (!fs.existsSync(file.buildSource) && file.isDirectory) {
+      warn(
+        `Could not find the directory ${relativeBuildPath}. Created a bootstrap directory in your current working directory. Feel free to customize it.`,
+      );
+      fs.cpSync(file.bootstrappingSource, file.buildSource, {
         recursive: true,
-      },
-    );
-  }
-
-  if (!fs.existsSync(fileMapping["public-dir"].buildSource)) {
-    warn(
-      "Could not find public directory. Created a public radar directory in your current working directory.",
-    );
-    fs.cpSync(
-      fileMapping["public-dir"].bootstrappingSource,
-      fileMapping["public-dir"].buildSource,
-      {
-        recursive: true,
-      },
-    );
-  }
-
-  if (!fs.existsSync(fileMapping["config-file"].buildSource)) {
-    warn(
-      "Could not find a config.json. Created a bootstrap config.json in your current working directory. Customize it to your needs.",
-    );
-    fs.copyFileSync(
-      fileMapping["config-file"].bootstrappingSource,
-      fileMapping["config-file"].buildSource,
-    );
-  }
-
-  if (!fs.existsSync(fileMapping["about-file"].buildSource)) {
-    warn(
-      "Could not find a about.md. Created a bootstrap about.md in your current working directory. Customize it to your needs.",
-    );
-    fs.copyFileSync(
-      fileMapping["about-file"].bootstrappingSource,
-      fileMapping["about-file"].buildSource,
-    );
-  }
-
-  if (!fs.existsSync(fileMapping["customcss-file"].buildSource)) {
-    warn("Created a bootstrap custom.css in your current working directory.");
-    fs.copyFileSync(
-      fileMapping["customcss-file"].bootstrappingSource,
-      fileMapping["customcss-file"].buildSource,
-    );
+      });
+    } else if (!fs.existsSync(file.buildSource) && !file.isDirectory) {
+      warn(
+        `Could not find ${relativeBuildPath}. Created a bootstrap file in your current working directory. Feel free to customize it. Customize it to your needs.`,
+      );
+      fs.copyFileSync(file.bootstrappingSource, file.buildSource);
+    }
   }
 }
 
@@ -180,35 +144,20 @@ if (RECREATE_DIR) {
 bootstrap();
 
 try {
-  if (fs.existsSync(fileMapping["radar-dir"].buildTarget)) {
-    fs.rmSync(fileMapping["radar-dir"].buildTarget, { recursive: true });
+  for (const file of Object.values(fileMapping)) {
+    // Clean up a directory if it exists
+    if (fs.existsSync(file.buildTarget) && file.isDirectory) {
+      fs.rmSync(file.buildTarget, { recursive: true });
+    }
+
+    if (file.isDirectory) {
+      fs.cpSync(file.buildSource, file.buildTarget, {
+        recursive: true,
+      });
+    } else if (!file.isDirectory) {
+      fs.copyFileSync(file.buildSource, file.buildTarget);
+    }
   }
-  fs.cpSync(
-    fileMapping["radar-dir"].buildSource,
-    fileMapping["radar-dir"].buildTarget,
-    {
-      recursive: true,
-    },
-  );
-  fs.cpSync(
-    fileMapping["public-dir"].buildSource,
-    fileMapping["public-dir"].buildTarget,
-    {
-      recursive: true,
-    },
-  );
-  fs.copyFileSync(
-    fileMapping["about-file"].buildSource,
-    fileMapping["about-file"].buildTarget,
-  );
-  fs.copyFileSync(
-    fileMapping["customcss-file"].buildSource,
-    fileMapping["customcss-file"].buildTarget,
-  );
-  fs.copyFileSync(
-    fileMapping["config-file"].buildSource,
-    fileMapping["config-file"].buildTarget,
-  );
   process.chdir(BUILDER_DIR);
 } catch (e) {
   error(e.message);
