@@ -59,6 +59,7 @@ file like the following and adapt to your needs:
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "dev": "techradar dev",
     "build": "techradar build --strict",
     "serve": "techradar serve"
   },
@@ -237,6 +238,10 @@ Run `npm run build` to build the radar and upload the files of the `./build` fol
 
 You can view a development version of the radar by running `npm run serve` and open the radar in
 your browser at `http://localhost:3000/techradar` or the path you specified via `basePath`.
+
+As an alternative to `npm run build`, you can start the dev server via `npm run dev`, which will watch for changes in
+the `radar` and `public` folder and rebuild the radar automatically. The dev server serves on
+`http://localhost:3000/techradar` or the path you specified via `basePath`.
 
 ## Advanced styling with `custom.css`
 
