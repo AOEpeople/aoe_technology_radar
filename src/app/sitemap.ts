@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 
 import { getAbsoluteUrl, getItems, getQuadrants } from "@/lib/data";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const quadrants = getQuadrants().map((quadrant) => ({
     url: getAbsoluteUrl(`/${quadrant.id}/`),
