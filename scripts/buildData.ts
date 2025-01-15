@@ -229,11 +229,6 @@ function postProcessItems(items: Item[]): {
         .reverse(),
     };
 
-    // unset revisions if there are none
-    if (!processedItem.revisions?.length) {
-      delete processedItem.revisions;
-    }
-
     // unset tags if there are none
     if (!processedItem.tags?.length) {
       delete processedItem.tags;
