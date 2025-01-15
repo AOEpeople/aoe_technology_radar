@@ -1,0 +1,21 @@
+.departments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.department {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  border-radius: 13px;
+  color: var(--foreground);
+  background-color: var(--department);
+  font-size: 10px;
+  line-height: 1;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 0px 5px 0px 0px;
+}

@@ -94,6 +94,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             tags: data.tags || [],
             revisions: [],
             position: [0, 0],
+            departments: getOrderedList(data.departments ?? []),
           };
         } else {
           items[id].release = releaseDate;
@@ -102,6 +103,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].ring = data.ring || items[id].ring;
           items[id].quadrant = data.quadrant || items[id].quadrant;
           items[id].tags = data.tags || items[id].tags;
+          items[id].departments = getOrderedList(data.departments ?? []);
           items[id].featured =
             typeof data.featured === "boolean"
               ? data.featured
@@ -112,6 +114,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           release: releaseDate,
           ring: data.ring,
           body,
+          departments: getOrderedList(data.departments ?? []),
         });
       }
     }
@@ -119,6 +122,17 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
 
   await readDir(dirPath);
   return Object.values(items).sort((a, b) => a.title.localeCompare(b.title));
+}
+
+function compareArrays<T>(arr1: T[] = [], arr2: T[] = []) {
+  return (
+    arr1.length === arr2.length &&
+    arr1.every((element, index) => element === arr2[index])
+  );
+}
+
+function getOrderedList<T>(list: T[]): T[] {
+  return Array.from(new Set<T>(list)).sort();
 }
 
 function getUniqueReleases(items: Item[]): string[] {
@@ -200,12 +214,13 @@ function postProcessItems(items: Item[]): {
       ...item,
       position: positioner.getNextPosition(item.quadrant, item.ring),
       flag: getFlag(item, releases),
-      // only keep revision which ring or body is different
-      revisions: item.revisions
-        ?.filter((revision, index, revisions) => {
-          const { ring, body } = revision;
+      // only keep revision which ring, body or department is different
+      revisions: (item.revisions ?? [])
+        .filter((revision, index, revisions) => {
+          const { ring, body, departments } = revision;
           return (
             ring !== item.ring ||
+            (departments && !compareArrays(departments, item.departments)) ||
             (body != "" &&
               body != item.body &&
               body !== revisions[index - 1]?.body)
@@ -223,7 +238,10 @@ function postProcessItems(items: Item[]): {
     if (!processedItem.tags?.length) {
       delete processedItem.tags;
     }
-
+    // unset departments if there are none
+    if (!processedItem.departments?.length) {
+      delete processedItem.departments;
+    }
     return processedItem;
   });
 

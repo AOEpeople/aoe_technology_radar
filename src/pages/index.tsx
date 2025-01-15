@@ -1,13 +1,15 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import { DepartmentFilter } from "@/components/Departments/DepartmentFilter";
 import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
 import { Radar } from "@/components/Radar/Radar";
 import { Tags } from "@/components/Tags/Tags";
 import {
   getAppName,
   getChartConfig,
-  getItems,
+  getDepartments,
+  getFilteredItems,
   getLabel,
   getQuadrants,
   getReleases,
@@ -21,6 +23,7 @@ import { CustomPage } from "@/pages/_app";
 const Home: CustomPage = () => {
   const router = useRouter();
   const tag = router.query.tag as string | undefined;
+  const department = router.query.department as string | undefined;
   const appName = getAppName();
   const metaDescription = getLabel("metaDescription");
   const chartConfig = getChartConfig();
@@ -29,9 +32,8 @@ const Home: CustomPage = () => {
   const rings = getRings();
   const quadrants = getQuadrants();
   const tags = getTags();
-  const items = getItems(undefined, true).filter(
-    (item) => !tag || item.tags?.includes(tag),
-  );
+  const departments = getDepartments();
+  const items = getFilteredItems(tag, department);
 
   return (
     <>
@@ -72,6 +74,13 @@ const Home: CustomPage = () => {
             return (
               getToggle("showQuadrantList") && (
                 <QuadrantList key={section} items={items} />
+              )
+            );
+          case "departments":
+            return (
+              getToggle("showDepartmentFilter") &&
+              departments.length > 0 && (
+                <DepartmentFilter key={section} activeDepartment={department} />
               )
             );
           default:

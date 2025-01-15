@@ -10,6 +10,8 @@ export interface Revision {
   release: Release;
   ring: string;
   body?: string;
+  departments?: string[];
+  teams?: string[];
 }
 
 export interface Item {
@@ -25,6 +27,8 @@ export interface Item {
   release: Release;
   revisions?: Revision[];
   position: [x: number, y: number];
+  teams?: string[];
+  departments?: string[];
 }
 
 export interface Ring {

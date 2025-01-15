@@ -1,6 +1,7 @@
 import styles from "./ItemDetail.module.css";
 
 import { RingBadge } from "@/components/Badge/Badge";
+import { Departments } from "@/components/Departments/Departments";
 import { Attention, Edit } from "@/components/Icons";
 import { Tag } from "@/components/Tags/Tags";
 import { getEditUrl, getLabel, getReleases } from "@/lib/data";
@@ -39,6 +40,7 @@ export function ItemDetail({ item }: ItemProps) {
           release={item.release}
           ring={item.ring}
           body={item.body}
+          departments={item.departments}
         />
         {item.revisions?.map((revision, index) => (
           <Revision key={index} id={item.id} {...revision} />
@@ -53,9 +55,10 @@ interface RevisionProps {
   release: string;
   ring: string;
   body?: string;
+  departments?: string[];
 }
 
-function Revision({ id, release, ring, body }: RevisionProps) {
+function Revision({ id, release, ring, body, departments }: RevisionProps) {
   const date = new Date(release);
   const editLink = getEditUrl({ id, release });
   const formattedDate = date.toLocaleDateString("en-US", {
@@ -74,6 +77,11 @@ function Revision({ id, release, ring, body }: RevisionProps) {
           <a href={editLink} target="_blank" className={styles.editLink}>
             <Edit />
           </a>
+        )}
+        {!!departments && departments.length > 0 && (
+          <div className={styles.departments}>
+            <Departments departments={departments} />
+          </div>
         )}
       </div>
     </div>

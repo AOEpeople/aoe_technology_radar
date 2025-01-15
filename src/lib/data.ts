@@ -66,6 +66,18 @@ export function getTags(): string[] {
   return data.tags;
 }
 
+export function getDepartments(): string[] {
+  const departmentsSet = new Set<string>();
+  data.items.forEach((item) => {
+    if ("departments" in item) {
+      (item.departments as string[]).forEach((department) =>
+        departmentsSet.add(department),
+      );
+    }
+  });
+  return Array.from(departmentsSet).sort();
+}
+
 export function getEditUrl(props: { id: string; release: string }) {
   if (!config.editUrl) return "";
   return format(config.editUrl, props);
@@ -83,7 +95,17 @@ export function getItems(quadrant?: string, featured?: boolean): Item[] {
   return data.items.filter((item) => {
     if (quadrant && item.quadrant !== quadrant) return false;
     return !(featured && !item.featured);
-  }) as Item[];
+  }) as unknown as Item[];
+}
+
+export function getFilteredItems(tag?: string, department?: string): Item[] {
+  return getItems().filter(
+    (item) =>
+      (!tag || item.tags?.includes(tag)) &&
+      (!department ||
+        (item.departments ?? []).length === 0 ||
+        item.departments?.includes(department)),
+  );
 }
 
 export function getImprintUrl() {
@@ -95,7 +117,7 @@ export function getAbsoluteUrl(path: string = "/") {
 }
 
 export function getItem(id: string): Item | undefined {
-  return data.items.find((item) => item.id === id) as Item;
+  return data.items.find((item) => item.id === id) as unknown as Item;
 }
 
 export const sortByFeaturedAndTitle = (a: Item, b: Item) =>
