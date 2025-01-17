@@ -1,7 +1,7 @@
 ---
 title: "PestPHP"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: false
 tags: [Testing]
 ---

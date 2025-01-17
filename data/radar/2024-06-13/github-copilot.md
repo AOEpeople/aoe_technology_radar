@@ -1,9 +1,9 @@
 ---
 title: "GitHub CoPilot"
-ring: adopt
-quadrant: tools
+ring: trial
+quadrant: ai
 featured: true
-tags: [AI]
+tags: [AI, IDE]
 ---
 
 [GitHub CoPilot](https://copilot.github.com/) is an AI-powered code completion tool developed by GitHub and OpenAI.

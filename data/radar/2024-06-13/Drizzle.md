@@ -1,7 +1,7 @@
 ---
 title: "Drizzle ORM"
 ring: trial
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [ORM, Database]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "DDD"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: true
 tags: [Architecture, Documentation]
 ---

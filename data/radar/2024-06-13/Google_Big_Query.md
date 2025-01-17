@@ -1,7 +1,7 @@
 ---
 title: "Google Big Query"
 ring: assess
-quadrant: tools
+quadrant: tools-and-techniques
 featured: false
 tags: [Data]
 ---

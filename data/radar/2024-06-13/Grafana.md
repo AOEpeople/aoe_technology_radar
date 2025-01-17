@@ -1,7 +1,7 @@
 ---
 title: "Grafana"
 ring: hold
-quadrant: tools
+quadrant: tools-and-techniques
 featured: false
 tags: [Monitoring]
 ---

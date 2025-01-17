@@ -1,7 +1,7 @@
 ---
 title: "CI/CD"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: false
 tags: [DevOps, CI/CD]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Trevor.io"
 ring: assess
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: []
 ---

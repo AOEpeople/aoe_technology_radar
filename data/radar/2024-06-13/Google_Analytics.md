@@ -1,7 +1,7 @@
 ---
 title: "Google Analytics"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: false
 tags: [Monitoring]
 ---

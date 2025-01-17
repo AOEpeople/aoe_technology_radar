@@ -1,7 +1,7 @@
 ---
 title: "refine.dev"
 ring: assess
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Admin portal]
 ---

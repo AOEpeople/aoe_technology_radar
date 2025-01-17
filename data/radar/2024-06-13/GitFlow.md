@@ -1,7 +1,7 @@
 ---
 title: "GitFlow"
 ring: hold
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: false
 tags: [Version Control]
 ---

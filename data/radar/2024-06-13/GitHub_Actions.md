@@ -1,7 +1,7 @@
 ---
 title: "GitHub Actions"
 ring: assess
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [CI/CD, DevOps]
 ---

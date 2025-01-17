@@ -1,7 +1,7 @@
 ---
 title: "Docker"
 ring: hold
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [DevOps]
 ---

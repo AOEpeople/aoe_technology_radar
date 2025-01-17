@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Database]
 ---

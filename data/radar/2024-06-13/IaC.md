@@ -1,7 +1,7 @@
 ---
 title: "IaC"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: true
 tags: [DevOps]
 ---

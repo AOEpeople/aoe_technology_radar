@@ -1,7 +1,7 @@
 ---
 title: "Typesense"
 ring: assess
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Backend, Search, AI]
 ---

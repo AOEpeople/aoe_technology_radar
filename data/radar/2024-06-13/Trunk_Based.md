@@ -1,7 +1,7 @@
 ---
 title: "Trunk Based"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: true
 tags: [Version Control, Development Methodology]
 ---

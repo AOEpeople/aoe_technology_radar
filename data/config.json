@@ -28,9 +28,9 @@
       "color": "#5B122C"
     },
     {
-      "id": "techniques",
-      "title": "Techniques",
-      "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
+      "id": "ai",
+      "title": "AI",
+      "description": "AI tools and processes that assist in optimizing workflows through new advances in AI tools and services.",
       "color": "#0D2D3E"
     },
     {
@@ -40,9 +40,9 @@
       "color": "#3F7893"
     },
     {
-      "id": "tools",
-      "title": "Tools",
-      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
+      "id": "tools-and-techniques",
+      "title": "Tools & Techniques",
+      "description": "A range of software tools and techniques, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
       "color": "#C53058"
     }
   ],
