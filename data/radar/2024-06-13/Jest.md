@@ -1,7 +1,7 @@
 ---
 title: "Jest"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Testing, JavaScript, Frontend, Backend]
 ---

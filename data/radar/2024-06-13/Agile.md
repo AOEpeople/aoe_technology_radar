@@ -1,7 +1,7 @@
 ---
 title: "Agile"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: false
 tags: [Project Management]
 ---

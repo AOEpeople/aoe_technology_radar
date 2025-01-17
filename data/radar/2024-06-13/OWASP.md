@@ -1,7 +1,7 @@
 ---
 title: "OWASP"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: true
 tags: [Security, Web Development]
 ---

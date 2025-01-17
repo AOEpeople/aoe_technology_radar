@@ -1,7 +1,7 @@
 ---
 title: "Drizzle ORM"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [ORM, Database]
 ---

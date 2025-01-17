@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Serverless, DevOps, Cloud]
 ---

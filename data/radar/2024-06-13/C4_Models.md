@@ -1,7 +1,7 @@
 ---
 title: "C4 Models"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: true
 tags: [Architecture, Documentation]
 ---

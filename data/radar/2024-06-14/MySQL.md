@@ -1,7 +1,7 @@
 ---
 title: "MySQL"
 ring: hold
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Database]
 ---

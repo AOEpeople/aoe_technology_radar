@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes"
 ring: hold
-quadrant: tools
+quadrant: tools-and-techniques
 featured: false
 tags: [DevOps, CI/CD]
 ---

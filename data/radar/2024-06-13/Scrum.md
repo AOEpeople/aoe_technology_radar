@@ -1,7 +1,7 @@
 ---
 title: "Scrum"
 ring: adopt
-quadrant: techniques
+quadrant: tools-and-techniques
 featured: false
 tags: []
 ---

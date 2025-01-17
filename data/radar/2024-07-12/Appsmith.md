@@ -1,7 +1,7 @@
 ---
 title: "Appsmith"
 ring: trial
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Backend, Frontend, Web development, Admin portal]
 ---

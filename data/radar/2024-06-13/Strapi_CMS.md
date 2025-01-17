@@ -1,7 +1,7 @@
 ---
 title: "Strapi CMS"
 ring: hold
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Web Development, Backend, Admin portal]
 ---

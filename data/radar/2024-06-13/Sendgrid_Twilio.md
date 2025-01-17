@@ -1,7 +1,7 @@
 ---
 title: "Sendgrid Twilio"
 ring: adopt
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Email]
 ---

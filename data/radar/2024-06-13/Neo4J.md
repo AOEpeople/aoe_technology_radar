@@ -1,7 +1,7 @@
 ---
 title: "Neo4J"
 ring: trial
-quadrant: tools
+quadrant: tools-and-techniques
 featured: true
 tags: [Database]
 ---
