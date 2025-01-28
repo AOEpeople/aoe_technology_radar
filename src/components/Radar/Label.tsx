@@ -25,7 +25,7 @@ export function Label({ quadrant }: LabelProps) {
     >
       <div className={styles.header}>
         <span>
-          {getLabel("quadrant")} {quadrant.position}
+          {getLabel("section")} {quadrant.position}
         </span>
         <QuadrantLink quadrant={quadrant} />
       </div>

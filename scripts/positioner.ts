@@ -3,9 +3,6 @@ import { Quadrant, Ring } from "@/lib/types";
 type Position = [x: number, y: number];
 type RingDimension = [innerRadius: number, outerRadius: number];
 
-// Corresponding to positions 1, 2, 3, and 4 respectively
-const startAngles = [270, 0, 180, 90];
-
 export default class Positioner {
   private readonly centerRadius: number;
   private readonly minDistance: number = 20;
@@ -18,8 +15,10 @@ export default class Positioner {
   constructor(size: number, quadrants: Quadrant[], rings: Ring[]) {
     this.centerRadius = size / 2;
 
-    quadrants.forEach((quadrant) => {
-      this.quadrantAngles[quadrant.id] = startAngles[quadrant.position - 1];
+    const startAngles = this.calculateStartAngles(quadrants.length);
+
+    quadrants.forEach((quadrant, index) => {
+      this.quadrantAngles[quadrant.id] = startAngles[index];
     });
 
     rings.forEach((ring, index) => {
@@ -29,6 +28,11 @@ export default class Positioner {
         (ring.radius ?? 1) * this.centerRadius - this.paddingRing;
       this.ringDimensions[ring.id] = [innerRadius, outerRadius];
     });
+  }
+
+  private calculateStartAngles(numQuadrants: number): number[] {
+    const angleIncrement = 360 / numQuadrants;
+    return Array.from({ length: numQuadrants }, (_, i) => i * angleIncrement);
   }
 
   static getDistance(a: Position, b: Position): number {

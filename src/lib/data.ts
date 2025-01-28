@@ -72,7 +72,7 @@ export function getEditUrl(props: { id: string; release: string }) {
 }
 
 export function getQuadrants(): Quadrant[] {
-  return config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
+  return config.sections.map((s, i) => ({ ...s, position: i + 1 }));
 }
 
 export function getQuadrant(id: string): Quadrant | undefined {

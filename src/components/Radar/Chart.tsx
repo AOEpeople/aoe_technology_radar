@@ -23,7 +23,6 @@ const _Chart: FC<ChartProps> = ({
 }) => {
   const viewBoxSize = size;
   const center = size / 2;
-  const startAngles = [270, 0, 180, 90]; // Corresponding to positions 1, 2, 3, and 4 respectively
 
   // Helper function to convert polar coordinates to cartesian
   const polarToCartesian = (
@@ -38,10 +37,11 @@ const _Chart: FC<ChartProps> = ({
   };
 
   // Function to generate the path for a ring segment
-  const describeArc = (radiusPercentage: number, position: number): string => {
-    // Define the start and end angles based on the quadrant position
-    const startAngle = startAngles[position - 1];
-    const endAngle = startAngle + 90;
+  const describeArc = (radiusPercentage: number, position: number, numQuadrants: number): string => {
+    // Calculate the start and end angles based on the number of quadrants
+    const angleIncrement = 360 / numQuadrants;
+    const startAngle = (position - 1) * angleIncrement;
+    const endAngle = startAngle + angleIncrement;
 
     const radius = radiusPercentage * center; // Convert percentage to actual radius
     const start = polarToCartesian(radius, endAngle);
@@ -54,14 +54,19 @@ const _Chart: FC<ChartProps> = ({
     ].join(" ");
   };
 
-  const renderGlow = (position: number, color: string) => {
+  const renderGlow = (position: number, color: string, numQuadrants: number) => {
     const gradientId = `glow-${position}`;
 
-    const cx = position === 1 || position === 3 ? 1 : 0;
-    const cy = position === 1 || position === 2 ? 1 : 0;
+    const angleIncrement = 360 / numQuadrants;
+    const startAngle = (position - 1) * angleIncrement;
+    const endAngle = startAngle + angleIncrement;
 
-    const x = position === 1 || position === 3 ? 0 : center;
-    const y = position === 1 || position === 2 ? 0 : center;
+    const cx = (startAngle + endAngle) / 2 > 180 ? 1 : 0;
+    const cy = (startAngle + endAngle) / 2 > 90 && (startAngle + endAngle) / 2 < 270 ? 1 : 0;
+
+    const x = cx === 1 ? 0 : center;
+    const y = cy === 1 ? 0 : center;
+
     return (
       <>
         <defs>
@@ -141,12 +146,12 @@ const _Chart: FC<ChartProps> = ({
     >
       {quadrants.map((quadrant) => (
         <g key={quadrant.id} data-quadrant={quadrant.id}>
-          {renderGlow(quadrant.position, quadrant.color)}
+          {renderGlow(quadrant.position, quadrant.color, quadrants.length)}
           {rings.map((ring) => (
             <path
               key={`${ring.id}-${quadrant.id}`}
               data-key={`${ring.id}-${quadrant.id}`}
-              d={describeArc(ring.radius || 0.5, quadrant.position)}
+              d={describeArc(ring.radius || 0.5, quadrant.position, quadrants.length)}
               fill="none"
               stroke={quadrant.color}
               strokeWidth={ring.strokeWidth || 2}

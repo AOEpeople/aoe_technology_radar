@@ -22,7 +22,7 @@
     "border": "rgba(255, 255, 255, 0.1)",
     "tag": "rgba(255, 255, 255, 0.1)"
   },
-  "quadrants": [
+  "sections": [
     {
       "id": "languages-and-frameworks",
       "title": "Languages & Frameworks",

@@ -1,7 +1,7 @@
 ---
 title: "Demo 1"
 ring: assess
-quadrant: methods-and-patterns
+section: methods-and-patterns
 tags: [coding]
 ---
 

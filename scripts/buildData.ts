@@ -17,10 +17,10 @@ const {
 } = config;
 
 const ringIds = rings.map((r) => r.id);
-const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
-const quadrantIds = quadrants.map((q) => q.id);
+const sections = config.sections.map((s, i) => ({ ...s, position: i + 1 }));
+const sectionIds = sections.map((s) => s.id);
 const tags = (config as { tags?: string[] }).tags || [];
-const positioner = new Positioner(size, quadrants, rings);
+const positioner = new Positioner(size, sections, rings);
 
 const marked = new Marked(
   markedHighlight({
@@ -87,7 +87,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             release: releaseDate,
             title: data.title || id,
             ring: data.ring,
-            quadrant: data.quadrant,
+            section: data.section,
             body,
             featured: data.featured !== false,
             flag: Flag.Default,
@@ -100,7 +100,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;
-          items[id].quadrant = data.quadrant || items[id].quadrant;
+          items[id].section = data.section || items[id].section;
           items[id].tags = data.tags || items[id].tags;
           items[id].featured =
             typeof data.featured === "boolean"
@@ -168,14 +168,14 @@ function postProcessItems(items: Item[]): {
   items: Item[];
 } {
   const filteredItems = items.filter((item) => {
-    // check if the items' quadrant and ring are valid
-    if (!item.quadrant || !item.ring) {
-      console.warn(`Item ${item.id} has no quadrant or ring`);
+    // check if the items' section and ring are valid
+    if (!item.section || !item.ring) {
+      console.warn(`Item ${item.id} has no section or ring`);
       return false;
     }
 
-    if (!quadrantIds.includes(item.quadrant)) {
-      console.warn(`Item ${item.id} has invalid quadrant ${item.quadrant}`);
+    if (!sectionIds.includes(item.section)) {
+      console.warn(`Item ${item.id} has invalid section ${item.section}`);
       return false;
     }
 
@@ -198,7 +198,7 @@ function postProcessItems(items: Item[]): {
   const processedItems = filteredItems.map((item) => {
     const processedItem = {
       ...item,
-      position: positioner.getNextPosition(item.quadrant, item.ring),
+      position: positioner.getNextPosition(item.section, item.ring),
       flag: getFlag(item, releases),
       // only keep revision which ring or body is different
       revisions: item.revisions

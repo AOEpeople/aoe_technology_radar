@@ -79,7 +79,7 @@ Open the `config.json` file and configure the radar to your needs.
 | toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
 | sections  | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
 | colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
-| quadrants | Config of the 4 quadrants of the radar. See config below.                                                                      |
+| sections  | Config of the sections of the radar. See config below.                                                                         |
 | rings     | Config of the rings of the radar. See config below.                                                                            |
 | flags     | Config of the flags of the radar. See config below                                                                             |
 | chart     | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
@@ -103,14 +103,14 @@ Open the `config.json` file and configure the radar to your needs.
 
 An array with of `radar`, `tags`, `list` in order you want them to appear on the page.
 
-#### `config.quadrants`
+#### `config.sections`
 
 | Attribute   | Description                                                 |
 | ----------- | ----------------------------------------------------------- |
 | id          | Used as reference in the radar markdown files and URLs      |
-| title       | Title of the quadrant                                       |
-| description | Will be shown on startpage and on the quadrants detail page |
-| color       | Color of the quadrant arcs and blips                        |
+| title       | Title of the section                                        |
+| description | Will be shown on startpage and on the sections detail page  |
+| color       | Color of the section arcs and blips                         |
 
 #### `config.rings`
 
@@ -159,7 +159,7 @@ Each file has a meta header where the attributes of the item are listed:
 ---
 title: "React"
 ring: adopt
-quadrant: languages-and-frameworks
+section: languages-and-frameworks
 tags: [frontend, coding]
 ---
 
@@ -169,11 +169,11 @@ Text goes here. You can use **markdown** here.
 Following front-matter attributes are possible:
 
 - **title**: Name of the Item
-- **quadrant**: Quadrant. One of the configured quadrants in `config.quadrants`
+- **section**: Section. One of the configured sections in `config.sections`
 - **ring**: Ring section in radar. One of the configured rings in `config.rings`
 - **tags**: Optional tags for filtering.
 - **featured**: (optional, default "true") If you set this to `false`, the item
-  will not be visible in the radar quadrants but still be available in the overview.
+  will not be visible in the radar sections but still be available in the overview.
 
 The name of the .md file acts as item identifier and may overwrite items with
 the same name from older releases.
