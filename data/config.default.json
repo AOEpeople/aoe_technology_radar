@@ -8,7 +8,7 @@
     "showSearch": false,
     "showChart": true,
     "showTagFilter": true,
-    "showQuadrantList": true,
+    "showSegmentList": true,
     "showEmptyRings": false
   },
   "sections": ["radar", "tags", "list"],
@@ -22,7 +22,7 @@
     "border": "rgba(255, 255, 255, 0.1)",
     "tag": "rgba(255, 255, 255, 0.1)"
   },
-  "quadrants": [
+  "segments": [
     {
       "id": "languages-and-frameworks",
       "title": "Languages & Frameworks",
@@ -125,8 +125,8 @@
   "labels": {
     "title": "Technology Radar",
     "imprint": "Legal Information",
-    "quadrant": "Quadrant",
-    "quadrantOverview": "Quadrant Overview",
+    "segment": "Segment",
+    "segmentOverview": "Segment Overview",
     "zoomIn": "Zoom in",
     "filterByTag": "Filter by Tag",
     "footer": "The technology radar is a project by AOE GmbH. Feel free to build your own radar based on the open source project.",
