@@ -32,7 +32,7 @@
     "lint-staged": "^15.4.3",
     "marked": "^15.0.7",
     "marked-highlight": "^2.2.1",
-    "next": "14.2.4",
+    "next": "14.2.15",
     "postcss-nested": "^7.0.2",
     "postcss-preset-env": "^10.1.5",
     "prettier": "^3.5.3",
