@@ -5,6 +5,7 @@
   "logoFile": "logo.svg",
   "jsFile": "",
   "toggles": {
+    "showSearch": false,
     "showChart": true,
     "showTagFilter": true,
     "showQuadrantList": true,
