@@ -247,3 +247,4 @@ parseDirectory(dataPath("radar")).then((items) => {
 // write about data to JSON file
 const about = readMarkdownFile(dataPath("about.md"));
 fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));
+console.log("ℹ️ Data written to data/data.json and data/about.json");

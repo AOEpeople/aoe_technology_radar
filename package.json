@@ -19,7 +19,7 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@radix-ui/react-dialog": "^1.1.1",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -36,10 +36,10 @@
     "next": "14.2.4",
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.5.14",
-    "prettier": "^3.3.2",
+    "prettier": "^3.5.3",
     "react": "^18",
     "react-dom": "^18",
-    "tsx": "^4.15.8",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   },
   "lint-staged": {
