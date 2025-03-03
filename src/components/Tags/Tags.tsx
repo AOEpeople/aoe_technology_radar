@@ -20,7 +20,7 @@ export function Tag({ tag, isActive, className, ...props }: TagProps) {
     <Link
       {...props}
       className={cn(styles.tag, className, isActive && styles.active)}
-      href={isActive ? "/" : `/?tag=${tag}`}
+      href={isActive ? "/" : `/?tag=${encodeURIComponent(tag)}`}
     >
       <Icon className={cn(styles.icon)} />
       <span className={styles.label}>{tag}</span>
