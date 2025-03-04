@@ -17,10 +17,10 @@ const {
 } = config;
 
 const ringIds = rings.map((r) => r.id);
-const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
-const quadrantIds = quadrants.map((q) => q.id);
+const segments = config.segments.map((s, i) => ({ ...s, position: i + 1 }));
+const segmentIds = segments.map((s) => s.id);
 const tags = (config as { tags?: string[] }).tags || [];
-const positioner = new Positioner(size, quadrants, rings);
+const positioner = new Positioner(size, segments, rings);
 
 const marked = new Marked(
   markedHighlight({
@@ -61,7 +61,7 @@ function readMarkdownFile(filePath: string) {
     const body = convertToHtml(content);
     return { id, data, body };
   } catch (error) {
-    console.error(`Failed parsing ${filePath}: ${error}`);
+    console.error(`❌ Failed parsing ${filePath}: ${error}`);
     process.exit(1);
   }
 }
@@ -87,7 +87,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             release: releaseDate,
             title: data.title || id,
             ring: data.ring,
-            quadrant: data.quadrant,
+            segment: data.segment,
             body,
             featured: data.featured !== false,
             flag: Flag.Default,
@@ -100,7 +100,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;
-          items[id].quadrant = data.quadrant || items[id].quadrant;
+          items[id].segment = data.segment || items[id].segment;
           items[id].tags = data.tags || items[id].tags;
           items[id].featured =
             typeof data.featured === "boolean"
@@ -168,19 +168,23 @@ function postProcessItems(items: Item[]): {
   items: Item[];
 } {
   const filteredItems = items.filter((item) => {
-    // check if the items' quadrant and ring are valid
-    if (!item.quadrant || !item.ring) {
-      console.warn(`Item ${item.id} has no quadrant or ring`);
+    // check if the items' segment and ring are valid
+    if (!item.segment || !item.ring) {
+      console.warn(`⚠️ Item "${item.id}" has no segment or ring`);
       return false;
     }
 
-    if (!quadrantIds.includes(item.quadrant)) {
-      console.warn(`Item ${item.id} has invalid quadrant ${item.quadrant}`);
+    if (!segmentIds.includes(item.segment)) {
+      console.warn(
+        `⚠️ Item "${item.id}" has invalid segment "${item.segment}"`,
+      );
+      console.info(`  Valid segments are: ${segmentIds.join(", ")}`);
       return false;
     }
 
     if (!ringIds.includes(item.ring)) {
-      console.warn(`Item ${item.id} has invalid ring ${item.ring}`);
+      console.warn(`⚠️ Item "${item.id}" has invalid ring "${item.ring}"`);
+      console.info(`  Valid rings are: ${ringIds.join(", ")}`);
       return false;
     }
 
@@ -198,7 +202,7 @@ function postProcessItems(items: Item[]): {
   const processedItems = filteredItems.map((item) => {
     const processedItem = {
       ...item,
-      position: positioner.getNextPosition(item.quadrant, item.ring),
+      position: positioner.getNextPosition(item.segment, item.ring),
       flag: getFlag(item, releases),
       // only keep revision which ring or body is different
       revisions: item.revisions
@@ -235,7 +239,7 @@ parseDirectory(dataPath("radar")).then((items) => {
   const data = postProcessItems(items);
 
   if (data.items.length === 0) {
-    console.error("No valid radar items found.");
+    console.error("❌ No valid radar items found.");
     console.log("Please check the markdown files in the `radar` directory.");
     process.exit(1);
   }
@@ -247,4 +251,5 @@ parseDirectory(dataPath("radar")).then((items) => {
 // write about data to JSON file
 const about = readMarkdownFile(dataPath("about.md"));
 fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));
-console.log("ℹ️ Data written to data/data.json and data/about.json");
+
+console.log("ℹ️ Data written to data/data.json and data/about.json\n\n");
