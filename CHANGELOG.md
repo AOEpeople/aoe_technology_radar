@@ -1,5 +1,30 @@
 # Changelog
 
+## Version v4.5.0 (2025-03-04)
+
+### Features
+
+- add showSearch toggle (#480) (1231dd87)
+- update eslint to 9.21.0 (8b5d2201)
+- update to react 19 and next.js 15.2 (1687f930)
+- restore scroll position when navigating back (5484b04c)
+
+### Fixes
+
+- uri-encode tag when used as query parameter (#472) (86c446b7)
+
+### Chores and tidying
+
+- **deps:** update dependency @types/node to v22.13.9 (#501) (d364a120)
+- **deps:** update nextjs monorepo to v15.2.1 (#477) (81758057)
+- remove superfluous Dialog component and deps (d6b41d0f)
+- update postcss-nested and postcss-preset-env to latest versions (45d9015e)
+- update prettier and related plugins (e2df29a1)
+- update demo entry with code highlighting and bump dependencies (3315d8ca)
+- ignore /techradar/ (953432c9)
+- update commitlint and husky dependencies (bef138f7)
+- bump version to 4.5.0-rc.1 (0d230035)
+
 ## Version v4.4.0 (2024-07-01)
 
 ### Features
