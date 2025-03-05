@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.5.1 (2025-03-05)
+
+### Chores and tidying
+
+- start new 4.6.0-rc.1 release (864ab225)
+
 ## Version v4.5.0 (2025-03-04)
 
 ### Features
