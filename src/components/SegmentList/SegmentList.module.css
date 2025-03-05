@@ -1,4 +1,4 @@
-.quadrants {
+.segments {
   --cols: 1;
   --gap: 60px;
   list-style: none;
@@ -9,7 +9,7 @@
   gap: var(--gap);
 }
 
-.quadrant {
+.segment {
   margin-bottom: 20px;
   flex: 1 0
     calc(100% / var(--cols) - var(--gap) / var(--cols) * (var(--cols) - 1));
@@ -32,7 +32,7 @@
 }
 
 @media (min-width: 1220px) {
-  .quadrants {
+  .segments {
     --cols: 2;
   }
 }
