@@ -20,7 +20,7 @@ import { CustomPage } from "@/pages/_app";
 
 const Home: CustomPage = () => {
   const router = useRouter();
-  const tag = router.query.tag as string | undefined;
+  const tagQuery = router.query.tag;
   const appName = getAppName();
   const metaDescription = getLabel("metaDescription");
   const chartConfig = getChartConfig();
@@ -29,9 +29,25 @@ const Home: CustomPage = () => {
   const rings = getRings();
   const quadrants = getQuadrants();
   const tags = getTags();
-  const items = getItems(undefined, true).filter(
-    (item) => !tag || item.tags?.includes(tag),
-  );
+
+  // Convert URL tag parameter(s) to array of decoded tags
+  const activeTags = (Array.isArray(tagQuery) ? tagQuery : [tagQuery])
+    .filter((tag): tag is string => Boolean(tag))
+    .map((tag) => decodeURIComponent(tag));
+
+  // Clean up URL if needed
+  if (tagQuery === "") {
+    router.replace("/", undefined, { shallow: true });
+  }
+
+  // Filter items by selected tags (AND logic)
+  const items = getItems(undefined, true).filter((item) => {
+    if (!activeTags.length) return true;
+    const itemTags = item.tags ?? [];
+    return (
+      itemTags.length > 0 && activeTags.every((tag) => itemTags.includes(tag))
+    );
+  });
 
   return (
     <>
@@ -65,7 +81,7 @@ const Home: CustomPage = () => {
             return (
               getToggle("showTagFilter") &&
               tags.length > 0 && (
-                <Tags key={section} tags={tags} activeTag={tag} />
+                <Tags key={section} tags={tags} activeTags={activeTags} />
               )
             );
           case "list":

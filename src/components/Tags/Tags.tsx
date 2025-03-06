@@ -11,16 +11,34 @@ import { cn } from "@/lib/utils";
 type TagProps = {
   tag: string;
   isActive?: boolean;
+  activeTags?: string[];
 } & Omit<LinkProps, "href"> &
   ComponentPropsWithoutRef<"a">;
 
-export function Tag({ tag, isActive, className, ...props }: TagProps) {
+export function Tag({
+  tag,
+  isActive,
+  activeTags = [],
+  className,
+  ...props
+}: TagProps) {
   const Icon = isActive ? IconRemove : IconTag;
+
+  // Update URL based on tag state
+  const remainingTags = isActive
+    ? activeTags.filter((t) => t !== tag)
+    : [...activeTags, tag];
+
+  const searchParams = new URLSearchParams(
+    remainingTags.map((tag) => ["tag", encodeURIComponent(tag)]),
+  );
+  const href = searchParams.toString() ? `/?${searchParams}` : "/";
+
   return (
     <Link
       {...props}
       className={cn(styles.tag, className, isActive && styles.active)}
-      href={isActive ? "/" : `/?tag=${encodeURIComponent(tag)}`}
+      href={href}
     >
       <Icon className={cn(styles.icon)} />
       <span className={styles.label}>{tag}</span>
@@ -30,17 +48,23 @@ export function Tag({ tag, isActive, className, ...props }: TagProps) {
 
 interface TagsProps {
   tags: string[];
-  activeTag?: string;
+  activeTags: string[];
   className?: string;
 }
 
-export function Tags({ tags, activeTag, className }: TagsProps) {
+export function Tags({ tags, activeTags, className }: TagsProps) {
   const label = getLabel("filterByTag");
   return (
     <div className={cn(styles.tags, className)}>
       {!!label && <h3>{label}</h3>}
       {tags.map((tag) => (
-        <Tag key={tag} tag={tag} isActive={activeTag == tag} scroll={false} />
+        <Tag
+          key={tag}
+          tag={tag}
+          isActive={activeTags.includes(tag)}
+          activeTags={activeTags}
+          scroll={false}
+        />
       ))}
     </div>
   );
