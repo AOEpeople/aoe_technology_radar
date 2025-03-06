@@ -5,10 +5,12 @@
   "logoFile": "logo.svg",
   "jsFile": "",
   "toggles": {
+    "showSearch": false,
     "showChart": true,
     "showTagFilter": true,
     "showQuadrantList": true,
-    "showEmptyRings": false
+    "showEmptyRings": false,
+    "showFacts": false
   },
   "sections": ["radar", "tags", "list"],
   "colors": {

@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/techradar/
 
 # generated
 /src/components/Icons/

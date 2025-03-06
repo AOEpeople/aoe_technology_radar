@@ -1,50 +1,84 @@
+import { useState } from "react";
+
 import styles from "./ItemDetail.module.css";
 
 import { RingBadge } from "@/components/Badge/Badge";
 import { Attention, Edit } from "@/components/Icons";
 import { Tag } from "@/components/Tags/Tags";
-import { getEditUrl, getLabel, getReleases } from "@/lib/data";
+import { getEditUrl, getLabel, getReleases, getToggle } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const latestReleases = getReleases().slice(-3);
+const showFacts = getToggle("showFacts");
 
 function isNotMaintained(release: string) {
   return !latestReleases.includes(release);
 }
 
-interface ItemProps {
+interface ItemDetailProps {
   item: Item;
 }
 
-export function ItemDetail({ item }: ItemProps) {
+export function ItemDetail({ item }: ItemDetailProps) {
+  const [activeTab, setActiveTab] = useState(showFacts ? "facts" : "revisions");
   const notMaintainedText = getLabel("notUpdated");
+
   return (
-    <>
+    <div className={styles.itemDetail}>
       <div className={styles.header}>
         <h1 className={styles.title}>{item.title}</h1>
         {item.tags?.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
-      <div className={styles.revisions}>
-        {notMaintainedText && isNotMaintained(item.release) && (
-          <div className={cn(styles.revision, styles.hint)}>
-            <span className={styles.release}>
-              <Attention className={styles.notMaintainedIcon} />
-            </span>
-            <div className={styles.content}>{notMaintainedText}</div>
-          </div>
-        )}
-        <Revision
-          id={item.id}
-          release={item.release}
-          ring={item.ring}
-          body={item.body}
-        />
-        {item.revisions?.map((revision, index) => (
-          <Revision key={index} id={item.id} {...revision} />
-        ))}
-      </div>
-    </>
+      {showFacts && (
+        <div className={styles.tabs}>
+          <button
+            className={activeTab === "facts" ? styles.active : ""}
+            onClick={() => setActiveTab("facts")}
+          >
+            Facts
+          </button>
+          <button
+            className={activeTab === "revisions" ? styles.active : ""}
+            onClick={() => setActiveTab("revisions")}
+          >
+            Revisions
+            {item.revisions && (
+              <span className={styles.badge}>{item.revisions.length}</span>
+            )}
+          </button>
+        </div>
+      )}
+      {activeTab === "revisions" && (
+        <div className={styles.revisions}>
+          {notMaintainedText && isNotMaintained(item.release) && (
+            <div className={cn(styles.revision, styles.hint)}>
+              <span className={styles.release}>
+                <Attention className={styles.notMaintainedIcon} />
+              </span>
+              <div className={styles.content}>{notMaintainedText}</div>
+            </div>
+          )}
+          {!showFacts && (
+            <Revision
+              id={item.id}
+              release={item.release}
+              ring={item.ring}
+              body={item.body}
+            />
+          )}
+          {item.revisions?.map((revision, index) => (
+            <Revision key={index} id={item.id} {...revision} />
+          ))}
+        </div>
+      )}
+      {activeTab === "facts" && (
+        <div className={styles.content + " " + styles.facts}>
+          <RingBadge className={styles.ring} ring={item.ring} size="large" />
+          <div dangerouslySetInnerHTML={{ __html: item.body }} />
+        </div>
+      )}
+    </div>
   );
 }
 

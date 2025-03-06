@@ -35,6 +35,19 @@ function bootstrap() {
     });
   }
 
+  if (!fs.existsSync(path.join(CWD, "radar", "01-facts"))) {
+    warn(
+      "Could not find facts directory. Created a bootstrap facts directory in your current working directory. Feel free to customize it.",
+    );
+    fs.cpSync(
+      path.join(SOURCE_DIR, "data", "radar", "01-facts"),
+      path.join(CWD, "radar", "01-facts"),
+      {
+        recursive: true,
+      },
+    );
+  }
+
   if (!fs.existsSync(path.join(CWD, "public"))) {
     warn(
       "Could not find public directory. Created a public radar directory in your current working directory.",
