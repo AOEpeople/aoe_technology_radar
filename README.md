@@ -70,24 +70,25 @@ file as `logoFile` inside the `config.json`. e.g. `"logoFile": "acme-logo.png"`
 
 Open the `config.json` file and configure the radar to your needs.
 
-| Attribute | Description                                                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| basePath  | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
-| baseUrl   | Set to the full URL, where the radar will be hosted. Will be used for sitemap.xml. `https://www.aoe.com/techradar`             |
-| logoFile  | (optional) Filepath in public folder. Default is `logo.svg`                                                                    |
-| jsFile    | (optional) Filepath in public folder or URL to enable include of custom script                                                 |
-| toggles   | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
-| sections  | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
-| colors    | A map of colors for the radar. Can be any valid CSS color value                                                                |
-| quadrants | Config of the 4 quadrants of the radar. See config below.                                                                      |
-| rings     | Config of the rings of the radar. See config below.                                                                            |
-| flags     | Config of the flags of the radar. See config below                                                                             |
-| chart     | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
-| social    | Social links in the footer. See config below                                                                                   |
-| imprint   | URL to the legal information                                                                                                   |
-| labels    | Configure the labels to change the texts and labels of the radar                                                               |
-| tags      | (optional) Use to render only items, which contain at least one of the specified tags. e.g `["frontend", "backend"]`           |
-| editUrl   | (optional) If set, an edit button will be shown next to the revision.<br/> You can use placeholders for `{id}` and `{release}` |
+| Attribute   | Description                                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| basePath    | Set if hosting under a sub-path, otherwise set it to `/`. Default is `/techradar`                                              |
+| baseUrl     | Set to the full URL, where the radar will be hosted. Will be used for sitemap.xml. `https://www.aoe.com/techradar`             |
+| logoFile    | (optional) Filepath in public folder. Default is `logo.svg`                                                                    |
+| jsFile      | (optional) Filepath in public folder or URL to enable include of custom script                                                 |
+| toggles     | (optional) Modify the behaviour and contents of the radar. See config below.                                                   |
+| sections    | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
+| fuzzySearch | (optional) Modify the fuse.js options (https://www.fusejs.io/api/options.html)                                                 |
+| colors      | A map of colors for the radar. Can be any valid CSS color value                                                                |
+| quadrants   | Config of the 4 quadrants of the radar. See config below.                                                                      |
+| rings       | Config of the rings of the radar. See config below.                                                                            |
+| flags       | Config of the flags of the radar. See config below                                                                             |
+| chart       | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
+| social      | Social links in the footer. See config below                                                                                   |
+| imprint     | URL to the legal information                                                                                                   |
+| labels      | Configure the labels to change the texts and labels of the radar                                                               |
+| tags        | (optional) Use to render only items, which contain at least one of the specified tags. e.g `["frontend", "backend"]`           |
+| editUrl     | (optional) If set, an edit button will be shown next to the revision.<br/> You can use placeholders for `{id}` and `{release}` |
 
 #### `config.toggles`
 
@@ -102,6 +103,10 @@ Open the `config.json` file and configure the radar to your needs.
 #### `config.sections`
 
 An array with of `radar`, `tags`, `list` in order you want them to appear on the page.
+
+#### `config.fuzzySearch`
+
+An object that represents the fuse.js options, which is used to search the radar.
 
 #### `config.quadrants`
 

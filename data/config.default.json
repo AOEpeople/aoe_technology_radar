@@ -137,5 +137,11 @@
     "pageSearch": "Search",
     "searchPlaceholder": "What are you looking for?",
     "metaDescription": ""
+  },
+  "fuzzySearch": {
+    "threshold": 0.4,
+    "distance": 600,
+    "ignoreLocation": false,
+    "includeScore": true
   }
 }

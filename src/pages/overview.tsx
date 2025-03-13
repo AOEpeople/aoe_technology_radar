@@ -6,6 +6,7 @@ import { useCallback, useMemo } from "react";
 import { Filter } from "@/components/Filter/Filter";
 import { ItemList } from "@/components/ItemList/ItemList";
 import { getItems, getLabel } from "@/lib/data";
+import { getFuzzySearchConfig } from "@/lib/data";
 import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
@@ -32,9 +33,7 @@ const Overview: CustomPage = () => {
   const { items, index } = useMemo(() => {
     const items = getItems().filter((item) => !ring || item.ring === ring);
     const index = new Fuse(items, {
-      threshold: 0.4,
-      distance: 600,
-      includeScore: true,
+      ...getFuzzySearchConfig(),
       keys: [
         {
           name: "title",
