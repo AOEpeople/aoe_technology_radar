@@ -1,5 +1,20 @@
 # Changelog
 
+## Version v4.6.0 (2025-03-14)
+
+### Features
+
+- add strict mode for data building (3efe7b5b)
+- add configuration options for fuse (c844e6dc)
+
+### Fixes
+
+- forward flags to `npm run build` and adjust README.md (61eff6d4)
+
+### Chores and tidying
+
+- start new 4.6.0-rc.1 release (864ab225)
+
 ## Version v4.5.0 (2025-03-04)
 
 ### Features
