@@ -41,6 +41,7 @@ export interface Segment {
   id: string;
   title: string;
   description: string;
+  label?: string; // only used in the radar labels
   color: string;
   position: number;
 }

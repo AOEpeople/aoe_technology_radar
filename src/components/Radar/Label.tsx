@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CSSProperties, useMemo } from "react";
 
 import styles from "./Label.module.css";
@@ -25,7 +24,7 @@ export function Label({ segment }: LabelProps) {
     >
       <div className={styles.header}>
         <span>
-          {getLabel("segment")} {segment.position}
+          {segment.label ?? `${getLabel("segment")} ${segment.position}`}
         </span>
         <SegmentLink segment={segment} />
       </div>

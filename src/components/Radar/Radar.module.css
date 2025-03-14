@@ -10,6 +10,10 @@
   height: auto;
   margin: 0 auto;
   fill: currentColor;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 30px;
+  border: 1px solid var(--border);
 }
 
 .tooltip {

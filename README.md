@@ -116,12 +116,13 @@ An object that represents the fuse.js options, which is used to search the radar
 
 #### `config.segments`
 
-| Attribute   | Description                                                |
-| ----------- | ---------------------------------------------------------- |
-| id          | Used as reference in the radar markdown files and URLs     |
-| title       | Title of the segment                                       |
-| description | Will be shown on startpage and on the segments detail page |
-| color       | Color of the segments arcs and blips                       |
+| Attribute   | Description                                                        |
+| ----------- | ------------------------------------------------------------------ |
+| id          | Used as reference in the radar markdown files and URLs             |
+| title       | Title of the segment                                               |
+| description | Will be shown on startpage and on the segments detail page         |
+| color       | Color of the segments arcs and blips                               |
+| label       | (optional) Will be shown on the startpage above the segments title |
 
 #### `config.rings`
 

@@ -26,6 +26,7 @@ export function SegmentList({ items }: RingListProps) {
               </h3>
               <SegmentLink segment={segment} />
             </div>
+            <p className={styles.description}>{segment.description}</p>
             <RingList items={items} size="small" />
           </li>
         );
