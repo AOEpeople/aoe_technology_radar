@@ -19,6 +19,7 @@
 
 /data/about.json
 /data/data.json
+/public/radar.json
 
 # misc
 .DS_Store
