@@ -11,6 +11,7 @@ const SOURCE_DIR = path.join(CWD, "node_modules", "aoe_technology_radar");
 const HASH_FILE = path.join(BUILDER_DIR, "hash");
 
 const PARAMETER = process.argv[2]; // "build" or "serve"
+const FLAGS = process.argv.slice(3).join(" ");
 
 function info(message) {
   console.log(`\x1b[32m${message}\x1b[0m`);
@@ -146,7 +147,9 @@ try {
 }
 
 info("Building data");
-execSync("npm run build:data", { stdio: "inherit" });
+execSync(`npm run build:data -- ${FLAGS}`, {
+  stdio: "inherit",
+});
 
 if (PARAMETER === "serve") {
   info("Starting techradar");

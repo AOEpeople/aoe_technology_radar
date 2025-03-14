@@ -45,7 +45,7 @@ file like the following and adapt to your needs:
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "techradar build",
+    "build": "techradar build --strict",
     "serve": "techradar serve"
   },
   "dependencies": {
@@ -57,6 +57,8 @@ file like the following and adapt to your needs:
 Run `npm install` to install the dependencies and run `npm run build` to create the initial radar.
 This will also create a basic bootstrap of all required files, including the `config.json` and
 the `about.md` if they do not exist yet.
+
+Note: The `--strict` flag will break the build process if there are any errors in the markdown files. If you do not care about errors, you can remove the `--strict` flag.
 
 ### Step 2: Change logo and the favicon
 
