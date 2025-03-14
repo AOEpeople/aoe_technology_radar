@@ -82,6 +82,7 @@ export const Radar: FC<RadarProps> = ({
     <div
       ref={radarRef}
       className={styles.radar}
+      data-segments={segments.length}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
