@@ -7,6 +7,7 @@ import path from "path";
 
 import nextConfig from "../next.config.js";
 import config from "../src/lib/config";
+import ErrorHandler, { ErrorType, TextColor } from "./errorHandler.js";
 import Positioner from "./positioner";
 
 import { Flag, Item } from "@/lib/types";
@@ -21,6 +22,7 @@ const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
 const quadrantIds = quadrants.map((q) => q.id);
 const tags = (config as { tags?: string[] }).tags || [];
 const positioner = new Positioner(size, quadrants, rings);
+const errorHandler = new ErrorHandler(quadrants, rings);
 
 const marked = new Marked(
   markedHighlight({
@@ -170,17 +172,25 @@ function postProcessItems(items: Item[]): {
   const filteredItems = items.filter((item) => {
     // check if the items' quadrant and ring are valid
     if (!item.quadrant || !item.ring) {
-      console.warn(`Item ${item.id} has no quadrant or ring`);
+      errorHandler.processBuildErrors(ErrorType.NoQuadrant, item.id);
       return false;
     }
 
     if (!quadrantIds.includes(item.quadrant)) {
-      console.warn(`Item ${item.id} has invalid quadrant ${item.quadrant}`);
+      errorHandler.processBuildErrors(
+        ErrorType.InvalidQuadrant,
+        item.id,
+        item.quadrant,
+      );
       return false;
     }
 
     if (!ringIds.includes(item.ring)) {
-      console.warn(`Item ${item.id} has invalid ring ${item.ring}`);
+      errorHandler.processBuildErrors(
+        ErrorType.InvalidRing,
+        item.id,
+        item.ring,
+      );
       return false;
     }
 
@@ -192,6 +202,8 @@ function postProcessItems(items: Item[]): {
 
     return true;
   });
+
+  errorHandler.checkForBuildErrors();
 
   const releases = getUniqueReleases(filteredItems);
   const uniqueTags = getUniqueTags(filteredItems);
@@ -230,21 +242,30 @@ function postProcessItems(items: Item[]): {
   return { releases, tags: uniqueTags, items: processedItems };
 }
 
-// Parse the data and write radar data to JSON file
-parseDirectory(dataPath("radar")).then((items) => {
+async function main() {
+  // Parse the data and write radar data to JSON file
+  const items = await parseDirectory(dataPath("radar"));
   const data = postProcessItems(items);
 
   if (data.items.length === 0) {
-    console.error("No valid radar items found.");
-    console.log("Please check the markdown files in the `radar` directory.");
-    process.exit(1);
+    errorHandler.processBuildErrors(ErrorType.NoRadarItems);
   }
+
+  errorHandler.checkForBuildErrors(true);
 
   const json = JSON.stringify(data, null, 2);
   fs.writeFileSync(dataPath("data.json"), json);
-});
 
-// write about data to JSON file
-const about = readMarkdownFile(dataPath("about.md"));
-fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));
-console.log("ℹ️ Data written to data/data.json and data/about.json");
+  // write about data to JSON file
+  const about = readMarkdownFile(dataPath("about.md"));
+  fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));
+  console.log(
+    "ℹ️ Data written to data/data.json and data/about.json\n\n" +
+      errorHandler.colorizeBackground(
+        " Build was successfull ",
+        TextColor.Green,
+      ),
+  );
+}
+
+main();

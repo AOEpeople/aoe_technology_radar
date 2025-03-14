@@ -267,4 +267,5 @@ If you want to change core functionality of the radar, you can clone this reposi
 radar's markdown-files, config.json and about.md in the `data` folder. Run `npm run build:data` to
 parse the markdown files and create a `data.json` and then run `npm run dev` to start the
 development server, which will be available at `http://localhost:3000/techradar` or the path
-you specified via `basePath`.
+you specified via `basePath`. Run `npm run build:data -- --strict` to break the build process
+when encountering errors.
