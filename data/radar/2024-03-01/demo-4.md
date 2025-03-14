@@ -1,7 +1,7 @@
 ---
 title: "Demo 4"
 ring: trial
-segment: tools
+quadrant: languages-and-frameworks
 tags: [new]
 ---
 
