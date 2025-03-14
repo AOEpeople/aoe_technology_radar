@@ -1,18 +1,18 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
 import { Radar } from "@/components/Radar/Radar";
+import { SegmentList } from "@/components/SegmentList/SegmentList";
 import { Tags } from "@/components/Tags/Tags";
 import {
   getAppName,
   getChartConfig,
   getItems,
   getLabel,
-  getQuadrants,
   getReleases,
   getRings,
   getSections,
+  getSegments,
   getTags,
   getToggle,
 } from "@/lib/data";
@@ -27,7 +27,7 @@ const Home: CustomPage = () => {
   const sections = getSections();
   const version = getReleases().length;
   const rings = getRings();
-  const quadrants = getQuadrants();
+  const segments = getSegments();
   const tags = getTags();
   const items = getItems(undefined, true).filter(
     (item) => !tag || item.tags?.includes(tag),
@@ -55,7 +55,7 @@ const Home: CustomPage = () => {
                 <Radar
                   key={section}
                   size={chartConfig.size}
-                  quadrants={quadrants}
+                  segments={segments}
                   rings={rings}
                   items={items}
                 />
@@ -70,8 +70,8 @@ const Home: CustomPage = () => {
             );
           case "list":
             return (
-              getToggle("showQuadrantList") && (
-                <QuadrantList key={section} items={items} />
+              getToggle("showSegmentList") && (
+                <SegmentList key={section} items={items} />
               )
             );
           default:

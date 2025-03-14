@@ -19,7 +19,7 @@ export interface Item {
   body: string;
   featured: boolean;
   ring: string;
-  quadrant: string;
+  segment: string;
   flag: Flag;
   tags?: string[];
   release: Release;
@@ -36,7 +36,7 @@ export interface Ring {
   strokeWidth?: number;
 }
 
-export interface Quadrant {
+export interface Segment {
   id: string;
   title: string;
   description: string;

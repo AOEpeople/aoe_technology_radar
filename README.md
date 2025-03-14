@@ -9,6 +9,10 @@ A static site generator for AOE Technology Radar
 - The repository is now found here: https://github.com/AOEpeople/techradar
 - The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
 
+## ✨ Version 5.0.0
+
+@todo
+
 ## ✨ Version 4.0.0
 
 Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
@@ -82,7 +86,7 @@ Open the `config.json` file and configure the radar to your needs.
 | sections    | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
 | fuzzySearch | (optional) Modify the fuse.js options (https://www.fusejs.io/api/options.html)                                                 |
 | colors      | A map of colors for the radar. Can be any valid CSS color value                                                                |
-| quadrants   | Config of the 4 quadrants of the radar. See config below.                                                                      |
+| segments    | Config of the segments of the radar. See config below.                                                                         |
 | rings       | Config of the rings of the radar. See config below.                                                                            |
 | flags       | Config of the flags of the radar. See config below                                                                             |
 | chart       | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
@@ -94,13 +98,13 @@ Open the `config.json` file and configure the radar to your needs.
 
 #### `config.toggles`
 
-| Attribute        | Description                                             |
-| ---------------- | ------------------------------------------------------- |
-| showSearch       | Render the radar search on the header?                  |
-| showChart        | Render the radar visualization on the homepage?         |
-| showTagFilter    | Render the tag filter below the radar?                  |
-| showQuadrantList | Render the items below the radar?                       |
-| showEmptyRings   | If set to `true` it will render empty rings in the list |
+| Attribute       | Description                                             |
+| --------------- | ------------------------------------------------------- |
+| showSearch      | Render the radar search on the header?                  |
+| showChart       | Render the radar visualization on the homepage?         |
+| showTagFilter   | Render the tag filter below the radar?                  |
+| showSegmentList | Render the items below the radar?                       |
+| showEmptyRings  | If set to `true` it will render empty rings in the list |
 
 #### `config.sections`
 
@@ -110,14 +114,14 @@ An array with of `radar`, `tags`, `list` in order you want them to appear on the
 
 An object that represents the fuse.js options, which is used to search the radar.
 
-#### `config.quadrants`
+#### `config.segments`
 
-| Attribute   | Description                                                 |
-| ----------- | ----------------------------------------------------------- |
-| id          | Used as reference in the radar markdown files and URLs      |
-| title       | Title of the quadrant                                       |
-| description | Will be shown on startpage and on the quadrants detail page |
-| color       | Color of the quadrant arcs and blips                        |
+| Attribute   | Description                                                |
+| ----------- | ---------------------------------------------------------- |
+| id          | Used as reference in the radar markdown files and URLs     |
+| title       | Title of the segment                                       |
+| description | Will be shown on startpage and on the segments detail page |
+| color       | Color of the segments arcs and blips                       |
 
 #### `config.rings`
 
@@ -166,7 +170,7 @@ Each file has a meta header where the attributes of the item are listed:
 ---
 title: "React"
 ring: adopt
-quadrant: languages-and-frameworks
+segment: languages-and-frameworks
 tags: [frontend, coding]
 ---
 
@@ -176,11 +180,11 @@ Text goes here. You can use **markdown** here.
 Following front-matter attributes are possible:
 
 - **title**: Name of the Item
-- **quadrant**: Quadrant. One of the configured quadrants in `config.quadrants`
-- **ring**: Ring section in radar. One of the configured rings in `config.rings`
+- **segment**: Segnebt. One of the configured segments in `config.segments`
+- **ring**: Ring in radar. One of the configured rings in `config.rings`
 - **tags**: Optional tags for filtering.
 - **featured**: (optional, default "true") If you set this to `false`, the item
-  will not be visible in the radar quadrants but still be available in the overview.
+  will not be visible in the radar, but still be available in the overview.
 
 The name of the .md file acts as item identifier and may overwrite items with
 the same name from older releases.

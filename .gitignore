@@ -25,6 +25,7 @@
 .idea/
 *.pem
 *.tgz
+.idea
 
 # debug
 npm-debug.log*
