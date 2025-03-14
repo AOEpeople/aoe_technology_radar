@@ -4,11 +4,11 @@ export enum Flag {
   Default = "default",
 }
 
-export type Release = string;
+export type Release = string; //  "YYYY-MM-DD" format
 
 export interface Revision {
   release: Release;
-  ring: string;
+  ring: Ring["id"];
   body?: string;
 }
 
