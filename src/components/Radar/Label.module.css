@@ -4,6 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  transition: all 0.2s ease-in-out;
 }
 
 .header {
@@ -35,4 +36,24 @@
 .position-3 {
   top: auto;
   bottom: 0;
+}
+
+/** re-order the labels to top-left in some configurations */
+[data-segments="1"] .position-1,
+[data-segments="2"] .position-2 {
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: auto;
+}
+
+[data-segments="5"] .position-4 {
+  top: 50%;
+  margin-top: -35px;
+}
+
+@media (min-width: 1440px) {
+  [data-segments="5"] .position-4 {
+    left: -10%;
+  }
 }
