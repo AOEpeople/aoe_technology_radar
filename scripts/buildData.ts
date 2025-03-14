@@ -27,7 +27,7 @@ const errorHandler = new ErrorHandler(segments, rings);
 const marked = new Marked(
   markedHighlight({
     langPrefix: "hljs language-",
-    highlight(code, lang, info) {
+    highlight(code, lang) {
       const language = hljs.getLanguage(lang) ? lang : "plaintext";
       return hljs.highlight(code, { language }).value;
     },
@@ -72,6 +72,10 @@ function readMarkdownFile(filePath: string) {
 async function parseDirectory(dirPath: string): Promise<Item[]> {
   const items: Record<string, Item> = {};
 
+  // collect stats about files with old `quadrant` field as we want to
+  // notify users and deprecate it in the future v6 release
+  const deprecatedQuadrantFiles: string[] = [];
+
   async function readDir(dirPath: string) {
     const entries = fs.readdirSync(dirPath, { withFileTypes: true });
 
@@ -83,13 +87,18 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
         const releaseDate = path.basename(path.dirname(fullPath));
         const { id, data, body } = readMarkdownFile(fullPath);
 
+        // check if item is using deprecated `quadrant` field
+        if (data.quadrant) {
+          deprecatedQuadrantFiles.push(`${releaseDate}/${entry.name}`);
+        }
+
         if (!items[id]) {
           items[id] = {
             id,
             release: releaseDate,
             title: data.title || id,
             ring: data.ring,
-            segment: data.segment,
+            segment: data.segment || data.quadrant,
             body,
             featured: data.featured !== false,
             flag: Flag.Default,
@@ -102,7 +111,11 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;
-          items[id].segment = data.segment || items[id].segment;
+          items[id].segment =
+            data.segment ||
+            data.quadrant ||
+            items[id].segment ||
+            items[id].quadrant;
           items[id].tags = data.tags || items[id].tags;
           items[id].featured =
             typeof data.featured === "boolean"
@@ -120,6 +133,17 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
   }
 
   await readDir(dirPath);
+
+  // log deprecated items
+  if (deprecatedQuadrantFiles.length > 0) {
+    console.warn(
+      `ℹ️ The following items are using the deprecated "quadrant" attribute: \n  - ${deprecatedQuadrantFiles.join(
+        "\n  - ",
+      )}`,
+    );
+    console.info(`It's advised to use the "segment" attribute instead.\n`);
+  }
+
   return Object.values(items).sort((a, b) => a.title.localeCompare(b.title));
 }
 

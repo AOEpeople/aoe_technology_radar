@@ -1,7 +1,7 @@
 ---
 title: "Demo 2"
 ring: adopt
-segment: platforms-and-operations
+quadrant: platforms-and-operations
 tags: [coding, backend]
 ---
 

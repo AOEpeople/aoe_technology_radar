@@ -1,7 +1,7 @@
 ---
 title: "Demo 2"
 ring: trial
-segment: platforms-and-operations
+quadrant: platforms-and-operations
 tags: [coding]
 ---
 
