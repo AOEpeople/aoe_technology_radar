@@ -180,7 +180,7 @@ Text goes here. You can use **markdown** here.
 Following front-matter attributes are possible:
 
 - **title**: Name of the Item
-- **segment**: Segnebt. One of the configured segments in `config.segments`
+- **segment**: Segment. One of the configured segments in `config.segments`
 - **ring**: Ring in radar. One of the configured rings in `config.rings`
 - **tags**: Optional tags for filtering.
 - **featured**: (optional, default "true") If you set this to `false`, the item
