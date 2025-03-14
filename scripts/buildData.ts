@@ -72,10 +72,6 @@ function readMarkdownFile(filePath: string) {
 async function parseDirectory(dirPath: string): Promise<Item[]> {
   const items: Record<string, Item> = {};
 
-  // collect stats about files with old `quadrant` field as we want to
-  // notify users and deprecate it in the future v6 release
-  const deprecatedQuadrantFiles: string[] = [];
-
   async function readDir(dirPath: string) {
     const entries = fs.readdirSync(dirPath, { withFileTypes: true });
 
@@ -89,7 +85,10 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
 
         // check if item is using deprecated `quadrant` field
         if (data.quadrant) {
-          deprecatedQuadrantFiles.push(`${releaseDate}/${entry.name}`);
+          errorHandler.processBuildErrors(
+            ErrorType.DeprecatedQuadrant,
+            `${releaseDate}/${entry.name}`,
+          );
         }
 
         if (!items[id]) {
@@ -133,17 +132,6 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
   }
 
   await readDir(dirPath);
-
-  // log deprecated items
-  if (deprecatedQuadrantFiles.length > 0) {
-    console.warn(
-      `ℹ️ The following items are using the deprecated "quadrant" attribute: \n  - ${deprecatedQuadrantFiles.join(
-        "\n  - ",
-      )}`,
-    );
-    console.info(`It's advised to use the "segment" attribute instead.\n`);
-  }
-
   return Object.values(items).sort((a, b) => a.title.localeCompare(b.title));
 }
 
