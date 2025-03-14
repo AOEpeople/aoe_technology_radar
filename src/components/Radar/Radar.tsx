@@ -12,19 +12,19 @@ import styles from "./Radar.module.css";
 import { Chart } from "@/components/Radar/Chart";
 import { Label } from "@/components/Radar/Label";
 import { Legend } from "@/components/Radar/Legend";
-import { Item, Quadrant, Ring } from "@/lib/types";
+import { Item, Ring, Segment } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 export interface RadarProps {
   size?: number;
-  quadrants: Quadrant[];
+  segments: Segment[];
   rings: Ring[];
   items: Item[];
 }
 
 export const Radar: FC<RadarProps> = ({
   size = 800,
-  quadrants = [],
+  segments = [],
   rings = [],
   items = [],
 }) => {
@@ -88,13 +88,13 @@ export const Radar: FC<RadarProps> = ({
       <Chart
         className={styles.chart}
         size={size}
-        quadrants={quadrants}
+        segments={segments}
         rings={rings}
         items={items}
       />
       <div className={styles.labels}>
-        {quadrants.map((quadrant) => (
-          <Label key={quadrant.id} quadrant={quadrant} />
+        {segments.map((segment) => (
+          <Label key={segment.id} segment={segment} />
         ))}
       </div>
       <Legend />

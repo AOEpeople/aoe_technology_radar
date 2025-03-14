@@ -3,34 +3,34 @@ import { CSSProperties, useMemo } from "react";
 
 import styles from "./Label.module.css";
 
-import { QuadrantLink } from "@/components/QuadrantLink/QuadrantLink";
+import { SegmentLink } from "@/components/SegmentLink/SegmentLink";
 import { getLabel } from "@/lib/data";
-import { Quadrant } from "@/lib/types";
+import { Segment } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 interface LabelProps {
-  quadrant: Quadrant;
+  segment: Segment;
 }
 
-export function Label({ quadrant }: LabelProps) {
+export function Label({ segment }: LabelProps) {
   const style = useMemo(
-    () => ({ "--quadrant-color": quadrant.color }) as CSSProperties,
-    [quadrant.color],
+    () => ({ "--segment-color": segment.color }) as CSSProperties,
+    [segment.color],
   );
 
   return (
     <div
-      className={cn(styles.label, styles[`position-${quadrant.position}`])}
+      className={cn(styles.label, styles[`position-${segment.position}`])}
       style={style}
     >
       <div className={styles.header}>
         <span>
-          {getLabel("quadrant")} {quadrant.position}
+          {getLabel("segment")} {segment.position}
         </span>
-        <QuadrantLink quadrant={quadrant} />
+        <SegmentLink segment={segment} />
       </div>
-      <h3 className={styles.title}>{quadrant.title}</h3>
-      <p className={styles.description}>{quadrant.description}</p>
+      <h3 className={styles.title}>{segment.title}</h3>
+      <p className={styles.description}>{segment.description}</p>
     </div>
   );
 }
