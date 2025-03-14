@@ -22,16 +22,17 @@
 
 .description {
   font-size: 14px;
+  opacity: 0.75;
 }
 
-.position-2,
-.position-4 {
+.position-1,
+.position-2 {
   left: auto;
   right: 0;
 }
 
-.position-3,
-.position-4 {
+.position-2,
+.position-3 {
   top: auto;
   bottom: 0;
 }

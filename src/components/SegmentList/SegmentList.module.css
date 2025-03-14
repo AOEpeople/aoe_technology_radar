@@ -28,11 +28,22 @@
   margin: 0;
 }
 
+.description {
+  margin: 0 0 20px;
+  opacity: 0.75;
+}
+
 .link {
 }
 
 @media (min-width: 1220px) {
   .segments {
     --cols: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .description {
+    display: none;
   }
 }
