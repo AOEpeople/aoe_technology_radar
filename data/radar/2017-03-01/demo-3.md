@@ -1,7 +1,7 @@
 ---
 title: "Demo 3"
 ring: hold
-quadrant: tools
+segment: tools
 tags: [coding, frontend]
 ---
 

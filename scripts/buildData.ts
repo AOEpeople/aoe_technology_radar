@@ -18,11 +18,11 @@ const {
 } = config;
 
 const ringIds = rings.map((r) => r.id);
-const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
-const quadrantIds = quadrants.map((q) => q.id);
+const segments = config.segments.map((s, i) => ({ ...s, position: i + 1 }));
+const segmentIds = segments.map((s) => s.id);
 const tags = (config as { tags?: string[] }).tags || [];
-const positioner = new Positioner(size, quadrants, rings);
-const errorHandler = new ErrorHandler(quadrants, rings);
+const positioner = new Positioner(size, segments, rings);
+const errorHandler = new ErrorHandler(segments, rings);
 
 const marked = new Marked(
   markedHighlight({
@@ -63,7 +63,7 @@ function readMarkdownFile(filePath: string) {
     const body = convertToHtml(content);
     return { id, data, body };
   } catch (error) {
-    console.error(`Failed parsing ${filePath}: ${error}`);
+    console.error(`❌ Failed parsing ${filePath}: ${error}`);
     process.exit(1);
   }
 }
@@ -89,7 +89,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             release: releaseDate,
             title: data.title || id,
             ring: data.ring,
-            quadrant: data.quadrant,
+            segment: data.segment,
             body,
             featured: data.featured !== false,
             flag: Flag.Default,
@@ -102,7 +102,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;
-          items[id].quadrant = data.quadrant || items[id].quadrant;
+          items[id].segment = data.segment || items[id].segment;
           items[id].tags = data.tags || items[id].tags;
           items[id].featured =
             typeof data.featured === "boolean"
@@ -170,17 +170,17 @@ function postProcessItems(items: Item[]): {
   items: Item[];
 } {
   const filteredItems = items.filter((item) => {
-    // check if the items' quadrant and ring are valid
-    if (!item.quadrant || !item.ring) {
-      errorHandler.processBuildErrors(ErrorType.NoQuadrant, item.id);
+    // check if the items' segment and ring are valid
+    if (!item.segment || !item.ring) {
+      errorHandler.processBuildErrors(ErrorType.NoSegmentOrRing, item.id);
       return false;
     }
 
-    if (!quadrantIds.includes(item.quadrant)) {
+    if (!segmentIds.includes(item.segment)) {
       errorHandler.processBuildErrors(
-        ErrorType.InvalidQuadrant,
+        ErrorType.InvalidSegment,
         item.id,
-        item.quadrant,
+        item.segment,
       );
       return false;
     }
@@ -210,7 +210,7 @@ function postProcessItems(items: Item[]): {
   const processedItems = filteredItems.map((item) => {
     const processedItem = {
       ...item,
-      position: positioner.getNextPosition(item.quadrant, item.ring),
+      position: positioner.getNextPosition(item.segment, item.ring),
       flag: getFlag(item, releases),
       // only keep revision which ring or body is different
       revisions: item.revisions
