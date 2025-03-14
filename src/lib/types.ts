@@ -20,6 +20,7 @@ export interface Item {
   featured: boolean;
   ring: string;
   segment: string;
+  quadrant?: string; // deprecated - users should update to `segment`
   flag: Flag;
   tags?: string[];
   release: Release;
