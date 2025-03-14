@@ -38,6 +38,10 @@ function dataPath(...paths: string[]): string {
   return path.resolve("data", ...paths);
 }
 
+function writeJsonFile(filePath: string, data: unknown) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
 function convertToHtml(markdown: string): string {
   // replace deprecated internal links with .html extension
   markdown = markdown.replace(/(]\(\/[^)]+)\.html/g, "$1/");
@@ -255,6 +259,11 @@ function postProcessItems(items: Item[]): {
 }
 
 async function main() {
+  // write about data to JSON file
+  const about = readMarkdownFile(dataPath("about.md"));
+  writeJsonFile(dataPath("about.json"), about);
+  console.info(`💾 Content of about.md was written to data/about.json`);
+
   // Parse the data and write radar data to JSON file
   const items = await parseDirectory(dataPath("radar"));
   const data = postProcessItems(items);
@@ -265,18 +274,16 @@ async function main() {
 
   errorHandler.checkForBuildErrors(true);
 
-  const json = JSON.stringify(data, null, 2);
-  fs.writeFileSync(dataPath("data.json"), json);
+  writeJsonFile(dataPath("data.json"), data);
+  console.info(
+    `💾 Data of ${data.items.length} items was written to data/data.json`,
+  );
 
-  // write about data to JSON file
-  const about = readMarkdownFile(dataPath("about.md"));
-  fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));
+  writeJsonFile(path.resolve("public", "radar.json"), { config, data });
+  console.info(`🌍️ Created public/radar.json`);
+
   console.log(
-    "ℹ️ Data written to data/data.json and data/about.json\n\n" +
-      errorHandler.colorizeBackground(
-        " Build was successfull ",
-        TextColor.Green,
-      ),
+    errorHandler.colorizeBackground(" Build was successfull ", TextColor.Green),
   );
 }
 
