@@ -1,11 +1,12 @@
 import { Ring, Segment } from "@/lib/types";
 
 export enum ErrorType {
+  InvalidSegmentConfig = "Please setup 2-6 segments in the config.json - you configured {0}.",
   NoSegmentOrRing = "Item {0} has no segment or ring",
   InvalidSegment = "Item {0} has invalid segment {1}\n\tvalid segments are: {2}",
   InvalidRing = "Item {0} has invalid ring {1}\n\tvalid rings are: {2}",
   NoRadarItems = "No valid radar items found. Please check the markdown files in the `radar` directory.",
-  DeprecatedQuadrant = "Item {0} is using deprecated 'quadrant' attribute. Please use 'segment' instead.",
+  DeprecatedQuadrantAttribute = "Item {0} is using deprecated 'quadrant' attribute. Please use 'segment' instead.",
 }
 
 export enum TextColor {
