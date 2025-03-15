@@ -71,8 +71,18 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 768px) {
+  .radar[data-segments="5"] {
+    padding: 15px 15px 200px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
   .radar {
     padding: 150px 15px;
+  }
+
+  .radar[data-segments="6"] {
+    padding: 150px 300px;
   }
 }
