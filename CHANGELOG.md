@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.6.1 (2025-03-15)
+
+### Chores and tidying
+
+- release v4.6.0 (3fd82879)
+
 ## Version v4.6.0 (2025-03-14)
 
 ### Features
