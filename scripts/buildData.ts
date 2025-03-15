@@ -90,7 +90,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
         // check if item is using deprecated `quadrant` field
         if (data.quadrant) {
           errorHandler.processBuildErrors(
-            ErrorType.DeprecatedQuadrant,
+            ErrorType.DeprecatedQuadrantAttribute,
             `${releaseDate}/${entry.name}`,
           );
         }
@@ -259,6 +259,16 @@ function postProcessItems(items: Item[]): {
 }
 
 async function main() {
+  // check segment length between 2 and 6
+  if (segments.length < 2 || segments.length > 6) {
+    errorHandler.processBuildErrors(
+      ErrorType.InvalidSegmentConfig,
+      `${segments.length}`,
+    );
+  }
+
+  errorHandler.checkForBuildErrors(true);
+
   // write about data to JSON file
   const about = readMarkdownFile(dataPath("about.md"));
   writeJsonFile(dataPath("about.json"), about);
