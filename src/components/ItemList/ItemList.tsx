@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./ItemList.module.css";
 
 import { FlagBadge, RingBadge } from "@/components/Badge/Badge";
-import { getQuadrant } from "@/lib/data";
+import { getSegment } from "@/lib/data";
 import { Item } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +36,7 @@ export function ItemList({
               [styles.isFadedOut]: !item.featured,
               [styles.isActive]: item.id === activeId,
             })}
-            href={`/${item.quadrant}/${item.id}`}
+            href={`/${item.segment}/${item.id}`}
           >
             <span className={styles.title}>{item.title}</span>
             <FlagBadge
@@ -47,8 +47,8 @@ export function ItemList({
 
             {size === "large" && (
               <div className={styles.info}>
-                <span className={styles.quadrant}>
-                  {getQuadrant(item.quadrant)?.title}
+                <span className={styles.segment}>
+                  {getSegment(item.segment)?.title}
                 </span>
                 {!hideRing && (
                   <RingBadge

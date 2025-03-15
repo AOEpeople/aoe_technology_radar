@@ -1,10 +1,12 @@
-import { Quadrant, Ring } from "@/lib/types";
+import { Ring, Segment } from "@/lib/types";
 
 export enum ErrorType {
-  NoQuadrant = "Item {0} has no quadrant or ring",
-  InvalidQuadrant = "Item {0} has invalid quadrant {1}\n\tvalid quadrants are: {2}",
+  InvalidSegmentConfig = "Please setup 2-6 segments in the config.json - you configured {0}.",
+  NoSegmentOrRing = "Item {0} has no segment or ring",
+  InvalidSegment = "Item {0} has invalid segment {1}\n\tvalid segments are: {2}",
   InvalidRing = "Item {0} has invalid ring {1}\n\tvalid rings are: {2}",
   NoRadarItems = "No valid radar items found. Please check the markdown files in the `radar` directory.",
+  DeprecatedQuadrantAttribute = "Item {0} is using deprecated 'quadrant' attribute. Please use 'segment' instead.",
 }
 
 export enum TextColor {
@@ -21,15 +23,15 @@ export enum TextColor {
 
 export default class ErrorHandler {
   private buildErrors: string[] = [];
-  private quadrants: Quadrant[];
+  private segments: Segment[];
   private rings: Ring[];
   private isStrict: boolean;
   private supportsColor: boolean;
 
-  constructor(quadrants: Quadrant[], rings: Ring[]) {
+  constructor(segments: Segment[], rings: Ring[]) {
     this.isStrict = process.argv.slice(2).includes("--strict");
     this.supportsColor = process.stdout.isTTY && process.env.TERM !== "dumb";
-    this.quadrants = quadrants;
+    this.segments = segments;
     this.rings = rings;
     console.log(`ℹ️ Build is${this.isStrict ? "" : " not"} in strict mode\n`);
   }
@@ -67,8 +69,8 @@ export default class ErrorHandler {
 
   private getErrorHint(errorType: ErrorType) {
     switch (errorType) {
-      case ErrorType.InvalidQuadrant:
-        return this.quadrants.map((quadrant) => quadrant.id).join(", ");
+      case ErrorType.InvalidSegment:
+        return this.segments.map((segment) => segment.id).join(", ");
       case ErrorType.InvalidRing:
         return this.rings.map((ring) => ring.id).join(", ");
       default:

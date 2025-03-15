@@ -2,7 +2,7 @@ import data from "../../data/data.json";
 import config from "./config";
 
 import { format } from "@/lib/format";
-import { Flag, Item, Quadrant, Ring } from "@/lib/types";
+import { Flag, Item, Ring, Segment } from "@/lib/types";
 import { assetUrl } from "@/lib/utils";
 
 export function getLabel(key: keyof typeof config.labels) {
@@ -75,17 +75,17 @@ export function getEditUrl(props: { id: string; release: string }) {
   return format(config.editUrl, props);
 }
 
-export function getQuadrants(): Quadrant[] {
-  return config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
+export function getSegments(): Segment[] {
+  return config.segments.map((s, i) => ({ ...s, position: i + 1 }));
 }
 
-export function getQuadrant(id: string): Quadrant | undefined {
-  return getQuadrants().find((q) => q.id === id);
+export function getSegment(id: string): Segment | undefined {
+  return getSegments().find((q) => q.id === id);
 }
 
-export function getItems(quadrant?: string, featured?: boolean): Item[] {
+export function getItems(segment?: string, featured?: boolean): Item[] {
   return data.items.filter((item) => {
-    if (quadrant && item.quadrant !== quadrant) return false;
+    if (segment && item.segment !== segment) return false;
     return !(featured && !item.featured);
   }) as Item[];
 }
@@ -117,15 +117,13 @@ export const groupItemsByRing = (items: Item[]) => {
   );
 };
 
-export const groupItemsByQuadrant = (items: Item[]) => {
-  return getQuadrants().reduce(
-    (acc, quadrant) => {
-      const quadrantItems = items.filter(
-        (item) => item.quadrant === quadrant.id,
-      );
-      if (quadrantItems.length) acc[quadrant.id] = quadrantItems;
+export const groupItemsBySegment = (items: Item[]) => {
+  return getSegments().reduce(
+    (acc, segment) => {
+      const segmentItems = items.filter((item) => item.segment === segment.id);
+      if (segmentItems.length) acc[segment.id] = segmentItems;
       return acc;
     },
-    {} as { [quadrantId: string]: Item[] },
+    {} as { [segmentId: string]: Item[] },
   );
 };
