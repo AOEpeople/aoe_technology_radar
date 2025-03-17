@@ -51,6 +51,16 @@ const _Chart: FC<ChartProps> = ({
     const start = polarToCartesian(radius, endAngle);
     const end = polarToCartesian(radius, startAngle);
 
+    // If there's only one segment, draw a full circle
+    // prettier-ignore
+    if (numSegments === 1) {
+      return [
+        "M", center, center - radius,
+        "A", radius, radius, 0, 1, 0, center, center + radius,
+        "A", radius, radius, 0, 1, 0, center, center - radius,
+      ].join(" ");
+    }
+
     // prettier-ignore
     return [
       "M", start.x, start.y,
@@ -59,8 +69,6 @@ const _Chart: FC<ChartProps> = ({
   };
 
   const renderGlow = (position: number, color: string, numSegments: number) => {
-    const gradientId = `glow-${position}`;
-
     const angleIncrement = 360 / numSegments;
     const startAngle = (position - 1) * angleIncrement;
     const endAngle = startAngle + angleIncrement;
@@ -71,22 +79,36 @@ const _Chart: FC<ChartProps> = ({
         ? 1
         : 0;
 
-    const x = cx === 1 ? 0 : center;
-    const y = cy === 1 ? 0 : center;
+    if (numSegments == 1)
+      return (
+        <circle
+          cx={center}
+          cy={center}
+          r={center}
+          fill={color}
+          mask="url(#glow-mask)"
+        />
+      );
+
+    if (numSegments == 2) {
+      return (
+        <rect
+          x={position === 1 ? center : 0}
+          y={0}
+          width={center}
+          height={size}
+          fill={color}
+          mask="url(#glow-mask)"
+        />
+      );
+    }
 
     return (
-      <>
-        <defs>
-          <radialGradient id={gradientId} x={0} y={0} r={1} cx={cx} cy={cy}>
-            <stop offset="0%" stopColor={color} stopOpacity={0.5}></stop>
-            <stop offset="100%" stopColor={color} stopOpacity={0}></stop>
-          </radialGradient>
-        </defs>
-        <polygon
-          points={`${center},${center} ${polarToCartesian(size, startAngle).x},${polarToCartesian(size, startAngle).y} ${polarToCartesian(size, endAngle).x},${polarToCartesian(size, endAngle).y}`}
-          fill={`url(#${gradientId})`}
-        />
-      </>
+      <polygon
+        points={`${center},${center} ${polarToCartesian(size, startAngle).x},${polarToCartesian(size, startAngle).y} ${polarToCartesian(size, endAngle).x},${polarToCartesian(size, endAngle).y}`}
+        fill={color}
+        mask="url(#glow-mask)"
+      />
     );
   };
 
@@ -153,12 +175,25 @@ const _Chart: FC<ChartProps> = ({
           <rect width="100%" height="100%" fill="black" />
           <circle cx={center} cy={center} r={center} fill="white" />
         </mask>
+        <mask id="glow-mask">
+          <radialGradient id="glow-gradient">
+            <stop offset="0%" stopColor="white" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <circle
+            cx={center}
+            cy={center}
+            r={center}
+            fill="url(#glow-gradient)"
+          />
+        </mask>
       </defs>
       {segments.map((segment) => (
         <g key={segment.id} data-segment={segment.id} mask="url(#radar-mask)">
           {renderGlow(segment.position, segment.color, segments.length)}
           {rings.map((ring) => (
             <path
+              className={styles.ring}
               key={`${ring.id}-${segment.id}`}
               data-key={`${ring.id}-${segment.id}`}
               d={describeArc(
