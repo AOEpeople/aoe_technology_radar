@@ -8,7 +8,9 @@ type DeepPartial<T> = T extends object
   : T;
 
 type Config = typeof defaultConfig;
-type UserConfig = DeepPartial<typeof defaultConfig>;
+type UserConfig = DeepPartial<Config> & {
+    quadrants?: (typeof defaultConfig)["segments"];
+};
 
 const userConfig = _userConfig as UserConfig;
 const config = { ...defaultConfig, ...userConfig } as Config;
@@ -27,5 +29,10 @@ if (userConfig.fuzzySearch)
     ...defaultConfig.fuzzySearch,
     ...userConfig.fuzzySearch,
   };
+
+// support for deprecated "quadrants" property
+if (userConfig.quadrants?.length) {
+  config.segments = userConfig.quadrants;
+}
 
 export default config;

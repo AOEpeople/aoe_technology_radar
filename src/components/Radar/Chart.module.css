@@ -2,6 +2,9 @@
   text-transform: uppercase;
 }
 
+.ring {
+}
+
 @media (max-width: 767px) {
   .ringLabels {
     display: none;

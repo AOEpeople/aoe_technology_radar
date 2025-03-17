@@ -260,14 +260,20 @@ function postProcessItems(items: Item[]): {
 
 async function main() {
   // check segment length between 2 and 6
-  if (segments.length < 2 || segments.length > 6) {
+  if (!segments.length || segments.length > 6) {
     errorHandler.processBuildErrors(
-      ErrorType.InvalidSegmentConfig,
+      ErrorType.InvalidSegmentLength,
       `${segments.length}`,
     );
   }
 
+  // break if segments are not defined at all
   errorHandler.checkForBuildErrors(true);
+
+  // warn about deprecated config
+  if ("quadrants" in config) {
+    errorHandler.processBuildErrors(ErrorType.DeprecatedQuadrantConfig);
+  }
 
   // write about data to JSON file
   const about = readMarkdownFile(dataPath("about.md"));
