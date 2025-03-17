@@ -1,24 +1,33 @@
 # AOE Technology Radar
 
-A static site generator for AOE Technology Radar
+A static site generator for a full-featured Technology Radar. [[Demo]](https://www.aoe.com/techradar/)
+
+**Features**: 1-6 segments, customizable rings, dashboard, radar visualization, item history, fuzzy search etc..
 
 ![Screenshot of the AOE Technology Radar](./docs/assets/screenshot-techradar.png)
 
 ## Looking for the AOE Tech Radar content?
 
 - The repository is now found here: https://github.com/AOEpeople/techradar
-- The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
+- The AOE Technology Radar is deployed here: https://www.aoe.com/techradar/
 
-## ✨ Version 5.0.0
+## Changelog
 
-@todo
+See the whole [CHANGELOG.md](./CHANGELOG.md) for all changes. Notable changes are:
 
-## ✨ Version 4.0.0
+### ✨ Version 5.0.0
+
+In this version, we transitioned from "quadrants" to "segments" for enhanced flexibility and organization. This update
+supports 1 to 6 segments, allowing you to customize your radar as needed. Simply update the attribute in your
+`config.json` and add or remove segments as desired. The radar will automatically adjust to the number of segments.
+
+### Version 4.0.0
 
 Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
 on [Next.js](https://nextjs.org/) to provide enhanced static site generation. The visualization has
 been rewritten without the need for the D3 dependency. New features include a fuzzy search based on
 Fuse.js, non-overlapping blips on the radar, and a reworked tag filter on the homepage.
+[See Mathias' blogpost on aoe.com](https://www.aoe.com/en/insights/blog/unveiling-the-new-aoe-tech-radar-v4.html)
 
 To migrate from the old version please migrate your `package.json`'s scripts and create a
 new `config.json` based on the documentation below. You can find a reference implementation in
@@ -36,7 +45,8 @@ rewrite ^/techradar/(.+)\.html$ /techradar/$1/ permanent;
 
 The generator is free to use under Open Source License - in fact there are already some other Radars
 published based on our Radar and there are also Contributions back. However, it would be nice to
-mention in radar that the generator is based on this repository.
+mention in radar that the generator is based on this repository. You do not need to clone or fork this repo unless
+you want to contribute back - instead use the generator as a dependency in your own project:
 
 ### Step 1: Create a new project
 
@@ -53,7 +63,7 @@ file like the following and adapt to your needs:
     "serve": "techradar serve"
   },
   "dependencies": {
-    "aoe_technology_radar": "^4"
+    "aoe_technology_radar": "^5"
   }
 }
 ```
@@ -62,7 +72,8 @@ Run `npm install` to install the dependencies and run `npm run build` to create 
 This will also create a basic bootstrap of all required files, including the `config.json` and
 the `about.md` if they do not exist yet.
 
-Note: The `--strict` flag will break the build process if there are any errors in the markdown files. If you do not care about errors, you can remove the `--strict` flag.
+Note: The `--strict` flag will break the build process if there are any errors in the markdown files. If you do not care
+about errors, you can remove the `--strict` flag.
 
 ### Step 2: Change logo and the favicon
 
