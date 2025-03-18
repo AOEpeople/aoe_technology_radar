@@ -23,6 +23,7 @@ const Home: CustomPage = () => {
   const tag = router.query.tag as string | undefined;
   const appName = getAppName();
   const metaDescription = getLabel("metaDescription");
+  const subTitle = "subtitle";
   const chartConfig = getChartConfig();
   const sections = getSections();
   const version = getReleases().length;
@@ -47,6 +48,7 @@ const Home: CustomPage = () => {
           Version #{version}
         </span>
       </h1>
+      {subTitle && <h2 className="subtitle">{subTitle}</h2>}
       {sections.map((section) => {
         switch (section) {
           case "radar":
