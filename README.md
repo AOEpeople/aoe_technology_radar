@@ -1,20 +1,33 @@
 # AOE Technology Radar
 
-A static site generator for AOE Technology Radar
+A static site generator for a full-featured Technology Radar. [[Demo]](https://www.aoe.com/techradar/)
+
+**Features**: 1-6 segments, customizable rings, dashboard, radar visualization, item history, fuzzy search etc..
 
 ![Screenshot of the AOE Technology Radar](./docs/assets/screenshot-techradar.png)
 
 ## Looking for the AOE Tech Radar content?
 
 - The repository is now found here: https://github.com/AOEpeople/techradar
-- The AOE Tech radar is deployed here: https://www.aoe.com/techradar/index.html
+- The AOE Technology Radar is deployed here: https://www.aoe.com/techradar/
 
-## ✨ Version 4.0.0
+## Changelog
+
+See the whole [CHANGELOG.md](./CHANGELOG.md) for all changes. Notable changes are:
+
+### ✨ Version 5.0.0
+
+In this version, we transitioned from "quadrants" to "segments" for enhanced flexibility and organization. This update
+supports 1 to 6 segments, allowing you to customize your radar as needed. Simply update the attribute in your
+`config.json` and add or remove segments as desired. The radar will automatically adjust to the number of segments.
+
+### Version 4.0.0
 
 Version 4.0.0 is a complete rewrite of the AOE Technology Radar. It is now based
 on [Next.js](https://nextjs.org/) to provide enhanced static site generation. The visualization has
 been rewritten without the need for the D3 dependency. New features include a fuzzy search based on
 Fuse.js, non-overlapping blips on the radar, and a reworked tag filter on the homepage.
+[See Mathias' blogpost on aoe.com](https://www.aoe.com/en/insights/blog/unveiling-the-new-aoe-tech-radar-v4.html)
 
 To migrate from the old version please migrate your `package.json`'s scripts and create a
 new `config.json` based on the documentation below. You can find a reference implementation in
@@ -32,7 +45,8 @@ rewrite ^/techradar/(.+)\.html$ /techradar/$1/ permanent;
 
 The generator is free to use under Open Source License - in fact there are already some other Radars
 published based on our Radar and there are also Contributions back. However, it would be nice to
-mention in radar that the generator is based on this repository.
+mention in radar that the generator is based on this repository. You do not need to clone or fork this repo unless
+you want to contribute back - instead use the generator as a dependency in your own project:
 
 ### Step 1: Create a new project
 
@@ -49,7 +63,7 @@ file like the following and adapt to your needs:
     "serve": "techradar serve"
   },
   "dependencies": {
-    "aoe_technology_radar": "^4"
+    "aoe_technology_radar": "^5"
   }
 }
 ```
@@ -58,7 +72,8 @@ Run `npm install` to install the dependencies and run `npm run build` to create 
 This will also create a basic bootstrap of all required files, including the `config.json` and
 the `about.md` if they do not exist yet.
 
-Note: The `--strict` flag will break the build process if there are any errors in the markdown files. If you do not care about errors, you can remove the `--strict` flag.
+Note: The `--strict` flag will break the build process if there are any errors in the markdown files. If you do not care
+about errors, you can remove the `--strict` flag.
 
 ### Step 2: Change logo and the favicon
 
@@ -82,7 +97,7 @@ Open the `config.json` file and configure the radar to your needs.
 | sections    | (optional) Modify the order of sections (`radar`, `tags`, `list`)                                                              |
 | fuzzySearch | (optional) Modify the fuse.js options (https://www.fusejs.io/api/options.html)                                                 |
 | colors      | A map of colors for the radar. Can be any valid CSS color value                                                                |
-| quadrants   | Config of the 4 quadrants of the radar. See config below.                                                                      |
+| segments    | Config of the segments of the radar. See config below.                                                                         |
 | rings       | Config of the rings of the radar. See config below.                                                                            |
 | flags       | Config of the flags of the radar. See config below                                                                             |
 | chart       | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
@@ -94,13 +109,13 @@ Open the `config.json` file and configure the radar to your needs.
 
 #### `config.toggles`
 
-| Attribute        | Description                                             |
-| ---------------- | ------------------------------------------------------- |
-| showSearch       | Render the radar search on the header?                  |
-| showChart        | Render the radar visualization on the homepage?         |
-| showTagFilter    | Render the tag filter below the radar?                  |
-| showQuadrantList | Render the items below the radar?                       |
-| showEmptyRings   | If set to `true` it will render empty rings in the list |
+| Attribute       | Description                                             |
+| --------------- | ------------------------------------------------------- |
+| showSearch      | Render the radar search on the header?                  |
+| showChart       | Render the radar visualization on the homepage?         |
+| showTagFilter   | Render the tag filter below the radar?                  |
+| showSegmentList | Render the items below the radar?                       |
+| showEmptyRings  | If set to `true` it will render empty rings in the list |
 
 #### `config.sections`
 
@@ -110,14 +125,15 @@ An array with of `radar`, `tags`, `list` in order you want them to appear on the
 
 An object that represents the fuse.js options, which is used to search the radar.
 
-#### `config.quadrants`
+#### `config.segments`
 
-| Attribute   | Description                                                 |
-| ----------- | ----------------------------------------------------------- |
-| id          | Used as reference in the radar markdown files and URLs      |
-| title       | Title of the quadrant                                       |
-| description | Will be shown on startpage and on the quadrants detail page |
-| color       | Color of the quadrant arcs and blips                        |
+| Attribute   | Description                                                        |
+| ----------- | ------------------------------------------------------------------ |
+| id          | Used as reference in the radar markdown files and URLs             |
+| title       | Title of the segment                                               |
+| description | Will be shown on startpage and on the segments detail page         |
+| color       | Color of the segments arcs and blips                               |
+| label       | (optional) Will be shown on the startpage above the segments title |
 
 #### `config.rings`
 
@@ -166,7 +182,7 @@ Each file has a meta header where the attributes of the item are listed:
 ---
 title: "React"
 ring: adopt
-quadrant: languages-and-frameworks
+segment: languages-and-frameworks
 tags: [frontend, coding]
 ---
 
@@ -176,11 +192,11 @@ Text goes here. You can use **markdown** here.
 Following front-matter attributes are possible:
 
 - **title**: Name of the Item
-- **quadrant**: Quadrant. One of the configured quadrants in `config.quadrants`
-- **ring**: Ring section in radar. One of the configured rings in `config.rings`
+- **segment**: Segment. One of the configured segments in `config.segments`
+- **ring**: Ring in radar. One of the configured rings in `config.rings`
 - **tags**: Optional tags for filtering.
 - **featured**: (optional, default "true") If you set this to `false`, the item
-  will not be visible in the radar quadrants but still be available in the overview.
+  will not be visible in the radar, but still be available in the overview.
 
 The name of the .md file acts as item identifier and may overwrite items with
 the same name from older releases.

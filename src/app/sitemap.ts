@@ -1,19 +1,19 @@
 import { MetadataRoute } from "next";
 
-import { getAbsoluteUrl, getItems, getQuadrants } from "@/lib/data";
+import { getAbsoluteUrl, getItems, getSegments } from "@/lib/data";
 
 export const dynamic = "force-static";
 export const revalidate = 60;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const quadrants = getQuadrants().map((quadrant) => ({
-    url: getAbsoluteUrl(`/${quadrant.id}/`),
+  const segments = getSegments().map((segment) => ({
+    url: getAbsoluteUrl(`/${segment.id}/`),
     lastModified: new Date(),
     priority: 0.8,
   }));
 
   const items = getItems().map((item) => ({
-    url: getAbsoluteUrl(`/${item.quadrant}/${item.id}/`),
+    url: getAbsoluteUrl(`/${item.segment}/${item.id}/`),
     lastModified: new Date(),
     priority: 0.5,
   }));
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.9,
     },
-    ...quadrants,
+    ...segments,
     ...items,
   ];
 }
