@@ -259,7 +259,7 @@ function postProcessItems(items: Item[]): {
 }
 
 async function main() {
-  // check segment length between 2 and 6
+  // check segment length between 1 and 6
   if (!segments.length || segments.length > 6) {
     errorHandler.processBuildErrors(
       ErrorType.InvalidSegmentLength,
