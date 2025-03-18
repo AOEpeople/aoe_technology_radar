@@ -36,24 +36,25 @@ const _Chart: FC<ChartProps> = ({
     };
   };
 
-  // Function to generate the path for a ring segment
+  // Helper function to calculate angles
+  const calculateSegmentAngles = (position: number, numSegments: number) => {
+    const angleIncrement = 360 / numSegments;
+    const startAngle = (position - 1) * angleIncrement;
+    const endAngle = startAngle + angleIncrement;
+    return { startAngle, endAngle, angleIncrement };
+  };
+
+  // Optimized function to generate the path for a ring segment
   const describeArc = (
     radiusPercentage: number,
     position: number,
     numSegments: number,
   ): string => {
-    // Calculate the start and end angles based on the number of segments
-    const angleIncrement = 360 / numSegments;
-    const startAngle = (position - 1) * angleIncrement;
-    const endAngle = startAngle + angleIncrement;
-
     const radius = radiusPercentage * center; // Convert percentage to actual radius
-    const start = polarToCartesian(radius, endAngle);
-    const end = polarToCartesian(radius, startAngle);
 
     // If there's only one segment, draw a full circle
-    // prettier-ignore
     if (numSegments === 1) {
+      // prettier-ignore
       return [
         "M", center, center - radius,
         "A", radius, radius, 0, 1, 0, center, center + radius,
@@ -61,25 +62,22 @@ const _Chart: FC<ChartProps> = ({
       ].join(" ");
     }
 
+    const { startAngle, endAngle } = calculateSegmentAngles(
+      position,
+      numSegments,
+    );
+    const start = polarToCartesian(radius, endAngle);
+    const end = polarToCartesian(radius, startAngle);
+
     // prettier-ignore
     return [
-      "M", start.x, start.y,
-      "A", radius, radius, 0, 0, 0, end.x, end.y,
+        "M", start.x, start.y,
+        "A", radius, radius, 0, 0, 0, end.x, end.y,
     ].join(" ");
   };
 
   const renderGlow = (position: number, color: string, numSegments: number) => {
-    const angleIncrement = 360 / numSegments;
-    const startAngle = (position - 1) * angleIncrement;
-    const endAngle = startAngle + angleIncrement;
-
-    const cx = (startAngle + endAngle) / 2 > 180 ? 1 : 0;
-    const cy =
-      (startAngle + endAngle) / 2 > 90 && (startAngle + endAngle) / 2 < 270
-        ? 1
-        : 0;
-
-    if (numSegments == 1)
+    if (numSegments === 1) {
       return (
         <circle
           cx={center}
@@ -89,8 +87,9 @@ const _Chart: FC<ChartProps> = ({
           mask="url(#glow-mask)"
         />
       );
+    }
 
-    if (numSegments == 2) {
+    if (numSegments === 2) {
       return (
         <rect
           x={position === 1 ? center : 0}
@@ -103,9 +102,16 @@ const _Chart: FC<ChartProps> = ({
       );
     }
 
+    const { startAngle, endAngle } = calculateSegmentAngles(
+      position,
+      numSegments,
+    );
+    const start = polarToCartesian(size, startAngle);
+    const end = polarToCartesian(size, endAngle);
+
     return (
       <polygon
-        points={`${center},${center} ${polarToCartesian(size, startAngle).x},${polarToCartesian(size, startAngle).y} ${polarToCartesian(size, endAngle).x},${polarToCartesian(size, endAngle).y}`}
+        points={`${center},${center} ${start.x},${start.y} ${end.x},${end.y}`}
         fill={color}
         mask="url(#glow-mask)"
       />
