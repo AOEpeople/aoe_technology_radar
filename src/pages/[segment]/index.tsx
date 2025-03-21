@@ -4,6 +4,8 @@ import { useMemo } from "react";
 
 import { RingList } from "@/components/RingList/RingList";
 import {
+  getAbsoluteUrl,
+  getBaseUrl,
   getItems,
   getSegment,
   getSegments,
@@ -26,6 +28,30 @@ const SegmentPage: CustomPage = () => {
       <Head>
         <title>{formatTitle(segment.title)}</title>
         <meta name="description" content={segment.description} />
+        <meta
+          name="og:title"
+          property="og:title"
+          content={formatTitle(segment.title)}
+        />
+        <meta
+          name="og:description"
+          property="og:description"
+          content={segment.description}
+        />
+        <meta
+          name="og:image"
+          property="og:image"
+          content={`${getBaseUrl()}${segment.id}/opengraph-image`}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`${getBaseUrl()}${segment.id}/opengraph-image`}
+        />
+        <meta
+          name="og:url"
+          property="og:url"
+          content={getAbsoluteUrl(segment.id)}
+        />
       </Head>
 
       <h1>{segment.title}</h1>

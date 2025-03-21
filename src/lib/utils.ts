@@ -12,3 +12,10 @@ export function assetUrl(path: string) {
   if (!path.startsWith("/")) path = "/" + path;
   return `${config.basePath}${path}`;
 }
+
+export function listContainsAny(list: string[], comp: string[]) {
+  for (const item of list) {
+    if (comp.includes(item)) return true;
+  }
+  return false;
+}

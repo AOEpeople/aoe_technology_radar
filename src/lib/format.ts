@@ -1,3 +1,5 @@
+import { convert } from "html-to-text";
+
 import { getAppName } from "@/lib/data";
 
 // Replaces placeholders in a string with values from a context object
@@ -20,4 +22,21 @@ export function formatRelease(release: string): string {
     month: "long",
     year: "numeric",
   });
+}
+
+export function formatTitleWithMissing(
+  ...title: (string | undefined)[]
+): string {
+  return title.filter((str) => typeof str === "string").join(" | ");
+}
+
+export function htmlToText(html: string): string {
+  return convert(html).replaceAll(/\[http(s)*:\/\/.*\]/gm, "");
+}
+
+export function limitTextLength(text: string, limit: number) {
+  if (text.length > limit) {
+    return text.slice(0, limit) + "...";
+  }
+  return text;
 }
