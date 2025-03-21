@@ -4,7 +4,12 @@ import Head from "next/head";
 import Script from "next/script";
 
 import { Layout, type LayoutClass } from "@/components/Layout/Layout";
-import { getJsUrl } from "@/lib/data";
+import {
+  getAbsoluteUrl,
+  getBaseUrl,
+  getDescription,
+  getJsUrl,
+} from "@/lib/data";
 import { formatTitle } from "@/lib/format";
 import { assetUrl } from "@/lib/utils";
 import "@/styles/_globals.css";
@@ -26,6 +31,23 @@ export default function App({ Component, pageProps, router }: CustomAppProps) {
       <Head>
         <title>{formatTitle()}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="og:title" property="og:title" content={formatTitle()} />
+        <meta
+          name="og:description"
+          property="og:description"
+          content={getDescription()}
+        />
+        <meta
+          name="og:image"
+          property="og:image"
+          content={`${getBaseUrl()}opengraph-image`}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`${getBaseUrl()}opengraph-image`}
+        />
+        <meta name="og:url" property="og:url" content={getAbsoluteUrl()} />
+        <meta name="og:type" property="og:type" content="website" />
         <link rel="icon" href={assetUrl("/favicon.ico")} />
       </Head>
       <Layout layoutClass={Component.layoutClass}>
