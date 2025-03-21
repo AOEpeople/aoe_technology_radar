@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React, { FC, Fragment, memo } from "react";
+import fs from "fs";
+import path from "path";
 
 import styles from "./Chart.module.css";
 
@@ -132,7 +134,12 @@ const _Chart: FC<ChartProps> = ({
     });
   };
 
-  return (
+  const exportRadarSVG = (svgContent: string) => {
+    const filePath = path.join(process.cwd(), "public", "radar.svg");
+    fs.writeFileSync(filePath, svgContent);
+  };
+
+  const svgContent = (
     <svg
       className={className}
       width={viewBoxSize}
@@ -158,6 +165,10 @@ const _Chart: FC<ChartProps> = ({
       <g className={styles.ringLabels}>{renderRingLabels()}</g>
     </svg>
   );
+
+  exportRadarSVG(svgContent);
+
+  return svgContent;
 };
 
 export const Chart = memo(_Chart);
