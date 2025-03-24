@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { getAppName } from "@/lib/data";
+import { formatTitleWithMissing, limitTextLength } from "@/lib/format";
 import { Segment } from "@/lib/types";
 
 interface SegmentProps {
@@ -28,7 +29,10 @@ export const SegmentInfo: FC<SegmentProps> = ({ segment, size }) => {
           width: `${size.width * 0.65}px`,
         }}
       >
-        {segment.title} | {getAppName()}
+        {limitTextLength(
+          formatTitleWithMissing(segment.title, getAppName()),
+          60,
+        )}
       </h2>
       <p
         style={{
@@ -41,7 +45,7 @@ export const SegmentInfo: FC<SegmentProps> = ({ segment, size }) => {
           fontSize: 32,
         }}
       >
-        {segment.description}
+        {limitTextLength(segment.description, 150)}
       </p>
     </div>
   );
