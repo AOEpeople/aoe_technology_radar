@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 import { BaseCard } from "@/components/OpenGraph/BaseCard";
 import { ItemInfo } from "@/components/OpenGraph/ItemInfo";
-import { getItem, getItems, getSegment } from "@/lib/data";
+import { getItem, getItems, getRing, getSegment } from "@/lib/data";
 import { htmlToText, limitTextLength } from "@/lib/format";
 
 export const alt = "TechRadar Open Graph Image";
@@ -23,6 +23,7 @@ export default async function OpenGraphImage({
   const item = getItem(res.id);
   const segment = getSegment(res.segment);
   const trimmedItemBody = limitTextLength(htmlToText(item?.body ?? ""), 100);
+  const ring = getRing(item?.ring ?? "");
 
   return new ImageResponse(
     (
@@ -31,7 +32,7 @@ export default async function OpenGraphImage({
           size={size}
           name={item?.title}
           segment={segment?.title}
-          ring={item?.ring}
+          ring={ring}
           description={trimmedItemBody}
         />
       </BaseCard>

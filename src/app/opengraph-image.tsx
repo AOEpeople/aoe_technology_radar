@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 
 import { BaseCard } from "@/components/OpenGraph/BaseCard";
 import { getAppName, getLabel } from "@/lib/data";
+import { limitTextLength } from "@/lib/format";
 
 export const alt = "TechRadar Open Graph Image";
 export const size = {
@@ -34,7 +35,7 @@ export default async function OpenGraphImage() {
               width: `${size.width}px`,
             }}
           >
-            {getAppName()}
+            {limitTextLength(getAppName(), 60)}
           </h2>
           <p
             style={{
@@ -47,7 +48,7 @@ export default async function OpenGraphImage() {
               fontSize: 32,
             }}
           >
-            {getLabel("metaDescription")}
+            {limitTextLength(getLabel("metaDescription"), 150)}
           </p>
         </div>
       </BaseCard>
