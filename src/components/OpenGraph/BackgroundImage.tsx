@@ -1,7 +1,5 @@
 import React, { FC } from "react";
 
-import { Blip } from "../Radar/Blip";
-
 import { getChartConfig } from "@/lib/data";
 import { Flag, Item, Ring, Segment } from "@/lib/types";
 
@@ -21,7 +19,6 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   segments = [],
   rings = [],
   items = [],
-  className,
 }) => {
   const viewBoxSize = size;
   const center = size / 2;
@@ -79,12 +76,6 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
     const angleIncrement = 360 / numSegments;
     const startAngle = (position - 1) * angleIncrement;
     const endAngle = startAngle + angleIncrement;
-
-    const cx = (startAngle + endAngle) / 2 > 180 ? 1 : 0;
-    const cy =
-      (startAngle + endAngle) / 2 > 90 && (startAngle + endAngle) / 2 < 270
-        ? 1
-        : 0;
 
     if (numSegments == 1)
       return (
@@ -160,12 +151,10 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
           />
         );
     }
-    // return <Blip color={segment.color} x={x} y={y} flag={item.flag} />;
   };
 
   return (
     <svg
-      className={className}
       width={viewBoxSize}
       height={viewBoxSize}
       viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}

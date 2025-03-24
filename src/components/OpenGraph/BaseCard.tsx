@@ -9,7 +9,7 @@ import {
   getSegments,
   getTags,
 } from "@/lib/data";
-import { Item, Ring, Segment } from "@/lib/types";
+import { Segment } from "@/lib/types";
 import { listContainsAny } from "@/lib/utils";
 
 interface BaseCardProps {
