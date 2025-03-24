@@ -9,13 +9,15 @@ import { ItemDetail } from "@/components/ItemDetail/ItemDetail";
 import { ItemList } from "@/components/ItemList/ItemList";
 import { SegmentLink } from "@/components/SegmentLink/SegmentLink";
 import {
+  getAbsoluteUrl,
+  getBaseUrl,
   getItem,
   getItems,
   getLabel,
   getSegment,
   sortByFeaturedAndTitle,
 } from "@/lib/data";
-import { formatTitle } from "@/lib/format";
+import { formatTitle, htmlToText, limitTextLength } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
 const ItemPage: CustomPage = () => {
@@ -30,12 +32,37 @@ const ItemPage: CustomPage = () => {
   }, [segment?.id, item?.ring]);
 
   if (!segment || !item) return null;
+  const trimmedItemBody = limitTextLength(htmlToText(item?.body ?? ""), 100);
 
   return (
     <>
       <Head>
         <title>{formatTitle(item.title, segment.title)}</title>
         <meta name="description" content={segment.description} />
+        <meta
+          name="og:title"
+          property="og:title"
+          content={formatTitle(item.title, segment.title)}
+        />
+        <meta
+          name="og:description"
+          property="og:description"
+          content={trimmedItemBody}
+        />
+        <meta
+          name="og:image"
+          property="og:image"
+          content={`${getBaseUrl()}${segment.id}/${item.id}/opengraph-image`}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`${getBaseUrl()}${segment.id}/${item.id}/opengraph-image`}
+        />
+        <meta
+          name="og:url"
+          property="og:url"
+          content={getAbsoluteUrl(segment.id)}
+        />
       </Head>
 
       <div className={styles.layout}>
