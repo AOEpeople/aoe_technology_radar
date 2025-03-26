@@ -117,3 +117,33 @@
     color: var(--foreground);
   }
 }
+
+.badge {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  margin-left: 0.5em;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: var(--foreground);
+  background: var(--background);
+  cursor: pointer;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid var(--border);
+}
+
+.facts {
+  margin-top: 2rem;
+}

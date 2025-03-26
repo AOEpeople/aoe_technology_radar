@@ -1,3 +1,4 @@
+import { log } from "console";
 import fs from "fs";
 import matter from "gray-matter";
 import hljs from "highlight.js";
@@ -90,7 +91,7 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             title: data.title || id,
             ring: data.ring,
             quadrant: data.quadrant,
-            body,
+            body: body,
             featured: data.featured !== false,
             flag: Flag.Default,
             tags: data.tags || [],
@@ -98,8 +99,15 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
             position: [0, 0],
           };
         } else {
+          if (config.toggles.showFacts) {
+            if (dirPath.includes("01-facts")) {
+              items[id].body = body;
+            }
+          } else {
+            items[id].body = body || items[id].body;
+          }
+
           items[id].release = releaseDate;
-          items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;
           items[id].quadrant = data.quadrant || items[id].quadrant;
@@ -110,11 +118,13 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
               : items[id].featured;
         }
 
-        items[id].revisions!.push({
-          release: releaseDate,
-          ring: data.ring,
-          body,
-        });
+        if (!dirPath.includes("01-facts")) {
+          items[id].revisions!.push({
+            release: releaseDate,
+            ring: data.ring,
+            body,
+          });
+        }
       }
     }
   }

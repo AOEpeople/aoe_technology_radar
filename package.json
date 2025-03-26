@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build:icons": "npx @svgr/cli --typescript --no-dimensions --no-prettier --out-dir src/components/Icons -- src/icons",
-    "build:data": "tsx scripts/buildData.ts",
+    "build:data": "tsx scripts/buildFacts.ts && tsx scripts/buildData.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
