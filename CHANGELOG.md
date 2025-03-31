@@ -1,5 +1,11 @@
 # Changelog
 
+## Version v4.6.2 (2025-03-31)
+
+### Chores and tidying
+
+- prepare v4.7.0 (3d14baef)
+
 ## Version v4.6.1 (2025-03-26)
 
 ### Fixes
