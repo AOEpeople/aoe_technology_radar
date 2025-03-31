@@ -84,7 +84,7 @@ export function getQuadrant(id: string): Quadrant | undefined {
 }
 
 export function getItems(quadrant?: string, featured?: boolean): Item[] {
-  return data.items.filter((item) => {
+  return data.items.filter((item: { quadrant: string; featured: any }) => {
     if (quadrant && item.quadrant !== quadrant) return false;
     return !(featured && !item.featured);
   }) as Item[];
@@ -99,7 +99,7 @@ export function getAbsoluteUrl(path: string = "/") {
 }
 
 export function getItem(id: string): Item | undefined {
-  return data.items.find((item) => item.id === id) as Item;
+  return data.items.find((item: { id: string }) => item.id === id) as Item;
 }
 
 export const sortByFeaturedAndTitle = (a: Item, b: Item) =>

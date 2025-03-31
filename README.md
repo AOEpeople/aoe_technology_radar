@@ -94,13 +94,15 @@ Open the `config.json` file and configure the radar to your needs.
 
 #### `config.toggles`
 
-| Attribute        | Description                                             |
-| ---------------- | ------------------------------------------------------- |
-| showSearch       | Render the radar search on the header?                  |
-| showChart        | Render the radar visualization on the homepage?         |
-| showTagFilter    | Render the tag filter below the radar?                  |
-| showQuadrantList | Render the items below the radar?                       |
-| showEmptyRings   | If set to `true` it will render empty rings in the list |
+| Attribute        | Description                                                                                                                  |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| showSearch       | Render the radar search on the header?                                                                                       |
+| showSearch       | Render the radar search on the header?                                                                                       |
+| showChart        | Render the radar visualization on the homepage?                                                                              |
+| showTagFilter    | Render the tag filter below the radar?                                                                                       |
+| showQuadrantList | Render the items below the radar?                                                                                            |
+| showEmptyRings   | If set to `true` it will render empty rings in the list                                                                      |
+| showFacts        | Enables or disables the facts feature. If disabled, tabs will be hidden, and only revisions will be shown. (default: `true`) |
 
 #### `config.sections`
 
