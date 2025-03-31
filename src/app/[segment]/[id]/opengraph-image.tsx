@@ -5,7 +5,6 @@ import { ItemInfo } from "@/components/OpenGraph/ItemInfo";
 import { getItem, getItems, getRing, getSegment } from "@/lib/data";
 import { htmlToText, limitTextLength } from "@/lib/format";
 
-export const alt = "TechRadar Open Graph Image";
 export const size = {
   width: 1200,
   height: 630,
@@ -44,8 +43,8 @@ export default async function OpenGraphImage({
 }
 
 export async function generateStaticParams() {
-  return getItems().map((item) => ({
-    segment: item.segment,
-    id: item.id,
+  return getItems().map(({ segment, id }) => ({
+    segment,
+    id,
   }));
 }

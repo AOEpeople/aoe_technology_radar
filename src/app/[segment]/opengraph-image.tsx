@@ -4,7 +4,6 @@ import { BaseCard } from "@/components/OpenGraph/BaseCard";
 import { SegmentInfo } from "@/components/OpenGraph/SegmentInfo";
 import { getSegment, getSegments } from "@/lib/data";
 
-export const alt = "TechRadar Open Graph Image";
 export const size = {
   width: 1200,
   height: 630,
