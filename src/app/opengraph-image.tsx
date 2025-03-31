@@ -4,7 +4,6 @@ import { BaseCard } from "@/components/OpenGraph/BaseCard";
 import { getAppName, getLabel } from "@/lib/data";
 import { limitTextLength } from "@/lib/format";
 
-export const alt = "TechRadar Open Graph Image";
 export const size = {
   width: 1200,
   height: 630,

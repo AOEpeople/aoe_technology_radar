@@ -41,11 +41,7 @@ const SegmentPage: CustomPage = () => {
         <meta
           name="og:image"
           property="og:image"
-          content={`${getBaseUrl()}${segment.id}/opengraph-image`}
-        />
-        <meta
-          property="og:image:secure_url"
-          content={`${getBaseUrl()}${segment.id}/opengraph-image`}
+          content={getAbsoluteUrl(`/${segment.id}/opengraph-image`)}
         />
         <meta
           name="og:url"

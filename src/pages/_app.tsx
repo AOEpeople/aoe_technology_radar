@@ -40,11 +40,7 @@ export default function App({ Component, pageProps, router }: CustomAppProps) {
         <meta
           name="og:image"
           property="og:image"
-          content={`${getBaseUrl()}opengraph-image`}
-        />
-        <meta
-          property="og:image:secure_url"
-          content={`${getBaseUrl()}opengraph-image`}
+          content={getAbsoluteUrl(`/opengraph-image`)}
         />
         <meta name="og:url" property="og:url" content={getAbsoluteUrl()} />
         <meta name="og:type" property="og:type" content="website" />

@@ -1,4 +1,3 @@
 {
-  "basePath": "/techradar",
-  "baseUrl": "http://localhost:3000/techradar/"
+  "basePath": "/techradar"
 }
