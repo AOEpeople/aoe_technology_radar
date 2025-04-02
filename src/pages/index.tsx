@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import styles from "./index.module.css";
+
 import { Radar } from "@/components/Radar/Radar";
 import { SegmentList } from "@/components/SegmentList/SegmentList";
 import { Tags } from "@/components/Tags/Tags";
@@ -23,7 +25,7 @@ const Home: CustomPage = () => {
   const tag = router.query.tag as string | undefined;
   const appName = getAppName();
   const metaDescription = getLabel("metaDescription");
-  const subTitle = getLabel("subTitle");
+  const subtitle = getLabel("subtitle");
   const chartConfig = getChartConfig();
   const sections = getSections();
   const version = getReleases().length;
@@ -42,13 +44,13 @@ const Home: CustomPage = () => {
         )}
       </Head>
 
-      <h1>
+      <h1 className={styles.title}>
         {appName}{" "}
         <span style={{ color: "var(--highlight)", whiteSpace: "nowrap" }}>
           Version #{version}
         </span>
       </h1>
-      {subTitle && <h2 className="subtitle">{subTitle}</h2>}
+      {subtitle && <h2 className={styles.subtitle}>{subtitle}</h2>}
       {sections.map((section) => {
         switch (section) {
           case "radar":

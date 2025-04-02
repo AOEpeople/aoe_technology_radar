@@ -9,7 +9,7 @@ type DeepPartial<T> = T extends object
 
 type Config = typeof defaultConfig;
 type UserConfig = DeepPartial<Config> & {
-    quadrants?: (typeof defaultConfig)["segments"];
+  quadrants?: (typeof defaultConfig)["segments"];
 };
 
 const userConfig = _userConfig as UserConfig;
