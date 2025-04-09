@@ -1,5 +1,5 @@
 ---
-title: "C Sharp"
+title: "C#"
 ring: adopt
 quadrant: languages-and-frameworks
 featured: true
