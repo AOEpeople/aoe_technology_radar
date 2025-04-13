@@ -14,18 +14,15 @@
   margin: -2px 8px 0 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .legend {
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 50px;
-    transform: translateX(-50%);
+    display: none;
   }
 }
 
 @media (min-width: 1200px) {
   .legend {
+    position: absolute;
     bottom: auto;
     left: auto;
     right: 0;
