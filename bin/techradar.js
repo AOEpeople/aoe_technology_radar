@@ -4,7 +4,6 @@ const fs = require("fs");
 const path = require("path");
 const { execSync, spawn } = require("child_process");
 const crypto = require("crypto");
-const chokidar = require("chokidar");
 
 const CWD = process.cwd();
 const BUILDER_DIR = path.join(CWD, ".techradar");
@@ -14,7 +13,7 @@ const HASH_FILE = path.join(BUILDER_DIR, "hash");
 const PARAMETER = process.argv[2]; // "dev", "build" or "serve"
 const FLAGS = process.argv.slice(3).join(" ");
 
-// We need this mapping on several places, so let's maintain it centrally
+// Central mapping for files and directories to be bootstrapped and rebuilt
 const fileMapping = {
   "radar-dir": {
     isDirectory: true,
@@ -81,7 +80,6 @@ function debounce(func, wait) {
 function bootstrap() {
   for (const file of Object.values(fileMapping)) {
     const relativeBuildPath = `./${path.relative(CWD, file.buildSource)}`;
-
     if (!fs.existsSync(file.buildSource) && file.isDirectory) {
       warn(
         `Could not find the directory ${relativeBuildPath}. Created a bootstrap directory in your current working directory. Feel free to customize it.`,
@@ -91,14 +89,14 @@ function bootstrap() {
       });
     } else if (!fs.existsSync(file.buildSource) && !file.isDirectory) {
       warn(
-        `Could not find ${relativeBuildPath}. Created a bootstrap file in your current working directory. Feel free to customize it. Customize it to your needs.`,
+        `Could not find ${relativeBuildPath}. Created a bootstrap file in your current working directory. Feel free to customize it.`,
       );
       fs.copyFileSync(file.bootstrappingSource, file.buildSource);
     }
   }
 }
 
-// Calculate current hash of package.json
+// Calculate current hash of package.json to determine if the builder needs to be re-created
 function calculateHash(file) {
   const fileBuffer = fs.readFileSync(file);
   const hashSum = crypto.createHash("sha256");
@@ -106,9 +104,15 @@ function calculateHash(file) {
   return hashSum.digest("hex");
 }
 
+function buildData() {
+  info("Building data");
+  execSync(`npm run build:data -- ${FLAGS}`, {
+    stdio: "inherit",
+  });
+}
+
 const CURRENT_HASH = calculateHash(path.join(CWD, "package.json"));
 
-// Check if builder dir needs to be recreated
 let RECREATE_DIR = false;
 if (
   !fs.existsSync(BUILDER_DIR) ||
@@ -145,16 +149,13 @@ bootstrap();
 
 try {
   for (const file of Object.values(fileMapping)) {
-    // Clean up a directory if it exists
+    // Remove existing target directories if needed
     if (fs.existsSync(file.buildTarget) && file.isDirectory) {
       fs.rmSync(file.buildTarget, { recursive: true });
     }
-
     if (file.isDirectory) {
-      fs.cpSync(file.buildSource, file.buildTarget, {
-        recursive: true,
-      });
-    } else if (!file.isDirectory) {
+      fs.cpSync(file.buildSource, file.buildTarget, { recursive: true });
+    } else {
       fs.copyFileSync(file.buildSource, file.buildTarget);
     }
   }
@@ -163,10 +164,7 @@ try {
   error(e.message);
 }
 
-info("Building data");
-execSync(`npm run build:data -- ${FLAGS}`, {
-  stdio: "inherit",
-});
+buildData();
 
 if (PARAMETER === "serve") {
   info("Starting techradar");
@@ -176,71 +174,50 @@ if (PARAMETER === "serve") {
 if (PARAMETER === "build") {
   info("Building techradar");
   execSync("npm run build", { stdio: "inherit" });
-  if (fs.existsSync(path.join(CWD, "build"))) {
-    fs.rmSync(path.join(CWD, "build"), { recursive: true });
+  const buildDir = path.join(CWD, "build");
+  if (fs.existsSync(buildDir)) {
+    fs.rmSync(buildDir, { recursive: true });
   }
-  info(`Copying techradar to ${path.join(CWD, "build")}`);
-  fs.renameSync(path.join(BUILDER_DIR, "out"), path.join(CWD, "build"));
+  info(`Copying techradar to ${buildDir}`);
+  fs.renameSync(path.join(BUILDER_DIR, "out"), buildDir);
 }
 
 if (PARAMETER === "dev") {
-  info("Developing techradar");
+  info("Starting techradar in development mode");
 
-  // Let's spawn a child process to run the dev server, so that it doesn't block our main thread
+  // Spawn a child process to run the dev server so the main thread is not blocked.
   // The process has to be killed whenever the main thread is killed
   const NODEDEV_CHILD_PROCESS = spawn("npm", ["run", "dev"], {
     stdio: "inherit",
     detached: false,
   });
+
   process.on("exit", () => {
     NODEDEV_CHILD_PROCESS.kill();
   });
-  // Initialize watching of source directory and files with chokidar
-  const filesToWatch = Object.values(fileMapping).filter(
-    (fileConfig) => fileConfig.rebuildOnChange && !fileConfig.isDirectory,
-  );
-  const dirsToWatch = Object.values(fileMapping).filter(
-    (fileConfig) => fileConfig.rebuildOnChange && fileConfig.isDirectory,
-  );
 
-  const srcFilesToWatch = [...filesToWatch, ...dirsToWatch].map(
-    (fileConfig) => fileConfig.buildSource,
-  );
-  const watcher = chokidar.watch(srcFilesToWatch, {
-    ignored: /^\./, // Ignore dotfiles
-    persistent: true,
-    ignoreInitial: true,
-    depth: 5,
-  });
+  // Array to store native watchers
+  const watchers = [];
 
-  // Rebuild the data when a change is detected
-  // Debounce the function to avoid multiple rebuilds at the same time
+  // Debounced function to rebuild the data when a change is detected.
   const rebuildData = debounce(({ path: changedPath }) => {
     try {
       const fileConfig = Object.values(fileMapping).find(
-        (fileConfig) =>
-          fileConfig.buildSource === changedPath && !fileConfig.isDirectory,
+        (config) => config.buildSource === changedPath && !config.isDirectory,
       );
       const dirConfig = Object.values(fileMapping).find(
-        (fileConfig) =>
-          changedPath.startsWith(fileConfig.buildSource) &&
-          fileConfig.isDirectory,
+        (config) =>
+          changedPath.startsWith(config.buildSource) && config.isDirectory,
       );
-
-      // First copy over the changed file to the build directory
-
-      // Is it a file that has been changed?
       if (fileConfig) {
         const relativeBuildSrc = `./${path.relative(CWD, changedPath)}`;
-
-        info(`${relativeBuildSrc} changed`);
+        info(`♻️ ${relativeBuildSrc} changed`);
         fs.copyFileSync(fileConfig.buildSource, fileConfig.buildTarget);
       } else if (dirConfig) {
-        // Is it a directory that has been changed?
         const relativeBuildSrc = `./${path.relative(CWD, changedPath)}`;
         const relativeTargetPath = `./${path.relative(CWD, dirConfig.buildTarget)}`;
         info(
-          `${relativeBuildSrc} changed, going to update all files in ${relativeTargetPath}.`,
+          `♻️ ${relativeBuildSrc} changed, updating all files in ${relativeTargetPath}.`,
         );
         if (fs.existsSync(dirConfig.buildTarget)) {
           fs.rmSync(dirConfig.buildTarget, { recursive: true });
@@ -249,22 +226,49 @@ if (PARAMETER === "dev") {
           recursive: true,
         });
       } else {
-        info(
-          "Unknown file changed. Won't be copied.",
-          `./${path.relative(CWD, changedPath)}`,
-        );
+        info(`Unknown file changed: ./${path.relative(CWD, changedPath)}`);
       }
 
-      // Then rebuild the json files, so that the next.js dev-server picks up the changes
-      execSync("npm run build:data", { stdio: "inherit" });
+      // Rebuild JSON files (or any other assets) needed by the dev server.
+      buildData();
     } catch (e) {
-      error("Unable to reload updated data. Please restart the server.", e);
+      error("Unable to reload updated data. Please restart the server.");
     }
   }, 1000);
 
-  // Event handlers
-  watcher
-    .on("add", (path) => rebuildData({ path }))
-    .on("change", (path) => rebuildData({ path }))
-    .on("unlink", (path) => rebuildData({ path }));
+  // Attach watchers for files/directories as specified in fileMapping.
+  for (const fileConfig of Object.values(fileMapping)) {
+    if (!fileConfig.rebuildOnChange) continue;
+
+    if (fileConfig.isDirectory) {
+      try {
+        const watcher = fs.watch(
+          fileConfig.buildSource,
+          { recursive: true },
+          (eventType, filename) => {
+            const changedPath = filename
+              ? path.join(fileConfig.buildSource, filename)
+              : fileConfig.buildSource;
+            rebuildData({ path: changedPath });
+          },
+        );
+        watchers.push(watcher);
+      } catch (err) {
+        warn(`Error watching directory ${fileConfig.buildSource}: ${err}`);
+      }
+    } else {
+      // For individual files, simply attach a watcher.
+      try {
+        const watcher = fs.watch(
+          fileConfig.buildSource,
+          (eventType, filename) => {
+            rebuildData({ path: fileConfig.buildSource });
+          },
+        );
+        watchers.push(watcher);
+      } catch (err) {
+        warn(`Error watching file ${fileConfig.buildSource}: ${err}`);
+      }
+    }
+  }
 }
