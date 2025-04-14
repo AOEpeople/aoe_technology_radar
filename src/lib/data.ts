@@ -21,6 +21,10 @@ export function getAppName() {
   return getLabel("title");
 }
 
+export function getDescription() {
+  return getLabel("metaDescription");
+}
+
 export function getLogoUrl() {
   return assetUrl(config.logoFile);
 }
@@ -92,6 +96,10 @@ export function getItems(segment?: string, featured?: boolean): Item[] {
 
 export function getImprintUrl() {
   return config.imprint;
+}
+
+export function getBaseUrl() {
+  return config.baseUrl;
 }
 
 export function getAbsoluteUrl(path: string = "/") {
