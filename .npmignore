@@ -1,0 +1,8 @@
+*.tgz
+.idea
+.github
+ /.next/
+ /out/
+ /techradar/
+/data/about.json
+/data/data.json

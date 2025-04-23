@@ -46,6 +46,10 @@ export function getFlag(flag: Flag) {
   return config.flags[flag];
 }
 
+export const getFuzzySearchConfig = () => {
+  return config.fuzzySearch;
+};
+
 export function getRings(): Ring[] {
   return config.rings;
 }
