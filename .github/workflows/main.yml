@@ -39,6 +39,7 @@ jobs:
       - name: Set up environment variables
         run: |
           echo "BASE_PATH=/$(echo '${{ github.repository }}' | cut -d'/' -f2)" >> $GITHUB_ENV
+          echo "BASE_URL=https://opensource.aoe.com$BASE_PATH" >> $GITHUB_ENV
       - run: npm run build:data
       - run: npm run build
       - run: if [ -n "$(git status --porcelain)" ]; then echo 'workspace is dirty after rebuilding' ; git status ; git diff ; exit 1 ; fi
