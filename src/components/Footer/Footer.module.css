@@ -14,7 +14,7 @@
   margin: 0 0 30px;
 }
 
-.imprint {
+.footerLink {
   opacity: 0.7;
   display: block;
   font-size: 12px;
@@ -41,8 +41,10 @@
     margin: 0 50px 0;
   }
 
-  .imprint {
-    text-align: right;
+  .footerLinks {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
   }
 }
 

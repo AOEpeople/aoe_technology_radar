@@ -1,18 +1,24 @@
 import defaultConfig from "../../data/config.default.json";
 import _userConfig from "../../data/config.json";
 
+import { FooterLink } from "@/lib/types";
+
 type DeepPartial<T> = T extends object
   ? {
       [P in keyof T]?: DeepPartial<T[P]>;
     }
   : T;
 
-type Config = typeof defaultConfig;
+type Config = typeof defaultConfig & {
+  footerLinks?: FooterLink[];
+};
+
 type UserConfig = DeepPartial<Config> & {
+  // deprecated - users should update to `segments`
   quadrants?: (typeof defaultConfig)["segments"];
 };
 
-const userConfig = _userConfig as UserConfig;
+const userConfig = _userConfig as unknown as UserConfig;
 const config = { ...defaultConfig, ...userConfig } as Config;
 
 if (userConfig.colors)
