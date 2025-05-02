@@ -17,11 +17,11 @@ See the whole [CHANGELOG.md](./CHANGELOG.md) for all changes. Notable changes ar
 
 ### ✨ Version 5.0.0
 
-In this version, we transitioned from `quadrants` to `segments` for enhanced flexibility and organization. This update
-supports 1 to 6 segments, allowing you to customize your radar as needed. Simply update the attribute in your
-`config.json` and add or remove segments as desired. The radar will automatically adjust to the number of segments.
+Version 5.0.0 introduces a major improvement: the transition from fixed `quadrants` to flexible `segments`. You can now define between 1 and 6 segments in your radar, making it easy to tailor the structure to your needs. Simply update the `segments` attribute in your `config.json`. Add or remove segments as required. The radar visualization and all related features will automatically adapt to your configuration.
 
-Deploy your radar using GitHub Actions and GitHub Pages. The repository includes a preconfigured workflow (`.github/workflows/main.yml`) that builds your static site and automatically publishes it to GitHub Pages whenever you push to the default (`main`) branch.
+Deployment is streamlined with a ready-to-use GitHub Actions workflow (`.github/workflows/main.yml`). This workflow builds your static site and publishes it to GitHub Pages every time you push to the `main` branch, enabling fast and automated updates to your radar.
+
+A new `footerLinks` option has been added, allowing you to configure custom links that appear in the footer of your radar site. This makes it easy to add links to legal pages, documentation, or any other resources relevant to your radar. To use this feature, add a `footerLinks` array to your `config.json`, where each entry has a `label` and a `url`. If not set, the footer will fall back to showing the imprint link.
 
 ### Version 4.0.0
 
@@ -105,7 +105,8 @@ Open the `config.json` file and configure the radar to your needs.
 | flags       | Config of the flags of the radar. See config below                                                                             |
 | chart       | If you have a lot of items, you can increase the `size` to scale down the radar                                                |
 | social      | Social links in the footer. See config below                                                                                   |
-| imprint     | URL to the legal information                                                                                                   |
+| imprint     | URL to the legal information (prefer to use the new `footerLinks` instead)                                                     |
+| footerLinks | (optional) Array of custom links for the footer. Each entry should have a `label` and a `url`.                                 |
 | labels      | Configure the labels to change the texts and labels of the radar                                                               |
 | tags        | (optional) Use to render only items, which contain at least one of the specified tags. e.g `["frontend", "backend"]`           |
 | editUrl     | (optional) If set, an edit button will be shown next to the revision.<br/> You can use placeholders for `{id}` and `{release}` |

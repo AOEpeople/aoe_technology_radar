@@ -2,7 +2,7 @@ import data from "../../data/data.json";
 import config from "./config";
 
 import { format } from "@/lib/format";
-import { Flag, Item, Ring, Segment } from "@/lib/types";
+import { Flag, FooterLink, Item, Ring, Segment } from "@/lib/types";
 import { assetUrl } from "@/lib/utils";
 
 export function getLabel(key: keyof typeof config.labels) {
@@ -66,6 +66,17 @@ export function getSocialLinks() {
   return config.social;
 }
 
+export function getFooterLinks(): FooterLink[] {
+  return config.footerLinks?.length
+    ? config.footerLinks
+    : [
+        {
+          label: getLabel("imprint"),
+          url: config.imprint,
+        },
+      ];
+}
+
 export function getTags(): string[] {
   return data.tags;
 }
@@ -88,10 +99,6 @@ export function getItems(segment?: string, featured?: boolean): Item[] {
     if (segment && item.segment !== segment) return false;
     return !(featured && !item.featured);
   }) as Item[];
-}
-
-export function getImprintUrl() {
-  return config.imprint;
 }
 
 export function getAbsoluteUrl(path: string = "/") {

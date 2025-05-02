@@ -45,3 +45,8 @@ export interface Segment {
   color: string;
   position: number;
 }
+
+export interface FooterLink {
+  label: string;
+  url: string;
+}
