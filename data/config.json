@@ -1,3 +1,7 @@
 {
-  "basePath": "/techradar"
+  "basePath": "/techradar",
+  "labels": {
+    "title": "Technology Radar Demo",
+    "subtitle": "This is just a demo of the AOE Technology Radar generator. You can use it to create your own radar."
+  }
 }
