@@ -35,4 +35,11 @@ if (userConfig.quadrants?.length) {
   config.segments = userConfig.quadrants;
 }
 
+// override basePath if provided
+const basePath = (process.env.BASE_PATH ?? config.basePath) || "";
+config.basePath = basePath;
+
+const baseUrl = (process.env.BASE_URL ?? config.baseUrl) || "";
+config.baseUrl = baseUrl;
+
 export default config;
