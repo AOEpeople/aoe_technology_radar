@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execSync, spawn } = require("child_process");
 const crypto = require("crypto");
 
 const CWD = process.cwd();
@@ -10,8 +10,47 @@ const BUILDER_DIR = path.join(CWD, ".techradar");
 const SOURCE_DIR = path.join(CWD, "node_modules", "aoe_technology_radar");
 const HASH_FILE = path.join(BUILDER_DIR, "hash");
 
-const PARAMETER = process.argv[2]; // "build" or "serve"
+const PARAMETER = process.argv[2]; // "dev", "build" or "serve"
 const FLAGS = process.argv.slice(3).join(" ");
+
+// Central mapping for files and directories to be bootstrapped and rebuilt
+const fileMapping = {
+  "radar-dir": {
+    isDirectory: true,
+    bootstrappingSource: path.join(SOURCE_DIR, "data", "radar"),
+    buildSource: path.join(CWD, "radar"),
+    buildTarget: path.join(BUILDER_DIR, "data", "radar"),
+    rebuildOnChange: true,
+  },
+  "public-dir": {
+    isDirectory: true,
+    bootstrappingSource: path.join(SOURCE_DIR, "public"),
+    buildSource: path.join(CWD, "public"),
+    buildTarget: path.join(BUILDER_DIR, "public"),
+    rebuildOnChange: true,
+  },
+  "config-file": {
+    isDirectory: false,
+    bootstrappingSource: path.join(SOURCE_DIR, "data", "config.default.json"),
+    buildSource: path.join(CWD, "config.json"),
+    buildTarget: path.join(BUILDER_DIR, "data", "config.json"),
+    rebuildOnChange: true,
+  },
+  "about-file": {
+    isDirectory: false,
+    bootstrappingSource: path.join(SOURCE_DIR, "data", "about.md"),
+    buildSource: path.join(CWD, "about.md"),
+    buildTarget: path.join(BUILDER_DIR, "data", "about.md"),
+    rebuildOnChange: true,
+  },
+  "customcss-file": {
+    isDirectory: false,
+    bootstrappingSource: path.join(SOURCE_DIR, "src", "styles", "custom.css"),
+    buildSource: path.join(CWD, "custom.css"),
+    buildTarget: path.join(BUILDER_DIR, "src", "styles", "custom.css"),
+    rebuildOnChange: true,
+  },
+};
 
 function info(message) {
   console.log(`\x1b[32m${message}\x1b[0m`);
@@ -26,55 +65,38 @@ function error(message) {
   process.exit(1);
 }
 
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function bootstrap() {
-  if (!fs.existsSync(path.join(CWD, "radar"))) {
-    warn(
-      "Could not find radar directory. Created a bootstrap radar directory in your current working directory. Feel free to customize it.",
-    );
-    fs.cpSync(path.join(SOURCE_DIR, "data", "radar"), path.join(CWD, "radar"), {
-      recursive: true,
-    });
-  }
-
-  if (!fs.existsSync(path.join(CWD, "public"))) {
-    warn(
-      "Could not find public directory. Created a public radar directory in your current working directory.",
-    );
-    fs.cpSync(path.join(SOURCE_DIR, "public"), path.join(CWD, "public"), {
-      recursive: true,
-    });
-  }
-
-  if (!fs.existsSync(path.join(CWD, "config.json"))) {
-    warn(
-      "Could not find a config.json. Created a bootstrap config.json in your current working directory. Customize it to your needs.",
-    );
-    fs.copyFileSync(
-      path.join(SOURCE_DIR, "data", "config.default.json"),
-      path.join(CWD, "config.json"),
-    );
-  }
-
-  if (!fs.existsSync(path.join(CWD, "about.md"))) {
-    warn(
-      "Could not find a about.md. Created a bootstrap about.md in your current working directory. Customize it to your needs.",
-    );
-    fs.copyFileSync(
-      path.join(SOURCE_DIR, "data", "about.md"),
-      path.join(CWD, "about.md"),
-    );
-  }
-
-  if (!fs.existsSync(path.join(CWD, "custom.css"))) {
-    warn("Created a bootstrap custom.css in your current working directory.");
-    fs.copyFileSync(
-      path.join(SOURCE_DIR, "src", "styles", "custom.css"),
-      path.join(CWD, "custom.css"),
-    );
+  for (const file of Object.values(fileMapping)) {
+    const relativeBuildPath = `./${path.relative(CWD, file.buildSource)}`;
+    if (!fs.existsSync(file.buildSource) && file.isDirectory) {
+      warn(
+        `Could not find the directory ${relativeBuildPath}. Created a bootstrap directory in your current working directory. Feel free to customize it.`,
+      );
+      fs.cpSync(file.bootstrappingSource, file.buildSource, {
+        recursive: true,
+      });
+    } else if (!fs.existsSync(file.buildSource) && !file.isDirectory) {
+      warn(
+        `Could not find ${relativeBuildPath}. Created a bootstrap file in your current working directory. Feel free to customize it.`,
+      );
+      fs.copyFileSync(file.bootstrappingSource, file.buildSource);
+    }
   }
 }
 
-// Calculate current hash of package.json
+// Calculate current hash of package.json to determine if the builder needs to be re-created
 function calculateHash(file) {
   const fileBuffer = fs.readFileSync(file);
   const hashSum = crypto.createHash("sha256");
@@ -82,9 +104,15 @@ function calculateHash(file) {
   return hashSum.digest("hex");
 }
 
+function buildData() {
+  info("Building data");
+  execSync(`npm run build:data -- ${FLAGS}`, {
+    stdio: "inherit",
+  });
+}
+
 const CURRENT_HASH = calculateHash(path.join(CWD, "package.json"));
 
-// Check if builder dir needs to be recreated
 let RECREATE_DIR = false;
 if (
   !fs.existsSync(BUILDER_DIR) ||
@@ -120,36 +148,23 @@ if (RECREATE_DIR) {
 bootstrap();
 
 try {
-  if (fs.existsSync(path.join(BUILDER_DIR, "data", "radar"))) {
-    fs.rmSync(path.join(BUILDER_DIR, "data", "radar"), { recursive: true });
+  for (const file of Object.values(fileMapping)) {
+    // Remove existing target directories if needed
+    if (fs.existsSync(file.buildTarget) && file.isDirectory) {
+      fs.rmSync(file.buildTarget, { recursive: true });
+    }
+    if (file.isDirectory) {
+      fs.cpSync(file.buildSource, file.buildTarget, { recursive: true });
+    } else {
+      fs.copyFileSync(file.buildSource, file.buildTarget);
+    }
   }
-  fs.cpSync(path.join(CWD, "radar"), path.join(BUILDER_DIR, "data", "radar"), {
-    recursive: true,
-  });
-  fs.cpSync(path.join(CWD, "public"), path.join(BUILDER_DIR, "public"), {
-    recursive: true,
-  });
-  fs.copyFileSync(
-    path.join(CWD, "about.md"),
-    path.join(BUILDER_DIR, "data", "about.md"),
-  );
-  fs.copyFileSync(
-    path.join(CWD, "custom.css"),
-    path.join(BUILDER_DIR, "src", "styles", "custom.css"),
-  );
-  fs.copyFileSync(
-    path.join(CWD, "config.json"),
-    path.join(BUILDER_DIR, "data", "config.json"),
-  );
   process.chdir(BUILDER_DIR);
 } catch (e) {
   error(e.message);
 }
 
-info("Building data");
-execSync(`npm run build:data -- ${FLAGS}`, {
-  stdio: "inherit",
-});
+buildData();
 
 if (PARAMETER === "serve") {
   info("Starting techradar");
@@ -159,9 +174,101 @@ if (PARAMETER === "serve") {
 if (PARAMETER === "build") {
   info("Building techradar");
   execSync("npm run build", { stdio: "inherit" });
-  if (fs.existsSync(path.join(CWD, "build"))) {
-    fs.rmSync(path.join(CWD, "build"), { recursive: true });
+  const buildDir = path.join(CWD, "build");
+  if (fs.existsSync(buildDir)) {
+    fs.rmSync(buildDir, { recursive: true });
   }
-  info(`Copying techradar to ${path.join(CWD, "build")}`);
-  fs.renameSync(path.join(BUILDER_DIR, "out"), path.join(CWD, "build"));
+  info(`Copying techradar to ${buildDir}`);
+  fs.renameSync(path.join(BUILDER_DIR, "out"), buildDir);
+}
+
+if (PARAMETER === "dev") {
+  info("Starting techradar in development mode");
+
+  // Spawn a child process to run the dev server so the main thread is not blocked.
+  // The process has to be killed whenever the main thread is killed
+  const NODEDEV_CHILD_PROCESS = spawn("npm", ["run", "dev"], {
+    stdio: "inherit",
+    detached: false,
+  });
+
+  process.on("exit", () => {
+    NODEDEV_CHILD_PROCESS.kill();
+  });
+
+  // Array to store native watchers
+  const watchers = [];
+
+  // Debounced function to rebuild the data when a change is detected.
+  const rebuildData = debounce(({ path: changedPath }) => {
+    try {
+      const fileConfig = Object.values(fileMapping).find(
+        (config) => config.buildSource === changedPath && !config.isDirectory,
+      );
+      const dirConfig = Object.values(fileMapping).find(
+        (config) =>
+          changedPath.startsWith(config.buildSource) && config.isDirectory,
+      );
+      if (fileConfig) {
+        const relativeBuildSrc = `./${path.relative(CWD, changedPath)}`;
+        info(`♻️ ${relativeBuildSrc} changed`);
+        fs.copyFileSync(fileConfig.buildSource, fileConfig.buildTarget);
+      } else if (dirConfig) {
+        const relativeBuildSrc = `./${path.relative(CWD, changedPath)}`;
+        const relativeTargetPath = `./${path.relative(CWD, dirConfig.buildTarget)}`;
+        info(
+          `♻️ ${relativeBuildSrc} changed, updating all files in ${relativeTargetPath}.`,
+        );
+        if (fs.existsSync(dirConfig.buildTarget)) {
+          fs.rmSync(dirConfig.buildTarget, { recursive: true });
+        }
+        fs.cpSync(dirConfig.buildSource, dirConfig.buildTarget, {
+          recursive: true,
+        });
+      } else {
+        info(`Unknown file changed: ./${path.relative(CWD, changedPath)}`);
+      }
+
+      // Rebuild JSON files (or any other assets) needed by the dev server.
+      buildData();
+    } catch (e) {
+      error("Unable to reload updated data. Please restart the server.");
+    }
+  }, 1000);
+
+  // Attach watchers for files/directories as specified in fileMapping.
+  for (const fileConfig of Object.values(fileMapping)) {
+    if (!fileConfig.rebuildOnChange) continue;
+
+    if (fileConfig.isDirectory) {
+      try {
+        const watcher = fs.watch(
+          fileConfig.buildSource,
+          { recursive: true },
+          (eventType, filename) => {
+            const changedPath = filename
+              ? path.join(fileConfig.buildSource, filename)
+              : fileConfig.buildSource;
+            rebuildData({ path: changedPath });
+          },
+        );
+        watchers.push(watcher);
+      } catch (err) {
+        warn(`Error watching directory ${fileConfig.buildSource}: ${err}`);
+      }
+    } else {
+      // For individual files, simply attach a watcher.
+      try {
+        const watcher = fs.watch(
+          fileConfig.buildSource,
+          (eventType, filename) => {
+            rebuildData({ path: fileConfig.buildSource });
+          },
+        );
+        watchers.push(watcher);
+      } catch (err) {
+        warn(`Error watching file ${fileConfig.buildSource}: ${err}`);
+      }
+    }
+  }
 }

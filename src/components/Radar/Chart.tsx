@@ -4,11 +4,11 @@ import React, { FC, Fragment, memo } from "react";
 import styles from "./Chart.module.css";
 
 import { Blip } from "@/components/Radar/Blip";
-import { Item, Quadrant, Ring } from "@/lib/types";
+import { Item, Ring, Segment } from "@/lib/types";
 
 export interface ChartProps {
   size?: number;
-  quadrants: Quadrant[];
+  segments: Segment[];
   rings: Ring[];
   items: Item[];
   className?: string;
@@ -16,14 +16,13 @@ export interface ChartProps {
 
 const _Chart: FC<ChartProps> = ({
   size = 800,
-  quadrants = [],
+  segments = [],
   rings = [],
   items = [],
   className,
 }) => {
   const viewBoxSize = size;
   const center = size / 2;
-  const startAngles = [270, 0, 180, 90]; // Corresponding to positions 1, 2, 3, and 4 respectively
 
   // Helper function to convert polar coordinates to cartesian
   const polarToCartesian = (
@@ -37,66 +36,104 @@ const _Chart: FC<ChartProps> = ({
     };
   };
 
-  // Function to generate the path for a ring segment
-  const describeArc = (radiusPercentage: number, position: number): string => {
-    // Define the start and end angles based on the quadrant position
-    const startAngle = startAngles[position - 1];
-    const endAngle = startAngle + 90;
+  // Helper function to calculate angles
+  const calculateSegmentAngles = (position: number, numSegments: number) => {
+    const angleIncrement = 360 / numSegments;
+    const startAngle = (position - 1) * angleIncrement;
+    const endAngle = startAngle + angleIncrement;
+    return { startAngle, endAngle, angleIncrement };
+  };
 
+  // Optimized function to generate the path for a ring segment
+  const describeArc = (
+    radiusPercentage: number,
+    position: number,
+    numSegments: number,
+  ): string => {
     const radius = radiusPercentage * center; // Convert percentage to actual radius
+
+    // If there's only one segment, draw a full circle
+    if (numSegments === 1) {
+      // prettier-ignore
+      return [
+        "M", center, center - radius,
+        "A", radius, radius, 0, 1, 0, center, center + radius,
+        "A", radius, radius, 0, 1, 0, center, center - radius,
+      ].join(" ");
+    }
+
+    const { startAngle, endAngle } = calculateSegmentAngles(
+      position,
+      numSegments,
+    );
     const start = polarToCartesian(radius, endAngle);
     const end = polarToCartesian(radius, startAngle);
 
     // prettier-ignore
     return [
-      "M", start.x, start.y,
-      "A", radius, radius, 0, 0, 0, end.x, end.y,
+        "M", start.x, start.y,
+        "A", radius, radius, 0, 0, 0, end.x, end.y,
     ].join(" ");
   };
 
-  const renderGlow = (position: number, color: string) => {
-    const gradientId = `glow-${position}`;
-
-    const cx = position === 1 || position === 3 ? 1 : 0;
-    const cy = position === 1 || position === 2 ? 1 : 0;
-
-    const x = position === 1 || position === 3 ? 0 : center;
-    const y = position === 1 || position === 2 ? 0 : center;
-    return (
-      <>
-        <defs>
-          <radialGradient id={gradientId} x={0} y={0} r={1} cx={cx} cy={cy}>
-            <stop offset="0%" stopColor={color} stopOpacity={0.5}></stop>
-            <stop offset="100%" stopColor={color} stopOpacity={0}></stop>
-          </radialGradient>
-        </defs>
-        <rect
-          width={center}
-          height={center}
-          x={x}
-          y={y}
-          fill={`url(#${gradientId})`}
+  const renderGlow = (position: number, color: string, numSegments: number) => {
+    if (numSegments === 1) {
+      return (
+        <circle
+          cx={center}
+          cy={center}
+          r={center}
+          fill={color}
+          mask="url(#glow-mask)"
         />
-      </>
+      );
+    }
+
+    if (numSegments === 2) {
+      return (
+        <rect
+          x={position === 1 ? center : 0}
+          y={0}
+          width={center}
+          height={size}
+          fill={color}
+          mask="url(#glow-mask)"
+        />
+      );
+    }
+
+    const { startAngle, endAngle } = calculateSegmentAngles(
+      position,
+      numSegments,
+    );
+    const start = polarToCartesian(size, startAngle);
+    const end = polarToCartesian(size, endAngle);
+
+    return (
+      <polygon
+        points={`${center},${center} ${start.x},${start.y} ${end.x},${end.y}`}
+        fill={color}
+        mask="url(#glow-mask)"
+      />
     );
   };
 
-  // Function to place items inside their rings and quadrants
+  // Function to place items inside their rings and segments
   const renderItem = (item: Item) => {
     const ring = rings.find((r) => r.id === item.ring);
-    const quadrant = quadrants.find((q) => q.id === item.quadrant);
-    if (!ring || !quadrant) return null; // If no ring or quadrant, don't render item
+    const segment = segments.find((q) => q.id === item.segment);
+    if (!ring || !segment) return null; // If no ring or segment, don't render item
     const [x, y] = item.position;
 
     return (
       <Link
         key={item.id}
-        href={`/${item.quadrant}/${item.id}`}
+        href={`/${item.segment}/${item.id}`}
         data-tooltip={item.title}
-        data-tooltip-color={quadrant.color}
+        data-tooltip-color={segment.color}
         tabIndex={-1}
       >
-        <Blip flag={item.flag} color={quadrant.color} x={x} y={y} />
+        <Blip flag={item.flag} color={segment.color} x={x} y={y} />
       </Link>
     );
   };
@@ -139,23 +176,50 @@ const _Chart: FC<ChartProps> = ({
       height={viewBoxSize}
       viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}
     >
-      {quadrants.map((quadrant) => (
-        <g key={quadrant.id} data-quadrant={quadrant.id}>
-          {renderGlow(quadrant.position, quadrant.color)}
+      <defs>
+        <mask id="radar-mask">
+          <rect width="100%" height="100%" fill="black" />
+          <circle cx={center} cy={center} r={center} fill="white" />
+        </mask>
+        <mask id="glow-mask">
+          <radialGradient id="glow-gradient">
+            <stop offset="0%" stopColor="white" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <circle
+            cx={center}
+            cy={center}
+            r={center}
+            fill="url(#glow-gradient)"
+          />
+        </mask>
+      </defs>
+      {segments.map((segment) => (
+        <g key={segment.id} data-segment={segment.id} mask="url(#radar-mask)">
+          {renderGlow(segment.position, segment.color, segments.length)}
           {rings.map((ring) => (
             <path
-              key={`${ring.id}-${quadrant.id}`}
-              data-key={`${ring.id}-${quadrant.id}`}
-              d={describeArc(ring.radius || 0.5, quadrant.position)}
+              className={styles.ring}
+              key={`${ring.id}-${segment.id}`}
+              data-key={`${ring.id}-${segment.id}`}
+              d={describeArc(
+                ring.radius || 0.5,
+                segment.position,
+                segments.length,
+              )}
               fill="none"
-              stroke={quadrant.color}
+              stroke={segment.color}
               strokeWidth={ring.strokeWidth || 2}
             />
           ))}
         </g>
       ))}
-      <g className={styles.items}>{items.map((item) => renderItem(item))}</g>
-      <g className={styles.ringLabels}>{renderRingLabels()}</g>
+      <g className={styles.items} data-key="items">
+        {items.map((item) => renderItem(item))}
+      </g>
+      <g className={styles.ringLabels} data-key="labels">
+        {renderRingLabels()}
+      </g>
     </svg>
   );
 };

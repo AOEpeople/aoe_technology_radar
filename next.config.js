@@ -1,10 +1,9 @@
 const config = require("./data/config.json");
-const basePath =
-  config.basePath && config.basePath !== "/" ? config.basePath : "";
+const basePath = process.env.BASE_PATH || config.basePath || "";
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  basePath,
+  basePath: basePath && basePath !== "/" ? basePath : "",
   output: "export",
   trailingSlash: true,
   reactStrictMode: true,

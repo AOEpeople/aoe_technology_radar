@@ -19,12 +19,14 @@
 
 /data/about.json
 /data/data.json
+/public/radar.json
 
 # misc
 .DS_Store
 .idea/
 *.pem
 *.tgz
+.idea
 
 # debug
 npm-debug.log*

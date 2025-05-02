@@ -8,7 +8,7 @@
     "showSearch": false,
     "showChart": true,
     "showTagFilter": true,
-    "showQuadrantList": true,
+    "showSegmentList": true,
     "showEmptyRings": false
   },
   "sections": ["radar", "tags", "list"],
@@ -22,30 +22,34 @@
     "border": "rgba(255, 255, 255, 0.1)",
     "tag": "rgba(255, 255, 255, 0.1)"
   },
-  "quadrants": [
-    {
-      "id": "languages-and-frameworks",
-      "title": "Languages & Frameworks",
-      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
-      "color": "#a3b18a"
-    },
+  "segments": [
     {
       "id": "methods-and-patterns",
       "title": "Methods & Patterns",
       "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
+      "label": "Quadrant 2",
+      "color": "#40713f"
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
+      "label": "Quadrant 4",
       "color": "#588157"
     },
     {
       "id": "platforms-and-operations",
       "title": "Platforms & Operations",
       "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
+      "label": "Quadrant 3",
       "color": "#3f633e"
     },
     {
-      "id": "tools",
-      "title": "Tools",
-      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
-      "color": "#40713f"
+      "id": "languages-and-frameworks",
+      "title": "Languages & Frameworks",
+      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
+      "label": "Quadrant 1",
+      "color": "#a3b18a"
     }
   ],
   "rings": [
@@ -121,12 +125,14 @@
       "icon": "github"
     }
   ],
+  "footerLinks": [],
   "imprint": "https://www.aoe.com/en/imprint.html",
   "labels": {
     "title": "Technology Radar",
+    "subtitle": "",
     "imprint": "Legal Information",
-    "quadrant": "Quadrant",
-    "quadrantOverview": "Quadrant Overview",
+    "segment": "Segment",
+    "segmentOverview": "Segment Overview",
     "zoomIn": "Zoom in",
     "filterByTag": "Filter by Tag",
     "footer": "The technology radar is a project by AOE GmbH. Feel free to build your own radar based on the open source project.",
