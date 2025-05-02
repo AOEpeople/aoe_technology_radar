@@ -17,9 +17,11 @@ See the whole [CHANGELOG.md](./CHANGELOG.md) for all changes. Notable changes ar
 
 ### ✨ Version 5.0.0
 
-In this version, we transitioned from "quadrants" to "segments" for enhanced flexibility and organization. This update
+In this version, we transitioned from `quadrants` to `segments` for enhanced flexibility and organization. This update
 supports 1 to 6 segments, allowing you to customize your radar as needed. Simply update the attribute in your
 `config.json` and add or remove segments as desired. The radar will automatically adjust to the number of segments.
+
+Deploy your radar using GitHub Actions and GitHub Pages. The repository includes a preconfigured workflow (`.github/workflows/main.yml`) that builds your static site and automatically publishes it to GitHub Pages whenever you push to the default (`main`) branch.
 
 ### Version 4.0.0
 
@@ -50,8 +52,8 @@ you want to contribute back - instead use the generator as a dependency in your 
 
 ### Step 1: Create a new project
 
-Ensure node.js ist installed and create a new project by creating a new folder with a `package.json`
-file like the following and adapt to your needs:
+Ensure node.js is installed and create a new project by creating a new folder with a `package.json`
+file like the following and adapt it to your needs:
 
 ```json
 {
@@ -101,7 +103,7 @@ Open the `config.json` file and configure the radar to your needs.
 | segments    | Config of the segments of the radar. See config below.                                                                         |
 | rings       | Config of the rings of the radar. See config below.                                                                            |
 | flags       | Config of the flags of the radar. See config below                                                                             |
-| chart       | If you hava a lot of items, you can increase the `size` to scale down the radar                                                |
+| chart       | If you have a lot of items, you can increase the `size` to scale down the radar                                                |
 | social      | Social links in the footer. See config below                                                                                   |
 | imprint     | URL to the legal information                                                                                                   |
 | labels      | Configure the labels to change the texts and labels of the radar                                                               |
@@ -245,7 +247,7 @@ the `radar` and `public` folder and rebuild the radar automatically. The dev ser
 
 ### Step 7: Deploy your radar
 
-The build artifact is a static site and can be hosted on any web server. You can use our demo [`.github/workflows/main.yml`](.github/workflows/main.yml) to host your radar on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+The build artifact is a static site and can be hosted on any web server. Make sure the `basePath` equals the desired folder on your server. If you plan to host your radar on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), you can copy our GitHub workflow [`.github/workflows/main.yml`](.github/workflows/main.yml).
 
 ## Advanced styling with `custom.css`
 
@@ -267,7 +269,7 @@ the following rule:
 ```
 
 If you want to include assets like images or fonts, use `../../public/` as the base path.
-Adding a background image to the page could be archived like this:
+Adding a background image to the page could be achieved like this:
 
 ```css
 body {
