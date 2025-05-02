@@ -1,6 +1,6 @@
 # AOE Technology Radar
 
-A static site generator for a full-featured Technology Radar. [[Demo]](https://www.aoe.com/techradar/)
+A static site generator for a full-featured Technology Radar. [[Demo]](https://opensource.aoe.com/aoe_technology_radar/)
 
 **Features**: 1-6 segments, customizable rings, dashboard, radar visualization, item history, fuzzy search etc..
 
@@ -242,6 +242,10 @@ your browser at `http://localhost:3000/techradar` or the path you specified via 
 As an alternative to `npm run build`, you can start the dev server via `npm run dev`, which will watch for changes in
 the `radar` and `public` folder and rebuild the radar automatically. The dev server serves on
 `http://localhost:3000/techradar` or the path you specified via `basePath`.
+
+### Step 7: Deploy your radar
+
+The build artifact is a static site and can be hosted on any web server. You can use our demo [`.github/workflows/main.yml`](.github/workflows/main.yml) to host your radar on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
 ## Advanced styling with `custom.css`
 
