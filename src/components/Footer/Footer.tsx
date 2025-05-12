@@ -1,10 +1,11 @@
 import styles from "./Footer.module.css";
 
 import { SocialLinks } from "@/components/SocialLinks/SocialLinks";
-import { getAppName, getImprintUrl, getLabel, getLogoUrl } from "@/lib/data";
+import { getAppName, getFooterLinks, getLabel, getLogoUrl } from "@/lib/data";
 
 export function Footer() {
   const logoUrl = getLogoUrl();
+  const footerLinks = getFooterLinks();
   return (
     <div className={styles.footer}>
       <div className={styles.branding}>
@@ -12,9 +13,13 @@ export function Footer() {
         <p className={styles.description}>{getLabel("footer")}</p>
         <SocialLinks className={styles.socialLinks} />
       </div>
-      <a href={getImprintUrl()} className={styles.imprint} target="_blank">
-        {getLabel("imprint")}
-      </a>
+      <div className={styles.footerLinks}>
+        {footerLinks.map(({ url, label }, i) => (
+          <a key={url} href={url} className={styles.footerLink} target="_blank">
+            {label}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

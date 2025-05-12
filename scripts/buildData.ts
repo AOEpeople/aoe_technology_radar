@@ -18,16 +18,16 @@ const {
 } = config;
 
 const ringIds = rings.map((r) => r.id);
-const quadrants = config.quadrants.map((q, i) => ({ ...q, position: i + 1 }));
-const quadrantIds = quadrants.map((q) => q.id);
+const segments = config.segments.map((s, i) => ({ ...s, position: i + 1 }));
+const segmentIds = segments.map((s) => s.id);
 const tags = (config as { tags?: string[] }).tags || [];
-const positioner = new Positioner(size, quadrants, rings);
-const errorHandler = new ErrorHandler(quadrants, rings);
+const positioner = new Positioner(size, segments, rings);
+const errorHandler = new ErrorHandler(segments, rings);
 
 const marked = new Marked(
   markedHighlight({
     langPrefix: "hljs language-",
-    highlight(code, lang, info) {
+    highlight(code, lang) {
       const language = hljs.getLanguage(lang) ? lang : "plaintext";
       return hljs.highlight(code, { language }).value;
     },
@@ -36,6 +36,10 @@ const marked = new Marked(
 
 function dataPath(...paths: string[]): string {
   return path.resolve("data", ...paths);
+}
+
+function writeJsonFile(filePath: string, data: unknown) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
 function convertToHtml(markdown: string): string {
@@ -63,7 +67,7 @@ function readMarkdownFile(filePath: string) {
     const body = convertToHtml(content);
     return { id, data, body };
   } catch (error) {
-    console.error(`Failed parsing ${filePath}: ${error}`);
+    console.error(`❌ Failed parsing ${filePath}: ${error}`);
     process.exit(1);
   }
 }
@@ -83,13 +87,21 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
         const releaseDate = path.basename(path.dirname(fullPath));
         const { id, data, body } = readMarkdownFile(fullPath);
 
+        // check if item is using deprecated `quadrant` field
+        if (data.quadrant) {
+          errorHandler.processBuildErrors(
+            ErrorType.DeprecatedQuadrantAttribute,
+            `${releaseDate}/${entry.name}`,
+          );
+        }
+
         if (!items[id]) {
           items[id] = {
             id,
             release: releaseDate,
             title: data.title || id,
             ring: data.ring,
-            quadrant: data.quadrant,
+            segment: data.segment || data.quadrant,
             body,
             featured: data.featured !== false,
             flag: Flag.Default,
@@ -102,7 +114,11 @@ async function parseDirectory(dirPath: string): Promise<Item[]> {
           items[id].body = body || items[id].body;
           items[id].title = data.title || items[id].title;
           items[id].ring = data.ring || items[id].ring;
-          items[id].quadrant = data.quadrant || items[id].quadrant;
+          items[id].segment =
+            data.segment ||
+            data.quadrant ||
+            items[id].segment ||
+            items[id].quadrant;
           items[id].tags = data.tags || items[id].tags;
           items[id].featured =
             typeof data.featured === "boolean"
@@ -170,17 +186,17 @@ function postProcessItems(items: Item[]): {
   items: Item[];
 } {
   const filteredItems = items.filter((item) => {
-    // check if the items' quadrant and ring are valid
-    if (!item.quadrant || !item.ring) {
-      errorHandler.processBuildErrors(ErrorType.NoQuadrant, item.id);
+    // check if the items' segment and ring are valid
+    if (!item.segment || !item.ring) {
+      errorHandler.processBuildErrors(ErrorType.NoSegmentOrRing, item.id);
       return false;
     }
 
-    if (!quadrantIds.includes(item.quadrant)) {
+    if (!segmentIds.includes(item.segment)) {
       errorHandler.processBuildErrors(
-        ErrorType.InvalidQuadrant,
+        ErrorType.InvalidSegment,
         item.id,
-        item.quadrant,
+        item.segment,
       );
       return false;
     }
@@ -210,7 +226,7 @@ function postProcessItems(items: Item[]): {
   const processedItems = filteredItems.map((item) => {
     const processedItem = {
       ...item,
-      position: positioner.getNextPosition(item.quadrant, item.ring),
+      position: positioner.getNextPosition(item.segment, item.ring),
       flag: getFlag(item, releases),
       // only keep revision which ring or body is different
       revisions: item.revisions
@@ -243,6 +259,27 @@ function postProcessItems(items: Item[]): {
 }
 
 async function main() {
+  // check segment length between 1 and 6
+  if (!segments.length || segments.length > 6) {
+    errorHandler.processBuildErrors(
+      ErrorType.InvalidSegmentLength,
+      `${segments.length}`,
+    );
+  }
+
+  // break if segments are not defined at all
+  errorHandler.checkForBuildErrors(true);
+
+  // warn about deprecated config
+  if ("quadrants" in config) {
+    errorHandler.processBuildErrors(ErrorType.DeprecatedQuadrantConfig);
+  }
+
+  // write about data to JSON file
+  const about = readMarkdownFile(dataPath("about.md"));
+  writeJsonFile(dataPath("about.json"), about);
+  console.info(`💾 Content of about.md was written to data/about.json`);
+
   // Parse the data and write radar data to JSON file
   const items = await parseDirectory(dataPath("radar"));
   const data = postProcessItems(items);
@@ -253,18 +290,16 @@ async function main() {
 
   errorHandler.checkForBuildErrors(true);
 
-  const json = JSON.stringify(data, null, 2);
-  fs.writeFileSync(dataPath("data.json"), json);
+  writeJsonFile(dataPath("data.json"), data);
+  console.info(
+    `💾 Data of ${data.items.length} items was written to data/data.json`,
+  );
 
-  // write about data to JSON file
-  const about = readMarkdownFile(dataPath("about.md"));
-  fs.writeFileSync(dataPath("about.json"), JSON.stringify(about, null, 2));
+  writeJsonFile(path.resolve("public", "radar.json"), { config, data });
+  console.info(`🌍️ Created public/radar.json`);
+
   console.log(
-    "ℹ️ Data written to data/data.json and data/about.json\n\n" +
-      errorHandler.colorizeBackground(
-        " Build was successfull ",
-        TextColor.Green,
-      ),
+    errorHandler.colorizeBackground(" Build was successfull ", TextColor.Green),
   );
 }
 

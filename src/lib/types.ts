@@ -4,11 +4,11 @@ export enum Flag {
   Default = "default",
 }
 
-export type Release = string;
+export type Release = string; //  "YYYY-MM-DD" format
 
 export interface Revision {
   release: Release;
-  ring: string;
+  ring: Ring["id"];
   body?: string;
 }
 
@@ -19,7 +19,8 @@ export interface Item {
   body: string;
   featured: boolean;
   ring: string;
-  quadrant: string;
+  segment: string;
+  quadrant?: string; // deprecated - users should update to `segment`
   flag: Flag;
   tags?: string[];
   release: Release;
@@ -36,10 +37,16 @@ export interface Ring {
   strokeWidth?: number;
 }
 
-export interface Quadrant {
+export interface Segment {
   id: string;
   title: string;
   description: string;
+  label?: string; // only used in the radar labels
   color: string;
   position: number;
+}
+
+export interface FooterLink {
+  label: string;
+  url: string;
 }

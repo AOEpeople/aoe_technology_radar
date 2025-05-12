@@ -1,24 +1,24 @@
 import Link from "next/link";
 
-import styles from "./QuadrantLink.module.css";
+import styles from "./SegmentLink.module.css";
 
 import Pie from "@/components/Icons/Pie";
 import { getLabel } from "@/lib/data";
-import { Quadrant } from "@/lib/types";
+import { Segment } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-interface QuadrantLinkProps {
-  quadrant: Quadrant;
+interface SegmentLinkProps {
+  segment: Segment;
   label?: string;
   className?: string;
 }
-export function QuadrantLink({
-  quadrant,
+export function SegmentLink({
+  segment,
   label = getLabel("zoomIn"),
   className,
-}: QuadrantLinkProps) {
+}: SegmentLinkProps) {
   return (
-    <Link className={cn(styles.link, className)} href={`/${quadrant.id}`}>
+    <Link className={cn(styles.link, className)} href={`/${segment.id}`}>
       <Pie className={styles.icon} />
       <span className={styles.label}>{label}</span>
     </Link>
