@@ -1,4 +1,4 @@
-# AOE Technology Radar
+# AOE Radar Generator
 
 A static site generator for a full-featured Technology Radar. [[Demo]](https://opensource.aoe.com/aoe_technology_radar/)
 
