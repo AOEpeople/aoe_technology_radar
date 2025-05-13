@@ -1,0 +1,23 @@
+steps:
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["npm", "run", "build:data"]
+
+  # Step 3: Build icons
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["npm", "run", "build:icons"]
+
+  # Step 4: Build the project
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["npm", "run", "build"]
+
+  # Step 5: Deploy to Google App Engine
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:slim"
+    args:
+      [
+        "gcloud",
+        "app",
+        "deploy",
+        "app.yaml",
+        "--project=diesel-acolyte-418314",
+        "-q",
+      ]
