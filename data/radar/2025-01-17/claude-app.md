@@ -1,5 +1,5 @@
 ---
-title: "Claude"
+title: "Claude App"
 ring: assess
 quadrant: ai
 featured: true
