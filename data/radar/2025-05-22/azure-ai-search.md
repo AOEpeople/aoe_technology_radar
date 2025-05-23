@@ -1,6 +1,6 @@
 ---
 title: "Azure AI Search"
-ring: trial
+ring: assess
 quadrant: ai
 featured: true
 tags: [AI, Vector Database]

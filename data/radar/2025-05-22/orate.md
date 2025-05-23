@@ -1,9 +1,9 @@
 ---
-title: "Amazon OpenSearch Serverless"
+title: "orate"
 ring: assess
 quadrant: ai
 featured: true
-tags: [AI, Vector Database]
+tags: [AI, AI Tooling, TTS, STT]
 ---
 
 todo: add details

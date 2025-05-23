@@ -3,7 +3,7 @@ title: "Meta Llama"
 ring: hold
 quadrant: ai
 featured: false
-tags: [AI, LLM Provider]
+tags: [AI, Model Provider, LLM]
 ---
 
 Meta’s [Llama](https://www.llama.com/models/llama-4/) models are high-performing, open-source LLMs with multimodal and multilingual capabilities. The latest Llama 4 series includes `Maverick` and `Scout` (lighter-weight).

@@ -1,6 +1,6 @@
 ---
 title: "Chroma"
-ring: Assess
+ring: assess
 quadrant: ai
 featured: true
 tags: [AI, Vector Database]

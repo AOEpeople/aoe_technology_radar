@@ -3,7 +3,7 @@ title: "GitHub Copilot"
 ring: adopt
 quadrant: ai
 featured: true
-tags: [AI, IDE]
+tags: [AI, IDE, Coding Agent]
 ---
 
 [GitHub Copilot](https://github.com/features/copilot) is an AI-powered code completion tool that helps developers write code faster and more efficiently. It uses OpenAI's Codex model to suggest code snippets, entire functions, and even complete files based on context and comments.

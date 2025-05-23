@@ -1,9 +1,9 @@
 ---
-title: "Amazon OpenSearch Serverless"
+title: "LlamaIndex"
 ring: assess
 quadrant: ai
 featured: true
-tags: [AI, Vector Database]
+tags: [AI, AI Tooling]
 ---
 
 todo: add details
