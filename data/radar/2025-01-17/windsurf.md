@@ -1,6 +1,6 @@
 ---
 title: "Windsurf"
-ring: assess
+ring: trial
 quadrant: ai
 featured: true
 tags: [AI, IDE, Coding Agent]
