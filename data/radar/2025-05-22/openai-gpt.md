@@ -3,12 +3,14 @@ title: "OpenAI GPT"
 ring: adopt
 quadrant: ai
 featured: true
-tags: [AI, Model Provider, LLM]
+tags: [AI, Model Provider, LLM, Embeddings, Content Moderation, Safety, Guardrails]
 ---
 
 OpenAI's [GPT models](https://platform.openai.com/docs/overview) are a family of state-of-the-art, general-purpose vision and language models that excel at natural language understanding, generation, reasoning, and multimodal processing. The variety of models includes high-intelligence chat models, reasoning models, lightweight and fast-inference `mini` models, and the `o-series` reasoning models that excel at complex, multi-step tasks.
 
-**[Models Overview](https://docs.anthropic.com/en/docs/about-claude/models/overview)**
+In addition to language generation, OpenAI provides [embedding](https://platform.openai.com/docs/guides/embeddings) models that generate high-dimensional vector representations of text. These embeddings are widely used in semantic search, recommendations, clustering, and RAG pipelines. They are fast, robust, and compatible with a variety of vector database systems, enabling performant retrieval-based AI workflows.
+
+OpenAI also offers the [Moderation](https://platform.openai.com/docs/guides/moderation/quickstart) API, a key tool for filtering harmful or sensitive content. It analyzes user-generated input and model output for categories such as hate speech, self-harm, sexual content, and violence—returning structured flags to help enforce content safety. This is especially important for production apps, as platforms like Apple require strong safeguards for generative content.
 
 **Provisioning Platforms:**
 
@@ -21,6 +23,8 @@ OpenAI's [GPT models](https://platform.openai.com/docs/overview) are a family of
 - Comprehension: reading, interpretation of complex documents
 - Reasoning: multi-step logic, code analysis, math problem-solving
 - Multimodal: text, image, audio, PDF file understanding
+- Embeddings: semantic search, RAG, classification, clustering
+- Moderation: real-time filtering of harmful or sensitive content
 - Multilingual support: supports text understanding and generation in over 60 languages
 
 MOHARA has adopted GPT chat models across various workflows due to their consistent performance, broad community support, and vibrant ecosystem. Advanced reasoning and multimodal capabilities continue to drive significant value, making it a foundational tool within our AI stack.
