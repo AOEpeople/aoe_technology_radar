@@ -1,6 +1,6 @@
 ---
 title: "GitHub CoPilot"
-ring: trial
+ring: adopt
 quadrant: ai
 featured: true
 tags: [AI, IDE]
