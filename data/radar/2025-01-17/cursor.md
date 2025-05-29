@@ -1,9 +1,9 @@
 ---
 title: "Cursor"
-ring: assess
+ring: trial
 quadrant: ai
 featured: true
-tags: [AI, IDE]
+tags: [AI, IDE, Coding Agent]
 ---
 
 [Cursor](https://cursor.sh/) is an AI-first code editor that combines the power of large language models with a modern development environment. Built on top of VSCode, it offers advanced AI features like chat-based code generation, intelligent code explanations, and automated refactoring capabilities.

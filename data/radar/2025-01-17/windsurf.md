@@ -1,9 +1,9 @@
 ---
 title: "Windsurf"
-ring: assess
+ring: trial
 quadrant: ai
 featured: true
-tags: [AI, IDE]
+tags: [AI, IDE, Coding Agent]
 ---
 
 [Windsurf](https://www.codeium.com/windsurf) is an innovative AI-first IDE developed by Codeium that introduces the concept of "AI Flow" - a new paradigm in development environments. It features Cascade, a powerful agentic AI assistant that can understand complex development tasks and execute them autonomously while collaborating with developers.

@@ -3,7 +3,7 @@ title: "Lovable"
 ring: assess
 quadrant: ai
 featured: true
-tags: [AI, Development, Full-stack]
+tags: [AI, Development, Full-stack, Coding Agent]
 ---
 
 [Lovable](https://lovable.dev) is an AI-powered application development platform that can generate complete, production-ready web applications from natural language descriptions. It creates full-stack applications with both frontend and backend components, including database schemas, API endpoints, and user interfaces.
