@@ -2,7 +2,7 @@
 title: "Amazon Polly"
 ring: adopt
 quadrant: ai
-featured: false
+featured: true
 tags: [AI, Text-to-Speech]
 ---
 

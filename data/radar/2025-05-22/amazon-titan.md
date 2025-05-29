@@ -2,7 +2,7 @@
 title: "Amazon Titan"
 ring: hold
 quadrant: ai
-featured: false
+featured: true
 tags: [AI, Model Provider, LLM, Embeddings]
 ---
 
@@ -14,6 +14,6 @@ In addition to text generation models, **Amazon Titan also includes embedding mo
 
 **Provisioning Platforms:**
 
-- AWS Bedrock: https://aws.amazon.com/bedrock/
+- [AWS Bedrock](https://aws.amazon.com/bedrock/)
 
 MOHARA is keeping Titan on hold as we compare cost-performance trade-offs against our existing providers. Current Titan model performance does not warrant further assessment.

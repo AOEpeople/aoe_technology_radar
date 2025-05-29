@@ -2,7 +2,7 @@
 title: "Meta Llama"
 ring: hold
 quadrant: ai
-featured: false
+featured: true
 tags: [AI, Model Provider, LLM]
 ---
 
@@ -17,6 +17,6 @@ Meta’s [Llama](https://www.llama.com/models/llama-4/) models are high-performi
 
 Provisioning Platform:
 
-- Hugging Face Hub: https://huggingface.co/models?library=llama
+- [Hugging Face Hub](https://huggingface.co/models?library=llama)
 
 MOHARA is keeping Llama on hold while we evaluate self-hosted versus managed options.

@@ -2,7 +2,7 @@
 title: "BrowserBase"
 ring: assess
 quadrant: ai
-featured: false
+featured: true
 tags: [AI, Computer Use]
 ---
 
@@ -11,6 +11,7 @@ tags: [AI, Computer Use]
 The platform provides browser-as-a-service infrastructure that enables AI agents to interact with web applications in a controlled, scalable environment. This addresses the complexity of running browser automation at scale while providing the reliability needed for production AI agent deployments.
 
 **Key Capabilities:**
+
 - Browser infrastructure optimized for AI agents
 - Scalable web automation platform
 - Developer-focused API access
@@ -19,6 +20,7 @@ The platform provides browser-as-a-service infrastructure that enables AI agents
 **[Platform](https://www.browserbase.com)**
 
 **Provisioning Platforms:**
+
 - BrowserBase API
 - Developer platform access
 - Cloud-hosted browser instances

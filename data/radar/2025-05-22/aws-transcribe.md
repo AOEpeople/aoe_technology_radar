@@ -2,7 +2,7 @@
 title: "AWS Transcribe"
 ring: adopt
 quadrant: ai
-featured: false
+featured: true
 tags: [AI, Speech-to-Text]
 ---
 

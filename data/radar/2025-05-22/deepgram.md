@@ -2,7 +2,7 @@
 title: "Deepgram"
 ring: adopt
 quadrant: ai
-featured: false
+featured: true
 tags: [AI, Speech-to-Text, Text-to-Speech]
 ---
 

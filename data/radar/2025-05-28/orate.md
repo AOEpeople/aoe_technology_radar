@@ -1,5 +1,5 @@
 ---
-title: "orate"
+title: "Orate"
 ring: assess
 quadrant: ai
 featured: true
