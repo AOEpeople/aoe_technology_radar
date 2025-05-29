@@ -3,7 +3,16 @@ title: "OpenAI GPT"
 ring: adopt
 quadrant: ai
 featured: true
-tags: [AI, Model Provider, LLM, Embeddings, Content Moderation, Safety, Guardrails, Speech-to-Text, Text-to-Speech]
+tags:
+  [
+    AI,
+    Model Provider,
+    LLM,
+    Embeddings,
+    Guardrails,
+    Speech-to-Text,
+    Text-to-Speech,
+  ]
 ---
 
 OpenAI's [GPT models](https://platform.openai.com/docs/overview) are a family of state-of-the-art, general-purpose vision and language models that excel at natural language understanding, generation, reasoning, and multimodal processing. The variety of models includes high-intelligence chat models, reasoning models, lightweight and fast-inference `mini` models, and the `o-series` reasoning models that excel at complex, multi-step tasks.
