@@ -1,5 +1,5 @@
 {
-  "basePath": "/techradar",
+  "basePath": "/demo-techradar",
   "labels": {
     "title": "Technology Radar Demo",
     "subtitle": "This is just a demo of the AOE Technology Radar generator. You can use it to create your own radar."
@@ -60,16 +60,16 @@
     {
       "id": "s7",
       "title": "S7",
-      "description": "Technologies and practices that are not recommended for use in new projects.",
+      "description": "Technologies that are in the 'hold' phase, meaning they are stable but not actively developed.",
       "label": "Segment 7",
-      "color": "#9FC87E"
+      "color": "#2B2D42"
     },
     {
       "id": "s8",
       "title": "S8",
-      "description": "Technologies and practices that are considered obsolete or no longer relevant.",
+      "description": "Technologies that are in the 'assess' phase, meaning they are being evaluated for potential adoption.",
       "label": "Segment 8",
-      "color": "#FFD95F"
+      "color": "#8D99AE"
     }
   ]
 }
