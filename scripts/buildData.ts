@@ -17,8 +17,13 @@ const {
   chart: { size },
 } = config;
 
-const ringIds = rings.map((r) => r.id);
-const segments = config.segments.map((s, i) => ({ ...s, position: i + 1 }));
+const ringIds = config.rings.map((r) => r.id);
+const segments = config.segments.map((s, i) => ({
+  ...s,
+  name: s.title,
+  id: s.id,
+  position: i + 1,
+}));
 const segmentIds = segments.map((s) => s.id);
 const tags = (config as { tags?: string[] }).tags || [];
 const positioner = new Positioner(size, segments, rings);
@@ -260,7 +265,7 @@ function postProcessItems(items: Item[]): {
 
 async function main() {
   // check segment length between 1 and 6
-  if (!segments.length || segments.length > 6) {
+  if (!segments.length || segments.length > 18) {
     errorHandler.processBuildErrors(
       ErrorType.InvalidSegmentLength,
       `${segments.length}`,
@@ -274,6 +279,26 @@ async function main() {
   if ("quadrants" in config) {
     errorHandler.processBuildErrors(ErrorType.DeprecatedQuadrantConfig);
   }
+
+  // Prepare augmented segments for the output configuration
+  const numberOfSegments = config.segments.length;
+  const anglePerSegment = 360 / numberOfSegments;
+
+  const augmentedSegmentsForOutput = config.segments.map((segment, index) => {
+    const calculatedStartAngle = index * anglePerSegment;
+    return {
+      ...segment, // Spread existing segment properties (e.g., id, name)
+      position: index + 1, // Add 1-based position, similar to the 'segments' variable
+      startAngle: calculatedStartAngle,
+      midAngle: calculatedStartAngle + anglePerSegment / 2,
+      endAngle: calculatedStartAngle + anglePerSegment,
+    };
+  });
+
+  const outputConfig = {
+    ...config,
+    segments: augmentedSegmentsForOutput,
+  };
 
   // write about data to JSON file
   const about = readMarkdownFile(dataPath("about.md"));
@@ -295,8 +320,11 @@ async function main() {
     `💾 Data of ${data.items.length} items was written to data/data.json`,
   );
 
-  writeJsonFile(path.resolve("public", "radar.json"), { config, data });
-  console.info(`🌍️ Created public/radar.json`);
+  writeJsonFile(path.resolve("public", "radar.json"), {
+    config: outputConfig,
+    data,
+  });
+  console.info(`🌍️ Created public/radar.json with augmented segment data`);
 
   console.log(
     errorHandler.colorizeBackground(" Build was successfull ", TextColor.Green),
