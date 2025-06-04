@@ -3,5 +3,73 @@
   "labels": {
     "title": "Technology Radar Demo",
     "subtitle": "This is just a demo of the AOE Technology Radar generator. You can use it to create your own radar."
-  }
+  },
+  "colors": {
+    "foreground": "#000000",
+    "background": "#FFFFFF",
+    "highlight": "#029df7",
+    "content": "#000000",
+    "text": "#575757",
+    "link": "#029df7",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "tag": "rgba(255, 255, 255, 0.1)"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "title": "S1",
+      "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
+      "label": "Segment 1",
+      "color": "#BB3E00"
+    },
+    {
+      "id": "s2",
+      "title": "S2",
+      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
+      "label": "Segment 2",
+      "color": "#F7AD45"
+    },
+    {
+      "id": "s3",
+      "title": "S3",
+      "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
+      "label": "Segment 3",
+      "color": "#657C6A"
+    },
+    {
+      "id": "s4",
+      "title": "S4",
+      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
+      "label": "Segment 4",
+      "color": "#A2B9A7"
+    },
+    {
+      "id": "s5",
+      "title": "S5",
+      "description": "Emerging technologies and concepts that are being explored for future adoption.",
+      "label": "Segment 5",
+      "color": "#FF3F33"
+    },
+    {
+      "id": "s6",
+      "title": "S6",
+      "description": "Technologies and practices that are being phased out or deprecated.",
+      "label": "Segment 6",
+      "color": "#075B5E"
+    },
+    {
+      "id": "s7",
+      "title": "S7",
+      "description": "Technologies and practices that are not recommended for use in new projects.",
+      "label": "Segment 7",
+      "color": "#9FC87E"
+    },
+    {
+      "id": "s8",
+      "title": "S8",
+      "description": "Technologies and practices that are considered obsolete or no longer relevant.",
+      "label": "Segment 8",
+      "color": "#FFD95F"
+    }
+  ]
 }
