@@ -9,6 +9,6 @@ This is a demo entry. It is used to show how a radar item is written in Markdown
 
 ```tsx
 // code higlighting works too
-const var = 'Hello World!'
-console.log(var)
+const str = "Hello World!";
+console.log(str);
 ```

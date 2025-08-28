@@ -1,25 +1,24 @@
-import { Quadrant, Ring } from "@/lib/types";
+import { Ring, Segment } from "@/lib/types";
 
 type Position = [x: number, y: number];
 type RingDimension = [innerRadius: number, outerRadius: number];
-
-// Corresponding to positions 1, 2, 3, and 4 respectively
-const startAngles = [270, 0, 180, 90];
 
 export default class Positioner {
   private readonly centerRadius: number;
   private readonly minDistance: number = 20;
   private readonly paddingRing: number = 15;
   private readonly paddingAngle: number = 10;
+  private readonly segments: Segment[] = [];
   private positions: Record<string, Position[]> = {};
   private ringDimensions: Record<string, RingDimension> = {};
-  private quadrantAngles: Record<string, number> = {};
+  private segmentAngles: Record<string, number> = {};
 
-  constructor(size: number, quadrants: Quadrant[], rings: Ring[]) {
+  constructor(size: number, segments: Segment[], rings: Ring[]) {
     this.centerRadius = size / 2;
+    this.segments = segments;
 
-    quadrants.forEach((quadrant) => {
-      this.quadrantAngles[quadrant.id] = startAngles[quadrant.position - 1];
+    segments.forEach((segment, index) => {
+      this.segmentAngles[segment.id] = index * (360 / segments.length);
     });
 
     rings.forEach((ring, index) => {
@@ -44,7 +43,7 @@ export default class Positioner {
   }
 
   private getXYPosition(
-    quadrantId: string,
+    segmentId: string,
     ringId: string,
     radiusFraction: number,
     angleFraction: number,
@@ -53,8 +52,9 @@ export default class Positioner {
     const ringWidth = outerRadius - innerRadius;
     const absoluteRadius = innerRadius + radiusFraction * ringWidth;
 
-    const startAngle = this.quadrantAngles[quadrantId] + this.paddingAngle;
-    const endAngle = startAngle + 90 - 2 * this.paddingAngle;
+    const startAngle = this.segmentAngles[segmentId] + this.paddingAngle;
+    const angleIncrement = 360 / this.segments.length;
+    const endAngle = startAngle + angleIncrement - 2 * this.paddingAngle;
     const absoluteAngle = startAngle + (endAngle - startAngle) * angleFraction;
     const angleInRadians = ((absoluteAngle - 90) * Math.PI) / 180;
 
@@ -64,32 +64,32 @@ export default class Positioner {
     ];
   }
 
-  public getNextPosition(quadrantId: string, ringId: string): Position {
-    this.positions[quadrantId] ??= [];
+  public getNextPosition(segmentId: string, ringId: string): Position {
+    this.positions[segmentId] ??= [];
 
     let tries = 0;
     let position: Position;
 
     do {
       position = this.getXYPosition(
-        quadrantId,
+        segmentId,
         ringId,
         Math.sqrt(Math.random()),
         Math.random(),
       );
       tries++;
     } while (
-      this.isOverlapping(position, this.positions[quadrantId]) &&
+      this.isOverlapping(position, this.positions[segmentId]) &&
       tries < 150
     );
 
     if (tries >= 150) {
       console.warn(
-        `Could not find a non-overlapping position for ${quadrantId} in ring ${ringId}`,
+        `Could not find a non-overlapping position for ${segmentId} in ring ${ringId}`,
       );
     }
 
-    this.positions[quadrantId].push(position);
+    this.positions[segmentId].push(position);
     return position;
   }
 }

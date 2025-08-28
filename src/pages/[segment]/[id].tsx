@@ -7,12 +7,12 @@ import styles from "./[id].module.css";
 import { RingBadge } from "@/components/Badge/Badge";
 import { ItemDetail } from "@/components/ItemDetail/ItemDetail";
 import { ItemList } from "@/components/ItemList/ItemList";
-import { QuadrantLink } from "@/components/QuadrantLink/QuadrantLink";
+import { SegmentLink } from "@/components/SegmentLink/SegmentLink";
 import {
   getItem,
   getItems,
   getLabel,
-  getQuadrant,
+  getSegment,
   sortByFeaturedAndTitle,
 } from "@/lib/data";
 import { formatTitle } from "@/lib/format";
@@ -20,22 +20,22 @@ import { CustomPage } from "@/pages/_app";
 
 const ItemPage: CustomPage = () => {
   const { query } = useRouter();
-  const quadrant = getQuadrant(query.quadrant as string);
+  const segment = getSegment(query.segment as string);
   const item = getItem(query.id as string);
 
   const relatedItems = useMemo(() => {
     return getItems()
-      .filter((i) => i.quadrant === quadrant?.id && i.ring == item?.ring)
+      .filter((i) => i.segment === segment?.id && i.ring == item?.ring)
       .sort(sortByFeaturedAndTitle);
-  }, [quadrant?.id, item?.ring]);
+  }, [segment?.id, item?.ring]);
 
-  if (!quadrant || !item) return null;
+  if (!segment || !item) return null;
 
   return (
     <>
       <Head>
-        <title>{formatTitle(item.title, quadrant.title)}</title>
-        <meta name="description" content={quadrant.description} />
+        <title>{formatTitle(item.title, segment.title)}</title>
+        <meta name="description" content={segment.description} />
       </Head>
 
       <div className={styles.layout}>
@@ -43,12 +43,12 @@ const ItemPage: CustomPage = () => {
           <ItemDetail item={item} />
         </section>
         <aside className={styles.sidebar}>
-          <h3>{quadrant.title}</h3>
-          <div className={styles.ringAndQuadrant}>
+          <h3>{segment.title}</h3>
+          <div className={styles.ringAndSegment}>
             <RingBadge ring={item.ring} />
-            <QuadrantLink
-              quadrant={quadrant}
-              label={getLabel("quadrantOverview")}
+            <SegmentLink
+              segment={segment}
+              label={getLabel("segmentOverview")}
             />
           </div>
 
@@ -64,7 +64,7 @@ export default ItemPage;
 export const getStaticPaths = async () => {
   const items = getItems();
   const paths = items.map((item) => ({
-    params: { quadrant: item.quadrant, id: item.id },
+    params: { segment: item.segment, id: item.id },
   }));
 
   return { paths, fallback: false };

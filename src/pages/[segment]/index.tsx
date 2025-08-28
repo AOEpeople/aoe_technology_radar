@@ -5,43 +5,43 @@ import { useMemo } from "react";
 import { RingList } from "@/components/RingList/RingList";
 import {
   getItems,
-  getQuadrant,
-  getQuadrants,
+  getSegment,
+  getSegments,
   sortByFeaturedAndTitle,
 } from "@/lib/data";
 import { formatTitle } from "@/lib/format";
 import { CustomPage } from "@/pages/_app";
 
-const QuadrantPage: CustomPage = () => {
+const SegmentPage: CustomPage = () => {
   const { query } = useRouter();
-  const quadrant = getQuadrant(query.quadrant as string);
+  const segment = getSegment(query.segment as string);
   const items = useMemo(
-    () => quadrant?.id && getItems(quadrant.id).sort(sortByFeaturedAndTitle),
-    [quadrant?.id],
+    () => segment?.id && getItems(segment.id).sort(sortByFeaturedAndTitle),
+    [segment?.id],
   );
-  if (!quadrant || !items) return null;
+  if (!segment || !items) return null;
 
   return (
     <>
       <Head>
-        <title>{formatTitle(quadrant.title)}</title>
-        <meta name="description" content={quadrant.description} />
+        <title>{formatTitle(segment.title)}</title>
+        <meta name="description" content={segment.description} />
       </Head>
 
-      <h1>{quadrant.title}</h1>
-      <h2>{quadrant.description}</h2>
+      <h1>{segment.title}</h1>
+      <h2>{segment.description}</h2>
 
       <RingList items={items} />
     </>
   );
 };
 
-export default QuadrantPage;
+export default SegmentPage;
 
 export const getStaticPaths = async () => {
-  const quadrants = getQuadrants();
-  const paths = quadrants.map((quadrant) => ({
-    params: { quadrant: quadrant.id },
+  const segments = getSegments();
+  const paths = segments.map((segment) => ({
+    params: { segment: segment.id },
   }));
 
   return { paths, fallback: false };

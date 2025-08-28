@@ -1,18 +1,20 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { QuadrantList } from "@/components/QuadrantList/QuadrantList";
+import styles from "./index.module.css";
+
 import { Radar } from "@/components/Radar/Radar";
+import { SegmentList } from "@/components/SegmentList/SegmentList";
 import { Tags } from "@/components/Tags/Tags";
 import {
   getAppName,
   getChartConfig,
   getItems,
   getLabel,
-  getQuadrants,
   getReleases,
   getRings,
   getSections,
+  getSegments,
   getTags,
   getToggle,
 } from "@/lib/data";
@@ -23,11 +25,12 @@ const Home: CustomPage = () => {
   const tag = router.query.tag as string | undefined;
   const appName = getAppName();
   const metaDescription = getLabel("metaDescription");
+  const subtitle = getLabel("subtitle");
   const chartConfig = getChartConfig();
   const sections = getSections();
   const version = getReleases().length;
   const rings = getRings();
-  const quadrants = getQuadrants();
+  const segments = getSegments();
   const tags = getTags();
   const items = getItems(undefined, true).filter(
     (item) => !tag || item.tags?.includes(tag),
@@ -41,12 +44,13 @@ const Home: CustomPage = () => {
         )}
       </Head>
 
-      <h1>
+      <h1 className={styles.title}>
         {appName}{" "}
         <span style={{ color: "var(--highlight)", whiteSpace: "nowrap" }}>
           Version #{version}
         </span>
       </h1>
+      {subtitle && <h2 className={styles.subtitle}>{subtitle}</h2>}
       {sections.map((section) => {
         switch (section) {
           case "radar":
@@ -55,7 +59,7 @@ const Home: CustomPage = () => {
                 <Radar
                   key={section}
                   size={chartConfig.size}
-                  quadrants={quadrants}
+                  segments={segments}
                   rings={rings}
                   items={items}
                 />
@@ -70,8 +74,8 @@ const Home: CustomPage = () => {
             );
           case "list":
             return (
-              getToggle("showQuadrantList") && (
-                <QuadrantList key={section} items={items} />
+              getToggle("showSegmentList") && (
+                <SegmentList key={section} items={items} />
               )
             );
           default:
