@@ -106,6 +106,7 @@ const _Chart: FC<ChartProps> = ({
       const outerRadius = ring.radius || 1;
       const innerRadius = rings[index - 1]?.radius || 0;
       const position = ((outerRadius + innerRadius) / 2) * center;
+      const description = ring.description || undefined;
 
       return (
         <Fragment key={ring.id}>
@@ -116,6 +117,7 @@ const _Chart: FC<ChartProps> = ({
             dominantBaseline="middle"
             fontSize="12"
           >
+            {description && <title>{description}</title>}
             {ring.title}
           </text>
           <text
@@ -125,6 +127,7 @@ const _Chart: FC<ChartProps> = ({
             dominantBaseline="middle"
             fontSize="12"
           >
+            {description && <title>{description}</title>}
             {ring.title}
           </text>
         </Fragment>
