@@ -116,7 +116,6 @@ const _Chart: FC<ChartProps> = ({
             textAnchor="middle"
             dominantBaseline="middle"
             fontSize="12"
-            title={description}
           >
             {description && <title>{description}</title>}
             {ring.title}
@@ -127,7 +126,6 @@ const _Chart: FC<ChartProps> = ({
             textAnchor="middle"
             dominantBaseline="middle"
             fontSize="12"
-            title={description}
           >
             {description && <title>{description}</title>}
             {ring.title}

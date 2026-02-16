@@ -70,7 +70,7 @@ export function RingBadge({
   const label = release
     ? `${ring.title} | ${formatRelease(release)}`
     : ring.title;
-  const description = title ?? ring.description ?? undefined;
+  const description = title || ring.description || undefined;
 
   return (
     <Badge color={ring.color} title={description} {...props}>
