@@ -61,6 +61,7 @@ interface RingBadgeProps extends Omit<BadgeProps, "color" | "children"> {
 export function RingBadge({
   ring: ringName,
   release,
+  title,
   ...props
 }: RingBadgeProps) {
   const ring = getRing(ringName);
@@ -69,9 +70,10 @@ export function RingBadge({
   const label = release
     ? `${ring.title} | ${formatRelease(release)}`
     : ring.title;
+  const description = title ?? ring.description ?? undefined;
 
   return (
-    <Badge color={ring.color} {...props}>
+    <Badge color={ring.color} title={description} {...props}>
       {label}
     </Badge>
   );
