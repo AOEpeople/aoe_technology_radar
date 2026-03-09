@@ -254,15 +254,33 @@ function postProcessItems(items: Item[]): {
   const internalHrefRegex = /href=(["'])([A-Za-z0-9_-]+)\1/g;
 
   for (const it of processedItems) {
-    if (!it.body) continue;
+    // map simple internal hrefs in the main item body
+    if (it.body) {
+      it.body = it.body.replace(
+        internalHrefRegex,
+        (match, quote, candidateId) => {
+          const targetPath = idToPath[candidateId];
+          return targetPath ? `href=${quote}${targetPath}${quote}` : match;
+        },
+      );
+    }
 
-    it.body = it.body.replace(
-      internalHrefRegex,
-      (match, quote, candidateId) => {
-        const targetPath = idToPath[candidateId];
-        return targetPath ? `href=${quote}${targetPath}${quote}` : match;
-      },
-    );
+    // map links inside revision bodies
+    if (it.revisions && it.revisions.length) {
+      it.revisions = it.revisions.map((rev) => {
+        if (!rev.body) return rev;
+        return {
+          ...rev,
+          body: rev.body.replace(
+            internalHrefRegex,
+            (match, quote, candidateId) => {
+              const targetPath = idToPath[candidateId];
+              return targetPath ? `href=${quote}${targetPath}${quote}` : match;
+            },
+          ),
+        };
+      });
+    }
   }
 
   return { releases, tags: uniqueTags, items: processedItems };
