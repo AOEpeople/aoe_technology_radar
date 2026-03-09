@@ -239,6 +239,50 @@ function postProcessItems(items: Item[]): {
     return processedItem;
   });
 
+  const base = nextConfig.basePath || "";
+
+  // Pre-calculate all valid item paths
+  const idToPath: Record<string, string> = {};
+  for (const it of processedItems) {
+    if (it.id && it.quadrant) {
+      idToPath[it.id] = `${base}/${it.quadrant}/${it.id}/`;
+    }
+  }
+
+  // Matches internal IDs only (alphanumeric, underscores, hyphens)
+  // This skips links containing dots (files), slashes (paths), or protocols (http)
+  const internalHrefRegex = /href=(["'])([A-Za-z0-9_-]+)\1/g;
+
+  for (const it of processedItems) {
+    // map simple internal hrefs in the main item body
+    if (it.body) {
+      it.body = it.body.replace(
+        internalHrefRegex,
+        (match, quote, candidateId) => {
+          const targetPath = idToPath[candidateId];
+          return targetPath ? `href=${quote}${targetPath}${quote}` : match;
+        },
+      );
+    }
+
+    // map links inside revision bodies
+    if (it.revisions && it.revisions.length) {
+      it.revisions = it.revisions.map((rev) => {
+        if (!rev.body) return rev;
+        return {
+          ...rev,
+          body: rev.body.replace(
+            internalHrefRegex,
+            (match, quote, candidateId) => {
+              const targetPath = idToPath[candidateId];
+              return targetPath ? `href=${quote}${targetPath}${quote}` : match;
+            },
+          ),
+        };
+      });
+    }
+  }
+
   return { releases, tags: uniqueTags, items: processedItems };
 }
 
